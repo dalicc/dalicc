@@ -1,0 +1,165 @@
+# Title: The machine-readable representation of "Creative Commons Attribution 3.0 Australia"@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttribution30Australia
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:CreativeCommonsAttribution30Australia a odrl:Set ;
+    cc:jurisdiction bpicounty:Australia ;
+    cc:legalcode <https://creativecommons.org/licenses/by/3.0/au/legalcode> ;
+    dalicc:LiabilityLimitation """
+ To the full extent permitted by applicable law, and
+ except for any liability arising from contrary
+ agreement, in no event will the Licensor be liable to
+ You on any legal basis (including without limitation,
+ negligence) for any loss or damage whatsoever,
+ including (without limitation):
+ 
+ loss of production or operation time, loss,
+ damage or corruption of data or records; or
+ loss of anticipated savings, opportunity,
+ revenue, profit or goodwill, or other economic
+ loss; or
+ any special, incidental, consequential,
+ punitive or exemplary damages arising out of or in
+ connection with this Licence or the use of the
+ Work, even if the Licensor has been advised of the
+ possibility of such damages.
+ 
+ 
+ 
+ If applicable legislation implies warranties or
+ conditions, or imposes obligations or liability on
+ the Licensor in respect of this Licence that cannot
+ be wholly or partly excluded, restricted or modified,
+ the Licensor’s liability is limited, to the
+ full extent permitted by the applicable legislation,
+ at its option, to:
+ 
+ 
+ in the case of goods, any one or more of the
+ following:
+ 
+ the replacement of the goods or the supply
+ of equivalent goods;
+ the repair of the goods;
+ the payment of the cost of replacing the
+ goods or of acquiring equivalent goods;
+ the payment of the cost of having the goods
+ repaired; or
+ 
+ 
+ 
+ in the case of services:
+ 
+ the supplying of the services again;
+ or
+ the payment of the cost of having the
+ services supplied again.
+ 
+ 
+ 
+ 
+ The Trade Practices Act 1974 (Cth), and
+ the corresponding State and Territory fair trading
+ legislation, restrict the limitation of liability in
+ certain circumstances, such as a contract for the
+ supply of goods or services of a kind ordinarily
+ acquired for personal, domestic, or household use.
+ Clauses 6(a) and 6(b) cannot and are not intended to
+ apply in circumstances where it is prohibited by
+ law.
+ 
+""" ;
+    dalicc:WarrantyDisclaimer """
+ Except as expressly stated in this Licence or
+ otherwise agreed to by the parties in writing, and to
+ the full extent permitted by applicable law, the
+ Licensor offers the Work "as-is" and makes no
+ representations, warranties or conditions of any kind
+ concerning the Work, express, implied, statutory or
+ otherwise. This includes, without limitation, any
+ representations, warranties or conditions regarding:
+ 
+ the contents or accuracy of the Work;
+ title, merchantability, or fitness for a particular purpose;
+ non-infringement;
+ the absence of latent or other defects; or
+ the presence or absence of errors, whether or not discoverable.
+ 
+ 
+ The Trade Practices Act 1974 (Cth), and
+ the corresponding State and Territory fair trading
+ legislation, imply certain warranties and conditions in
+ certain circumstances, such as the right to supply or
+ fitness for purpose of goods or services supplied to a
+ consumer. Clause 5(a) cannot and is not intended to
+ exclude, restrict or modify these warranties.
+ 
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution 3.0",
+        "Attribution 3.0 Australia",
+        "CC BY 3.0",
+        "CC BY 3.0 AU",
+        "CC-BY 3.0",
+        "CC-BY-3.0",
+        "CC-BY-3.0 AU",
+        "Creative Commons BY 3.0",
+        "Creative Commons BY 3.0 AU" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution 3.0 Australia"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/au.png> ;
+    foaf:logo <https://licensebuttons.net/l/by/3.0/au/88x31.png> .

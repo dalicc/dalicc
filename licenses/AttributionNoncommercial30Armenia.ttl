@@ -1,0 +1,81 @@
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial 3.0 Armenia"@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/AttributionNoncommercial30Armenia
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:AttributionNoncommercial30Armenia a odrl:Set ;
+    cc:jurisdiction bpicounty:Armenia ;
+    cc:legalcode <https://creativecommons.org/licenses/by-nc/3.0/am/legalcode> ;
+    dalicc:LiabilityLimitation """Օրենքով նախատեսված պահանջների և 5-րդ Բաժնի երաշխիքների խախտումներից բացի, Լիցենզատուն պատասխանատու է նաև այն վնասների համար, որոնք պատճառվել են դիտավորությամբ՝ անզգուշությամբ տեղ գտած գործողության կամ անգործության հետևանքով։
+""" ;
+    dalicc:WarrantyDisclaimer """Հավաստագրեր և երաշխիքներ Լիցենզատուն հավաստում և երաշխավորում է, որ՝ i.	սույն Լիցենզիայի իրականացումը և կատարումը Լիցենզատուի լիազորությունների մեջ են մտնում և չեն հակասում Օրենքին. ii.	Լիցենզատուն ամբողջությամբ տիրապետում է լիցենզավորված Ստեղծագործության նկատմամբ սեփականության իրավունքին և, որ լիցենզավորման գործընթացի առնչությամբ Լիցենզատուի համար որևէ իրավական խոչընդոտներ չկան.
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution NonCommercial 3.0 Armenia",
+        "Attribution-NonCommercial 3.0",
+        "Attribution-NonCommercial 3.0 Armenia",
+        "CC BY NC 3.0",
+        "CC BY NC 3.0 AM",
+        "CC BY-NC 3.0",
+        "CC BY-NC 3.0 AM",
+        "CC-BY-NC 3.0",
+        "CC-BY-NC 3.0 AM",
+        "Creative Commons BY-NC 3.0",
+        "Creative Commons BY-NC 3.0 AM" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution-NonCommercial 3.0 Armenia"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/am.png> ;
+    foaf:logo <https://licensebuttons.net/l/by-nc/3.0/am/88x31.png> .

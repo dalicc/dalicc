@@ -1,0 +1,114 @@
+# Title: The machine-readable representation of "Creative Commons Attribution 2.0 France"@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttribution20France
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:CreativeCommonsAttribution20France a odrl:Set ;
+    cc:jurisdiction bpicounty:France ;
+    cc:legalcode <https://creativecommons.org/licenses/by/2.0/fr/legalcode> ;
+    dalicc:LiabilityLimitation """A l'exception
+ des garanties d'ordre public imposées par la loi applicable et des
+ réparations imposées par le régime de la responsabilité
+ vis-à-vis d'un tiers en raison de la violation des garanties
+ prévues par l'article 5 du présent contrat, l'Offrant ne sera en
+ aucun cas tenu responsable vis-à-vis de l'Acceptant, sur la base
+ d'aucune théorie légale ni en raison d'aucun préjudice direct, indirect, matériel ou moral, résultant
+ de l'exécution du présent Contrat ou de l'utilisation de
+ l'Oeuvre, y compris dans l'hypothèse où l'Offrant avait
+ connaissance de la possible existence d'un tel préjudice.
+ 
+""" ;
+    dalicc:WarrantyDisclaimer """En mettant l'Oeuvre à la disposition du public selon les termes
+ de ce Contrat, l'Offrant déclare de bonne foi qu'à sa
+ connaissance et dans les limites d'une enquête raisonnable :
+ 
+ L'Offrant a obtenu tous les droits sur l'Oeuvre nécessaires
+ pour pouvoir autoriser l'exercice des droits accordés par le
+ présent Contrat, et permettre la jouissance paisible et l'exercice
+ licite de ces droits, ceci sans que l'Acceptant n'ait aucune
+ obligation de verser de rémunération ou tout autre paiement ou
+ droits, dans la limite des mécanismes de gestion collective
+ obligatoire applicables décrits à l'article 4(e);
+ L'Oeuvre n'est constitutive ni d'une violation des droits de
+ tiers, notamment du droit de la propriété littéraire et artistique,
+ du droit des marques, du droit de l'information, du droit civil ou
+ de tout autre droit, ni de diffamation, de violation de la vie
+ privée ou de tout autre préjudice délictuel à l'égard de toute
+ tierce partie.
+ 
+  
+ A l'exception des situations expressément mentionnées dans le
+ présent Contrat ou dans un autre accord écrit, ou exigées par
+ la loi applicable, l'Oeuvre est mise à disposition en l'état sans
+ garantie d'aucune sorte, qu'elle soit expresse ou tacite, y compris
+ à l'égard du contenu ou de l'exactitude de l'Oeuvre.
+ 
+ 
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution 2.0",
+        "Attribution 2.0 France",
+        "CC BY 2.0",
+        "CC BY 2.0 FR",
+        "CC-BY 2.0",
+        "CC-BY-2.0",
+        "CC-BY-2.0 FR",
+        "Creative Commons BY 2.0",
+        "Creative Commons BY 2.0 FR" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution 2.0 France"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/fr.png> ;
+    foaf:logo <https://licensebuttons.net/l/by/2.0/fr/88x31.png> .
