@@ -1,0 +1,74 @@
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Chile"@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialNoderivs30Chile
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Chile a odrl:Set ;
+    cc:jurisdiction bpicounty:Chile ;
+    cc:legalcode <https://creativecommons.org/licenses/by-nc-nd/3.0/cl/legalcode> ;
+    dalicc:LiabilityLimitation """A MENOS QUE LO EXIJA EXPRESAMENTE LA LEY APLICABLE, EL LICENCIANTE NO SERÁ RESPONSABLE ANTE USTED POR DAÑO ALGUNO, SEA POR RESPONSABILIDAD EXTRACONTRACTUAL O CONTRACTUAL, OBJETIVAS O SUBJETIVAS, SE TRATE DE DAÑOS MORALES O PATRIMONIALES, DIRECTOS O INDIRECTOS, PREVISTOS O IMPREVISTOS PRODUCIDOS POR EL USO DE ESTA LICENCIA O DE LA OBRA, AUN CUANDO EL LICENCIANTE HAYA SIDO ADVERTIDO DE LA POSIBILIDAD DE DICHOS DAÑOS. ALGUNAS LEYES NO PERMITEN LA EXCLUSIÓN DE CIERTA RESPONSABILIDAD, EN CUYO CASO ESTA EXCLUSIÓN PUEDE NO APLICARSE A USTED.
+""" ;
+    dalicc:WarrantyDisclaimer """A MENOS QUE LAS PARTES LO CONVINIERAN DE OTRA FORMA POR ESCRITO, Y HASTA LA MAYOR EXTENSIÓN PERMITIDA POR LA LEGISLACIÓN APLICABLE, EL LICENCIANTE OFRECE LA OBRA "TAL CUAL", SIN BRINDAR GARANTÍAS DE CLASE ALGUNA RESPECTO DE LA OBRA, YA SEA EXPRESA, IMPLÍCITA, LEGAL O CUALQUIERA OTRA, INCLUYENDO, SIN LIMITACIÓN, GARANTÍAS DE TITULARIDAD, COMERCIABILIDAD, ADAPTABILIDAD A PROPÓSITO DETERMINADO, AUSENCIA DE INFRACCIÓN, DE DEFECTOS LATENTES O DE OTRO TIPO, PRECISIÓN O ERRORES, SEAN O NO DESCUBRIBLES. ALGUNOS PAÍSES NO PERMITEN LA EXCLUSIÓN DE GARANTÍAS IMPLÍCITAS, EN CUYO CASO ESTA EXCLUSIÓN PUEDE NO APLICARSE A USTED.
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution NonCommercial NoDerivatives 3.0 Chile",
+        "Attribution-NonCommercial-NoDerivatives 3.0 Chile",
+        "Attribution-NonCommercial-NoDerivatives 4.0",
+        "CC BY NC ND 3.0",
+        "CC BY NC ND 3.0 CL",
+        "CC BY-NC-ND 3.0",
+        "CC BY-NC-ND 3.0 CL",
+        "CC-BY-NC-ND 3.0",
+        "CC-BY-NC-ND 3.0 CL",
+        "Creative Commons Attribution NonCommercial NoDerivatives 3.0 Chile",
+        "Creative Commons BY-NC-ND 3.0",
+        "Creative Commons BY-NC-ND 3.0 CL" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Chile"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action odrl:derive ],
+        [ a odrl:Prohibition ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/cl.png> ;
+    foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/cl/88x31.png> .

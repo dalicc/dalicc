@@ -1,0 +1,93 @@
+# Title: The machine-readable representation of "Creative Commons Attribution-NoDerivatives 3.0 Greece"@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionNoderivs30Greece
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:CreativeCommonsAttributionNoderivs30Greece a odrl:Set ;
+    cc:jurisdiction bpicounty:Greece ;
+    cc:legalcode <https://creativecommons.org/licenses/by-nd/3.0/gr/legalcode> ;
+    dalicc:LiabilityLimitation """ΥΠΟ ΤΗΝ ΠΡΟΫΠΟΘΕΣΗ ΔΙΑΦΟΡΕΤΙΚΗΣ ΥΠΟΧΡΕΩΤΙΚΗΣ ΡΥΘΜΙΣΗΣ ΑΠΟ ΤΟ
+ ΙΣΧΥΟΝΤΑ ΝΟΜΟ, ΣΕ ΚΑΜΙΑ ΠΕΡΙΠΤΩΣΗ Ο ΧΟΡΗΓΩΝ ΤΗΝ ΑΔΕΙΑ ΔΕΝ ΘΑ
+ ΕΥΘΥΝΕΤΑΙ ΕΝΑΝΤΙ ΣΑΣ ΒΑΣΕΙ ΟΠΟΙΟΥΔΗΠΟΤΕ ΝΟΜΙΚΟΥ ΣΥΛΛΟΓΙΣΜΟΥ ΠΟΥ
+ ΑΦΟΡΑ ΣΕ ΕΙΔΙΚΕΣ, ΤΥΧΑΙΕΣ, ΠΡΟΚΑΛΟΥΜΕΝΕΣ, ΕΠΙΒΑΛΛΟΜΕΝΕΣ ΩΣ
+ ΠΟΙΝΗ Η ΓΙΑ ΠΑΡΑΔΕΙΓΜΑΤΙΣΜΟ ΖΗΜΙΕΣ ΠΟΥ ΠΡΟΚΥΠΤΟΥΝ ΑΠΟ ΑΥΤΗ ΤΗΝ
+ ΑΔΕΙΑ Η ΤΗ ΧΡΗΣΗ ΤΟΥ ΕΡΓΟΥ, ΑΚΟΜΗ ΚΑΙ ΑΝ Ο ΧΟΡΗΓΩΝ ΤΗΝ ΑΔΕΙΑ
+ ΕΙΝΑΙ ΕΝΗΜΕΡΩΜΕΝΟΣ ΓΙΑ ΤΗ ΠΙΘΑΝΟΤΗΤΑ ΠΡΟΚΛΗΣΗΣ ΑΥΤΩΝ ΤΩΝ
+ ΖΗΜΙΩΝ.
+ 
+""" ;
+    dalicc:WarrantyDisclaimer """ΥΠΟ ΤΗΝ ΠΡΟΫΠΟΘΕΣΗ ΤΗΣ ΜΗ ΥΠΑΡΞΗΣ ΑΜΟΙΒΑΙΑ ΑΠΟΔΕΚΤΗΣ,
+ ΔΙΑΦΟΡΕΤΙΚΗΣ, ΓΡΑΠΤΗΣ ΣΥΜΦΩΝΙΑΣ ΜΕΤΑΞΥ ΤΩΝ ΜΕΡΩΝ, ΚΑΙ ΣΤΟ
+ ΜΕΓΙΣΤΟ ΕΠΙΤΡΕΠΟΜΕΝΟ ΒΑΘΜΟ ΑΠΟ ΤΟ ΕΦΑΡΜΟΣΤΕΟ ΔΙΚΑΙΟ, Ο ΧΟΡΗΓΩΝ
+ ΤΗΝ ΑΔΕΙΑ ΠΡΟΣΦΕΡΕΙ ΤΗΝ ΑΔΕΙΑ ΩΣ ΕΧΕΙ ΚΑΙ ΔΕΝ ΠΡΟΒΑΙΝΕΙ ΣΕ
+ ΔΗΛΩΣΕΙΣ Η ΕΓΓΥΗΣΕΙΣ ΣΧΕΤΙΚΑ ΜΕ ΤΟ ΕΡΓΟ, ΣΑΦΕΙΣ, ΕΝΝΟΟΥΜΕΝΕΣ,
+ ΘΕΣΜΙΚΕΣ Η ΑΛΛΕΣ, ΣΤΙΣ ΟΠΟΙΕΣ ΕΝΔΕΙΚΤΙΚΑ ΚΑΙ ΟΧΙ ΠΕΡΙΟΡΙΣΤΙΚΑ
+ ΠΕΡΙΛΑΜΒΑΝΟΝΤΑΙ ΟΙ ΕΓΓΥΗΣΕΙΣ ΤΙΤΛΟΥ, ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ,
+ ΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΕΝΑ ΙΔΙΑΙΤΕΡΟ ΣΚΟΠΟ, ΜΗ-ΠΑΡΑΒΙΑΣΗΣ Η
+ ΑΠΟΥΣΙΑΣ ΚΡΥΦΩΝ Η ΑΛΛΩΝ ΕΛΑΤΤΩΜΑΤΩΝ, ΑΚΡΙΒΕΙΑΣ Η ΑΠΟΥΣΙΑΣ
+ ΛΑΘΩΝ, ΑΝΑΓΝΩΡΙΣΙΜΩΝ Η ΟΧΙ. ΣΕ ΜΕΡΙΚΕΣ ΔΙΚΑΙΟΔΟΣΙΕΣ ΠΟΥ ΔΕΝ
+ ΕΠΙΤΡΕΠΕΤΑΙ Ο ΑΠΟΚΛΕΙΣΜΟΣ ΕΝΝΟΟΥΜΕΝΩΝ ΕΓΓΥΗΣΕΩΝ, ΑΥΤΟΣ Ο
+ ΑΠΟΚΛΕΙΣΜΟΣ ΜΠΟΡΕΙ ΝΑ ΜΗΝ ΕΧΕΙ ΕΦΑΡΜΟΓΗ Σ’ ΕΣΑΣ.
+ 
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution NoDerivatives 3.0 Greece",
+        "Attribution-NoDerivatives 3.0",
+        "Attribution-NoDerivatives 3.0 Greece",
+        "CC BY ND 3.0",
+        "CC BY ND 3.0 GR",
+        "CC BY-ND 3.0",
+        "CC BY-ND 3.0 GR",
+        "CC-BY-ND 3.0",
+        "CC-BY-ND 3.0 GR",
+        "Creative Commons BY-ND 3.0",
+        "Creative Commons BY-ND 3.0 GR" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution-NoDerivatives 3.0 Greece"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action odrl:derive ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/gr.png> ;
+    foaf:logo <https://licensebuttons.net/l/by-nd/3.0/gr/88x31.png> .

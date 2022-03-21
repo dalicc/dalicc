@@ -1,0 +1,73 @@
+# Title: The machine-readable representation of "Creative Commons Attribution-NoDerivatives 2.0 South Africa"@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionNoderivs20SouthAfrica
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:CreativeCommonsAttributionNoderivs20SouthAfrica a odrl:Set ;
+    cc:jurisdiction bpicounty:SouthAfrica ;
+    cc:legalcode <https://creativecommons.org/licenses/by-nd/2.0/za/legalcode> ;
+    dalicc:LiabilityLimitation """EXCEPT TO THE EXTENT REQUIRED BY APPLICABLE LAW, IN NO EVENT WILL LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY FOR ANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES ARISING OUT OF THIS LICENCE OR THE USE OF THE WORK, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+""" ;
+    dalicc:WarrantyDisclaimer """THE LICENSOR MAKES THE WORK AVAILABLE UNDER THE GOOD FAITH BELIEF THAT LICENCED USE OF THE WORK DOES NOT VIOLATE THE COPYRIGHT OR WHERE APPROPRIATE PERFORMERS’ PROTECTION RIGHTS OF OTHERS. UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, LICENSOR OFFERS THE WORK AS-IS ON THE BASIS OF A GOOD FAITH BELIEF THAT IT DOES NOT VIOLATE THE RIGHTS OF OTHERS, AND MAKES NO OTHER REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING, WITHOUT LIMITATION, WARRANTIES OF ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS, WHETHER OR NOT DISCOVERABLE AND IF THE WORK INCLUDES SOFTWARE, WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO SUCH EXCLUSION MAY NOT APPLY TO YOU.
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution NoDerivatives 2.0 South Africa",
+        "Attribution-NoDerivatives 2.0",
+        "Attribution-NoDerivatives 2.0 South Africa",
+        "CC BY ND 2.0",
+        "CC BY ND 2.0 ZA",
+        "CC BY-ND 2.0",
+        "CC BY-ND 2.0 ZA",
+        "CC-BY-ND 2.0",
+        "CC-BY-ND 2.0 ZA",
+        "Creative Commons BY-ND 2.0",
+        "Creative Commons BY-ND 2.0 ZA" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution-NoDerivatives 2.0 South Africa"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action odrl:derive ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/za.png> ;
+    foaf:logo <https://licensebuttons.net/l/by-nd/2.0/za/88x31.png> .

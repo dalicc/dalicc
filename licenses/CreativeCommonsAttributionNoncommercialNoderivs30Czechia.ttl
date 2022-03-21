@@ -1,0 +1,78 @@
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Czechia"@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialNoderivs30Czechia
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Czechia a odrl:Set ;
+    cc:jurisdiction bpicounty:Czechia ;
+    cc:legalcode <https://creativecommons.org/licenses/by-nc-nd/3.0/cz/legalcode> ;
+    dalicc:LiabilityLimitation """POSKYTOVATEL NEODPOVÍDÁ ZA ŽÁDNOU ŠKODU NAD MINIMÁLNÍ ROZSAH STANOVENÝ PLATNOU PRÁVNÍ ÚPRAVOU, COŽ NABYVATEL BERE NA VĚDOMÍ.
+""" ;
+    dalicc:WarrantyDisclaimer """NEBYLA-LI MEZI POSKYTOVATELEM A NABYVATELEM UZAVŘENA PÍSEMNÁ DOHODA
+ UPRAVUJÍCÍ ODPOVĚDNOST POSKYTOVATELE ZA VADY DÍLA, POSKYTUJE
+ POSKYTOVATEL DÍLO TAKOVÉ, JAKÉ JE. POSKYTOVATEL NEPROHLAŠUJE, ŽE DÍLO
+ MÁ URČITÉ VLASTNOSTI A NEPOSKYTUJE K DÍLU ZÁRUKY, COŽ NABYVATEL BERE NA
+ VĚDOMÍ.
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution NonCommercial NoDerivatives 3.0 Czechia",
+        "Attribution-NonCommercial-NoDerivatives 3.0 Czechia",
+        "Attribution-NonCommercial-NoDerivatives 4.0",
+        "CC BY NC ND 3.0",
+        "CC BY NC ND 3.0 CZ",
+        "CC BY-NC-ND 3.0",
+        "CC BY-NC-ND 3.0 CZ",
+        "CC-BY-NC-ND 3.0",
+        "CC-BY-NC-ND 3.0 CZ",
+        "Creative Commons Attribution NonCommercial NoDerivatives 3.0 Czechia",
+        "Creative Commons BY-NC-ND 3.0",
+        "Creative Commons BY-NC-ND 3.0 CZ" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Czechia"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action odrl:derive ],
+        [ a odrl:Prohibition ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/cz.png> ;
+    foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/cz/88x31.png> .

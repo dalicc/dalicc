@@ -1,0 +1,74 @@
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-NoDerivatives 2.0 Australia"@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialNoderivs20Australia
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Australia a odrl:Set ;
+    cc:jurisdiction bpicounty:Australia ;
+    cc:legalcode <https://creativecommons.org/licenses/by-nc-nd/2.0/au/legalcode> ;
+    dalicc:LiabilityLimitation """TO THE FULL EXTENT PERMITTED BY APPLICABLE LAW, AND EXCEPT FOR ANY LIABILITY ARISING FROM CONTRARY MUTUAL AGREEMENT AS REFERRED TO IN SECTION 5, IN NO EVENT WILL LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY (INCLUDING, WITHOUT LIMITATION, NEGLIGENCE) FOR ANY LOSS OR DAMAGE WHATSOEVER, INCLUDING (WITHOUT LIMITATION) LOSS OF PRODUCTION OR OPERATION TIME, LOSS, DAMAGE OR CORRUPTION OF DATA OR RECORDS; OR LOSS OF ANTICIPATED SAVINGS, OPPORTUNITY, REVENUE, PROFIT OR GOODWILL, OR OTHER ECONOMIC LOSS; OR ANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES ARISING OUT OF OR IN CONNECTION WITH THIS LICENCE OR THE USE OF THE WORK, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+""" ;
+    dalicc:WarrantyDisclaimer """EXCEPT AS EXPRESSLY STATED IN THIS LICENCE OR OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, AND TO THE FULL EXTENT PERMITTED BY APPLICABLE LAW, LICENSOR OFFERS THE WORK "AS-IS" AND MAKES NO REPRESENTATIONS, WARRANTIES OR CONDITIONS OF ANY KIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING, WITHOUT LIMITATION, ANY REPRESENTATIONS, WARRANTIES OR CONDITIONS REGARDING THE CONTENTS OR ACCURACY OF THE WORK, OR OF TITLE, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, THE ABSENCE OF LATENT OR OTHER DEFECTS, OR THE PRESENCE OR ABSENCE OF ERRORS, WHETHER OR NOT DISCOVERABLE.
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution NonCommercial NoDerivatives 2.0 Australia",
+        "Attribution-NonCommercial-NoDerivatives 2.0 Australia",
+        "Attribution-NonCommercial-NoDerivatives 4.0",
+        "CC BY NC ND 2.0",
+        "CC BY NC ND 2.0 AU",
+        "CC BY-NC-ND 2.0",
+        "CC BY-NC-ND 2.0 AU",
+        "CC-BY-NC-ND 2.0",
+        "CC-BY-NC-ND 2.0 AU",
+        "Creative Commons Attribution NonCommercial NoDerivatives 2.0 Australia",
+        "Creative Commons BY-NC-ND 2.0",
+        "Creative Commons BY-NC-ND 2.0 AU" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution-NonCommercial-NoDerivatives 2.0 Australia"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action odrl:derive ],
+        [ a odrl:Prohibition ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/au.png> ;
+    foaf:logo <https://licensebuttons.net/l/by-nc-nd/2.0/au/88x31.png> .

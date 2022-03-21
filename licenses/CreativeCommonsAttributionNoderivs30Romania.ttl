@@ -1,0 +1,82 @@
+# Title: The machine-readable representation of "Creative Commons Attribution-NoDerivatives 3.0 Romania"@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionNoderivs30Romania
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:CreativeCommonsAttributionNoderivs30Romania a odrl:Set ;
+    cc:jurisdiction bpicounty:Romania ;
+    cc:legalcode <https://creativecommons.org/licenses/by-nd/3.0/ro/legalcode> ;
+    dalicc:LiabilityLimitation """Cu excepţia răspunderii cerută de normele imperative ale legii aplicabile şi a reparării prejudiciilor impuse de răspunderea faţă de terţi generată de încălcarea garanţiilor prevăzute la articolul 5, Licenţiatorul nu va fi responsabil faţa de Licenţiat, în temeiul niciunei doctrine juridice, pentru orice prejudicii directe, indirecte, materiale sau morale care decurg din această licenţă sau din utilizarea Operei, chiar dacă Licenţiatorul a fost avertizat asupra posibilităţii producerii unor asemenea prejudicii. 
+""" ;
+    dalicc:WarrantyDisclaimer """Prin punerea Operei la dispoziţia publicului în conformitate cu dispoziţiile prezentei licenţe, Licenţiatorul declară de bună credinţă că, în conformitate cu ceea ce cunoaşte şi în limite rezonabile:
+ 
+ 
+ 
+ Licenţiatorul a obţinut toate drepturile necesare asupra Operei pentru a putea autoriza exerciţiul drepturilor acordate prin prezenta licenţă şi a permite utilizarea netulburată şi exerciţiul licit al acestor drepturi, aceasta fără ca Licenţiatul să aibă o obligaţie de a plăti vreo remuneraţie, cu excepţia celor prevăzute de mecanismele de gestiune colectivă obligatorie descrise la articolul 3 litera (f);
+ Opera nu dă naştere vreunei încălcări a drepturilor unor terţe persoane, în special drepturi de autor sau drepturi conexe, drepturi privind mărcile, drepturi privind informaţia, drepturi patrimoniale sau oricare alte drepturi, şi nici vreunei defăimări, violări a dreptului la viaţa privată sau vreunui alt fapt ilicit cu privire la oricare altă terţă parte. 
+ 
+ 
+ Cu excepţia cazurilor prevăzute expres în prezenta licenţă sau într-un alt acord scris, sau cerute de legea aplicabilă, Opera este pusă la dispoziţie fără vreo garanţie de orice fel, expresă sau tacită, inclusiv în ceea ce priveşte conţinutul Operei sau exactitatea acesteia. 
+ 
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution NoDerivatives 3.0 Romania",
+        "Attribution-NoDerivatives 3.0",
+        "Attribution-NoDerivatives 3.0 Romania",
+        "CC BY ND 3.0",
+        "CC BY ND 3.0 RO",
+        "CC BY-ND 3.0",
+        "CC BY-ND 3.0 RO",
+        "CC-BY-ND 3.0",
+        "CC-BY-ND 3.0 RO",
+        "Creative Commons BY-ND 3.0",
+        "Creative Commons BY-ND 3.0 RO" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution-NoDerivatives 3.0 Romania"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action odrl:derive ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/ro.png> ;
+    foaf:logo <https://licensebuttons.net/l/by-nd/3.0/ro/88x31.png> .
