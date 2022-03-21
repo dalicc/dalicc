@@ -1,0 +1,59 @@
+# Title: The machine-readable representation of "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication"@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/Cc010Universal
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:Cc010Universal a odrl:Set ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://creativecommons.org/publicdomain/zero/1.0/legalcode> ;
+    dalicc:LiabilityLimitation """No trademark or patent rights held by Affirmer are waived, abandoned, surrendered, licensed or otherwise affected by this document.
+Affirmer disclaims responsibility for clearing rights of other persons that may apply to the Work or any use thereof, including without limitation any person's Copyright and Related Rights in the Work. Further, Affirmer disclaims responsibility for obtaining any necessary consents, permissions or other rights required for any use of the Work.""" ;
+    dalicc:WarrantyDisclaimer """Affirmer offers the Work as-is and makes no representations or warranties of any kind concerning the Work, express, implied, statutory or otherwise, including without limitation warranties of title, merchantability, fitness for a particular purpose, non infringement, or the absence of latent or other defects, accuracy, or the present or absence of errors, whether or not discoverable, all to the greatest extent permissible under applicable law.
+Affirmer understands and acknowledges that Creative Commons is not a party to this document and has no duty or obligation with respect to this CC0 or use of the Work.""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "CC Zero ",
+        "CC0 1.0",
+        "CC0 1.0 Universal",
+        "CC0 1.0 Universal Public Domain Dedication",
+        "Creative Commons Zero 1.0 Universal" ;
+    dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dct:title "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:derive ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset ] .

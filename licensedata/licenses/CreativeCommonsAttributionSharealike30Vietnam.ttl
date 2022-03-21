@@ -1,0 +1,83 @@
+# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 3.0 Vietnam"@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike30Vietnam
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:CreativeCommonsAttributionSharealike30Vietnam a odrl:Set ;
+    cc:jurisdiction bpicounty:Vietnam ;
+    cc:legalcode <https://creativecommons.org/licenses/by-sa/3.0/vn/legalcode> ;
+    dalicc:LiabilityLimitation """TRỪ KHI LUẬT ÁP DỤNG CÓ YÊU CẦU KHÁC, TRONG MỌI TRƯỜNG HỢP, BÊN CẤP PHÉP SẼ KHÔNG CÓ TRÁCH NHIỆM PHÁP LÝ ĐỐI VỚI BẠN THEO BẤT KỲ HỆ THỐNG PHÁP LÝ NÀO ĐỐI VỚI BẤT KỲ CÁC BỒI THƯỜNG THIỆT HẠI THỰC TẾ, BỒI THƯỜNG THIỆT HẠI DO VI PHẠM HỢP ĐỒNG, BỒI THƯỜNG DO GÂY THIỆT HẠI GIÁN TIẾP, BỒI THƯỜNG THIỆT HẠI MANG TÍNH TRỪNG PHẠT HOẶC LÀM GƯƠNG PHÁT SINH TỪ GIẤY PHÉP NÀY HOẶC TỪ VIỆC SỬ DỤNG TÁC PHẨM, KỂ CẢ TRONG TRƯỜNG HỢP BÊN CẤP PHÉP ĐÃ ĐƯỢC THÔNG BÁO TRƯỚC VỀ KHẢ NĂNG CÓ THỂ CÓ CÁC BỒI THƯỜNG THIỆT HẠI NHƯ VẬY.
+""" ;
+    dalicc:WarrantyDisclaimer """THEO GIẤY PHÉP NÀY, BÊN CẤP PHÉP KHẲNG ĐỊNH RẰNG HỌ CUNG CẤP TÁC PHẨM NHƯ NÓ VỐN CÓ VÀ TRỪ TRƯỜNG HỢP LUẬT ÁP DỤNG YÊU CẦU, KHÔNG CÓ BẤT KỲ TUYÊN BỐ HAY BẢO ĐẢM DƯỚI BẤT KỲ HÌNH THỨC NÀO LIÊN QUAN ĐẾN TÁC PHẨM, DÙ LÀ BẢO ĐẢM RÕ RÀNG HOẶC NGẦM ĐỊNH, DO PHÁP LUẬT QUY ĐỊNH HAY DƯỚI HÌNH THỨC KHÁC, BAO GỒM, NHƯNG KHÔNG GIỚI HẠN, CÁC BẢO ĐẢM VỀ QUYỀN SỞ HỮU, VỀ TÍNH THƯƠNG MẠI, VỀ SỰ PHÙ HỢP CHO MỘT MỤC ĐÍCH CỤ THỂ, VỀ HÀNH VI KHÔNG VI PHẠM, HOẶC BẢO ĐẢM KHÔNG CÓ LỖI TIỀM TÀNG HOẶC CÁC LỖI KHÁC, BẢO ĐẢM VỀ TÍNH CHÍNH XÁC, HOẶC BẢO ĐẢM KHÔNG CÓ LỖI DÙ LÀ LỖI CÓ THỂ PHÁT HIỆN HAY KHÔNG THỂ PHÁT HIỆN. 
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution ShareAlike 3.0 Vietnam",
+        "Attribution-ShareAlike 3.0",
+        "Attribution-ShareAlike 3.0 Vietnam",
+        "CC BY SA 3.0",
+        "CC BY SA 3.0 vn",
+        "CC BY-SA 3.0",
+        "CC BY-SA 3.0 vn",
+        "CC-BY-SA 3.0",
+        "CC-BY-SA 3.0 vn",
+        "Creative Commons BY-SA 3.0",
+        "Creative Commons BY-SA 3.0 vn" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution-ShareAlike 3.0 Vietnam"@en ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ] ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/vn.png> ;
+    foaf:logo <https://licensebuttons.net/l/by-sa/3.0/vn/88x31.png> .

@@ -1,0 +1,64 @@
+# Title: The machine-readable representation of "The Universal Permissive License (UPL), Version 1.0" in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/TheUniversalPermissiveLicenseUplVersion10
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:TheUniversalPermissiveLicenseUplVersion10 a odrl:Set ;
+    cc:attributionName "- not specified -" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode osl:UPL ;
+    dalicc:WarrantyDisclaimer "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE." ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "UPL",
+        "UPL-1.0",
+        "Universal Permissive License 1.0 (UPL-1.0)" ;
+    dct:publisher "- not specified -" ;
+    dct:source osl:UPL ;
+    dct:title "The Universal Permissive License (UPL), Version 1.0" ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:derive ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:grantUse ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeLicenseFee ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:noWarrantyNotice ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action cc:ShareAlike ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:addStatement ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Software ] .

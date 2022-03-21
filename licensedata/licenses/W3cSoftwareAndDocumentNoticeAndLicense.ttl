@@ -1,0 +1,66 @@
+# Title: The machine-readable representation of "W3C Software and Document Notice and License" in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/W3cSoftwareAndDocumentNoticeAndLicense
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:W3cSoftwareAndDocumentNoticeAndLicense a odrl:Set ;
+    cc:attributionName "W3C" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document> ;
+    dalicc:additionalClauses "Can be used for commercial purposes but without fee or royalty." ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "W3C License" ;
+    dct:publisher "W3C" ;
+    dct:source <https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document> ;
+    dct:title "W3C Software and Document Notice and License" ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset,
+                dcmitype:Software ] .

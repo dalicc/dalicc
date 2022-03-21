@@ -1,0 +1,99 @@
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial 3.0 United States of America"@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/AttributionNoncommercial30UnitedStatesofAmerica
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:AttributionNoncommercial30UnitedStatesofAmerica a odrl:Set ;
+    cc:jurisdiction bpicounty:UnitedStates ;
+    cc:legalcode <https://creativecommons.org/licenses/by-nc/3.0/us/legalcode> ;
+    dalicc:LiabilityLimitation """EXCEPT TO
+ THE EXTENT REQUIRED BY APPLICABLE LAW, IN NO EVENT WILL
+ LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY FOR ANY
+ SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY
+ DAMAGES ARISING OUT OF THIS LICENSE OR THE USE OF THE WORK,
+ EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF
+ SUCH DAMAGES.
+""" ;
+    dalicc:WarrantyDisclaimer """UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN
+ WRITING, LICENSOR OFFERS THE WORK AS-IS AND ONLY TO THE
+ EXTENT OF ANY RIGHTS HELD IN THE LICENSED WORK BY THE
+ LICENSOR. THE LICENSOR MAKES NO REPRESENTATIONS OR
+ WARRANTIES OF ANY KIND CONCERNING THE WORK, EXPRESS,
+ IMPLIED, STATUTORY OR OTHERWISE, INCLUDING, WITHOUT
+ LIMITATION, WARRANTIES OF TITLE, MARKETABILITY,
+ MERCHANTIBILITY, FITNESS FOR A PARTICULAR PURPOSE,
+ NONINFRINGEMENT, OR THE ABSENCE OF LATENT OR OTHER DEFECTS,
+ ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS, WHETHER OR
+ NOT DISCOVERABLE. SOME JURISDICTIONS DO NOT ALLOW THE
+ EXCLUSION OF IMPLIED WARRANTIES, SO SUCH EXCLUSION MAY NOT
+ APPLY TO YOU.
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution NonCommercial 3.0 United States of America",
+        "Attribution-NonCommercial 3.0",
+        "Attribution-NonCommercial 3.0 United States of America",
+        "CC BY NC 3.0",
+        "CC BY NC 3.0 US",
+        "CC BY-NC 3.0",
+        "CC BY-NC 3.0 US",
+        "CC-BY-NC 3.0",
+        "CC-BY-NC 3.0 US",
+        "Creative Commons BY-NC 3.0",
+        "Creative Commons BY-NC 3.0 US" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution-NonCommercial 3.0 United States of America"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/us.png> ;
+    foaf:logo <https://licensebuttons.net/l/by-nc/3.0/us/88x31.png> .

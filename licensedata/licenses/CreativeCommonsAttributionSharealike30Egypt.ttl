@@ -1,0 +1,83 @@
+# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 3.0 Egypt"@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike30Egypt
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:CreativeCommonsAttributionSharealike30Egypt a odrl:Set ;
+    cc:jurisdiction bpicounty:Egypt ;
+    cc:legalcode <https://creativecommons.org/licenses/by-sa/3.0/eg/legalcode> ;
+    dalicc:LiabilityLimitation """باستثناء ما هو مصرح به بموجب القانون المعمول به، لا يكون المُرَخِّص بأي حال من الأحوال مسئولا تجاه المرخَّص له وفق أي مبدأ قانوني عن أي أضرار طارئة أو مترابطة أو عقابية ممكن أن تنجم عن هذا الترخيص أو عن استعمال المصنف، حتى إن تم إبلاغ المُرَخِّص باحتمالية حدوث مثل تلك الأضرار.
+""" ;
+    dalicc:WarrantyDisclaimer """ما لم يتم الاتفاق المتبادل خطيا بين الأطراف وإلى المدى الذي يسمح به القانون، يقدم المُرَخِّص المصنف كما هو ولا يقدم أي ضمانات من أي نوع سواء كانت صريحة أو ضمنية أو قانونية أو غير ذلك، بما في ذلك على سبيل المثال لا الحصر ضمانات الملكية، وضمان رواج المصنف في السوق وضمان ملائمة المصنف لغاية معينة، وضمان عدم التعدي أو غياب العيب الخفي أو عيوب أخرى أو وجود أو عدم وجود أخطاء في المصنف سواء كانت أو لم تكن قابلة للاكتشاف. في التشريعات التي لا تجيز استثناء الضمانات غير الصريحة (الضمنية)، لا ينطبق هذا الاستثناء على المرخَّص له.
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution ShareAlike 3.0 Egypt",
+        "Attribution-ShareAlike 3.0",
+        "Attribution-ShareAlike 3.0 Egypt",
+        "CC BY SA 3.0",
+        "CC BY SA 3.0 eg",
+        "CC BY-SA 3.0",
+        "CC BY-SA 3.0 eg",
+        "CC-BY-SA 3.0",
+        "CC-BY-SA 3.0 eg",
+        "Creative Commons BY-SA 3.0",
+        "Creative Commons BY-SA 3.0 eg" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution-ShareAlike 3.0 Egypt"@en ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ] ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/eg.png> ;
+    foaf:logo <https://licensebuttons.net/l/by-sa/3.0/eg/88x31.png> .

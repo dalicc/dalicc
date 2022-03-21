@@ -1,0 +1,78 @@
+# Title: The machine-readable representation of "Open Software License v. 3.0" in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/OpenSoftwareLicenseV30
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:OpenSoftwareLicenseV30 a odrl:Set ;
+    cc:attributionName "Lawrence Rosen" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode osl:OSL-3.0 ;
+    dalicc:WarrantyDisclaimer "Licensor warrants that the copyright in and to the Original Work and the patent rights granted herein by Licensor are owned by the Licensor or are sublicensed to You under the terms of this License with the permission of the contributor(s) of those copyrights and patent rights. Except as expressly stated in the immediately preceding sentence, the Original Work is provided under this License on an \"AS IS\" BASIS and WITHOUT WARRANTY, either express or implied, including, without limitation, the warranties of non-infringement, merchantability or fitness for a particular purpose. THE ENTIRE RISK AS TO THE QUALITY OF THE ORIGINAL WORK IS WITH YOU. This DISCLAIMER OF WARRANTY constitutes an essential part of this License. No license to the Original Work is granted by this License except under this disclaimer." ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "OSL v. 3.0",
+        "OSL-3.0",
+        "Open Software License v. 3.0 (OSL-3.0)",
+        "The Open Software License 3.0",
+        "The Open Software License 3.0 (OSL-3.0)" ;
+    dct:publisher "Lawrence Rosen" ;
+    dct:source <http://rosenlaw.com/OSL3.0-explained.htm> ;
+    dct:title "Open Software License v. 3.0" ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:derive ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ] ],
+        [ a odrl:Permission ;
+            odrl:action cc:ShareAlike ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeLicenseFee ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:noWarrantyNotice ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action odrl:grantUse ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:addStatement ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Software ] .

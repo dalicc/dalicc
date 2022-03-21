@@ -1,0 +1,61 @@
+# Title: The machine-readable representation of "INSPIRE End User Licence" in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/InspireEndUserLicence
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:InspireEndUserLicence a odrl:Set ;
+    cc:attributionName "Ordnance Survey Limited" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://www.ordnancesurvey.co.uk/business-and-government/public-sector/mapping-agreements/inspire-licence.html> ;
+    dalicc:WarrantyDisclaimer """5.1 The Supplied Data is licensed ‘as is’ and the Licensor and OS exclude all representations, warranties, obligations and liabilities in relation to the Supplied Data to the maximum extent permitted by law.
+
+5.2 Neither the Licensor nor OS shall be liable for any errors or omissions in the Supplied Data and, subject to Clause 5.3, shall not be liable for any loss, injury or damage of any kind caused by its use.
+
+5.3 Nothing in this Licence shall exclude or limit liability of a party for death or personal injury resulting from the negligence of that party or its servants, agents or employees or for fraudulent misrepresentation.""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:publisher "Ordnance Survey Limited" ;
+    dct:source <https://www.ordnancesurvey.co.uk/business-and-government/public-sector/mapping-agreements/inspire-licence.html> ;
+    dct:title "INSPIRE End User Licence" ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:modify ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:noWarrantyNotice ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action odrl:derive ],
+        [ a odrl:Prohibition ;
+            odrl:action odrl:display ],
+        [ a odrl:Prohibition ;
+            odrl:action odrl:distribute ],
+        [ a odrl:Prohibition ;
+            odrl:action odrl:grantUse ],
+        [ a odrl:Prohibition ;
+            odrl:action odrl:present ],
+        [ a odrl:Prohibition ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Prohibition ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Prohibition ;
+            odrl:action cc:ShareAlike ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:addStatement ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:chargeDistributionFee ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:chargeLicenseFee ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Dataset ] .

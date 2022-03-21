@@ -1,0 +1,83 @@
+# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 3.0 China"@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike30China
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:CreativeCommonsAttributionSharealike30China a odrl:Set ;
+    cc:jurisdiction bpicounty:China ;
+    cc:legalcode <https://creativecommons.org/licenses/by-sa/3.0/cn/legalcode> ;
+    dalicc:LiabilityLimitation """除非属于相关法律所要求的范围，许可人在任何情况下都不对您因本许可或因使用本作品而产生的任何直接损失、间接损失或惩罚性赔偿负责，即使许可人已被告知发生此类损害的可能性。
+""" ;
+    dalicc:WarrantyDisclaimer """除非本许可的当事人相互以书面的方式做出相反约定，且在相关法律所允许的最大范围内，否则许可人按其现状提供本作品，对本作品不作任何明示或者默示、依照法律或者其他规定的陈述或担保，包括但是不限于任何有关可否商业性使用、是否符合特定的目的、不具有潜在的或者其他缺陷、准确性或者不存在不论能否被发现的错误的担保。有些司法管辖区不允许排除前述默示保证，因此这些排除性规定并不一定适用于您。
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution ShareAlike 3.0 China",
+        "Attribution-ShareAlike 3.0",
+        "Attribution-ShareAlike 3.0 China",
+        "CC BY SA 3.0",
+        "CC BY SA 3.0 cn",
+        "CC BY-SA 3.0",
+        "CC BY-SA 3.0 cn",
+        "CC-BY-SA 3.0",
+        "CC-BY-SA 3.0 cn",
+        "Creative Commons BY-SA 3.0",
+        "Creative Commons BY-SA 3.0 cn" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution-ShareAlike 3.0 China"@en ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ] ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/cn.png> ;
+    foaf:logo <https://licensebuttons.net/l/by-sa/3.0/cn/88x31.png> .

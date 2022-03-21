@@ -1,0 +1,83 @@
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Luxembourg "@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialSharealike30Luxembourg
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Luxembourg a odrl:Set ;
+    cc:jurisdiction bpicounty:Luxembourg ;
+    cc:legalcode <https://creativecommons.org/licenses/by-nc-sa/3.0/lu/legalcode> ;
+    dalicc:LiabilityLimitation """SAUF DANS LA MESURE REQUISE PAR LA LOI APPLICABLE, LE DONNEUR DE LICENCE NE SAURAIT EN AUCUN CAS ETRE TENU RESPONSABLE A VOTRE EGARD AU TITRE DE QUELQUE DOCTRINE QUE CE SOIT DE TOUS DOMMAGES SPECIAUX, ACCESSOIRES, INDIRECTS, PUNITIFS OU EXEMPLAIRES DECOULANT DE LA PRESENTE LICENCE OU DE L’UTILISATION DE L’ŒUVRE, MEME DANS LE CAS OU LE DONNEUR DE LICENCE AURAIT ETE AVISE DE L'EVENTUALITE DESDITS DOMMAGES.
+""" ;
+    dalicc:WarrantyDisclaimer """SAUF ACCORD COMMUN ECRIT DES PARTIES ET DANS LA MESURE PERMISE PAR LA LOI APPLICABLE, LE DONNEUR DE LICENCE PROPOSE L’ŒUVRE EN L'ETAT ET NE FORMULE AUCUNE GARANTIE NI DECLARATION DE QUELQUE NATURE QUE CE SOIT. CERTAINES JURIDICTIONS INTERDISENT L’EXCLUSION DE GARANTIES, AUQUEL CAS LA PRESENTE EXCLUSION NE VOUS EST PAS APPLICABLE.
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution NonCommercial ShareAlike 3.0 Luxembourg",
+        "Attribution-NonCommercial-ShareAlike 3.0",
+        "Attribution-NonCommercial-ShareAlike 3.0 Luxembourg",
+        "CC BY NC SA 3.0",
+        "CC BY NC SA 3.0 LU",
+        "CC BY-NC-SA 3.0",
+        "CC BY-NC-SA 3.0 LU",
+        "CC-BY-NC-SA 3.0",
+        "CC-BY-NC-SA 3.0 LU",
+        "Creative Commons BY-NC-SA 3.0",
+        "Creative Commons BY-NC-SA 3.0 LU" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Luxembourg "@en ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ] ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/lu.png> ;
+    foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/lu/88x31.png> .

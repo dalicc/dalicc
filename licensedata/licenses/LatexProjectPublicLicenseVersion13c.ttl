@@ -1,0 +1,89 @@
+# Title: The machine-readable representation of "LaTeX Project Public License, Version 1.3c" in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/LatexProjectPublicLicenseVersion13c
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:LatexProjectPublicLicenseVersion13c a odrl:Set ;
+    cc:attributionName "LaTeX3 Project" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode osl:LPPL-1.3c ;
+    dalicc:WarrantyDisclaimer """ There is no warranty for the Work. Except when otherwise stated in writing, the Copyright Holder provides the Work `as is', without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose. The entire risk as to the quality and performance of the Work is with you. Should the Work prove defective, you assume the cost of all necessary servicing, repair, or correction.
+
+In no event unless required by applicable law or agreed to in writing will The Copyright Holder, or any author named in the components of the Work, or any other party who may distribute and/or modify the Work as permitted above, be liable to you for damages, including any general, special, incidental or consequential damages arising out of any use of the Work or out of inability to use the Work (including, but not limited to, loss of data, data being rendered inaccurate, or losses sustained by anyone as a result of any failure of the Work to operate with any other programs), even if the Copyright Holder or said author or said other party has been advised of the possibility of such damages. """ ;
+    dalicc:WarrantyOrLiabilityAcceptance """ The Work has the status `author-maintained' if the Copyright Holder explicitly and prominently states near the primary copyright notice in the Work that the Work can only be maintained by the Copyright Holder or simply that it is `author-maintained'.
+
+The Work has the status `maintained' if there is a Current Maintainer who has indicated in the Work that they are willing to receive error reports for the Work (for example, by supplying a valid e-mail address). It is not required for the Current Maintainer to acknowledge or act upon these error reports.
+
+The Work changes from status `maintained' to `unmaintained' if there is no Current Maintainer, or the person stated to be Current Maintainer of the work cannot be reached through the indicated means of communication for a period of six months, and there are no other significant signs of active maintenance.
+
+You can become the Current Maintainer of the Work by agreement with any existing Current Maintainer to take over this role.
+
+If the Work is unmaintained, you can become the Current Maintainer of the Work through the following steps:
+
+    Make a reasonable attempt to trace the Current Maintainer (and the Copyright Holder, if the two differ) through the means of an Internet or similar search.
+    If this search is successful, then enquire whether the Work is still maintained.
+        If it is being maintained, then ask the Current Maintainer to update their communication data within one month.
+        If the search is unsuccessful or no action to resume active maintenance is taken by the Current Maintainer, then announce within the pertinent community your intention to take over maintenance. (If the Work is a LaTeX work, this could be done, for example, by posting to comp.text.tex.)
+        If the Current Maintainer is reachable and agrees to pass maintenance of the Work to you, then this takes effect immediately upon announcement.
+        If the Current Maintainer is not reachable and the Copyright Holder agrees that maintenance of the Work be passed to you, then this takes effect immediately upon announcement.
+    If you make an `intention announcement' as described in 2b. above and after three months your intention is challenged neither by the Current Maintainer nor by the Copyright Holder nor by other people, then you may arrange for the Work to be changed so as to name you as the (new) Current Maintainer.
+    If the previously unreachable Current Maintainer becomes reachable once more within three months of a change completed under the terms of 3b) or 4), then that Current Maintainer must become or remain the Current Maintainer upon request provided they then update their communication data within one month.
+
+A change in the Current Maintainer does not, of itself, alter the fact that the Work is distributed under the LPPL license.
+
+If you become the Current Maintainer of the Work, you should immediately provide, within the Work, a prominent and unambiguous statement of your status as Current Maintainer. You should also announce your new status to the same pertinent community as in 2b) above. """ ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "LPPL-1.3c" ;
+    dct:publisher "LaTeX3 Project" ;
+    dct:title "LaTeX Project Public License, Version 1.3c" ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:grantUse ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:addStatement ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:noWarrantyNotice ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action odrl:derive ],
+        [ a odrl:Prohibition ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Prohibition ;
+            odrl:action cc:ShareAlike ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:addLimitation ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Software ] .

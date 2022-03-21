@@ -1,0 +1,83 @@
+# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 3.0 Venezuela"@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike30Venezuela
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:CreativeCommonsAttributionSharealike30Venezuela a odrl:Set ;
+    cc:jurisdiction bpicounty:Venezuela ;
+    cc:legalcode <https://creativecommons.org/licenses/by-sa/3.0/ve/legalcode> ;
+    dalicc:LiabilityLimitation """EL LICENCIANTE NO SERÁ RESPONSABLE FRENTE AL LICENCIATARIO POR DAÑO ALGUNO, SEA POR RESPONSABILIDAD EXTRACONTRACTUAL O CONTRACTUAL, OBJETIVA O SUBJETIVA, SE TRATE DE DAÑOS MORALES O PATRIMONIALES, DIRECTOS O INDIRECTOS, PREVISTOS O IMPREVISTOS, PRODUCIDOS POR EL USO DE ESTA LICENCIA O DE LA OBRA, AÚN CUANDO EL LICENCIANTE HAYA SIDO ADVERTIDO DE LA POSIBILIDAD DE DICHOS DAÑOS, SALVO QUE ALGUNAS LEYES NO PERMITAN LA EXCLUSIÓN DE CIERTA RESPONSABILIDAD Y/Ó PREVEAN EXPRESAMENTE EL DERECHO DE INDEMNIZACIÓN A FAVOR DEL LICENCIATARIO, EN CUYO CASO ESTA EXCLUSIÓN NO SERÁ APLICABLE.
+""" ;
+    dalicc:WarrantyDisclaimer """SALVO MUTUO ACUERDO POR ESCRITO ENTRE LAS PARTES, Y EN TODA LA EXTENSIÓN PERMITIDA POR LA LEY APLICABLE, EL LICENCIANTE OFRECE LA OBRA TAL COMO ES Y SIN BRINDAR GARANTÍAS DE NINGÚN TIPO RESPECTO DE LA OBRA, YA SEA EXPRESA, IMPLÍCITA, POR LEY O DE OTRA MANERA, INCLUYENDO, SIN LIMITACIONES, LAS GARANTÍAS DE TITUTLARIDAD, COMERCIALIZACIÓN, IDONEIDAD PARA UN PROPÓSITO PARTICULAR, INFRACCIÓN, O LA AUSENCIA DE DEFECTOS LATENTES, EXACTITUD, O LA PRESENCIA O AUSENCIA DE ERRORES, SEAN O NO DESCUBRIBLES. ALGUNAS JURISDICCIONES NO PERMITEN LA EXCLUSIÓN DE GARANTÍAS, POR LO QUE PUEDE NO SER APLICABLE AL LICENCIATARIO.
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution ShareAlike 3.0 Venezuela",
+        "Attribution-ShareAlike 3.0",
+        "Attribution-ShareAlike 3.0 Venezuela",
+        "CC BY SA 3.0",
+        "CC BY SA 3.0 ve",
+        "CC BY-SA 3.0",
+        "CC BY-SA 3.0 ve",
+        "CC-BY-SA 3.0",
+        "CC-BY-SA 3.0 ve",
+        "Creative Commons BY-SA 3.0",
+        "Creative Commons BY-SA 3.0 ve" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution-ShareAlike 3.0 Venezuela"@en ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ] ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/ve.png> ;
+    foaf:logo <https://licensebuttons.net/l/by-sa/3.0/ve/88x31.png> .

@@ -1,0 +1,98 @@
+# Title: The machine-readable representation of "Data Exploration Licence" in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/DataExplorationLicence
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:DataExplorationLicence a odrl:Set ;
+    cc:attributionName "Ordnance Survey" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://www.ordnancesurvey.co.uk/business-and-government/licensing/licences/data-exploration.html> ;
+    dalicc:WarrantyDisclaimer "It is your responsibility to ensure that the Exploration Data you request is what you need. Exploration Data is provided ‘as is’ and without any warranty or condition express or implied, statutory or otherwise as to its quality or fitness for purpose. Except as expressly stated in this Licence, all conditions, warranties, terms and undertakings express or implied statutory or otherwise in respect of the Exploration Data are hereby excluded to the fullest extent permitted by law." ;
+    dct:alternative "OS Data Exploration Licence",
+        "Ordnance Survey Data Exploration Licence" ;
+    dct:publisher "Ordnance Survey" ;
+    dct:source <https://www.ordnancesurvey.co.uk/business-and-government/licensing/licences/data-exploration.html> ;
+    dct:title "Data Exploration Licence" ;
+    scho:endDate "2018-12-31" ;
+    scho:startDate "2018-01-01" ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:derive ],
+        [ a odrl:Permission ;
+            odrl:action cc:ShareAlike ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ],
+        [ a odrl:Permission ;
+            odrl:action cc:ShareAlike ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:noWarrantyNotice ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:noWarrantyNotice ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action odrl:display ],
+        [ a odrl:Prohibition ;
+            odrl:action odrl:display ],
+        [ a odrl:Prohibition ;
+            odrl:action odrl:distribute ],
+        [ a odrl:Prohibition ;
+            odrl:action odrl:grantUse ],
+        [ a odrl:Prohibition ;
+            odrl:action odrl:present ],
+        [ a odrl:Prohibition ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Prohibition ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:addStatement ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:chargeDistributionFee ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:chargeLicenseFee ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action odrl:distribute ],
+        [ a odrl:Prohibition ;
+            odrl:action odrl:grantUse ],
+        [ a odrl:Prohibition ;
+            odrl:action odrl:present ],
+        [ a odrl:Prohibition ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Prohibition ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:addStatement ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:chargeDistributionFee ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:chargeLicenseFee ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Dataset ] .

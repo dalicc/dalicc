@@ -1,0 +1,81 @@
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Uganda"@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialNoderivs30Uganda
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Uganda a odrl:Set ;
+    cc:jurisdiction bpicounty:Uganda ;
+    cc:legalcode <https://creativecommons.org/licenses/by-nc-nd/3.0/ug/legalcode> ;
+    dalicc:LiabilityLimitation """EXCEPT TO THE EXTENT REQUIRED BY THE APPLICABLE LAW, IN
+ NO EVENT WILL THE LICENSOR BE LIABLE TO A USER FOR ANY
+ SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY
+ DAMAGES ARISING OUT OF THIS LICENCE OR THE USE OF THE WORK,
+ EVEN IF THE LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF
+ SUCH DAMAGES.
+""" ;
+    dalicc:WarrantyDisclaimer """UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN
+ WRITING AND TO THE FULLEST EXTENT PERMITTED BY THE
+ APPLICABLE LAW, THE LICENSOR OFFERS THE WORK AS-IS.
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution NonCommercial NoDerivatives 3.0 Uganda",
+        "Attribution-NonCommercial-NoDerivatives 3.0 Uganda",
+        "Attribution-NonCommercial-NoDerivatives 4.0",
+        "CC BY NC ND 3.0",
+        "CC BY NC ND 3.0 UG",
+        "CC BY-NC-ND 3.0",
+        "CC BY-NC-ND 3.0 UG",
+        "CC-BY-NC-ND 3.0",
+        "CC-BY-NC-ND 3.0 UG",
+        "Creative Commons Attribution NonCommercial NoDerivatives 3.0 Uganda",
+        "Creative Commons BY-NC-ND 3.0",
+        "Creative Commons BY-NC-ND 3.0 UG" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Uganda"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action odrl:derive ],
+        [ a odrl:Prohibition ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/ug.png> ;
+    foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/ug/88x31.png> .

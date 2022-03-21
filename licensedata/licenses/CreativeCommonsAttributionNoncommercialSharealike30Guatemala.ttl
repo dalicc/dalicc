@@ -1,0 +1,83 @@
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Guatemala "@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialSharealike30Guatemala
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Guatemala a odrl:Set ;
+    cc:jurisdiction bpicounty:Guatemala ;
+    cc:legalcode <https://creativecommons.org/licenses/by-nc-sa/3.0/gt/legalcode> ;
+    dalicc:LiabilityLimitation """SALVO QUE LA LEY APLICABLE LO EXIJA EXPRESAMENTE, EL LICENCIANTE EN NINGÚN CASO PODRÁ SER RESPONSABLE ANTE EL LICENCIATARIO POR DAÑOS DE NINGUNA CLASE, QUE SE DERIVEN DE ESTA LICENCIA O DEL USO DE LA OBRA, AUN CUANDO EL LICENCIANTE SEPA DE LA POSIBILIDAD DE ESOS DAÑOS.
+""" ;
+    dalicc:WarrantyDisclaimer """SALVO PACTO EN CONTRARIO DE AMBAS PARTES, QUE CONSTE POR ESCRITO, Y EN LA MAYOR AMPLITUD DE LO PERMITIDO POR LAS LEYES VIGENTES, EL LICENCIANTE OFRECE LA OBRA EN SUS CONDICIONES ACTUALES. EL AUTOR GARANTIZA LA AUTORÍA Y ORIGINALIDAD DE LA OBRA, PERO NO CONFIERE NINGUNA GARANTÍA SOBRE LA CALIDAD COMERCIAL DE LA MISMA O SU ADECUACIÓN PARA UN PROPÓSITO EN PARTICULAR.
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution NonCommercial ShareAlike 3.0 Guatemala",
+        "Attribution-NonCommercial-ShareAlike 3.0",
+        "Attribution-NonCommercial-ShareAlike 3.0 Guatemala",
+        "CC BY NC SA 3.0",
+        "CC BY NC SA 3.0 GT",
+        "CC BY-NC-SA 3.0",
+        "CC BY-NC-SA 3.0 GT",
+        "CC-BY-NC-SA 3.0",
+        "CC-BY-NC-SA 3.0 GT",
+        "Creative Commons BY-NC-SA 3.0",
+        "Creative Commons BY-NC-SA 3.0 GT" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Guatemala "@en ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ] ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/gt.png> ;
+    foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/gt/88x31.png> .

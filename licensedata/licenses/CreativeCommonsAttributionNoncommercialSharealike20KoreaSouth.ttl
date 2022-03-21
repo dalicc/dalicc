@@ -1,0 +1,87 @@
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-ShareAlike 2.0 South Korea "@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialSharealike20KoreaSouth
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:CreativeCommonsAttributionNoncommercialSharealike20KoreaSouth a odrl:Set ;
+    cc:jurisdiction bpicounty:KoreaSouth ;
+    cc:legalcode <https://creativecommons.org/licenses/by-nc-sa/2.0/kr/legalcode> ;
+    dalicc:LiabilityLimitation """당사자간에 서면에 의하여 달리 합의되지 않는 한, 이용허락자는 저작물을 있는 그대로 제공하며 일체의 보증이나 담보책임을 부담하지 않습니다.
+ 
+ 법이 달리 정하는 경우를 제외하고, 이용허락자는, 본 이용허락이나 저작물의 이용으로부터 야기되는 손해에 대하여 책임을 부담하지 않습니다.
+""" ;
+    dalicc:WarrantyDisclaimer """당사자간에 서면에 의하여 달리 합의되지 않는 한, 이용허락자는 저작물을 있는 그대로 제공하며 일체의 보증이나 담보책임을 부담하지 않습니다.
+ 
+ 법이 달리 정하는 경우를 제외하고, 이용허락자는, 본 이용허락이나 저작물의 이용으로부터 야기되는 손해에 대하여 책임을 부담하지 않습니다.
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution NonCommercial ShareAlike 2.0 South Korea",
+        "Attribution-NonCommercial-ShareAlike 2.0",
+        "Attribution-NonCommercial-ShareAlike 2.0 South Korea",
+        "CC BY NC SA 2.0",
+        "CC BY NC SA 2.0 KR",
+        "CC BY-NC-SA 2.0",
+        "CC BY-NC-SA 2.0 KR",
+        "CC-BY-NC-SA 2.0",
+        "CC-BY-NC-SA 2.0 KR",
+        "Creative Commons BY-NC-SA 2.0",
+        "Creative Commons BY-NC-SA 2.0 KR" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 2.0 South Korea "@en ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ] ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/kr.png> ;
+    foaf:logo <https://licensebuttons.net/l/by-nc-sa/2.0/kr/88x31.png> .

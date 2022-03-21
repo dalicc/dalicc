@@ -1,0 +1,83 @@
+# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 3.0 Poland"@en in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike30Poland
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:CreativeCommonsAttributionSharealike30Poland a odrl:Set ;
+    cc:jurisdiction bpicounty:Poland ;
+    cc:legalcode <https://creativecommons.org/licenses/by-sa/3.0/pl/legalcode> ;
+    dalicc:LiabilityLimitation """O ILE PRAWO WŁAŚCIWE NIE STANOWI INACZEJ, W ŻADNYM WYPADKU LICENCJODAWCA NIE ODPOWIADA WOBEC LICENCJOBIORCY NA ŻADNEJ PODSTAWIE PRAWNEJ ZA ŻADNE SZCZEGÓLNE, PRZYPADKOWE LUB NASTĘPCZE SZKODY WYNIKAJĄCE Z NINIEJSZEJ LICENCJI LUB WYKORZYSTANIA UTWORU, NAWET JEŻELI LICENCJODAWCA ZOSTAŁ POWIADOMIONY O MOŻLIWOŚCI WYSTĄPIENIA TAKICH SZKÓD.
+""" ;
+    dalicc:WarrantyDisclaimer """JEŻELI STRONY NIE POSTANOWIĄ INACZEJ W ODRĘBNYM POROZUMIENIU SPORZĄDZONYM NA PIŚMIE POD RYGOREM NIEWAŻNOŚCI, LICENCJODAWCA UDOSTĘPNIA UTWÓR W TAKIEJ FORMIE W JAKIEJ ZAPOZNAŁ SIĘ Z NIM LICENCJOBIORCA I W NAJDALEJ IDĄCYM STOPNIU NA JAKI POZWALA PRAWO WŁAŚCIWE NIE SKŁADA ŻADNYCH ZAPEWNIEŃ ORAZ NIE UDZIELA ŻADNYCH GWARANCJI A TAKŻE WYŁĄCZA RĘKOJMIĘ, CZY TO WYRAŹNĄ, DOROZUMIANĄ CZY INNĄ, W SZCZEGÓLNOŚCI DOTYCZĄCYCH TYTUŁU, MOŻLIWOŚCI KORZYSTANIA Z UTWORU ZGODNIE Z JEGO PRZEZNACZENIEM, PRZEZNACZENIA UTWORU DO KONKRETNEGO CELU, CO DO TEGO, ŻE NIE NARUSZA ON PRAW INNYCH OSÓB, BRAKU JAWNYCH LUB UKRYTYCH WAD, DOKŁADNOŚCI, WYSTĘPOWANIA LUB NIEWYSTĘPOWANIA WAD WIDOCZNYCH JAK I UKRYTYCH. PRAWO WŁAŚCIWE MOŻE NIE ZEZWALAĆ NA NIEKTÓRE SPOŚRÓD POWYŻSZYCH WYŁĄCZEŃ, WIĘC MOGĄ ONE NIE MIEĆ ZASTOSOWANIA.
+""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Attribution ShareAlike 3.0 Poland",
+        "Attribution-ShareAlike 3.0",
+        "Attribution-ShareAlike 3.0 Poland",
+        "CC BY SA 3.0",
+        "CC BY SA 3.0 pl",
+        "CC BY-SA 3.0",
+        "CC BY-SA 3.0 pl",
+        "CC-BY-SA 3.0",
+        "CC-BY-SA 3.0 pl",
+        "Creative Commons BY-SA 3.0",
+        "Creative Commons BY-SA 3.0 pl" ;
+    dct:publisher "Creative Commons" ;
+    dct:title "Creative Commons Attribution-ShareAlike 3.0 Poland"@en ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ] ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:img <https://creativecommons.org/images/international/pl.png> ;
+    foaf:logo <https://licensebuttons.net/l/by-sa/3.0/pl/88x31.png> .

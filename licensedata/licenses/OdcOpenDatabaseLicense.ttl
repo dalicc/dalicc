@@ -1,0 +1,86 @@
+# Title: The machine-readable representation of "ODC Open Database License (ODbL) " in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/OdcOpenDatabaseLicense
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:OdcOpenDatabaseLicense a odrl:Set ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://opendatacommons.org/licenses/odbl/1.0/> ;
+    dalicc:LiabilityLimitation """Subject to any liability that may not be excluded or limited by law,
+the Licensor is not liable for, and expressly excludes, all liability
+for loss or damage however and whenever caused to anyone by any use
+under this License, whether by You or by anyone else, and whether caused
+by any fault on the part of the Licensor or not. This exclusion of
+liability includes, but is not limited to, any special, incidental,
+consequential, punitive, or exemplary damages such as loss of revenue,
+data, anticipated profits, and lost business. This exclusion applies
+even if the Licensor has been advised of the possibility of such
+damages.
+
+If liability may not be excluded by law, it is limited to actual and
+direct financial loss to the extent it is caused by proved negligence on
+the part of the Licensor.""" ;
+    dalicc:WarrantyDisclaimer """The Database is licensed by the Licensor “as is” and without any
+warranty of any kind, either express, implied, or arising by statute,
+custom, course of dealing, or trade usage. Licensor specifically
+disclaims any and all implied warranties or conditions of title,
+non-infringement, accuracy or completeness, the presence or absence of
+errors, fitness for a particular purpose, merchantability, or otherwise.
+Some jurisdictions do not allow the exclusion of implied warranties, so
+this exclusion may not apply to You.""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "ODbL 1.0",
+        "ODbL v1.0" ;
+    dct:publisher "Socialtext Incorporated" ;
+    dct:title "ODC Open Database License (ODbL) " ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ] ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Dataset ] .

@@ -1,0 +1,68 @@
+# Title: The machine-readable representation of "Open Supreme Court Licence" in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/OpenSupremeCourtLicence
+# License: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:OpenSupremeCourtLicence a odrl:Set ;
+    cc:attributionName "UK Supreme Court" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <http://www.nationalarchives.gov.uk/doc/open-supreme-court-licence/version/1/open-supreme-court-licence-version-1.0.pdf> ;
+    dalicc:WarrantyDisclaimer """The Information is licensed ‘as is’ and the Licensor excludes all representations, warranties, obligations and liabilities in relation to the Information to the maximum extent permitted by law.
+The Licensor is not liable for any errors or omissions in the Information and shall not be liable for any loss, injury or damage of any kind caused by its use. The Licensor does not guarantee the continued supply of the Information.""" ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Open Supreme Court Licence v1.0",
+        "Open Supreme Court Licence version 1.0",
+        "UK Open Supreme Court Licence v1.0",
+        "UK Open Supreme Court Licence version 1.0" ;
+    dct:publisher "The National Archives UK" ;
+    dct:source <http://www.nationalarchives.gov.uk/doc/open-supreme-court-licence/version/1/open-supreme-court-licence-version-1.0.pdf> ;
+    dct:title "Open Supreme Court Licence" ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:derive ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:grantUse ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeLicenseFee ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:noWarrantyNotice ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action cc:ShareAlike ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:addStatement ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset,
+                dcmitype:Software ] .
