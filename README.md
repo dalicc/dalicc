@@ -20,6 +20,7 @@ DALICC API supports the automated clearance of rights thus supporting the legall
 * Execute the following commands in the folder: 
     1. `docker-compose build --pull`
     2. `docker-compose up -d`
+    3. `mkdir reasoner/app/programs/temp`
 
 ### Virtuoso Configuration ###
 
@@ -51,7 +52,7 @@ DALICC API supports the automated clearance of rights thus supporting the legall
 * To set the text index to be updated every 10 minutes, use:
     * `DB.DBA.VT_BATCH_UPDATE ('DB.DBA.RDF_OBJ', 'ON', 10);`
 * Example query using the full text index:
-    * `SELECT * FROM <http://dalicc.net/licenselibrary/> WHERE { ?s ?p ?o . ?o bif:contains '"Mozilla*"'};`
+    * `SELECT * FROM <http://dalicc.net/licenselibrary/> WHERE { ?s ?p ?o . ?o bif:contains '"Mozilla*"' . };`
     
 ### API Configuration ###
 
