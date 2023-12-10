@@ -1,20 +1,23 @@
-# Title: The machine-readable representation of "Developer License" in the DALICC license library
+﻿# Title: The machine-readable representation of "Developer License" in the DALICC license library
 # Author: DALICC
-# Source: http://dalicc.net/licenselibrary/DeveloperLicense
-# License: Attribution 4.0 International (CC BY 4.0) 
+# Source: https://dalicc.net/licenselibrary/DeveloperLicense
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
 
 @prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dalicc: <http://dalicc.net/ns#> .
-@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix osl: <http://opensource.org/licenses/> .
 @prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
 
 dalicclib:DeveloperLicense a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "The National Archives" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://www.nationalarchives.gov.uk/documents/information-management/developer-licence.pdf> ;

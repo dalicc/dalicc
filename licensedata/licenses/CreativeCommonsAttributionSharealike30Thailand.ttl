@@ -1,20 +1,23 @@
-# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 3.0 Thailand"@en in the DALICC license library
+﻿# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 3.0 Thailand"@en in the DALICC license library
 # Author: DALICC
-# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike30Thailand
-# License: Attribution 4.0 International (CC BY 4.0) 
+# Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike30Thailand
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
 
 @prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dalicc: <http://dalicc.net/ns#> .
-@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix osl: <http://opensource.org/licenses/> .
 @prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
 
 dalicclib:CreativeCommonsAttributionSharealike30Thailand a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Thailand ;
     cc:legalcode <https://creativecommons.org/licenses/by-sa/3.0/th/legalcode> ;
     dalicc:LiabilityLimitation """เว้นแต่กฎหมายที่ใช้บังคับอยู่บัญญัติไว้เป็นอย่างอื่น ไม่ว่าในกรณีใด ๆ ผู้อนุญาตจะไม่รับผิดต่อท่านในค่าเสียหายใด ๆ ที่เกิดขึ้น ไม่ว่าจะเป็นค่าเสียหายพิเศษ ค่าเสียหายโดยบังเอิญ ค่าเสียหายที่เป็นผลต่อเนื่อง ค่าเสียหายเพื่อลงโทษ หรือค่าเสียหายเพื่อเป็นกรณีตัวอย่าง ที่เกิดขึ้นจากการใช้สัญญาอนุญาตนี้ หรือที่เกิดขึ้นจากการใช้งาน

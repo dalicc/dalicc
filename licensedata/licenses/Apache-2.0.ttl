@@ -1,20 +1,24 @@
-# Title: The machine-readable representation of "Apache V2", in the DALICC license library
+﻿# Title: The machine-readable representation of "Apache License, Version 2.0"@en in the DALICC license library
 # Author: DALICC
-# Source: http://dalicc.net/licenselibrary/Apache-2.0
-# License: Attribution 4.0 International (CC BY 4.0) 
+# Source: https://dalicc.net/licenselibrary/Apache-2.0
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
 
 @prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dalicc: <http://dalicc.net/ns#> .
-@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix osl: <http://opensource.org/licenses/> .
 @prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
 
 dalicclib:Apache-2.0 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "Apache-2.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://www.apache.org/licenses/LICENSE-2.0> ;
     dalicc:LiabilityLimitation "In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages." ;
@@ -27,8 +31,7 @@ dalicclib:Apache-2.0 a odrl:Set ;
         "Apache Version 2.0" ;
     dct:publisher "The Apache Software Foundation" ;
     dct:source <http://www.apache.org/licenses/LICENSE-2.0> ;
-    dct:title "Apache V2",
-        "Apache License, Version 2.0"@en ;
+    dct:title "Apache License, Version 2.0"@en ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;

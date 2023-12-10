@@ -1,20 +1,23 @@
-# Title: The machine-readable representation of "LaTeX Project Public License, Version 1.3c" in the DALICC license library
+﻿# Title: The machine-readable representation of "LaTeX Project Public License, Version 1.3c" in the DALICC license library
 # Author: DALICC
-# Source: http://dalicc.net/licenselibrary/LatexProjectPublicLicenseVersion13c
-# License: Attribution 4.0 International (CC BY 4.0) 
+# Source: https://dalicc.net/licenselibrary/LatexProjectPublicLicenseVersion13c
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
 
 @prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dalicc: <http://dalicc.net/ns#> .
-@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix osl: <http://opensource.org/licenses/> .
 @prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
 
 dalicclib:LatexProjectPublicLicenseVersion13c a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "LaTeX3 Project" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:LPPL-1.3c ;

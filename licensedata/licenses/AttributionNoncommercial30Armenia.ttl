@@ -1,20 +1,23 @@
-# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial 3.0 Armenia"@en in the DALICC license library
+﻿# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial 3.0 Armenia"@en in the DALICC license library
 # Author: DALICC
-# Source: http://dalicc.net/licenselibrary/AttributionNoncommercial30Armenia
-# License: Attribution 4.0 International (CC BY 4.0) 
+# Source: https://dalicc.net/licenselibrary/AttributionNoncommercial30Armenia
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
 
 @prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dalicc: <http://dalicc.net/ns#> .
-@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix osl: <http://opensource.org/licenses/> .
 @prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
 
 dalicclib:AttributionNoncommercial30Armenia a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Armenia ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc/3.0/am/legalcode> ;
     dalicc:LiabilityLimitation """Օրենքով նախատեսված պահանջների և 5-րդ Բաժնի երաշխիքների խախտումներից բացի, Լիցենզատուն պատասխանատու է նաև այն վնասների համար, որոնք պատճառվել են դիտավորությամբ՝ անզգուշությամբ տեղ գտած գործողության կամ անգործության հետևանքով։

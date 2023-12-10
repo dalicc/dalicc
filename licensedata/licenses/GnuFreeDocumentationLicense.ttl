@@ -1,20 +1,23 @@
-# Title: The machine-readable representation of "GNU Free Documentation License version 1.3"@en in the DALICC license library
+﻿# Title: The machine-readable representation of "GNU Free Documentation License version 1.3"@en in the DALICC license library
 # Author: DALICC
-# Source: http://dalicc.net/licenselibrary/GnuFreeDocumentationLicense
-# License: Attribution 4.0 International (CC BY 4.0) 
+# Source: https://dalicc.net/licenselibrary/GnuFreeDocumentationLicense
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
 
 @prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dalicc: <http://dalicc.net/ns#> .
-@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix osl: <http://opensource.org/licenses/> .
 @prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
 
 dalicclib:GnuFreeDocumentationLicense a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.gnu.org/licenses/fdl.html> ;
     dalicc:WarrantyDisclaimer "The Document may include Warranty Disclaimers next to the notice which states that this License applies to the Document. These Warranty Disclaimers are considered to be included by reference in this License, but only as regards disclaiming warranties: any other implication that these Warranty Disclaimers may have is void and has no effect on the meaning of this License." ;

@@ -1,34 +1,38 @@
-# Title: The machine-readable representation of "The 2-Clause BSD License"@en in the DALICC license library
+﻿# Title: The machine-readable representation of "The 4-Clause BSD License"@en in the DALICC license library
 # Author: DALICC
-# Source: http://dalicc.net/licenselibrary/BSD-2
-# License: Attribution 4.0 International (CC BY 4.0) 
+# Source: https://dalicc.net/licenselibrary/BSD-4-Clause
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
 
 @prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dalicc: <http://dalicc.net/ns#> .
-@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix osl: <http://opensource.org/licenses/> .
 @prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
 
-dalicclib:BSD-2 a odrl:Set ;
+dalicclib:BSD-4-Clause a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "BSD-4-Clause" ;   
     cc:jurisdiction dalicc:worldwide ;
-    cc:legalcode osl:BSD-2-Clause ;
-    dalicc:WarrantyDisclaimer "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." ;
+    dalicc:additionalClauses "All advertising materials mentioning features or use of this software must display the following acknowledgement: This product includes software developed by the University of California, Berkeley and its contributors." ;
     dalicc:validityType dalicc:perpetual ;
-    dct:alternative "2 Clause BSD License",
-        "2-Clause BSD",
-        "2-Clause BSD License",
-        "BSD 2 Clause",
-        "BSD-2",
-        "BSD-2-Clause",
-        "FreeBSD License",
-        "Simplified BSD License" ;
-    dct:source osl:BSD-2-Clause ;
-    dct:title "The 2-Clause BSD License"@en ;
+    dct:alternative "4 Clause BSD License",
+        "4-Clause BSD",
+        "4-Clause BSD License",
+        "BSD 4 Clause",
+        "BSD-4",
+        "BSD-4-Clause",
+        "Original BSD License",
+        "Old BSD License" ;
+    dct:publisher "University of California-Specific" ;
+    dct:source <https://spdx.org/licenses/BSD-4-Clause-UC.html> ;
+    dct:title "The 4-Clause BSD License"@en ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -60,10 +64,10 @@ dalicclib:BSD-2 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
-            odrl:action dalicc:chargeDistributionFee ],
-        [ a odrl:Permission ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:chargeDistributionFee ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:ChangeLicense ] ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

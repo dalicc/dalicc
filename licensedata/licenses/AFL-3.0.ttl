@@ -1,20 +1,24 @@
-# Title: The machine-readable representation of "Academic Free License 3.0" in the DALICC license library
+﻿# Title: The machine-readable representation of "Academic Free License 3.0" in the DALICC license library
 # Author: DALICC
-# Source: http://dalicc.net/licenselibrary/AcademicFreeLicense30
-# License: Attribution 4.0 International (CC BY 4.0) 
+# Source: https://dalicc.net/licenselibrary/AFL-3.0
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
 
 @prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dalicc: <http://dalicc.net/ns#> .
-@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix osl: <http://opensource.org/licenses/> .
 @prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
 
-dalicclib:AcademicFreeLicense30 a odrl:Set ;
+dalicclib:AFL-3.0 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "AFL-3.0" ;
     cc:attributionName "- not specified - " ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:AFL-3.0 ;

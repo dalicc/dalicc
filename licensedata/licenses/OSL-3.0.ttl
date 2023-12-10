@@ -1,20 +1,23 @@
-# Title: The machine-readable representation of "Open Software License v. 3.0" in the DALICC license library
+﻿# Title: The machine-readable representation of "Open Software License 3.0" in the DALICC license library
 # Author: DALICC
-# Source: http://dalicc.net/licenselibrary/OpenSoftwareLicenseV30
-# License: Attribution 4.0 International (CC BY 4.0) 
+# Source: https://dalicc.net/licenselibrary/OSL-3.0
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
 
 @prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dalicc: <http://dalicc.net/ns#> .
-@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix osl: <http://opensource.org/licenses/> .
 @prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
 
-dalicclib:OpenSoftwareLicenseV30 a odrl:Set ;
+dalicclib:OSL-3.0 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "Lawrence Rosen" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:OSL-3.0 ;
@@ -27,7 +30,7 @@ dalicclib:OpenSoftwareLicenseV30 a odrl:Set ;
         "The Open Software License 3.0 (OSL-3.0)" ;
     dct:publisher "Lawrence Rosen" ;
     dct:source <http://rosenlaw.com/OSL3.0-explained.htm> ;
-    dct:title "Open Software License v. 3.0" ;
+    dct:title "Open Software License 3.0" ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:derive ],
         [ a odrl:Permission ;

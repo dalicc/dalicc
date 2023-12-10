@@ -6,3 +6,5 @@ requests==2.25.1
 simplejson==3.17.2
 python-multipart==0.0.5
 rdflib==6.1.1
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.21.0

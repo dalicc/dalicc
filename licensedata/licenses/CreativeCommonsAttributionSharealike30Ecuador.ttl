@@ -1,20 +1,23 @@
-# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 3.0 Ecuador"@en in the DALICC license library
+﻿# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 3.0 Ecuador"@en in the DALICC license library
 # Author: DALICC
-# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike30Ecuador
-# License: Attribution 4.0 International (CC BY 4.0) 
+# Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike30Ecuador
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
 
 @prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dalicc: <http://dalicc.net/ns#> .
-@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix osl: <http://opensource.org/licenses/> .
 @prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
 
 dalicclib:CreativeCommonsAttributionSharealike30Ecuador a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Ecuador ;
     cc:legalcode <https://creativecommons.org/licenses/by-sa/3.0/ec/legalcode> ;
     dalicc:LiabilityLimitation """SALVO QUE LA LEY APLICABLE LO EXIJA EXPRESAMENTE, EL LICENCIANTE EN NINGÚN CASO PODRÁ SER RESPONSABLE ANTE EL LICENCIATARIO POR NINGÚN DAÑO ESPECIAL, INCIDENTAL, RESULTANTE, PUNITIVO NI EJEMPLAR QUE SURGIERA POR ESTA LICENCIA NI POR EL USO DE LA OBRA.

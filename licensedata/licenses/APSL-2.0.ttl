@@ -1,29 +1,34 @@
-# Title: The machine-readable representation of "Adaptive Public License 1.0" in the DALICC license library
+﻿# Title: The machine-readable representation of "Apple Public Source License 2.0" in the DALICC license library
 # Author: DALICC
-# Source: http://dalicc.net/licenselibrary/AdaptivePublicLicense10
-# License: Attribution 4.0 International (CC BY 4.0) 
+# Source: https://dalicc.net/licenselibrary/APSL-2.0
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
 
 @prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dalicc: <http://dalicc.net/ns#> .
-@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix osl: <http://opensource.org/licenses/> .
 @prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
 
-dalicclib:AdaptivePublicLicense10 a odrl:Set ;
-    cc:attributionName "- not specified - " ;
+dalicclib:APSL-2.0 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "APSL-2.0" ;
+    cc:attributionName "Apple" ;
     cc:jurisdiction dalicc:worldwide ;
-    cc:legalcode osl:APL-1.0 ;
-    dalicc:WarrantyDisclaimer "EXCEPT AS EXPRESSLY SET FORTH IN THIS LICENSE, THE LICENSED WORK IS PROVIDED UNDER THIS LICENSE ON AN \"AS IS\" BASIS, WITHOUT ANY REPRESENTATION, WARRANTY, GUARANTEE, ASSURANCE OR CONDITION OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE LICENSED WORK IS WITH RECIPIENT. SHOULD ANY LICENSED WORK PROVE DEFECTIVE IN ANY RESPECT, RECIPIENT (NOT THE INITIAL CONTRIBUTOR OR ANY SUBSEQUENT CONTRIBUTOR) ASSUMES THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS CLAUSE CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY LICENSED WORK IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS LICENSE INCLUDING WITHOUT LIMITATION THIS DISCLAIMER." ;
+    cc:legalcode osl:APSL-2.0 ;
+    dalicc:WarrantyDisclaimer """TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT SHALL APPLE OR ANY CONTRIBUTOR BE LIABLE FOR ANY INCIDENTAL, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR RELATING TO THIS LICENSE OR YOUR USE OR INABILITY TO USE THE COVERED CODE, OR ANY PORTION THEREOF, WHETHER UNDER A THEORY OF CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE), PRODUCTS LIABILITY OR OTHERWISE, EVEN IF
+APPLE OR SUCH CONTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND NOTWITHSTANDING THE FAILURE OF ESSENTIAL PURPOSE OF ANY REMEDY. SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OF LIABILITY OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS LIMITATION MAY NOT APPLY TO YOU. In no event shall Apple's total liability to You for all damages (other than as may be required by applicable law) under this License exceed the amount of fifty dollars ($50.00).""" ;
     dalicc:validityType dalicc:perpetual ;
-    dct:alternative "APL-1.0" ;
-    dct:publisher "- not specified - " ;
-    dct:source osl:APL-1.0 ;
-    dct:title "Adaptive Public License 1.0" ;
+    dct:alternative "APSL" ;
+    dct:publisher "Apple" ;
+    dct:source osl:APSL-2.0 ;
+    dct:title "Apple Public Source License 2.0" ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:derive ],
         [ a odrl:Permission ;

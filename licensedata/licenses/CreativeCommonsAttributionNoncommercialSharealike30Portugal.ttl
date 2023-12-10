@@ -1,20 +1,23 @@
-# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Portugal "@en in the DALICC license library
+﻿# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Portugal "@en in the DALICC license library
 # Author: DALICC
-# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialSharealike30Portugal
-# License: Attribution 4.0 International (CC BY 4.0) 
+# Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialSharealike30Portugal
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
 
 @prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dalicc: <http://dalicc.net/ns#> .
-@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix osl: <http://opensource.org/licenses/> .
 @prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
 
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Portugal a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Portugal ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc-sa/3.0/pt/legalcode> ;
     dalicc:LiabilityLimitation """EXCETO NA EXTENSÃO EXIGIDA PELA LEGISLAÇÃO APLICÁVEL, EM NENHUMA CIRCUNSTÂNCIA O LICENCIANTE SERÁ RESPONSÁVEL PARA COM O UTILIZADOR, COM BASE EM NENHUMA TEORIA JURÍDICA, POR QUAISQUER DANOS, GERAIS OU ESPECIAIS (INCLUINDO DANOS EMERGENTES E LUCROS CESSANTES), INCIDENTAIS OU CONSEQUENCIAIS, PUNITIVOS OU EXEMPLARES, QUE RESULTEM DA PRESENTE LICENÇA OU DA UTILIZAÇÃO DO TRABALHO, AINDA QUE O LICENCIANTE TENHA SIDO AVISADO SOBRE A POSSIBILIDADE DE OCORRÊNCIA DE TAIS DANOS.

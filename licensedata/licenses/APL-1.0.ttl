@@ -1,29 +1,33 @@
-# Title: The machine-readable representation of "Computer Associates Trusted Open Source License 1.1" in the DALICC license library
+﻿# Title: The machine-readable representation of "Adaptive Public License 1.0" in the DALICC license library
 # Author: DALICC
-# Source: http://dalicc.net/licenselibrary/ComputerAssociatesTrustedOpenSourceLicense11
-# License: Attribution 4.0 International (CC BY 4.0) 
+# Source: https://dalicc.net/licenselibrary/APL-1.0
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
 
 @prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dalicc: <http://dalicc.net/ns#> .
-@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix osl: <http://opensource.org/licenses/> .
 @prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
 
-dalicclib:ComputerAssociatesTrustedOpenSourceLicense11 a odrl:Set ;
-    cc:attributionName "Computer Associates International, Inc. (CA)" ;
+dalicclib:APL-1.0 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "APL-1.0" ;
+    cc:attributionName "- not specified - " ;
     cc:jurisdiction dalicc:worldwide ;
-    cc:legalcode osl:CATOSL-1.1 ;
-    dalicc:WarrantyDisclaimer "EXCEPT AS EXPRESSLY SET FORTH IN THIS LICENSE, AND TO THE EXTENT PERMITTED BY LAW, NO CONTRIBUTOR SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. " ;
+    cc:legalcode osl:APL-1.0 ;
+    dalicc:WarrantyDisclaimer "EXCEPT AS EXPRESSLY SET FORTH IN THIS LICENSE, THE LICENSED WORK IS PROVIDED UNDER THIS LICENSE ON AN \"AS IS\" BASIS, WITHOUT ANY REPRESENTATION, WARRANTY, GUARANTEE, ASSURANCE OR CONDITION OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE LICENSED WORK IS WITH RECIPIENT. SHOULD ANY LICENSED WORK PROVE DEFECTIVE IN ANY RESPECT, RECIPIENT (NOT THE INITIAL CONTRIBUTOR OR ANY SUBSEQUENT CONTRIBUTOR) ASSUMES THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS CLAUSE CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY LICENSED WORK IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS LICENSE INCLUDING WITHOUT LIMITATION THIS DISCLAIMER." ;
     dalicc:validityType dalicc:perpetual ;
-    dct:alternative "CATOSL-1.1" ;
-    dct:publisher "Computer Associates International, Inc. (CA)" ;
-    dct:source osl:CATOSL-1.1 ;
-    dct:title "Computer Associates Trusted Open Source License 1.1" ;
+    dct:alternative "APL-1.0" ;
+    dct:publisher "- not specified - " ;
+    dct:source osl:APL-1.0 ;
+    dct:title "Adaptive Public License 1.0" ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:derive ],
         [ a odrl:Permission ;
@@ -33,7 +37,9 @@ dalicclib:ComputerAssociatesTrustedOpenSourceLicense11 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ] ],
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
@@ -43,11 +49,13 @@ dalicclib:ComputerAssociatesTrustedOpenSourceLicense11 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ] ],
         [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
             odrl:action odrl:grantUse ],
-        [ a odrl:Permission ;
-            odrl:action odrl:modify ],
         [ a odrl:Permission ;
             odrl:action odrl:present ],
         [ a odrl:Permission ;

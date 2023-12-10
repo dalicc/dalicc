@@ -1,30 +1,33 @@
-# Title: The machine-readable representation of "Apple Public Source License 2.0" in the DALICC license library
+﻿# Title: The machine-readable representation of "Computer Associates Trusted Open Source License 1.1" in the DALICC license library
 # Author: DALICC
-# Source: http://dalicc.net/licenselibrary/ApplePublicSourceLicense20
-# License: Attribution 4.0 International (CC BY 4.0) 
+# Source: https://dalicc.net/licenselibrary/CATOSL-1.1
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
 
 @prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dalicc: <http://dalicc.net/ns#> .
-@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix osl: <http://opensource.org/licenses/> .
 @prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
 
-dalicclib:ApplePublicSourceLicense20 a odrl:Set ;
-    cc:attributionName "Apple" ;
+dalicclib:CATOSL-1.1 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "CATOSL-1.1" ;
+    cc:attributionName "Computer Associates International, Inc. (CA)" ;
     cc:jurisdiction dalicc:worldwide ;
-    cc:legalcode osl:APSL-2.0 ;
-    dalicc:WarrantyDisclaimer """TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT SHALL APPLE OR ANY CONTRIBUTOR BE LIABLE FOR ANY INCIDENTAL, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR RELATING TO THIS LICENSE OR YOUR USE OR INABILITY TO USE THE COVERED CODE, OR ANY PORTION THEREOF, WHETHER UNDER A THEORY OF CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE), PRODUCTS LIABILITY OR OTHERWISE, EVEN IF
-APPLE OR SUCH CONTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND NOTWITHSTANDING THE FAILURE OF ESSENTIAL PURPOSE OF ANY REMEDY. SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OF LIABILITY OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS LIMITATION MAY NOT APPLY TO YOU. In no event shall Apple's total liability to You for all damages (other than as may be required by applicable law) under this License exceed the amount of fifty dollars ($50.00).""" ;
+    cc:legalcode osl:CATOSL-1.1 ;
+    dalicc:WarrantyDisclaimer "EXCEPT AS EXPRESSLY SET FORTH IN THIS LICENSE, AND TO THE EXTENT PERMITTED BY LAW, NO CONTRIBUTOR SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. " ;
     dalicc:validityType dalicc:perpetual ;
-    dct:alternative "APSL" ;
-    dct:publisher "Apple" ;
-    dct:source osl:APSL-2.0 ;
-    dct:title "Apple Public Source License 2.0" ;
+    dct:alternative "CATOSL-1.1" ;
+    dct:publisher "Computer Associates International, Inc. (CA)" ;
+    dct:source osl:CATOSL-1.1 ;
+    dct:title "Computer Associates Trusted Open Source License 1.1" ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:derive ],
         [ a odrl:Permission ;
@@ -34,9 +37,7 @@ APPLE OR SUCH CONTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AN
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ],
-                [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action cc:SourceCode ] ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
@@ -46,13 +47,11 @@ APPLE OR SUCH CONTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AN
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ] ],
         [ a odrl:Permission ;
-            odrl:action odrl:modify ;
-            odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
-        [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
             odrl:action odrl:grantUse ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ],
         [ a odrl:Permission ;
             odrl:action odrl:present ],
         [ a odrl:Permission ;

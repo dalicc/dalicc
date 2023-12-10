@@ -1,41 +1,39 @@
-# Title: The machine-readable representation of "Tassilos License" in the DALICC license library
+﻿# Title: The machine-readable representation of "Artistic License 2.0" in the DALICC license library
 # Author: DALICC
-# Source: http://dalicc.net/licenselibrary/TassilosLicense
-# License: Attribution 4.0 International (CC BY 4.0) 
+# Source: https://dalicc.net/licenselibrary/Artistic-2.0
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
 
 @prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dalicc: <http://dalicc.net/ns#> .
-@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix osl: <http://opensource.org/licenses/> .
 @prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
 
-dalicclib:TassilosLicense a odrl:Set ;
-    cc:License dalicclib:CC-BY_v4 ;
-    cc:attributionName "Tassilo" ;
-    cc:jurisdiction "Europe" ;
-    dalicc:LiabilityLimitation "No" ;
-    dalicc:WarrantyDisclaimer "No disclaimer" ;
-    dalicc:WarrantyOrLiabilityAcceptance "No liability" ;
-    dalicc:additionalClauses "No" ;
-    dct:publisher "Tassilo" ;
-    dct:title "Tassilos License" ;
-    scho:endDate "2021-01-22" ;
-    scho:startDate "2021-01-13" ;
-    odrl:assignee "Open" ;
-    odrl:duty [ a odrl:Duty ;
-            odrl:action cc:ShareAlike ] ;
+dalicclib:Artistic-2.0 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "Artistic-2.0" ;
+    cc:attributionName "Perl Foundation" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode osl:Artistic-2.0 ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:alternative "Artistic License v2",
+        "Artistic Version 2.0",
+        "Artistic-2.0" ;
+    dct:publisher "N.N." ;
+    dct:source osl:Artistic-2.0 ;
+    dct:title "Artistic License 2.0" ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dct:source ],
-                [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
@@ -44,8 +42,6 @@ dalicclib:TassilosLicense a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dct:source ],
-                [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
@@ -58,8 +54,6 @@ dalicclib:TassilosLicense a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dct:source ],
-                [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
@@ -70,7 +64,9 @@ dalicclib:TassilosLicense a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:rename ] ],
         [ a odrl:Permission ;
-            odrl:action cc:CommercialUse ],
+            odrl:action dalicc:ChangeLicense ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action dalicc:compliantLicense ] ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
@@ -78,10 +74,6 @@ dalicclib:TassilosLicense a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:ChangeLicense ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action cc:CommercialUse ] ;
     odrl:target [ a odrl:AssetCollection ;
-            dct:type dalicc:CreativeWork,
-                dcmitype:Dataset,
-                dcmitype:Software ] .
+            dct:type dcmitype:Software ] .

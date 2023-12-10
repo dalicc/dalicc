@@ -1,20 +1,23 @@
-# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Poland"@en in the DALICC license library
+﻿# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Poland"@en in the DALICC license library
 # Author: DALICC
-# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialNoderivs30Poland
-# License: Attribution 4.0 International (CC BY 4.0) 
+# Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialNoderivs30Poland
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
 
 @prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dalicc: <http://dalicc.net/ns#> .
-@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix osl: <http://opensource.org/licenses/> .
 @prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
 
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Poland a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Poland ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc-nd/3.0/pl/legalcode> ;
     dalicc:LiabilityLimitation """O ILE PRAWO WŁAŚCIWE NIE STANOWI INACZEJ, W ŻADNYM WYPADKU LICENCJODAWCA NIE ODPOWIADA WOBEC LICENCJOBIORCY NA ŻADNEJ PODSTAWIE PRAWNEJ ZA ŻADNE SZCZEGÓLNE, PRZYPADKOWE LUB NASTĘPCZE SZKODY WYNIKAJĄCE Z NINIEJSZEJ LICENCJI LUB WYKORZYSTANIA UTWORU, NAWET JEŻELI LICENCJODAWCA ZOSTAŁ POWIADOMIONY O MOŻLIWOŚCI WYSTĄPIENIA TAKICH SZKÓD.

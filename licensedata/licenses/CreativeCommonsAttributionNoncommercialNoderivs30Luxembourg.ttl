@@ -1,20 +1,23 @@
-# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Luxembourg"@en in the DALICC license library
+﻿# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Luxembourg"@en in the DALICC license library
 # Author: DALICC
-# Source: http://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialNoderivs30Luxembourg
-# License: Attribution 4.0 International (CC BY 4.0) 
+# Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialNoderivs30Luxembourg
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
 
 @prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
 @prefix cc: <http://creativecommons.org/ns#> .
-@prefix dalicc: <http://dalicc.net/ns#> .
-@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix osl: <http://opensource.org/licenses/> .
 @prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
 
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Luxembourg a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Luxembourg ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc-nd/3.0/lu/legalcode> ;
     dalicc:LiabilityLimitation """SAUF DANS LA MESURE REQUISE PAR LA LOI APPLICABLE, LE DONNEUR DE LICENCE NE SAURAIT EN AUCUN CAS ETRE TENU RESPONSABLE A VOTRE EGARD AU TITRE DE QUELQUE DOCTRINE QUE CE SOIT DE TOUS DOMMAGES SPECIAUX, ACCESSOIRES, INDIRECTS, PUNITIFS OU EXEMPLAIRES DECOULANT DE LA PRESENTE LICENCE OU DE L’UTILISATION DE L’ŒUVRE, MEME DANS LE CAS OU LE DONNEUR DE LICENCE AURAIT ETE AVISE DE L'EVENTUALITE DESDITS DOMMAGES.
