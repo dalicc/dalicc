@@ -1,4 +1,4 @@
-# DALICC #
+# DALICC: The Data Licenses Clearance Center #
 
 ## License Library ##
 
