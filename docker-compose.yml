@@ -11,6 +11,8 @@ services:
             - "8890:8890"
     api:
         container_name: dalicc-api
+        #environment:
+        #    APP_MODULE: "--proxy-headers"
         build:
             context: ./
             dockerfile: Dockerfile
@@ -35,10 +37,10 @@ services:
             - db_data:/var/lib/mysql
         restart: always
         environment:
-            MYSQL_ROOT_PASSWORD: <root_password>
-            MYSQL_DATABASE: <db_name>
-            MYSQL_USER: <db_user>
-            MYSQL_PASSWORD: <db_password>
+            MYSQL_ROOT_PASSWORD: somewordpress
+            MYSQL_DATABASE: wordpress
+            MYSQL_USER: wordpress
+            MYSQL_PASSWORD: wordpress
     
     wordpress:
         depends_on:
@@ -50,10 +52,10 @@ services:
             - "8000:80"
         restart: always
         environment:
-            WORDPRESS_DB_HOST: db_wp:<wp_db_port>
-            WORDPRESS_DB_USER: <db_user>
-            WORDPRESS_DB_PASSWORD: <db_password>
-            WORDPRESS_DB_NAME: <db_name>
+            WORDPRESS_DB_HOST: db_wp:3306
+            WORDPRESS_DB_USER: wordpress
+            WORDPRESS_DB_PASSWORD: wordpress
+            WORDPRESS_DB_NAME: wordpress
 volumes:
   db_data: {}
   wordpress_data: {}
