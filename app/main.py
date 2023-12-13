@@ -13,10 +13,8 @@ app_custom_openapi = FastAPI()
 
 # Define the list of origins that are allowed to communicate with the API
 origins = [
-    "http://www.dalicc.net",
-    "https://www.dalicc.net",
-    # "http://localhost",
-    # "http://localhost:8080",
+    "http://localhost",
+    "http://localhost:8080",
 ]
 
 
