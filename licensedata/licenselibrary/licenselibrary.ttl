@@ -15,7 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
-***
+
 dalicclib:AGPL-3.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "AGPL-3.0" ;
@@ -85,7 +85,7 @@ dalicclib:AGPL-3.0 a odrl:Set ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] ;
     foaf:logo <https://www.gnu.org/graphics/agplv3-155x51.png> .
-***
+
 dalicclib:AFL-3.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "AFL-3.0" ;
@@ -148,7 +148,7 @@ dalicclib:AFL-3.0 a odrl:Set ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset,
                 dcmitype:Software ] .
-***
+
 dalicclib:APL-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "APL-1.0" ;
@@ -209,7 +209,7 @@ dalicclib:APL-1.0 a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:Apache-1.1 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "Apache-1.1" ;
@@ -270,7 +270,7 @@ dalicclib:Apache-1.1 a odrl:Set ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset,
                 dcmitype:Software ] .
-***
+
 dalicclib:Apache-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "Apache-2.0" ;
@@ -329,7 +329,7 @@ dalicclib:Apache-2.0 a odrl:Set ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset,
                 dcmitype:Software ] .
-***
+
 dalicclib:APSL-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "APSL-2.0" ;
@@ -391,7 +391,7 @@ APPLE OR SUCH CONTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AN
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:Artistic-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "Artistic-2.0" ;
@@ -453,7 +453,7 @@ dalicclib:Artistic-2.0 a odrl:Set ;
             odrl:action cc:CommercialUse ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:AAL a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "AAL" ;
@@ -507,7 +507,7 @@ ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:AttributionNoncommercial20Australia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Australia ;
@@ -574,7 +574,7 @@ dalicclib:AttributionNoncommercial20Australia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/au.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/2.0/au/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial20Austria a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Austria ;
@@ -641,7 +641,7 @@ dalicclib:AttributionNoncommercial20Austria a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/at.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/2.0/at/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial20Brazil a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Brazil ;
@@ -708,7 +708,7 @@ dalicclib:AttributionNoncommercial20Brazil a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/br.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/2.0/br/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial20Chile a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Chile ;
@@ -790,7 +790,7 @@ dalicclib:AttributionNoncommercial20Chile a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/2.0/cl/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial20Croatia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Croatia ;
@@ -857,7 +857,7 @@ dalicclib:AttributionNoncommercial20Croatia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/hr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/2.0/hr/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial20France a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:France ;
@@ -959,7 +959,7 @@ dalicclib:AttributionNoncommercial20France a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/fr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/2.0/fr/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial20Germany a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Germany ;
@@ -1026,7 +1026,7 @@ dalicclib:AttributionNoncommercial20Germany a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/de.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/2.0/de/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial20Italy a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Italy ;
@@ -1093,7 +1093,7 @@ dalicclib:AttributionNoncommercial20Italy a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/it.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/2.0/it/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial20Japan a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Japan ;
@@ -1160,7 +1160,7 @@ dalicclib:AttributionNoncommercial20Japan a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/jp.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/2.0/jp/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial20KoreaSouth a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:KoreaSouth ;
@@ -1231,7 +1231,7 @@ dalicclib:AttributionNoncommercial20KoreaSouth a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/kr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/2.0/kr/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial20Netherlands a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Netherlands ;
@@ -1298,7 +1298,7 @@ dalicclib:AttributionNoncommercial20Netherlands a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/nl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/2.0/nl/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial20Poland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Poland ;
@@ -1365,7 +1365,7 @@ dalicclib:AttributionNoncommercial20Poland a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/pl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/2.0/pl/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial20SouthAfrica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:SouthAfrica ;
@@ -1432,7 +1432,7 @@ dalicclib:AttributionNoncommercial20SouthAfrica a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/za.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/2.0/za/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Armenia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Armenia ;
@@ -1499,7 +1499,7 @@ dalicclib:AttributionNoncommercial30Armenia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/am.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/am/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Australia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Australia ;
@@ -1652,7 +1652,7 @@ dalicclib:AttributionNoncommercial30Australia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/au.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/au/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Austria a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Austria ;
@@ -1719,7 +1719,7 @@ dalicclib:AttributionNoncommercial30Austria a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/at.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/at/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Azerbaijan a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Azerbaijan ;
@@ -1789,7 +1789,7 @@ dalicclib:AttributionNoncommercial30Azerbaijan a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/az.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/az/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Brazil a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Brazil ;
@@ -1870,7 +1870,7 @@ dalicclib:AttributionNoncommercial30Brazil a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/br.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/br/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Chile a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Chile ;
@@ -1937,7 +1937,7 @@ dalicclib:AttributionNoncommercial30Chile a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/cl/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30China a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:China ;
@@ -2004,7 +2004,7 @@ dalicclib:AttributionNoncommercial30China a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cn.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/cn/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30CostaRica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:CostaRica ;
@@ -2071,7 +2071,7 @@ dalicclib:AttributionNoncommercial30CostaRica a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/cr/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Croatia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Croatia ;
@@ -2138,7 +2138,7 @@ dalicclib:AttributionNoncommercial30Croatia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/hr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/hr/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Czechia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Czechia ;
@@ -2209,7 +2209,7 @@ dalicclib:AttributionNoncommercial30Czechia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cz.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/cz/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Ecuador a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Ecuador ;
@@ -2276,7 +2276,7 @@ dalicclib:AttributionNoncommercial30Ecuador a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ec.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/ec/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Egypt a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Egypt ;
@@ -2343,7 +2343,7 @@ dalicclib:AttributionNoncommercial30Egypt a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/eg.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/eg/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Estonia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Estonia ;
@@ -2431,7 +2431,7 @@ dalicclib:AttributionNoncommercial30Estonia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ee.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/ee/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30France a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:France ;
@@ -2498,7 +2498,7 @@ dalicclib:AttributionNoncommercial30France a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/fr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/fr/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Georgia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Georgia ;
@@ -2567,7 +2567,7 @@ dalicclib:AttributionNoncommercial30Georgia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ge.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/ge/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Germany a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Germany ;
@@ -2650,7 +2650,7 @@ dalicclib:AttributionNoncommercial30Germany a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/de.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/de/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Greece a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Greece ;
@@ -2737,7 +2737,7 @@ dalicclib:AttributionNoncommercial30Greece a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/gr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/gr/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Guatemala a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Guatemala ;
@@ -2804,7 +2804,7 @@ dalicclib:AttributionNoncommercial30Guatemala a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/gt.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/gt/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Ireland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Ireland ;
@@ -2871,7 +2871,7 @@ dalicclib:AttributionNoncommercial30Ireland a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ie.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/ie/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Italy a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Italy ;
@@ -2938,7 +2938,7 @@ dalicclib:AttributionNoncommercial30Italy a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/it.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/it/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Luxembourg a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Luxembourg ;
@@ -3005,7 +3005,7 @@ dalicclib:AttributionNoncommercial30Luxembourg a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/lu.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/lu/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Netherlands a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Netherlands ;
@@ -3072,7 +3072,7 @@ dalicclib:AttributionNoncommercial30Netherlands a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/nl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/nl/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30NewZealand a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:NewZealand ;
@@ -3139,7 +3139,7 @@ dalicclib:AttributionNoncommercial30NewZealand a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/nz.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/nz/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Norway a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Norway ;
@@ -3218,7 +3218,7 @@ dalicclib:AttributionNoncommercial30Norway a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/no.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/no/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Philippines a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Philippines ;
@@ -3285,7 +3285,7 @@ dalicclib:AttributionNoncommercial30Philippines a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ph.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/ph/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Poland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Poland ;
@@ -3352,7 +3352,7 @@ dalicclib:AttributionNoncommercial30Poland a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/pl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/pl/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Portugal a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Portugal ;
@@ -3419,7 +3419,7 @@ dalicclib:AttributionNoncommercial30Portugal a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/pt.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/pt/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Romania a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Romania ;
@@ -3495,7 +3495,7 @@ dalicclib:AttributionNoncommercial30Romania a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ro.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/ro/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Singapore a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Singapore ;
@@ -3578,7 +3578,7 @@ dalicclib:AttributionNoncommercial30Singapore a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/sg.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/sg/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30SouthAfrica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:SouthAfrica ;
@@ -3645,7 +3645,7 @@ dalicclib:AttributionNoncommercial30SouthAfrica a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/za.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/za/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Thailand a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Thailand ;
@@ -3712,7 +3712,7 @@ dalicclib:AttributionNoncommercial30Thailand a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/th.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/th/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Uganda a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Uganda ;
@@ -3786,7 +3786,7 @@ dalicclib:AttributionNoncommercial30Uganda a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ug.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/ug/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30UnitedStatesofAmerica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:UnitedStates ;
@@ -3871,7 +3871,7 @@ dalicclib:AttributionNoncommercial30UnitedStatesofAmerica a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/us.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/us/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Venezuela a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Venezuela ;
@@ -3938,7 +3938,7 @@ dalicclib:AttributionNoncommercial30Venezuela a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ve.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/ve/88x31.png> .
-***
+
 dalicclib:AttributionNoncommercial30Vietnam a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Vietnam ;
@@ -4005,7 +4005,7 @@ dalicclib:AttributionNoncommercial30Vietnam a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/vn.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/vn/88x31.png> .
-***
+
 dalicclib:BSD-2-Clause a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "BSD-2-Clause" ;
@@ -4059,7 +4059,7 @@ dalicclib:BSD-2-Clause a odrl:Set ;
             odrl:action dalicc:ChangeLicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:BSD-3-Clause a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "BSD-3-Clause" ;
@@ -4113,7 +4113,7 @@ dalicclib:BSD-3-Clause a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:BSD-4-Clause a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "BSD-4-Clause" ;   
@@ -4169,7 +4169,7 @@ dalicclib:BSD-4-Clause a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:BSL-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "BSL-1.0" ;
@@ -4220,7 +4220,7 @@ dalicclib:BSL-1.0 a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:CC-BY-NC-ND-4.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
@@ -4279,7 +4279,7 @@ dalicclib:CC-BY-NC-ND-4.0 a odrl:Set ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset ] ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/4.0/88x31.png> .
-***
+
 dalicclib:CC-BY-NC-SA-4.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
@@ -4343,7 +4343,7 @@ dalicclib:CC-BY-NC-SA-4.0 a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ ] ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png> .
-***
+
 dalicclib:CC-BY-ND-4.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
@@ -4401,7 +4401,7 @@ dalicclib:CC-BY-ND-4.0 a odrl:Set ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset ] ;
     foaf:logo <https://licensebuttons.net/l/by-nd/4.0/88x31.png> .
-***
+
 dalicclib:Cc010Universal a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
@@ -4446,7 +4446,7 @@ Affirmer understands and acknowledges that Creative Commons is not a party to th
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset ] .
-***
+
 dalicclib:CeaCnrsInriaLogicielLibreLicenseVersion21 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName " CEA, CNRS, INRIA" ;
@@ -4504,7 +4504,7 @@ dalicclib:CeaCnrsInriaLogicielLibreLicenseVersion21 a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:CommonDevelopmentAndDistributionLicense10 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "SUN Microsystems" ;
@@ -4561,7 +4561,7 @@ dalicclib:CommonDevelopmentAndDistributionLicense10 a odrl:Set ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:CommonPublicAttributionLicenseVersion10 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
@@ -4631,7 +4631,7 @@ dalicclib:CommonPublicAttributionLicenseVersion10 a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:CATOSL-1.1 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "CATOSL-1.1" ;
@@ -4688,7 +4688,7 @@ dalicclib:CATOSL-1.1 a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:CreativeCommonsAttribution20Australia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Australia ;
@@ -4753,7 +4753,7 @@ dalicclib:CreativeCommonsAttribution20Australia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/au.png> ;
     foaf:logo <https://licensebuttons.net/l/by/2.0/au/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution20Austria a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Austria ;
@@ -4818,7 +4818,7 @@ dalicclib:CreativeCommonsAttribution20Austria a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/at.png> ;
     foaf:logo <https://licensebuttons.net/l/by/2.0/at/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution20Brazil a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Brazil ;
@@ -4883,7 +4883,7 @@ dalicclib:CreativeCommonsAttribution20Brazil a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/br.png> ;
     foaf:logo <https://licensebuttons.net/l/by/2.0/br/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution20Chile a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Chile ;
@@ -4963,7 +4963,7 @@ dalicclib:CreativeCommonsAttribution20Chile a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cl.png> ;
     foaf:logo <https://licensebuttons.net/l/by/2.0/cl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution20Croatia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Croatia ;
@@ -5028,7 +5028,7 @@ dalicclib:CreativeCommonsAttribution20Croatia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/hr.png> ;
     foaf:logo <https://licensebuttons.net/l/by/2.0/hr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution20France a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:France ;
@@ -5128,7 +5128,7 @@ dalicclib:CreativeCommonsAttribution20France a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/fr.png> ;
     foaf:logo <https://licensebuttons.net/l/by/2.0/fr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution20Germany a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Germany ;
@@ -5193,7 +5193,7 @@ dalicclib:CreativeCommonsAttribution20Germany a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/de.png> ;
     foaf:logo <https://licensebuttons.net/l/by/2.0/de/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution20Italy a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Italy ;
@@ -5258,7 +5258,7 @@ dalicclib:CreativeCommonsAttribution20Italy a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/it.png> ;
     foaf:logo <https://licensebuttons.net/l/by/2.0/it/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution20Japan a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Japan ;
@@ -5322,7 +5322,7 @@ dalicclib:CreativeCommonsAttribution20Japan a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/jp.png> ;
     foaf:logo <https://licensebuttons.net/l/by/2.0/jp/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution20KoreaSouth a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:KoreaSouth ;
@@ -5391,7 +5391,7 @@ dalicclib:CreativeCommonsAttribution20KoreaSouth a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/kr.png> ;
     foaf:logo <https://licensebuttons.net/l/by/2.0/kr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution20Netherlands a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Netherlands ;
@@ -5456,7 +5456,7 @@ dalicclib:CreativeCommonsAttribution20Netherlands a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/nl.png> ;
     foaf:logo <https://licensebuttons.net/l/by/2.0/nl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution20Poland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Poland ;
@@ -5521,7 +5521,7 @@ dalicclib:CreativeCommonsAttribution20Poland a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/pl.png> ;
     foaf:logo <https://licensebuttons.net/l/by/2.0/pl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution20SouthAfrica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:SouthAfrica ;
@@ -5586,7 +5586,7 @@ dalicclib:CreativeCommonsAttribution20SouthAfrica a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/za.png> ;
     foaf:logo <https://licensebuttons.net/l/by/2.0/za/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Armenia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Armenia ;
@@ -5651,7 +5651,7 @@ dalicclib:CreativeCommonsAttribution30Armenia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/am.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/am/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Australia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Australia ;
@@ -5802,7 +5802,7 @@ dalicclib:CreativeCommonsAttribution30Australia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/au.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/au/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Austria a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Austria ;
@@ -5867,7 +5867,7 @@ dalicclib:CreativeCommonsAttribution30Austria a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/at.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/at/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Azerbaijan a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Azerbaijan ;
@@ -5935,7 +5935,7 @@ dalicclib:CreativeCommonsAttribution30Azerbaijan a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/az.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/az/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Brazil a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Brazil ;
@@ -6014,7 +6014,7 @@ dalicclib:CreativeCommonsAttribution30Brazil a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/br.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/br/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Chile a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Chile ;
@@ -6079,7 +6079,7 @@ dalicclib:CreativeCommonsAttribution30Chile a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cl.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/cl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30China a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:China ;
@@ -6144,7 +6144,7 @@ dalicclib:CreativeCommonsAttribution30China a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cn.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/cn/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30CostaRica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:CostaRica ;
@@ -6209,7 +6209,7 @@ dalicclib:CreativeCommonsAttribution30CostaRica a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cr.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/cr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Croatia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Croatia ;
@@ -6274,7 +6274,7 @@ dalicclib:CreativeCommonsAttribution30Croatia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/hr.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/hr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Czechia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Czechia ;
@@ -6343,7 +6343,7 @@ dalicclib:CreativeCommonsAttribution30Czechia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cz.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/cz/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Ecuador a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Ecuador ;
@@ -6408,7 +6408,7 @@ dalicclib:CreativeCommonsAttribution30Ecuador a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ec.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/ec/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Egypt a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Egypt ;
@@ -6473,7 +6473,7 @@ dalicclib:CreativeCommonsAttribution30Egypt a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/eg.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/eg/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Estonia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Estonia ;
@@ -6559,7 +6559,7 @@ dalicclib:CreativeCommonsAttribution30Estonia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ee.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/ee/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30France a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:France ;
@@ -6624,7 +6624,7 @@ dalicclib:CreativeCommonsAttribution30France a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/fr.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/fr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Georgia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Georgia ;
@@ -6691,7 +6691,7 @@ dalicclib:CreativeCommonsAttribution30Georgia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ge.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/ge/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Germany a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Germany ;
@@ -6772,7 +6772,7 @@ dalicclib:CreativeCommonsAttribution30Germany a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/de.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/de/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Greece a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Greece ;
@@ -6857,7 +6857,7 @@ dalicclib:CreativeCommonsAttribution30Greece a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/gr.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/gr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Guatemala a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Guatemala ;
@@ -6922,7 +6922,7 @@ dalicclib:CreativeCommonsAttribution30Guatemala a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/gt.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/gt/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Ireland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Ireland ;
@@ -6987,7 +6987,7 @@ dalicclib:CreativeCommonsAttribution30Ireland a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ie.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/ie/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Italy a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Italy ;
@@ -7052,7 +7052,7 @@ dalicclib:CreativeCommonsAttribution30Italy a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/it.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/it/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Luxembourg a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Luxembourg ;
@@ -7117,7 +7117,7 @@ dalicclib:CreativeCommonsAttribution30Luxembourg a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/lu.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/lu/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Netherlands a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Netherlands ;
@@ -7182,7 +7182,7 @@ dalicclib:CreativeCommonsAttribution30Netherlands a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/nl.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/nl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30NewZealand a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:NewZealand ;
@@ -7247,7 +7247,7 @@ dalicclib:CreativeCommonsAttribution30NewZealand a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/nz.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/nz/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Norway a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Norway ;
@@ -7324,7 +7324,7 @@ dalicclib:CreativeCommonsAttribution30Norway a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/no.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/no/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Philippines a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Philippines ;
@@ -7389,7 +7389,7 @@ dalicclib:CreativeCommonsAttribution30Philippines a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ph.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/ph/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Poland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Poland ;
@@ -7454,7 +7454,7 @@ dalicclib:CreativeCommonsAttribution30Poland a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/pl.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/pl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Portugal a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Portugal ;
@@ -7519,7 +7519,7 @@ dalicclib:CreativeCommonsAttribution30Portugal a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/pt.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/pt/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Romania a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Romania ;
@@ -7593,7 +7593,7 @@ dalicclib:CreativeCommonsAttribution30Romania a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ro.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/ro/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Singapore a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Singapore ;
@@ -7674,7 +7674,7 @@ dalicclib:CreativeCommonsAttribution30Singapore a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/sg.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/sg/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30SouthAfrica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:SouthAfrica ;
@@ -7739,7 +7739,7 @@ dalicclib:CreativeCommonsAttribution30SouthAfrica a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/za.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/za/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Thailand a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Thailand ;
@@ -7804,7 +7804,7 @@ dalicclib:CreativeCommonsAttribution30Thailand a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/th.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/th/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Uganda a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Uganda ;
@@ -7876,7 +7876,7 @@ dalicclib:CreativeCommonsAttribution30Uganda a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ug.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/ug/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30UnitedStatesofAmerica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:UnitedStates ;
@@ -7959,7 +7959,7 @@ dalicclib:CreativeCommonsAttribution30UnitedStatesofAmerica a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/us.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/us/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Venezuela a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Venezuela ;
@@ -8024,7 +8024,7 @@ dalicclib:CreativeCommonsAttribution30Venezuela a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ve.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/ve/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttribution30Vietnam a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Vietnam ;
@@ -8089,7 +8089,7 @@ dalicclib:CreativeCommonsAttribution30Vietnam a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/vn.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/vn/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs20Australia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Australia ;
@@ -8148,7 +8148,7 @@ dalicclib:CreativeCommonsAttributionNoderivs20Australia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/au.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/2.0/au/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs20Austria a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Austria ;
@@ -8207,7 +8207,7 @@ dalicclib:CreativeCommonsAttributionNoderivs20Austria a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/at.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/2.0/at/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs20Brazil a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Brazil ;
@@ -8266,7 +8266,7 @@ dalicclib:CreativeCommonsAttributionNoderivs20Brazil a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/br.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/2.0/br/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs20Chile a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Chile ;
@@ -8340,7 +8340,7 @@ dalicclib:CreativeCommonsAttributionNoderivs20Chile a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/2.0/cl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs20Croatia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Croatia ;
@@ -8399,7 +8399,7 @@ dalicclib:CreativeCommonsAttributionNoderivs20Croatia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/hr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/2.0/hr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs20France a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:France ;
@@ -8493,7 +8493,7 @@ dalicclib:CreativeCommonsAttributionNoderivs20France a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/fr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/2.0/fr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs20Germany a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Germany ;
@@ -8552,7 +8552,7 @@ dalicclib:CreativeCommonsAttributionNoderivs20Germany a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/de.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/2.0/de/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs20Italy a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Italy ;
@@ -8611,7 +8611,7 @@ dalicclib:CreativeCommonsAttributionNoderivs20Italy a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/it.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/2.0/it/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs20Japan a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Japan ;
@@ -8670,7 +8670,7 @@ dalicclib:CreativeCommonsAttributionNoderivs20Japan a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/jp.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/2.0/jp/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs20KoreaSouth a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:KoreaSouth ;
@@ -8733,7 +8733,7 @@ dalicclib:CreativeCommonsAttributionNoderivs20KoreaSouth a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/kr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/2.0/kr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs20Netherlands a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Netherlands ;
@@ -8792,7 +8792,7 @@ dalicclib:CreativeCommonsAttributionNoderivs20Netherlands a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/nl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/2.0/nl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs20Poland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Poland ;
@@ -8851,7 +8851,7 @@ dalicclib:CreativeCommonsAttributionNoderivs20Poland a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/pl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/2.0/pl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs20SouthAfrica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:SouthAfrica ;
@@ -8910,7 +8910,7 @@ dalicclib:CreativeCommonsAttributionNoderivs20SouthAfrica a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/za.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/2.0/za/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Armenia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Armenia ;
@@ -8969,7 +8969,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Armenia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/am.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/am/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Australia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Australia ;
@@ -9114,7 +9114,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Australia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/au.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/au/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Austria a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Austria ;
@@ -9173,7 +9173,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Austria a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/at.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/at/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Azerbaijan a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Azerbaijan ;
@@ -9235,7 +9235,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Azerbaijan a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/az.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/az/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Brazil a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Brazil ;
@@ -9308,7 +9308,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Brazil a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/br.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/br/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Chile a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Chile ;
@@ -9367,7 +9367,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Chile a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/cl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30China a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:China ;
@@ -9426,7 +9426,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30China a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cn.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/cn/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30CostaRica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:CostaRica ;
@@ -9485,7 +9485,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30CostaRica a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/cr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Croatia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Croatia ;
@@ -9544,7 +9544,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Croatia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/hr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/hr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Czechia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Czechia ;
@@ -9607,7 +9607,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Czechia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cz.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/cz/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Ecuador a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Ecuador ;
@@ -9666,7 +9666,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Ecuador a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ec.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/ec/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Egypt a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Egypt ;
@@ -9725,7 +9725,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Egypt a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/eg.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/eg/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Estonia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Estonia ;
@@ -9805,7 +9805,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Estonia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ee.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/ee/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30France a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:France ;
@@ -9864,7 +9864,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30France a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/fr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/fr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Georgia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Georgia ;
@@ -9925,7 +9925,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Georgia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ge.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/ge/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Germany a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Germany ;
@@ -10000,7 +10000,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Germany a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/de.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/de/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Greece a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Greece ;
@@ -10079,7 +10079,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Greece a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/gr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/gr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Guatemala a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Guatemala ;
@@ -10138,7 +10138,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Guatemala a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/gt.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/gt/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Ireland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Ireland ;
@@ -10197,7 +10197,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Ireland a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ie.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/ie/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Italy a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Italy ;
@@ -10256,7 +10256,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Italy a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/it.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/it/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Luxembourg a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Luxembourg ;
@@ -10315,7 +10315,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Luxembourg a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/lu.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/lu/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Netherlands a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Netherlands ;
@@ -10374,7 +10374,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Netherlands a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/nl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/nl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30NewZealand a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:NewZealand ;
@@ -10433,7 +10433,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30NewZealand a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/nz.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/nz/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Norway a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Norway ;
@@ -10536,7 +10536,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Norway a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/no.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/no/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Philippines a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Philippines ;
@@ -10595,7 +10595,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Philippines a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ph.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/ph/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Poland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Poland ;
@@ -10654,7 +10654,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Poland a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/pl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/pl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Portugal a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Portugal ;
@@ -10713,7 +10713,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Portugal a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/pt.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/pt/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Romania a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Romania ;
@@ -10781,7 +10781,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Romania a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ro.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/ro/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Singapore a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Singapore ;
@@ -10856,7 +10856,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Singapore a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/sg.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/sg/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30SouthAfrica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:SouthAfrica ;
@@ -10915,7 +10915,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30SouthAfrica a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/za.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/za/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Thailand a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Thailand ;
@@ -10974,7 +10974,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Thailand a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/th.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/th/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Uganda a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Uganda ;
@@ -11040,7 +11040,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Uganda a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ug.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/ug/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30UnitedStatesofAmerica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:UnitedStates ;
@@ -11117,7 +11117,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30UnitedStatesofAmerica a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/us.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/us/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Venezuela a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Venezuela ;
@@ -11176,7 +11176,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Venezuela a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ve.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/ve/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoderivs30Vietnam a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Vietnam ;
@@ -11235,7 +11235,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Vietnam a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/vn.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/3.0/vn/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Australia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Australia ;
@@ -11295,7 +11295,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Australia a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/au.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/2.0/au/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Austria a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Austria ;
@@ -11355,7 +11355,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Austria a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/at.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/2.0/at/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Brazil a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Brazil ;
@@ -11415,7 +11415,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Brazil a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/br.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/2.0/br/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Chile a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Chile ;
@@ -11490,7 +11490,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Chile a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/2.0/cl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Croatia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Croatia ;
@@ -11550,7 +11550,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Croatia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/hr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/2.0/hr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20France a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:France ;
@@ -11645,7 +11645,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20France a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/fr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/2.0/fr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Germany a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Germany ;
@@ -11705,7 +11705,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Germany a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/de.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/2.0/de/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Italy a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Italy ;
@@ -11765,7 +11765,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Italy a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/it.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/2.0/it/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Japan a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Japan ;
@@ -11825,7 +11825,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Japan a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/jp.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/2.0/jp/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20KoreaSouth a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:KoreaSouth ;
@@ -11889,7 +11889,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20KoreaSouth a odrl:Set
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/kr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/2.0/kr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Netherlands a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Netherlands ;
@@ -11949,7 +11949,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Netherlands a odrl:Se
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/nl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/2.0/nl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Poland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Poland ;
@@ -12009,7 +12009,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Poland a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/pl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/2.0/pl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20SouthAfrica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:SouthAfrica ;
@@ -12069,7 +12069,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20SouthAfrica a odrl:Se
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/za.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/2.0/za/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Armenia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Armenia ;
@@ -12129,7 +12129,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Armenia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/am.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/am/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Australia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Australia ;
@@ -12275,7 +12275,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Australia a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/au.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/au/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Austria a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Austria ;
@@ -12335,7 +12335,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Austria a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/at.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/at/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Azerbaijan a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Azerbaijan ;
@@ -12398,7 +12398,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Azerbaijan a odrl:Set
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/az.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/az/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Brazil a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Brazil ;
@@ -12472,7 +12472,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Brazil a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/br.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/br/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Chile a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Chile ;
@@ -12532,7 +12532,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Chile a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/cl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30China a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:China ;
@@ -12592,7 +12592,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30China a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cn.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/cn/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30CostaRica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:CostaRica ;
@@ -12652,7 +12652,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30CostaRica a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/cr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Croatia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Croatia ;
@@ -12712,7 +12712,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Croatia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/hr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/hr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Czechia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Czechia ;
@@ -12776,7 +12776,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Czechia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cz.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/cz/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Ecuador a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Ecuador ;
@@ -12836,7 +12836,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Ecuador a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ec.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/ec/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Egypt a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Egypt ;
@@ -12896,7 +12896,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Egypt a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/eg.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/eg/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Estonia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Estonia ;
@@ -12977,7 +12977,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Estonia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ee.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/ee/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30France a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:France ;
@@ -13037,7 +13037,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30France a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/fr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/fr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Georgia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Georgia ;
@@ -13099,7 +13099,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Georgia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ge.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/ge/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Germany a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Germany ;
@@ -13175,7 +13175,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Germany a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/de.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/de/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Greece a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Greece ;
@@ -13255,7 +13255,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Greece a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/gr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/gr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Guatemala a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Guatemala ;
@@ -13315,7 +13315,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Guatemala a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/gt.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/gt/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Ireland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Ireland ;
@@ -13375,7 +13375,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Ireland a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ie.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/ie/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Italy a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Italy ;
@@ -13435,7 +13435,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Italy a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/it.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/it/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Luxembourg a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Luxembourg ;
@@ -13495,7 +13495,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Luxembourg a odrl:Set
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/lu.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/lu/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Netherlands a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Netherlands ;
@@ -13555,7 +13555,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Netherlands a odrl:Se
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/nl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/nl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30NewZealand a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:NewZealand ;
@@ -13615,7 +13615,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30NewZealand a odrl:Set
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/nz.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/nz/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Philippines a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Philippines ;
@@ -13675,7 +13675,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Philippines a odrl:Se
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ph.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/ph/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Poland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Poland ;
@@ -13735,7 +13735,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Poland a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/pl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/pl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Portugal a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Portugal ;
@@ -13795,7 +13795,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Portugal a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/pt.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/pt/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Romania a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Romania ;
@@ -13864,7 +13864,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Romania a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ro.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/ro/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Singapore a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Singapore ;
@@ -13940,7 +13940,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Singapore a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/sg.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/sg/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30SouthAfrica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:SouthAfrica ;
@@ -14000,7 +14000,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30SouthAfrica a odrl:Se
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/za.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/za/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Thailand a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Thailand ;
@@ -14060,7 +14060,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Thailand a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/th.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/th/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Uganda a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Uganda ;
@@ -14127,7 +14127,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Uganda a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ug.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/ug/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30UnitedStatesofAmerica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:UnitedStates ;
@@ -14205,7 +14205,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30UnitedStatesofAmerica
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/us.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/us/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Venezuela a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Venezuela ;
@@ -14265,7 +14265,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Venezuela a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ve.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/ve/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Vietnam a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Vietnam ;
@@ -14325,7 +14325,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Vietnam a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/vn.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/3.0/vn/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike20Australia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Australia ;
@@ -14394,7 +14394,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike20Australia a odrl:Se
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/au.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/2.0/au/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike20Austria a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Austria ;
@@ -14463,7 +14463,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike20Austria a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/at.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/2.0/at/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike20Brazil a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Brazil ;
@@ -14532,7 +14532,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike20Brazil a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/br.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/2.0/br/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike20Chile a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Chile ;
@@ -14616,7 +14616,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike20Chile a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/2.0/cl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike20Croatia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Croatia ;
@@ -14685,7 +14685,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike20Croatia a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/hr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/2.0/hr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike20France a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:France ;
@@ -14789,7 +14789,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike20France a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/fr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/2.0/fr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike20Germany a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Germany ;
@@ -14858,7 +14858,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike20Germany a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/de.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/2.0/de/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike20Japan a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Japan ;
@@ -14927,7 +14927,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike20Japan a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/jp.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/2.0/jp/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike20KoreaSouth a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:KoreaSouth ;
@@ -15000,7 +15000,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike20KoreaSouth a odrl:S
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/kr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/2.0/kr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike20Netherlands a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Netherlands ;
@@ -15069,7 +15069,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike20Netherlands a odrl:
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/nl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/2.0/nl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike20Poland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Poland ;
@@ -15138,7 +15138,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike20Poland a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/pl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/2.0/pl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike20SouthAfrica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:SouthAfrica ;
@@ -15207,7 +15207,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike20SouthAfrica a odrl:
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/za.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/2.0/za/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Armenia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Armenia ;
@@ -15276,7 +15276,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Armenia a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/am.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/am/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Australia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Australia ;
@@ -15431,7 +15431,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Australia a odrl:Se
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/au.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/au/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Austria a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Austria ;
@@ -15500,7 +15500,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Austria a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/at.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/at/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Azerbaijan a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Azerbaijan ;
@@ -15572,7 +15572,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Azerbaijan a odrl:S
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/az.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/az/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Brazil a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Brazil ;
@@ -15655,7 +15655,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Brazil a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/br.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/br/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Chile a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Chile ;
@@ -15724,7 +15724,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Chile a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/cl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30China a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:China ;
@@ -15793,7 +15793,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30China a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cn.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/cn/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30CostaRica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:CostaRica ;
@@ -15862,7 +15862,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30CostaRica a odrl:Se
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/cr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Croatia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Croatia ;
@@ -15931,7 +15931,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Croatia a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/hr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/hr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Czechia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Czechia ;
@@ -16004,7 +16004,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Czechia a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cz.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/cz/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Ecuador a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Ecuador ;
@@ -16073,7 +16073,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Ecuador a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ec.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/ec/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Egypt a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Egypt ;
@@ -16142,7 +16142,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Egypt a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/eg.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/eg/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Estonia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Estonia ;
@@ -16232,7 +16232,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Estonia a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ee.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/ee/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30France a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:France ;
@@ -16301,7 +16301,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30France a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/fr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/fr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Georgia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Georgia ;
@@ -16372,7 +16372,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Georgia a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ge.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/ge/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Germany a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Germany ;
@@ -16457,7 +16457,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Germany a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/de.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/de/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Greece a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Greece ;
@@ -16546,7 +16546,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Greece a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/gr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/gr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Guatemala a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Guatemala ;
@@ -16615,7 +16615,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Guatemala a odrl:Se
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/gt.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/gt/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Ireland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Ireland ;
@@ -16684,7 +16684,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Ireland a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ie.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/ie/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Italy a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Italy ;
@@ -16753,7 +16753,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Italy a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/it.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/it/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Luxembourg a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Luxembourg ;
@@ -16822,7 +16822,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Luxembourg a odrl:S
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/lu.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/lu/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Netherlands a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Netherlands ;
@@ -16891,7 +16891,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Netherlands a odrl:
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/nl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/nl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30NewZealand a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:NewZealand ;
@@ -16960,7 +16960,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30NewZealand a odrl:S
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/nz.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/nz/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Norway a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Norway ;
@@ -17041,7 +17041,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Norway a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/no.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/no/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Philippines a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Philippines ;
@@ -17110,7 +17110,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Philippines a odrl:
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ph.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/ph/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Poland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Poland ;
@@ -17179,7 +17179,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Poland a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/pl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/pl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Portugal a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Portugal ;
@@ -17248,7 +17248,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Portugal a odrl:Set
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/pt.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/pt/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Romania a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Romania ;
@@ -17326,7 +17326,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Romania a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ro.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/ro/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Singapore a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Singapore ;
@@ -17411,7 +17411,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Singapore a odrl:Se
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/sg.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/sg/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30SouthAfrica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:SouthAfrica ;
@@ -17480,7 +17480,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30SouthAfrica a odrl:
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/za.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/za/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Thailand a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Thailand ;
@@ -17549,7 +17549,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Thailand a odrl:Set
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/th.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/th/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Uganda a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Uganda ;
@@ -17625,7 +17625,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Uganda a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ug.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/ug/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30UnitedStatesofAmerica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:UnitedStates ;
@@ -17712,7 +17712,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30UnitedStatesofAmeri
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/us.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/us/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Venezuela a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Venezuela ;
@@ -17781,7 +17781,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Venezuela a odrl:Se
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ve.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/ve/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Vietnam a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Vietnam ;
@@ -17850,7 +17850,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Vietnam a odrl:Set 
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/vn.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/vn/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike20Australia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Australia ;
@@ -17919,7 +17919,7 @@ dalicclib:CreativeCommonsAttributionSharealike20Australia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/au.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/2.0/au/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike20Austria a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Austria ;
@@ -17988,7 +17988,7 @@ dalicclib:CreativeCommonsAttributionSharealike20Austria a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/at.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/2.0/at/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike20Brazil a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Brazil ;
@@ -18057,7 +18057,7 @@ dalicclib:CreativeCommonsAttributionSharealike20Brazil a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/br.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/2.0/br/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike20Chile a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Chile ;
@@ -18141,7 +18141,7 @@ dalicclib:CreativeCommonsAttributionSharealike20Chile a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/2.0/cl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike20Croatia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Croatia ;
@@ -18210,7 +18210,7 @@ dalicclib:CreativeCommonsAttributionSharealike20Croatia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/hr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/2.0/hr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike20France a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:France ;
@@ -18314,7 +18314,7 @@ dalicclib:CreativeCommonsAttributionSharealike20France a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/fr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/2.0/fr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike20Germany a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Germany ;
@@ -18383,7 +18383,7 @@ dalicclib:CreativeCommonsAttributionSharealike20Germany a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/de.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/2.0/de/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike20Italy a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Italy ;
@@ -18452,7 +18452,7 @@ dalicclib:CreativeCommonsAttributionSharealike20Italy a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/it.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/2.0/it/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike20Japan a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Japan ;
@@ -18521,7 +18521,7 @@ dalicclib:CreativeCommonsAttributionSharealike20Japan a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/jp.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/2.0/jp/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike20KoreaSouth a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:KoreaSouth ;
@@ -18593,7 +18593,7 @@ dalicclib:CreativeCommonsAttributionSharealike20KoreaSouth a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/kr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/2.0/kr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike20Netherlands a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Netherlands ;
@@ -18662,7 +18662,7 @@ dalicclib:CreativeCommonsAttributionSharealike20Netherlands a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/nl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/2.0/nl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike20Poland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Poland ;
@@ -18731,7 +18731,7 @@ dalicclib:CreativeCommonsAttributionSharealike20Poland a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/pl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/2.0/pl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike20SouthAfrica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:SouthAfrica ;
@@ -18800,7 +18800,7 @@ dalicclib:CreativeCommonsAttributionSharealike20SouthAfrica a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/za.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/2.0/za/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Armenia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Armenia ;
@@ -18869,7 +18869,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Armenia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/am.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/am/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Australia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Australia ;
@@ -19024,7 +19024,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Australia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/au.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/au/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Austria a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Austria ;
@@ -19093,7 +19093,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Austria a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/at.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/at/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Azerbaijan a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Azerbaijan ;
@@ -19165,7 +19165,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Azerbaijan a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/az.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/az/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Brazil a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Brazil ;
@@ -19248,7 +19248,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Brazil a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/br.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/br/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Chile a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Chile ;
@@ -19317,7 +19317,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Chile a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/cl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30China a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:China ;
@@ -19386,7 +19386,7 @@ dalicclib:CreativeCommonsAttributionSharealike30China a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cn.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/cn/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30CostaRica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:CostaRica ;
@@ -19455,7 +19455,7 @@ dalicclib:CreativeCommonsAttributionSharealike30CostaRica a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/cr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Croatia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Croatia ;
@@ -19524,7 +19524,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Croatia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/hr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/hr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Czechia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Czechia ;
@@ -19597,7 +19597,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Czechia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cz.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/cz/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Ecuador a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Ecuador ;
@@ -19666,7 +19666,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Ecuador a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ec.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/ec/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Egypt a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Egypt ;
@@ -19735,7 +19735,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Egypt a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/eg.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/eg/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Estonia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Estonia ;
@@ -19825,7 +19825,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Estonia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ee.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/ee/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30France a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:France ;
@@ -19894,7 +19894,7 @@ dalicclib:CreativeCommonsAttributionSharealike30France a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/fr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/fr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Georgia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Georgia ;
@@ -19965,7 +19965,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Georgia a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ge.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/ge/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Germany a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Germany ;
@@ -20050,7 +20050,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Germany a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/de.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/de/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Greece a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Greece ;
@@ -20139,7 +20139,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Greece a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/gr.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/gr/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Guatemala a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Guatemala ;
@@ -20208,7 +20208,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Guatemala a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/gt.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/gt/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Ireland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Ireland ;
@@ -20277,7 +20277,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Ireland a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ie.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/ie/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Italy a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Italy ;
@@ -20346,7 +20346,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Italy a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/it.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/it/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Luxembourg a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Luxembourg ;
@@ -20415,7 +20415,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Luxembourg a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/lu.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/lu/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Netherlands a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Netherlands ;
@@ -20484,7 +20484,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Netherlands a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/nl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/nl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30NewZealand a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:NewZealand ;
@@ -20553,7 +20553,7 @@ dalicclib:CreativeCommonsAttributionSharealike30NewZealand a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/nz.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/nz/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Norway a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Norway ;
@@ -20634,7 +20634,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Norway a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/no.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/no/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Philippines a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Philippines ;
@@ -20703,7 +20703,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Philippines a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ph.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/ph/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Poland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Poland ;
@@ -20772,7 +20772,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Poland a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/pl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/pl/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Portugal a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Portugal ;
@@ -20841,7 +20841,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Portugal a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/pt.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/pt/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Romania a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Romania ;
@@ -20919,7 +20919,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Romania a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ro.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/ro/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Singapore a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Singapore ;
@@ -21004,7 +21004,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Singapore a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/sg.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/sg/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30SouthAfrica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:SouthAfrica ;
@@ -21073,7 +21073,7 @@ dalicclib:CreativeCommonsAttributionSharealike30SouthAfrica a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/za.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/za/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Thailand a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Thailand ;
@@ -21142,7 +21142,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Thailand a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/th.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/th/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Uganda a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Uganda ;
@@ -21218,7 +21218,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Uganda a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ug.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/ug/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30UnitedStatesofAmerica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:UnitedStates ;
@@ -21305,7 +21305,7 @@ dalicclib:CreativeCommonsAttributionSharealike30UnitedStatesofAmerica a odrl:Set
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/us.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/us/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Venezuela a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Venezuela ;
@@ -21374,7 +21374,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Venezuela a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ve.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/ve/88x31.png> .
-***
+
 dalicclib:CreativeCommonsAttributionSharealike30Vietnam a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:Vietnam ;
@@ -21443,7 +21443,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Vietnam a odrl:Set ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/vn.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/vn/88x31.png> .
-***
+
 dalicclib:DataExplorationLicence a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "Ordnance Survey" ;
@@ -21527,7 +21527,7 @@ dalicclib:DataExplorationLicence a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Dataset ] .
-***
+
 dalicclib:DeveloperLicense a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "The National Archives" ;
@@ -21574,7 +21574,7 @@ dalicclib:DeveloperLicense a odrl:Set ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset,
                 dcmitype:Software ] .
-***
+
 dalicclib:EclipsePublicLicense10 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "Eclipse " ;
@@ -21637,7 +21637,7 @@ dalicclib:EclipsePublicLicense10 a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:EPL-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "Eclipse Foundation" ;
@@ -21691,7 +21691,7 @@ dalicclib:EPL-2.0 a odrl:Set ;
             odrl:action dalicc:ModifiedWorks ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:0BSD a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "0BSD" ;
@@ -21737,7 +21737,7 @@ dalicclib:0BSD a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:GPL-2.0-only a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
@@ -21806,7 +21806,7 @@ dalicclib:GPL-2.0-only a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:GPL-3.0-only a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
@@ -21874,7 +21874,7 @@ dalicclib:GPL-3.0-only a odrl:Set ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] ;
     foaf:logo <https://www.gnu.org/graphics/gplv3-127x51.png> .
-***
+
 dalicclib:GnuFreeDocumentationLicense a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
@@ -21944,7 +21944,7 @@ dalicclib:GnuFreeDocumentationLicense a odrl:Set ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Software ] .
-***
+
 dalicclib:InspireEndUserLicence a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "Ordnance Survey Limited" ;
@@ -21991,7 +21991,7 @@ dalicclib:InspireEndUserLicence a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Dataset ] .
-***
+
 dalicclib:IscLicense a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
@@ -22032,7 +22032,7 @@ dalicclib:IscLicense a odrl:Set ;
             odrl:action dalicc:ChangeLicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:LGPL-3.0-only a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
@@ -22095,7 +22095,7 @@ dalicclib:LGPL-3.0-only a odrl:Set ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] ;
     foaf:logo <https://www.gnu.org/graphics/lgplv3-147x51.png> .
-***
+
 dalicclib:LatexProjectPublicLicenseVersion13c a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "LaTeX3 Project" ;
@@ -22170,7 +22170,7 @@ If you become the Current Maintainer of the Work, you should immediately provide
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:MicrosoftPublicLicense a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "Microsoft" ;
@@ -22224,7 +22224,7 @@ dalicclib:MicrosoftPublicLicense a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:MozillaPublicLicenseVersion20 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
@@ -22274,7 +22274,7 @@ dalicclib:MozillaPublicLicenseVersion20 a odrl:Set ;
             odrl:action dalicc:ChangeLicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:NCGL-UK-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "The National Archives" ;
@@ -22287,7 +22287,7 @@ The Information Provider is not liable for any errors or omissions in the Inform
     dct:alternative "Non-Commercial Government Licence v2.0",
         "Non-Commercial Government Licence version 2.0",
         "UK Non-Commercial Government Licence v2.0",
-        "UK Non-Commercial Government Licence version 2.0" ;
+        "UK Non-Commercial Government Licence version 2.0",
         "NCGL UK 2.0" ;
     dct:publisher "The National Archives" ;
     dct:source <http://www.nationalarchives.gov.uk/doc/non-commercial-government-licence/version/2/> ;
@@ -22328,7 +22328,7 @@ The Information Provider is not liable for any errors or omissions in the Inform
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset,
                 dcmitype:Software ] .
-***
+
 dalicclib:OdcOpenDatabaseLicense a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
@@ -22400,7 +22400,7 @@ this exclusion may not apply to You.""" ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Dataset ] .
-***
+
 dalicclib:OdcPublicDomainDedicationAndLicence a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
@@ -22441,7 +22441,7 @@ If liability may not be excluded by law, it is limited to actual and direct fina
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Dataset ] .
-***
+
 dalicclib:OpenDataCommonsAttributionLicenseV10 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "Open Data Commons" ;
@@ -22501,7 +22501,7 @@ No warranties and disclaimer of any damages. This information is provided ‘as 
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Dataset ] .
-***
+
 dalicclib:OpenDataLicenceAgreement a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "Office of the Commissioner of Lobbying" ;
@@ -22552,7 +22552,7 @@ The Information Provider is not liable for any errors or omissions in the Inform
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Dataset ] .
-***
+
 dalicclib:OpenGovernmentLicenceCanada a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "Her Majesty the Queen in right of Canada" ;
@@ -22602,7 +22602,7 @@ The Information Provider is not liable for any errors or omissions in the Inform
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset,
                 dcmitype:Software ] .
-***
+
 dalicclib:OSL-3.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "Lawrence Rosen" ;
@@ -22666,7 +22666,7 @@ dalicclib:OSL-3.0 a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:OpenSupremeCourtLicence a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "UK Supreme Court" ;
@@ -22720,7 +22720,7 @@ The Licensor is not liable for any errors or omissions in the Information and sh
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset,
                 dcmitype:Software ] .
-***
+
 dalicclib:PhpLicense30 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "PHP Group" ;
@@ -22774,7 +22774,7 @@ dalicclib:PhpLicense30 a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:PythonLicense20 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
@@ -22823,7 +22823,7 @@ OR ANY DERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF.""" ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:QPublicLicenseVersion10 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "Trolltech AS" ;
@@ -22875,7 +22875,7 @@ dalicclib:QPublicLicenseVersion10 a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:SampleLicenseSl a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:License dalicclib:MIT ;
@@ -22938,7 +22938,7 @@ dalicclib:SampleLicenseSl a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:StatisticsCanadaOpenLicenceAgreement a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "Her Majesty the Queen in Right of Canada" ;
@@ -22973,7 +22973,7 @@ dalicclib:StatisticsCanadaOpenLicenceAgreement a odrl:Set ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset ] .
-***
+
 dalicclib:SunPublicLicenseVersion10 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "Sun Microsystems, Inc." ;
@@ -23039,7 +23039,7 @@ dalicclib:SunPublicLicenseVersion10 a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:TheUniversalPermissiveLicenseUplVersion10 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "- not specified -" ;
@@ -23089,7 +23089,7 @@ dalicclib:TheUniversalPermissiveLicenseUplVersion10 a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:TheZlibLibpngLicense a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
@@ -23137,7 +23137,7 @@ dalicclib:TheZlibLibpngLicense a odrl:Set ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .
-***
+
 dalicclib:UkOpenGovernmentLicenseForPublicSectorInformation a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "UK Government" ;
@@ -23188,7 +23188,7 @@ The Information Provider and/or Licensor are not liable for any errors or omissi
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset,
                 dcmitype:Software ] .
-***
+
 dalicclib:W3cSoftwareAndDocumentNoticeAndLicense a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "W3C" ;
@@ -23240,7 +23240,7 @@ dalicclib:W3cSoftwareAndDocumentNoticeAndLicense a odrl:Set ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset,
                 dcmitype:Software ] .
-***
+
 dalicclib:WTFPL a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "Sam Hocevar" ;
@@ -23277,7 +23277,7 @@ dalicclib:WTFPL a odrl:Set ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset,
                 dcmitype:Software ] .
-***
+
 dalicclib:CC-BY-NC-4.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
@@ -23343,7 +23343,7 @@ dalicclib:CC-BY-NC-4.0 a odrl:Set ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset ] ;
     foaf:logo <https://licensebuttons.net/l/by-nc/4.0/88x31.png> .
-***
+
 dalicclib:CC-BY-SA-4.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
@@ -23409,7 +23409,7 @@ dalicclib:CC-BY-SA-4.0 a odrl:Set ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset ] ;
     foaf:logo <https://licensebuttons.net/l/by-sa/4.0/88x31.png> .
-***
+
 dalicclib:CC-BY-4.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
@@ -23473,7 +23473,7 @@ dalicclib:CC-BY-4.0 a odrl:Set ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset ] ;
     foaf:logo <http://i.creativecommons.org/l/by/4.0/88x31.png> .
-***
+
 dalicclib:MIT a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction dalicc:worldwide ;
