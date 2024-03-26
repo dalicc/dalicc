@@ -12,6 +12,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix osl: <http://opensource.org/licenses/> .
+@prefix owl: http://www.w3.org/2002/07/owl# .
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
@@ -19,6 +20,7 @@
 dalicclib:AGPL-3.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "AGPL-3.0" ;
+	owl:sameAs dalicclib:AGPL ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.gnu.org/licenses/agpl-3.0.html> ;
     dalicc:LiabilityLimitation "IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES." ;
@@ -89,6 +91,7 @@ dalicclib:AGPL-3.0 a odrl:Set ;
 dalicclib:AFL-3.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "AFL-3.0" ;
+	owl:sameAs dalicclib:AcademicFreeLicense30 ;
     cc:attributionName "- not specified - " ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:AFL-3.0 ;
@@ -152,6 +155,7 @@ dalicclib:AFL-3.0 a odrl:Set ;
 dalicclib:APL-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "APL-1.0" ;
+	owl:sameAs dalicclib:AdaptivePublicLicense10 ;
     cc:attributionName "- not specified - " ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:APL-1.0 ;
@@ -333,6 +337,7 @@ dalicclib:Apache-2.0 a odrl:Set ;
 dalicclib:APSL-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "APSL-2.0" ;
+	owl:sameAs dalicclib:ApplePublicSourceLicense20 ;
     cc:attributionName "Apple" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:APSL-2.0 ;
@@ -395,6 +400,7 @@ APPLE OR SUCH CONTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AN
 dalicclib:Artistic-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "Artistic-2.0" ;
+	owl:sameAs dalicclib:ArtisticLicense20 ;
     cc:attributionName "Perl Foundation" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:Artistic-2.0 ;
@@ -457,6 +463,7 @@ dalicclib:Artistic-2.0 a odrl:Set ;
 dalicclib:AAL a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "AAL" ;
+	owl:sameAs dalicclib:AttributionAssuranceLicense ;
     cc:attributionName "Edwin A. Suominen" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:AAL ;
@@ -4009,6 +4016,7 @@ dalicclib:AttributionNoncommercial30Vietnam a odrl:Set ;
 dalicclib:BSD-2-Clause a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "BSD-2-Clause" ;
+	owl:sameAs dalicclib:BSD-2 ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:BSD-2-Clause ;
     dalicc:WarrantyDisclaimer "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." ;
@@ -4063,6 +4071,7 @@ dalicclib:BSD-2-Clause a odrl:Set ;
 dalicclib:BSD-3-Clause a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "BSD-3-Clause" ;
+	owl:sameAs dalicclib:BSD-3 ;
     cc:jurisdiction dalicc:worldwide ;
     dalicc:validityType dalicc:perpetual ;
     dct:alternative "3 Clause BSD License",
@@ -4117,6 +4126,7 @@ dalicclib:BSD-3-Clause a odrl:Set ;
 dalicclib:BSD-4-Clause a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "BSD-4-Clause" ;   
+	owl:sameAs dalicclib:BSD-4 ;
     cc:jurisdiction dalicc:worldwide ;
     dalicc:additionalClauses "All advertising materials mentioning features or use of this software must display the following acknowledgement: This product includes software developed by the University of California, Berkeley and its contributors." ;
     dalicc:validityType dalicc:perpetual ;
@@ -4173,6 +4183,7 @@ dalicclib:BSD-4-Clause a odrl:Set ;
 dalicclib:BSL-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "BSL-1.0" ;
+	owl:sameAs dalicclib:BoostSoftwareLicense10 ;
     cc:attributionName "- not specified - " ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:BSL-1.0 ;
@@ -4223,6 +4234,7 @@ dalicclib:BSL-1.0 a odrl:Set ;
 
 dalicclib:CC-BY-NC-ND-4.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+	owl:sameAs dalicclib:CC-BY-NC-ND_v4 ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode> ;
     dalicc:LiabilityLimitation "To the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You." ;
@@ -4282,6 +4294,7 @@ dalicclib:CC-BY-NC-ND-4.0 a odrl:Set ;
 
 dalicclib:CC-BY-NC-SA-4.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+	owl:sameAs dalicclib:CC-BY-NC-SA_v4 ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode> ;
     dalicc:LiabilityLimitation "To the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You." ;
@@ -4346,6 +4359,7 @@ dalicclib:CC-BY-NC-SA-4.0 a odrl:Set ;
 
 dalicclib:CC-BY-ND-4.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+	owl:sameAs dalicclib:CC-BY-ND_v4 ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://creativecommons.org/licenses/by-nd/4.0/legalcode> ;
     dalicc:LiabilityLimitation "To the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You." ;
@@ -4635,6 +4649,7 @@ dalicclib:CommonPublicAttributionLicenseVersion10 a odrl:Set ;
 dalicclib:CATOSL-1.1 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "CATOSL-1.1" ;
+	owl:sameAs dalicclib:ComputerAssociatesTrustedOpenSourceLicense11 ;
     cc:attributionName "Computer Associates International, Inc. (CA)" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:CATOSL-1.1 ;
@@ -21640,6 +21655,7 @@ dalicclib:EclipsePublicLicense10 a odrl:Set ;
 
 dalicclib:EPL-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+	owl:sameAs dalicclib:EclipsePublicLicense20 ;
     cc:attributionName "Eclipse Foundation" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:EPL-2.0 ;
@@ -21695,6 +21711,7 @@ dalicclib:EPL-2.0 a odrl:Set ;
 dalicclib:0BSD a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "0BSD" ;
+	owl:sameAs dalicclib:FreePublicLicense100 ;
     cc:attributionName "- not specified - " ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:FPL-1.0.0 ;
@@ -21740,6 +21757,7 @@ dalicclib:0BSD a odrl:Set ;
 
 dalicclib:GPL-2.0-only a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+	owl:sameAs dalicclib:GNU_GPL_v2 ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.gnu.org/licenses/old-licenses/gpl-2.0.html> ;
     dalicc:LiabilityLimitation " IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. " ;
@@ -21809,6 +21827,7 @@ dalicclib:GPL-2.0-only a odrl:Set ;
 
 dalicclib:GPL-3.0-only a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+	owl:sameAs dalicclib:GNU_GPL_v3 ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.gnu.org/licenses/gpl.html> ;
     dalicc:LiabilityLimitation "N NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES." ;
@@ -22035,6 +22054,7 @@ dalicclib:IscLicense a odrl:Set ;
 
 dalicclib:LGPL-3.0-only a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+	owl:sameAs dalicclib:LGPLv3 ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.gnu.org/licenses/lgpl-3.0.html> ;
     dalicc:additionalClauses " You may convey a Combined Work under terms of your choice that, taken together, effectively do not restrict modification of the portions of the Library contained in the Combined Work and reverse engineering for debugging such modifications, if you also do each of the following: a) Give prominent notice with each copy of the Combined Work that the Library is used in it and that the Library and its use are covered by this License. b) Accompany the Combined Work with a copy of the GNU GPL and this license document. c) For a Combined Work that displays copyright notices during execution, include the copyright notice for the Library among these notices, as well as a reference directing the user to the copies of the GNU GPL and this license document. d) Do one of the following: 0) Convey the Minimal Corresponding Source under the terms of this License, and the Corresponding Application Code in a form suitable for, and under terms that permit, the user to recombine or relink the Application with a modified version of the Linked Version to produce a modified Combined Work, in the manner specified by section 6 of the GNU GPL for conveying Corresponding Source. 1) Use a suitable shared library mechanism for linking with the Library. A suitable mechanism is one that (a) uses at run time a copy of the Library already present on the user's computer system, and (b) will operate properly with a modified version of the Library that is interface-compatible with the Linked Version. e) Provide Installation Information, but only if you would otherwise be required to provide such information under section 6 of the GNU GPL, and only to the extent that such information is necessary to install and execute a modified version of the Combined Work produced by recombining or relinking the Application with a modified version of the Linked Version. (If you use option 4d0, the Installation Information must accompany the Minimal Corresponding Source and Corresponding Application Code. If you use option 4d1, you must provide the Installation Information in the manner specified by section 6 of the GNU GPL for conveying Corresponding Source.) Combined Libraries. You may place library facilities that are a work based on the Library side by side in a single library together with other library facilities that are not Applications and are not covered by this License, and convey such a combined library under terms of your choice, if you do both of the following: a) Accompany the combined library with a copy of the same work based on the Library, uncombined with any other library facilities, conveyed under the terms of this License. b) Give prominent notice with the combined library that part of it is a work based on the Library, and explaining where to find the accompanying uncombined form of the same work." ;
@@ -22277,6 +22297,7 @@ dalicclib:MozillaPublicLicenseVersion20 a odrl:Set ;
 
 dalicclib:NCGL-UK-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+	owl:sameAs dalicclib:NonCommercialGovernmentLicence;
     cc:attributionName "The National Archives" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://www.nationalarchives.gov.uk/doc/non-commercial-government-licence/version/2/> ;
@@ -22605,6 +22626,7 @@ The Information Provider is not liable for any errors or omissions in the Inform
 
 dalicclib:OSL-3.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+	owl:sameAs dalicclib:OpenSoftwareLicenseV30;
     cc:attributionName "Lawrence Rosen" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:OSL-3.0 ;
@@ -23243,6 +23265,7 @@ dalicclib:W3cSoftwareAndDocumentNoticeAndLicense a odrl:Set ;
 
 dalicclib:WTFPL a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+	owl:sameAs dalicclib:Wtfpl ;
     cc:attributionName "Sam Hocevar" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://www.wtfpl.net/about/> ;
@@ -23280,6 +23303,7 @@ dalicclib:WTFPL a odrl:Set ;
 
 dalicclib:CC-BY-NC-4.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+	owl:sameAs dalicclib:CC-BY-NC_v4 ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc/4.0/legalcode> ;
     dalicc:LiabilityLimitation "To the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You." ;
@@ -23346,6 +23370,7 @@ dalicclib:CC-BY-NC-4.0 a odrl:Set ;
 
 dalicclib:CC-BY-SA-4.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+	owl:sameAs dalicclib:CC-BY-SA_v4 ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://creativecommons.org/licenses/by-sa/4.0/legalcode> ;
     dalicc:LiabilityLimitation "To the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You." ;
@@ -23412,6 +23437,7 @@ dalicclib:CC-BY-SA-4.0 a odrl:Set ;
 
 dalicclib:CC-BY-4.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+	owl:sameAs dalicclib:CC-BY_v4 ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://creativecommons.org/licenses/by/4.0/legalcode> ;
     dalicc:LiabilityLimitation "To the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You." ;
