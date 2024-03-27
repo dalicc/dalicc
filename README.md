@@ -31,7 +31,8 @@ DALICC API supports the automated clearance of rights thus supporting the legall
 ##### Load DALICC License Library #####
 
 * Execute the following command for copying the RDF files into `ttl_dump` directory under `virtuoso_data` and specifying the graphs:
-    1. `sudo sh licensedata/copy_ttls.sh`
+    1. `cd licensedata`
+    2. `sudo sh copy_ttls.sh`
 * To load RDF files into Virtuoso follow the instructions from the [documentation](http://vos.openlinksw.com/owiki/wiki/VOS/VirtBulkRDFLoader): 
     1. `docker exec -it virtuoso-db bash`
     2. `isql-v -U dba -P dba`
@@ -53,7 +54,10 @@ DALICC API supports the automated clearance of rights thus supporting the legall
     * `DB.DBA.VT_BATCH_UPDATE ('DB.DBA.RDF_OBJ', 'ON', 10);`
 * Example query using the full text index:
     * `SELECT * FROM <https://dalicc.net/licenselibrary/> WHERE { ?s ?p ?o . ?o bif:contains '"Mozilla*"' . }`
-    
+
+##### Removing All Triples from Virtuoso DB #####
+* https://vos.openlinksw.com/owiki/wiki/VOS/VirtRemoveTriples
+
 ### API Configuration ###
 
 * The API is implemented using [FastAPI](https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker).
