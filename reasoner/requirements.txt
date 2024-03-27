@@ -2,6 +2,7 @@ SPARQLWrapper==1.8.5
 Jinja2==2.11.3
 aiofiles==0.6.0
 hexlite==1.4.1
-typing-extensions>=4.1.0
+typing-extensions>=4.5.0
 configparser==5.0.2
 simplejson==3.17.2
+fastapi==0.103.2

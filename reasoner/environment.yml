@@ -5,7 +5,7 @@ channels:
   - potassco
 dependencies:
   - python=3.7
-  - fastapi
+  - fastapi=0.103.2
   - hexlite
   - SPARQLWrapper=1.8.5
   - Jinja2=2.11.3 
