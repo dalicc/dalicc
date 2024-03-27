@@ -91,7 +91,7 @@ def getDependencyGraph(dp_named_graph):
 
     # Define and execute a SPARQL query to retrieve the dependency graph
     sparql.setQuery("""
-    PREFIX dp: <http://dalicc.net/dependencygraph/>
+    PREFIX dp: <https://dalicc.net/dependencygraph/>
     SELECT * 
     FROM dp:"""+str(dp_named_graph).strip('"')+"""
     WHERE { ?s ?p ?o }

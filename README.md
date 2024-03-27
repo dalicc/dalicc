@@ -44,7 +44,7 @@ DALICC API supports the automated clearance of rights thus supporting the legall
     1. `docker exec -it virtuoso-db bash`
     2. `isql-v -U dba -P dba`
     3. -- We specify that all string objects in the graph 'license-library' should be text indexed:
-        * `SQL> DB.DBA.RDF_OBJ_FT_RULE_ADD('http://dalicc.net/licenselibrary/', null, 'licenses');`
+        * `SQL> DB.DBA.RDF_OBJ_FT_RULE_ADD('https://dalicc.net/licenselibrary/', null, 'licenses');`
     4. -- We update the text index.
         * `SQL> DB.DBA.VT_INC_INDEX_DB_DBA_RDF_OBJ ();`
 * To set the text index to follow the triples in real time, use:
@@ -52,7 +52,7 @@ DALICC API supports the automated clearance of rights thus supporting the legall
 * To set the text index to be updated every 10 minutes, use:
     * `DB.DBA.VT_BATCH_UPDATE ('DB.DBA.RDF_OBJ', 'ON', 10);`
 * Example query using the full text index:
-    * `SELECT * FROM <http://dalicc.net/licenselibrary/> WHERE { ?s ?p ?o . ?o bif:contains '"Mozilla*"' . }`
+    * `SELECT * FROM <https://dalicc.net/licenselibrary/> WHERE { ?s ?p ?o . ?o bif:contains '"Mozilla*"' . }`
     
 ### API Configuration ###
 
