@@ -54,7 +54,10 @@ DALICC API supports the automated clearance of rights thus supporting the legall
     * `DB.DBA.VT_BATCH_UPDATE ('DB.DBA.RDF_OBJ', 'ON', 10);`
 * Example query using the full text index:
     * `SELECT * FROM <http://dalicc.net/licenselibrary/> WHERE { ?s ?p ?o . ?o bif:contains '"Mozilla*"' . }`
-    
+
+##### Removing All Triples from Virtuoso DB #####
+* https://vos.openlinksw.com/owiki/wiki/VOS/VirtRemoveTriples
+
 ### API Configuration ###
 
 * The API is implemented using [FastAPI](https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker).
