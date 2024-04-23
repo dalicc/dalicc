@@ -12,6 +12,7 @@ from rdflib import Graph
 import json
 from typing import Any, Dict, AnyStr, List, Union, TypeVar
 import requests
+import os
 
 # Type aliases for JSON related data structures
 JSONObject = Dict[AnyStr, Any]
@@ -46,7 +47,7 @@ router = APIRouter(
 )
 
 # Initializing the SPARQL wrapper with the endpoint URL
-sparql = SPARQLWrapper("http://virtuoso-db:8890/sparql")
+sparql = SPARQLWrapper(os.getenv('DB_URL'))
 
 # Endpoint for the reasoner function
 @router.post("/")
@@ -62,7 +63,7 @@ def reasoner(input_json: ReasonerTask = None):
     """
     
     # Address of the reasoner service
-    reasoner_address = "http://dalicc-reasoner:80/reasoner/ws"
+    reasoner_address = os.getenv('REASONER_URL')+"/ws"
     
     # Sending a POST request to the reasoner service and returning the response
     response = requests.post(reasoner_address, data=input_json.json())

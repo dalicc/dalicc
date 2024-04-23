@@ -41,7 +41,7 @@ app_custom_openapi.include_router(compatibilitycheck.router)
 app_custom_openapi.include_router(githublicensechecker.router)
 
 # Mount static files to the application
-app.mount("/static", StaticFiles(directory="app/static"), name="static")
+# app.mount("/static", StaticFiles(directory="app/static"), name="static") # Not needed
 
 # Route to return the respec html page
 @app.get("/spec")

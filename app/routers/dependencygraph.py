@@ -8,6 +8,7 @@ from rdflib import Graph
 import simplejson as json
 from typing import Any, Dict, AnyStr, List, Union, TypeVar
 import requests
+import os
 
 # Setting up the FastAPI router with a specific prefix and tags
 router = APIRouter(
@@ -17,7 +18,7 @@ router = APIRouter(
 )
 
 # Initialize SPARQLWrapper with the endpoint
-sparql = SPARQLWrapper("http://virtuoso-db:8890/sparql")
+sparql = SPARQLWrapper(os.getenv('DB_URL'))
 
 # Endpoint to get the dependency graph
 @router.get("/list")

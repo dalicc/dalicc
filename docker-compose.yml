@@ -21,6 +21,9 @@ services:
         volumes:
             - .:/app
         entrypoint: ['/start-reload.sh']
+        environment:
+            - DB_URL=http://virtuoso-db:8890/sparql
+            - REASONER_URL=http://dalicc-reasoner:80/reasoner
     reasoner:
         container_name: dalicc-reasoner
         build:
@@ -31,6 +34,8 @@ services:
         volumes:
             - ./reasoner:/app
         entrypoint: ['/start-reload.sh']
+        environment:
+            - DB_URL=http://virtuoso-db:8890/sparql
     db_wp:
         image: mysql:5.7
         volumes:

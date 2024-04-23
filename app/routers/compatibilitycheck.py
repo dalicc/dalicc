@@ -10,6 +10,7 @@ from rdflib import Graph
 import json
 from typing import Any, Dict, AnyStr, List, Union, TypeVar
 import requests
+import os
 
 # Type aliases for JSON structures
 JSONObject = Dict[AnyStr, Any]
@@ -36,7 +37,7 @@ router = APIRouter(
 )
 
 # SPARQL endpoint
-sparql = SPARQLWrapper("http://virtuoso-db:8890/sparql")
+sparql = SPARQLWrapper(os.getenv('DB_URL'))
 
 # Endpoint for compatibility check
 @router.post("/")
@@ -49,7 +50,7 @@ def compatibility(input_json: LicensesJSON = None):
     * {"licenses": ["https://dalicc.net/licenselibrary/Apache-2.0", "https://dalicc.net/licenselibrary/MIT", "https://dalicc.net/licenselibrary/StatisticsCanadaOpenLicenceAgreement"]}
     """
     # Address for the compatibility reasoner
-    reasoner_address = "http://dalicc-reasoner:80/reasoner/compatibility"
+    reasoner_address = os.getenv('REASONER_URL')+"/compatibility"
     
     # Sending a POST request to the reasoner and returning the response
     response = requests.post(reasoner_address,  data = input_json.json())

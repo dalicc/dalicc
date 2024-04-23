@@ -15,6 +15,7 @@ import requests
 from fuzzywuzzy import fuzz
 import json as stdjson
 from rdflib.plugin import register, Parser
+import os
 
 # Type definitions for JSON structures
 JSONObject = Dict[AnyStr, Any]
@@ -29,7 +30,7 @@ router = APIRouter(
 )
 
 # Initialize SPARQLWrapper with the endpoint
-sparql = SPARQLWrapper("http://virtuoso-db:8890/sparql")
+sparql = SPARQLWrapper(os.getenv('DB_URL'))
 
 # Enum classes for defining various states in the license library
 class ActionState(Enum):

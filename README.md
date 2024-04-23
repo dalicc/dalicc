@@ -22,6 +22,14 @@ DALICC API supports the automated clearance of rights thus supporting the legall
     2. `docker-compose up -d`
     3. `mkdir reasoner/app/programs/temp`
 
+#### Change ports or container name ####
+
+The URLs of the database and the reasoner are set via env in the docker-compose file.
+One exception is the config file of the reasoner: 'reasoner/reasoner.config'
+
+In there is the URL of the database used by the hexlite plugin.
+This has to be changed additionally.
+
 ### Virtuoso Configuration ###
 
 * Virtuoso is hosted using [this Docker image](https://hub.docker.com/r/tenforce/virtuoso/).
