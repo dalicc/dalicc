@@ -11,8 +11,6 @@ services:
             - "8890:8890"
     api:
         container_name: dalicc-api
-        #environment:
-        #    APP_MODULE: "--proxy-headers"
         build:
             context: ./
             dockerfile: Dockerfile
@@ -36,31 +34,5 @@ services:
         entrypoint: ['/start-reload.sh']
         environment:
             - DB_URL=http://virtuoso-db:8890/sparql
-    db_wp:
-        image: mysql:5.7
-        volumes:
-            - db_data:/var/lib/mysql
-        restart: always
-        environment:
-            MYSQL_ROOT_PASSWORD: somewordpress
-            MYSQL_DATABASE: wordpress
-            MYSQL_USER: wordpress
-            MYSQL_PASSWORD: wordpress
-    
-    wordpress:
-        depends_on:
-            - db_wp
-        image: wordpress:latest
-        volumes:
-            - wordpress_data:/var/www/html
-        ports:
-            - "8000:80"
-        restart: always
-        environment:
-            WORDPRESS_DB_HOST: db_wp:3306
-            WORDPRESS_DB_USER: wordpress
-            WORDPRESS_DB_PASSWORD: wordpress
-            WORDPRESS_DB_NAME: wordpress
 volumes:
   db_data: {}
-  wordpress_data: {}
