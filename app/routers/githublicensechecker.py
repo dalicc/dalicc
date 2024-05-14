@@ -4,7 +4,6 @@ from fastapi import FastAPI, HTTPException
 from fastapi import APIRouter, Body, HTTPException
 
 # Configuration (commented out)
-# API_KEY = <api_key>
 LIBRARIES_URL = "https://libraries.io/api/"
 DALICC_URL = "https://api.dalicc.net/"
 
@@ -20,10 +19,14 @@ def dalicc_lookup(license_id: str):
     api_url = DALICC_URL + "licenselibrary/license/{license_id}?format=json-ld&download=false".format(license_id=license_id)
     response = requests.get(api_url)
     dalicc_res = response.json()
-    if dalicc_res and len(dalicc_res) > 0 and "@id" in dalicc_res[0]:
-        dalicc_id = dalicc_res[0]["@id"]
-        return dalicc_id
-    else:
+    try:
+        if dalicc_res and len(dalicc_res) > 0 and "@id" in dalicc_res[0]:
+            dalicc_id = dalicc_res[0]["@id"]
+            return dalicc_id
+        else:
+            return None
+    except:
+        print("::: Error with retrieving license ", license_id,". Got ", dalicc_res)
         return None
 
 # Function to parse GitHub repository URL and extract owner and name
@@ -49,7 +52,7 @@ def dalicc_compatibility(licenses: list):
 # Endpoint to get repository dependencies by owner and name
 @router.get("/dependencies/{owner}/{name}")
 def repository_dependencies(owner: str, name: str):
-    api_url = LIBRARIES_URL + "github/{owner}/{name}/dependencies?api_key={key}".format(owner=owner, name=name, key=API_KEY)
+    api_url = LIBRARIES_URL + "github/{owner}/{name}/dependencies".format(owner=owner, name=name)
     response = requests.get(api_url)
     lib_res = response.json()
     return lib_res
