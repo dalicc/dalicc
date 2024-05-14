@@ -20,8 +20,8 @@ def dalicc_lookup(license_id: str):
     response = requests.get(api_url)
     dalicc_res = response.json()
     try:
-        if dalicc_res and len(dalicc_res) > 0 and "@id" in dalicc_res[0]:
-            dalicc_id = dalicc_res[0]["@id"]
+        if dalicc_res and "@graph" in dalicc_res and "@id" in dalicc_res["@graph"]:
+            dalicc_id = dalicc_res["@graph"]["@id"]
             return dalicc_id
         else:
             return None
