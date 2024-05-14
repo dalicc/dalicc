@@ -19,14 +19,19 @@ def dalicc_lookup(license_id: str):
     api_url = DALICC_URL + "licenselibrary/license/{license_id}?format=json-ld&download=false".format(license_id=license_id)
     response = requests.get(api_url)
     dalicc_res = response.json()
+    # print("::: keys", dalicc_res.keys())
+    # print("::: @graph", dalicc_res["@graph"])
+    # print("::: @id", dalicc_res["@graph"][0]["@id"])
     try:
-        if dalicc_res and "@graph" in dalicc_res and "@id" in dalicc_res["@graph"]:
-            dalicc_id = dalicc_res["@graph"]["@id"]
+        if "@graph" in dalicc_res and len(dalicc_res["@graph"]) > 0 and "@id" in dalicc_res["@graph"][0]:
+            dalicc_id = dalicc_res["@graph"][0]["@id"]
             return dalicc_id
         else:
+            print("::: Did not found the id for ", license_id)
             return None
-    except:
-        print("::: Error with retrieving license ", license_id,". Got ", dalicc_res)
+    except Exception as error:
+        print("::: Error with retrieving license ", license_id,". Got ", dalicc_res.keys())
+        print("::: Error: ", error)
         return None
 
 # Function to parse GitHub repository URL and extract owner and name
