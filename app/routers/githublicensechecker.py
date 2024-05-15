@@ -49,9 +49,10 @@ def parse_github_url(github_url: str):
 # Function to check license compatibility using DALICC
 def dalicc_compatibility(licenses: list):
     api_url = DALICC_URL + "compatibilitycheck/"
-    body = json.dumps({"licenses": licenses})
+    body = json.dumps({"licenses": [license.replace("dalicc:", "https://dalicc.net/licenselibrary/").replace("dalicclib:", "https://dalicc.net/licenselibrary/") for license in licenses]})
     response = requests.post(api_url, data=body)
     dalicc_res = response.json()
+    print("::: compatibilitycheck:", body, dalicc_res)
     return dalicc_res
 
 # Endpoint to get repository dependencies by owner and name
