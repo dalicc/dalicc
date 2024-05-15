@@ -124,8 +124,9 @@ def get_license_by_id(license_id, request: Request, format: Optional[LicenseForm
     # Create a graph to parse the license data
     g = Graph()
     try:
-        g.parse("licensedata/licenses/" + license_id + ".ttl", format="turtle")
+        g.parse("/app/licensedata/licenses/" + license_id + ".ttl", format="turtle")
     except Exception:
+        print("::: error loading license file in graph - ", "/app/licensedata/licenses/" + license_id + ".ttl")
         pass  # Handle exception if needed
 
     # Context dictionary for JSON-LD serialization

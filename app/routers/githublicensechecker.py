@@ -69,6 +69,7 @@ def repository_dependencies_by_url(github_url: str):
     return repository_dependencies(owner, name)
 
 # Endpoint to check compatibility of repository dependencies
+# TODO validate if main repo license should be skipped
 @router.get("/check/{owner}/{name}")
 def check_repository_dependencies(owner: str, name: str):
     dependencies = repository_dependencies(owner, name)
