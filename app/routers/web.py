@@ -15,6 +15,7 @@ import re
 import string
 import random
 import datetime
+import os
 
 
 # Initialize an API router with a specific prefix and response settings
@@ -25,7 +26,7 @@ router = APIRouter(
 )
 
 # Setup a SPARQL wrapper to interact with a SPARQL database endpoint
-sparql = SPARQLWrapper("http://virtuoso-db:8890/sparql")
+sparql = SPARQLWrapper(os.getenv('DB_URL'))
 
 # Jinja2 templates configuration for rendering HTML templates from a specified directory
 templates = Jinja2Templates(directory="app/templates")
@@ -406,7 +407,7 @@ async def form_post(request: Request):
 
     # Insert the serialized data into a SPARQL endpoint
     custom_licenses_graph_uri = "https://dalicc.net/customlicenses/"
-    sparqlc = SPARQLWrapper("http://virtuoso-db:8890/sparql")
+    sparqlc = SPARQLWrapper(os.getenv('DB_URL'))
     sparqlc.method = 'POST'
     query = f"""
         INSERT {{
@@ -641,7 +642,7 @@ def html_search(request: Request, license_id):
     g = Graph()
 
     # SPARQL endpoint URL
-    endpoint = "http://virtuoso-db:8890/sparql"
+    endpoint = os.getenv('DB_URL')
     # Constructing the full license URI using the provided license ID
     license_uri = "https://dalicc.net/licenselibrary/" + license_id
 

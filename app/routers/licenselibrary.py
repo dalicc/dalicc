@@ -15,6 +15,7 @@ import requests
 from fuzzywuzzy import fuzz
 import json as stdjson
 from rdflib.plugin import register, Parser
+import os
 
 # Type definitions for JSON structures
 JSONObject = Dict[AnyStr, Any]
@@ -29,7 +30,7 @@ router = APIRouter(
 )
 
 # Initialize SPARQLWrapper with the endpoint
-sparql = SPARQLWrapper("http://virtuoso-db:8890/sparql")
+sparql = SPARQLWrapper(os.getenv('DB_URL'))
 
 # Enum classes for defining various states in the license library
 class ActionState(Enum):
@@ -113,6 +114,7 @@ def get_license_by_id(license_id, request: Request, format: Optional[LicenseForm
     * license_id (str): The ID of the license (e.g., "Apache-2.0").
     * format (LicenseFormat, optional): The desired format of the license (json-ld, ttl, rdf-xml).
     * download (bool, optional): If True, provides the license as a downloadable file.
+    * Accept Header: if text/html then a link to the HTML website is returned
     """
     
     # Redirects to an HTML page if the Accept header is set to text/html
@@ -123,55 +125,56 @@ def get_license_by_id(license_id, request: Request, format: Optional[LicenseForm
     # Create a graph to parse the license data
     g = Graph()
     try:
-        g.parse("licensedata/licenses/" + license_id + ".ttl", format="turtle")
+        g.parse("/app/licensedata/licenses/" + license_id + ".ttl", format="turtle")
     except Exception:
+        print("::: error loading license file in graph - ", "/app/licensedata/licenses/" + license_id + ".ttl")
         pass  # Handle exception if needed
 
     # Context dictionary for JSON-LD serialization
-        context_dict = {
-        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-        "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "dcat": "http://www.w3.org/ns/dcat#",
-        "dct": "http://purl.org/dc/terms/",
-        "foaf": "http://xmlns.com/foaf/0.1/",
-        "dalicc": "https://dalicc.net/ns#",
-        "dalicclib": "https://dalicc.net/licenselibrary/",
-        "cc": "http://creativecommons.org/ns#",
-        "odrl": "http://www.w3.org/ns/odrl/2/",
-        "osl": "http://opensource.org/licenses/",
-        "scho": "http://schema.org/"
-        }
-        
-        # Preparing the filename for the output
-        filename = "app/temp/" + license_id
-        extension = None
+    context_dict = {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "dalicc": "https://dalicc.net/ns#",
+    "dalicclib": "https://dalicc.net/licenselibrary/",
+    "cc": "http://creativecommons.org/ns#",
+    "odrl": "http://www.w3.org/ns/odrl/2/",
+    "osl": "http://opensource.org/licenses/",
+    "scho": "http://schema.org/"
+    }
+    
+    # Preparing the filename for the output
+    filename = "app/temp/" + license_id
+    extension = None
 
-        # Serialize the graph to the specified format
-        if format == LicenseFormat.jsonld:
-            # Register the JSON-LD parser
-            register('json-ld', Parser, 'rdflib_jsonld.parser', 'JsonLDParser')
-            extension = ".json"
-            filename += extension
-            license_data = g.serialize(format='json-ld', context=context_dict, indent=2)
-            jsonld_dict = stdjson.loads(license_data)
-            license_data = flatten_ids(jsonld_dict)
-        elif format == LicenseFormat.rdfxml:
-            extension = ".xml"
-            filename += extension
-            license_data = g.serialize(format='xml')
-        elif format == LicenseFormat.ttl:
-            extension = ".ttl"
-            filename += extension
-            license_data = g.serialize(format='ttl')
+    # Serialize the graph to the specified format
+    if format == LicenseFormat.jsonld:
+        # Register the JSON-LD parser
+        register('json-ld', Parser, 'rdflib_jsonld.parser', 'JsonLDParser')
+        extension = ".json"
+        filename += extension
+        license_data = g.serialize(format='json-ld', context=context_dict, indent=2)
+        jsonld_dict = stdjson.loads(license_data)
+        license_data = flatten_ids(jsonld_dict)
+    elif format == LicenseFormat.rdfxml:
+        extension = ".xml"
+        filename += extension
+        license_data = g.serialize(format='xml')
+    elif format == LicenseFormat.ttl:
+        extension = ".ttl"
+        filename += extension
+        license_data = g.serialize(format='ttl')
 
-        # Handling download option
-        if download:
-            with open(filename, "w") as f:
-                f.write(license_data)
-            return FileResponse(path=filename, filename=license_id + extension)
-        else:
-            return license_data if format == LicenseFormat.jsonld else license_data
+    # Handling download option
+    if download:
+        with open(filename, "w") as f:
+            f.write(license_data)
+        return FileResponse(path=filename, filename=license_id + extension)
+    else:
+        return license_data if format == LicenseFormat.jsonld else license_data
 
         
 # Function to calculate similarity score between strings
