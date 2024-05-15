@@ -114,6 +114,7 @@ def get_license_by_id(license_id, request: Request, format: Optional[LicenseForm
     * license_id (str): The ID of the license (e.g., "Apache-2.0").
     * format (LicenseFormat, optional): The desired format of the license (json-ld, ttl, rdf-xml).
     * download (bool, optional): If True, provides the license as a downloadable file.
+    * Accept Header: if text/html then a link to the HTML website is returned
     """
     
     # Redirects to an HTML page if the Accept header is set to text/html
