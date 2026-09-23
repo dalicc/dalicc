@@ -1,0 +1,58 @@
+# Version 1 of the dg_br dependency graph, 2026-09-23. Reviewer: Giray Havur.
+#
+# Brazil default rules (proposal)
+#
+# This graph holds default rules only and no axioms of its own: it names the core graph
+# with dalicc:extendsGraph, so a check under it sees the 46 curated axioms, the adopted
+# endorsement rule and the rules below. Every rule below is dalicc:Proposed. A proposed
+# rule takes part in a check only when a reader chooses this graph, which is the reader's
+# request to see what the rule would do.
+#
+# NOTHING IN THIS FILE IS LEGAL ADVICE. Each rule names the statute or the principle it
+# rests on so that a reader can check it, and each one is a proposal for the association's
+# legal reviewer, who decides whether it is adopted. What a licence means is decided by
+# its text, and what the law of a country requires is decided by that country's courts.
+#
+# Two things the action layer cannot carry, and therefore does not: implied warranties
+# and the consumer rules that go with them, which bind the parties rather than describe
+# an act the licensee may do; and the reservation a rightholder may make against
+# commercial mining, which is a fact about one work rather than a statement of a licence.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+
+<https://dalicc.net/dependencygraph/dg_br> dct:title "Brazil default rules (proposal)"@en ;
+    dct:description """The core graph plus the default rules proposed for Brazil: moral rights the law declares inalienable, integration of a program with another, which the software law allows, and mining, for which the list of limitations has no entry. Every rule is a proposal for the association's legal reviewer. Nothing in it is legal advice."""@en ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:extendsGraph <https://dalicc.net/dependencygraph/dg_default> .
+
+<https://dalicc.net/dependencygraph/rules/br-moral> a dalicc:DefaultRule ;
+    rdfs:label "Moral rights are inalienable in Brazil"@en ;
+    dalicc:appliesTo dalicc:moralRightsRestriction ;
+    dalicc:defaultOutcome dalicc:NotWaivable ;
+    dalicc:inJurisdiction dalicc:BR ;
+    dalicc:ruleBasis "Lei 9.610/1998 article 27: the moral rights of the author are inalienable and cannot be renounced, so a clause of the licence that gives them up has no effect" ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .
+
+<https://dalicc.net/dependencygraph/rules/br-interop> a dalicc:DefaultRule ;
+    rdfs:label "Integrating a program with another is allowed unless the licence forbids it"@en ;
+    dalicc:appliesTo dalicc:reverseEngineerForInteroperability ;
+    dalicc:defaultOutcome dalicc:GrantedByDefault ;
+    dalicc:inJurisdiction dalicc:BR ;
+    dalicc:ruleBasis "Lei 9.609/1998 article 6(IV): the integration of a program into an application or system of the licensee, kept for the licensee's own use, is not an infringement" ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .
+
+<https://dalicc.net/dependencygraph/rules/br-tdm> a dalicc:DefaultRule ;
+    rdfs:label "Mining is not allowed unless the licence allows it"@en ;
+    dalicc:appliesTo dalicc:textAndDataMining ;
+    dalicc:defaultOutcome dalicc:NotGrantedByDefault ;
+    dalicc:inJurisdiction dalicc:BR ;
+    dalicc:ruleBasis "Lei 9.610/1998 article 46 lists the limitations on copyright and names no general exception for text and data mining" ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .

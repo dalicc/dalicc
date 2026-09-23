@@ -1,0 +1,108 @@
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic"@en in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/CC-BY-NC-SA-2.0
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:CC-BY-NC-SA-2.0 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "CC-BY-NC-SA-2.0" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://creativecommons.org/licenses/by-nc-sa/2.0/legalcode> ;
+    dalicc:LiabilityLimitation "EXCEPT TO THE EXTENT REQUIRED BY APPLICABLE LAW, IN NO EVENT WILL LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY FOR ANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES ARISING OUT OF THIS LICENSE OR THE USE OF THE WORK, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES." ;
+    dalicc:WarrantyDisclaimer "UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, LICENSOR OFFERS THE WORK AS-IS AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING, WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTIBILITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, OR THE ABSENCE OF LATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS, WHETHER OR NOT DISCOVERABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO SUCH EXCLUSION MAY NOT APPLY TO YOU." ;
+    dalicc:additionalClauses "You may not offer or impose any terms on the Work that alter or restrict the terms of this License or the recipients' exercise of the rights granted hereunder. You may not sublicense the Work. You must keep intact all notices that refer to this License and to the disclaimer of warranties. You may not distribute, publicly display, publicly perform, or publicly digitally perform the Work with any technological measures that control access or use of the Work in a manner inconsistent with the terms of this License Agreement.",
+        "You may distribute, publicly display, publicly perform, or publicly digitally perform a Derivative Work only under the terms of this License, a later version of this License with the same License Elements as this License, or a Creative Commons iCommons license that contains the same License Elements as this License (e.g. Attribution-NonCommercial-ShareAlike 2.0 Japan). You must include a copy of, or the Uniform Resource Identifier for, this License or other license specified in the previous sentence with every copy or phonorecord of each Derivative Work You distribute, publicly display, publicly perform, or publicly digitally perform. You may not offer or impose any terms on the Derivative Works that alter or restrict the terms of this License or the recipients' exercise of the rights granted hereunder, and You must keep intact all notices that refer to this License and to the disclaimer of warranties. You may not distribute, publicly display, publicly perform, or publicly digitally perform the Derivative Work with any technological measures that control access or use of the Work in a manner inconsistent with the terms of this License Agreement. The above applies to the Derivative Work as incorporated in a Collective Work, but this does not require the Collective Work apart from the Derivative Work itself to be made subject to the terms of this License.",
+        "You may not exercise any of the rights granted to You in Section 3 above in any manner that is primarily intended for or directed toward commercial advantage or private monetary compensation. The exchange of the Work for other copyrighted works by means of digital file-sharing or otherwise shall not be considered to be intended for or directed toward commercial advantage or private monetary compensation, provided there is no payment of any monetary compensation in connection with the exchange of copyrighted works.",
+        "For the avoidance of doubt, where the Work is a musical composition: i. Performance Royalties Under Blanket Licenses. Licensor reserves the exclusive right to collect, whether individually or via a performance rights society (e.g. ASCAP, BMI, SESAC), royalties for the public performance or public digital performance (e.g. webcast) of the Work if that performance is primarily intended for or directed toward commercial advantage or private monetary compensation. ii. Mechanical Rights and Statutory Royalties. Licensor reserves the exclusive right to collect, whether individually or via a music rights agency or designated agent (e.g. Harry Fox Agency), royalties for any phonorecord You create from the Work (\"cover version\") and distribute, subject to the compulsory license created by 17 USC Section 115 of the US Copyright Act (or the equivalent in other jurisdictions), if Your distribution of such cover version is primarily intended for or directed toward commercial advantage or private monetary compensation.",
+        "Webcasting Rights and Statutory Royalties. For the avoidance of doubt, where the Work is a sound recording, Licensor reserves the exclusive right to collect, whether individually or via a performance-rights society (e.g. SoundExchange), royalties for the public digital performance (e.g. webcast) of the Work, subject to the compulsory license created by 17 USC Section 114 of the US Copyright Act (or the equivalent in other jurisdictions), if Your public digital performance is primarily intended for or directed toward commercial advantage or private monetary compensation.",
+        "This License and the rights granted hereunder will terminate automatically upon any breach by You of the terms of this License. Individuals or entities who have received Derivative Works or Collective Works from You under this License, however, will not have their licenses terminated provided such individuals or entities remain in full compliance with those licenses. Sections 1, 2, 5, 6, 7, and 8 will survive any termination of this License.",
+        "Each time You distribute or publicly digitally perform the Work or a Collective Work, the Licensor offers to the recipient a license to the Work on the same terms and conditions as the license granted to You under this License.",
+        "Each time You distribute or publicly digitally perform a Derivative Work, Licensor offers to the recipient a license to the original Work on the same terms and conditions as the license granted to You under this License.",
+        "If any provision of this License is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this License, and without further action by the parties to this agreement, such provision shall be reformed to the minimum extent necessary to make such provision valid and enforceable.",
+        "Except for the limited purpose of indicating to the public that the Work is licensed under the CCPL, neither party will use the trademark \"Creative Commons\" or any related trademark or logo of Creative Commons without the prior written consent of Creative Commons. Any permitted use will be in compliance with Creative Commons' then-current trademark usage guidelines, as may be published on its website or otherwise made available upon request from time to time." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
+    dalicc:reciprocityScope "the derivative work, not a collective work the work is included in" ;
+    dalicc:shareAlikeVersionQualifier "this License, a later version of this License with the same License Elements, or a Creative Commons iCommons license with the same License Elements" ;
+    dalicc:variantKind "version" ;
+    dalicc:licenseVersion "2.0" ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-22"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CC-BY-NC-SA-2.0/versions> ;
+    dct:alternative "Attribution NonCommercial ShareAlike 2.0 Generic",
+        "Attribution-NonCommercial-ShareAlike 2.0",
+        "Attribution-NonCommercial-ShareAlike 2.0 Generic",
+        "CC BY NC SA 2.0",
+        "CC BY-NC-SA 2.0",
+        "CC-BY-NC-SA 2.0",
+        "CC-BY-NC-SA-2.0",
+        "Creative Commons Attribution Non Commercial Share Alike 2.0 Generic",
+        "Creative Commons BY-NC-SA 2.0" ;
+    dct:hasVersion "1" ;
+    dct:modified "2026-09-22"^^xsd:date ;
+    dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/licenses/by-nc-sa/2.0/> ;
+    dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic"@en ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ] ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:royaltyCollectionReserved ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] ;
+    foaf:logo <https://licensebuttons.net/l/by-nc-sa/2.0/88x31.png> .

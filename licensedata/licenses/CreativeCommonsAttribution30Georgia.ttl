@@ -43,8 +43,8 @@ dalicclib:CreativeCommonsAttribution30Georgia a odrl:Set ;
         "CC-BY-3.0 GE",
         "Creative Commons BY 3.0",
         "Creative Commons BY 3.0 GE" ;
-    dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "3" ;
+    dct:modified "2026-09-23"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by/3.0/ge/> ;
     dct:title "Creative Commons Attribution 3.0 Georgia"@en ;
@@ -86,8 +86,6 @@ dalicclib:CreativeCommonsAttribution30Georgia a odrl:Set ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;

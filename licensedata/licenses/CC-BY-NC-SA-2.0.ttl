@@ -52,8 +52,8 @@ dalicclib:CC-BY-NC-SA-2.0 a odrl:Set ;
         "CC-BY-NC-SA-2.0",
         "Creative Commons Attribution Non Commercial Share Alike 2.0 Generic",
         "Creative Commons BY-NC-SA 2.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-23"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc-sa/2.0/> ;
     dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic"@en ;
@@ -97,8 +97,6 @@ dalicclib:CC-BY-NC-SA-2.0 a odrl:Set ;
             odrl:action cc:CommercialUse ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:royaltyCollectionReserved ],
         [ a odrl:Prohibition ;

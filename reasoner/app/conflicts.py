@@ -23,11 +23,17 @@ from .answersets import Atom, extract_answer_sets, parse_atoms
 
 __all__ = [
     "CONTRADICTION_HEADLINE",
+    "DEFAULT_KINDS",
+    "DEFAULT_RULE_REASON",
     "DERIVED_HEADLINE",
     "DIRECT_REASON",
     "DIRECT_REASONS",
+    "NOT_WAIVABLE_REASON",
+    "ORIGIN_FROM_DEFAULT_RULE",
+    "ORIGIN_FROM_TEXT",
     "atoms_from_stdout",
     "build_conflict_response",
+    "build_defaults",
     "build_dependency_graph_rows",
     "empty_conflict_response",
 ]
@@ -57,6 +63,36 @@ DIRECT_REASONS = {
         "work could leave the license that requires it to stay."
     ),
 }
+
+#: The two values ``dalicc:statementOrigin`` takes in an answer.  Every statement a
+#: licence makes is ``FromText``; a statement a default rule supplied for an action the
+#: licence is silent about is ``FromDefaultRule``, and the rule that supplied it is
+#: named beside it so a reader can look it up.
+ORIGIN_FROM_TEXT = "https://dalicc.net/ns#FromText"
+ORIGIN_FROM_DEFAULT_RULE = "https://dalicc.net/ns#FromDefaultRule"
+
+#: ``odrl`` predicate -> the word the ``defaults`` array uses for it.
+DEFAULT_KINDS = {
+    "http://www.w3.org/ns/odrl/2/permission": "permission",
+    "http://www.w3.org/ns/odrl/2/prohibition": "prohibition",
+    "http://www.w3.org/ns/odrl/2/duty": "duty",
+}
+
+#: The sentence a derived statement carries.  It says what the statement is and where
+#: it came from, and it never claims that the licence says it.
+DEFAULT_RULE_REASON = (
+    "This license says nothing about the action. The statement comes from a default "
+    "rule of the dependency graph, not from the text."
+)
+
+#: The sentence a dalicc:NotWaivable finding carries.  Such a rule adds nothing: it
+#: reports that the licence states something the law of that jurisdiction does not let
+#: it state, and the record is left as it is.
+NOT_WAIVABLE_REASON = (
+    "This license states the action, and a default rule of the dependency graph says "
+    "that a license cannot decide it in that jurisdiction. The statement is reported "
+    "and not overridden."
+)
 
 PREFIX_BY_RELATION = {
     "sameAs": "http://www.w3.org/2002/07/owl#",
@@ -107,11 +143,82 @@ def _derived_reason(args: tuple[str, ...]) -> str:
     return f"{headline} ({due_to_1},{prefix}{relation},{due_to_2}) {tail}"
 
 
+def build_defaults(atoms: list[Atom]) -> list[dict[str, Any]]:
+    """The ``defaults`` array: what the default rules said about each licence.
+
+    One entry per derived statement and per ``dalicc:NotWaivable`` finding, sorted so
+    that the same answer always comes back in the same order.  The array is additive:
+    it is left out of the answer entirely when no rule fired, so a deployment whose
+    graph carries no rules gets the answer it has always got.
+    """
+    out: list[dict[str, Any]] = []
+    for atom in atoms:
+        if atom.name == "defaultStatement":
+            if len(atom.args) < 4:
+                logger.warning("skipping malformed defaultStatement/%d", len(atom.args))
+                continue
+            licence, predicate, action, rule = atom.args[:4]
+            out.append(
+                {
+                    "license": licence,
+                    "kind": DEFAULT_KINDS.get(predicate, "statement"),
+                    "statement": [licence, predicate, action],
+                    "action": action,
+                    "origin": ORIGIN_FROM_DEFAULT_RULE,
+                    "rule": rule,
+                    "reason": DEFAULT_RULE_REASON,
+                }
+            )
+        elif atom.name == "defaultFinding":
+            if len(atom.args) < 4:
+                logger.warning("skipping malformed defaultFinding/%d", len(atom.args))
+                continue
+            licence, action, rule, predicate = atom.args[:4]
+            out.append(
+                {
+                    "license": licence,
+                    "kind": "finding",
+                    "statement": [licence, predicate, action],
+                    "action": action,
+                    "origin": ORIGIN_FROM_DEFAULT_RULE,
+                    "rule": rule,
+                    "reason": NOT_WAIVABLE_REASON,
+                }
+            )
+    out.sort(key=lambda entry: (entry["license"], entry["kind"], entry["action"], entry["rule"]))
+    return out
+
+
 def build_conflict_response(atoms: list[Atom]) -> dict[str, Any]:
-    """Build ``{"conflicting_statements": {"direct": ..., "derived": ...}}``."""
+    """Build ``{"conflicting_statements": {"direct": ..., "derived": ...}}``.
+
+    When the dependency graph carries default rules that fired, the answer also holds
+    an additive ``defaults`` array, and every conflict carries ``origin_1``,
+    ``origin_2``, ``rule_1`` and ``rule_2``, which say for each side whether it came
+    from the text of the licence or from one of those rules.  Neither is present when
+    no rule fired, so the historical answer is unchanged byte for byte.
+    """
     response = empty_conflict_response()
     direct = response["conflicting_statements"]["direct"]
     derived = response["conflicting_statements"]["derived"]
+
+    defaults = build_defaults(atoms)
+    supplied = {
+        (entry["statement"][0], entry["statement"][1], entry["statement"][2]): entry["rule"]
+        for entry in defaults
+        if entry["kind"] != "finding"
+    }
+
+    def origins(statement_1: list[str], statement_2: list[str]) -> dict[str, str]:
+        """``origin_n`` and ``rule_n`` for the two sides of one conflict."""
+        out: dict[str, str] = {}
+        for position, statement in ((1, statement_1), (2, statement_2)):
+            rule = supplied.get(tuple(statement), "")
+            out[f"origin_{position}"] = (
+                ORIGIN_FROM_DEFAULT_RULE if rule else ORIGIN_FROM_TEXT
+            )
+            out[f"rule_{position}"] = rule
+        return out
 
     direct_index = 0
     derived_index = 0
@@ -121,22 +228,30 @@ def build_conflict_response(atoms: list[Atom]) -> dict[str, Any]:
                 logger.warning("skipping malformed directConflict/%d", len(atom.args))
                 continue
             kind = atom.args[6] if len(atom.args) > 6 else "direct"
+            statement_1 = [atom.args[0], atom.args[1], atom.args[2]]
+            statement_2 = [atom.args[3], atom.args[4], atom.args[5]]
             direct[str(direct_index)] = {
-                "statement_1": [atom.args[0], atom.args[1], atom.args[2]],
-                "statement_2": [atom.args[3], atom.args[4], atom.args[5]],
+                "statement_1": statement_1,
+                "statement_2": statement_2,
                 "reason": DIRECT_REASONS.get(kind, DIRECT_REASON),
+                **(origins(statement_1, statement_2) if defaults else {}),
             }
             direct_index += 1
         elif atom.name == "derivedConflict":
             if len(atom.args) < 10:
                 logger.warning("skipping malformed derivedConflict/%d", len(atom.args))
                 continue
+            statement_1 = [atom.args[0], atom.args[1], atom.args[2]]
+            statement_2 = [atom.args[3], atom.args[4], atom.args[5]]
             derived[str(derived_index)] = {
-                "statement_1": [atom.args[0], atom.args[1], atom.args[2]],
-                "statement_2": [atom.args[3], atom.args[4], atom.args[5]],
+                "statement_1": statement_1,
+                "statement_2": statement_2,
                 "reason": _derived_reason(atom.args),
+                **(origins(statement_1, statement_2) if defaults else {}),
             }
             derived_index += 1
+    if defaults:
+        response["defaults"] = defaults
     return response
 
 

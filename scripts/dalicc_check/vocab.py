@@ -48,10 +48,19 @@ __all__ = [
     "ACTIONS",
     "ACTIONS_BY_CURIE",
     "ASSET_TYPES",
+    "DEFAULT_OUTCOMES",
+    "JURISDICTIONS",
     "JURISDICTION_WORLDWIDE",
     "NAMESPACES",
+    "ORIGIN_FROM_DEFAULT_RULE",
+    "ORIGIN_FROM_TEXT",
+    "OUTCOME_NOT_GRANTED",
     "POLICY_QUALITIES",
     "PROPERTY_LABELS",
+    "RULE_STATUSES",
+    "RULE_STATUS_ADOPTED",
+    "RULE_STATUS_PROPOSED",
+    "STATEMENT_ORIGINS",
     "VOCABULARY_FILE",
     "Term",
     "action_description",
@@ -64,6 +73,9 @@ __all__ = [
     "humanize_local_name",
     "humanize_value",
     "is_known_action",
+    "is_known_jurisdiction",
+    "jurisdiction_label",
+    "jurisdiction_phrase",
     "policy_quality",
     "resolve_action",
     "term_payload",
@@ -658,6 +670,15 @@ _UNUSED_NOTES = (
 
 _PROPERTY_TYPES = (OWL.DatatypeProperty, OWL.ObjectProperty, OWL.AnnotationProperty)
 
+#: The classes whose instances belong to the default-rule vocabulary rather than to the
+#: policy qualities a license carries.
+_RULE_VOCABULARY_CLASSES = {
+    _DALICC.DefaultOutcome,
+    _DALICC.RuleStatus,
+    _DALICC.StatementOrigin,
+    _DALICC.Jurisdiction,
+}
+
 
 def _vocabulary_file() -> Path | None:
     """Locate ``licensedata/vocabulary/dalicc-ns.ttl``.
@@ -698,8 +719,17 @@ def _collapse(text: str) -> str:
     return " ".join(text.split())
 
 
-def _load_vocabulary(path: Path) -> tuple[list[Term], list[Term], dict[str, str], dict[str, str]]:
-    """Read the vocabulary file and return its actions, qualities, assets and properties."""
+def _load_vocabulary(
+    path: Path,
+) -> tuple[list[Term], list[Term], dict[str, str], dict[str, str], dict[str, dict[str, str]]]:
+    """Read the vocabulary file and return what the service reads out of it.
+
+    The last member is the default-rule vocabulary of version 7: the instances of
+    ``dalicc:DefaultOutcome``, ``dalicc:RuleStatus``, ``dalicc:StatementOrigin`` and
+    ``dalicc:Jurisdiction``, each as ``IRI -> label``.  A default rule may only name one
+    of these, and the form that validates a rule reads exactly this, so the file stays
+    the single definition of what a rule may say.
+    """
     graph = rdflib.Graph()
     graph.parse(path.as_posix(), format="turtle")
 
@@ -707,6 +737,12 @@ def _load_vocabulary(path: Path) -> tuple[list[Term], list[Term], dict[str, str]
     qualities: list[Term] = []
     asset_types: dict[str, str] = {}
     property_labels: dict[str, str] = {}
+    controlled: dict[str, dict[str, str]] = {
+        "outcomes": {},
+        "statuses": {},
+        "origins": {},
+        "jurisdictions": {},
+    }
 
     for subject in sorted(graph.subjects(RDFS.isDefinedBy, _NS_IRI), key=str):
         if not isinstance(subject, rdflib.URIRef) or not str(subject).startswith(str(_DALICC)):
@@ -715,6 +751,14 @@ def _load_vocabulary(path: Path) -> tuple[list[Term], list[Term], dict[str, str]
         curie = "dalicc:" + iri[len(str(_DALICC)) :]
         types = set(graph.objects(subject, RDF.type))
         label = _collapse(_english(graph, subject, RDFS.label)) or humanize_local_name(iri)
+        for class_name, bucket in (
+            ("DefaultOutcome", "outcomes"),
+            ("RuleStatus", "statuses"),
+            ("StatementOrigin", "origins"),
+            ("Jurisdiction", "jurisdictions"),
+        ):
+            if _DALICC[class_name] in types:
+                controlled[bucket][iri] = label
         comment = _collapse(_english(graph, subject, RDFS.comment))
         definition = _collapse(_english(graph, subject, SKOS.definition))
         description = definition or comment
@@ -753,7 +797,13 @@ def _load_vocabulary(path: Path) -> tuple[list[Term], list[Term], dict[str, str]
             property_labels[iri] = label
             continue
 
-        if SKOS.Concept in types:
+        if SKOS.Concept in types and not (types & _RULE_VOCABULARY_CLASSES):
+            # The controlled values of a default rule and the region jurisdictions are
+            # concepts too, and they are collected above.  They are not policy
+            # qualities: a license never carries one, and the lists that offer the
+            # qualities for authoring and for the translation prompt would be wrong to
+            # show them.  ``dalicc:worldwide`` is in the hand-written table and keeps
+            # its place there.
             qualities.append(
                 Term(
                     iri=iri,
@@ -769,7 +819,7 @@ def _load_vocabulary(path: Path) -> tuple[list[Term], list[Term], dict[str, str]
                     replaced_by=replaced_by,
                 )
             )
-    return actions, qualities, asset_types, property_labels
+    return actions, qualities, asset_types, property_labels, controlled
 
 
 def _merge(builtin: tuple[Term, ...], loaded: list[Term]) -> tuple[Term, ...]:
@@ -799,6 +849,7 @@ _LOADED_ACTIONS: list[Term] = []
 _LOADED_QUALITIES: list[Term] = []
 _LOADED_ASSETS: dict[str, str] = {}
 _LOADED_PROPERTIES: dict[str, str] = {}
+_LOADED_CONTROLLED: dict[str, dict[str, str]] = {}
 if VOCABULARY_FILE is not None:
     try:
         (
@@ -806,6 +857,7 @@ if VOCABULARY_FILE is not None:
             _LOADED_QUALITIES,
             _LOADED_ASSETS,
             _LOADED_PROPERTIES,
+            _LOADED_CONTROLLED,
         ) = _load_vocabulary(VOCABULARY_FILE)
     except Exception:  # pragma: no cover - a broken file must not break the app
         LOG.exception("cannot read the DALICC vocabulary from %s", VOCABULARY_FILE)
@@ -823,6 +875,69 @@ ACTIONS_BY_CURIE: dict[str, Term] = {term.curie: term for term in _TERMS}
 #: IRI -> :class:`Term` for the policy-level qualities (validity, jurisdiction,
 #: revocability, cost).  Keyed by IRI *and* CURIE, like the action maps.
 POLICY_QUALITIES: dict[str, Term] = {term.iri: term for term in _QUALITIES}
+
+#: The controlled values a ``dalicc:DefaultRule`` may name, read from the vocabulary
+#: file.  ``DEFAULT_OUTCOMES`` are the four conclusions a rule can draw,
+#: ``RULE_STATUSES`` are adopted and proposed, ``STATEMENT_ORIGINS`` are the two values
+#: a finding carries to say whether it came from the text or from a rule, and
+#: ``JURISDICTIONS`` are ``dalicc:worldwide`` and the region concepts version 7 defines.
+#: A rule that names anything else is refused by the editor and ignored by the reasoner.
+DEFAULT_OUTCOMES: dict[str, str] = dict(_LOADED_CONTROLLED.get("outcomes", {}))
+RULE_STATUSES: dict[str, str] = dict(_LOADED_CONTROLLED.get("statuses", {}))
+STATEMENT_ORIGINS: dict[str, str] = dict(_LOADED_CONTROLLED.get("origins", {}))
+JURISDICTIONS: dict[str, str] = dict(_LOADED_CONTROLLED.get("jurisdictions", {}))
+
+#: The outcome a rule names when nothing else is chosen, and the status that keeps a
+#: rule out of every check the reader did not ask for.
+OUTCOME_NOT_GRANTED = "https://dalicc.net/ns#NotGrantedByDefault"
+RULE_STATUS_ADOPTED = "https://dalicc.net/ns#Adopted"
+RULE_STATUS_PROPOSED = "https://dalicc.net/ns#Proposed"
+ORIGIN_FROM_TEXT = "https://dalicc.net/ns#FromText"
+ORIGIN_FROM_DEFAULT_RULE = "https://dalicc.net/ns#FromDefaultRule"
+
+
+#: Territory names that read as "in the ..." rather than "in ...".
+_ARTICLE_JURISDICTIONS = frozenset(
+    {"European Union", "United States", "United Kingdom", "Netherlands", "Philippines"}
+)
+
+
+def jurisdiction_phrase(iri: str) -> str:
+    """The territory as it reads inside a sentence: "in Austria", "in the EU"."""
+    label = jurisdiction_label(iri)
+    if not label:
+        return ""
+    if label == "Worldwide":
+        return "every jurisdiction"
+    return f"the {label}" if label in _ARTICLE_JURISDICTIONS else label
+
+
+def jurisdiction_label(iri: str) -> str:
+    """The label of a jurisdiction: a region, ``worldwide``, or a BPI country name."""
+    candidate = expand_curie(iri) or (iri or "").strip()
+    known = JURISDICTIONS.get(candidate)
+    if known:
+        return known
+    quality = POLICY_QUALITIES.get(candidate)
+    if quality is not None:
+        return quality.label
+    return humanize_local_name(candidate) if candidate else ""
+
+
+def is_known_jurisdiction(iri: str) -> bool:
+    """True for a region or ``dalicc:worldwide``, or for a BPI country IRI.
+
+    The BPI country list is not shipped with the service, so a country is accepted on
+    the shape of its IRI rather than on membership: the records name countries in that
+    scheme and a rule has to be able to name the same ones.
+    """
+    candidate = expand_curie(iri) or (iri or "").strip()
+    if candidate in JURISDICTIONS:
+        return True
+    return candidate.startswith(NAMESPACES["bpicounty"]) and len(candidate) > len(
+        NAMESPACES["bpicounty"]
+    )
+
 
 #: Asset-type IRI -> label, as ``odrl:target``/``dct:type`` carries them.  The two
 #: Dublin Core types are fixed; the DALICC ones come from ``dalicc:AssetType`` in the

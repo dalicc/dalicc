@@ -39,8 +39,8 @@ dalicclib:CC-BY-NC-SA-4.0 a odrl:Set ;
         "CC-BY-NC-SA 4.0 International",
         "Creative Commons BY-NC-SA 4.0",
         "Creative Commons BY-NC-SA 4.0 International" ;
-    dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "3" ;
+    dct:modified "2026-09-23"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc-sa/4.0/> ;
     dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"@en ;
@@ -79,7 +79,13 @@ dalicclib:CC-BY-NC-SA-4.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
-            odrl:action dalicc:chargeDistributionFee ] ;
+            odrl:action dalicc:chargeDistributionFee ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:suiGenerisDatabaseRights ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ] ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action cc:CommercialUse ],
         [ a odrl:Prohibition ;

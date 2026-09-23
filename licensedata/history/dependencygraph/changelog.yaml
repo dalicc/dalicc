@@ -1,6 +1,6 @@
 id: dg_default
 title: DALICC deontic dependency graph
-current_version: 4
+current_version: 5
 entries:
 - version: 2
   date: '2026-09-15'
@@ -107,4 +107,29 @@ entries:
     reason: odrl:display is 'create a static and transient rendition of the work' and odrl:play is
       'render the asset in an audio or video form'. A static rendition is not an audio or video one,
       so displaying is not a kind of playing. Both remain kinds of odrl:present.
+    source: dependency-graph-review 2026-09-23
+- version: 5
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: 'The graph gained a second kind of statement. An axiom relates two actions; a default rule
+    says what applies to an action a licence is silent about, in which jurisdiction, and on the strength
+    of which legal source. The first adopted rule is the one the library had been keeping as a house
+    convention on 519 records: a copyright licence that says nothing about endorsement grants none.
+    The 46 axioms are unchanged.'
+  changes:
+  - action: added
+    statement: rule dalicc:promote dalicc:NotGrantedByDefault in dalicc:worldwide
+    reason: 'Open proposal 1 of the licence review: dalicc:promote was prohibited on 519 of 581 records
+      although the GNU texts and the older Creative Commons texts say nothing about endorsement. The
+      prohibition was a house convention resting on a legal default, so it belongs in the rule layer
+      and not in the records. Basis: trademark law and the protection of names, under which a copyright
+      licence that is silent grants no right to endorsement. Status: adopted, so a check that chooses
+      nothing reads a silent licence exactly as it read a record that carried the prohibition.'
+    source: dependency-graph-review 2026-09-23
+  - action: added
+    statement: the graphs dg_eu, dg_us, dg_cn, dg_gb, dg_jp, dg_in and dg_br
+    reason: The owner asked for options for the biggest markets. Each graph holds the default rules
+      proposed for one of them, names this graph with dalicc:extendsGraph so the axioms stay written
+      once, and carries only proposals, so nothing in it reaches a reader who chooses nothing. Every
+      rule names the statute or the principle it rests on, and nothing in any of them is legal advice.
     source: dependency-graph-review 2026-09-23

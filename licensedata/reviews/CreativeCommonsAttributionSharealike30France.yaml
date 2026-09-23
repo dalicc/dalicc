@@ -214,6 +214,29 @@ findings:
     this record from the other records of the BY-SA element set, across all three versions and every jurisdiction
     the library holds.'
   action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The record said nothing about the sui generis database right although the port''s own
+    text settles it, which the rubric 2 finding of this review read off the legal code: Article 3 grants,
+    over and above the copyright acts, the right to "extraire et reutiliser des parties substantielles"
+    when the work is a database, the definition of Oeuvre covers "une base de donnees dans la mesure ou
+    elle est protegee par le droit d''auteur ou le droit des producteurs de bases de donnees", and the
+    licensor waives its own sui generis right where it holds one, "l''Offrant renonce a ce droit", and
+    Article 4(e) adds that article 3 and articles 4(a) and 4(b) do not apply to the part of the work that
+    is covered by the database producer right alone. Exercising that right is therefore permitted by this
+    licence and dalicc:suiGenerisDatabaseRights is now a permission of the record. It carries no duty,
+    which is where the 3.0 ports part company with the 4.0 text their parent CC-BY-SA-4.0 models: Section
+    4(c) of 4.0 carries the conditions of Section 3(a) over to the database layer, while this port takes
+    its own restrictions off the material that qualifies only under the database right. The cc:ShareAlike
+    duty of this record sits at the level of the odrl:Set and still reaches this permission in the model;
+    the term that would take the conditions off the database layer does not exist, and the gap finding
+    of this review still records that. Under the proposed default rule eu-sui-generis-db of licensedata/dependencygraph/dg_eu.ttl
+    the database right is not granted unless the licence grants it, so a record that is silent reads as
+    a licence that keeps the right back, which this text contradicts.'
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
+    \ ] ;"
 family: 'Creative Commons 3.0 port: France (FR)'
 port_of: CC-BY-SA-4.0
 variant_kind: jurisdiction-port

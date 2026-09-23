@@ -48,8 +48,8 @@ dalicclib:CC-BY-2.5 a odrl:Set ;
         "CC-BY-2.5 Generic",
         "Creative Commons BY 2.5",
         "Creative Commons BY 2.5 Generic" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-23"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by/2.5/> ;
     dct:title "Creative Commons Attribution 2.5 Generic"@en ;
@@ -91,8 +91,6 @@ dalicclib:CC-BY-2.5 a odrl:Set ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;

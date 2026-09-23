@@ -1,6 +1,6 @@
 id: AttributionNoncommercial30Germany
 title: Creative Commons Attribution-NonCommercial 3.0 Germany
-current_version: 2
+current_version: 3
 entries:
 - version: 2
   date: '2026-09-15'
@@ -69,3 +69,18 @@ entries:
       the canonical URL of the licence, https://creativecommons.org/licenses/by-nc/3.0/de/, and the
       six 4.0 International parents carry exactly that pair, legal code plus deed. Added.
     source: review-finding 1/dct:source
+- version: 3
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: 'The port settles the sui generis database right in its own text: Section 1 counts a protected
+    database as licensed subject matter, "Soweit Datenbanken oder Zusammenstellungen von Daten einen
+    immaterialgueterrechtlichen Schutz eigener Art geniessen, unterfallen auch sie dem Begriff Schutzgegenstand
+    im Sinne dieser Lizenz", and Section 3 closes with the waiver "verzichtet der Lizenzgeber auf
+    saemtliche aus diesem Schutz resultierenden Rechte". dalicc:suiGenerisDatabaseRights is now permitted,
+    and it carries no duty because Section 4 adds that the restrictions do not bite on the parts that
+    are subject matter only because of that sui generis protection.'
+  changes:
+  - action: added
+    statement: permission dalicc:suiGenerisDatabaseRights
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

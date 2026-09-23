@@ -1,6 +1,6 @@
 id: CreativeCommonsAttributionNoncommercialSharealike30Luxembourg
 title: Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Luxembourg
-current_version: 2
+current_version: 3
 entries:
 - version: 2
   date: '2026-09-15'
@@ -69,3 +69,19 @@ entries:
       how the same question was decided for the Portuguese, Czech and Azerbaijani ports. The ports
       in this batch whose text has no database clause at all, Ecuador and Brazil, keep the proposal.
     source: review-finding 2/odrl:target
+- version: 3
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: 'The port settles the sui generis database right in its own text: Section 3 grants "Lorsque
+    l''Oeuvre est une base de donnees, extraire et reutiliser des parties substantielles de l''Oeuvre"
+    and closes with "Si le Donneur de Licence est le titulaire de droits de base de donnees sui generis
+    suivant la transposition en droit national de la Directive Europeenne sur les Bases de Donnees,
+    le Donneur de Licence renonce a ces droits". dalicc:suiGenerisDatabaseRights is now permitted,
+    and it carries no duty because Section 4(f) adds that the restrictions of 4(a) and 4(b) do not
+    apply to the parts of an Oeuvre that fall inside the definition only because they are governed
+    by that sui generis right.'
+  changes:
+  - action: added
+    statement: permission dalicc:suiGenerisDatabaseRights
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

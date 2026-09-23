@@ -1,6 +1,6 @@
 id: 0BSD
 title: Free Public License 1.0.0
-current_version: 4
+current_version: 5
 entries:
 - version: 2
   date: '2026-09-15'
@@ -89,5 +89,15 @@ entries:
   changes:
   - action: added
     statement: permission dalicc:ChangeLicense
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+- version: 5
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
+    now supplies it.
+  changes:
+  - action: removed
+    statement: prohibition dalicc:promote
     reason: Edited by hand; see the summary of this entry.
     source: manual

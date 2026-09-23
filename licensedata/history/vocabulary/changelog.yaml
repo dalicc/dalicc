@@ -1,84 +1,85 @@
 id: dalicc-ns
 title: DALICC vocabulary
-current_version: 6
+current_version: 7
 entries:
 - version: 2
   date: '2026-09-15'
   reviewer: Giray Havur
-  summary: The content review of 2026-09-15 defined the terms the license texts need and the review itself
-    writes, restated the definitions it had taken from the 2022 documentation and kept the misspelled
-    royalty term as a deprecated alias, and the model history added the two terms a versioned model needs.
+  summary: The content review of 2026-09-15 defined the terms the license texts need and the review
+    itself writes, restated the definitions it had taken from the 2022 documentation and kept the
+    misspelled royalty term as a deprecated alias, and the model history added the two terms a versioned
+    model needs.
   changes:
   - action: changed
     statement: owl:versionInfo "2.0"
     previous: owl:versionInfo "1.2.0"
-    reason: 'The vocabulary is versioned like every other curated model: version 1 is archived next to
-      this change log and owl:priorVersion names it.'
+    reason: 'The vocabulary is versioned like every other curated model: version 1 is archived next
+      to this change log and owl:priorVersion names it.'
     source: model-history
   - action: added
     statement: term dalicc:Approved
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:Audited
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:Created
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:RecordStatus
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:ReviewStatus
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:Reviewed
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:applyTechnicalProtectionMeasures
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:databaseRightWaiver
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:derivativeDatabaseAccess
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:downstreamOffer
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:exemptedMaterial
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:includeNoticeFile
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:jurisdictionPortOf
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:licenseVersion
@@ -87,83 +88,83 @@ entries:
     source: model-history
   - action: added
     statement: term dalicc:moralRightsNonAssertion
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:moralRightsRestriction
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:orLaterVersionOption
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:patentGrant
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:patentRetaliationTermination
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:recordStatus
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:reviewStatus
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:reviewedOn
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:royaltyCollectionReserved
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:shareAlikeVersionQualifier
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:suiGenerisDatabaseRights
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:terminationOnBreach
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:testFixture
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:translationOf
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:useForModelTraining
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:variantKind
-    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
-      and the model could not express.
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts
+      state and the model could not express.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:versionHistory
@@ -174,8 +175,8 @@ entries:
   date: '2026-09-15'
   reviewer: Giray Havur
   summary: The standard-license addition of 2026-09-15 defined the 26 terms the 116 new records needed,
-    classified every action as a rule action, a duty action or both so that app/services/vocab.py can
-    read the term table from this file, and refreshed the usage notes.
+    classified every action as a rule action, a duty action or both so that app/services/vocab.py
+    can read the term table from this file, and refreshed the usage notes.
   changes:
   - action: changed
     statement: owl:versionInfo "3.0"
@@ -184,13 +185,13 @@ entries:
     source: model-history
   - action: added
     statement: term dalicc:AssetType
-    reason: The class the asset types of the library belong to, so that app/services/vocab.py can read
-      them from the file instead of holding a second copy of the list.
+    reason: The class the asset types of the library belong to, so that app/services/vocab.py can
+      read them from the file instead of holding a second copy of the list.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:DutyAction
-    reason: The class of actions that may be the odrl:action of an odrl:Duty. The vocabulary file is now
-      the source of truth for the classification, which app/services/vocab.py reads at import.
+    reason: The class of actions that may be the odrl:action of an odrl:Duty. The vocabulary file
+      is now the source of truth for the classification, which app/services/vocab.py reads at import.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:RuleAction
@@ -213,7 +214,8 @@ entries:
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:compatibleLicenseTest
-    reason: Ten records name a list of compatible licences or a test for one, and neither could be recorded.
+    reason: Ten records name a list of compatible licences or a test for one, and neither could be
+      recorded.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:composedOf
@@ -225,8 +227,8 @@ entries:
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:conditionalAddLimitation
-    reason: OSET-PL-2.1 allows a further condition only where statute, judicial order, regulation, national
-      security or the public interest requires it.
+    reason: OSET-PL-2.1 allows a further condition only where statute, judicial order, regulation,
+      national security or the public interest requires it.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:contributionGrantBack
@@ -259,8 +261,8 @@ entries:
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:networkUseTrigger
-    reason: Sixteen records make deployment or communication to the public, and not distribution, the
-      trigger of the source duty.
+    reason: Sixteen records make deployment or communication to the public, and not distribution,
+      the trigger of the source duty.
     source: consolidation-decision 8
   - action: added
     statement: term dalicc:originalVersionOffer
@@ -315,15 +317,16 @@ entries:
     source: consolidation-decision 2
   - action: changed
     statement: skos:note "... not used by any license in the current library"
-    reason: 'The notes were refreshed from the real usage counts: nine terms the content review had defined
-      and applied nowhere are now in use, and the notes of the terms that are still unused say so.'
+    reason: 'The notes were refreshed from the real usage counts: nine terms the content review had
+      defined and applied nowhere are now in use, and the notes of the terms that are still unused
+      say so.'
     source: consolidation-decision 2
 - version: 4
   date: '2026-09-22'
   reviewer: Giray Havur
-  summary: The definition of dalicc:ChangeLicense opened with the label of another term and still stated
-    the contradiction the dependency graph dropped on 2026-09-15, so it now names its own subject and
-    says what family rule 13 holds.
+  summary: The definition of dalicc:ChangeLicense opened with the label of another term and still
+    stated the contradiction the dependency graph dropped on 2026-09-15, so it now names its own subject
+    and says what family rule 13 holds.
   changes:
   - action: changed
     statement: owl:versionInfo "4.0"
@@ -340,17 +343,18 @@ entries:
       terms and replace the original license with a new one. Where the license carries a share-alike
       duty for the whole work, this permission must carry the dalicc:compliantLicense duty."
     previous: dalicc:ChangeLicense rdfs:comment "The licensee may change, extend or modify the license
-      terms and replace the original license with a new one. The grant-use clause contradicts the share-alike
-      clause."
+      terms and replace the original license with a new one. The grant-use clause contradicts the
+      share-alike clause."
     reason: 'The closing sentence stated cc:ShareAlike dalicc:contradicts odrl:grantUse, which version
       2 of the dependency graph removed. What holds today is family rule 13: a license-wide share-alike
-      duty beside a permitted dalicc:ChangeLicense that carries no dalicc:compliantLicense duty is inconsistent.'
+      duty beside a permitted dalicc:ChangeLicense that carries no dalicc:compliantLicense duty is
+      inconsistent.'
     source: consolidation-decision 5
 - version: 5
   date: '2026-09-22'
   reviewer: Giray Havur
-  summary: A composed licence can now carry the licence text itself, so the vocabulary gained the property
-    that holds it.
+  summary: A composed licence can now carry the licence text itself, so the vocabulary gained the
+    property that holds it.
   changes:
   - action: changed
     statement: owl:versionInfo "5.0"
@@ -376,17 +380,17 @@ entries:
     source: model-history
   - action: added
     statement: term dalicc:variantOf
-    reason: 'An or-later identifier, a licence with an SPDX exception and a licence with a rider
-      are variants of a record the library already holds, and dalicc:jurisdictionPortOf is for
-      jurisdiction ports only. The new property names the base record, so the licence page can
-      list the variants of a licence next to its ports.'
+    reason: An or-later identifier, a licence with an SPDX exception and a licence with a rider are
+      variants of a record the library already holds, and dalicc:jurisdictionPortOf is for jurisdiction
+      ports only. The new property names the base record, so the licence page can list the variants
+      of a licence next to its ports.
     source: manual
   - action: added
     statement: term dalicc:exceptedCombination
-    reason: 'A linking or classpath exception carves material out of the condition of the licence,
-      not out of its grant. dalicc:exemptedMaterial says the opposite, that the grant does not
-      reach the material at all, and it is prohibited on the records that use it. The new action
-      is permitted on the 18 records that model a licence with an SPDX exception.'
+    reason: A linking or classpath exception carves material out of the condition of the licence,
+      not out of its grant. dalicc:exemptedMaterial says the opposite, that the grant does not reach
+      the material at all, and it is prohibited on the records that use it. The new action is permitted
+      on the 18 records that model a licence with an SPDX exception.
     source: manual
   - action: changed
     statement: dalicc:variantKind rdfs:comment
@@ -394,4 +398,110 @@ entries:
       version or edition.'
     reason: The comment lists the values the property takes, and the addition brought three more,
       version-option, exception and rider, each of which carries dalicc:variantOf.
+    source: manual
+- version: 7
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: 'A curated record states what its text states. Version 7 adds the terms for the other half
+    of the question, what applies to an action a licence says nothing about: a rule class with an
+    outcome, a jurisdiction, a legal basis and a status, the two origins a derived statement carries
+    in a result, seven region jurisdictions for the biggest markets, and the two actions the jurisdiction
+    proposals needed.'
+  changes:
+  - action: changed
+    statement: owl:versionInfo "7.0"
+    previous: owl:versionInfo "6.0"
+    reason: Version 6 is archived next to this change log and owl:priorVersion names it.
+    source: model-history
+  - action: added
+    statement: term dalicc:DefaultRule
+    reason: 'The open proposal of the licence review asked for a mechanism to close the world of unspoken
+      actions, and for that mechanism to vary by jurisdiction. A rule is that mechanism: it names
+      one action, one outcome, one territory, the legal source it rests on and whether the library
+      has adopted it.'
+    source: manual
+  - action: added
+    statement: term dalicc:DefaultOutcome
+    reason: The class of the four values a rule concludes with, so the outcome is a controlled value
+      rather than a free string.
+    source: manual
+  - action: added
+    statement: term dalicc:NotGrantedByDefault
+    reason: 'The action is not permitted unless the licence permits it. This is the outcome the endorsement
+      rule uses: a copyright licence that is silent grants no right to use the licensor''s name.'
+    source: manual
+  - action: added
+    statement: term dalicc:GrantedByDefault
+    reason: The action is permitted unless the licence prohibits it, which is what a statutory exception
+      does. The European mining exceptions and the interoperability exception are written with it.
+    source: manual
+  - action: added
+    statement: term dalicc:RequiredByDefault
+    reason: A duty applies unless the licence waives it, so that a jurisdiction whose law imposes
+      a duty on every licensee can be stated.
+    source: manual
+  - action: added
+    statement: term dalicc:NotWaivable
+    reason: A statement of the licence to the contrary has no effect in that jurisdiction. The reasoner
+      reports it as a finding and never overrides the record, because the record models the text.
+    source: manual
+  - action: added
+    statement: term dalicc:RuleStatus, with dalicc:Adopted and dalicc:Proposed
+    reason: Only an adopted rule takes part in a check a reader did not ask for. Every jurisdiction
+      rule of this version is proposed, so nothing changes for a reader who chooses nothing.
+    source: manual
+  - action: added
+    statement: term dalicc:StatementOrigin, with dalicc:FromText and dalicc:FromDefaultRule
+    reason: A result that mixes what the text says with what a rule supplies has to say which is which,
+      on every finding.
+    source: manual
+  - action: added
+    statement: term dalicc:appliesTo
+    reason: The action a rule is about.
+    source: manual
+  - action: added
+    statement: term dalicc:defaultOutcome
+    reason: The outcome a rule concludes with.
+    source: manual
+  - action: added
+    statement: term dalicc:inJurisdiction
+    reason: 'The territory a rule holds in: dalicc:worldwide, a region, or a BPI country IRI, which
+      is the scheme cc:jurisdiction already uses on the records.'
+    source: manual
+  - action: added
+    statement: term dalicc:ruleBasis
+    reason: The statute, directive or principle a rule rests on, named in words so a reader can check
+      it. It is a citation, not a holding.
+    source: manual
+  - action: added
+    statement: term dalicc:ruleStatus
+    reason: Whether a rule is adopted or proposed.
+    source: manual
+  - action: added
+    statement: term dalicc:statementOrigin
+    reason: Written into results and documents, never into a curated record.
+    source: manual
+  - action: added
+    statement: term dalicc:extendsGraph
+    reason: A jurisdiction graph holds its own rules and is read together with the core graph. Without
+      this property the core axioms would have to be copied into seven files, and the next graph review
+      would have to edit eight.
+    source: manual
+  - action: added
+    statement: terms dalicc:EU, dalicc:US, dalicc:CN, dalicc:GB, dalicc:JP, dalicc:IN and dalicc:BR
+    reason: cc:jurisdiction names a BPI country or dalicc:worldwide, and the law a default rule rests
+      on is usually written for a region. Each region is a dalicc:Jurisdiction whose members are named
+      with the BPI country IRIs the records use.
+    source: manual
+  - action: added
+    statement: term dalicc:textAndDataMining
+    reason: The European and British mining exceptions describe the automated analysis of a work,
+      which is wider than training a model on it. dalicc:useForModelTraining keeps its narrower meaning
+      and no record uses the new term.
+    source: manual
+  - action: added
+    statement: term dalicc:reverseEngineerForInteroperability
+    reason: Article 6 of the European Software Directive allows decompilation for interoperability
+      and forbids a contract from taking it away, which needs an action of its own; reverse engineering
+      at large is a different act.
     source: manual

@@ -1,6 +1,6 @@
 id: CreativeCommonsAttributionNoncommercialNoderivs30Austria
 title: Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Austria
-current_version: 2
+current_version: 4
 entries:
 - version: 2
   date: '2026-09-15'
@@ -71,3 +71,28 @@ entries:
       text is explicit, dcmitype:Dataset was added here rather than left to the library wide decision
       that covers the ports whose text says nothing about databases.'
     source: review-finding 2/odrl:target
+- version: 3
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
+    now supplies it.
+  changes:
+  - action: removed
+    statement: prohibition dalicc:promote
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+- version: 4
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: 'The port settles the sui generis database right in its own text: Ziffer 3 disposes of
+    the right in the grant itself: "Soweit Datenbanken oder Zusammenstellungen von Daten Schutzgegenstand
+    dieser Lizenz oder Teil dessen sind und einen immaterialgueterrechtlichen Schutz eigener Art geniessen,
+    verzichtet der Lizenzgeber auf die Geltendmachung saemtlicher daraus resultierender Rechte.".
+    dalicc:suiGenerisDatabaseRights is now permitted, and it carries no duty because Ziffer 4 adds
+    that the restrictions do not apply to the parts of the Schutzgegenstand that fall under the definition
+    only because they enjoy sui generis database protection.'
+  changes:
+  - action: added
+    statement: permission dalicc:suiGenerisDatabaseRights
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

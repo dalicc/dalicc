@@ -15,14 +15,26 @@ service and the website that run on top of them are developed privately for the 
 with a review record beside it that says how it was checked against the legal text it
 models. 290 of the records are jurisdiction ports, translations or editions of another
 record and say so in the data, so the library describes 291 distinct licenses. The
-directory also holds the controlled vocabulary, the deontic dependency graph the reasoner
-works from, the SPDX mapping, and the archived version of every record that was ever
-superseded.
+directory also holds the controlled vocabulary, at version 7, the eight deontic
+dependency graphs the reasoner works from, the SPDX mapping, and the archived version of
+every record that was ever superseded.
+
+The core graph, `licensedata/dependencygraph/dg_default.ttl`, holds the 46 axioms that
+relate one action to another and one adopted default rule, which says what applies to an
+action a license is silent about. Seven jurisdiction graphs beside it, `dg_eu`, `dg_us`,
+`dg_cn`, `dg_gb`, `dg_jp`, `dg_in` and `dg_br`, hold the default rules proposed for one
+market each. Every rule in those seven is a proposal for the association's legal
+reviewer, none of them is the default for any check, and nothing any of them states is
+legal advice. docs/DATA.md describes the mechanism and docs/LICENSE_REVIEW.md lists every
+rule with the statute or principle it rests on.
 
 `reasoner/` is the answer-set-programming service that finds the conflicts. It reduces
-each license in a request to statements about actions, runs them against the dependency
-graph with clingo, and reports which pairs of statements cannot hold at once and why. It
-is a FastAPI service with its own Dockerfile and its own test suite.
+each license in a request to statements about actions, including the duties attached to a
+permission, runs them against the dependency graph with clingo, and reports which pairs
+of statements cannot hold at once and why. It reads the graph's default rules too, so an
+action the license is silent about is decided by the rule rather than left out, and every
+conflict says which side came from the license text and which from a rule. It is a
+FastAPI service with its own Dockerfile and its own test suite.
 
 `scripts/` is the tooling. The validator is the gate the data has to pass, the consistency
 sweep runs the rule set of the composer over every record, the family rules check that

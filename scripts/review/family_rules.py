@@ -44,6 +44,13 @@ Rules
     what the exception or the rider changes.
 18  Creative Commons records of one version of the unported text agree on the asset types,
     on the termination terms and on the moral-rights statement.
+19  A record prohibits dalicc:promote only where a sentence of its text says so. What a
+    licence that is silent about endorsement grants is a legal default, and the default
+    lives in the dependency graph as an adopted dalicc:DefaultRule, not in the records.
+20  A Creative Commons record permits dalicc:suiGenerisDatabaseRights exactly where its own
+    text settles the database right, and the duties on that permission are the ones that
+    text attaches: the conditions of Section 3(a) on the six 4.0 records, none on the 3.0
+    ports, whose own carve-out takes the restrictions off the database layer.
 
 Usage
 -----
@@ -87,6 +94,247 @@ ODRL = Namespace("http://www.w3.org/ns/odrl/2/")
 DALICCLIB = Namespace("https://dalicc.net/licenselibrary/")
 
 LOG = logging.getLogger("family_rules")
+
+#: The records whose own text bars the use of the licensor's name or mark, and which
+#: therefore state the dalicc:promote prohibition.  Every other record is silent about
+#: endorsement and gets the answer from the adopted default rule of the core dependency
+#: graph instead, which is what rule 19 checks.  The set was read off the texts and the
+#: review records one record at a time on 2026-09-23; docs/LICENSE_REVIEW.md section 13
+#: says how each side was decided.
+TEXT_SUPPORTED_PROMOTE: frozenset[str] = frozenset({
+    "AAL", "AFL-1.1", "AFL-1.2", "AFL-2.0", "AFL-2.1", "AFL-3.0", "APSL-1.0", "APSL-1.1",
+    "APSL-1.2", "APSL-2.0", "Apache-1.0", "Apache-1.1", "Apache-2.0",
+    "Apache-2.0-with-Commons-Clause", "Apache-2.0-with-LLVM-exception",
+    "Apple-ML-Research-Model-License", "Artistic-1.0", "Artistic-1.0-Perl", "Artistic-1.0-cl8",
+    "Artistic-2.0", "AttributionNoncommercial20Brazil", "AttributionNoncommercial20Croatia",
+    "AttributionNoncommercial20Italy", "AttributionNoncommercial30Armenia",
+    "AttributionNoncommercial30Azerbaijan", "AttributionNoncommercial30Brazil",
+    "AttributionNoncommercial30Chile", "AttributionNoncommercial30China",
+    "AttributionNoncommercial30CostaRica", "AttributionNoncommercial30Croatia",
+    "AttributionNoncommercial30Czechia", "AttributionNoncommercial30Ecuador",
+    "AttributionNoncommercial30Egypt", "AttributionNoncommercial30Estonia",
+    "AttributionNoncommercial30France", "AttributionNoncommercial30Germany",
+    "AttributionNoncommercial30Guatemala", "AttributionNoncommercial30Ireland",
+    "AttributionNoncommercial30Italy", "AttributionNoncommercial30Luxembourg",
+    "AttributionNoncommercial30Netherlands", "AttributionNoncommercial30NewZealand",
+    "AttributionNoncommercial30Norway", "AttributionNoncommercial30Philippines",
+    "AttributionNoncommercial30Poland", "AttributionNoncommercial30Portugal",
+    "AttributionNoncommercial30Romania", "AttributionNoncommercial30Singapore",
+    "AttributionNoncommercial30SouthAfrica", "AttributionNoncommercial30Thailand",
+    "AttributionNoncommercial30Uganda", "AttributionNoncommercial30Venezuela", "BSD-3-Clause",
+    "BSD-3-Clause-Attribution", "BSD-3-Clause-Clear", "BSD-3-Clause-LBNL",
+    "BSD-3-Clause-Open-MPI", "BSD-4-Clause", "BSD-ask-to-endorse", "BUSL-1.1",
+    "BigCode-OpenRAIL-M", "BigScience-BLOOM-RAIL-1.0", "BigScience-OpenRAIL-M",
+    "Bitstream-Vera", "CAL-1.0", "CAL-1.0-Combined-Work-Exception", "CATOSL-1.1", "CC-BY-3.0",
+    "CC-BY-4.0", "CC-BY-NC-3.0", "CC-BY-NC-4.0", "CC-BY-NC-ND-3.0", "CC-BY-NC-ND-4.0",
+    "CC-BY-NC-SA-3.0", "CC-BY-NC-SA-4.0", "CC-BY-ND-3.0", "CC-BY-ND-4.0", "CC-BY-SA-3.0",
+    "CC-BY-SA-4.0", "CDDL-1.1", "CERN-OHL-P-2.0", "CERN-OHL-S-2.0", "CERN-OHL-W-2.0",
+    "CNRI-Python", "CNRI-Python-GPL-Compatible", "CUA-OPL-1.0", "Cc010Universal",
+    "CommonDevelopmentAndDistributionLicense10", "CommonPublicAttributionLicenseVersion10",
+    "Confluent-Community-1.0", "CreativeCommonsAttribution20Brazil",
+    "CreativeCommonsAttribution20Croatia", "CreativeCommonsAttribution20Italy",
+    "CreativeCommonsAttribution30Armenia", "CreativeCommonsAttribution30Azerbaijan",
+    "CreativeCommonsAttribution30Brazil", "CreativeCommonsAttribution30Chile",
+    "CreativeCommonsAttribution30China", "CreativeCommonsAttribution30CostaRica",
+    "CreativeCommonsAttribution30Croatia", "CreativeCommonsAttribution30Czechia",
+    "CreativeCommonsAttribution30Ecuador", "CreativeCommonsAttribution30Egypt",
+    "CreativeCommonsAttribution30Estonia", "CreativeCommonsAttribution30France",
+    "CreativeCommonsAttribution30Germany", "CreativeCommonsAttribution30Guatemala",
+    "CreativeCommonsAttribution30Ireland", "CreativeCommonsAttribution30Italy",
+    "CreativeCommonsAttribution30Luxembourg", "CreativeCommonsAttribution30Netherlands",
+    "CreativeCommonsAttribution30NewZealand", "CreativeCommonsAttribution30Norway",
+    "CreativeCommonsAttribution30Philippines", "CreativeCommonsAttribution30Poland",
+    "CreativeCommonsAttribution30Portugal", "CreativeCommonsAttribution30Romania",
+    "CreativeCommonsAttribution30Singapore", "CreativeCommonsAttribution30SouthAfrica",
+    "CreativeCommonsAttribution30Thailand", "CreativeCommonsAttribution30Uganda",
+    "CreativeCommonsAttribution30Venezuela", "CreativeCommonsAttributionNoderivs20Brazil",
+    "CreativeCommonsAttributionNoderivs20Croatia", "CreativeCommonsAttributionNoderivs20Italy",
+    "CreativeCommonsAttributionNoderivs30Armenia",
+    "CreativeCommonsAttributionNoderivs30Azerbaijan",
+    "CreativeCommonsAttributionNoderivs30Brazil", "CreativeCommonsAttributionNoderivs30Chile",
+    "CreativeCommonsAttributionNoderivs30China",
+    "CreativeCommonsAttributionNoderivs30CostaRica",
+    "CreativeCommonsAttributionNoderivs30Croatia",
+    "CreativeCommonsAttributionNoderivs30Czechia",
+    "CreativeCommonsAttributionNoderivs30Ecuador", "CreativeCommonsAttributionNoderivs30Egypt",
+    "CreativeCommonsAttributionNoderivs30Estonia", "CreativeCommonsAttributionNoderivs30France",
+    "CreativeCommonsAttributionNoderivs30Germany",
+    "CreativeCommonsAttributionNoderivs30Guatemala",
+    "CreativeCommonsAttributionNoderivs30Ireland", "CreativeCommonsAttributionNoderivs30Italy",
+    "CreativeCommonsAttributionNoderivs30Luxembourg",
+    "CreativeCommonsAttributionNoderivs30Netherlands",
+    "CreativeCommonsAttributionNoderivs30NewZealand",
+    "CreativeCommonsAttributionNoderivs30Norway",
+    "CreativeCommonsAttributionNoderivs30Philippines",
+    "CreativeCommonsAttributionNoderivs30Poland",
+    "CreativeCommonsAttributionNoderivs30Portugal",
+    "CreativeCommonsAttributionNoderivs30Romania",
+    "CreativeCommonsAttributionNoderivs30Singapore",
+    "CreativeCommonsAttributionNoderivs30SouthAfrica",
+    "CreativeCommonsAttributionNoderivs30Thailand",
+    "CreativeCommonsAttributionNoderivs30Uganda",
+    "CreativeCommonsAttributionNoderivs30Venezuela",
+    "CreativeCommonsAttributionNoncommercialNoderivs20Brazil",
+    "CreativeCommonsAttributionNoncommercialNoderivs20Croatia",
+    "CreativeCommonsAttributionNoncommercialNoderivs20Italy",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Armenia",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Azerbaijan",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Brazil",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Chile",
+    "CreativeCommonsAttributionNoncommercialNoderivs30China",
+    "CreativeCommonsAttributionNoncommercialNoderivs30CostaRica",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Croatia",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Czechia",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Ecuador",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Egypt",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Estonia",
+    "CreativeCommonsAttributionNoncommercialNoderivs30France",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Germany",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Guatemala",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Ireland",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Italy",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Luxembourg",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Netherlands",
+    "CreativeCommonsAttributionNoncommercialNoderivs30NewZealand",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Norway",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Philippines",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Poland",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Portugal",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Romania",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Singapore",
+    "CreativeCommonsAttributionNoncommercialNoderivs30SouthAfrica",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Thailand",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Uganda",
+    "CreativeCommonsAttributionNoncommercialNoderivs30Venezuela",
+    "CreativeCommonsAttributionNoncommercialSharealike20Brazil",
+    "CreativeCommonsAttributionNoncommercialSharealike20Croatia",
+    "CreativeCommonsAttributionNoncommercialSharealike30Armenia",
+    "CreativeCommonsAttributionNoncommercialSharealike30Azerbaijan",
+    "CreativeCommonsAttributionNoncommercialSharealike30Brazil",
+    "CreativeCommonsAttributionNoncommercialSharealike30Chile",
+    "CreativeCommonsAttributionNoncommercialSharealike30China",
+    "CreativeCommonsAttributionNoncommercialSharealike30CostaRica",
+    "CreativeCommonsAttributionNoncommercialSharealike30Croatia",
+    "CreativeCommonsAttributionNoncommercialSharealike30Czechia",
+    "CreativeCommonsAttributionNoncommercialSharealike30Ecuador",
+    "CreativeCommonsAttributionNoncommercialSharealike30Egypt",
+    "CreativeCommonsAttributionNoncommercialSharealike30Estonia",
+    "CreativeCommonsAttributionNoncommercialSharealike30France",
+    "CreativeCommonsAttributionNoncommercialSharealike30Germany",
+    "CreativeCommonsAttributionNoncommercialSharealike30Guatemala",
+    "CreativeCommonsAttributionNoncommercialSharealike30Ireland",
+    "CreativeCommonsAttributionNoncommercialSharealike30Italy",
+    "CreativeCommonsAttributionNoncommercialSharealike30Luxembourg",
+    "CreativeCommonsAttributionNoncommercialSharealike30Netherlands",
+    "CreativeCommonsAttributionNoncommercialSharealike30NewZealand",
+    "CreativeCommonsAttributionNoncommercialSharealike30Norway",
+    "CreativeCommonsAttributionNoncommercialSharealike30Philippines",
+    "CreativeCommonsAttributionNoncommercialSharealike30Poland",
+    "CreativeCommonsAttributionNoncommercialSharealike30Portugal",
+    "CreativeCommonsAttributionNoncommercialSharealike30Romania",
+    "CreativeCommonsAttributionNoncommercialSharealike30Singapore",
+    "CreativeCommonsAttributionNoncommercialSharealike30SouthAfrica",
+    "CreativeCommonsAttributionNoncommercialSharealike30Thailand",
+    "CreativeCommonsAttributionNoncommercialSharealike30Uganda",
+    "CreativeCommonsAttributionNoncommercialSharealike30Venezuela",
+    "CreativeCommonsAttributionSharealike20Brazil",
+    "CreativeCommonsAttributionSharealike20Croatia",
+    "CreativeCommonsAttributionSharealike20Italy",
+    "CreativeCommonsAttributionSharealike30Armenia",
+    "CreativeCommonsAttributionSharealike30Azerbaijan",
+    "CreativeCommonsAttributionSharealike30Brazil",
+    "CreativeCommonsAttributionSharealike30Chile",
+    "CreativeCommonsAttributionSharealike30China",
+    "CreativeCommonsAttributionSharealike30CostaRica",
+    "CreativeCommonsAttributionSharealike30Croatia",
+    "CreativeCommonsAttributionSharealike30Czechia",
+    "CreativeCommonsAttributionSharealike30Ecuador",
+    "CreativeCommonsAttributionSharealike30Egypt",
+    "CreativeCommonsAttributionSharealike30Estonia",
+    "CreativeCommonsAttributionSharealike30France",
+    "CreativeCommonsAttributionSharealike30Germany",
+    "CreativeCommonsAttributionSharealike30Guatemala",
+    "CreativeCommonsAttributionSharealike30Ireland",
+    "CreativeCommonsAttributionSharealike30Italy",
+    "CreativeCommonsAttributionSharealike30Luxembourg",
+    "CreativeCommonsAttributionSharealike30Netherlands",
+    "CreativeCommonsAttributionSharealike30NewZealand",
+    "CreativeCommonsAttributionSharealike30Norway",
+    "CreativeCommonsAttributionSharealike30Philippines",
+    "CreativeCommonsAttributionSharealike30Poland",
+    "CreativeCommonsAttributionSharealike30Portugal",
+    "CreativeCommonsAttributionSharealike30Romania",
+    "CreativeCommonsAttributionSharealike30Singapore",
+    "CreativeCommonsAttributionSharealike30SouthAfrica",
+    "CreativeCommonsAttributionSharealike30Thailand",
+    "CreativeCommonsAttributionSharealike30Uganda",
+    "CreativeCommonsAttributionSharealike30Venezuela", "CreativeML-OpenRAIL-M",
+    "CreativeML-OpenRAIL-Mpp", "DOC", "DataExplorationLicence", "DeepFloyd-IF-License",
+    "DeveloperLicense", "ECL-1.0", "ECL-2.0", "EUDatagrid", "EUPL-1.1", "EUPL-1.2",
+    "Elastic-2.0", "Entessa", "FSL-1.1-ALv2", "FSL-1.1-MIT", "GFDL-1.1-only",
+    "GFDL-1.1-or-later", "GFDL-1.2-only", "GFDL-1.2-or-later", "GFDL-1.3-invariants-only",
+    "GFDL-1.3-invariants-or-later", "GFDL-1.3-no-invariants-only",
+    "GFDL-1.3-no-invariants-or-later", "GFDL-1.3-or-later", "Gemma-Terms-of-Use",
+    "GnuFreeDocumentationLicense", "HPND", "ICU", "IPA", "ImageMagick", "Info-ZIP", "Intel",
+    "LiLiQ-P-1.1", "LiLiQ-R-1.1", "LiLiQ-Rplus-1.1", "Llama-2-Community-License",
+    "Llama-3-Community-License", "Llama-3.1-Community-License", "Llama-3.2-Community-License",
+    "Llama-3.3-Community-License", "Llama-4-Community-License", "MIT-CMU", "MPL-1.1",
+    "MPL-2.0-no-copyleft-exception", "MS-RL", "MicrosoftPublicLicense", "Motosoto",
+    "MozillaPublicLicenseVersion20", "MulanPSL-1.0", "MulanPSL-2.0", "Multics", "NASA-1.3",
+    "NCGL-UK-2.0", "NCSA", "NLOD-2.0", "NPOSL-3.0", "NTP", "NVIDIA-Open-Model-License",
+    "Naumen", "Nokia", "OCLC-2.0", "OFL-1.0", "OFL-1.1", "OFL-1.1-RFN", "OFL-1.1-no-RFN",
+    "OGL-UK-1.0", "OGL-UK-2.0", "OGTSL", "OLDAP-2.8", "OLFL-1.3", "OSET-PL-2.1", "OSL-1.0",
+    "OSL-2.0", "OSL-2.1", "OSL-3.0", "OdcOpenDatabaseLicense",
+    "OdcPublicDomainDedicationAndLicence", "OpenDataCommonsAttributionLicenseV10",
+    "OpenDataLicenceAgreement", "OpenGovernmentLicenceCanada", "OpenSSL",
+    "OpenSupremeCourtLicence", "PHP-3.01", "PSF-2.0", "PhpLicense30", "Python-2.0.1",
+    "PythonLicense20", "RPL-1.1", "RPL-1.5", "RPSL-1.0", "RSALv2", "RSCPL", "SISSL",
+    "SimPL-2.0", "Sleepycat", "StatisticsCanadaOpenLicenceAgreement",
+    "SunPublicLicenseVersion10", "Sustainable-Use-License", "UCL-1.0",
+    "UkOpenGovernmentLicenseForPublicSectorInformation", "Unicode-3.0", "Unicode-DFS-2016",
+    "VSL-1.0", "W3C", "W3cSoftwareAndDocumentNoticeAndLicense", "Watcom-1.0", "WordNet", "X11",
+    "ZPL-2.0", "ZPL-2.1", "bzip2-1.0.6", "curl", "etalab-2.0",
+})
+
+#: The six Creative Commons 4.0 records.  Section 4 of that text grants the sui generis
+#: database right and Section 4(c) carries the conditions of Section 3(a) over to it, so
+#: their dalicc:suiGenerisDatabaseRights permission carries the attribution and notice
+#: duties of the copyright grant.
+CC_40_RECORDS: frozenset[str] = frozenset({
+    "CC-BY-4.0", "CC-BY-SA-4.0", "CC-BY-NC-4.0", "CC-BY-NC-SA-4.0", "CC-BY-ND-4.0",
+    "CC-BY-NC-ND-4.0",
+})
+
+#: The 3.0 jurisdiction ports whose own legal code settles the database right: fourteen
+#: states of the Union whose text either grants the extraction and re-use of a substantial
+#: part outright or waives the licensor's own database right, and in either case carves the
+#: restrictions out of the material that qualifies only under that right.  Their permission
+#: therefore carries no duty.  Read off the review records one port at a time on 2026-09-23;
+#: the ports left out, and why, are in docs/LICENSE_REVIEW.md section 11.
+DATABASE_RIGHT_PORT_COUNTRIES: tuple[str, ...] = (
+    "Austria", "Croatia", "Czechia", "Estonia", "France", "Germany", "Greece", "Ireland",
+    "Italy", "Luxembourg", "Netherlands", "Poland", "Portugal", "Romania",
+)
+
+#: The identifier of each element set of one 3.0 port.
+CC_30_ELEMENT_SETS: tuple[str, ...] = (
+    "CreativeCommonsAttribution30",
+    "CreativeCommonsAttributionSharealike30",
+    "AttributionNoncommercial30",
+    "CreativeCommonsAttributionNoncommercialSharealike30",
+    "CreativeCommonsAttributionNoderivs30",
+    "CreativeCommonsAttributionNoncommercialNoderivs30",
+)
+
+#: Every Creative Commons record whose own text settles the sui generis database right,
+#: which is what rule 20 checks.  A record that is silent about it gets the answer from the
+#: proposed default rule eu-sui-generis-db of the EU dependency graph instead.
+DATABASE_RIGHT_BY_TEXT: frozenset[str] = frozenset(
+    set(CC_40_RECORDS)
+    | {prefix + country
+       for prefix in CC_30_ELEMENT_SETS
+       for country in DATABASE_RIGHT_PORT_COUNTRIES}
+)
 
 #: Dedications: no attribution duty is expected, and a bare permission set is correct.
 #: CC-PDDC is one of them: "Dedicator intends this dedication to be an overt act of
@@ -558,6 +806,78 @@ def rules(records: list[Record]) -> list[dict]:
     result("18", "Creative Commons records of one version agree",
            "two records of one version of the unported text differ where their element "
            "sets differ and nowhere else", len(checked_records), offenders)
+
+    # 19 --------------------------------------------------------------------
+    # The endorsement prohibition was a house convention on 519 of 581 records until
+    # 2026-09-23. What a licence that says nothing about endorsement grants is a legal
+    # default, and a default belongs in the rule layer of the dependency graph, where it
+    # reaches every silent licence at once and says which jurisdiction it holds in. A
+    # record states the prohibition only where a sentence of its own text does, and the
+    # list below is that set, read off the texts and the review records one at a time.
+    promote = str(DALICC.promote)
+    offenders = []
+    for r in records:
+        states = promote in r.prohibited
+        listed = r.identifier in TEXT_SUPPORTED_PROMOTE
+        if states and not listed:
+            offenders.append(
+                f"{r.identifier} (prohibits dalicc:promote and is not in the "
+                f"text-supported list)"
+            )
+        elif listed and not states:
+            offenders.append(
+                f"{r.identifier} (the list says its text bars endorsement, and the "
+                f"record does not prohibit dalicc:promote)"
+            )
+    result("19", "Endorsement is prohibited only where the text says so",
+           "a record carries the dalicc:promote prohibition exactly when a sentence of "
+           "its own text bars the use of the licensor's name or mark", len(records),
+           offenders)
+
+    # 20 --------------------------------------------------------------------
+    # The sui generis database right is a right of its own, separate from copyright, and a
+    # licence that says nothing about it leaves it untouched: that is the proposed default
+    # rule eu-sui-generis-db of dg_eu.ttl. A record therefore states the permission only
+    # where its own text settles the right, and the duties follow the text that grants it.
+    # The 4.0 text sends the reader to the conditions of Section 3(a) (Section 4(c)); the
+    # 3.0 ports take their restrictions off the material that qualifies only under the
+    # database right, so their permission carries no duty at all.
+    database = str(DALICC.suiGenerisDatabaseRights)
+    checked = [r for r in records if r.is_creative_commons]
+    offenders = []
+    for r in checked:
+        states = database in r.permitted
+        listed = r.identifier in DATABASE_RIGHT_BY_TEXT
+        if states and not listed:
+            offenders.append(
+                f"{r.identifier} (permits dalicc:suiGenerisDatabaseRights and is not in "
+                f"the text-supported list)"
+            )
+            continue
+        if listed and not states:
+            offenders.append(
+                f"{r.identifier} (the list says its text settles the database right, and "
+                f"the record does not permit dalicc:suiGenerisDatabaseRights)"
+            )
+            continue
+        if not states:
+            continue
+        expected = (
+            {str(CC.Attribution), str(CC.Notice)}
+            if r.identifier in CC_40_RECORDS
+            else set()
+        )
+        duties = r.duties_by_act.get(database, set())
+        if duties != expected:
+            offenders.append(
+                f"{r.identifier} (the duties on dalicc:suiGenerisDatabaseRights are "
+                f"{sorted(local(d) for d in duties)}, expected "
+                f"{sorted(local(d) for d in expected)})"
+            )
+    result("20", "The database right is stated only where the text settles it",
+           "a Creative Commons record permits dalicc:suiGenerisDatabaseRights exactly "
+           "where its own legal code disposes of that right, with the duties that text "
+           "attaches to it", len(checked), offenders)
 
     return out
 

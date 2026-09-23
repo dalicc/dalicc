@@ -1,0 +1,49 @@
+# Version 1 of the dg_cn dependency graph, 2026-09-23. Reviewer: Giray Havur.
+#
+# China default rules (proposal)
+#
+# This graph holds default rules only and no axioms of its own: it names the core graph
+# with dalicc:extendsGraph, so a check under it sees the 46 curated axioms, the adopted
+# endorsement rule and the rules below. Every rule below is dalicc:Proposed. A proposed
+# rule takes part in a check only when a reader chooses this graph, which is the reader's
+# request to see what the rule would do.
+#
+# NOTHING IN THIS FILE IS LEGAL ADVICE. Each rule names the statute or the principle it
+# rests on so that a reader can check it, and each one is a proposal for the association's
+# legal reviewer, who decides whether it is adopted. What a licence means is decided by
+# its text, and what the law of a country requires is decided by that country's courts.
+#
+# Two things the action layer cannot carry, and therefore does not: implied warranties
+# and the consumer rules that go with them, which bind the parties rather than describe
+# an act the licensee may do; and the reservation a rightholder may make against
+# commercial mining, which is a fact about one work rather than a statement of a licence.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+
+<https://dalicc.net/dependencygraph/dg_cn> dct:title "China default rules (proposal)"@en ;
+    dct:description """The core graph plus the default rules proposed for China: the moral rights of authorship and integrity, which the Copyright Law does not let a licence remove, and mining, for which the law states no general exception. Every rule is a proposal for the association's legal reviewer. Nothing in it is legal advice."""@en ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:extendsGraph <https://dalicc.net/dependencygraph/dg_default> .
+
+<https://dalicc.net/dependencygraph/rules/cn-moral> a dalicc:DefaultRule ;
+    rdfs:label "Authorship and integrity cannot be waived in China"@en ;
+    dalicc:appliesTo dalicc:moralRightsRestriction ;
+    dalicc:defaultOutcome dalicc:NotWaivable ;
+    dalicc:inJurisdiction dalicc:CN ;
+    dalicc:ruleBasis "Copyright Law articles 10(1) to 10(4) and article 22: the rights of publication, authorship, alteration and integrity belong to the author, and the last three are not limited in time, so a licence cannot remove them" ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .
+
+<https://dalicc.net/dependencygraph/rules/cn-tdm> a dalicc:DefaultRule ;
+    rdfs:label "Mining is not allowed unless the licence allows it"@en ;
+    dalicc:appliesTo dalicc:textAndDataMining ;
+    dalicc:defaultOutcome dalicc:NotGrantedByDefault ;
+    dalicc:inJurisdiction dalicc:CN ;
+    dalicc:ruleBasis "Copyright Law article 24 lists the permitted uses and names no general exception for text and data mining, so a licence that says nothing leaves the act unlicensed" ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .

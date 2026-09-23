@@ -44,7 +44,7 @@ The reading worked from the record itself; the legal text, fetched from the reco
 `cc:legalcode` wherever it resolved and otherwise from the SPDX license list text or an
 archive snapshot of the same URL; the DALICC vocabulary,
 `licensedata/vocabulary/dalicc-ns.ttl`; the modelling conventions in [DATA.md](DATA.md); and
-`app.services.composer.consistency_check`, run with
+`app.services.consistency.consistency_check`, run with
 `licensedata/dependencygraph/dg_default.ttl`.
 
 A change is applied directly only where the license text supports it without interpretation.
@@ -182,7 +182,7 @@ the autocomplete, which is what `dalicc:jurisdictionPortOf` makes possible.
 | Short permissive (MIT, ISC, Zlib, Boost, UPL, WTFPL) | none of the six carries a share-alike statement of any kind. WTFPL keeps zero prohibitions and zero duties, which its text supports |
 | Apache | both records are faithful within the vocabulary. The substantive difference between them, that 1.1 has no patent grant and no patent retaliation and 2.0 has both, is now expressible and modelled |
 | Other OSI approved | the widest variety and the most errors. One composer template had stamped a `cc:ShareAlike` prohibition on eight reciprocal licenses, which asserts the opposite of what a reciprocal license requires |
-| Creative Commons 4.0 International | the reference model for the 287 ports, checked clause by clause; the six differ from `CC-BY-4.0` exactly where the element set differs. Three clauses of the 4.0 text are still unmodelled in all six: sui generis database rights, the no-downstream-restrictions and no-technological-measures rule, and termination with a 30 day cure period |
+| Creative Commons 4.0 International | the reference model for the 287 ports, checked clause by clause; the six differ from `CC-BY-4.0` exactly where the element set differs. Two clauses of the 4.0 text are still unmodelled in all six: the no-downstream-restrictions and no-technological-measures rule, and termination with a 30 day cure period. Section 4, the sui generis database right, was modelled on 2026-09-23 |
 | Creative Commons 2.0 and 3.0 ports | the 3.0 ports support the `dalicc:promote` prohibition better than the 2.0 ports, because the no-endorsement rule sits in the licence body rather than in the notice around it. Five ports carry an affirmative warranty or an unusual liability rule where the family has a disclaimer (Georgia, Azerbaijan, Armenia, Guatemala, Romania). New Zealand is a rewrite rather than a translation |
 | Dedications (CC0, PDDL) | one deontic signature, correctly: both dedicate and both fall back to a permissive licence, which each record carries as clause text. Neither the vocabulary nor the model can say that a record is a dedication rather than a licence |
 | UK and Canadian government | four National Archives documents share one drafting pattern and now model it alike. The Canadian pair carries the same text under two institutions and models it the same way |
@@ -394,7 +394,7 @@ the number of records each reaches today:
 | Termination | `dalicc:terminatesOnBreach`, `dalicc:curePeriod`, `dalicc:patentRetaliationTermination` | 145, 43 and 77 records |
 | Patents | `dalicc:patentGrant`, `dalicc:patentFreedomCondition`, `dalicc:covenantNotToSue` | 91, 6 and 2 records |
 | Network use and reciprocity scope | `dalicc:networkUseTrigger`, `dalicc:compatibleLicenseTest`, `dalicc:sublicenseSurvival`, `dalicc:alternativeConditionSet`, `dalicc:reciprocityScope` | 30, 23, 17, 6 and 47 records |
-| Database rights | `dalicc:suiGenerisDatabaseRights` | 8 records |
+| Database rights | `dalicc:suiGenerisDatabaseRights` | 98 records |
 | Notices and duties the texts impose | `dalicc:includeNoticeFile`, `dalicc:recipientAssent`, `dalicc:exportControlNotice`, `dalicc:advertisingAcknowledgement`, `dalicc:contributionGrantBack`, `dalicc:provideUserData`, `dalicc:originalVersionOffer`, `dalicc:standardsConformance`, `dalicc:recipientRegistrationRequest` | 12 records and fewer |
 | Restrictions the texts state | `dalicc:applyTechnicalProtectionMeasures`, `dalicc:exemptedMaterial`, `dalicc:useForModelTraining`, `dalicc:sellCopy`, `dalicc:publicationNonObstruction`, `dalicc:computationalUseOnly`, `dalicc:fieldOfUseRestriction`, `dalicc:conditionalAddLimitation`, `dalicc:governmentRightsLimitation` | 30 records and fewer |
 | Moral rights | `dalicc:moralRightsNonAssertion`, `dalicc:moralRightsRestriction` | 4 and 6 records |
@@ -730,16 +730,21 @@ the same action as `dalicc:sublicense`. `Apache-2.0` states it the same way.
 
 ### What is still open
 
-Everything below is recorded in the review records with the sentence behind it, and nothing
-of it was applied. Each line says how many records depend on the answer.
+Everything below is recorded in the review records with the sentence behind it, and none of
+it was applied when the list was written; the items marked closed were decided afterwards and
+say what was decided. Each line says how many records depend on the answer.
 
-1. **`dalicc:promote` where no text supports it.** The prohibition is on 519 of the 581
-   records. The GNU texts have no trademark or endorsement clause and their records carry
-   it as a library-wide convention, and so do the ten Creative Commons records of versions
+1. **`dalicc:promote` where no text supports it.** *Closed on 2026-09-23; see
+   [section 13](#13-default-rules-and-jurisdictions).* The prohibition was on 519 of the 581
+   records. The GNU texts have no trademark or endorsement clause and their records carried
+   it as a library-wide convention, and so did the Creative Commons records of versions
    1.0 to 2.5, where the nearest sentence is the trademark notice printed around the
-   licence rather than in it. The 2026-09-15 review already listed this as open issue 6;
-   100 of the 121 new records carry the prohibition, so more of the library depends on the
-   answer than before.
+   licence rather than in it. The decision: what a licence that is silent about endorsement
+   grants is a legal default, not a statement of the text, so it moved out of the records
+   and into the dependency graph as an adopted `dalicc:DefaultRule`. 157 records lost the
+   prohibition, 362 whose own text bars the use of the licensor's name kept it, and a check
+   reaches the same answer as before because the rule supplies what the records no longer
+   say.
 2. **The Creative Commons 4.0 records and the 287 ports have no termination flag** (293
    records). Section 6(a) of every 4.0 legal code says the licence "terminate[s]
    automatically" on a failure to comply and 6(b)(1) reinstates it "within 30 days of Your
@@ -798,6 +803,30 @@ of it was applied. Each line says how many records depend on the answer.
     `dalicc:changeLicense` (three), `dalicc:researchUseOnly` (two) and
     `dalicc:creditRemovalOnRequest` (the Creative Commons family). Each is quoted in the
     review record that proposes it.
+
+12. **The sui generis database right of the Creative Commons family.** *Closed on 2026-09-23
+    for the records whose own text settles it.* Section 4 of the 4.0 legal code grants the
+    right where the Licensed Rights include it, and Section 4(c) sends the reader to the
+    conditions of Section 3(a), so the six 4.0 records now permit
+    `dalicc:suiGenerisDatabaseRights` with the attribution and notice duties the copyright
+    grant carries. The 3.0 jurisdiction ports of fourteen states of the Union settle it in
+    their own legal codes, either granting the extraction and re-use of a substantial part
+    outright or waiving the licensor's own database right, and each of them carves its
+    restrictions out of the material that qualifies only under that right, so their
+    permission carries no duty at all: Austria, Croatia, Czechia, Estonia, France, Germany,
+    Greece, Ireland, Italy, Luxembourg, the Netherlands, Poland, Portugal and Romania, 84
+    records. Four ports whose reviews also speak of a database clause were left alone, and
+    they are what is still open here. Armenia, because the waiver stands in three of its six
+    texts and the review's own finding is a proposal rather than a correction. Azerbaijan and
+    Georgia, because neither is in the Union or the EEA and their texts dispose of the right
+    only where national law gives it to the licensor. Norway, which is in the EEA and quotes
+    the waiver in five of its six review records, while the sixth, the
+    NonCommercial-NoDerivatives record added at consolidation, carries no database finding to
+    read. Each of the four needs its legal code read before the permission is added, and
+    splitting a port between its element sets would break the family. What a licence that
+    says nothing about the right grants is the default rule `eu-sui-generis-db` of
+    [section 13](#13-default-rules-and-jurisdictions); the licensor's waiver, the carve-out
+    and `odrl:extract` for the extraction half still have no term of their own.
 
 ### The queue beyond the cap
 
@@ -1039,9 +1068,12 @@ and notice** are related by `cc:Attribution odrl:implies cc:Notice`. Both alread
 
 **Sui generis database rights and the dataset targets.** `dalicc:suiGenerisDatabaseRights` is
 "exercising the database right that protects a substantial investment in obtaining, verifying
-or presenting the contents of a database". Eight records permit it, none prohibits it, and
+or presenting the contents of a database". 98 records permit it, none prohibits it, and
 whether a licence fits a dataset is the asset-type check the License Mixer runs beside the
-conflicts, not a statement about actions. No axiom.
+conflicts, not a statement about actions. No axiom. The 90 Creative Commons records that
+joined the eight on 2026-09-23 are the ones whose own text settles the right; what a licence
+that is silent about it grants is a default rule of the jurisdiction graphs, `eu-sui-generis-db`
+and `gb-sui-generis-db` (see [section 13](#13-default-rules-and-jurisdictions)).
 
 **Adding a limitation and adding a statement.** `dalicc:addLimitation` is "adding further
 limitations or restrictions to the license terms when redistributing the work";
@@ -1062,7 +1094,7 @@ offered for authoring.
 
 ### What the two checks now agree on
 
-`app/services/composer.py` and `reasoner/app/programs/query.lp` are two implementations of
+`app/services/consistency.py` and `reasoner/app/programs/query.lp` are two implementations of
 one reading, and a chain that crosses from one relation of the graph into another was where
 they parted. Over every ordered pair of the graph's own actions, **eighteen pairs got
 different answers** from the form and from the program: the program stopped at a synonym, and
@@ -1078,3 +1110,249 @@ distribution, a licence that permits deriving also meets a licence that prohibit
 distributing. That follows from `odrl:derive odrl:implies cc:DerivativeWorks`, which the
 content review decided to keep and which conflates making a derivative with publishing one.
 Weakening it is still the open question, and it now affects one more pair of statements.
+
+---
+
+## 13. Default rules and jurisdictions
+
+Open proposal 1 of [section 11](#what-is-still-open) is closed. `dalicc:promote` was
+prohibited on 519 of 581 records although the GNU texts and the older Creative Commons texts
+say nothing about endorsement. It was a house convention, and behind the convention was a
+reading of the law: a copyright licence that is silent grants no right to use the licensor's
+name. The owner asked whether the library needs another mechanism to close the world of
+unspoken actions, because that reading can differ from one country to the next, and asked for
+options for the biggest markets. This section is the answer, read on 2026-09-23.
+
+Nothing in this section is legal advice. Every rule below names the statute or the principle
+it rests on so that a reader can check it, and every rule but one is a proposal for the
+association's legal reviewer, who decides whether it is adopted. What a licence means is
+decided by its text, and what the law of a country requires is decided by that country's
+courts.
+
+### The mechanism
+
+A record states what its text states, and nothing more. What applies to an action the text is
+silent about is a separate statement, and it lives in the dependency graph beside the axioms,
+because a graph is the layer of statements about actions and a reader already chooses one per
+check. The statement is a `dalicc:DefaultRule` and it says five things: which action, what
+applies, where, on the strength of what, and whether the library has adopted it.
+
+| Outcome | Reading |
+|---|---|
+| `dalicc:NotGrantedByDefault` | the action is not permitted unless the licence permits it |
+| `dalicc:GrantedByDefault` | the action is permitted unless the licence prohibits it, which is what a statutory exception does |
+| `dalicc:RequiredByDefault` | a duty applies unless the licence waives it |
+| `dalicc:NotWaivable` | a statement of the licence to the contrary has no effect there; the reasoner reports it as a finding and never overrides the record |
+
+A licence is **silent** about an action when it neither permits it, prohibits it nor requires
+it, and when no statement of the graph carries one of those to it: permitting an act settles
+everything it entails and every other name for it, prohibiting an act settles every special
+case of it, and a duty settles the other names of what it requires. Those are the two closures
+the derived conflicts already use, so silence is read with the reasoning the rest of the
+checker is built on.
+
+A rule whose outcome is one of the first three supplies the statement it names, for every
+licence that is silent. That statement takes part in the conflict rules exactly as a statement
+of a text does, and every finding says which side came from the text and which from the rule.
+A `dalicc:NotWaivable` rule supplies nothing: it reports that the licence says something the
+law of that jurisdiction does not let it say. Which statement that is depends on which way the
+law leans, and the graph says which: where the same graph also says the action is granted by
+default the law keeps an exception open, so a prohibition is the contrary statement; everywhere
+else the law keeps a protection in place, so a permission is.
+
+`app/services/consistency.py` and `reasoner/app/programs/query.lp` are two implementations of
+that one reading, as they are of the conflict rules, and
+`tests/unit/test_composer_reasoner.py` proves they agree over every action every shipped graph
+speaks about, with the licence silent, permitting, prohibiting and requiring it in turn.
+
+### What was adopted
+
+One rule, in the core graph, at version 5:
+
+| Action | Outcome | Where | Basis |
+|---|---|---|---|
+| `dalicc:promote` | `dalicc:NotGrantedByDefault` | worldwide | trademark law and the protection of names: a copyright licence that is silent grants no right to endorsement |
+
+It is adopted because it is the reading the library had already been applying to 519 records,
+and adopting it means that a check of a record that lost the prohibition reaches the same
+answer it reached before. The reading did not change; only the place it is written down did.
+
+### The records
+
+The prohibition was removed from **157 records** and kept on **362**. One record,
+`SampleLicenseSl`, permits the action and was left alone.
+
+Each removal was decided from the text and the review record, not by family. Where a review
+quotes a sentence of the licence the prohibition stays; where it says "convention", "library
+convention", "no text supports it" or that the nearest sentence is the trademark paragraph
+printed around the licence rather than in it, the prohibition goes. Three readings had to be
+resolved because two reviews of near-identical texts disagreed:
+
+* **The GNU Free Documentation License.** Section 4 of versions 1.1, 1.2 and 1.3 ends with
+  "The author(s) and publisher(s) of the Document do not by this License give permission to
+  use their names for publicity for or to assert or imply endorsement of any Modified
+  Version." The reviews of 1.1 and 1.2 quote it; the reviews of the three 1.3 identifiers
+  call the prohibition a library-wide default. The sentence is in all three texts, so all nine
+  Free Documentation records keep it.
+* **The LaTeX Project Public License.** The reviews of 1.0 and 1.2 read "your license should
+  not refer to the LPPL" and "you must change any identification string" as supporting the
+  prohibition; the reviews of 1.1, 1.3a and 1.3c read the same sentences and say they are a
+  file-identification rule rather than a bar on using the licensor's name. The later reading
+  is the one that holds, and the two sentences are already modelled as the `dalicc:rename` and
+  `dalicc:modificationNotice` duties, so the prohibition goes from all five.
+* **The Server Side Public License.** Its review rests the prohibition on sections 7(d) and
+  7(e), "the same reading AGPL-3.0 takes". Those sections list additional terms a licensor
+  *may* add, and the review of `GPL-3.0-only` says of the same section that it "only allows a
+  licensor to decline trademark rights as an added term". A permission to add a term is not a
+  term, so the prohibition goes, and `AGPL-3.0` goes with it.
+
+Examples of each side. Gone: `GPL-3.0-only` and the other GNU records, whose texts have no
+trademark or endorsement clause; `CC-BY-2.0` and the 1.0 to 2.5 Creative Commons records and
+their ports, where the nearest sentence is the Creative Commons trademark notice printed
+around the licence; `0BSD` and `BSL-1.0`, whose reviews say the text says nothing about
+trademarks. Kept: `Apache-2.0` for section 6, "This License does not grant permission to use
+the trade names, trademarks, service marks, or product names of the Licensor";
+`BSD-3-Clause` for its third condition; `CC-BY-4.0` for section 2(a)(6), the no-endorsement
+clause, read with section 2(b)(2); the 3.0 Creative Commons ports whose attribution clause
+carries the endorsement bar in the licence body; `MPL-1.1`, `CDDL-1.0` and their relatives,
+whose grant excludes trademark rights in as many words.
+
+Every removal is one version through `scripts/review/bump_version.py` with the summary "The
+endorsement prohibition rested on no sentence of the text; the default rule for endorsement
+now supplies it.", and the review record of each one carries a finding that says the same
+thing and points here. Rule 19 of `scripts/review/family_rules.py` holds the list of the 362
+records whose text bars endorsement and fails if a record joins or leaves it without the list
+being changed.
+
+### Jurisdiction options for the biggest markets
+
+Seven graphs, one per market, each holding the rules proposed for it and reading the core
+graph's axioms and the adopted endorsement rule through `dalicc:extendsGraph`. Every rule in
+them is `dalicc:Proposed`: none of them reaches a reader who chooses nothing, and choosing one
+is a request to see what its rules would do.
+
+**European Union (`dg_eu`), nine rules.**
+
+| Action | Outcome | Where | Basis |
+|---|---|---|---|
+| `dalicc:moralRightsRestriction` | not waivable | Austria | Urheberrechtsgesetz sections 19 to 21: the right to be named and the right against a distortion stay with the author, who can consent to a named use but cannot give them up in advance |
+| `dalicc:moralRightsRestriction` | not waivable | Germany | Urheberrechtsgesetz sections 13 and 14 with section 29(1): authorship and integrity are not transferable and a blanket waiver has no effect, although consent to a specific use does |
+| `dalicc:moralRightsRestriction` | not waivable | France | Code de la propriete intellectuelle article L121-1: the moral right is perpetual, inalienable and imprescriptible |
+| `dalicc:suiGenerisDatabaseRights` | not granted by default | EU | Directive 96/9/EC article 7: the maker of a database holds a right separate from copyright, so a licence that says nothing leaves it untouched |
+| `dalicc:textAndDataMining` | granted by default | EU | Directive (EU) 2019/790 articles 3 and 4 |
+| `dalicc:textAndDataMining` | not waivable | EU | Directive (EU) 2019/790 article 7(1): a contractual provision contrary to article 3 is unenforceable |
+| `dalicc:reverseEngineerForInteroperability` | granted by default | EU | Directive 2009/24/EC article 6 |
+| `dalicc:reverseEngineerForInteroperability` | not waivable | EU | Directive 2009/24/EC article 8: any contractual provision contrary to article 6 is null and void |
+| `dalicc:sellCopy` | granted by default | EU | Directive 2001/29/EC article 4(2), with case C-128/11 for a downloaded copy under a perpetual licence |
+
+**United States (`dg_us`), two rules.**
+
+| Action | Outcome | Where | Basis |
+|---|---|---|---|
+| `dalicc:reverseEngineerForInteroperability` | granted by default | US | 17 U.S.C. 1201(f), and Sega v. Accolade 977 F.2d 1510 (9th Cir. 1992). A contract may still restrict it, so the rule is not marked unwaivable |
+| `dalicc:sellCopy` | granted by default | US | 17 U.S.C. 109(a), the first-sale doctrine |
+
+No moral-rights rule: 17 U.S.C. 106A reaches only works of visual art and section 106A(e)
+lets the author waive those rights in a signed writing, so there is no default that holds
+across the asset types the library records. No mining rule: mining in the United States is
+decided as fair use, case by case, and a case-by-case answer is not a default. No database
+rule: there is no sui generis database right.
+
+**China (`dg_cn`), two rules.**
+
+| Action | Outcome | Where | Basis |
+|---|---|---|---|
+| `dalicc:moralRightsRestriction` | not waivable | CN | Copyright Law articles 10(1) to 10(4) and article 22: authorship, alteration and integrity belong to the author and the last three are not limited in time |
+| `dalicc:textAndDataMining` | not granted by default | CN | Copyright Law article 24 lists the permitted uses and names no general mining exception |
+
+No database rule: there is no sui generis database right.
+
+**United Kingdom (`dg_gb`), five rules.**
+
+| Action | Outcome | Where | Basis |
+|---|---|---|---|
+| `dalicc:suiGenerisDatabaseRights` | not granted by default | GB | The Copyright and Rights in Databases Regulations 1997, regulation 13, kept after leaving the Union |
+| `dalicc:textAndDataMining` | granted by default | GB | Copyright, Designs and Patents Act 1988 section 29A, for computational analysis in non-commercial research |
+| `dalicc:textAndDataMining` | not waivable | GB | Section 29A(5): a term purporting to prevent or restrict such a copy is unenforceable |
+| `dalicc:reverseEngineerForInteroperability` | granted by default | GB | Section 50B, decompilation by a lawful user |
+| `dalicc:reverseEngineerForInteroperability` | not waivable | GB | Section 296A: a term is void in so far as it purports to prohibit what section 50B allows |
+
+No moral-rights rule: section 87 of the same Act lets an author waive those rights in
+writing, so there is no default a licence cannot change.
+
+**Japan (`dg_jp`), three rules.**
+
+| Action | Outcome | Where | Basis |
+|---|---|---|---|
+| `dalicc:moralRightsRestriction` | not waivable | JP | Copyright Act article 59: the moral rights of the author are personal to the author and cannot be transferred |
+| `dalicc:textAndDataMining` | granted by default | JP | Copyright Act article 30-4: a work may be exploited where the purpose is not to enjoy the expression itself |
+| `dalicc:sellCopy` | granted by default | JP | Copyright Act article 26-2(2): the transfer right is exhausted once a copy has been transferred with authorisation |
+
+**India (`dg_in`), three rules.**
+
+| Action | Outcome | Where | Basis |
+|---|---|---|---|
+| `dalicc:moralRightsRestriction` | not waivable | IN | Copyright Act 1957 section 57: the author's special rights survive an assignment |
+| `dalicc:reverseEngineerForInteroperability` | granted by default | IN | Copyright Act 1957 section 52(1)(ab) |
+| `dalicc:textAndDataMining` | not granted by default | IN | Section 52 lists the acts that are not an infringement and names no general mining exception |
+
+**Brazil (`dg_br`), three rules.**
+
+| Action | Outcome | Where | Basis |
+|---|---|---|---|
+| `dalicc:moralRightsRestriction` | not waivable | BR | Lei 9.610/1998 article 27: the moral rights of the author are inalienable and cannot be renounced |
+| `dalicc:reverseEngineerForInteroperability` | granted by default | BR | Lei 9.609/1998 article 6(IV): integration of a program into the licensee's own system |
+| `dalicc:textAndDataMining` | not granted by default | BR | Lei 9.610/1998 article 46 lists the limitations and names no mining exception |
+
+### What the action layer cannot carry
+
+Two things were asked about and are deliberately absent.
+
+**Implied warranties and the consumer rules that go with them.** A default rule speaks about
+an act the licensee may or may not do. An implied warranty binds the parties and survives a
+disclaimer in some jurisdictions and not others, which is a statement about the agreement
+rather than about an act. It has no term in the action vocabulary and it would be wrong to
+bend one to cover it.
+
+**The reservation against commercial mining.** Article 4(3) of the Digital Single Market
+Directive lets a rightholder reserve the mining of a particular work in a machine-readable
+way. That is a fact about one work, not a statement of a licence, so the European mining rule
+names articles 3 and 4 and says in its basis that the reservation is not modelled.
+
+### What it changes today
+
+`scripts/review/consistency_sweep.py` over all 581 records, under each shipped graph:
+
+| Graph | Records with a conflict | Derived statements | Records reached |
+|---|---|---|---|
+| `dg_default` | 2 | 218 | 218 |
+| `dg_eu` | 2 | 2,357 | 581 |
+| `dg_us` | 2 | 1,203 | 581 |
+| `dg_cn` | 2 | 799 | 581 |
+| `dg_gb` | 2 | 1,953 | 581 |
+| `dg_jp` | 2 | 1,203 | 581 |
+| `dg_in` | 2 | 1,380 | 581 |
+| `dg_br` | 2 | 1,380 | 581 |
+
+The two are the Ordnance Survey evaluation licences of [open issue 2](#6-open-issues), which
+have been the whole of the sweep since the content review, and no jurisdiction graph adds a
+third. That is the expected result and not a disappointing one: the proposals speak about
+acts the library's records barely mention, which is exactly why a default rule is the right
+place for them. Under the core graph 218 records are now silent about endorsement and get the
+prohibition from the rule instead; before the records changed it was 61.
+
+### What is still open
+
+1. **Every jurisdiction rule is a proposal.** None of them is adopted, none of them reaches a
+   reader who chooses nothing, and adopting any of them is a decision for the association's
+   legal reviewer. Adopting one means moving its `dalicc:ruleStatus` to `dalicc:Adopted` and,
+   where it is to apply to every check, moving the rule into the core graph.
+2. **The moral-rights rules name three EU countries and not the Union.** Austria, Germany and
+   France are the three the library's records name most often and the three whose statutes
+   are quoted above. The other twenty-four member states have their own answers, and Berne
+   article 6bis is only a floor.
+3. **A rule cannot say "unless reserved".** Article 4(3) of the mining directive, and any
+   other default that turns on a fact about the work, has no place in a layer whose statements
+   are about actions.
+4. **The endorsement rule is worldwide.** It rests on a principle rather than on one statute,
+   and a jurisdiction where it does not hold would need a rule of its own to say so.

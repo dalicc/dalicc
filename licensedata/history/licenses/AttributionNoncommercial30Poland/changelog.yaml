@@ -1,6 +1,6 @@
 id: AttributionNoncommercial30Poland
 title: Creative Commons Attribution-NonCommercial 3.0 Poland
-current_version: 2
+current_version: 3
 entries:
 - version: 2
   date: '2026-09-15'
@@ -60,3 +60,18 @@ entries:
       only because it is a database that is not itself an authored work. Because the grant of the
       database right is explicit in the text, dcmitype:Dataset was added rather than proposed.'
     source: review-finding 2/odrl:target
+- version: 3
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: 'The port settles the sui generis database right in its own text: Paragraph 3 lists "Pobieranie
+    danych z Utworu oraz ich wtorne wykorzystanie" among the fields of exploitation granted and closes
+    with the licensor waiving the sui generis right under the law implementing Directive 96/9/EC,
+    "Licencjodawca zrzeka sie tego prawa". dalicc:suiGenerisDatabaseRights is now permitted, and it
+    carries no duty because Paragraph 4(e) adds that the restrictions in 4(a) to 4(d) do not apply
+    to a work, or a part of one, that is a work under this licence only because it is a database that
+    is not itself an authored work.'
+  changes:
+  - action: added
+    statement: permission dalicc:suiGenerisDatabaseRights
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

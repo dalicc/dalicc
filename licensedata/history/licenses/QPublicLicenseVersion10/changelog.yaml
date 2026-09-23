@@ -1,6 +1,6 @@
 id: QPublicLicenseVersion10
 title: Q Public License Version 1.0
-current_version: 2
+current_version: 3
 entries:
 - version: 2
   date: '2026-09-15'
@@ -30,3 +30,13 @@ entries:
     statement: spdx:licenseId "QPL-1.0"
     reason: Added QPL-1.0; the title matches the SPDX name.
     source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
+    now supplies it.
+  changes:
+  - action: removed
+    statement: prohibition dalicc:promote
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

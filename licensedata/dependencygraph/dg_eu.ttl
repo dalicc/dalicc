@@ -1,0 +1,112 @@
+# Version 1 of the dg_eu dependency graph, 2026-09-23. Reviewer: Giray Havur.
+#
+# European Union default rules (proposal)
+#
+# This graph holds default rules only and no axioms of its own: it names the core graph
+# with dalicc:extendsGraph, so a check under it sees the 46 curated axioms, the adopted
+# endorsement rule and the rules below. Every rule below is dalicc:Proposed. A proposed
+# rule takes part in a check only when a reader chooses this graph, which is the reader's
+# request to see what the rule would do.
+#
+# NOTHING IN THIS FILE IS LEGAL ADVICE. Each rule names the statute or the principle it
+# rests on so that a reader can check it, and each one is a proposal for the association's
+# legal reviewer, who decides whether it is adopted. What a licence means is decided by
+# its text, and what the law of a country requires is decided by that country's courts.
+#
+# Two things the action layer cannot carry, and therefore does not: implied warranties
+# and the consumer rules that go with them, which bind the parties rather than describe
+# an act the licensee may do; and the reservation a rightholder may make against
+# commercial mining, which is a fact about one work rather than a statement of a licence.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+
+<https://dalicc.net/dependencygraph/dg_eu> dct:title "European Union default rules (proposal)"@en ;
+    dct:description """The core graph plus the default rules proposed for the European Union: moral rights that cannot be waived in Austria, Germany and France, the sui generis database right, the mining exceptions of the Digital Single Market Directive, decompilation for interoperability and exhaustion after a first sale. Every rule is a proposal for the association's legal reviewer. Nothing in it is legal advice."""@en ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:extendsGraph <https://dalicc.net/dependencygraph/dg_default> .
+
+<https://dalicc.net/dependencygraph/rules/eu-moral-at> a dalicc:DefaultRule ;
+    rdfs:label "Moral rights cannot be waived in Austria"@en ;
+    dalicc:appliesTo dalicc:moralRightsRestriction ;
+    dalicc:defaultOutcome dalicc:NotWaivable ;
+    dalicc:inJurisdiction bpicounty:Austria ;
+    dalicc:ruleBasis "Urheberrechtsgesetz sections 19 to 21: the right to be named as the author and the right against a distortion of the work stay with the author, who can consent to a named use but cannot give them up in advance" ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .
+
+<https://dalicc.net/dependencygraph/rules/eu-moral-de> a dalicc:DefaultRule ;
+    rdfs:label "Moral rights cannot be waived in Germany"@en ;
+    dalicc:appliesTo dalicc:moralRightsRestriction ;
+    dalicc:defaultOutcome dalicc:NotWaivable ;
+    dalicc:inJurisdiction bpicounty:Germany ;
+    dalicc:ruleBasis "Urheberrechtsgesetz sections 13 and 14, read with section 29(1): authorship and the integrity of the work are not transferable and a blanket waiver in a licence has no effect, although consent to a specific use does" ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .
+
+<https://dalicc.net/dependencygraph/rules/eu-moral-fr> a dalicc:DefaultRule ;
+    rdfs:label "Moral rights cannot be waived in France"@en ;
+    dalicc:appliesTo dalicc:moralRightsRestriction ;
+    dalicc:defaultOutcome dalicc:NotWaivable ;
+    dalicc:inJurisdiction bpicounty:France ;
+    dalicc:ruleBasis "Code de la propriete intellectuelle article L121-1: the moral right is perpetual, inalienable and imprescriptible, so a clause of the licence that gives it up is void" ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .
+
+<https://dalicc.net/dependencygraph/rules/eu-sui-generis-db> a dalicc:DefaultRule ;
+    rdfs:label "The database right is not granted unless the licence grants it"@en ;
+    dalicc:appliesTo dalicc:suiGenerisDatabaseRights ;
+    dalicc:defaultOutcome dalicc:NotGrantedByDefault ;
+    dalicc:inJurisdiction dalicc:EU ;
+    dalicc:ruleBasis "Directive 96/9/EC article 7: a maker who has made a substantial investment in a database holds a right separate from copyright, so a licence that says nothing about it leaves it untouched" ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .
+
+<https://dalicc.net/dependencygraph/rules/eu-tdm> a dalicc:DefaultRule ;
+    rdfs:label "Mining is allowed unless the licence forbids it"@en ;
+    dalicc:appliesTo dalicc:textAndDataMining ;
+    dalicc:defaultOutcome dalicc:GrantedByDefault ;
+    dalicc:inJurisdiction dalicc:EU ;
+    dalicc:ruleBasis "Directive (EU) 2019/790 articles 3 and 4: research organisations and cultural heritage institutions may mine works they have lawful access to, and anybody may mine them unless the rightholder has reserved the use in an appropriate way. The reservation of article 4(3) is not modelled here" ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .
+
+<https://dalicc.net/dependencygraph/rules/eu-tdm-research> a dalicc:DefaultRule ;
+    rdfs:label "The research mining exception cannot be contracted away"@en ;
+    dalicc:appliesTo dalicc:textAndDataMining ;
+    dalicc:defaultOutcome dalicc:NotWaivable ;
+    dalicc:inJurisdiction dalicc:EU ;
+    dalicc:ruleBasis "Directive (EU) 2019/790 article 7(1): a contractual provision contrary to the exception of article 3 is unenforceable, so a licence cannot forbid mining to a research organisation with lawful access" ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .
+
+<https://dalicc.net/dependencygraph/rules/eu-interop> a dalicc:DefaultRule ;
+    rdfs:label "Decompiling for interoperability is allowed unless the licence forbids it"@en ;
+    dalicc:appliesTo dalicc:reverseEngineerForInteroperability ;
+    dalicc:defaultOutcome dalicc:GrantedByDefault ;
+    dalicc:inJurisdiction dalicc:EU ;
+    dalicc:ruleBasis "Directive 2009/24/EC article 6: reproducing and translating the code is allowed so far as it is indispensable to obtain the information needed to make an independently created program interoperate" ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .
+
+<https://dalicc.net/dependencygraph/rules/eu-interop-void> a dalicc:DefaultRule ;
+    rdfs:label "The interoperability exception cannot be contracted away"@en ;
+    dalicc:appliesTo dalicc:reverseEngineerForInteroperability ;
+    dalicc:defaultOutcome dalicc:NotWaivable ;
+    dalicc:inJurisdiction dalicc:EU ;
+    dalicc:ruleBasis "Directive 2009/24/EC article 8: any contractual provision contrary to article 6 is null and void" ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .
+
+<https://dalicc.net/dependencygraph/rules/eu-exhaustion> a dalicc:DefaultRule ;
+    rdfs:label "A copy that was sold may be sold on"@en ;
+    dalicc:appliesTo dalicc:sellCopy ;
+    dalicc:defaultOutcome dalicc:GrantedByDefault ;
+    dalicc:inJurisdiction dalicc:EU ;
+    dalicc:ruleBasis "Directive 2001/29/EC article 4(2): the distribution right in a copy is exhausted by the first sale in the Union with the rightholder's consent. Case C-128/11 extends it to a copy of a program downloaded with a perpetual licence" ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .

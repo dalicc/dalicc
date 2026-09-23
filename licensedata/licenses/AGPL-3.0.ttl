@@ -42,7 +42,7 @@ dalicclib:AGPL-3.0 a odrl:Set ;
         "GNU AGPL v3",
         "GNU Affero GPL",
         "GNU Affero General Public License Version 3" ;
-    dct:hasVersion "4" ;
+    dct:hasVersion "5" ;
     dct:modified "2026-09-23"^^xsd:date ;
     dct:publisher "Free Software Foundation" ;
     dct:source <https://www.gnu.org/licenses/agpl-3.0.html> ;
@@ -98,9 +98,7 @@ dalicclib:AGPL-3.0 a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:SourceCode ] ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:ChangeLicense ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:ChangeLicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] ;
     foaf:logo <https://www.gnu.org/graphics/agplv3-155x51.png> .

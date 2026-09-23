@@ -41,8 +41,8 @@ dalicclib:GPL-2.0-only-with-GCC-exception-2.0 a odrl:Set ;
         "GPL-2.0-only WITH GCC-exception-2.0",
         "GPL-2.0-only-with-GCC-exception-2.0",
         "GPLv2 with GCC exception" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-23"^^xsd:date ;
     dct:publisher "Free Software Foundation" ;
     dct:source <https://spdx.org/licenses/GCC-exception-2.0.html> ;
     dct:title "GNU General Public License, Version 2 with GCC Runtime Library exception 2.0"@en ;
@@ -93,8 +93,6 @@ dalicclib:GPL-2.0-only-with-GCC-exception-2.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:exceptedCombination ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:ChangeLicense ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:ChangeLicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

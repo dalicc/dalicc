@@ -17,4 +17,13 @@ t(X, owl_sameAs, Z) :- t(X, owl_sameAs, Y), t(Y, owl_sameAs, Z), X!=Z.
 t(X, owl_sameAs, Z) :- t(Z, owl_sameAs, X).
 
 % get dependency graph
-t(S,P,O) :- &getDependencyGraph["dg_default"](S,P,O).
+%
+% Only the four relations become t/3. A graph also carries dalicc:DefaultRule nodes,
+% which say what applies to an action a licence is silent about rather than relating
+% two actions; the closure below is about the relations, and the published shape of
+% GET /reasoner/dependency_graph is the closure of the axioms and nothing else. The
+% rules are served by GET /dependencygraph/rules on the API service.
+relation(odrl_includedIn). relation(odrl_implies).
+relation(owl_sameAs). relation(dalicc_contradicts).
+
+t(S,P,O) :- &getDependencyGraph["dg_default"](S,P,O), relation(P).

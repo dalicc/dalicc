@@ -1,6 +1,6 @@
 id: CreativeCommonsAttributionNoncommercialSharealike20Germany
 title: Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Germany
-current_version: 2
+current_version: 3
 entries:
 - version: 2
   date: '2026-09-15'
@@ -51,3 +51,13 @@ entries:
       URL of the licence, https://creativecommons.org/licenses/by-nc-sa/2.0/de/, and the six 4.0 International
       parents carry exactly that pair (legal code plus deed). Added.
     source: review-finding 1/dct:source
+- version: 3
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
+    now supplies it.
+  changes:
+  - action: removed
+    statement: prohibition dalicc:promote
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

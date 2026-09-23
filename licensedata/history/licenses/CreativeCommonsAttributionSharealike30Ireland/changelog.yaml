@@ -1,6 +1,6 @@
 id: CreativeCommonsAttributionSharealike30Ireland
 title: Creative Commons Attribution-ShareAlike 3.0 Ireland
-current_version: 2
+current_version: 3
 entries:
 - version: 2
   date: '2026-09-15'
@@ -80,3 +80,18 @@ entries:
       the text is explicit, dcmitype:Dataset was added, which also brings the record into line with
       its parent.
     source: review-finding 2/odrl:target
+- version: 3
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: 'The port settles the sui generis database right in its own text: the definition of Work
+    says that "a Work shall also be taken to mean a live Performance or a database insofar as these
+    are protected under the applicable law within Your jurisdiction", the grant runs for the duration
+    of the sui generis database right, and section 3 waives the licensor own database rights under
+    the national law implementing Directive 96/9/EC. dalicc:suiGenerisDatabaseRights is now permitted,
+    and it carries no duty because section 4 carves the restrictions out of the parts that qualify
+    only under that right.'
+  changes:
+  - action: added
+    statement: permission dalicc:suiGenerisDatabaseRights
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

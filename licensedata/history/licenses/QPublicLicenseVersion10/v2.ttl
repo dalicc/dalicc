@@ -1,0 +1,77 @@
+# Title: The machine-readable representation of "Q Public License Version 1.0" in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/QPublicLicenseVersion10
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:QPublicLicenseVersion10 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "QPL-1.0" ;
+    cc:attributionName "Trolltech AS" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode osl:QPL-1.0 ;
+    dalicc:WarrantyDisclaimer "The Software and this license document are provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE." ;
+    dalicc:LiabilityLimitation "In no event shall the initial developers or copyright holders be liable for any damages whatsoever, including - but not restricted to - lost revenue or profits or other direct, indirect, special, incidental or consequential damages, even if they have been advised of the possibility of such damages, except to the extent invariable law, if any, provides otherwise." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/QPublicLicenseVersion10/versions> ;
+    dct:alternative "QPL-1.0" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
+    dct:publisher "Trolltech AS" ;
+    dct:source osl:QPL-1.0 ;
+    dct:title "Q Public License Version 1.0" ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:derive ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:ShareAlike ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:noWarrantyNotice ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action odrl:grantUse ],
+        [ a odrl:Prohibition ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:addStatement ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:chargeDistributionFee ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:chargeLicenseFee ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Software ] .

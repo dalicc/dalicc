@@ -1,6 +1,6 @@
 id: CreativeCommonsAttributionNoncommercialSharealike30Czechia
 title: Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Czechia
-current_version: 2
+current_version: 3
 entries:
 - version: 2
   date: '2026-09-15'
@@ -68,3 +68,17 @@ entries:
       was added here rather than left as a proposal. The ports in this batch whose text has no database
       clause at all keep the proposal.'
     source: review-finding 2/odrl:target
+- version: 3
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: 'The port settles the sui generis database right in its own text: the last paragraph of
+    Article 3 waives the special right of the maker of a database in full, "poskytovatel se takoveho
+    prava k Dilu v celem rozsahu vzdava", and the definition of dilo in Article 1 ends with "Za dila
+    jsou povazovany tez databaze". dalicc:suiGenerisDatabaseRights is now permitted, and it carries
+    no duty because Article 4(e) adds that the restrictions of 4(a) to 4(d) do not apply to the parts
+    of the Work that fall under the definition only because of that right.'
+  changes:
+  - action: added
+    statement: permission dalicc:suiGenerisDatabaseRights
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

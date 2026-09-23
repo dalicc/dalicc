@@ -62,8 +62,8 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30UnitedStatesofAmerica
         "Creative Commons Attribution NonCommercial NoDerivatives 3.0 United States of America",
         "Creative Commons BY-NC-ND 3.0",
         "Creative Commons BY-NC-ND 3.0 US" ;
-    dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "3" ;
+    dct:modified "2026-09-23"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc-nd/3.0/us/> ;
     dct:title "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 United States"@en ;
@@ -87,8 +87,6 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30UnitedStatesofAmerica
             odrl:action cc:CommercialUse ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;

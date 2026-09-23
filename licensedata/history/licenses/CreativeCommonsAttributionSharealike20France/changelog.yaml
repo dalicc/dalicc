@@ -1,6 +1,6 @@
 id: CreativeCommonsAttributionSharealike20France
 title: Creative Commons Attribution-ShareAlike 2.0 France
-current_version: 2
+current_version: 3
 entries:
 - version: 2
   date: '2026-09-15'
@@ -76,3 +76,13 @@ entries:
       des parties substantielles de l''Oeuvre". The preamble also names the "droits des producteurs
       de bases de donnees" among the rights protecting the work. Added dcmitype:Dataset.'
     source: review-finding 2/odrl:target
+- version: 3
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
+    now supplies it.
+  changes:
+  - action: removed
+    statement: prohibition dalicc:promote
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

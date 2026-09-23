@@ -53,8 +53,8 @@ dalicclib:SSPL-1.0 a odrl:Set ;
         "SSPL-1.0",
         "Server Side Public License",
         "Server Side Public License 1.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-23"^^xsd:date ;
     dct:publisher "MongoDB, Inc." ;
     dct:source <https://spdx.org/licenses/SSPL-1.0.html> ;
     dct:title "Server Side Public License, v 1"@en ;
@@ -116,8 +116,6 @@ dalicclib:SSPL-1.0 a odrl:Set ;
             odrl:action dalicc:addLimitation ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:applyTechnicalProtectionMeasures ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ] ;
     odrl:target [ a odrl:AssetCollection ;

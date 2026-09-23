@@ -8,9 +8,9 @@ verdict: corrected
 summary: 'The record models the CC-BY-ND-4.0 element set of the Creative Commons 4.0 International suite and,
   after the corrections, it matches the legal text: the grant, the attribution and notice conditions, the NoDerivatives
   restriction are all in the right place and the two clause texts are verbatim. Applied: spdx:licenseId. What
-  is left is either interpretive or beyond the vocabulary: the sui generis database rights clause of Section
-  4, the no-additional-restrictions and no-DRM clause of Section 2(a)(5)(B), and termination with its cure
-  period.'
+  is left is either interpretive or beyond the vocabulary: the no-additional-restrictions and no-DRM clause
+  of Section 2(a)(5)(B), and termination with its cure period. On 2026-09-23 the database right of Section
+  4 was applied as a dalicc:suiGenerisDatabaseRights permission carrying the conditions of Section 3(a).'
 findings:
 - rubric: 1
   severity: minor
@@ -53,6 +53,29 @@ findings:
   change: "remove:\n    odrl:permission [ a odrl:Permission ;\n            odrl:action dalicc:ModifiedWorks\
     \ ]\nadd:\n    odrl:prohibition [ a odrl:Prohibition ;\n            odrl:action dalicc:ModifiedWorks ]\
     \ ;"
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 4 of the legal code, Sui Generis Database Rights, grants the database right where the
+    Licensed Rights include it, and the record carried nothing for it. Section 4(a): "for the avoidance of
+    doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial
+    portion of the contents of the database". Section 4(b) adds that a database into which You include all
+    or a substantial portion of the contents, and in which You have Sui Generis Database Rights, is Adapted
+    Material. Section 4(c): "You must comply with the conditions in Section 3(a) if You Share all or a substantial
+    portion of the contents of the database". dalicc:suiGenerisDatabaseRights, which the vocabulary defined
+    on 2026-09-15 for exactly this clause and which eight data licences of the library already carry, is now
+    a permission of this record, with the cc:Attribution and cc:Notice duties that Section 3(a) requires: the
+    same pair the copyright grant carries on odrl:distribute, because Section 4(c) sends the reader to the
+    same conditions. The NoDerivatives prohibition is unchanged and no prohibition was added: Section 4(b)
+    makes a database that holds a substantial portion of the contents Adapted Material, which this element
+    set does not permit to be shared, and nothing in Section 4 lifts that. Under the proposed default rule
+    eu-sui-generis-db of licensedata/dependencygraph/dg_eu.ttl the database right is not granted unless the
+    licence grants it, so a record that is silent reads as a licence that keeps the right back. This text grants
+    it, and the record now says so.'
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights ;\n \
+    \       odrl:duty [ a odrl:Duty ;\n                odrl:action cc:Attribution ],\n            [ a odrl:Duty\
+    \ ;\n                odrl:action cc:Notice ] ] ;"
 - rubric: 4
   severity: info
   field: odrl:prohibition
@@ -120,8 +143,11 @@ findings:
     extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database". ODRL
     already has odrl:extract, which no record of the library uses; the reuse half and the rule that a database
     built from a substantial portion counts as Adapted Material would need a term of their own. Proposed terms:
-    odrl:extract as a permission plus dalicc:suiGenerisDatabaseRights for the clause. Not modelled, because
-    a partial model would claim more than the vocabulary can say.'
+    odrl:extract as a permission plus dalicc:suiGenerisDatabaseRights for the clause. The clause itself was
+    applied on 2026-09-23 as the dalicc:suiGenerisDatabaseRights permission of the rubric 3 finding above,
+    with the conditions of Section 3(a) as its duties. What is still without a term of its own is odrl:extract
+    for the extraction half, which no record of the library uses, and the rule of Section 4(b) that a database
+    holding a substantial portion of the contents is itself Adapted Material.'
   action: none
 - rubric: 8
   severity: gap

@@ -39,7 +39,7 @@ sweep: venv ## Run the consistency rule set over every license record
 # all in the Creative Commons ports. docs/DATA.md explains them under the known
 # data-quality issues; fixing them takes 287 records to a new version in one sweep, so it
 # waits for a commit of its own and does not fail this gate meanwhile.
-family-rules: venv ## Check the eighteen family rules over every license record
+family-rules: venv ## Check the twenty family rules over every license record
 	$(PY) scripts/review/family_rules.py --strict --skip-rule 14
 
 canonical: venv ## The generated library document is exactly what the per-record files produce

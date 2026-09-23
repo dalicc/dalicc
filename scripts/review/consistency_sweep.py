@@ -19,13 +19,24 @@ Survey evaluation licences allow building something with the data and forbid sup
 it, which the model can only express as ``odrl:derive`` permitted while
 ``cc:DerivativeWorks`` is prohibited.
 
+A dependency graph also carries default rules, which say what applies to an action a
+license is silent about.  ``--graph`` runs the sweep under one of the graphs that ship
+instead of the core one, which is how the effect of a jurisdiction proposal is measured
+before anybody adopts it; ``--all-graphs`` runs it under each of them in turn and prints
+what each adds.  Only the core graph is a baseline: a jurisdiction graph holds proposals
+and is expected to report more.
+
 Usage
 -----
     python scripts/review/consistency_sweep.py            # human-readable report
     python scripts/review/consistency_sweep.py --json     # machine-readable
     python scripts/review/consistency_sweep.py --expected DataExplorationLicence,DeveloperLicense
+    python scripts/review/consistency_sweep.py --graph dg_eu
+    python scripts/review/consistency_sweep.py --all-graphs
 
 Exit status is 0 when the set of conflicting records equals ``--expected``, 1 otherwise.
+``--all-graphs`` reports and always exits 0 for the jurisdiction graphs, because a
+proposal that changes nothing would not be worth proposing.
 """
 
 from __future__ import annotations
@@ -43,7 +54,14 @@ LICENSES_DIR = REPO_ROOT / "licensedata" / "licenses"
 DEPENDENCY_FILE = REPO_ROOT / "licensedata" / "dependencygraph" / "dg_default.ttl"
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
-from dalicc_check.consistency import consistency_check  # noqa: E402
+from dalicc_check.consistency import (  # noqa: E402
+    P_EXTENDS_GRAPH as EXTENDS_GRAPH,
+)
+from dalicc_check.consistency import (  # noqa: E402
+    consistency_check,
+    default_statements,
+    rules_from_triples,
+)
 
 #: The two evaluation licences the review confirmed as faithful, not as modelling errors.
 DEFAULT_EXPECTED = ("DataExplorationLicence", "DeveloperLicense")
@@ -51,32 +69,91 @@ DEFAULT_EXPECTED = ("DataExplorationLicence", "DeveloperLicense")
 LOG = logging.getLogger("consistency_sweep")
 
 
+#: Every dependency graph that ships, the core one first.  The seven others hold the
+#: default rules proposed for one market each and are read together with the core one.
+SHIPPED_GRAPHS = ("dg_default", "dg_eu", "dg_us", "dg_cn", "dg_gb", "dg_jp", "dg_in", "dg_br")
+
+
+def graph_file(graph_id: str = "dg_default") -> Path:
+    """Where one shipped graph lives."""
+    return REPO_ROOT / "licensedata" / "dependencygraph" / f"{graph_id}.ttl"
+
+
 def dependency_relations(path: Path = DEPENDENCY_FILE) -> list[tuple[str, str, str]]:
-    """Read the dependency-graph axioms from the data, with no triple store involved."""
+    """Read the statements of one graph from the data, with no triple store involved.
+
+    A graph that names another with ``dalicc:extendsGraph`` is read together with it,
+    one step, exactly as the service reads it.
+    """
     if not path.is_file():
         LOG.warning("No dependency graph available at %s", path)
         return []
     graph = Graph()
     graph.parse(path.as_posix(), format="turtle")
-    return [(str(s), str(p), str(o)) for s, p, o in graph]
+    triples = [(str(s), str(p), str(o)) for s, p, o in graph]
+    extended = {obj for _s, predicate, obj in triples if predicate == EXTENDS_GRAPH}
+    for target in sorted(extended):
+        base = graph_file(target.rstrip("/").rsplit("/", 1)[-1])
+        if base.is_file() and base != path:
+            seen = set(triples)
+            triples += [
+                triple for triple in dependency_relations(base) if triple not in seen
+            ]
+    return triples
 
 
-def sweep(licenses_dir: Path) -> dict[str, list[dict]]:
-    """Return the conflicts of every record, keyed by license identifier."""
-    triples = dependency_relations()
-    LOG.info("dependency graph: %d axioms", len(triples))
-    result: dict[str, list[dict]] = {}
+def records(licenses_dir: Path) -> list[tuple[str, Graph]]:
+    """Every record, parsed once.  Reading the library is what the sweep costs."""
+    out: list[tuple[str, Graph]] = []
     for path in sorted(licenses_dir.glob("*.ttl")):
         graph = Graph()
         graph.parse(path.as_posix(), format="turtle")
-        result[path.stem] = [conflict.as_dict() for conflict in consistency_check(graph, triples)]
-    return result
+        out.append((path.stem, graph))
+    return out
+
+
+def sweep(
+    licenses_dir: Path,
+    graph_id: str = "dg_default",
+    parsed: list[tuple[str, Graph]] | None = None,
+) -> dict[str, list[dict]]:
+    """Return the conflicts of every record, keyed by license identifier."""
+    triples = dependency_relations(graph_file(graph_id))
+    rules = rules_from_triples(triples)
+    LOG.info(
+        "%s: %d statements, %d default rule(s)", graph_id, len(triples), len(rules)
+    )
+    return {
+        name: [conflict.as_dict() for conflict in consistency_check(graph, triples)]
+        for name, graph in (parsed if parsed is not None else records(licenses_dir))
+    }
+
+
+def defaults_sweep(
+    licenses_dir: Path,
+    graph_id: str,
+    parsed: list[tuple[str, Graph]] | None = None,
+) -> dict[str, int]:
+    """How many derived statements and findings each record gets under one graph."""
+    triples = dependency_relations(graph_file(graph_id))
+    return {
+        name: len(default_statements(graph, triples))
+        for name, graph in (parsed if parsed is not None else records(licenses_dir))
+    }
 
 
 def main(argv: list[str] | None = None) -> int:
     """Run the sweep and compare it with the expected set of conflicting records."""
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--json", action="store_true", help="print the full result as JSON")
+    parser.add_argument(
+        "--graph", default="dg_default", help="the shipped dependency graph to reason with"
+    )
+    parser.add_argument(
+        "--all-graphs",
+        action="store_true",
+        help="run the sweep under every shipped graph and report what each one adds",
+    )
     parser.add_argument(
         "--expected",
         default=",".join(DEFAULT_EXPECTED),
@@ -86,7 +163,10 @@ def main(argv: list[str] | None = None) -> int:
 
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
-    result = sweep(LICENSES_DIR)
+    if args.all_graphs:
+        return _report_every_graph()
+
+    result = sweep(LICENSES_DIR, args.graph)
     conflicting = {name: conflicts for name, conflicts in result.items() if conflicts}
     expected = {name for name in args.expected.split(",") if name}
 
@@ -99,6 +179,10 @@ def main(argv: list[str] | None = None) -> int:
             for conflict in conflicts:
                 LOG.info("  %s [%s] %s", name, conflict["kind"], conflict["reason"])
 
+    if args.graph != "dg_default":
+        LOG.info("a jurisdiction graph holds proposals, so its result is a report only")
+        return 0
+
     unexpected = sorted(set(conflicting) - expected)
     missing = sorted(expected - set(conflicting))
     for name in unexpected:
@@ -106,6 +190,32 @@ def main(argv: list[str] | None = None) -> int:
     for name in missing:
         LOG.error("expected a conflict in %s and found none", name)
     return 1 if unexpected or missing else 0
+
+
+def _report_every_graph() -> int:
+    """Print, per shipped graph, how much it adds to the core reading."""
+    parsed = records(LICENSES_DIR)
+    baseline = sweep(LICENSES_DIR, "dg_default", parsed)
+    base_conflicts = {name for name, conflicts in baseline.items() if conflicts}
+    for graph_id in SHIPPED_GRAPHS:
+        result = (
+            baseline if graph_id == "dg_default" else sweep(LICENSES_DIR, graph_id, parsed)
+        )
+        conflicting = {name for name, conflicts in result.items() if conflicts}
+        derived = defaults_sweep(LICENSES_DIR, graph_id, parsed)
+        LOG.info(
+            "%s: %d record(s) with a conflict (%d more than the core graph), "
+            "%d derived statement(s) over %d record(s)",
+            graph_id,
+            len(conflicting),
+            len(conflicting - base_conflicts),
+            sum(derived.values()),
+            len([name for name, count in derived.items() if count]),
+        )
+        for name in sorted(conflicting - base_conflicts):
+            for conflict in result[name]:
+                LOG.info("    %s [%s] %s", name, conflict["kind"], conflict["reason"][:110])
+    return 0
 
 
 if __name__ == "__main__":

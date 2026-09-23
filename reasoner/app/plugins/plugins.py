@@ -24,9 +24,9 @@ External atoms
     licence and theirs is the rule node, so without this atom every duty a licence
     attaches to a permission was invisible to the program.
 ``&getDependencyGraph[G](S, P, O)``
-    Returns every triple of the configured dependency graph.  ``G`` is only a
-    fallback graph *name*; the graph IRI itself is taken from
-    ``DALICC_DEPENDENCY_GRAPH``.
+    Returns every triple of the configured dependency graph, and of the graph it
+    names with ``dalicc:extendsGraph`` when it names one.  ``G`` is only a fallback
+    graph *name*; the graph IRI itself is taken from ``DALICC_DEPENDENCY_GRAPH``.
 ``&concat[...](R)``
     String concatenation, kept for backwards compatibility with older programs.
 """
@@ -144,8 +144,21 @@ def concat(strs):
     dlvhex.output((dlvhex.storeConstant(result),))
 
 
+#: The property one graph names another with.  A jurisdiction graph holds its own
+#: default rules and takes the curated axioms from the graph it extends, so the core
+#: graph stays the single place those axioms are written.
+EXTENDS_GRAPH = "https://dalicc.net/ns#extendsGraph"
+
+
 def getDependencyGraph(dp_named_graph):  # noqa: N802 - name fixed by the ASP programs
-    """Emit every triple of the configured dependency graph."""
+    """Emit every triple of the configured dependency graph.
+
+    A graph that names another one with ``dalicc:extendsGraph`` is read together with
+    it, one step only: the triples of the named graph are emitted after its own, with
+    the duplicates dropped.  A second hop is not followed, so a graph cannot send the
+    reasoner round a chain of graphs, and the IRI it names is validated exactly like
+    the one from the configuration before it is queried.
+    """
     settings = get_settings()
     graph_iri = settings.dependency_graph
     if not graph_iri:  # pragma: no cover - config always supplies a default
@@ -153,11 +166,28 @@ def getDependencyGraph(dp_named_graph):  # noqa: N802 - name fixed by the ASP pr
         graph_iri = "https://dalicc.net/dependencygraph/" + name
     validate_license_iri(graph_iri)
 
-    query = DEPENDENCY_GRAPH_QUERY_TEMPLATE.format(graph_iri=sparql_iri_ref(graph_iri))
-    triples = _select(settings.sparql_endpoint, query)
+    triples = _graph_triples(settings, graph_iri)
+    extended = sorted({obj for _s, predicate, obj in triples if predicate == EXTENDS_GRAPH})
+    if len(extended) == 1 and extended[0] != graph_iri:
+        try:
+            validate_license_iri(extended[0])
+        except Exception:
+            logger.warning("Refusing to follow dalicc:extendsGraph to %s", extended[0])
+        else:
+            seen = {tuple(triple) for triple in triples}
+            triples = triples + [
+                triple for triple in _graph_triples(settings, extended[0])
+                if tuple(triple) not in seen
+            ]
     logger.debug("getDependencyGraph(%s) -> %d triples", graph_iri, len(triples))
     for subject, predicate, obj in triples:
         dlvhex.output((subject, predicate, obj))
+
+
+def _graph_triples(settings, graph_iri: str) -> list[list[str]]:
+    """Every triple of one named graph."""
+    query = DEPENDENCY_GRAPH_QUERY_TEMPLATE.format(graph_iri=sparql_iri_ref(graph_iri))
+    return _select(settings.sparql_endpoint, query)
 
 
 def register(arguments=None):

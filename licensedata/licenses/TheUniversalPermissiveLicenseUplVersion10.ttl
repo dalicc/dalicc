@@ -31,8 +31,8 @@ dalicclib:TheUniversalPermissiveLicenseUplVersion10 a odrl:Set ;
     dct:alternative "UPL",
         "UPL-1.0",
         "Universal Permissive License 1.0 (UPL-1.0)" ;
-    dct:hasVersion "4" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "5" ;
+    dct:modified "2026-09-23"^^xsd:date ;
     dct:source osl:UPL ;
     dct:title "The Universal Permissive License (UPL), Version 1.0" ;
     odrl:permission [ a odrl:Permission ;
@@ -68,8 +68,6 @@ dalicclib:TheUniversalPermissiveLicenseUplVersion10 a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action dalicc:compliantLicense ] ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:addStatement ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:addStatement ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

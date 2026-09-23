@@ -176,6 +176,26 @@ findings:
     checker cannot tell this record from the other records of the BY element set, across all three versions
     and every jurisdiction the library holds.'
   action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The record said nothing about the sui generis database right although the port''s own
+    text settles it, which the rubric 2 finding of this review read off the legal code: Section 3 grants
+    "Lorsque l''Oeuvre est une base de donnees, extraire et reutiliser des parties substantielles de l''Oeuvre"
+    and closes with "Si le Donneur de Licence est le titulaire de droits de base de donnees sui generis
+    suivant la transposition en droit national de la Directive Europeenne sur les Bases de Donnees, le
+    Donneur de Licence renonce a ces droits", and Section 4(f) adds that the restrictions of 4(a) and
+    4(b) do not apply to the parts of an Oeuvre that fall inside the definition only because they are
+    governed by that sui generis right. Exercising that right is therefore permitted by this licence and
+    dalicc:suiGenerisDatabaseRights is now a permission of the record. It carries no duty, which is where
+    the 3.0 ports part company with the 4.0 text their parent CC-BY-4.0 models: Section 4(c) of 4.0 carries
+    the conditions of Section 3(a) over to the database layer, while this port takes its own restrictions
+    off the material that qualifies only under the database right. Under the proposed default rule eu-sui-generis-db
+    of licensedata/dependencygraph/dg_eu.ttl the database right is not granted unless the licence grants
+    it, so a record that is silent reads as a licence that keeps the right back, which this text contradicts.'
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
+    \ ] ;"
 family: 'Creative Commons 3.0 port: Luxembourg (LU)'
 port_of: CC-BY-4.0
 variant_kind: jurisdiction-port

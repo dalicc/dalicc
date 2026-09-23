@@ -184,6 +184,27 @@ findings:
     record from the other records of the BY element set, across all three versions and every jurisdiction
     the library holds.'
   action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The record said nothing about the sui generis database right although the port''s own
+    text settles it, which the rubric 2 finding of this review read off the legal code: article 1 defines
+    the Werk to include the databank in the sense of the Databankenwet, the definition of Maker counts
+    the producer of a databank among the makers, and article 3 grants the right to extract and re-use
+    the Werk and waives the licensor own exclusive rights under the national law implementing the European
+    database directive, and article 4 carves the restrictions out of the parts that qualify only under
+    the sui generis database right. Exercising that right is therefore permitted by this licence and dalicc:suiGenerisDatabaseRights
+    is now a permission of the record. It carries no duty, which is where the 3.0 ports part company with
+    the 4.0 text their parent CC-BY-4.0 models: Section 4(c) of 4.0 carries the conditions of Section
+    3(a) over to the database layer, while this port takes its own restrictions off the material that
+    qualifies only under the database right. The review reads the articles off the legal code without
+    quoting a sentence of the Dutch text, so the passage above is the finding''s own wording and not a
+    quotation. Under the proposed default rule eu-sui-generis-db of licensedata/dependencygraph/dg_eu.ttl
+    the database right is not granted unless the licence grants it, so a record that is silent reads as
+    a licence that keeps the right back, which this text contradicts.'
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
+    \ ] ;"
 family: 'Creative Commons 3.0 port: Netherlands (NL)'
 port_of: CC-BY-4.0
 variant_kind: jurisdiction-port

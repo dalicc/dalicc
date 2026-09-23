@@ -96,6 +96,39 @@ ODRL = Namespace("http://www.w3.org/ns/odrl/2/")
 LEGACY_DALICC_NS = "http://dalicc.net/ns#"
 ACTION_NAMESPACES = (str(ODRL), str(CC), str(DALICC))
 DEPENDENCY_RELATIONS = {ODRL.includedIn, ODRL.implies, OWL.sameAs, DALICC.contradicts}
+
+#: The predicates a dependency graph may carry beside its four relations.  A
+#: dalicc:DefaultRule node says what applies to an action a license is silent about,
+#: and a graph may describe itself and name the graph it is read together with.
+DEPENDENCY_RULE_PREDICATES = {
+    rdflib.RDF.type,
+    DALICC.appliesTo,
+    DALICC.defaultOutcome,
+    DALICC.inJurisdiction,
+    DALICC.ruleBasis,
+    DALICC.ruleStatus,
+    DALICC.extendsGraph,
+    rdflib.RDFS.label,
+    DCT.title,
+    DCT.description,
+    DCT.date,
+}
+
+#: The four values a rule may conclude with, and the two states it may be in.
+DEPENDENCY_RULE_OUTCOMES = {
+    DALICC.NotGrantedByDefault,
+    DALICC.GrantedByDefault,
+    DALICC.RequiredByDefault,
+    DALICC.NotWaivable,
+}
+DEPENDENCY_RULE_STATUSES = {DALICC.Adopted, DALICC.Proposed}
+
+#: Every dependency graph that ships.  The core graph is the one the reasoner uses
+#: when nothing is chosen and the only one that may carry an adopted rule; the seven
+#: jurisdiction graphs hold proposals and are read together with it.
+SHIPPED_DEPENDENCY_GRAPHS = (
+    "dg_default", "dg_eu", "dg_us", "dg_cn", "dg_gb", "dg_jp", "dg_in", "dg_br",
+)
 REQUIRED_PREDICATES = (DCT.title, ODRL.target, ODRL.permission, CC.jurisdiction)
 SPDX_LICENSE_ID = rdflib.URIRef("http://spdx.org/rdf/terms#licenseId")
 
@@ -365,28 +398,84 @@ def validate_library(canonical: dict[str, str], report: Report) -> rdflib.Graph:
 
 
 def validate_dependency_graph(report: Report) -> rdflib.Graph:
-    """Parse the dependency graph and check its namespaces and relations."""
-    graph = rdflib.Graph()
-    if check_encoding(DEPENDENCY_FILE, report) is None:
-        return graph
-    try:
-        graph.parse(DEPENDENCY_FILE, format="turtle")
-    except Exception as exc:
-        report.error(f"{DEPENDENCY_FILE.relative_to(REPO_ROOT)}: Turtle parse error: {exc}")
-        return graph
+    """Parse every shipped dependency graph and check what it is allowed to say.
 
+    A graph holds two kinds of statement.  An axiom relates two actions with one of
+    the four relations.  A ``dalicc:DefaultRule`` says what applies to an action a
+    license is silent about, and carries an action, an outcome, a jurisdiction, a
+    basis and a status.  Anything else is refused, because the reasoner would not know
+    what to do with it.
+
+    Only the core graph may carry an adopted rule: a rule that takes part in a check
+    the reader did not ask for is a decision of the library, and a jurisdiction graph
+    holds proposals.  The core graph is the one this function returns, because the
+    rest of the script reasons about it.
+    """
+    core = rdflib.Graph()
+    for graph_id in SHIPPED_DEPENDENCY_GRAPHS:
+        path = DATA_DIR / "dependencygraph" / f"{graph_id}.ttl"
+        if not path.is_file():
+            report.error(f"licensedata/dependencygraph/{graph_id}.ttl: missing")
+            continue
+        graph = core if graph_id == "dg_default" else rdflib.Graph()
+        if check_encoding(path, report) is None:
+            continue
+        try:
+            graph.parse(path, format="turtle")
+        except Exception as exc:
+            report.error(f"{path.relative_to(REPO_ROOT)}: Turtle parse error: {exc}")
+            continue
+        _check_dependency_graph(graph_id, graph, report)
+    return core
+
+
+def _check_dependency_graph(graph_id: str, graph: rdflib.Graph, report: Report) -> None:
+    """Check the statements of one dependency graph."""
+    name = f"{graph_id}.ttl"
+    rules: set[rdflib.term.Node] = set()
     for subject, predicate, obj in graph:
         for node in (subject, predicate, obj):
             if isinstance(node, rdflib.URIRef) and str(node).startswith(LEGACY_DALICC_NS):
                 report.error(
-                    f"dg_default.ttl: <{node}> uses the legacy http:// DALICC namespace; "
+                    f"{name}: <{node}> uses the legacy http:// DALICC namespace; "
                     f"use {DALICC}"
                 )
-        if predicate not in DEPENDENCY_RELATIONS:
-            report.error(f"dg_default.ttl: unknown dependency relation <{predicate}>")
-    LOG.info("dg_default.ttl: %d axioms over %d relations",
-             len(graph), len({p for _, p, _ in graph}))
-    return graph
+        if predicate in DEPENDENCY_RELATIONS:
+            continue
+        if predicate not in DEPENDENCY_RULE_PREDICATES:
+            report.error(f"{name}: unknown dependency relation <{predicate}>")
+            continue
+        if predicate == rdflib.RDF.type and obj == DALICC.DefaultRule:
+            rules.add(subject)
+
+    axioms = [triple for triple in graph if triple[1] in DEPENDENCY_RELATIONS]
+    for rule in sorted(rules, key=str):
+        for label, predicate, allowed in (
+            ("an action", DALICC.appliesTo, None),
+            ("an outcome", DALICC.defaultOutcome, DEPENDENCY_RULE_OUTCOMES),
+            ("a jurisdiction", DALICC.inJurisdiction, None),
+            ("a basis", DALICC.ruleBasis, None),
+            ("a status", DALICC.ruleStatus, DEPENDENCY_RULE_STATUSES),
+        ):
+            values = list(graph.objects(rule, predicate))
+            if len(values) != 1:
+                report.error(f"{name}: <{rule}> has to name {label} exactly once")
+                continue
+            if allowed is not None and values[0] not in allowed:
+                report.error(f"{name}: <{rule}> names <{values[0]}>, which is not {label} "
+                             f"the reasoner knows")
+        adopted = DALICC.Adopted in set(graph.objects(rule, DALICC.ruleStatus))
+        if adopted and graph_id != "dg_default":
+            report.error(
+                f"{name}: <{rule}> is adopted, and only the core graph may adopt a rule"
+            )
+        if not adopted and graph_id == "dg_default":
+            report.error(
+                f"{name}: <{rule}> is a proposal, and the core graph carries only "
+                f"adopted rules"
+            )
+    LOG.info("%s: %d axioms over %d relations, %d default rule(s)",
+             name, len(axioms), len({p for _, p, _ in axioms}), len(rules))
 
 
 def validate_vocabulary(report: Report) -> rdflib.Graph:

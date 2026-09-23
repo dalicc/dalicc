@@ -195,6 +195,36 @@ findings:
     collection arrangements. The compatibility checker cannot tell this record from the other records
     of the BY-ND element set, across all three versions and every jurisdiction the library holds.'
   action: none
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:promote was prohibited and no sentence of this text supports it. The statement was
+    the library's reading of a legal default, that a copyright licence which says nothing about endorsement
+    grants no right to it, and it sat in 519 of 581 records as a house convention. That reading is now
+    an adopted dalicc:DefaultRule of the core dependency graph, which supplies it to every licence that
+    is silent about the action, so a compatibility check reaches the same answer and the record states
+    only what the text states. Removed on 2026-09-23; see section 13 of docs/LICENSE_REVIEW.md.
+  action: applied
+  change: "# removed\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:promote ] ;\n"
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The record said nothing about the sui generis database right although the port''s own
+    text settles it, which the rubric 2 finding of this review read off the legal code: clause 3(e), in
+    the English rendering the review quotes, grants the right "to make any use of a substantial part of
+    the contents of a database, in the case where the licensed subject matter is a database", and clause
+    3 adds that the Licensor waives the sui generis right of the database maker under Greek copyright
+    law implementing Directive 96/9/EC, and clause 4(e) exempts the parts covered only by the sui generis
+    right from the restrictions. Exercising that right is therefore permitted by this licence and dalicc:suiGenerisDatabaseRights
+    is now a permission of the record. It carries no duty, which is where the 3.0 ports part company with
+    the 4.0 text their parent CC-BY-ND-4.0 models: Section 4(c) of 4.0 carries the conditions of Section
+    3(a) over to the database layer, while this port takes its own restrictions off the material that
+    qualifies only under the database right. Under the proposed default rule eu-sui-generis-db of licensedata/dependencygraph/dg_eu.ttl
+    the database right is not granted unless the licence grants it, so a record that is silent reads as
+    a licence that keeps the right back, which this text contradicts.'
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
+    \ ] ;"
 family: 'Creative Commons 3.0 port: Greece (GR)'
 port_of: CC-BY-ND-4.0
 variant_kind: jurisdiction-port

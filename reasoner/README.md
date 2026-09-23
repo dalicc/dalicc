@@ -45,6 +45,49 @@ statements that cannot all hold at once.
 | `derived` | `L1` permits `Y`, `L2` prohibits `X`, and the dependency graph relates them | a conflict through `odrl:includedIn`, `odrl:implies` or `owl:sameAs` |
 | `derived` | `L1` asserts `X`, `L2` asserts `Y`, and the graph says `X dalicc:contradicts Y` | two acts that cannot both hold of one asset, although neither licence forbids anything. Asserting is permitting or requiring |
 
+## What a licence does not say
+
+A dependency graph carries a second kind of statement beside its axioms: a
+`dalicc:DefaultRule`, which names one action, what applies to it when the licence is
+silent, the territory it holds in and the statute or principle it rests on. Nothing a
+rule states is legal advice.
+
+A licence is **silent** about an action when it neither permits it, prohibits it nor
+requires it, and when no statement of the graph carries one of those to it. That is
+`speaksAbout/2` in the program: permitting an act settles everything it entails and
+every other name for it, prohibiting an act settles every special case of it and every
+other name for it, and a duty settles the other names of what it requires. Those are the
+two closures the derived conflicts use, so silence is read with the reasoning the rest
+of the program is built on. `silent/2` is the stratified negation of it, and it is read
+against `requiredByText/2` rather than `required/2`, so a derived duty can never make a
+licence look as if it had spoken.
+
+| Outcome | What the program adds |
+|---|---|
+| `dalicc:NotGrantedByDefault` | `defaultStatement(L, odrl:prohibition, A, R)` |
+| `dalicc:GrantedByDefault` | `defaultStatement(L, odrl:permission, A, R)` |
+| `dalicc:RequiredByDefault` | `defaultStatement(L, odrl:duty, A, R)` |
+| `dalicc:NotWaivable` | nothing; `defaultFinding(L, A, R, P)` when the licence states the contrary |
+
+"The contrary" is a prohibition where the same graph also says the action is granted by
+default, and a permission everywhere else: the law either keeps an exception open that a
+licence may not close, or keeps a protection in place that a licence may not give away.
+`grantedBySomeRule/1` is that lookup.
+
+`holds/3` is what holds of a licence, its own statements plus what a rule supplied, and
+every conflict rule reads it, so a derived statement takes part exactly as a stated one
+does. `#show` adds `defaultStatement/4` and `defaultFinding/4`, and `app/conflicts.py`
+turns them into an additive `defaults` array and into `origin_1`, `origin_2`, `rule_1`
+and `rule_2` on each conflict. Both are left out when no rule fired, so a deployment
+whose graph carries no rule gets the answer it has always got.
+
+`&getDependencyGraph` follows `dalicc:extendsGraph` one step, which is how a
+jurisdiction graph holds its own rules and reads the core graph's axioms.
+`app/programs/getdepgraph.lp` filters `t/3` to the four relations, because the closure
+it publishes is about the relations and its shape is part of the contract.
+`app/services/consistency.py` on the API side implements the same reading, and
+`tests/unit/test_composer_reasoner.py` proves the two agree.
+
 The last argument of `directConflict/7` says which of the four readings produced it, and
 `app/conflicts.py` maps it onto the sentence the client reads. The permission-prohibition
 case keeps the argument `"direct"` and the sentence it has always had.
@@ -68,7 +111,7 @@ permission-prohibition sentence; everything else about the answer is unchanged.
 
 The dependency graph is a named graph in the triple store, by default
 `https://dalicc.net/dependencygraph/dg_default`, holding 46 axioms over ODRL and DALICC
-actions. `licensedata/dependencygraph/dg_default.ttl` is its source, and
+actions and one adopted default rule. `licensedata/dependencygraph/dg_default.ttl` is its source, and
 [docs/DATA.md](../docs/DATA.md) describes the model.
 
 `app/programs/query.lp` pulls the licence statements, the nested duties and the graph

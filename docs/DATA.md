@@ -34,10 +34,12 @@ licensedata/
 │   ├── licenselibrary.ttl                            all 581 licenses in one document (GENERATED)
 │   └── licenselibrary.ttl.graph  → https://dalicc.net/licenselibrary/
 ├── dependencygraph/
-│   ├── dg_default.ttl                                46 reasoning axioms (version 4)
-│   └── dg_default.ttl.graph      → https://dalicc.net/dependencygraph/dg_default
+│   ├── dg_default.ttl                                46 reasoning axioms + 1 default rule (version 5)
+│   ├── dg_default.ttl.graph      → https://dalicc.net/dependencygraph/dg_default
+│   ├── dg_eu|us|cn|gb|jp|in|br.ttl                   the default rules proposed for one market each
+│   └── dg_<id>.ttl.graph         → https://dalicc.net/dependencygraph/dg_<id>
 ├── vocabulary/
-│   ├── dalicc-ns.ttl                                 the DALICC vocabulary, 104 terms (version 6)
+│   ├── dalicc-ns.ttl                                 the DALICC vocabulary, 132 terms (version 7)
 │   ├── dalicc-ns.ttl.graph       → https://dalicc.net/ns
 │   └── usage-counts.json                             how often each term is used (GENERATED)
 ├── history/                                          the model history; never loaded into the store
@@ -291,16 +293,16 @@ resolving; listings, search results and the homepage count leave them out.
 
 ### Census
 
-581 licenses, 54,017 triples, 12,490 blank nodes.
+581 licenses, 53,852 triples, 12,435 blank nodes.
 
 | Class | Instances | | Predicate | Triples | On licenses |
 |---|---|---|---|---|---|
-| `odrl:Permission` | 5,577 | | `rdf:type` | 13,071 | 581 |
-| `odrl:Duty` | 4,576 | | `odrl:action` | 11,909 | 0 (on blank nodes) |
-| `odrl:Prohibition` | 1,756 | | `odrl:permission` | 5,577 | 581 |
-| `odrl:Set` | 581 | | `odrl:duty` | 4,576 | 181 (license-wide) |
+| `odrl:Permission` | 5,667 | | `rdf:type` | 13,016 | 581 |
+| `odrl:Duty` | 4,588 | | `odrl:action` | 11,854 | 0 (on blank nodes) |
+| `odrl:Prohibition` | 1,599 | | `odrl:permission` | 5,667 | 581 |
+| `odrl:Set` | 581 | | `odrl:duty` | 4,588 | 181 (license-wide) |
 | `odrl:AssetCollection` | 581 | | `dct:alternative` | 4,274 | 577 |
-| | | | `odrl:prohibition` | 1,756 | 541 |
+| | | | `odrl:prohibition` | 1,599 | 540 |
 | | | | `dalicc:additionalClauses` | 912 | 244 |
 | | | | `dct:type` | 813 | 0 (on the target) |
 | | | | `cc:license` | 582 | 581 |
@@ -348,8 +350,8 @@ CC REL. The count is the number of `odrl:action` triples that use the term.
 
 | Count | Action | Meaning |
 |---|---|---|
-| 1,442 | `cc:Notice` | attach or clearly refer to the license when distributing the work |
-| 1,382 | `cc:Attribution` | give credit to the copyright holder(s) and author(s) |
+| 1,448 | `cc:Notice` | attach or clearly refer to the license when distributing the work |
+| 1,388 | `cc:Attribution` | give credit to the copyright holder(s) and author(s) |
 | 735 | `dalicc:modificationNotice` | document every change and how the result differs from the original |
 | 581 | `odrl:derive` | create a new work from the existing one (translation, adaptation, ...) |
 | 581 | `odrl:distribute` | provide the work to the public or make it accessible to anyone else |
@@ -359,7 +361,7 @@ CC REL. The count is the number of `odrl:action` triples that use the term.
 | 565 | `odrl:display` | create a static, transient rendition of the work |
 | 564 | `odrl:present` | publicly perform the work |
 | 541 | `dalicc:chargeDistributionFee` | charge a fee for distributing the work |
-| 520 | `dalicc:promote` | use the licensor's trademark for advertising and promotion |
+| 363 | `dalicc:promote` | use the licensor's trademark for advertising and promotion |
 | 475 | `odrl:modify` | alter the work without substantially changing it (otherwise: `odrl:derive`) |
 | 475 | `cc:DerivativeWorks` | distribute the derivative and make it available to the public |
 | 458 | `dalicc:ModifiedWorks` | distribute the modified version of the work |
@@ -368,6 +370,7 @@ CC REL. The count is the number of `odrl:action` triples that use the term.
 | 312 | `cc:ShareAlike` | relicense the work, or the part the license names, under the original license |
 | 119 | `dalicc:addStatement` | attach additional terms or notices when redistributing |
 | 119 | `dalicc:compliantLicense` | the replacement license must stay compliant with the original |
+| 98 | `dalicc:suiGenerisDatabaseRights` | exercise the database right in the contents of a licensed database |
 | 91 | `dalicc:patentGrant` | the express patent license a contributor grants |
 | 77 | `dalicc:patentRetaliationTermination` | a patent claim over the work ends the grant |
 | 70 | `dalicc:rename` | give the modified work a name of its own |
@@ -380,7 +383,7 @@ CC REL. The count is the number of `odrl:action` triples that use the term.
 | 18 | `dalicc:exceptedCombination` | combine the work as an SPDX exception allows, outside the condition it lifts |
 | 17 | `dalicc:useForModelTraining` | use the material to train an automated system |
 | 13 | `dalicc:exemptedMaterial` | use material the licence carves out of its grant |
-| 21 more, each with fewer than 13 triples | | `dalicc:originalVersionOffer`, `dalicc:exportControlNotice`, `dalicc:royaltyCollectionReserved`, `dalicc:sellCopy`, `dalicc:suiGenerisDatabaseRights`, `dalicc:applyTechnicalProtectionMeasures`, `dalicc:recipientAssent`, `dalicc:contributionGrantBack`, `dalicc:moralRightsRestriction`, `dalicc:patentFreedomCondition`, `dalicc:advertisingAcknowledgement`, `dalicc:provideUserData`, `dalicc:moralRightsNonAssertion`, `dalicc:standardsConformance`, `dalicc:covenantNotToSue`, `dalicc:computationalUseOnly`, `dalicc:publicationNonObstruction`, `dalicc:patentNotice`, `dalicc:trademarkNotice`, `dalicc:recipientRegistrationRequest`, `dalicc:conditionalAddLimitation` |
+| 20 more, each with fewer than 13 triples | | `dalicc:originalVersionOffer`, `dalicc:exportControlNotice`, `dalicc:royaltyCollectionReserved`, `dalicc:sellCopy`, `dalicc:applyTechnicalProtectionMeasures`, `dalicc:recipientAssent`, `dalicc:contributionGrantBack`, `dalicc:moralRightsRestriction`, `dalicc:patentFreedomCondition`, `dalicc:advertisingAcknowledgement`, `dalicc:provideUserData`, `dalicc:moralRightsNonAssertion`, `dalicc:standardsConformance`, `dalicc:covenantNotToSue`, `dalicc:computationalUseOnly`, `dalicc:publicationNonObstruction`, `dalicc:patentNotice`, `dalicc:trademarkNotice`, `dalicc:recipientRegistrationRequest`, `dalicc:conditionalAddLimitation` |
 
 Every one of the 53 is defined in the DALICC vocabulary or comes from ODRL or Creative
 Commons. `odrl:action dct:source`, which the GNU Free Documentation records carried and
@@ -389,10 +392,11 @@ and `cc:SourceCode`, which sat beside each of them, carries the rule.
 
 ### The dependency graph
 
-`licensedata/dependencygraph/dg_default.ttl` is the entire knowledge base of the
-compatibility checker: 46 triples over four relations, hand-maintained, no blank nodes and
-no literals. It is at version 4; versions 1 to 3 and the change log are in
-`licensedata/history/dependencygraph/`.
+`licensedata/dependencygraph/dg_default.ttl` holds the axioms the compatibility checker
+reasons with: 46 triples over four relations, hand-maintained, no blank nodes and no
+literals. Since version 5 it also holds one default rule, which is a different kind of
+statement and is described in [section 9](#9-dependency-graphs-as-data). It is at version 5;
+versions 1 to 4 and the change log are in `licensedata/history/dependencygraph/`.
 
 | Relation | Triples | Semantics |
 |---|---|---|
@@ -475,14 +479,14 @@ Two axioms of the graph are load-bearing and are pinned by `scripts/validate_dat
 
 ### The DALICC vocabulary
 
-`licensedata/vocabulary/dalicc-ns.ttl` defines **104 terms** in 966 triples. Each carries
+`licensedata/vocabulary/dalicc-ns.ttl` defines **132 terms** in 1217 triples. Each carries
 `rdf:type`, `rdfs:label@en`, `rdfs:comment@en`, `rdfs:isDefinedBy <https://dalicc.net/ns#>`
 and, where an ODRL or CC counterpart exists, `rdfs:seeAlso`.
 
 | Kind | Count | How it is typed |
 |---|---|---|
 | Actions | 49 | `odrl:Action` and `skos:Concept`, plus `dalicc:RuleAction` (29) when the term may be the action of a permission or a prohibition and `dalicc:DutyAction` (23) when it may be the action of a duty. Three are both; an action typed neither is read as a rule action |
-| Classes | 10 | `owl:Class`: the asset types `dalicc:CreativeWork` and `dalicc:Hardware`, and the classifiers `dalicc:AssetType`, `dalicc:Jurisdiction`, `dalicc:ValidityType`, `dalicc:DependencyRelation`, `dalicc:RecordStatus`, `dalicc:ReviewStatus`, `dalicc:RuleAction`, `dalicc:DutyAction` |
+| Classes | 14 | `owl:Class`: the asset types `dalicc:CreativeWork` and `dalicc:Hardware`, the classifiers `dalicc:AssetType`, `dalicc:Jurisdiction`, `dalicc:ValidityType`, `dalicc:DependencyRelation`, `dalicc:RecordStatus`, `dalicc:ReviewStatus`, `dalicc:RuleAction`, `dalicc:DutyAction`, and the four of the default-rule layer: `dalicc:DefaultRule`, `dalicc:DefaultOutcome`, `dalicc:RuleStatus`, `dalicc:StatementOrigin` |
 | Datatype properties | 13 | the clause properties (`dalicc:WarrantyDisclaimer`, `dalicc:LiabilityLimitation`, `dalicc:WarrantyOrLiabilityAcceptance`, `dalicc:additionalClauses`, `dalicc:PromotionSpecification`, `dalicc:licenseOwner`), `dalicc:licenseText` and the boolean and literal qualifiers, all with `rdfs:domain odrl:Set` |
 | Object properties | 9 | `dalicc:validityType`, `dalicc:jurisdictionPortOf`, `dalicc:translationOf`, `dalicc:variantOf`, `dalicc:recordStatus`, `dalicc:reviewStatus`, `dalicc:versionHistory`, `dalicc:composedOf` and `dalicc:contradicts`, which is also `owl:SymmetricProperty` |
 | Annotation properties | 9 | the per-record annotations such as `dalicc:curePeriod`, `dalicc:governingLaw` and `dalicc:compatibleLicenseTest` |
@@ -502,6 +506,22 @@ exception: combining or linking the covered work with the material the exception
 conveying the result without the condition the exception lifts. It is the counterpart of
 `dalicc:exemptedMaterial`, which keeps its one meaning, material the grant does not reach at
 all, and which the exception records used to carry in the opposite position.
+
+Version 7 adds the terms for what a licence does **not** say. `dalicc:DefaultRule` is a rule
+about an action a licence is silent on; it names the action with `dalicc:appliesTo`, the
+conclusion with `dalicc:defaultOutcome` (`dalicc:NotGrantedByDefault`,
+`dalicc:GrantedByDefault`, `dalicc:RequiredByDefault` or `dalicc:NotWaivable`), the territory
+with `dalicc:inJurisdiction`, the statute or principle with `dalicc:ruleBasis` and its state
+with `dalicc:ruleStatus` (`dalicc:Adopted` or `dalicc:Proposed`). `dalicc:statementOrigin`
+says of a statement in a result whether it is `dalicc:FromText` or `dalicc:FromDefaultRule`;
+it is never written into a curated record. `dalicc:extendsGraph` relates one dependency graph
+to another it is read together with. Seven region jurisdictions, `dalicc:EU`, `dalicc:US`,
+`dalicc:CN`, `dalicc:GB`, `dalicc:JP`, `dalicc:IN` and `dalicc:BR`, name their members with
+`skos:member` and the BPI country IRIs the records use. Two actions came with them because
+the jurisdiction proposals had nothing to name: `dalicc:textAndDataMining`, the automated
+analysis the European and British mining exceptions describe, and
+`dalicc:reverseEngineerForInteroperability`, decompiling only so far as interoperability
+needs. Neither is used by a record, so neither is offered for authoring.
 
 Every superseded version is archived next to its change log, as
 `licensedata/history/vocabulary/dalicc-ns-v<n>.ttl`, and the change log says why each term
@@ -917,13 +937,15 @@ it.)
 ```bash
 export VIRTUOSO_DBA_PASSWORD=…              # the variable docker-compose.yml uses
 scripts/load_data.sh                        # append into the existing graphs
-scripts/load_data.sh --clear                # CLEAR GRAPH first, then load  (recommended)
+scripts/load_data.sh --clear                # CLEAR the shipped graphs, then load  (recommended)
 scripts/load_data.sh --custom-licenses build/customlicenses.nt --clear
-scripts/load_data.sh --dry-run              # show the isql script, touch nothing
+scripts/load_data.sh --custom-licenses build/dump.nt --clear-custom   # replace that graph
+scripts/load_data.sh --dry-run              # show the plan and the isql script, touch nothing
 ```
 
 Options: `--container` (default `virtuoso-db`), `--password`, `--data-dir` (default `/data`),
-`--dump-dir` (default `ttl_dump`), `--ld-dir`, `--clear`, `--skip-index`, `--dry-run`.
+`--dump-dir` (default `ttl_dump`), `--ld-dir`, `--clear`, `--clear-custom`, `--skip-index`,
+`--dry-run`.
 
 What it does, and why each step is there:
 
@@ -937,7 +959,12 @@ What it does, and why each step is there:
    accepted. Override with `--ld-dir` if your image differs.
 3. `DELETE FROM DB.DBA.load_list WHERE ll_file LIKE '%ttl_dump%'`. Without this the bulk
    loader skips files it has already seen and a second run silently loads nothing.
-4. Optional `SPARQL CLEAR GRAPH <…>` per target graph (`--clear`).
+4. Prints the graphs it is about to clear and the triple count of
+   `https://dalicc.net/customlicenses/`, then `SPARQL CLEAR GRAPH <…>` per graph on the
+   list. `--clear` puts the graphs this repository ships on it: the library, the
+   vocabulary, `dg_default` and the seven jurisdiction graphs. The custom-licenses graph
+   is never on it unless `--clear-custom` is given, and the script refuses to run if it
+   is (see below).
 5. `ld_dir(…, '*.ttl', NULL)`, `ld_dir(…, '*.nt', NULL)`, `rdf_loader_run()`, `checkpoint`.
 6. Prints any row of `DB.DBA.load_list` that carries an error, then one
    `SPARQL SELECT (COUNT(*) …) FROM <graph>` per graph so you can see the triple counts.
@@ -948,6 +975,28 @@ What it does, and why each step is there:
 **The loader appends.** Virtuoso's `rdf_loader_run()` adds triples; it never replaces a
 graph. That is how the pre-2023 identifiers survived a rename in production for years, and it
 is why you always use `--clear` when reloading a graph you have already loaded.
+
+**`--clear` stops at the custom-licenses graph.** `https://dalicc.net/customlicenses/` holds
+the licenses people compose on the running instance. It is in no file of this repository, the
+history in `licensedata/history/` does not cover it, and only a backup of the store brings it
+back. Until 2026-09-23 the clear list was every graph of the run, so `--clear` plus
+`--custom-licenses` emptied it and loaded the dump back over it; twice in September 2026 that
+deleted every license composed since the dump was taken. The clear list is now built from the
+files this repository ships, and emptying that graph takes `--clear-custom`, which is refused
+unless `--custom-licenses` names the file that refills it:
+
+```bash
+scripts/load_data.sh --clear                                       # keeps the composed licenses
+scripts/load_data.sh --clear --custom-licenses build/dump.nt       # keeps them, appends the dump
+scripts/load_data.sh --clear --custom-licenses build/dump.nt --clear-custom   # replaces them
+scripts/load_data.sh --clear-custom                                # refused: nothing would refill it
+```
+
+The second line is rarely what you want: the loader gives the blank nodes of the dump fresh
+labels, so a dump appended on top of the licenses it was taken from duplicates every rule in
+it. Take a fresh export first (section 6) and use the third line. Every run prints the clear
+list and the current triple count of the custom graph before it clears anything, and
+`--dry-run` prints the same plan without a container.
 
 The dba password comes from `--password`, else `VIRTUOSO_DBA_PASSWORD`, else the image
 default `dba` **with a loud warning**. It is passed to the container through `docker exec -e`,
@@ -1012,8 +1061,12 @@ The production dump does not parse: the composer wrapped unvalidated form input 
 python scripts/restore_custom_licenses.py \
     /path/to/backup/S_dalicc.net_customlicenses.nt \
     --output build/customlicenses.nt [--drop-empty]
-scripts/load_data.sh --custom-licenses build/customlicenses.nt --clear
+scripts/load_data.sh --custom-licenses build/customlicenses.nt --clear --clear-custom
 ```
+
+`--clear-custom` is what replaces that graph with the repaired dump; without it the dump is
+appended and every rule in it is duplicated. Give it only when the dump is a current export
+of the graph you are about to empty (section 5).
 
 * A relative IRI in the object of `dct:title`, `dct:alternative` or `dct:publisher` becomes a
   plain literal: it was free text all along.
@@ -1136,16 +1189,75 @@ exist yet.
 ## 9. Dependency graphs as data
 
 `licensedata/dependencygraph/dg_default.ttl` is the **core** graph, the one every caller
-reasons with unless it chooses otherwise, and it is no longer the only one: anybody with an
-account can keep a graph of their own. The data model of a graph is unchanged, whoever owns
-it: triples of three IRIs, a subject action, one of the four relations, an object action, with
-no blank nodes and no literals.
+reasons with unless it chooses otherwise, and it is no longer the only one: seven further
+graphs ship with the service, and anybody with an account can keep a graph of their own.
+
+A graph holds two kinds of statement.
+
+An **axiom** relates two actions: triples of three IRIs, a subject action, one of the four
+relations, an object action, with no blank nodes and no literals. That is the whole of the
+model this section described until version 5 of the core graph.
+
+A **default rule** says what applies to an action a license is silent about. It is a node of
+type `dalicc:DefaultRule` carrying five statements, and it exists because a record states what
+its text states while most texts are silent about most acts:
+
+```turtle
+<https://dalicc.net/dependencygraph/rules/endorsement-worldwide> a dalicc:DefaultRule ;
+    rdfs:label "Endorsement is not granted by default"@en ;
+    dalicc:appliesTo dalicc:promote ;
+    dalicc:defaultOutcome dalicc:NotGrantedByDefault ;
+    dalicc:inJurisdiction dalicc:worldwide ;
+    dalicc:ruleBasis "trademark law and the protection of names: a copyright licence that is silent grants no right to endorsement" ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Adopted .
+```
+
+`dalicc:defaultOutcome` takes one of four values. `dalicc:NotGrantedByDefault`: the action is
+not permitted unless the license permits it. `dalicc:GrantedByDefault`: it is permitted unless
+the license prohibits it, which is what a statutory exception does. `dalicc:RequiredByDefault`:
+a duty applies unless the license waives it. `dalicc:NotWaivable`: a statement of the license
+to the contrary has no effect there, and the reasoner reports it as a finding rather than
+overriding the record. "To the contrary" is a prohibition where the same graph also says the
+action is granted by default, and a permission everywhere else: the law either keeps an
+exception open that a license may not close, or keeps a protection in place that a license may
+not give away.
+
+`dalicc:ruleStatus` is `dalicc:Adopted` or `dalicc:Proposed`. The core graph carries adopted
+rules only; a jurisdiction graph carries proposals, is never the default for any check, and is
+reached only by a reader who chooses it. `scripts/validate_data.py` refuses the other way
+round in either file. Nothing a rule states is legal advice.
+
+`dalicc:extendsGraph` relates a graph to one it is read together with, one step. A
+jurisdiction graph holds its own rules and takes the 46 curated axioms and the adopted
+endorsement rule from the core graph, so the axioms stay written in one place and the next
+graph review edits one file rather than eight.
 
 | IRI | What lives there |
 |---|---|
-| `DALICC_DEPENDENCY_GRAPH` (default `https://dalicc.net/dependencygraph/dg_default`) | the curated default graph |
+| `DALICC_DEPENDENCY_GRAPH` (default `https://dalicc.net/dependencygraph/dg_default`) | the curated default graph: 46 axioms and one adopted default rule |
+| `https://dalicc.net/dependencygraph/dg_eu`, `dg_us`, `dg_cn`, `dg_gb`, `dg_jp`, `dg_in`, `dg_br` | the default rules proposed for one market each, read together with the core graph; every one of them a proposal and none of them a default |
 | `https://dalicc.net/dependencygraph/{id}` | any other published graph, core or user |
 | `https://dalicc.net/users/{user_id}/dependencygraphs/{id}` | a graph somebody is working on; private, like a license draft |
+
+The census of the shipped graphs, on 2026-09-23:
+
+| Graph | Axioms | Default rules | Adopted |
+|---|---|---|---|
+| `dg_default` | 46 | 1 | 1 |
+| `dg_eu` | from the core graph | 9 | 0 |
+| `dg_us` | from the core graph | 2 | 0 |
+| `dg_cn` | from the core graph | 2 | 0 |
+| `dg_gb` | from the core graph | 5 | 0 |
+| `dg_jp` | from the core graph | 3 | 0 |
+| `dg_in` | from the core graph | 3 | 0 |
+| `dg_br` | from the core graph | 3 | 0 |
+
+[LICENSE_REVIEW.md](LICENSE_REVIEW.md#13-default-rules-and-jurisdictions) lists every rule
+with the statute or principle it rests on.
+
+`GET /dependencygraph/list` answers with the axioms and nothing else, exactly as it always
+has; `GET /dependencygraph/rules` is the additive endpoint for the other kind of statement.
 
 A graph is written as a whole: the named graph is cleared and re-inserted. Nothing else ever
 shares one of these graphs, so there is no subject-scoped delete as there is for a license

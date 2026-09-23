@@ -1,6 +1,17 @@
-# Version 4 of the dependency graph, 2026-09-23. Versions 1 to 3 and the change log are in
+# Version 5 of the dependency graph, 2026-09-23. Versions 1 to 4 and the change log are in
 # licensedata/history/dependencygraph/. Reviewer: Giray Havur.
+#
+# The graph holds two kinds of statement. An axiom relates two actions: it says that one
+# is a kind of another, entails it, is another name for it, or cannot hold beside it. A
+# default rule says what applies to an action a licence is silent about, in which
+# jurisdiction, and on the strength of which legal source. The rules proposed for the
+# seven biggest markets live in dg_eu, dg_us, dg_cn, dg_gb, dg_jp, dg_in and dg_br, which
+# are read together with this graph and are chosen deliberately. Only the rule below is
+# adopted, and nothing here is legal advice.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dalicc: <https://dalicc.net/ns#> .
@@ -52,3 +63,14 @@ odrl:reproduce owl:sameAs odrl:copy .
 odrl:sell odrl:includedIn odrl:commercialize .
 odrl:sell odrl:includedIn odrl:transfer .
 odrl:shareAlike owl:sameAs cc:ShareAlike .
+
+# The default rules of this graph.
+
+<https://dalicc.net/dependencygraph/rules/endorsement-worldwide> a dalicc:DefaultRule ;
+    rdfs:label "Endorsement is not granted by default"@en ;
+    dalicc:appliesTo dalicc:promote ;
+    dalicc:defaultOutcome dalicc:NotGrantedByDefault ;
+    dalicc:inJurisdiction dalicc:worldwide ;
+    dalicc:ruleBasis "trademark law and the protection of names: a copyright licence that is silent grants no right to endorsement" ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Adopted .

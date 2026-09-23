@@ -208,6 +208,17 @@ findings:
     collection arrangements. The compatibility checker cannot tell this record from the other records
     of the BY-ND element set, across all three versions and every jurisdiction the library holds.'
   action: none
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:promote was prohibited and no sentence of this text supports it. The statement was
+    the library's reading of a legal default, that a copyright licence which says nothing about endorsement
+    grants no right to it, and it sat in 519 of 581 records as a house convention. That reading is now
+    an adopted dalicc:DefaultRule of the core dependency graph, which supplies it to every licence that
+    is silent about the action, so a compatibility check reaches the same answer and the record states
+    only what the text states. Removed on 2026-09-23; see section 13 of docs/LICENSE_REVIEW.md.
+  action: applied
+  change: "# removed\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:promote ] ;\n"
 family: 'Creative Commons 3.0 port: Georgia (GE)'
 port_of: CC-BY-ND-4.0
 variant_kind: jurisdiction-port

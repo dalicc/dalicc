@@ -29,6 +29,7 @@
 # canonical term is `dalicc:royaltyFree`; `dalicc:royalityFree` is kept as a deprecated alias
 # (`owl:deprecated true`, `dct:isReplacedBy`) because external data may already use that IRI.
 
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
 @prefix cc:       <http://creativecommons.org/ns#> .
 @prefix dalicc:   <https://dalicc.net/ns#> .
 @prefix dcmitype: <http://purl.org/dc/dcmitype/> .
@@ -61,14 +62,15 @@ in the production triple store; it denotes the same terms but must not be used i
     dct:publisher "DALICC" ;
     dct:source <https://dalicc.github.io/> ;
     dct:modified "2026-09-23"^^xsd:date ;
-    dct:hasVersion "6" ;
+    dct:hasVersion "7" ;
     dalicc:versionHistory <https://dalicc.net/ns/versions> ;
-    owl:versionInfo "6.0" ;
+    owl:versionInfo "7.0" ;
     owl:priorVersion <https://dalicc.net/ns/versions/1> ,
         <https://dalicc.net/ns/versions/2> ,
         <https://dalicc.net/ns/versions/3> ,
         <https://dalicc.net/ns/versions/4> ,
         <https://dalicc.net/ns/versions/5> ,
+        <https://dalicc.net/ns/versions/6> ,
         <http://dalicc.net/ns#> ;
     vann:preferredNamespaceUri "https://dalicc.net/ns#" ;
     vann:preferredNamespacePrefix "dalicc" ;
@@ -146,6 +148,41 @@ dalicc:DependencyRelation a owl:Class ;
 over. The DALICC dependency graph (named graph https://dalicc.net/dependencygraph/dg_default)
 consists exclusively of statements whose predicate is an instance of this class."""@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> .
+
+dalicc:DefaultRule a owl:Class ;
+    rdfs:label "Default rule"@en ;
+    rdfs:comment """A rule about an action a license is silent on: what applies when the license
+neither permits, prohibits nor requires that action. A rule names the action (dalicc:appliesTo),
+the outcome (dalicc:defaultOutcome), the territory it holds in (dalicc:inJurisdiction), the
+statute or principle it rests on (dalicc:ruleBasis) and whether it is adopted or only proposed
+(dalicc:ruleStatus)."""@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso dalicc:DefaultOutcome , dalicc:RuleStatus , dalicc:DependencyRelation ;
+    skos:scopeNote "Instances live in the dependency graphs of licensedata/dependencygraph/, beside the axioms, because a graph is the layer of statements about actions and can be chosen per check."@en ;
+    skos:note "Nothing a rule states is legal advice. An adopted rule is the library's reading of a legal default, a proposed one is a question for a legal reviewer, and what a license means is decided by its text."@en .
+
+dalicc:DefaultOutcome a owl:Class ;
+    rdfs:label "Default outcome"@en ;
+    rdfs:comment """What a default rule concludes about an action the license does not mention:
+that it is not granted, that it is granted, that it is required, or that a statement of the
+license to the contrary has no effect."""@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso dalicc:defaultOutcome , dalicc:DefaultRule .
+
+dalicc:RuleStatus a owl:Class ;
+    rdfs:label "Rule status"@en ;
+    rdfs:comment """Whether a default rule takes part in reasoning by default (dalicc:Adopted) or
+is written down for review and applies only when its graph is chosen (dalicc:Proposed)."""@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso dalicc:ruleStatus , dalicc:DefaultRule .
+
+dalicc:StatementOrigin a owl:Class ;
+    rdfs:label "Statement origin"@en ;
+    rdfs:comment """Where a deontic statement in a result or a document came from: the text of the
+license, or a default rule applied to an action the text is silent on."""@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso dalicc:statementOrigin , dalicc:DefaultRule ;
+    skos:scopeNote "Used in compatibility and consistency results and in the documents built from them, never in a curated record: a record states what its text states."@en .
 
 dalicc:RecordStatus a owl:Class ;
     rdfs:label "Record status"@en ;
@@ -372,6 +409,25 @@ in which case no statement is made."""@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso odrl:extract , dcmitype:Dataset ;
     skos:note "Added by the license library review of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 3 license records by the standard-license addition of 2026-09-15."@en .
+
+dalicc:textAndDataMining a odrl:Action , skos:Concept , dalicc:RuleAction ;
+    rdfs:label "Text and data mining"@en ;
+    rdfs:comment """Automated analysis of the work in digital form to generate information about
+patterns, trends and correlations in it, which is the act the European and British mining
+exceptions describe. It covers the copying a mining run makes, whether or not a model is trained
+from the result."""@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso dalicc:useForModelTraining , odrl:extract , odrl:reproduce ;
+    skos:note "Added with version 7 of the vocabulary so that the mining exceptions can be stated as default rules; not used by any license in the current library. dalicc:useForModelTraining stays the narrower act of training a system on the work."@en .
+
+dalicc:reverseEngineerForInteroperability a odrl:Action , skos:Concept , dalicc:RuleAction ;
+    rdfs:label "Reverse engineer for interoperability"@en ;
+    rdfs:comment """Decompiling or otherwise analysing a program so far as is necessary to obtain
+the information needed to make an independently created program work with it. It is narrower
+than reverse engineering at large: the purpose is interoperability and nothing else."""@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso odrl:extract , cc:SourceCode , dalicc:textAndDataMining ;
+    skos:note "Added with version 7 of the vocabulary so that the European interoperability exception can be stated as a default rule; not used by any license in the current library."@en .
 
 dalicc:networkUseTrigger a odrl:Action , skos:Concept , dalicc:RuleAction ;
     rdfs:label "Network use trigger"@en ;
@@ -645,6 +701,157 @@ dalicc:worldwide a skos:Concept , dalicc:Jurisdiction ;
     skos:prefLabel "worldwide"@en ;
     rdfs:seeAlso cc:jurisdiction ;
     skos:scopeNote "The value of cc:jurisdiction on 57 licenses; the other 286 name one or more BPI country IRIs."@en .
+
+#################################################################
+#    Default outcomes, rule statuses and statement origins
+#
+#    The controlled values a dalicc:DefaultRule takes, and the two origins a derived
+#    statement carries in a result. None of them is an action: they qualify a rule or
+#    a finding, never an act the licensee may or may not do.
+#################################################################
+
+dalicc:NotGrantedByDefault a skos:Concept , dalicc:DefaultOutcome ;
+    rdfs:label "Not granted by default"@en ;
+    rdfs:comment """The action is not permitted unless the license permits it. A license that says
+nothing grants nothing, so a check under a graph that adopts the rule reads the silence as a
+prohibition and marks the finding as coming from the rule."""@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    skos:prefLabel "notGrantedByDefault"@en ;
+    rdfs:seeAlso dalicc:GrantedByDefault , dalicc:defaultOutcome .
+
+dalicc:GrantedByDefault a skos:Concept , dalicc:DefaultOutcome ;
+    rdfs:label "Granted by default"@en ;
+    rdfs:comment """The action is permitted unless the license prohibits it, for example because a
+statutory exception allows it whatever the license says. A check under a graph that adopts the
+rule reads the silence as a permission and marks the finding as coming from the rule."""@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    skos:prefLabel "grantedByDefault"@en ;
+    rdfs:seeAlso dalicc:NotGrantedByDefault , dalicc:NotWaivable .
+
+dalicc:RequiredByDefault a skos:Concept , dalicc:DefaultOutcome ;
+    rdfs:label "Required by default"@en ;
+    rdfs:comment """A duty applies unless the license waives it. A check under a graph that adopts
+the rule reads the silence as a license-wide duty and marks the finding as coming from the
+rule."""@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    skos:prefLabel "requiredByDefault"@en ;
+    rdfs:seeAlso dalicc:NotWaivable , odrl:duty .
+
+dalicc:NotWaivable a skos:Concept , dalicc:DefaultOutcome ;
+    rdfs:label "Not waivable"@en ;
+    rdfs:comment """A statement of the license to the contrary has no effect in that jurisdiction.
+The reasoner reports it as a finding when the license prohibits the action; it never silently
+overrides what the license says, because what the license says is what the record models."""@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    skos:prefLabel "notWaivable"@en ;
+    rdfs:seeAlso dalicc:GrantedByDefault , dalicc:moralRightsRestriction .
+
+dalicc:Adopted a skos:Concept , dalicc:RuleStatus ;
+    rdfs:label "Adopted"@en ;
+    rdfs:comment """The rule takes part in reasoning under every graph that carries it. Only a rule
+the library has adopted is applied when a reader chooses nothing."""@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    skos:prefLabel "adopted"@en ;
+    rdfs:seeAlso dalicc:Proposed , dalicc:ruleStatus .
+
+dalicc:Proposed a skos:Concept , dalicc:RuleStatus ;
+    rdfs:label "Proposed"@en ;
+    rdfs:comment """The rule is written down for review and is not part of any default check.
+Choosing the graph it lives in is the reader's request to see what it would do."""@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    skos:prefLabel "proposed"@en ;
+    rdfs:seeAlso dalicc:Adopted , dalicc:ruleStatus ;
+    skos:note "A proposed rule is a question for the association's legal reviewer and not legal advice."@en .
+
+dalicc:FromText a skos:Concept , dalicc:StatementOrigin ;
+    rdfs:label "From the text"@en ;
+    rdfs:comment "The statement is modelled from a sentence of the license text, which is what every curated record holds."@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    skos:prefLabel "fromText"@en ;
+    rdfs:seeAlso dalicc:FromDefaultRule , dalicc:statementOrigin .
+
+dalicc:FromDefaultRule a skos:Concept , dalicc:StatementOrigin ;
+    rdfs:label "From a default rule"@en ;
+    rdfs:comment """The statement was derived, for an action the license is silent on, by a
+dalicc:DefaultRule of the dependency graph the check ran under. The rule that produced it is
+named beside it."""@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    skos:prefLabel "fromDefaultRule"@en ;
+    rdfs:seeAlso dalicc:FromText , dalicc:DefaultRule .
+
+#################################################################
+#    Regions -- jurisdictions wider than one country
+#
+#    cc:jurisdiction on a license record names a BPI country or dalicc:worldwide. A
+#    default rule needs to speak about a region as well, because the law it rests on is
+#    often written for one. Each region below is a dalicc:Jurisdiction whose members are
+#    named with the BPI country IRIs the records use.
+#################################################################
+
+dalicc:EU a skos:Concept , dalicc:Jurisdiction ;
+    rdfs:label "European Union"@en ;
+    rdfs:comment """The member states of the European Union. A rule in this jurisdiction rests on
+a Union instrument, which reaches every member state once it is transposed; where a member state
+differs, a rule for that country says so."""@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    skos:prefLabel "EU"@en ;
+    rdfs:seeAlso cc:jurisdiction , dalicc:worldwide ;
+    skos:member bpicounty:Austria , bpicounty:Belgium , bpicounty:Bulgaria , bpicounty:Croatia ,
+        bpicounty:Cyprus , bpicounty:Czechia , bpicounty:Denmark , bpicounty:Estonia ,
+        bpicounty:Finland , bpicounty:France , bpicounty:Germany , bpicounty:Greece ,
+        bpicounty:Hungary , bpicounty:Ireland , bpicounty:Italy , bpicounty:Latvia ,
+        bpicounty:Lithuania , bpicounty:Luxembourg , bpicounty:Malta , bpicounty:Netherlands ,
+        bpicounty:Poland , bpicounty:Portugal , bpicounty:Romania , bpicounty:Slovakia ,
+        bpicounty:Slovenia , bpicounty:Spain , bpicounty:Sweden ;
+    skos:scopeNote "27 member states. The United Kingdom left the Union in 2020 and is dalicc:GB, which keeps some of the same law and has diverged in others."@en .
+
+dalicc:US a skos:Concept , dalicc:Jurisdiction ;
+    rdfs:label "United States"@en ;
+    rdfs:comment "The United States of America, whose copyright law is federal."@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    skos:prefLabel "US"@en ;
+    skos:member bpicounty:UnitedStates ;
+    rdfs:seeAlso cc:jurisdiction .
+
+dalicc:CN a skos:Concept , dalicc:Jurisdiction ;
+    rdfs:label "China"@en ;
+    rdfs:comment "The People's Republic of China, excluding the special administrative regions, whose copyright law is separate."@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    skos:prefLabel "CN"@en ;
+    skos:member bpicounty:China ;
+    rdfs:seeAlso cc:jurisdiction .
+
+dalicc:GB a skos:Concept , dalicc:Jurisdiction ;
+    rdfs:label "United Kingdom"@en ;
+    rdfs:comment "The United Kingdom of Great Britain and Northern Ireland, which kept the database right and the mining exception it had as a member state and has diverged since."@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    skos:prefLabel "GB"@en ;
+    skos:member bpicounty:UnitedKingdom ;
+    rdfs:seeAlso dalicc:EU , cc:jurisdiction .
+
+dalicc:JP a skos:Concept , dalicc:Jurisdiction ;
+    rdfs:label "Japan"@en ;
+    rdfs:comment "Japan."@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    skos:prefLabel "JP"@en ;
+    skos:member bpicounty:Japan ;
+    rdfs:seeAlso cc:jurisdiction .
+
+dalicc:IN a skos:Concept , dalicc:Jurisdiction ;
+    rdfs:label "India"@en ;
+    rdfs:comment "The Republic of India."@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    skos:prefLabel "IN"@en ;
+    skos:member bpicounty:India ;
+    rdfs:seeAlso cc:jurisdiction .
+
+dalicc:BR a skos:Concept , dalicc:Jurisdiction ;
+    rdfs:label "Brazil"@en ;
+    rdfs:comment "The Federative Republic of Brazil."@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    skos:prefLabel "BR"@en ;
+    skos:member bpicounty:Brazil ;
+    rdfs:seeAlso cc:jurisdiction .
 
 dalicc:irrevocable a skos:Concept ;
     rdfs:label "Irrevocable"@en ;
@@ -1045,6 +1252,76 @@ compatibility answer for the stack is the conjunction of the answers for its par
     rdfs:seeAlso dct:hasPart , dalicc:jurisdictionPortOf ;
     skos:scopeNote "Carried by Python-2.0.1, which is four agreements published as one license."@en ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 1 license record by the standard-license addition of 2026-09-15."@en .
+
+#################################################################
+#    Default-rule properties
+#################################################################
+
+dalicc:appliesTo a owl:ObjectProperty ;
+    rdfs:label "Applies to"@en ;
+    rdfs:comment "Relates a default rule to the action it is about."@en ;
+    rdfs:domain dalicc:DefaultRule ;
+    rdfs:range odrl:Action ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso odrl:action , dalicc:DefaultRule .
+
+dalicc:defaultOutcome a owl:ObjectProperty ;
+    rdfs:label "Default outcome"@en ;
+    rdfs:comment """Relates a default rule to what it concludes about an action the license does
+not mention: dalicc:NotGrantedByDefault, dalicc:GrantedByDefault, dalicc:RequiredByDefault or
+dalicc:NotWaivable."""@en ;
+    rdfs:domain dalicc:DefaultRule ;
+    rdfs:range dalicc:DefaultOutcome ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso dalicc:DefaultOutcome .
+
+dalicc:inJurisdiction a owl:ObjectProperty ;
+    rdfs:label "In jurisdiction"@en ;
+    rdfs:comment """Relates a default rule to the territory it holds in: dalicc:worldwide, one of
+the region concepts this vocabulary defines, or a BPI country IRI, which is the scheme
+cc:jurisdiction uses on the records."""@en ;
+    rdfs:domain dalicc:DefaultRule ;
+    rdfs:range dalicc:Jurisdiction ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso cc:jurisdiction , dalicc:Jurisdiction .
+
+dalicc:ruleBasis a owl:DatatypeProperty ;
+    rdfs:label "Rule basis"@en ;
+    rdfs:comment """The legal source a default rule rests on, named in words: a statute and its
+article, a directive, or a general principle. It is a citation a reader can check, not a holding
+and not legal advice."""@en ;
+    rdfs:domain dalicc:DefaultRule ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso dalicc:DefaultRule , dct:date .
+
+dalicc:ruleStatus a owl:ObjectProperty ;
+    rdfs:label "Rule status"@en ;
+    rdfs:comment """Relates a default rule to whether it takes part in reasoning by default
+(dalicc:Adopted) or is written down for review (dalicc:Proposed)."""@en ;
+    rdfs:domain dalicc:DefaultRule ;
+    rdfs:range dalicc:RuleStatus ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso dalicc:RuleStatus .
+
+dalicc:statementOrigin a owl:ObjectProperty ;
+    rdfs:label "Statement origin"@en ;
+    rdfs:comment """Relates a deontic statement in a result or a document to where it came from:
+dalicc:FromText or dalicc:FromDefaultRule. It is written by the reasoner and by the services that
+build a result, never by a curated record."""@en ;
+    rdfs:range dalicc:StatementOrigin ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso dalicc:StatementOrigin , dalicc:DefaultRule .
+
+dalicc:extendsGraph a owl:ObjectProperty ;
+    rdfs:label "Extends graph"@en ;
+    rdfs:comment """Relates a dependency graph to a graph whose statements it is read together
+with. A jurisdiction graph carries its own default rules and extends the core graph, so a check
+under it sees the core axioms, the adopted rules and the proposed rules of that jurisdiction,
+and the core graph stays the single place its axioms are written."""@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso dalicc:DependencyRelation , dalicc:DefaultRule ;
+    skos:scopeNote "Read by app/services/depgraph.py and by the reasoner's dependency-graph atom, which follow it one step; a graph that extends a graph that extends a third is not resolved further."@en .
 
 #################################################################
 #    The dependency-graph relations

@@ -41,8 +41,8 @@ dalicclib:LGPL-3.0-or-later a odrl:Set ;
         "GNU Lesser General Public License Version 3 or later",
         "LGPL Version 3 or later",
         "LGPL-3.0+" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-23"^^xsd:date ;
     dct:publisher "Free Software Foundation" ;
     dct:source <https://www.gnu.org/licenses/lgpl-3.0.html> ;
     dct:title "GNU Lesser General Public License v3.0 or later"@en ;
@@ -93,9 +93,7 @@ dalicclib:LGPL-3.0-or-later a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:patentGrant ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:ChangeLicense ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:ChangeLicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] ;
     foaf:logo <https://www.gnu.org/graphics/lgplv3-147x51.png> .

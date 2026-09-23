@@ -1,0 +1,104 @@
+# Title: The machine-readable representation of "GNU Lesser General Public License v2.1 only with Qt LGPL exception 1.1"@en in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/LGPL-2.1-only-with-Qt-LGPL-exception-1.1
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:LGPL-2.1-only-with-Qt-LGPL-exception-1.1 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "LGPL-2.1-only WITH Qt-LGPL-exception-1.1" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html> ;
+    dalicc:LiabilityLimitation "IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR REDISTRIBUTE THE LIBRARY AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE LIBRARY (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE LIBRARY TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES." ;
+    dalicc:WarrantyDisclaimer "BECAUSE THE LIBRARY IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY FOR THE LIBRARY, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE LIBRARY \"AS IS\" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE LIBRARY IS WITH YOU. SHOULD THE LIBRARY PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION." ;
+    dalicc:WarrantyOrLiabilityAcceptance "You may charge a fee for the physical act of transferring a copy, and you may at your option offer warranty protection in exchange for a fee." ;
+    dalicc:additionalClauses "As an exception to the Sections above, you may also combine or link a \"work that uses the Library\" with the Library to produce a work containing portions of the Library, and distribute that work under terms of your choice, provided that the terms permit modification of the work for the customer's own use and reverse engineering for debugging such modifications. You must give prominent notice with each copy of the work that the Library is used in it and that the Library and its use are covered by this License. You must supply a copy of this License. If the work during execution displays copyright notices, you must include the copyright notice for the Library among them, as well as a reference directing the user to the copy of this License. Also, you must do one of these things: a) Accompany the work with the complete corresponding machine-readable source code for the Library including whatever changes were used in the work (which must be distributed under Sections 1 and 2 above); and, if the work is an executable linked with the Library, with the complete machine-readable \"work that uses the Library\", as object code and/or source code, so that the user can modify the Library and then relink to produce a modified executable containing the modified Library. (It is understood that the user who changes the contents of definitions files in the Library will not necessarily be able to recompile the application to use the modified definitions.) b) Use a suitable shared library mechanism for linking with the Library. A suitable mechanism is one that (1) uses at run time a copy of the library already present on the user's computer system, rather than copying library functions into the executable, and (2) will operate properly with a modified version of the library, if the user installs one, as long as the modified version is interface-compatible with the version that the work was made with. c) Accompany the work with a written offer, valid for at least three years, to give the same user the materials specified in Subsection 6a, above, for a charge no more than the cost of performing this distribution. d) If distribution of the work is made by offering access to copy from a designated place, offer equivalent access to copy the above specified materials from the same place. e) Verify that the user has already received a copy of these materials or that you have already sent this user a copy. For an executable, the required form of the \"work that uses the Library\" must include any data and utility programs needed for reproducing the executable from it. However, as a special exception, the materials to be distributed need not include anything that is normally distributed (in either source or binary form) with the major components (compiler, kernel, and so on) of the operating system on which the executable runs, unless that component itself accompanies the executable. It may happen that this requirement contradicts the license restrictions of other proprietary libraries that do not normally accompany the operating system. Such a contradiction means you cannot use both them and the Library together in an executable that you distribute. 7. You may place library facilities that are a work based on the Library side-by-side in a single library together with other library facilities not covered by this License, and distribute such a combined library, provided that the separate distribution of the work based on the Library and of the other library facilities is otherwise permitted, and provided that you do these two things: a) Accompany the combined library with a copy of the same work based on the Library, uncombined with any other library facilities. This must be distributed under the terms of the Sections above. b) Give prominent notice with the combined library of the fact that part of it is a work based on the Library, and explaining where to find the accompanying uncombined form of the same work.",
+        "The Qt Company Qt LGPL Exception version 1.1 As an additional permission to the GNU Lesser General Public License version 2.1, the object code form of a \"work that uses the Library\" may incorporate material from a header file that is part of the Library. You may distribute such object code under terms of your choice, provided that: (i) the header files of the Library have not been modified; and (ii) the incorporated material is limited to numerical parameters, data structure layouts, accessors, macros, inline functions and templates; and (iii) you comply with the terms of Section 6 of the GNU Lesser General Public License version 2.1. Moreover, you may apply this exception to a modified version of the Library, provided that such modification does not involve copying material from the Library into the modified Library's header files unless such material is limited to (i) numerical parameters; (ii) data structure layouts; (iii) accessors; and (iv) small macros, templates and inline functions of five lines or less in length. Furthermore, you are not required to apply this additional permission to a modified version of the Library." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:orLaterVersionOption false ;
+    dalicc:terminatesOnBreach true ;
+    dalicc:reciprocityScope "the library, not object code that incorporates limited material from its unmodified header files" ;
+    dalicc:variantKind "exception" ;
+    dalicc:variantOf dalicclib:LGPL-2.1-only ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-22"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/LGPL-2.1-only-with-Qt-LGPL-exception-1.1/versions> ;
+    dct:alternative "GNU Lesser General Public License v2.1 only with Qt LGPL exception 1.1",
+        "LGPL-2.1 with Qt LGPL exception",
+        "LGPL-2.1-only WITH Qt-LGPL-exception-1.1",
+        "LGPL-2.1-only-with-Qt-LGPL-exception-1.1",
+        "LGPLv2.1 with Qt LGPL exception" ;
+    dct:hasVersion "1" ;
+    dct:modified "2026-09-22"^^xsd:date ;
+    dct:publisher "Free Software Foundation" ;
+    dct:source <https://spdx.org/licenses/Qt-LGPL-exception-1.1.html> ;
+    dct:title "GNU Lesser General Public License v2.1 only with Qt LGPL exception 1.1"@en ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ] ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:patentFreedomCondition ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:exceptedCombination ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Software ] .

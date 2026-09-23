@@ -1,0 +1,102 @@
+# Title: The machine-readable representation of "LaTeX Project Public License, Version 1.0"@en in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/LPPL-1.0
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:LPPL-1.0 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "LPPL-1.0" ;
+    cc:attributionName "LaTeX3 Project" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://www.latex-project.org/lppl/lppl-1-0/> ;
+    dalicc:LiabilityLimitation "In no event unless required by applicable law or agreed to in writing will The Copyright Holder, or any of the individual authors named in the source for The Program, be liable to you for damages, including any general, special, incidental or consequential damages arising out of any use of The Program or out of inability to use The Program (including but not limited to loss of data or data being rendered inaccurate or losses sustained by you or by third parties as a result of a failure of The Program to operate with any other programs), even if such holder or other party has been advised of the possibility of such damages." ;
+    dalicc:WarrantyDisclaimer "There is no warranty for The Program, to the extent permitted by applicable law. Except when otherwise stated in writing, The Copyright Holder provides The Program `as is' without warranty of any kind, either expressed or implied, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose. The entire risk as to the quality and performance of the program is with you. Should The Program prove defective, you assume the cost of all necessary servicing, repair or correction." ;
+    dalicc:additionalClauses "Redistribution of unchanged files is allowed provided that all files that make up the distribution of The Program are distributed. In particular this means that The Program has to be distributed including its documentation if documentation was part of the original distribution.",
+        "The distribution of The Program will contain a prominent file listing all the files covered by this license.",
+        "The distribution of changed versions of certain files included in the The Program, and the reuse of code from The Program, are allowed under the following restrictions: * It is allowed only if the legal notice in the file does not expressly forbid it. See note below, under \"Conditions on individual files\". * You rename the file before you make any changes to it, unless the file explicitly says that renaming is not required. Any such changed files must be distributed under a license that forbids distribution of those files, and any files derived from them, under the names used by the original files in the distribution of The Program. * You change any `identification string' in The Program to clearly indicate that the file is not part of the standard system. * If The Program includes an `error report address' so that errors may be reported to The Copyright Holder, or other specified addresses, this address must be changed in any modified versions of The Program, so that reports for files not maintained by the original program maintainers are directed to the maintainers of the changed files. * You acknowledge the source and authorship of the original version in the modified file. * You also distribute the unmodified version of the file or alternatively provide sufficient information so that the user of your modified file can be reasonably expected to be able to obtain an original, unmodified copy of The Program. For example, you may specify a URL to a site that you expect will freely provide the user with a copy of The Program (either the version on which your modification is based, or perhaps a later version).",
+        "If The Program is intended to be used with, or is based on, LaTeX, then files with the following file extensions which have special meaning in LaTeX Software, have special modification rules under the license: - Files with extension `.ins' (installation files): these files may not be modified at all because they contain the legal notices that are placed in the generated files. - Files with extension `.fd' (LaTeX font definitions files): these files are allowed to be modified without changing the name, but only to enable use of all available fonts and to prevent attempts to access unavailable fonts. However, modified files are not allowed to be distributed in place of original files. - Files with extension `.cfg' (configuration files): these files can be created or modified to enable easy configuration of the system. The documentation in cfgguide.tex in the base LaTeX distribution describes when it makes sense to modify or generate such files.",
+        "The above restrictions are not intended to prohibit, and hence do not apply to, the updating, by any method, of a file so that it becomes identical to the latest version of that file in The Program.",
+        "The individual files may bear additional conditions which supersede the general conditions on distribution and modification contained in this file. If there are any such files, the distribution of The Program will contain a prominent file that lists all the exceptional files.",
+        "If you do need to modify the distribution terms of some files, do not refer to this license, instead distribute The Program under a different license. You may use the parts of the text of LPPL as a model for your own license, but your license should not directly refer to the LPPL or otherwise give the impression that The Program is distributed under the LPPL." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:variantKind "version" ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-22"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/LPPL-1.0/versions> ;
+    dct:alternative "LPPL 1.0",
+        "LPPL-1.0",
+        "LaTeX Project Public License v1.0" ;
+    dct:hasVersion "1" ;
+    dct:modified "2026-09-22"^^xsd:date ;
+    dct:publisher "LaTeX3 Project" ;
+    dct:source <https://spdx.org/licenses/LPPL-1.0.html> ;
+    dct:title "LaTeX Project Public License, Version 1.0"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action dalicc:ChangeLicense ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action dalicc:compliantLicense ] ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:originalVersionOffer ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:rename ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:originalVersionOffer ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:rename ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:addLimitation ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Software ] .

@@ -237,6 +237,30 @@ findings:
     checker cannot tell this record from the other records of the BY-NC-SA element set, across all three
     versions and every jurisdiction the library holds.'
   action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The record said nothing about the sui generis database right although the port''s own
+    text settles it, which the rubric 2 finding of this review read off the legal code: Section 1 defines
+    Opera to include "o baza de date in conformitate cu definitiile din legislatia in vigoare privind
+    drepturile de autor si drepturile conexe", Section 3 grants "in cazul in care opera este o baza de
+    date, dreptul de a extrage si/sau a reutiliza parti substantiale din Opera" and closes with "Daca
+    Licentiatorul este titularul drepturilor sui-generis asupra unei baze de date, in conformitate cu
+    legea nationala care implementeaza Directiva Europeana privind Bazele de Date, Licentiatorul va renunta
+    la aceste drepturi", and Section 4 adds that the restrictions do not apply to the parts of the Work
+    that qualify only under the Romanian sui generis database right. Exercising that right is therefore
+    permitted by this licence and dalicc:suiGenerisDatabaseRights is now a permission of the record. It
+    carries no duty, which is where the 3.0 ports part company with the 4.0 text their parent CC-BY-NC-SA-4.0
+    models: Section 4(c) of 4.0 carries the conditions of Section 3(a) over to the database layer, while
+    this port takes its own restrictions off the material that qualifies only under the database right.
+    The cc:ShareAlike duty of this record sits at the level of the odrl:Set and still reaches this permission
+    in the model; the term that would take the conditions off the database layer does not exist, and the
+    gap finding of this review still records that. Under the proposed default rule eu-sui-generis-db of
+    licensedata/dependencygraph/dg_eu.ttl the database right is not granted unless the licence grants
+    it, so a record that is silent reads as a licence that keeps the right back, which this text contradicts.'
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
+    \ ] ;"
 family: 'Creative Commons 3.0 port: Romania (RO)'
 port_of: CC-BY-NC-SA-4.0
 variant_kind: jurisdiction-port
