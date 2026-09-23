@@ -20,6 +20,18 @@
 # --clear -- Virtuoso's bulk loader APPENDS, which is how stale pre-2023 license
 # identifiers survived in production for years (see docs/DATA.md).
 #
+# --clear empties only the graphs this repository ships: the library, the vocabulary, the
+# core dependency graph and the seven jurisdiction dependency graphs. It never empties
+# <https://dalicc.net/customlicenses/>. That graph holds the licenses people compose on
+# the running instance, it exists nowhere in this repository, and clearing it destroys
+# user data that only a backup can bring back. Emptying it takes the separate
+# --clear-custom, which is refused unless --custom-licenses names the file that refills
+# it.
+#
+# Before anything is cleared the script prints the graphs it is about to clear and the
+# current triple count of the custom-licenses graph, and it refuses to run if that graph
+# would be cleared without --clear-custom.
+#
 # Usage:
 #   scripts/load_data.sh [options]
 #
@@ -32,9 +44,16 @@
 #   --dump-dir NAME         staging directory under --data-dir               (default: ttl_dump)
 #   --ld-dir PATH           the staging directory as ld_dir() must name it
 #                           (default: ./<dump-dir>, relative to the server's cwd)
-#   --clear                 SPARQL CLEAR GRAPH each target graph before loading
+#   --clear                 SPARQL CLEAR GRAPH, before loading, each graph this
+#                           repository ships: the library, the vocabulary, the core
+#                           dependency graph and the jurisdiction dependency graphs.
+#                           Never the custom-licenses graph.
+#   --clear-custom          also SPARQL CLEAR GRAPH <https://dalicc.net/customlicenses/>,
+#                           the composed licenses of the running instance. Only together
+#                           with --custom-licenses, and only when that file is meant to
+#                           replace them.
 #   --skip-index            do not (re)build the full-text index
-#   --dry-run               print what would happen, touch nothing
+#   --dry-run               print what would happen, touch nothing (needs no docker)
 #   -h, --help              this text
 #
 # Environment:
@@ -43,8 +62,10 @@
 # Examples:
 #   VIRTUOSO_DBA_PASSWORD=s3cret scripts/load_data.sh --clear
 #   scripts/load_data.sh --custom-licenses build/customlicenses.nt
+#   scripts/load_data.sh --clear --custom-licenses dump.nt --clear-custom   # full restore
 #
-# Requirements: docker, and a running Virtuoso container (docker compose up -d db).
+# Requirements: docker, and a running Virtuoso container (docker compose up -d db);
+# --dry-run needs neither.
 # In the tenforce/virtuoso image /data is a SYMLINK to the server's working directory
 # (/usr/local/virtuoso-opensource/var/lib/virtuoso/db), and virtuoso.ini sets
 # DirsAllowed = "." plus the vad share. Virtuoso matches DirsAllowed against the path as
@@ -66,6 +87,7 @@ CONTAINER_DATA_DIR="/data"
 DUMP_DIR="ttl_dump"
 LD_DIR=""
 CLEAR=0
+CLEAR_CUSTOM=0
 SKIP_INDEX=0
 DRY_RUN=0
 
@@ -93,6 +115,7 @@ while [[ $# -gt 0 ]]; do
         --dump-dir)        DUMP_DIR="${2:?--dump-dir needs a value}"; shift 2 ;;
         --ld-dir)          LD_DIR="${2:?--ld-dir needs a value}"; shift 2 ;;
         --clear)           CLEAR=1; shift ;;
+        --clear-custom)    CLEAR_CUSTOM=1; shift ;;
         --skip-index)      SKIP_INDEX=1; shift ;;
         --dry-run)         DRY_RUN=1; shift ;;
         -h|--help)         usage; exit 0 ;;
@@ -115,8 +138,9 @@ if [[ -z "${PASSWORD}" ]]; then
 fi
 
 # --- inputs -----------------------------------------------------------------------
-declare -a FILES=()      # host paths of the payload files
-declare -a GRAPHS=()     # target graph IRIs, in the same order
+declare -a FILES=()        # host paths of the payload files
+declare -a GRAPHS=()       # every target graph IRI, for the triple counts at the end
+declare -a REPO_GRAPHS=()  # of those, the ones this repository ships -- what --clear clears
 
 add_pair() {
     # add_pair <host .ttl/.nt path> <expected graph IRI>
@@ -128,13 +152,23 @@ add_pair() {
         || die "${graph_file} names <${actual}> but <${expected}> was expected"
     FILES+=("${path}" "${graph_file}")
     GRAPHS+=("${expected}")
+    REPO_GRAPHS+=("${expected}")
 }
 
 add_pair "${DATA_DIR_HOST}/licenselibrary/licenselibrary.ttl"  "${GRAPH_LIBRARY}"
 add_pair "${DATA_DIR_HOST}/dependencygraph/dg_default.ttl"     "${GRAPH_DEPENDENCY}"
 add_pair "${DATA_DIR_HOST}/vocabulary/dalicc-ns.ttl"           "${GRAPH_VOCABULARY}"
 
+# The jurisdiction graphs. Each holds the default rules proposed for one market and is
+# read together with the core graph, which it names with dalicc:extendsGraph. None of
+# them is the default for any check: a reader chooses one deliberately.
+for jurisdiction in eu us cn gb jp in br; do
+    add_pair "${DATA_DIR_HOST}/dependencygraph/dg_${jurisdiction}.ttl" \
+             "https://dalicc.net/dependencygraph/dg_${jurisdiction}"
+done
+
 CUSTOM_GRAPH_FILE=""
+CUSTOM_TARGET=""
 if [[ -n "${CUSTOM_LICENSES}" ]]; then
     [[ -f "${CUSTOM_LICENSES}" ]] || die "missing custom-licenses file: ${CUSTOM_LICENSES}"
     CUSTOM_GRAPH_FILE="${CUSTOM_LICENSES}.graph"
@@ -149,13 +183,19 @@ if [[ -n "${CUSTOM_LICENSES}" ]]; then
         [[ "${actual}" == "${GRAPH_CUSTOM}" ]] \
             || warn "${CUSTOM_GRAPH_FILE} names <${actual}>, not the usual <${GRAPH_CUSTOM}>"
     fi
+    CUSTOM_TARGET="$(tr -d '[:space:]' < "${CUSTOM_GRAPH_FILE}")"
     FILES+=("${CUSTOM_LICENSES}")
-    GRAPHS+=("$(tr -d '[:space:]' < "${CUSTOM_GRAPH_FILE}")")
+    # Deliberately not added to REPO_GRAPHS: --clear must not reach this graph.
+    GRAPHS+=("${CUSTOM_TARGET}")
+fi
+
+if [[ "${CLEAR_CUSTOM}" -eq 1 && -z "${CUSTOM_LICENSES}" ]]; then
+    die "--clear-custom without --custom-licenses would empty <${GRAPH_CUSTOM}> and load nothing back into it. Name the file that refills it, or drop --clear-custom."
 fi
 
 # --- container --------------------------------------------------------------------
-command -v docker >/dev/null 2>&1 || die "docker not found on PATH"
 if [[ "${DRY_RUN}" -eq 0 ]]; then
+    command -v docker >/dev/null 2>&1 || die "docker not found on PATH"
     docker inspect --format '{{.State.Running}}' "${CONTAINER}" 2>/dev/null | grep -q true \
         || die "container '${CONTAINER}' is not running (try: docker compose up -d db)"
 fi
@@ -165,17 +205,78 @@ readonly STAGE="${CONTAINER_DATA_DIR}/${DUMP_DIR}"
 # not follow the /data symlink when it checks the access control list (see the header).
 readonly LD_STAGE="${LD_DIR:-./${DUMP_DIR}}"
 
+isql() {
+    # Run one isql-v batch in the container. isql-v reports SQL errors on stdout and still
+    # exits 0, so every caller has to inspect the output (see check_isql_output).
+    docker exec -i -e DALICC_VPW="${PASSWORD}" "${CONTAINER}" \
+        sh -c 'exec isql-v 1111 dba "$DALICC_VPW"'
+}
+
+check_isql_output() {
+    # isql-v exits 0 even after "*** Error 42000: ... FA003: Access to ... is denied",
+    # which is how a completely failed load used to report success.
+    grep -q '^\*\*\* Error' "$1" && die "isql reported an error (see the output above)"
+    return 0
+}
+
+graph_triples() {
+    # The triple count of one graph, or the empty string when the store cannot be asked.
+    # No `exit` in awk: closing the pipe early would SIGPIPE `docker exec` and, with
+    # `set -o pipefail`, abort the script.
+    printf 'SPARQL SELECT (COUNT(*) AS ?t) FROM <%s> WHERE { ?s ?p ?o };\n' "$1" \
+        | isql | awk '/^[0-9]+$/ && !seen { print; seen = 1 }'
+}
+
+# --- what gets cleared ------------------------------------------------------------
+# Built from REPO_GRAPHS, never from GRAPHS. GRAPHS carries the custom-licenses graph
+# whenever --custom-licenses is given, and clearing every entry of GRAPHS is how
+# `--clear --custom-licenses <dump>` emptied the composed licenses of a running instance
+# before loading the dump back over them: anything composed since that dump was taken was
+# gone, and nothing in this repository could restore it.
+declare -a CLEAR_GRAPHS=()
+if [[ "${CLEAR}" -eq 1 ]]; then
+    CLEAR_GRAPHS+=("${REPO_GRAPHS[@]}")
+fi
+if [[ "${CLEAR_CUSTOM}" -eq 1 ]]; then
+    CLEAR_GRAPHS+=("${CUSTOM_TARGET:-${GRAPH_CUSTOM}}")
+fi
+
+# Belt and braces: whatever a .graph sidecar said, that graph is only ever in the list on
+# an explicit --clear-custom.
+for graph in ${CLEAR_GRAPHS[@]+"${CLEAR_GRAPHS[@]}"}; do
+    [[ "${graph}" == "${GRAPH_CUSTOM}" && "${CLEAR_CUSTOM}" -ne 1 ]] && die \
+        "refusing to clear <${GRAPH_CUSTOM}>: it holds the licenses composed on this instance, it is in no file of this repository, and only a backup can bring it back. Pass --clear-custom together with --custom-licenses if that file really is meant to replace them."
+done
+
+# Say it before doing it. A reader who sees the custom graph in this list, or sees a
+# triple count it did not expect, still has time to press Ctrl-C.
+if [[ "${#CLEAR_GRAPHS[@]}" -eq 0 ]]; then
+    log "no graph will be cleared: the loader appends into the existing graphs"
+else
+    log "graphs that will be CLEARED before loading (${#CLEAR_GRAPHS[@]}):"
+    printf '[load_data]     <%s>\n' "${CLEAR_GRAPHS[@]}" >&2
+fi
+if [[ "${DRY_RUN}" -eq 1 ]]; then
+    CUSTOM_COUNT="not read (dry run)"
+else
+    CUSTOM_COUNT="$(graph_triples "${GRAPH_CUSTOM}")"
+    CUSTOM_COUNT="${CUSTOM_COUNT:-0} triple(s)"
+fi
+if [[ "${CLEAR_CUSTOM}" -eq 1 ]]; then
+    log "custom licenses <${GRAPH_CUSTOM}>: ${CUSTOM_COUNT}, CLEARED and replaced by ${CUSTOM_LICENSES}"
+else
+    log "custom licenses <${GRAPH_CUSTOM}>: ${CUSTOM_COUNT}, kept"
+fi
+
 # --- build the isql script --------------------------------------------------------
 SQL_FILE="$(mktemp -t dalicc-load-sql.XXXXXX)"
 trap 'rm -f "${SQL_FILE}"' EXIT
 
 {
     echo "-- generated by scripts/load_data.sh on $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
-    if [[ "${CLEAR}" -eq 1 ]]; then
-        for graph in "${GRAPHS[@]}"; do
-            echo "SPARQL CLEAR GRAPH <${graph}>;"
-        done
-    fi
+    for graph in ${CLEAR_GRAPHS[@]+"${CLEAR_GRAPHS[@]}"}; do
+        echo "SPARQL CLEAR GRAPH <${graph}>;"
+    done
     # Make ld_dir idempotent: without this, files already in the work list are skipped
     # on a second run and a --clear would leave the graphs empty.
     echo "DELETE FROM DB.DBA.load_list WHERE ll_file LIKE '%${DUMP_DIR}%';"
@@ -217,24 +318,6 @@ if [[ -n "${CUSTOM_LICENSES}" ]]; then
         "${CONTAINER}:${STAGE}/$(basename "${CUSTOM_LICENSES}").graph"
 fi
 
-if [[ "${CLEAR}" -eq 1 ]]; then
-    log "--clear: the target graphs will be emptied before loading"
-fi
-
-isql() {
-    # Run one isql-v batch in the container. isql-v reports SQL errors on stdout and still
-    # exits 0, so every caller has to inspect the output (see check_isql_output).
-    docker exec -i -e DALICC_VPW="${PASSWORD}" "${CONTAINER}" \
-        sh -c 'exec isql-v 1111 dba "$DALICC_VPW"'
-}
-
-check_isql_output() {
-    # isql-v exits 0 even after "*** Error 42000: ... FA003: Access to ... is denied",
-    # which is how a completely failed load used to report success.
-    grep -q '^\*\*\* Error' "$1" && die "isql reported an error (see the output above)"
-    return 0
-}
-
 log "running isql-v in ${CONTAINER}"
 ISQL_OUT="$(mktemp -t dalicc-load-out.XXXXXX)"
 trap 'rm -f "${SQL_FILE}" "${ISQL_OUT}"' EXIT
@@ -247,10 +330,7 @@ check_isql_output "${ISQL_OUT}"
 log "triple counts:"
 failed=0
 for graph in "${GRAPHS[@]}"; do
-    # No `exit` in awk: closing the pipe early would SIGPIPE `docker exec` and, with
-    # `set -o pipefail`, abort the script halfway through the report.
-    count="$(printf 'SPARQL SELECT (COUNT(*) AS ?t) FROM <%s> WHERE { ?s ?p ?o };\n' "${graph}" \
-        | isql | awk '/^[0-9]+$/ && !seen { print; seen = 1 }')"
+    count="$(graph_triples "${graph}")"
     count="${count:-0}"
     log "  <${graph}>  ${count}"
     [[ "${count}" -gt 0 ]] || { warn "  ^ empty: nothing was loaded into this graph"; failed=1; }
