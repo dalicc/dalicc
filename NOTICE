@@ -1,0 +1,36 @@
+DALICC - Data Licenses Clearance Center
+https://dalicc.net
+
+Copyright (C) 2021-2026 DALICC - Verein zur Foerderung der Rechtssicherheit in der
+Datenbewirtschaftung (ZVR 1249185710) and contributors.
+Principal author: Giray Havur.
+
+This program is free software: you can redistribute it and/or modify it under the terms
+of the GNU Affero General Public License, version 3 only, as published by the Free
+Software Foundation. The full licence text is in the file LICENSE.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+
+A commercial licence is available from the association as an alternative to the AGPL,
+for organisations that cannot or do not wish to comply with it. See
+COMMERCIAL-LICENSE.md, or write to tassilo.pellegrini@ustp.at or giray.havur@ustp.at.
+
+The DALICC license library, dependency graph and vocabulary in licensedata/ are
+published under the Creative Commons Attribution 4.0 International licence
+(CC BY 4.0). Attribution: "DALICC License Library, DALICC association,
+https://dalicc.net, CC BY 4.0". See licensedata/LICENSE.
+
+The code this repository held until 2024 remains available at the tag release-2023,
+under the MIT licence it was published with.
+
+No trademark or branding rights in the DALICC name or logo are granted by any licence in
+this repository.
+
+This product includes third-party software: the hexlite solver and clingo, FastAPI,
+uvicorn, gunicorn, pydantic, SPARQLWrapper, requests, rdflib and PyYAML. Each keeps its
+own licence; the pinned versions are in requirements.txt, reasoner/requirements.txt and
+reasoner/requirements-solver.txt.
+
+An overview of all of the above is in LICENSING.md.
