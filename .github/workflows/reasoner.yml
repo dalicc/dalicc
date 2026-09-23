@@ -1,0 +1,53 @@
+# The reasoner's own test suite, including the end-to-end solve.
+#
+# hexlite is installed with --no-deps on purpose: its setup.py hard-pins a clingo
+# version that has no wheel for this Python and a Java bridge the service never uses.
+# reasoner/requirements.txt pins the clingo and ply versions it is run against instead.
+# The tests that need the solver skip themselves when the binary is missing, so
+# installing it here is what makes them run at all.
+name: reasoner
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    name: reasoner tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: reasoner
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            reasoner/requirements.txt
+            reasoner/requirements-dev.txt
+            reasoner/requirements-solver.txt
+
+      - name: Install the service, clingo and the test dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Install the solver
+        run: pip install --no-deps -r requirements-solver.txt
+
+      # hexlite exits 1 after printing its usage banner, which is what the service's own
+      # health probe accounts for, so the exit status is not the thing to look at here.
+      - name: Show which solver is installed
+        run: hexlite --help || true
+
+      - name: Run the tests
+        run: python -m pytest
+
+      - name: Lint
+        run: ruff check .
