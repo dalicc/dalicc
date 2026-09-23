@@ -1,8 +1,20 @@
-SPARQLWrapper==1.8.5
-Jinja2==2.11.3
-aiofiles==0.6.0
-hexlite==1.4.1
-typing-extensions>=4.5.0
-configparser==5.0.2
-simplejson==3.17.2
-fastapi==0.103.2
+# Runtime dependencies of the DALICC reasoner service (Python 3.12).
+#
+# NOTE: hexlite itself lives in requirements-solver.txt because its setup.py
+# hard-pins clingo==5.5.0.post3 (no wheels for cp312 / linux-aarch64) and
+# jpype1==1.2.1 (a Java bridge this service never uses).  It is installed with
+# --no-deps against the clingo and ply versions pinned below, which is verified
+# by the `hexlite --help` smoke test in the Dockerfile and by reasoner/tests.
+
+fastapi==0.141.1
+uvicorn[standard]==0.53.0
+uvicorn-worker==0.4.0
+gunicorn==26.2.0
+pydantic==2.13.5
+SPARQLWrapper==2.0.0
+requests==2.34.2
+
+# hexlite's own runtime requirements, pinned to versions that ship wheels for
+# CPython 3.12 on linux/amd64 and linux/arm64.
+clingo==5.8.2
+ply==3.11

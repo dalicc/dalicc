@@ -1,0 +1,47 @@
+# SPDX-License-Identifier: AGPL-3.0-only
+# SPDX-FileCopyrightText: 2021-2026 DALICC - Verein zur Foerderung der Rechtssicherheit in der Datenbewirtschaftung (ZVR 1249185710)
+# Lint configuration for the reasoner service.
+#
+# The repository root pyproject.toml deliberately excludes `reasoner` from the
+# API service's ruff run, so this file is the authority for these files.  The
+# rule set mirrors the root configuration.
+line-length = 100
+target-version = "py312"
+src = ["."]
+
+[lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # import sorting
+    "UP",   # pyupgrade
+    "B",    # bugbear
+    "C4",   # comprehensions
+    "T20",  # no print()
+    "SIM",  # simplifications
+    "RET",  # return statements
+    "PTH",  # pathlib over os.path
+    "S",    # bandit
+    "N",    # naming
+    "RUF",
+    "D",    # docstrings
+]
+ignore = [
+    "D100",  # module docstring is enforced by review, not for every __init__
+    "D104",  # package docstring
+    "D203",  # incompatible with D211
+    "D213",  # incompatible with D212
+    "D401",  # imperative mood is not always the clearest phrasing
+    "RUF012",
+    "B008",  # FastAPI dependency injection uses calls in defaults by design
+]
+
+[lint.pydocstyle]
+convention = "pep257"
+
+[lint.per-file-ignores]
+# Tests: asserts are the point, and per-function docstrings add noise.
+"tests/**" = ["D", "S101", "S104", "S310"]
+# The hexlite plugin must bootstrap sys.path before importing the app package.
+"app/plugins/plugins.py" = ["E402"]

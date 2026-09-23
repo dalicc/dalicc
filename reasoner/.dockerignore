@@ -1,0 +1,25 @@
+# Build context hygiene: only requirements, the config and the app package are
+# needed to build the image.
+.git
+.gitignore
+.venv
+venv
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+tests/
+requirements-dev.txt
+README.md
+Dockerfile
+.dockerignore
+.DS_Store
+Icon?
+pytest.ini
+ruff.toml
+

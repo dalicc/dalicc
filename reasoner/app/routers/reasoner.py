@@ -1,17 +1,50 @@
-from fastapi import APIRouter
-import simplejson as json
-import subprocess
-from subprocess import Popen, PIPE
-import os
-from pydantic import BaseModel
-import random
-import string
+# SPDX-License-Identifier: AGPL-3.0-only
+# SPDX-FileCopyrightText: 2021-2026 DALICC - Verein zur Foerderung der Rechtssicherheit in der Datenbewirtschaftung (ZVR 1249185710)
+"""HTTP surface of the DALICC reasoner.
 
-from typing import Any, Dict, AnyStr, List, Union, Optional
+``POST /reasoner/compatibility``
+    Deontic conflict detection for a set of licences.  Called by the public
+    ``POST /compatibilitycheck/`` endpoint of the API service.
+``GET /reasoner/dependency_graph``
+    The transitive closure of the dependency-graph axioms, computed by
+    ``getdepgraph.lp``.
 
-JSONObject = Dict[AnyStr, Any]
-JSONArray = List[Any]
-JSONStructure = Union[JSONArray, JSONObject]
+Both accept an optional per-request dependency graph (``dependency_graph`` in the
+compatibility body, ``?graph=`` on the closure endpoint).  It overrides
+``DALICC_DEPENDENCY_GRAPH`` for that one solver run and has to be an absolute IRI in
+one of the two DALICC graph spaces; the API service decides *who* may choose a graph,
+this service decides *what* is a usable graph IRI at all.
+
+Both endpoints validate their input, run ``hexlite`` in a per-request
+temporary directory with a wall-clock timeout, and map solver problems onto
+502 / 504 instead of an unhandled ``IndexError``.
+"""
+
+from __future__ import annotations
+
+import logging
+from typing import Annotated, Any
+
+from fastapi import APIRouter, Header, HTTPException, Response, status
+from fastapi.responses import JSONResponse
+from pydantic import BaseModel, ConfigDict, Field, field_validator
+
+from ..answersets import extract_answer_sets, parse_atoms
+from ..conflicts import (
+    build_conflict_response,
+    build_dependency_graph_rows,
+    empty_conflict_response,
+)
+from ..iri import IriValidationError, validate_dependency_graph_iri, validate_license_iri
+from ..solver import SolverFailureError, SolverTimeoutError, run_compatibility, run_dependency_graph
+
+__all__ = ["LicensesJSON", "router", "wants_normalized_shape"]
+
+logger = logging.getLogger(__name__)
+
+#: Opt-in header for the normalised (non-legacy) response shape.
+COMPAT_HEADER = "X-DALICC-Compat"
+COMPAT_NORMALISED = "2"
 
 router = APIRouter(
     prefix="/reasoner",
@@ -19,169 +52,169 @@ router = APIRouter(
     responses={404: {"description": "Not found"}},
 )
 
+CompatHeader = Annotated[str | None, Header(alias=COMPAT_HEADER)]
+
+
 class LicensesJSON(BaseModel):
-    licenses: list = []
+    """Request body of ``POST /reasoner/compatibility``."""
 
-# Endpoint to retrieve the dependency graph
-@router.get("/dependency_graph")
-def dependency_graph():
+    model_config = ConfigDict(extra="ignore")
+
+    licenses: list[Any] = Field(
+        default_factory=list,
+        description="Absolute http(s) licence IRIs, e.g. "
+        "https://dalicc.net/licenselibrary/Apache-2.0",
+    )
+    normalize: bool | None = Field(
+        default=None,
+        description="Opt in to the normalised empty result "
+        '{"conflicting_statements": {"direct": {}, "derived": {}}} '
+        "instead of the legacy fall-through value.",
+    )
+    dependency_graph: str | None = Field(
+        default=None,
+        description="Named graph to reason with for this request, instead of "
+        "DALICC_DEPENDENCY_GRAPH. Must be an absolute IRI under "
+        "https://dalicc.net/dependencygraph/ or https://dalicc.net/users/.",
+    )
+
+    @field_validator("licenses")
+    @classmethod
+    def _validate_licenses(cls, value: list[Any]) -> list[str]:
+        validated: list[str] = []
+        for entry in value:
+            try:
+                validated.append(validate_license_iri(entry))
+            except IriValidationError as exc:
+                raise ValueError(str(exc)) from exc
+        return validated
+
+    @field_validator("dependency_graph")
+    @classmethod
+    def _validate_dependency_graph(cls, value: str | None) -> str | None:
+        """Refuse a graph outside the two DALICC graph spaces with a 422.
+
+        The value ends up in a SPARQL ``FROM`` clause inside the solver plugin, so it
+        is validated here rather than trusted because the API service already checked
+        it: this service is reachable on its own.
+        """
+        if value is None or not str(value).strip():
+            return None
+        try:
+            return validate_dependency_graph_iri(str(value).strip())
+        except IriValidationError as exc:
+            raise ValueError(str(exc)) from exc
+
+
+def wants_normalized_shape(body_flag: bool | None, compat_header: str | None) -> bool:
+    """Return whether the caller opted in to the normalised response shape."""
+    if body_flag:
+        return True
+    return bool(compat_header) and compat_header.strip() == COMPAT_NORMALISED
+
+
+def _legacy_empty_response(normalized: bool) -> JSONResponse:
+    """Reproduce the historical fall-through value for an empty solver result.
+
+    The original implementation returned the raw (empty) stdout, which FastAPI
+    serialised as the JSON string ``""``.  In practice this only happened when
+    the solver failed -- which is now a 502 -- so this branch is reached only
+    if ``hexlite`` succeeds while printing no answer set at all.
     """
-    Endpoint to retrieve a dependency graph.
+    if normalized:
+        return JSONResponse(empty_conflict_response())
+    logger.warning("solver produced no answer set; returning the legacy empty value")
+    return JSONResponse("")
 
-    Returns:
-        A list of triples representing the dependency graph.
+
+def _solver_http_error(exc: Exception) -> HTTPException:
+    if isinstance(exc, SolverTimeoutError):
+        return HTTPException(
+            status_code=status.HTTP_504_GATEWAY_TIMEOUT,
+            detail=f"Reasoning timed out after {exc.timeout_seconds}s.",
+        )
+    if isinstance(exc, SolverFailureError):
+        tail = exc.stderr_tail
+        detail = f"Reasoner failed: {exc}."
+        if tail:
+            detail = f"{detail} Solver stderr: {tail}"
+        return HTTPException(status_code=status.HTTP_502_BAD_GATEWAY, detail=detail)
+    return HTTPException(  # pragma: no cover - defensive
+        status_code=status.HTTP_502_BAD_GATEWAY, detail=f"Reasoner failed: {exc}"
+    )
+
+
+@router.get(
+    "/dependency_graph",
+    summary="Transitive closure of the dependency graph",
+    response_model=None,
+)
+def dependency_graph(
+    normalize: bool = False,
+    graph: str | None = None,
+    x_dalicc_compat: CompatHeader = None,
+) -> Response:
+    """Return the dependency-graph triples after applying the closure rules.
+
+    By default the historical string shape is preserved (terms keep their
+    surrounding quotes).  ``?normalize=true`` or ``X-DALICC-Compat: 2`` returns
+    clean, unquoted IRIs.  ``?graph=<IRI>`` computes the closure of another
+    dependency graph, validated the same way as the request-body field.
     """
-    # Generate a random file name for temporary storage
-    random_id = ''.join(random.choices(
-        string.ascii_uppercase + string.digits, k=5))
-    lp_file = "./app/programs/temp/" + random_id + ".lp"
+    normalized = wants_normalized_shape(normalize, x_dalicc_compat)
+    chosen: str | None = None
+    if graph and graph.strip():
+        try:
+            chosen = validate_dependency_graph_iri(graph.strip())
+        except IriValidationError as exc:
+            raise HTTPException(
+                status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail=str(exc)
+            ) from exc
+    try:
+        result = run_dependency_graph(dependency_graph=chosen)
+    except (SolverTimeoutError, SolverFailureError) as exc:
+        raise _solver_http_error(exc) from exc
 
-    # Create and write to a temporary file
-    with open(lp_file, "w") as f:
-        pass
+    if not extract_answer_sets(result.stdout):
+        logger.warning("dependency graph solve produced no answer set")
+        return JSONResponse([] if normalized else "")
+    return JSONResponse(build_dependency_graph_rows(result.stdout, legacy=not normalized))
 
-    # Run hexlite to process the logic program
-    run_list = ["hexlite", "./app/programs/getdepgraph.lp",
-                "--pluginpath", "./app/plugins", "--plugin", "plugins"]
-    p = Popen(run_list, stdin=PIPE, stdout=PIPE, stderr=PIPE)
-    output, err = p.communicate()
 
-    # Process the output into a list of triples
-    triples = []
-    if len(output) != 0:
-        output_aux = output.decode('UTF-8').split("{")[1].split("}")[0].split("),")
-        output_aux_2 = list(map(lambda x: x.split(","), output_aux))
-        for e in output_aux_2:
-            if "license(" in e[0]:
-                continue
-            triples.append([e[0].split("t(")[1], e[1], e[2]])
+@router.post(
+    "/compatibility",
+    summary="Deontic conflict detection for a set of licences",
+    response_model=None,
+)
+def compatibility(
+    input_json: LicensesJSON,
+    x_dalicc_compat: CompatHeader = None,
+) -> Response:
+    """Return the conflicting statements between the supplied licences.
 
-    # Remove the temporary file
-    os.remove(lp_file)
-
-    return triples
-
-def process_conflict_term(conflict_string):
+    Request body: ``{"licenses": ["https://dalicc.net/licenselibrary/MIT", ...]}``,
+    optionally with ``"dependency_graph": "<IRI>"`` to reason with a graph other
+    than the configured one for this request.
+    Response: ``{"conflicting_statements": {"direct": {...}, "derived": {...}}}``
+    with stringified-integer keys.
     """
-    Processes a conflict term string to extract relevant information.
+    normalized = wants_normalized_shape(input_json.normalize, x_dalicc_compat)
+    licenses: list[str] = list(input_json.licenses)
+    graph = input_json.dependency_graph
+    logger.info(
+        "compatibility check for %d licence(s)%s",
+        len(licenses),
+        f" with dependency graph {graph}" if graph else "",
+    )
 
-    Args:
-        conflict_string (str): A string representing a conflict term from hexlite output.
+    try:
+        result = run_compatibility(licenses, dependency_graph=graph)
+    except (SolverTimeoutError, SolverFailureError) as exc:
+        raise _solver_http_error(exc) from exc
 
-    Returns:
-        list: A list containing processed elements of the conflict term.
-    """
-    # Splitting the string to isolate the components of the conflict term
-    elements = conflict_string.split('(')[1].split(',')
-    processed_elements = []
-
-    # Processing each element in the conflict term
-    for element in elements:
-        # Remove closing parenthesis and strip quotes
-        clean_element = element.rstrip(')').strip('"')
-        processed_elements.append(clean_element)
-
-    return processed_elements
-
-def compile_conflict_results(direct_conflicts, derived_conflicts):
-    """
-    Compiles direct and derived conflict information into a structured dictionary.
-
-    Args:
-        direct_conflicts (list): A list of direct conflict terms.
-        derived_conflicts (list): A list of derived conflict terms.
-
-    Returns:
-        dict: A dictionary containing structured conflict information.
-    """
-    conflict_dict = {"conflicting_statements": {"direct": {}, "derived": {}}}
-
-    # Process direct conflicts
-    for index, conflict in enumerate(direct_conflicts):
-        statement_1 = conflict[:3]  # First half of the conflict term
-        statement_2 = conflict[3:6]  # Second half of the conflict term
-        conflict_dict["conflicting_statements"]["direct"][str(index)] = {
-            "statement_1": statement_1,
-            "statement_2": statement_2,
-            "reason": "Direct permission-prohibition conflict."
-        }
-
-    # Process derived conflicts
-    for index, conflict in enumerate(derived_conflicts):
-        statement_1 = conflict[:3]  # First half of the conflict term
-        statement_2 = conflict[3:6]  # Second half of the conflict term
-        due_to_reason = determine_due_to_reason(conflict[6:])  # Additional reasoning info
-        conflict_dict["conflicting_statements"]["derived"][str(index)] = {
-            "statement_1": statement_1,
-            "statement_2": statement_2,
-            "reason": f"Derived permission-prohibition conflict. {due_to_reason}"
-        }
-
-    return conflict_dict
-
-def determine_due_to_reason(additional_info):
-    """
-    Determines the reason for a conflict based on additional information.
-
-    Args:
-        additional_info (list): Additional information elements from a derived conflict term.
-
-    Returns:
-        str: A string describing the reason for the conflict.
-    """
-    # Example logic to determine the reason based on additional info
-    # This can be modified based on the specific format of the additional info
-    if 'derived' in additional_info:
-        return "is derived from the statements in the dependency graph."
-    else:
-        return "is given in the dependency graph."
-
-
-# Endpoint to check the compatibility of licenses
-@router.post("/compatibility")
-def compatibility(input_json: Dict[Any, Any] = None):
-    """
-    Endpoint for checking compatibility between multiple licenses.
-
-    Args:
-        input_json (Dict[Any, Any]): Input JSON containing a list of licenses.
-
-    Returns:
-        A dictionary detailing conflicts between licenses, if any.
-    """
-
-    # Create a temporary file for reasoning input
-    lp_file = "./app/programs/temp/test_user.lp"
-    with open(lp_file, "w") as f:
-        for license in input_json['licenses']:
-            f.write(f"license(\"{license}\").\n")
-
-    # Command to run the reasoner hexlite with the input file
-    run_list = ["hexlite", lp_file, "./app/programs/query.lp",
-                "--pluginpath", "./app/plugins", "--plugin", "plugins"]
-
-    # Execute the command and capture the output
-    p = Popen(run_list, stdin=PIPE, stdout=PIPE, stderr=PIPE)
-    output, err = p.communicate()
-
-    # Initialize lists to store direct and derived conflicts
-    terms_conflict_direct = []
-    terms_conflict_derived = []
-
-    # Process the output if it's not empty
-    if len(output) != 0:
-        output_aux = output.decode('UTF-8').split("{")[1].split("}")[0].split("),")
-
-        # Extract conflict terms from the output
-        for e in output_aux:
-            if "directConflict(" in e:
-                terms_conflict_direct.append(process_conflict_term(e))
-            if "derivedConflict(" in e:
-                terms_conflict_derived.append(process_conflict_term(e))
-
-        # Compile results into a structured return dictionary
-        return_dict = compile_conflict_results(terms_conflict_direct, terms_conflict_derived)
-
-        return return_dict
-
-    return output
+    blocks = extract_answer_sets(result.stdout)
+    if not blocks:
+        return _legacy_empty_response(normalized)
+    if len(blocks) > 1:
+        logger.warning("solver returned %d answer sets; using the first", len(blocks))
+    return JSONResponse(build_conflict_response(parse_atoms(blocks[0])))
