@@ -1,0 +1,102 @@
+id: MIT-CMU
+title: CMU License
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/MIT-CMU.txt
+text_retrieved: true
+verdict: created
+summary: Models the Carnegie Mellon variant of the MIT licence, the permission-to-use form that asks for the copyright
+  notice in all copies, for the copyright and permission notices in the supporting documentation, and for the copyright
+  holder's name to stay out of advertising. The grant does not name sublicensing, so the record makes no sublicensing
+  statement.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all MIT-CMU. The SPDX full name
+    is CMU License, which is the dct:title.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software. The text covers the software and its associated
+    documentation.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant reads "Permission to use, copy, modify, and distribute this software and its associated documentation
+    for any purpose and without fee is hereby granted". The record permits reproduce, distribute, modify, derive,
+    display, present, commercial use, derivative works, modified works and the distribution fee. "for any purpose
+    and without fee" carries cc:CommercialUse.
+  action: applied
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: No dalicc:sublicense and no odrl:grantUse. Unlike the MIT text, this grant names neither sublicensing
+    nor a right for the recipient of a copy to do the same, so no statement is made either way.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'dalicc:ChangeLicense is permitted with the dalicc:compliantLicense duty: the notice conditions are
+    duties on the acts they govern, not a bar on relicensing.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote is prohibited for "and that the name of the copyright holder not be used in advertising
+    or publicity pertaining to distribution of the software without specific, written prior permission".
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Attribution and cc:Notice hang off odrl:distribute, odrl:modify and odrl:derive for "provided that
+    the above copyright notice appears in all copies, and that both that copyright notice and this permission notice
+    appear in supporting documentation".
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: 'The single disclaimer paragraph carries two clauses. The record splits it at the sentence boundary:
+    the warranty sentence goes to dalicc:WarrantyDisclaimer and the liability sentence to dalicc:LiabilityLimitation,
+    both verbatim. This follows BSD-1-Clause, which split the same paragraph on 2026-09-15.'
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: 'The opening sentence, under which a person agrees to the terms by obtaining, using or copying the
+    software, is quoted. dalicc:recipientAssent is not used: that duty is about obtaining the assent of a recipient,
+    while this sentence binds the licensee by conduct.'
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: info
+  field: dalicc:additionalClauses
+  description: No clause of this text needs a term the vocabulary does not have.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Read against licensedata/licenses/MIT.ttl the differences are three: the notice has to appear in the
+    supporting documentation as well as in the copies, the advertising clause makes dalicc:promote a prohibition,
+    and there is no sublicensing statement.'
+  action: none
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: The SPDX text carries a <copyright notice> placeholder at the top, which is not quoted anywhere in the record.
+  cc:legalcode and dct:source both point at the SPDX page. The grammatical slip in the disclaimer, "THE COPYRIGHT
+  HOLDER DISCLAIM", is the text's own and is quoted as it stands.

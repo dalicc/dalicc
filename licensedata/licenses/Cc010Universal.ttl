@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication"@en in the DALICC license library
+# Title: The machine-readable representation of "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/Cc010Universal
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,21 +15,29 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:Cc010Universal a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "CC0-1.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://creativecommons.org/publicdomain/zero/1.0/legalcode> ;
+    dalicc:additionalClauses """Public License Fallback. Should any part of the Waiver for any reason be judged legally invalid or ineffective under applicable law, then the Waiver shall be preserved to the maximum extent permitted taking into account Affirmer's express Statement of Purpose. In addition, to the extent the Waiver is so judged Affirmer hereby grants to each affected person a royalty-free, non transferable, non sublicensable, non exclusive, irrevocable and unconditional license to exercise Affirmer's Copyright and Related Rights in the Work (i) in all territories worldwide, (ii) for the maximum duration provided by applicable law or treaty (including future time extensions), (iii) in any current or future medium and for any number of copies, and (iv) for any purpose whatsoever, including without limitation commercial, advertising or promotional purposes (the "License").""" ;
     dalicc:LiabilityLimitation """No trademark or patent rights held by Affirmer are waived, abandoned, surrendered, licensed or otherwise affected by this document.
 Affirmer disclaims responsibility for clearing rights of other persons that may apply to the Work or any use thereof, including without limitation any person's Copyright and Related Rights in the Work. Further, Affirmer disclaims responsibility for obtaining any necessary consents, permissions or other rights required for any use of the Work.""" ;
     dalicc:WarrantyDisclaimer """Affirmer offers the Work as-is and makes no representations or warranties of any kind concerning the Work, express, implied, statutory or otherwise, including without limitation warranties of title, merchantability, fitness for a particular purpose, non infringement, or the absence of latent or other defects, accuracy, or the present or absence of errors, whether or not discoverable, all to the greatest extent permissible under applicable law.
 Affirmer understands and acknowledges that Creative Commons is not a party to this document and has no duty or obligation with respect to this CC0 or use of the Work.""" ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/Cc010Universal/versions> ;
     dct:alternative "CC Zero ",
         "CC0 1.0",
         "CC0 1.0 Universal",
         "CC0 1.0 Universal Public Domain Dedication",
         "Creative Commons Zero 1.0 Universal" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/publicdomain/zero/1.0/> ;
     dct:title "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication"@en ;

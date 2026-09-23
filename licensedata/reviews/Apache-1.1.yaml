@@ -1,0 +1,66 @@
+id: Apache-1.1
+title: Apache License, Version 1.1
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Apache-1.1.txt
+text_retrieved: true
+verdict: corrected
+summary: The record models the 1.1 license as a BSD-style permissive license with an acknowledgement clause
+  and two name restrictions. dalicc:PromotionSpecification holds the acknowledgement of clause 3, dalicc:additionalClauses
+  the naming restriction of clause 5, and dalicc:promote is prohibited for clause 4. The notice duty was
+  attached to distribution only, although clauses 1 and 2 apply to every redistribution "with or without
+  modification".
+findings:
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'Clause 1 reads: "Redistributions of source code must retain the above copyright notice,
+    this list of conditions and the following disclaimer", and the whole condition block is introduced
+    by "Redistribution and use in source and binary forms, with or without modification, are permitted
+    provided that the following conditions are met". The cc:Notice duty was on odrl:distribute only. Added
+    it to odrl:modify and odrl:derive.'
+  action: applied
+  change: "odrl:duty [ a odrl:Duty ;\n        odrl:action cc:Notice ] ;\n"
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:promote is prohibited and clause 4 supports it: "The names \"Apache\" and \"Apache
+    Software Foundation\" must not be used to endorse or promote products derived from this software without
+    prior written permission."'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'dalicc:rename on odrl:modify is supported by clause 5: "Products derived from this software
+    may not be called \"Apache\" nor may \"Apache\" appear in their name". It is not attached to odrl:derive,
+    where the same clause applies.'
+  action: proposed
+  change: "# add to the odrl:derive permission\nodrl:duty [ a odrl:Duty ;\n        odrl:action dalicc:rename\
+    \ ] ;\n"
+- rubric: 8
+  severity: info
+  field: vocabulary
+  description: Version 1.1 grants no patent rights and has no patent retaliation clause. That is the substantive
+    difference from version 2.0 and it is invisible in the model, because neither record can express a
+    patent grant. See the Apache-2.0 record.
+  action: none
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: The asset collection lists dalicc:CreativeWork and dcmitype:Dataset next to dcmitype:Software.
+    The 1.1 text speaks only of software and its documentation.
+  action: proposed
+  change: '# remove dcmitype:Dataset from odrl:target
+
+    '
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 2 finding 6.5: cc:attributionName and dct:publisher both began
+    with a space.'
+  action: applied
+family: Apache Software Foundation (1.1, 2.0)
+port_of: null
+variant_kind: version
+notes: Superseded by version 2.0 in 2004 but still attached to older Apache releases.

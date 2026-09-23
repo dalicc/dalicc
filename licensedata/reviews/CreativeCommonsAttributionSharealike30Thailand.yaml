@@ -1,0 +1,193 @@
+id: CreativeCommonsAttributionSharealike30Thailand
+title: Creative Commons Attribution-ShareAlike 3.0 Thailand
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by-sa/3.0/th/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the BY-SA element set of the Creative Commons 3.0 port for Thailand and the
+  model follows the grant and the restrictions section of that port. The legal text was read in Thai.
+  Corrections applied: dct:source. What remains are proposals that touch the whole Creative Commons family
+  rather than this record, chiefly the express prohibition of sublicensing.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source. The legal-code page states the canonical
+    URL of the licence, https://creativecommons.org/licenses/by-sa/3.0/th/, and the six 4.0 International
+    parents carry exactly that pair, legal code plus deed. Added.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by-sa/3.0/th/> ;
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: SPDX has no identifier for this port. The legal-code URL implies CC-BY-SA-3.0-TH, which
+    the SPDX licence list does not define, so no spdx:licenseId was invented. Of the forty two records
+    of this batch only the Attribution 3.0 Netherlands record can take one.
+  action: none
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: 'The record targets dalicc:CreativeWork only, while the 4.0 International parent CC-BY-SA-4.0
+    targets dalicc:CreativeWork and dcmitype:Dataset. The Thai port has no database language at all: neither
+    the definitions nor the grant nor the restrictions mention a database or a sui generis right. The
+    four European Union ports of this batch, Italy, the Netherlands, Ireland and Croatia, were corrected
+    because their texts license database rights in terms; this one was not, and aligning it with the parent
+    is part of the single library wide decision on the asset types of the Creative Commons family.'
+  action: proposed
+  change: "odrl:target [ a odrl:AssetCollection ;\n        dct:type dalicc:CreativeWork,\n           \
+    \ dcmitype:Dataset ] ;"
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'Every modelled permission is supported by the grant. Clause 3 grants the licensee the
+    right to use the work worldwide, without royalties and non-exclusively, for the term of copyright
+    protection: 3.1 to reproduce the work and include it in one or more collections, 3.2 to create and
+    reproduce adaptations provided the adaptation is clearly marked as changed, 3.3 to distribute and
+    communicate the work to the public, and 3.4 to distribute and communicate adaptations to the public.
+    The record models that as odrl:reproduce, odrl:distribute, odrl:display, odrl:present, odrl:derive,
+    odrl:modify, cc:DerivativeWorks and dalicc:ModifiedWorks. The rights may be exercised in all media
+    and formats now known or later devised. cc:CommercialUse is permitted, which this element set does
+    not restrict.'
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The licence forbids sublicensing and the record does not say so: clause 4.1 states that
+    the licensee may not sublicense the rights in the work to anyone else. The vocabulary already has
+    dalicc:sublicense, but no record in the library uses it and its skos:note says so, and the same sentence
+    stands in every Creative Commons 2.0 and 3.0 record, so adding it to this batch alone would split
+    the compatibility behaviour of one family. Proposed as one library wide correction, together with
+    an update of the vocabulary note. Not applied for that reason.'
+  action: proposed
+  change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: the licensee may offer
+    the work only under the terms of this licence and may not offer or impose terms that alter or restrict
+    it or the recipient ability to exercise the rights granted. dalicc:promote is prohibited, which rests
+    on the reservation of all rights not expressly granted and on the endorsement bar in the attribution
+    clause rather than on a trademark clause of the licence body.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The attribution and notice duties are present and supported: the licence requires a copy
+    of, or the URI for, the licence with every copy distributed or communicated to the public, that all
+    notices referring to the licence and to the disclaimer be kept intact, and that credit be given. The
+    attribution clause owes credit to the original creator, the licensor and the persons who took part
+    in creating the work, and it also carries the bar on implying a connection, sponsorship or endorsement.
+    The duties hang on odrl:distribute, odrl:modify and odrl:derive, which matches the licence, since
+    they are triggered by making the work public rather than by private use. The cc:ShareAlike duty is
+    carried at the level of the odrl:Set, as in the parent CC-BY-SA-4.0.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The share-alike clause of the 3.0 ports is wider than a flat prohibition of relicensing:
+    an adaptation may be distributed under this licence, under a later version of it with the same licence
+    elements, or under the Creative Commons Unported licence or another jurisdiction port of this or a
+    later version with the same licence elements. The record expresses it as a cc:ShareAlike duty plus
+    a dalicc:ChangeLicense prohibition, which cannot say that a later version or another port is an acceptable
+    outgoing licence. The 4.0 International parent has the same limitation, and the consistency check
+    would report a conflict if dalicc:ChangeLicense were permitted next to cc:ShareAlike, so the present
+    modelling is the only one the checker allows.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation are quoted from the Thai text
+    of this port and not from the English unported version, and each field holds its own clause rather
+    than a copy of the other. Clause 5, representations, warranties and disclaimer of liability, and clause
+    6, limitation of liability, are both present and each field holds its own clause verbatim in Thai.
+    Note that the Thai limitation, unlike the Italian one, ends at the list of damages and adds no carve-out
+    for intent or gross negligence.
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: The record has no dalicc:additionalClauses, so the clauses the ODRL policy cannot carry,
+    the reservation of unnamed rights, the downstream offer to every recipient, the severability and entire
+    agreement paragraphs, the termination rule and the royalty collection arrangements, are not visible
+    in the record at all. The whole Creative Commons family is modelled this way.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:Thailand, which matches the country of the legal-code URL
+    https://creativecommons.org/licenses/by-sa/3.0/th/legalcode, and dalicc:validityType is dalicc:perpetual,
+    which matches a grant made for the duration of the applicable rights. The Thai port has no choice-of-law
+    clause. Clause 8 holds the downstream offer, severability, the written-waiver rule and the entire
+    agreement paragraph. Note that the jurisdiction field records the legal home of the port, not a territorial
+    limit on the grant: the grant itself runs worldwide.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The licence forbids technological protection measures and the vocabulary has no term for
+    it: clause 4.1 forbids the licensee, when distributing or communicating the work to the public, to
+    apply any technological measure that restricts the ability of a recipient to exercise the rights granted
+    by the licence. Proposed term: dalicc:applyTechnicalProtectionMeasures, an odrl:Action to be used
+    as an odrl:Prohibition. Not modelled, because bending an existing term would be worse than the gap.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The automatic termination of the licence on breach, and the survival of the definitions,
+    the disclaimer, the limitation of liability and the miscellaneous sections, have no vocabulary term.
+    Proposed term: dalicc:terminationOnBreach. The offer of a direct licence from the licensor to every
+    recipient of the work has none either. Proposed term: dalicc:downstreamOffer.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Moral rights are not expressible with the present vocabulary. Clause 4.6 is the fullest
+    moral-rights clause of the batch: unless agreed otherwise in writing, the author keeps the right to
+    claim authorship and to object to any distortion, mutilation, adaptation or other act in relation
+    to the work that is derogatory and would harm the honour or reputation of the author, to the extent
+    that the law recognises those rights and does not take them away. It restricts the licensee. Proposed
+    terms: dalicc:moralRightsRestriction for a clause that binds the licensee and dalicc:moralRightsNonAssertion
+    for one in which the licensor undertakes not to assert.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The royalty collection arrangements are not expressible either. Clause 4.5 reserves to
+    the licensor the right to collect royalties and damages for any exercise of the licensed rights for
+    a purpose other than the permitted non-commercial one, unless that right has been waived, and reserves
+    the same right where the licensor is a member of a royalty collection organisation that administers
+    a voluntary licensing scheme. Proposed term: dalicc:royaltyCollectionReserved, with a companion for
+    the waived case. The clause differs between the element sets of one and the same port, which is exactly
+    what the model cannot show.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the forty one axioms of licensedata/dependencygraph/dg_default.ttl
+    reports no conflict, before and after the corrections, and the pre-review baseline listed none for
+    this record either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of Creative Commons Attribution-ShareAlike 4.0 International. The deontic model of
+    this record is identical to the parent CC-BY-SA-4.0, statement for statement: the same permissions
+    with the same duties, the same prohibitions and the same set level duties. What differs is the jurisdiction,
+    the language of the legal text, the clause texts quoted from it, and the version specific clauses
+    of 3.0 that the model does not carry, chiefly the express prohibition of sublicensing, the technological
+    measures clause, the moral rights clause and the royalty collection arrangements. The odrl:target
+    still differs from the parent, which is the open proposal recorded above. The compatibility checker
+    cannot tell this record from the other records of the BY-SA element set, across all three versions
+    and every jurisdiction the library holds.'
+  action: none
+family: 'Creative Commons 3.0 port: Thailand (TH)'
+port_of: CC-BY-SA-4.0
+variant_kind: jurisdiction-port
+notes: 'The parent is the 4.0 International record of the same element set, since the library holds no
+  unported and no International 3.0 record; the version difference, 3.0 against 4.0, is therefore part
+  of the port relation and not only the jurisdiction. The 3.0 text differs from 4.0 in substance as well:
+  it prohibits sublicensing expressly, it has no thirty day cure period for a breach, its share-alike
+  clause accepts a later version or another port with the same licence elements, and it settles the moral
+  rights and royalty collection questions per jurisdiction. None of that is visible in the model. Nothing
+  in this review is legal advice.'

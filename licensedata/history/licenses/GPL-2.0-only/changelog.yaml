@@ -1,0 +1,107 @@
+id: GPL-2.0-only
+title: GNU General Public License, Version 2
+current_version: 4
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail, 1 permission and 1 statement,
+    recorded the relation to the record this one was adapted from and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:licenseVersion "2.0"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:orLaterVersionOption "false"^^xsd:boolean
+    reason: 'Review decision 6: the four GNU records model the ''-only'' reading, so the or-later
+      option is recorded as false rather than left unsaid.'
+    source: consolidation-decision 6
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "version"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: permission dalicc:chargeDistributionFee
+    reason: 'Section 1 states: "You may charge a fee for the physical act of transferring a copy,
+      and you may at your option offer warranty protection in exchange for a fee." The record did
+      not permit dalicc:chargeDistributionFee, so a compatibility check would treat paid redistribution
+      as unlicensed. Added.'
+    source: review-finding 3/odrl:permission
+  - action: added
+    statement: spdx:licenseId "GPL-2.0-only"
+    reason: The record carried no SPDX identifier although its own id is the SPDX list id. Added the
+      non deprecated id GPL-2.0-only.
+    source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 2 finding 6.6 and batch 1 finding 5.2: both clause literals began and ended with
+    a space, and the record did not carry section 1 of the text, ''You may charge a fee for the physical
+    act of transferring a copy, and you may at your option offer warranty protection in exchange for
+    a fee'', which the two new LGPL 2.x records carry as dalicc:WarrantyOrLiabilityAcceptance.'
+  changes:
+  - action: changed
+    statement: dalicc:LiabilityLimitation "IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED
+      TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR REDISTRIBUTE
+      THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL,
+      INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING
+      BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU
+      OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH
+      HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES."
+    previous: dalicc:LiabilityLimitation " IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED
+      TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR REDISTRIBUTE
+      THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL,
+      INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING
+      BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU
+      OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH
+      HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. "
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: dalicc:WarrantyDisclaimer "BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS
+      NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE
+      STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM \"AS IS\" WITHOUT
+      WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+      WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE
+      QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU
+      ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION."
+    previous: dalicc:WarrantyDisclaimer " BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS
+      NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE
+      STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM \"AS IS\" WITHOUT
+      WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+      WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE
+      QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU
+      ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION. "
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: dalicc:WarrantyOrLiabilityAcceptance "You may charge a fee for the physical act of
+      transferring a copy, and you may at your option offer warranty protection in exchange for a
+      fee."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+- version: 4
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: 'The licence ends on breach and the record now says so. Section 4: "Any attempt otherwise
+    to copy, modify, sublicense or distribute the Program is void, and will automatically terminate
+    your rights under this License." LGPL-2.1-only already carried the flag on the same sentence of
+    its own section 8.'
+  changes:
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

@@ -1,0 +1,137 @@
+id: LGPL-2.0-or-later
+title: GNU Library General Public License v2 or later
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/LGPL-2.0-or-later.txt
+text_retrieved: true
+verdict: created
+summary: >-
+  The record models the or-later reading of version 2 of the GNU Library General Public
+  License. The legal text is the same document as LGPL-2.0-only, so the record copies that
+  record statement for statement and changes the identifier, the SPDX identifier, the title,
+  the alternative names and dalicc:orLaterVersionOption, which is true here and false there.
+  dalicc:variantKind "version-option" and dalicc:variantOf point back at LGPL-2.0-only. Read
+  the review of LGPL-2.0-only for what every statement is based on.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: >-
+    File name, identifier, SPDX identifier and the local name of the IRI are the same string,
+    LGPL-2.0-or-later. SPDX gives the or-later reading an identifier of its own, and package
+    managers still report it as LGPL-2.0+, which is carried in dct:alternative.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: >-
+    The odrl:target of LGPL-2.0-only is copied unchanged: one odrl:AssetCollection of
+    dct:type dcmitype:Software. The license speaks of a software library throughout.
+  action: applied
+- rubric: 3
+  severity: major
+  field: dalicc:orLaterVersionOption
+  description: >-
+    Section 13 states: "If the Library specifies a version number of this License which
+    applies to it and "any later version", you have the option of following the terms and
+    conditions either of that version or of any later version published by the Free Software
+    Foundation. If the Library does not specify a license version number, you may choose any
+    version ever published by the Free Software Foundation." That sentence is the whole
+    difference between this record and LGPL-2.0-only. It is not quoted in
+    dalicc:additionalClauses, because the base record does not quote it there and an or-later
+    record keeps the clause literals of its base.
+  action: applied
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: >-
+    Every permission of LGPL-2.0-only is copied with the same duties in the same places:
+    odrl:reproduce, odrl:distribute, odrl:modify, odrl:derive, odrl:display, odrl:present,
+    cc:CommercialUse, cc:DerivativeWorks, dalicc:ModifiedWorks and
+    dalicc:chargeDistributionFee. Choosing a later version is a choice about which text
+    applies, not a further permission.
+  action: applied
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: >-
+    The three prohibitions of LGPL-2.0-only are copied: dalicc:ChangeLicense from sections 1,
+    2c and 6, dalicc:sublicense from section 8 ("You may not copy, modify, sublicense, link
+    with, or distribute the Library except as expressly provided under this License") and
+    dalicc:promote, which the base record carries as a library convention because this text
+    has no trademark or endorsement clause.
+  action: applied
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: >-
+    The license-wide cc:ShareAlike duty is copied, as are cc:Attribution, cc:Notice,
+    cc:SourceCode and dalicc:patentFreedomCondition on distribute, and cc:Attribution,
+    cc:Notice, cc:SourceCode and dalicc:modificationNotice on modify and derive. Section 2c
+    requires "the whole of the work to be licensed at no charge to all third parties under the
+    terms of this License", which is whole-work reciprocity, so the share-alike duty hangs off
+    the odrl:Set.
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: >-
+    The clause texts of LGPL-2.0-only are copied verbatim: the warranty disclaimer of section
+    15, the limitation of liability of section 16, the sentence of section 1 that lets a
+    redistributor charge a transfer fee and offer warranty protection, and the linking
+    exception of section 6 with the combined-library rule of section 7 in
+    dalicc:additionalClauses.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: >-
+    cc:jurisdiction dalicc:worldwide, dalicc:validityType dalicc:perpetual and
+    dalicc:terminatesOnBreach true are copied from the base record. cc:legalcode and
+    dct:source also point at what the base record points at, because the legal text is the
+    same document; the SPDX page for this identifier would be an alternative dct:source and
+    the report notes it.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:variantOf
+  description: >-
+    dalicc:variantOf is not defined in the vocabulary yet, so the validator reports it as an
+    undefined DALICC term, and the value "version-option" is not in the list of variant kinds
+    the vocabulary comment gives. Both are needed for a record that keeps the text of another
+    record and changes what that text grants or requires.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: >-
+    The vocabulary gaps of the base record are inherited: section 11 forbids distribution
+    where a patent claim would make royalty-free redistribution impossible, and section 10
+    forbids imposing further restrictions on the recipients. The base record records both as
+    open questions and so does this one.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty conflict list, the same result as for LGPL-2.0-only. Share-alike is required while
+    dalicc:ChangeLicense is prohibited and odrl:grantUse is not permitted.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Against LGPL-2.0-only the record differs in the identifier, the SPDX identifier, the
+    title, the four alternative names, dalicc:orLaterVersionOption, dalicc:variantKind and the
+    new dalicc:variantOf relation, and in nothing else. The same pattern holds between
+    LGPL-2.1-or-later and LGPL-2.1-only.
+  action: applied
+family: GNU family
+port_of: null
+variant_kind: version-option
+variant_of: LGPL-2.0-only
+notes: >-
+  The SPDX text for LGPL-2.0-or-later is byte for byte the text for LGPL-2.0-only. This is the
+  license SPDX calls the GNU Library General Public License v2 or later; the text itself is
+  titled GNU LIBRARY GENERAL PUBLIC LICENSE, Version 2, June 1991.

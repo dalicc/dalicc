@@ -1,0 +1,104 @@
+id: AFL-1.1
+title: Academic Free License v1.1
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'http://opensource.linux-mirror.org/licenses/afl-1.1.txt'
+text_retrieved: true
+verdict: created
+summary: >-
+  The first Academic Free License: a permissive grant of use, copying, modification,
+  distribution and sale together with an express patent licence, conditioned only on the
+  reproduction of the copyright notices. The record follows AFL-3.0, the sibling already in
+  the library, and differs from it where version 1.1 is different: the licence is not
+  sublicenseable and it has no clause 1(c) allowing a distributor to pick another licence.
+  Nothing here is legal advice.
+findings:
+- rubric: 2
+  severity: info
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Software alone, the type 32 of the library's software records carry, among them
+    MIT, BSD-3-Clause, GPL-3.0-only and the sibling OSL-3.0. These texts license an "original
+    work of authorship", which would also fit dalicc:CreativeWork, the type the AFL-3.0 record
+    carries beside Software and Dataset; the batch keeps the narrower reading its batch entry
+    prescribes, so that all nine records of the family answer alike and the owner can widen
+    them in one pass.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    The grant reads: "Licensor hereby grants to any person obtaining a copy of the Original
+    Work ("You") a world-wide, royalty-free, non-exclusive, perpetual, non-sublicenseable
+    license (1) to use, copy, modify, merge, publish, perform, distribute and/or sell copies
+    of the Original Work and derivative works thereof". The record therefore carries the
+    library's permissive base set plus dalicc:chargeLicenseFee for the right to sell copies,
+    and dalicc:patentGrant for the patent licence in paragraph (2).
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    Three prohibitions. dalicc:sublicense, because the grant is expressly
+    "non-sublicenseable"; dalicc:promote, from the Exclusions from License Grant clause, which
+    bars the use of the names and marks of the Licensor and the contributors to endorse or
+    promote products; and dalicc:patentRetaliationTermination, from the Mutual Termination for
+    Patent Action clause.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    The only condition on the licensee is the Right of Attribution: "Redistributions of the
+    Original Work must reproduce all copyright notices in the Original Work as furnished by
+    the Licensor". cc:Attribution and cc:Notice therefore hang on odrl:distribute, odrl:modify
+    and odrl:derive. cc:SourceCode hangs on odrl:distribute and follows the AFL-3.0 record;
+    the License to Source Code clause is drafted as an undertaking of the Licensor rather than
+    of the licensee, which the review of the family should settle once for all nine records.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The warranty and the limitation of liability are quoted verbatim into their own fields.
+    dalicc:additionalClauses carries the License to Source Code clause, the Mutual Termination
+    for Patent Action clause and the notice that the licence text itself may not be modified.
+  action: applied
+- rubric: 7
+  severity: info
+  field: 'cc:jurisdiction'
+  description: >-
+    Version 1.1 names no forum and no governing law, so cc:jurisdiction stays dalicc:worldwide
+    and dalicc:validityType stays dalicc:perpetual, which the grant states in as many words.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The automatic termination of the licence on a patent action is modelled with
+    dalicc:patentRetaliationTermination, but the mechanism, that the whole licence ends, has
+    no property. Proposed term dalicc:terminatesOnBreach over the existing
+    dalicc:terminationOnBreach concept; the clause is quoted instead.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty list for this record.
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: >-
+    AFL-1.1 and AFL-1.2 share one model. Against AFL-3.0 this record lacks the
+    dalicc:ChangeLicense permission, which AFL-3.0 carries from its clause 1(c), and adds the
+    dalicc:sublicense prohibition, because 1.1 is not sublicenseable.
+  action: none
+family: Academic Free and Open Software
+port_of: null
+variant_kind: version
+notes: >-
+  Modelled from the SPDX plain text of AFL-1.1 and checked against the licensor URL in
+  cc:legalcode. The warranty and liability sections are quoted in the upper case of the
+  source.

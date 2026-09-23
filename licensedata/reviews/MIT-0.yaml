@@ -1,0 +1,82 @@
+id: MIT-0
+title: MIT No Attribution
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/MIT-0.txt
+text_retrieved: true
+verdict: created
+summary: The record models MIT without its one condition. The grant is the MIT grant minus the notice requirement,
+  so the record carries the permissions of the MIT record and no duty at all, which is the whole difference
+  between the two licenses. Sublicensing and relicensing are permitted, as on Cc010Universal, because nothing
+  has to travel with a copy.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads: "Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal in the Software without restriction,
+    including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+    sell copies of the Software, and to permit persons to whom the Software is furnished to do so." The record
+    therefore permits reproduce, distribute, modify, derive, display, present, grantUse, sublicense, commercial
+    use, derivative works, modified works and the distribution fee. The grant names sublicensing in as many
+    words, so dalicc:sublicense is a permission, and the clause that lets the recipient of a copy do the same
+    is odrl:grantUse, the term the MIT record already uses for it.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'dalicc:ChangeLicense is permitted, following Cc010Universal: the grant carries no condition,
+    so a licensee may put a copy under other terms. This is the one statement that separates MIT-0 from MIT
+    in a compatibility result, together with the absence of duties.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: No duties. The sentence that carries the MIT notice condition, "The above copyright notice and
+    this permission notice shall be included in all copies or substantial portions of the Software", is absent
+    from this text, which is why the license exists.
+  action: applied
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: No prohibitions. The text has no trademark, endorsement or advertising clause, so dalicc:promote
+    is not prohibited even though most permissive records carry it.
+  action: none
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: 'The disclaimer paragraph holds two sentences: the warranty disclaimer and the liability limitation.
+    They are quoted into dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation respectively. The MIT record
+    keeps both sentences in dalicc:WarrantyDisclaimer and leaves dalicc:LiabilityLimitation empty, so the two
+    records split the same paragraph differently.'
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following MIT. The text licenses software
+    and its documentation.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts. No share-alike duty
+    is present, so permitting dalicc:ChangeLicense raises no conflict.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'MIT-0 is MIT minus the notice condition, not a version of MIT, so the record carries no dalicc:variantKind.
+    Read against MIT the difference is: no cc:Attribution and no cc:Notice duty anywhere, and dalicc:ChangeLicense
+    permitted.'
+  action: none
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text, which is the text of the AWS repository named in cc:legalcode. dct:publisher
+  names Amazon Web Services, which published the license and keeps the canonical copy.

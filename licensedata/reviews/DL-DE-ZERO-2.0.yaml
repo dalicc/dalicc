@@ -1,0 +1,101 @@
+id: DL-DE-ZERO-2.0
+title: Data licence Germany - zero - version 2.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://spdx.org/licenses/DL-DE-ZERO-2.0.html'
+text_retrieved: true
+verdict: created
+summary: >-
+  The German zero data licence, version 2.0: four sentences that permit any use of the data
+  and metadata provided without restrictions or conditions. The record follows the
+  Cc010Universal record of the library: every permission, no duty, no prohibition, no clause
+  text, because the licence has none.
+findings:
+- rubric: 1
+  severity: minor
+  field: 'spdx:licenseId'
+  description: >-
+    The record carries the SPDX id DL-DE-ZERO-2.0, in the upper case spelling of the SPDX
+    list. dct:title is the SPDX name with its two long dashes replaced by plain hyphens;
+    dct:alternative holds the German name and the short form dl-de/zero-2-0.
+  action: applied
+- rubric: 2
+  severity: major
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Dataset and dalicc:CreativeWork, as on the DL-DE-BY-2.0 record: the object is the
+    same data and metadata, and the same three uses, copying, printing and presenting, reach
+    beyond data.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    "Any use is permitted without restrictions or conditions." The record therefore permits
+    reproduce, distribute, display, present, modify, derive, commercial use, derivative works,
+    modified works, the distribution fee, the licence fee, dalicc:sublicense and
+    dalicc:ChangeLicense, which is the set the Cc010Universal and Unlicense records carry for
+    the same kind of unconditional dedication.
+  action: applied
+- rubric: 4
+  severity: info
+  field: 'odrl:prohibition'
+  description: >-
+    No prohibition, and none can be read into a text that permits any use without restrictions
+    or conditions. Note that the Cc010Universal record prohibits dalicc:promote, from the
+    sentence of CC0 that reserves trademark and patent rights; the German text has no such
+    sentence.
+  action: applied
+- rubric: 5
+  severity: info
+  field: 'odrl:duty'
+  description: >-
+    No duty at all, which is the whole difference between this licence and DL-DE-BY-2.0.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    No warranty and no liability clause exists in the text, so neither field is written.
+    dalicc:additionalClauses carries the German original and its official English version,
+    which together are the whole licence.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    cc:jurisdiction stays dalicc:worldwide and dalicc:validityType dalicc:perpetual: the
+    licence names no governing law, no territory and no term.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    As on the DL-DE-BY-2.0 record, the record cannot say which language a quoted clause is in.
+    Proposed: dct:language.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Family: DL-DE-ZERO-2.0 is DL-DE-BY-2.0 without the source note, and the two records differ
+    in exactly that: no duty, and three more permissions (dalicc:ChangeLicense,
+    dalicc:sublicense and dalicc:chargeLicenseFee). Its nearest neighbours in the library are
+    Cc010Universal and the Unlicense record of batch 1.
+  action: none
+family: National open government data licences
+port_of: null
+variant_kind: null
+notes: >-
+  The SPDX plain text holds the German original and the official English version one after the
+  other; both are quoted in dalicc:additionalClauses, which is possible here because the whole
+  licence is four sentences long. The name carries two long dashes in the source and in the
+  SPDX name; they are written as plain hyphens throughout. dct:publisher is left out: the text
+  names no steward.

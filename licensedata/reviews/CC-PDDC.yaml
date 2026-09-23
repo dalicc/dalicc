@@ -1,0 +1,112 @@
+id: CC-PDDC
+title: Creative Commons Public Domain Dedication and Certification
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/CC-PDDC.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models the Creative Commons Public Domain Dedication and Certification, the instrument Creative
+  Commons published before CC0. It is a dedication, so it is modelled like Cc010Universal: every act is permitted,
+  nothing is required, and dalicc:ChangeLicense is a permission. Two things a reader should know: the text has no
+  warranty or liability clause of its own, and it is half a certification about somebody else''s work, which the
+  vocabulary cannot express.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, identifier, SPDX identifier and IRI agree. CC-PDDC is the Creative Commons Public Domain
+    Dedication and Certification, the instrument that preceded CC0, and the library held no record of it. It is
+    not a version of anything the library holds, so it carries no dalicc:variantKind and no relation.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'One odrl:AssetCollection of dct:type dalicc:CreativeWork. Unlike Cc010Universal, which also carries
+    dcmitype:Dataset, this text says nothing about a database right: it speaks only of copyright, so only the creative-work
+    type is written.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The dedication reads: "the Work may be freely reproduced, distributed, transmitted, used, modified,
+    built upon, or otherwise exploited by anyone for any purpose, commercial or non-commercial, and in any way,
+    including by methods that have not yet been invented or conceived" That is the full permissive set with nothing
+    held back: odrl:reproduce, odrl:distribute, odrl:display, odrl:present, odrl:modify, odrl:derive, cc:DerivativeWorks,
+    dalicc:ModifiedWorks, cc:CommercialUse, dalicc:chargeDistributionFee, and dalicc:ChangeLicense as a permission,
+    which is what Cc010Universal carries and what family rule 15 requires of a dedication.'
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: The record carries no prohibition at all. The text has no trademark clause, no endorsement clause
+    and no patent reservation, so dalicc:promote is not written. Cc010Universal does prohibit it, on the strength
+    of its own sentence "No trademark or patent rights held by Affirmer are waived, abandoned, surrendered, licensed
+    or otherwise affected by this document", which this text does not have.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The record does not prohibit dalicc:sublicense. Review decision 1 of 2026-09-15 requires that prohibition
+    of every Creative Commons record except the CC0 dedication, and scripts/validate_data.py reads cc:legalcode
+    to decide which records the rule reaches, so it will report "CC-PDDC: no dalicc:sublicense prohibition" until
+    CC-PDDC joins CC_SUBLICENSE_EXEMPT beside Cc010Universal. The text states no sublicensing bar, because there
+    is nothing left to sublicense: the dedicator relinquishes the copyright. Writing the prohibition to satisfy
+    the validator would say something the text does not. The change belongs in scripts/validate_data.py and is proposed,
+    not applied.'
+  action: proposed
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The record carries no duty, because the dedication asks for nothing in return. It reads: "hereby
+    either (a) certifies that, to the best of his knowledge, the work of authorship identified is in the public
+    domain of the country from which the work is published, or (b) hereby dedicates whatever copyright the dedicators
+    holds in the work of authorship identified below (the "Work") to the public domain". Family rules 6 and 7 of
+    scripts/review/family_rules.py expect an attribution or notice duty and a prohibition or a duty on every record
+    that is not in their DEDICATIONS set; CC-PDDC belongs in that set, beside Cc010Universal, WTFPL and Unlicense.
+    Proposed there too.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: 'Neither dalicc:WarrantyDisclaimer nor dalicc:LiabilityLimitation is written. This text has no disclaimer
+    and no limitation: the only sentence that speaks of liability runs the other way, against the certifier, and
+    is quoted in dalicc:additionalClauses instead: "Certifier recognizes that his good faith efforts may not shield
+    him from liability if in fact the work certified is not in the public domain." The whole text is 1593 characters
+    and all four of its paragraphs are quoted, so nothing of it is lost.'
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system, so cc:jurisdiction is dalicc:worldwide. It speaks of "an overt act
+    of relinquishment in perpetuity of all present and future rights under copyright law, whether vested or contingent,
+    in the Work", so dalicc:validityType is dalicc:perpetual, and it has no termination clause, so dalicc:terminatesOnBreach
+    is not written.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The certification half of the instrument has no term. A certifier states that a work is already
+    in the public domain, which is a statement of fact about a third party''s work rather than a grant, and the
+    deontic model has no way to say it. Proposed term: dalicc:publicDomainCertification. The paragraph is quoted
+    in full.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the axioms of licensedata/dependencygraph/dg_default.ttl
+    returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The nearest sibling is Cc010Universal. The two records differ in three things: CC-PDDC has no dcmitype:Dataset
+    on its target, no dalicc:promote prohibition and no warranty or liability clause, because its text has none
+    of the three. Both permit dalicc:ChangeLicense and ask for nothing.'
+  action: applied
+family: Creative Commons public domain dedication
+port_of: null
+variant_kind: null
+variant_of: null
+notes: Modelled from the SPDX plain text. The record will make scripts/validate_data.py report a missing dalicc:sublicense
+  prohibition until CC-PDDC is added to CC_SUBLICENSE_EXEMPT, and scripts/review/family_rules.py report rules 6
+  and 7 until it is added to DEDICATIONS. Both are recorded as findings.

@@ -1,0 +1,246 @@
+id: CreativeCommonsAttributionSharealike30Estonia
+title: Creative Commons Attribution-ShareAlike 3.0 Estonia
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by-sa/3.0/ee/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the BY-SA element set of the Creative Commons 3.0 port for Estonia and it
+  does so correctly: the ShareAlike element carries a cc:ShareAlike duty, the attribution and notice duties
+  hang on the acts that make the work public, and the permissions, prohibitions and duties all follow
+  from the grant and the restrictions sections of the port. The legal text was read in Estonian. Corrections
+  applied: dct:source, odrl:target dcmitype:Dataset. What remains are proposals that touch the whole Creative
+  Commons family rather than this record, chiefly the express prohibition of sublicensing.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source. The legal code page states the canonical
+    URL of the licence, https://creativecommons.org/licenses/by-sa/3.0/ee/, and the six 4.0 International
+    parents carry exactly that pair, legal code plus deed. Added.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by-sa/3.0/ee/> ;
+- rubric: 1
+  severity: minor
+  field: dct:alternative
+  description: 'Four of the eleven dct:alternative labels carry the country code in lower case ("CC BY
+    SA 3.0 ee", "CC BY-SA 3.0 ee", "CC-BY-SA 3.0 ee", "Creative Commons BY-SA 3.0 ee") while every other
+    record of the library writes it in upper case. This is not specific to this port: the same lower case
+    labels sit in forty six Attribution-ShareAlike port records across versions 2.0 and 3.0, so normalising
+    them is one library wide edit at consolidation rather than five records here.'
+  action: proposed
+  change: |-
+    dct:alternative "CC BY SA 3.0 EE",
+            "CC BY-SA 3.0 EE",
+            "CC-BY-SA 3.0 EE",
+            "Creative Commons BY-SA 3.0 EE" ;   # replacing the lower case forms
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: 'The record targeted dalicc:CreativeWork only, while the 4.0 International parent CC-BY-SA-4.0
+    targets dalicc:CreativeWork and dcmitype:Dataset. This port licenses database rights in its own words,
+    so the asset type is text supported rather than merely plausible. The Estonian port is explicit twice
+    over. Section 1 counts a database inside the licensed work: "Litsentsi tahenduses on Teoseks ka Teose
+    esitus, fonogramm, raadio- ja televisioonisaade, filmi esmasalvestus ja andmebaas selles ulatuses,
+    millises see on kaitstud Eesti autorioiguse seadusega." Section 3 then disposes of the sui generis
+    right: "Kui Litsentsiandja omab Eesti autorioiguse seaduse kohaselt, millega on Eesti oiguskorda ule
+    voetud Euroopa Parlamendi ja noukogu direktiiv 96/9/EU, 11. marts 1996, andmebaaside oiguskaitse kohta,
+    sui generis andmebaasi tegija oigusi, loobub Litsentsiandja kaesolevaga sellistest oigustest." Section
+    4(e) adds that the restrictions of 4(a) to 4(d) do not apply to those database maker rights so far
+    as Estonian law allows them to be limited. Added dcmitype:Dataset.'
+  action: applied
+  change: |-
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset ] ;
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'Every modelled permission is supported by the grant. Section 3 grants "ulemaailmse, tasuta,
+    tahtajatu (autorioiguse ja autorioigusega kaasnevate oiguste kaitse kehtivuse tahtaja piirides) lihtlitsentsi",
+    a worldwide, free, perpetual non exclusive licence for the term of copyright and neighbouring rights.
+    It covers reproduction, incorporation into collections, and distribution and public performance of
+    the work including as incorporated in collections, and the creation and reproduction of derivative
+    works and their distribution and public performance (section 3.b and 3.d). The record models this
+    as odrl:reproduce, odrl:distribute, odrl:display, odrl:present, odrl:derive and cc:DerivativeWorks,
+    plus odrl:modify and dalicc:ModifiedWorks, which rest on the technical modification sentence of the
+    grant: Section 3: "Eelnimetatud oigused holmavad oigust teha selliseid muudatusi, mis on tehniliselt
+    vajalikud teostamaks oigusi muudes meediumites ja formaatides." cc:CommercialUse is permitted, which
+    follows from a grant that puts no purpose limit on the rights.'
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The licence forbids sublicensing and the record does not say so. Section 4(a): "Te ei
+    tohi Teost all-litsentsida." The vocabulary already has dalicc:sublicense, but no record in the library
+    uses it and its skos:note says so, and the same sentence stands in every Creative Commons 2.0 and
+    3.0 record, so adding it to this batch alone would split the compatibility behaviour of one family.
+    Proposed as one library wide correction, together with an update of the vocabulary note.'
+  action: proposed
+  change: |-
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: Section 4(a): "Te ei voi
+    kehtestada Teosele tingimusi, mis kitsendavad Litsentsi tingimusi voi Teose saaja voimet teostada
+    Litsentsi alusel Teosele saadud oigusi." dalicc:promote is prohibited, which rests on section 4(d)
+    itself, which is the 3.0 no endorsement clause: "Te ei voi seelabi vihjamisi ega selgesonaliselt viidata
+    mis tahes seosele Teie voi Teie poolt Teose kasutamise ning vastavalt Algse Autori, Litsentsiandja
+    ja/voi Viidatud isikute vahel ega viimaste toetusele, ilma nende eelneva selgelt valjendatud kirjaliku
+    loata." Version 3.0 therefore supports dalicc:promote in the licence body, which version 2.0 does
+    not.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The attribution and notice duties are present and supported. Section 4(a) requires a copy
+    of the licence or its Uniform Resource Identifier with every copy distributed or publicly performed,
+    and that all notices referring to the licence and to the exclusion of warranties be kept intact. Credit
+    is owed to the "Algne Autor" or to the "Viidatud isikud" the licensor names, with the title of the
+    work and the URI where reasonably applicable; section 1 counts the performer, the phonogram producer,
+    the audiovisual producer, the broadcasting organisation and the maker of a database as original authors
+    for the purposes of the licence, so the attribution duty reaches the neighbouring rights holders as
+    well. Section 4(d) closes with the no endorsement sentence.. Section 3(b) makes the marking of changes
+    a condition of the grant itself: the maker of every derivative work "astub moistlikke samme tahistamaks
+    selgelt, et Teose originaali on tehtud muudatusi". The duties hang on odrl:distribute, odrl:modify
+    and odrl:derive, which matches the licence, since they are triggered by making the work public rather
+    than by private use. The cc:ShareAlike duty is carried at the level of the odrl:Set, as in the parent
+    CC-BY-SA-4.0.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The share alike clause of this port is wider than a flat prohibition of relicensing. Section
+    4(b) accepts three outgoing licences: this licence, a later version with the same licence elements,
+    or a Creative Commons unported or ported licence with the same elements ("Creative Commons jurisdiktsiooniga
+    sidumata litsentsi voi Creative Commons jurisdiktsiooniga seotud litsentsi ... mis sisaldab Litsentsi
+    Elementidega vorreldes samu elemente"), together called the "Kohaldatav litsents". The record expresses
+    it as a cc:ShareAlike duty plus a dalicc:ChangeLicense prohibition, which cannot say that a later
+    version of the same licence, or another jurisdiction port with the same licence elements, is an acceptable
+    outgoing licence. The 4.0 International parent CC-BY-SA-4.0 has the same limitation, and the consistency
+    check would report a conflict if dalicc:ChangeLicense were permitted next to cc:ShareAlike, so the
+    present modelling is the only one the checker allows.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: 'dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation are quoted from the Estonian
+    text of this port and not from the English unported version, and each field holds its own clause.
+    Section 5 (Garantii mitteandmine) and section 6 (Vastutuse piiramine) are separate sections and the
+    record keeps them apart: dalicc:WarrantyDisclaimer holds section 5 and dalicc:LiabilityLimitation
+    holds section 6, both quoted verbatim in Estonian and in the upper case of the original. The Estonian
+    limitation of liability spells out the heads of damage (direct loss, lost profit, and non material
+    damage including physical and mental suffering) instead of the incidental and consequential damages
+    list of the English text.'
+  action: none
+- rubric: 6
+  severity: minor
+  field: dalicc:LiabilityLimitation
+  description: dalicc:LiabilityLimitation ends with a closing parenthesis that matches the opening "(SEALHULGAS"
+    of the sentence. Five of the six Estonian legal code pages drop that parenthesis and only the Attribution
+    3.0 Estonia page prints it, so the quote follows the one page that is typographically complete. Left
+    untouched.
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: 'The record has no dalicc:additionalClauses, so the clauses the ODRL policy cannot carry
+    stay invisible: the reservation of unnamed rights, the downstream offer to recipients, the severability,
+    waiver and entire agreement paragraphs and the termination rule. Section 7 ends the licence automatically
+    on any breach, keeps the licences of downstream recipients of derivative works and collections alive
+    and lets sections 1, 2, 5, 6, 7 and 8 survive; section 8 makes the licensor grant every recipient
+    a licence on the same terms. The whole Creative Commons family is modelled this way.'
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:Estonia, which matches the country of the legal code URL
+    https://creativecommons.org/licenses/by-sa/3.0/ee/legalcode, and dalicc:validityType is dalicc:perpetual,
+    which matches a grant made for the duration of copyright. The Estonian 3.0 port has no choice of law
+    clause: section 8 ends with the severability, waiver and entire agreement paragraphs, and the only
+    reference to Estonian law in the whole text sits inside the database rights clause of section 3. cc:jurisdiction
+    bpicounty:Estonia therefore records the port, not a forum chosen by the text.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The licence forbids technological protection measures and the vocabulary has no term for
+    it. Section 4(a): "Teose levitamisel voi avalikul esitamisel ei voi Te lisada Teosele mis tahes tehnilisi
+    kaitsemeetmeid, mis kitsendavad Teilt Teose saaja voimet teostada Litsentsi alusel Teosele saadud
+    oigusi." Proposed term: dalicc:applyTechnicalProtectionMeasures, an odrl:Action to be used as an odrl:Prohibition.
+    Not modelled, because bending an existing term would be worse than the gap.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The automatic termination of the licence on breach, the survival of the named sections
+    and the licence the licensor offers to every downstream recipient have no vocabulary terms. Section
+    7 ends the licence automatically on any breach, keeps the licences of downstream recipients of derivative
+    works and collections alive and lets sections 1, 2, 5, 6, 7 and 8 survive; section 8 makes the licensor
+    grant every recipient a licence on the same terms. Proposed terms: dalicc:terminationOnBreach and
+    dalicc:downstreamOffer.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Section 4 closes by licensing the licensor''s own personal rights, which no other port
+    in this batch does: "Kaesolevaga antakse Litsentsiandja isiklike oiguste osas nii laiaulatuslik litsents,
+    kui see on lubatud kohaldatava siseriikliku oiguse kohaselt, et voimaldada Teil moistlikult kasutada
+    Teile kaesoleva Litsentsi punktis 3 antud oigusi. Kaesolevaga ei anta Teile Litsentsiandja isiklike
+    oiguste suhtes litsentsi muuks otstarbeks." It binds the licensor rather than restricting the licensee,
+    as the Korean and Japanese ports do, but it goes further than they do by granting a licence instead
+    of a covenant not to assert. Not expressible with the present vocabulary. Proposed terms: dalicc:moralRightsRestriction
+    for the ports that bind the licensee and dalicc:moralRightsNonAssertion for the ports that bind the
+    licensor.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Section 4(f) settles royalty collection in three parts and, unlike the Costa Rican port
+    of the same version, follows the 3.0 Unported position. Non waivable statutory schemes: the licensor
+    keeps the exclusive right to collect. Waivable statutory schemes: in the Attribution, Attribution-ShareAlike
+    and Attribution-NoDerivatives sets the licensor waives ("loobub Litsentsiandja ainuoigusest saada
+    Teilt autoritasu Litsentsi alusel antud oiguste mis tahes kasutamise eest"), and in the NonCommercial
+    sets the licensor keeps the right for commercial use and waives it otherwise. Voluntary schemes: the
+    same split, with the collecting society ("kollektiivse esindamise organisatsioon") named as the channel.
+    The vocabulary has no term for it. Proposed term: dalicc:royaltyCollectionReserved, with a companion
+    for the waiver.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The waiver of the sui generis database maker rights, and the disapplication of the restrictions
+    of sections 4(a) to 4(d) to those rights, have no vocabulary term. Adding dcmitype:Dataset to odrl:target
+    says that a dataset may be licensed under this record, but it cannot say that the licensor gives up
+    the database right itself, which makes the Estonian port more permissive for datasets than any other
+    record of the family. Proposed term: dalicc:suiGenerisDatabaseRightsWaived.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the forty one axioms of licensedata/dependencygraph/dg_default.ttl
+    reports no conflict, before and after the corrections, and the pre review baseline listed none for
+    this record either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of Creative Commons Attribution-ShareAlike 4.0 International. The deontic model of
+    this record is identical to the parent, statement for statement: the same permissions with the same
+    duties, the same prohibitions and the same set level duties, and after the correction above the same
+    odrl:target as well. What differs is the jurisdiction, the language of the legal text, the clause
+    texts, and the version specific clauses of 3.0 that the model does not carry, chiefly the express
+    prohibition of sublicensing, the technological measures clause and the royalty collection arrangements.
+    The compatibility checker cannot tell this record from any other record of the BY-SA element set,
+    across all three versions and every jurisdiction the library holds.'
+  action: none
+family: 'Creative Commons 3.0 port: Estonia (EE)'
+port_of: CC-BY-SA-4.0
+variant_kind: jurisdiction-port
+notes: The parent is the 4.0 International record of the same element set, since the library holds no
+  unported and no International 3.0 record; the version difference, 3.0 against 4.0, is therefore part
+  of the port relation and not only the jurisdiction. The SPDX licence list defines no identifier for
+  this port, so the record carries no spdx:licenseId and none was invented. Nothing in this review is
+  legal advice.

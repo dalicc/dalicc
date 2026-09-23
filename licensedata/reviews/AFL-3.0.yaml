@@ -1,0 +1,85 @@
+id: AFL-3.0
+title: Academic Free License 3.0
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/AFL-3.0.txt
+text_retrieved: true
+verdict: corrected
+summary: 'The Academic Free License is the permissive twin of the Open Software License: same structure,
+  same author, but clause 1(c) lets the licensee distribute under any license of their choice as long
+  as it does not contradict this one. That right was not modelled and has been added. The share-alike
+  prohibition the template contributes contradicts the same clause.'
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Clause 1(c) grants the right "to distribute or communicate copies of the Original Work
+    and Derivative Works to the public, under any license of your choice that does not contradict the
+    terms and conditions ... in this Academic Free License". That is exactly dalicc:ChangeLicense with
+    a dalicc:compliantLicense duty, the pattern Apache-2.0 and the Common Development and Distribution
+    License use. Added.
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:ChangeLicense ;\n       \
+    \ odrl:duty [ a odrl:Duty ;\n                odrl:action dalicc:compliantLicense ] ] ;\n"
+- rubric: 5
+  severity: major
+  field: odrl:prohibition
+  description: cc:ShareAlike is prohibited, which asserts that the licensee may not redistribute under
+    this same license. Clause 1(c) says "any license of your choice", which includes this one. Removing
+    it is the right answer but it belongs with the library-wide decision on the eight template records,
+    so it is proposed rather than applied.
+  action: proposed
+  change: "# remove\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action cc:ShareAlike ] ;\n"
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:addStatement is prohibited, which contradicts clause 1(c) as well.
+  action: proposed
+  change: "# remove\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:addStatement\
+    \ ] ;\n"
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'Clause 2 grants a patent license, clause 10 terminates the whole license on patent action,
+    and clause 5 treats "External Deployment", that is making the work usable over a network, as a distribution.
+    None of the three has a term. Proposed: dalicc:patentGrant, dalicc:patentRetaliationTermination, dalicc:networkUseTrigger.'
+  action: none
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The stored disclaimer is clause 8, the limitation of liability, not clause 7, the warranty
+    of provenance and disclaimer of warranty. The record has no dalicc:LiabilityLimitation, so the two
+    clauses are conflated.
+  action: proposed
+  change: 'dalicc:WarrantyDisclaimer "Licensor warrants that the copyright in and to the Original Work
+    ... the Original Work is provided under this License on an \"AS IS\" BASIS and WITHOUT WARRANTY ..."
+    ;
+
+    dalicc:LiabilityLimitation "Under no circumstances and under no legal theory ..." ;
+
+    '
+- rubric: 10
+  severity: info
+  field: family
+  description: 'AFL-3.0 and OSL-3.0 are the same document with one clause changed: 1(c) says "any license
+    of your choice" in AFL and "shall be licensed under this Open Software License" in OSL. After this
+    pass the two records differ in exactly that place, which is the intended shape.'
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 4 finding 6.3, 6.4 and 6.5 and consolidation decision 4: the
+    record prohibited cc:ShareAlike and dalicc:addStatement without support, permitted dalicc:noWarrantyNotice
+    although no clause of the AFL grants such a right, kept the limitation of liability inside dalicc:WarrantyDisclaimer
+    while section 7, the disclaimer of warranty, was absent, made no patent statement although section
+    2 grants one and section 10 ends it on patent litigation, and carried the placeholder ''- not specified
+    - ''.'
+  action: applied
+family: Other OSI approved licenses (corporate, academic, weak copyleft)
+port_of: null
+variant_kind: null
+notes: 'This record uses the composer template shared by AAL, AFL-3.0, APL-1.0, APSL-2.0, CATOSL-1.1,
+  CECILL-2.1, EPL-1.0 and PHP-3.0: bare odrl:derive and odrl:modify permissions with the real duties hung
+  on cc:DerivativeWorks, plus a fixed block of three prohibitions (cc:ShareAlike, dalicc:addStatement,
+  dalicc:promote). The template fits a permissive license and misdescribes every reciprocal one.'

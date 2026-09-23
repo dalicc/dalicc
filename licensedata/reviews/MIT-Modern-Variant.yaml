@@ -1,0 +1,89 @@
+id: MIT-Modern-Variant
+title: MIT License Modern Variant
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/MIT-Modern-Variant.txt
+text_retrieved: true
+verdict: created
+summary: The record models the modern MIT variant, the wording used by Ptolemy and Tcl and Tk. Its grant is narrower
+  in form than the MIT grant, being a permission to use, copy, modify and distribute rather than a permission to
+  deal in the software without restriction, and it names neither sublicensing nor selling. The condition is the
+  familiar notice condition, modelled as cc:Attribution and cc:Notice on distribute, modify and derive, as on IscLicense.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads: "Permission is hereby granted, without written agreement and without license or
+    royalty fees, to use, copy, modify, and distribute this software and its documentation for any purpose". The
+    record permits reproduce, distribute, modify, derive, display, present, commercial use, derivative works and
+    modified works. Sublicensing is not named, so neither dalicc:sublicense nor odrl:grantUse is written. dalicc:chargeDistributionFee
+    follows the library convention for a license that is silent about what the licensee may charge; the phrase about
+    royalty fees describes the licensor, not the licensee.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The condition reads: "provided that the above copyright notice and the following two paragraphs
+    appear in all copies of this software". cc:Attribution and cc:Notice are duties on distribute, modify and derive,
+    so the notice travels with a changed copy too.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited because the text requires the license itself to travel with every
+    copy, which is the reading IscLicense and BSD-3-Clause take of the same clause. The MIT record does not carry
+    the prohibition although its text has the same requirement, so the library is not uniform here. (Corrected on
+    2026-09-15 by the verification pass: see the rubric 3 finding on relicensing below.)'
+  action: applied
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: No endorsement or advertising clause, so dalicc:promote is not prohibited.
+  action: none
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The text carries the liability paragraph first and the warranty paragraph second. Each is quoted
+    into its own field, in the words of the text.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following IscLicense. The text licenses software
+    and its documentation.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Against MIT the difference is the missing sublicense and sell wording, and the warranty paragraph,
+    which here also disclaims any obligation to provide maintenance, support, updates or modifications. Against
+    IscLicense the deontic model is identical.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Permission is hereby granted, without written agreement
+    and without license or royalty fees, to use, copy, modify, and distribute this software and its documentation
+    for any purpose, provided that the above copyright notice and the following two paragraphs appear in all copies
+    of this software." The permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the
+    notice has to survive the relicensing.'
+  action: applied
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. cc:legalcode points at the Fedora licensing page, which is the reference
+  SPDX itself names for this wording; the license has no steward, so there is no dct:publisher.

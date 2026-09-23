@@ -1,0 +1,142 @@
+id: Intel-Research-Use-License
+title: Intel Research Use License Agreement
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://scancode-licensedb.aboutcode.org/intel-research-use-2024.LICENSE
+text_retrieved: true
+verdict: created
+summary: >-
+  A narrow research licence over datasets, model weights and other software. You may use,
+  reproduce, display and distribute the material for research purposes and nothing else, and
+  the agreement says in terms that any other use is withheld. The record is the most
+  restrictive of this family: it permits three acts, prohibits the rest expressly, and carries
+  no duty at all because the text asks for no notice and no attribution.
+findings:
+- rubric: 1
+  severity: info
+  field: 'dct:title'
+  description: >-
+    File name, record identifier and IRI local name agree. The licence has no SPDX identifier,
+    so no spdx:licenseId triple is written. dct:title is the heading of the document; the
+    short form and the model-hub tag are in dct:alternative.
+  action: applied
+- rubric: 2
+  severity: major
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Dataset and dcmitype:Software. The definition is express: "'Material' means
+    datasets, model weights or other software Intel makes available to you under this
+    Agreement."
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 2 grants "a limited, non-transferable, non-sublicensable, non-exclusive,
+    worldwide, royalty-free, license under Intel's copyrights in the Material, to use,
+    reproduce, display, and distribute the Material solely for research purposes." That is
+    odrl:reproduce, odrl:display and odrl:distribute, and nothing more. odrl:present is not
+    written: the text says display, not perform.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    Section 2.1 reads "Except as authorized above, You will not: (a) use Material in any other
+    way; (b) reverse engineer, decompile, or disassemble the Material, or (c) use Material to
+    violate or aid in the violation of any international human right." Because the grant is
+    closed, the acts it does not name are prohibited rather than merely absent: odrl:modify,
+    odrl:derive, cc:DerivativeWorks, dalicc:ModifiedWorks and cc:CommercialUse, the last from
+    "solely for research purposes". dalicc:sublicense is prohibited from "non-sublicensable".
+    dalicc:ChangeLicense is prohibited because the agreement binds every user of the material
+    by its own terms: "By using or distributing any portion or element of the Material, You
+    agree to be bound by this Agreement." dalicc:exemptedMaterial is prohibited from section
+    3: "Your use of certain third-party software with or within the Material is subject to
+    your compliance with licensing you obtain directly from that third-party."
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    The record carries no duty, licence-wide or on an act. The text asks for no copyright
+    notice, no attribution line, no copy of the agreement and no modification note, and none
+    was invented. This makes the record one of the few in the library with neither
+    cc:Attribution nor cc:Notice; the report proposes that the consolidation add the
+    identifier to the list of records that rule 6 of the family rules exempts.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    Section 4 goes to dalicc:WarrantyDisclaimer and section 5 to dalicc:LiabilityLimitation,
+    each whole and verbatim. dalicc:additionalClauses carries the acceptance sentence, the
+    definitions, the licence grant, the restrictions, the no-implied- licence clause, the
+    third-party clause, the term and termination clause and the governing- law clause. Curly
+    quotation marks in the source are kept; no long dash appears in the text.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    cc:jurisdiction is dalicc:worldwide, from the "worldwide" grant, and dalicc:governingLaw
+    names the law the agreement chooses: "All disputes will be governed by the laws of the
+    United States of America and the State of Delaware without reference to conflict of law
+    principles". dalicc:validityType is dalicc:perpetual, because the term runs from
+    acceptance until terminated rather than for a fixed period, and dalicc:terminatesOnBreach
+    is true from "Intel may terminate this Agreement if You are in breach of any term or
+    condition of this Agreement." No cure period is given.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:fieldOfUseRestriction'
+  description: >-
+    "solely for research purposes" is a field of use the vocabulary cannot carry as an action.
+    The literal names the field and the clause is quoted; the proposed term is
+    dalicc:researchUseOnly, a duty action beside dalicc:computationalUseOnly. The same
+    proposal covers two other records of this family.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Clause 2.1(c), "use Material to violate or aid in the violation of any international human
+    right", is a use restriction of the kind the responsible-use licences of this family put
+    in an attachment. No term expresses a named prohibited use. Quoted; the proposed term is
+    dalicc:prohibitedUsePolicy, an annotation carrying the policy or the list the licence
+    applies.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Section 6 names what survives termination: "Sections 4, 5 and 7 will survive the
+    termination of this Agreement." dalicc:sublicenseSurvival says only whether granted
+    sublicences survive, and there is no term for the clauses that do. Quoted; the proposed
+    term is dalicc:survivingClauses, an annotation naming them.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer against dg_default returned an empty
+    conflict list. The eight prohibitions and three permissions do not overlap, and none of
+    the prohibited actions is implied by a permitted one in the dependency graph.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Family: the narrowest of the three research-only records. Like the other two it prohibits
+    cc:CommercialUse and names its field in dalicc:fieldOfUseRestriction, but it is the only
+    one of the seventeen that withholds modification and derivative works, and the only one
+    with no duty.
+  action: none
+family: Model licences
+port_of: null
+variant_kind: null
+variant_of: null
+notes: >-
+  The copy in the model repository the evidence names returned 404, so the text was taken from
+  the ScanCode license database and cc:legalcode and dct:source both point there. The
+  agreement names no publisher other than the licensor, so dct:publisher is Intel Corporation,
+  the party the text names as the grantor.

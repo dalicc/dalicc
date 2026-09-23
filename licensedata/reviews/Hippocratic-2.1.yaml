@@ -1,0 +1,117 @@
+id: Hippocratic-2.1
+title: Hippocratic License 2.1
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Hippocratic-2.1.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models the Hippocratic License 2.1, which grants everything the licensor''s copyright and patent rights
+  would otherwise forbid and then conditions the grant on the licensee''s own conduct: the software must be used consistently
+  with the Human Rights Principles the text names and may not be used for anything that violates the Human Rights Laws it
+  defines. That condition is the whole point of the licence and the vocabulary cannot express it, so it is quoted and recorded
+  as a gap.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, record identifier, SPDX identifier and IRI local name agree. cc:legalcode points at the publisher''s
+    page for version 2.1 and dct:source at the SPDX entry. dct:publisher is left out: the text names no publishing body,
+    only the sentence that the licence is an Ethical Source licence, which is quoted.'
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only. The grant reaches 'this software and associated documentation files', which the text
+    then calls the Software throughout.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: '''To do everything with the Software that would otherwise infringe (i) the Licensor''s copyright in the
+    Software or (ii) any patent claims to the Software that the Licensor can license or becomes able to license.'' Everything
+    means the full set: reproduce, distribute, modify, derive, display, present, cc:DerivativeWorks, dalicc:ModifiedWorks,
+    cc:CommercialUse and dalicc:patentGrant. dalicc:ChangeLicense is permitted with no duty, because the Notice section
+    says a licensee ''is free to create modifications of the Software and distribute only the modified portion created by
+    Licensee with additional or different terms''.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: The record carries no prohibition. The text has no trademark or endorsement clause, so dalicc:promote is
+    absent, as it is on MIT-0; it asks instead that a trademark notice the licensor included be passed on, which is a duty.
+    There is no patent retaliation clause either. The one thing the licence forbids, use that violates the Human Rights
+    Laws, has no action term and is recorded as a gap.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Notice and cc:Attribution for 'Licensee must ensure that everyone who gets a copy of any part of this
+    Software from Licensee, with or without changes, also receives the License and the above copyright notice'; dalicc:patentNotice
+    and dalicc:trademarkNotice for the same sentence's '(and if included by the Licensor, patent, trademark and attribution
+    notice)', which is why they hang on odrl:distribute; dalicc:modificationNotice on odrl:modify and odrl:derive for 'Licensee
+    must cause any modified versions of the Software to carry prominent notices stating that Licensee changed the Software';
+    cc:ShareAlike for 'the portion of the Software not modified must be distributed pursuant to this License', which is
+    file-level reciprocity and is why the duty hangs on the three acts and not on the licence as a whole.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: The Disclaimer section disclaims warranty and liability in one sentence, so the whole sentence is quoted
+    into dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation is left out rather than repeating it, as in CAL-1.0. Twelve
+    further clauses are quoted in dalicc:additionalClauses, including both human rights sections, the arbitration clause
+    and the indemnity.
+  action: applied
+- rubric: 7
+  severity: major
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction stays dalicc:worldwide and dalicc:governingLaw is absent: the text names no governing law
+    and says the licence ''may be enforced by Licensor under the Laws of any jurisdiction to which Licensee is subject''.
+    dalicc:terminatesOnBreach is true and dalicc:curePeriod is ''30 days'' for the Notice section''s cure sentence. Two
+    further clauses also end the licence at once: electing not to arbitrate, and a court holding the human rights terms
+    unenforceable. Both are quoted.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:fieldOfUseRestriction
+  description: 'The human rights condition has no term. dalicc:fieldOfUseRestriction is the nearest literal and names it;
+    both sections are quoted: ''Licensee shall use the Software in a manner consistent with Human Rights Principles'' and
+    ''The Software shall not be used by any person or entity for any systems, activities, or other uses that violate any
+    Human Rights Laws.'' Proposed term: dalicc:externalStandardCompliance, a duty action for a licence that binds the licensee
+    to a body of law or a standard named outside the licence, with an annotation naming the instrument.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The indemnity has no term: ''Licensee shall hold harmless and indemnify Licensor (and any other contributor)
+    against all losses, damages, liabilities ... arising out of or relating to Licensee''s use of the Software in violation
+    of Human Rights Laws or Human Rights Principles.'' Quoted. Proposed term: dalicc:indemnifyLicensor, a duty action.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The arbitration clause has no term: disputes about the human rights sections ''shall be settled by arbitration
+    in accordance with the Hague Rules on Business and Human Rights Arbitration'', and a licensee who declines loses the
+    licence. dalicc:governingLaw is about the law that governs, not about the forum, so it is not used. Quoted. Proposed
+    term: dalicc:disputeResolutionForum, an annotation holding the forum and the rules a licence names.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run against licensedata/dependencygraph/dg_default.ttl, returned
+    no conflicts. The record has no prohibition at all, so no action can be permitted and prohibited at once.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: Its nearest sibling in shape is MIT-0, which also carries a wide grant and no prohibition, and in substance
+    C-UDA-1.0, which also confines the licensee to a field the vocabulary can only name in a literal. The difference from
+    both is that the condition here is about the licensee's conduct towards other people rather than about the kind of work
+    done with the software.
+  action: none
+family: Source-available licences and riders
+port_of: null
+variant_kind: null
+variant_of: null
+notes: The condition is drafted around instruments outside the licence, the United Nations Universal Declaration of Human
+  Rights, the United Nations Global Compact and the Hague Rules on Business and Human Rights Arbitration, so a reader cannot
+  tell from the licence text alone what compliance requires. The record says what the licence says and no more.

@@ -1,0 +1,39 @@
+id: InspireEndUserLicence
+title: INSPIRE End User Licence
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 license-wide duty, changed 1 identification detail
+    and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: changed
+    statement: dct:source <http://web.archive.org/web/20190330210447/https://www.ordnancesurvey.co.uk/business-and-government/public-sector/mapping-agreements/inspire-licence.html>
+    previous: dct:source <https://www.ordnancesurvey.co.uk/business-and-government/public-sector/mapping-agreements/inspire-licence.html>
+    reason: cc:legalcode and dct:source both pointed at an Ordnance Survey URL that returns 404, and
+      the current site has no INSPIRE licence page, so the record had no working link to its text.
+      dct:source now points at the Internet Archive snapshot of 30 March 2019, which is the text that
+      was read for this review. cc:legalcode was left at the original URL, because it is the address
+      the licence was published at and changing it would erase that fact; the owner should replace
+      it once Ordnance Survey republishes the licence.
+    source: review-finding 1/dct:source
+  - action: added
+    statement: duty cc:Notice
+    reason: 'The record carried no duty of any kind and was the single violation of rule 6 of the
+      family-rule baseline, every record needs an attribution or notice duty. The licence has one,
+      clause 3.1: "You shall not alter or remove any of the OS copyright / database right notices
+      and licence numbers which are shown on the Supplied Data." A licence-wide cc:Notice duty was
+      added, licence-wide because the duty is owed for any use and the acts that would normally carry
+      it, distribution and public display, are prohibited here.'
+    source: review-finding 5/odrl:duty

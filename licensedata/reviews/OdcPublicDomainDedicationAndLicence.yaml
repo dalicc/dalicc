@@ -1,0 +1,110 @@
+id: OdcPublicDomainDedicationAndLicence
+title: ODC Public Domain Dedication and Licence (PDDL)
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://opendatacommons.org/licenses/pddl/1-0/
+text_retrieved: true
+verdict: corrected
+summary: 'PDDL is the Open Data Commons counterpart of CC0: a dedication of a database to the public domain
+  with a licence fallback for jurisdictions where the dedication does not work. The record models it correctly,
+  with every act permitted, no duty anywhere and only the trademark prohibition. Applied: the SPDX identifier
+  and the fallback licence of Section 3.3, quoted into dalicc:additionalClauses.'
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: The record carried no SPDX identifier. Its cc:legalcode, https://opendatacommons.org/licenses/pddl/1.0/,
+    is the seeAlso URL of the SPDX entry PDDL-1.0, and the fetched document is headed "Open Data Commons
+    Public Domain Dedication and License (PDDL) v1.0". The proposal file rated this medium; the version
+    in the document confirms it. Added.
+  action: applied
+  change: spdx:licenseId "PDDL-1.0" ;
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Dataset only, which matches a document whose subject is a database and whose Section
+    2 covers copyright and database rights in the work.
+  action: none
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'Every act is permitted, which follows Section 3.1: "The Rightsholder by using this Document,
+    dedicates the Work to the public domain for the benefit of the public and relinquishes all rights
+    in Copyright and Database Rights over the Work." dalicc:ChangeLicense among the permissions is right
+    for a dedication.'
+  action: none
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:promote is the only prohibition and it is supported by Section 4.3: "This Document
+    does not grant You a licence for any trade marks that the Rightsholder may own or that the Rightsholder
+    may use to cover the Work." Section 4.2 does the same for patents, which the vocabulary cannot express
+    as a reservation.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'No duty, which is correct: PDDL imposes no attribution or notice requirement. Section
+    4.1 says the work is made available "without any other contractual obligations, either express or
+    implied" and that a community norms statement is not a contract. The family-rule baseline lists this
+    record among the four where no attribution duty is expected.'
+  action: none
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: Section 3.3, the licence that applies where the dedication and the waiver are ineffective,
+    was missing. It is the operative clause in those jurisdictions and it repeats that the rights "explicitly
+    include commercial use, and do not exclude any field of endeavour". Quoted verbatim into dalicc:additionalClauses,
+    in the same way as the fallback clause of CC0.
+  action: applied
+  change: dalicc:additionalClauses """Licence of Copyright and Database Rights when Sections 3.1 and 3.2
+    inapplicable ...""" ;
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: dalicc:WarrantyDisclaimer is Section 5.1 and dalicc:LiabilityLimitation is Sections 5.2
+    and 5.3, both quoted verbatim. The warranty value begins with a stray leading blank, which is cosmetic
+    and was left alone. Section 3.4, moral rights, and Section 6.4, the jurisdiction rule that decides
+    which of 3.1, 3.2 and 3.3 applies, are not carried.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'dalicc:worldwide and dalicc:perpetual are supported: the dedication is unlimited in time
+    and territory, and Section 3.3(a) grants the fallback licence "for the duration of any applicable
+    Copyright and Database Rights".'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'As with CC0, nothing in the model says that this is a dedication and not a licence, and
+    the reservation of patent and trade mark rights in Sections 4.2 and 4.3 can only be approximated by
+    the dalicc:promote prohibition. Proposed terms: dalicc:publicDomainDedication and dalicc:patentRightsReserved.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check reports no conflict, before and after the corrections.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The record shares its deontic signature with Cc010Universal, which review_duplicates.md
+    section 4 flags as a cross-family pair. That is correct rather than a defect: both documents dedicate
+    the work and both fall back to a permissive licence. The separation into two records is justified
+    by provenance and by the subject matter, a database against any work. Inside the Open Data Commons
+    family this record is the permissive end, ODC-By the attribution end and ODbL the share-alike end,
+    and all three now carry the same Section 3.1 commercial-use grant in their model.'
+  action: none
+- rubric: 10
+  severity: minor
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9 and 10: the record was corrected against
+    its new siblings and versioned. Family rule 14 of scripts/review/family_rules.py: the warranty literal
+    carried a padding space inside its quotation marks.'
+  action: applied
+family: Open Data Commons (ODbL, PDDL, ODC-By)
+port_of: null
+variant_kind: null
+notes: The three Open Data Commons documents share a drafting skeleton, section numbering included, so
+  a clause-by-clause comparison between them is reliable. Nothing in this review is legal advice.

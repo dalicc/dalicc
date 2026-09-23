@@ -1,0 +1,110 @@
+id: ECL-2.0
+title: Educational Community License v2.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://opensource.org/license/ECL-2.0
+text_retrieved: true
+verdict: created
+summary: Models the second Educational Community License, which is the Apache License 2.0 with
+  one changed sentence in the patent grant. The record copies the Apache-2.0 record statement
+  for statement and adds the express patent grant as a permission and patent retaliation as a
+  prohibition, which the Apache-2.0 record does not yet carry. A reader comparing the two records
+  should read the quoted patent clauses, because that is the whole of the difference between the
+  licences.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, license id, SPDX id and IRI agree. cc:legalcode and dct:source point
+    at the single seeAlso URL; the text itself also names http://www.apache.org/licenses/LICENSE-2.0
+    as the unmodified parent, which is quoted rather than linked so the record resolves to the
+    ECL text.
+  action: none
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: 'Asset types copied from the Apache-2.0 record (dalicc:CreativeWork, dcmitype:Dataset,
+    dcmitype:Software): the licence grants rights in ''the Work'', defined as any work of authorship
+    in Source or Object form.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Section 2 grants a 'perpetual, worldwide, non-exclusive, no-charge, royalty-free,
+    irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display,
+    publicly perform, sublicense, and distribute the Work', so the record carries reproduce, distribute,
+    modify, derive, display, present, grant use, commercial use, derivative works, modified works,
+    the distribution fee and dalicc:ChangeLicense with a dalicc:compliantLicense duty for the
+    section 4 allowance of different terms on Your modifications. dalicc:patentGrant is added
+    for section 3, which the Apache-2.0 record omits.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote for section 6 ('This License does not grant permission to use the
+    trade names, trademarks, service marks, or product names of the Licensor') and dalicc:patentRetaliationTermination
+    for the second sentence of section 3, which ends the patent licence when the licensee sues.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'Section 4 conditions redistribution, so cc:Attribution and cc:Notice hang off
+    distribute, and dalicc:modificationNotice joins them on modify and derive: ''You must cause
+    any modified files to carry prominent notices stating that You changed the files''. This is
+    the Apache-2.0 record''s placement, unchanged.'
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: Section 4(d) requires the NOTICE file to travel with Derivative Works. dalicc:includeNoticeFile
+    would express it, but the Apache-2.0 record does not carry it and this record follows its
+    sibling; adding it to both at once is the consolidation agent's call.
+  action: proposed
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyOrLiabilityAcceptance
+  description: Sections 7, 8 and 9 are quoted verbatim into dalicc:WarrantyDisclaimer, dalicc:LiabilityLimitation
+    and dalicc:WarrantyOrLiabilityAcceptance, word for word identical to the Apache-2.0 record.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:additionalClauses
+  description: 'The narrowed patent sentence is quoted in full because it is the reason the licence
+    exists: ''Any patent license granted hereby with respect to contributions by an individual
+    employed by an institution or organization is limited to patent claims where the individual
+    that is the author of the Work is also the inventor of the patent claims licensed, and where
+    the organization or institution has the right to grant such license under applicable grant
+    and research funding agreements. No other express or implied licenses are granted.'''
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'No legal system and no term are named: dalicc:worldwide and dalicc:perpetual.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: No vocabulary gap of its own. dalicc:patentGrant and dalicc:patentRetaliationTermination
+    were defined by the 2026-09-15 review and applied to no record then; this record is one of
+    the first to use them, so the consolidation pass should update their skos:note.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run with the 39 axioms of licensedata/dependencygraph/dg_default.ttl,
+    returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Against Apache-2.0 the record differs only by dalicc:patentGrant, dalicc:patentRetaliationTermination
+    and the quoted patent clauses. Against ECL-1.0 it adds the patent grant and retaliation and
+    drops the rename duty. A separate record is justified: the compatibility answer for a patent
+    claimant differs.'
+  action: none
+family: Educational, hardware and logistics
+port_of: null
+variant_kind: version
+notes: Modelled from the SPDX plain text. The licence says of itself that it 'consists of the
+  Apache 2.0 license, modified to change the scope of the patent grant in section 3'; that sentence
+  is quoted in dalicc:additionalClauses so the relation is readable from the record.

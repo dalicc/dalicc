@@ -1,0 +1,130 @@
+id: CAL-1.0
+title: Cryptographic Autonomy License 1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: http://cryptographicautonomylicense.com/license-text.html
+text_retrieved: true
+verdict: created
+summary: Models the Cryptographic Autonomy License 1.0 as it applies to source the licensor has
+  not marked with the Combined Work Exception. Reciprocity reaches the whole work, so cc:ShareAlike
+  is a license-wide duty. The licence also forbids technological measures that lock a recipient
+  out of their own data, which is the clause the record is written around.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, license id, SPDX id and IRI agree. cc:legalcode is the licensor''s
+    own URL and dct:source the OSI page, which lists both identifiers under one entry. dct:publisher
+    is left out: the text names no steward.'
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only, following MozillaPublicLicenseVersion20 and OSL-3.0.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 3.1 grants ''the world-wide, royalty-free, non-exclusive permission to:
+    a) Take any action with the Work that would infringe the non-patent intellectual property
+    laws of any jurisdiction to which You are subject'', together with a patent licence. Because
+    the grant is stated as the whole of the non-patent rights, the record carries reproduce, distribute,
+    modify, derive, display, present, commercial use, derivative works, modified works and dalicc:patentGrant.
+    No distribution fee: the text is silent about charging for a copy and expressly requires no-charge
+    network access to the source and a no-charge copy of user data.'
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: 'Section 6 is one sentence that disclaims warranty and limits liability together,
+    so it is quoted whole into dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation is left
+    out rather than duplicating the same words: ''As far as the law allows, the Work comes AS-IS,
+    without any warranty of any kind, and no Licensor or contributor will be liable to anyone
+    for any damages related to this software or this license''. Eleven further clauses are quoted
+    in dalicc:additionalClauses.'
+  action: applied
+- rubric: 7
+  severity: minor
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction stays dalicc:worldwide: section 3.1 grants world-wide permission
+    and section 7.2 lets an individual licensor, not the licence, pick a forum and a governing
+    law. The clause is quoted so a reader sees that the choice is open.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: odrl:duty
+  description: 'Section 4.2.1 obliges the licensee to hand a recipient a copy of the recipient''s
+    own data: ''You must also provide to any Recipient to whom you provide services via the Work,
+    a no-charge copy, provided in a commonly used electronic form, of the Recipient''s User Data
+    in your possession''. Nothing in the vocabulary comes near it. Quoted; proposed term: dalicc:provideUserData,
+    an action used as a duty on odrl:distribute and on the network-use trigger.'
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'dalicc:applyTechnicalProtectionMeasures for section 4.2.2, which is the clearest
+    case in the library for that term: ''You may not, by means of the use cryptographic methods
+    applied to anything provided to the Recipient, by possession or control of cryptographic keys,
+    seeds, hashes, by any other technological protection measures, or by any other method, limit
+    a Recipient''s ability to access any functionality present in Recipient''s independent copy
+    of the Work''. dalicc:sublicense for section 7.3 (''This License is not sublicensable''),
+    dalicc:addLimitation for 4.2.3 and 7.3, dalicc:promote for 3.2(b) and dalicc:patentRetaliationTermination
+    for 5.3.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The licence is triggered by deployment or by serving the work over a network,
+    not only by distribution. The vocabulary has no term for that trigger, so the definition is
+    quoted in dalicc:additionalClauses and the source-code duty is attached to distribute, modify
+    and derive. Proposed term: dalicc:networkUseTrigger. Text: section 4.2.1, which binds You
+    ''Throughout any period in which You exercise any of the permissions granted to You under
+    this License'' and reaches any Recipient ''to whom you provide services via the Work''. The
+    vocabulary defines the term and the record carries the permission.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Automatic termination on breach has no property that a record can carry: dalicc:terminationOnBreach
+    is a policy quality with no predicate. The clause is quoted in dalicc:additionalClauses. Proposed
+    term: dalicc:terminatesOnBreach as a boolean property on odrl:Set, with the cure period as
+    a literal. Text: ''This License terminates automatically if You fail to comply with any of
+    the conditions in section 4'' (section 5.2), with a one-time reinstatement within sixty days.
+    The vocabulary defines the property and the record carries it.'
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run with the 39 axioms of licensedata/dependencygraph/dg_default.ttl,
+    returned no conflicts.
+  action: none
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:ShareAlike is license-wide, because section 4 conditions every permission and
+    4.1.2 requires the modifications to go out 'either a) under this License, or b) under a Compatible
+    Open Source License'. cc:SourceCode, cc:Attribution, cc:Notice and dalicc:addStatement (section
+    4.3, which asks for the Notices 'together with a statement acknowledging the use of the Work')
+    hang off distribute, modify and derive.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:ChangeLicense is prohibited in this record and left unstated in the Combined
+    Work Exception record, which is the modelled difference between the two identifiers.
+  action: applied
+- rubric: 10
+  severity: major
+  field: record
+  description: 'CAL-1.0 and CAL-1.0-Combined-Work-Exception share one legal text. Separate records
+    are justified because SPDX gives them separate identifiers and the reach of the reciprocity
+    differs: here the Larger Work is bound, there section 4.5 releases it. The records differ
+    in exactly two places, the attachment level of cc:ShareAlike and the ChangeLicense prohibition.'
+  action: none
+family: Reciprocal and source-available
+port_of: null
+variant_kind: null
+notes: 'Modelled from the licence text at the licensor''s own URL, which is the same text the
+  SPDX entry mirrors. The two SPDX identifiers CAL-1.0 and CAL-1.0-Combined-Work-Exception share
+  one text: the exception applies when the licensor marks source files as carrying it, and the
+  two records differ only in how far the reciprocity then reaches.'

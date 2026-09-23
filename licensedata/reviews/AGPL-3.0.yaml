@@ -1,0 +1,70 @@
+id: AGPL-3.0
+title: GNU Affero General Public License
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://www.gnu.org/licenses/agpl-3.0.html
+text_retrieved: true
+verdict: corrected
+summary: The record models the Affero GPL exactly like GPL-3.0-only and quotes the network clause of section
+  13 in dalicc:additionalClauses. The SPDX identifier it carried, "AGPL-3.0", is deprecated on the SPDX
+  list; it was replaced by AGPL-3.0-only. The publisher field held the license name instead of a publisher,
+  and the right to charge for conveying copies was missing.
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: The record carried the deprecated SPDX id "AGPL-3.0". SPDX replaced it with AGPL-3.0-only
+    and AGPL-3.0-or-later; the record models no "any later version" option, so AGPL-3.0-only is the matching
+    id.
+  action: applied
+  change: 'spdx:licenseId "AGPL-3.0-only" ;
+
+    '
+- rubric: 1
+  severity: minor
+  field: dct:publisher
+  description: dct:publisher held the string "GNU Affero General Public License", that is the name of
+    the license, not its publisher. Corrected to the Free Software Foundation, in line with the other
+    three GNU records.
+  action: applied
+  change: 'dct:publisher "Free Software Foundation" ;
+
+    '
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 4 states: "You may charge any price or no price for each copy that you convey."
+    Added the missing dalicc:chargeDistributionFee permission.'
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:chargeDistributionFee ] ;\n"
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'The defining clause of this license cannot be modelled. Section 13 states: "if you modify
+    the Program, your modified version must prominently offer all users interacting with it remotely through
+    a computer network ... an opportunity to receive the Corresponding Source". Remote interaction is
+    not distribution, so no existing action covers it and the quoted prose in dalicc:additionalClauses
+    is invisible to the compatibility checker. Proposed term: dalicc:networkUseTrigger (an odrl:Action
+    usable as a duty, with dalicc:networkUseSourceCode for the source obligation it triggers). Patent
+    grant, patent retaliation and the anti circumvention clause are the same gaps as in GPL-3.0-only.'
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: 'Apart from section 13 the model is identical to GPL-3.0-only, which is correct: the two
+    texts differ only in sections 13 and 0. Once dalicc:networkUseTrigger exists, this record is the only
+    one of the four that should carry it.'
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 1 finding 5.2: the record did not carry section 4 of the text,
+    ''You may charge any price or no price for each copy that you convey, and you may offer support or
+    warranty protection for a fee'', which every GNU record now carries.'
+  action: applied
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: version
+notes: Separate license, not a version of the GPL record. The network clause is the only substantive difference
+  and it is currently prose only.

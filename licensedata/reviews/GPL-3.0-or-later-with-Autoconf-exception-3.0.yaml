@@ -1,0 +1,133 @@
+id: GPL-3.0-or-later-with-Autoconf-exception-3.0
+title: GNU General Public License v3.0 or later with Autoconf exception 3.0
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/GPL-3.0-or-later.txt
+text_retrieved: true
+verdict: created
+summary: The record models GPL version 3 or later with the Autoconf configure script exception 3.0, the
+  combination GNU Autoconf carries. It keeps every statement of the GPL-3.0-or-later record and adds one
+  permission for the output of Autoconf, which may be distributed under terms of the recipient's choice.
+  The condition that voids the exception for a modified Autoconf has no term and is quoted.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, record identifier, IRI local name and title agree. spdx:licenseId carries the
+    SPDX expression "GPL-3.0-or-later WITH Autoconf-exception-3.0": the base identifier, one space, WITH
+    in capitals, one space, the exception identifier. No record in the library carried an expression before,
+    so the SPDX mapping and the spdx route have to accept the space and the keyword.'
+  action: applied
+- rubric: 1
+  severity: info
+  field: cc:legalcode
+  description: cc:legalcode points at the text of the base licence, https://www.gnu.org/licenses/gpl-3.0.html,
+    because that is the licence the record models. dct:source points at the SPDX page of the exception,
+    https://spdx.org/licenses/Autoconf-exception-3.0.html, because that is where the additional permission
+    is published.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'odrl:target is the one the base record carries: an odrl:AssetCollection of dct:type dcmitype:Software.
+    The exception is about program files, so nothing changes.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 1 of the exception reads: "You have permission to propagate output of Autoconf,
+    even if such propagation would otherwise violate the terms of GPLv3." The purpose clause says what
+    that is for: "The purpose of this Exception is to allow distribution of Autoconf''s typical output
+    under terms of the recipient''s choice (including proprietary)." The output is material the licence
+    conditions no longer reach, which is the permission dalicc:exceptedCombination.'
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:exceptedCombination ] ;\n"
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: Every permission of GPL-3.0-or-later is kept, in the same place and with the same duties.
+    An exception adds an additional permission to a licence; it never takes a granted right away.
+  action: applied
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'The exception lets the combined result travel under other terms, and the vocabulary cannot
+    say that of a part of a work. The purpose clause says: "The purpose of this Exception is to allow
+    distribution of Autoconf''s typical output under terms of the recipient''s choice (including proprietary)."
+    A dalicc:ChangeLicense permission would say the licence of the covered work itself may be replaced,
+    which is false and would contradict the whole-work share-alike duty. The record therefore keeps the
+    prohibition, states the narrowed reach in dalicc:reciprocityScope and quotes the clause. Proposed
+    term: dalicc:combinedWorkRelicensing, a permission for putting a larger work that contains the covered
+    material under other terms.'
+  action: applied
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The licence-wide cc:ShareAlike duty stays on the odrl:Set, and section 2 of the exception
+    says why: "The availability of this Exception does not imply any general presumption that third-party
+    software is unaffected by the copyleft requirements of the license of Autoconf."'
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: The exception text is quoted verbatim as one literal, taken from https://raw.githubusercontent.com/spdx/license-list-data/main/text/Autoconf-exception-3.0.txt.
+    Line breaks and the indentation of the source file are collapsed to single spaces, which is how every
+    clause literal in the library is written; the wording is untouched. The warranty disclaimer and the
+    liability limitation are the ones the base record quotes from the base licence.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction stays dalicc:worldwide and dalicc:validityType stays dalicc:perpetual:
+    the exception names no territory and no term. The termination clause of the base licence still applies,
+    and the record says no more about it than the base record does.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:exceptedCombination
+  description: 'The exception carves the combination out of the condition of the licence, not out
+    of its grant. dalicc:exemptedMaterial says the opposite and is prohibited on OGL-UK-1.0, OGL-UK-2.0 and
+    NLOD-2.0, where it means material the licence never granted. The vocabulary defines
+    dalicc:exceptedCombination for this side of it since 2026-09-23, and the record carries it as
+    a permission.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The exception falls away when a modification changes what Autoconf copies into its output:
+    "However, if by modifying Autoconf you cause any Ineligible Code of the version you received to become
+    Normally Copied Code of your modified version, then you void this Exception for the resulting covered
+    work." No term can hold a condition that ends an additional permission. Proposed term: dalicc:exceptionVoidingCondition.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: app.services.composer.consistency_check with the default dependency graph reports 0 conflicts
+    for this record. dalicc:exceptedCombination takes part in no dependency relation, so it neither creates
+    nor hides one.
+  action: applied
+- rubric: 10
+  severity: major
+  field: dalicc:variantOf
+  description: 'The base record of this variant is GPL-3.0-or-later, which this same addition creates.
+    The model is copied from it statement for statement, so dalicc:orLaterVersionOption stays true for
+    the clause GPL version 3 section 14 states: "If the Program specifies a version number of this License
+    which applies to it and "any later version", you have the option of following the terms and conditions
+    either of that version or of any later version published by the Free Software Foundation." dalicc:variantOf
+    points at GPL-3.0-or-later and not at GPL-3.0-only, although the two carry the same deontic model.
+    Both records are new, so a second reader should read them together.'
+  action: applied
+- rubric: 10
+  severity: info
+  field: record
+  description: The nearest siblings are GPL-3.0-or-later, which this record copies, and GPL-2.0-or-later-with-Autoconf-exception-2.0,
+    the older pair. Version 3.0 of the exception defines Covered Code, Normally Copied Code and Ineligible
+    Code and hangs the permission on them, where version 2.0 simply names the configure scripts.
+  action: applied
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: exception
+variant_of: GPL-3.0-or-later
+notes: The exception text carries a copyright sign, "Copyright (c) 2009 Free Software Foundation, Inc.",
+  written with the character the published text uses. It is kept verbatim in the quoted clause, which
+  is how the one other record in the library that quotes such a line treats it.

@@ -1,0 +1,173 @@
+id: EclipsePublicLicense10
+title: Eclipse Public License 1.0
+current_version: 4
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 clause text, 1 identification detail and 1 permission,
+    removed 1 prohibition, changed 1 clause text, recorded the relation to the record this one was
+    adapted from and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:LiabilityLimitation "EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER
+      RECIPIENT NOR ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+      SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER
+      CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+      NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR
+      THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES."
+    reason: dalicc:WarrantyDisclaimer held the text of section 6, DISCLAIMER OF LIABILITY, and there
+      was no dalicc:LiabilityLimitation. Moved section 6 to the liability field and put section 5,
+      NO WARRANTY, in the warranty field.
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: changed
+    statement: dalicc:WarrantyDisclaimer "EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE PROGRAM
+      IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS
+      OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT,
+      MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. Each Recipient is solely responsible for
+      determining the appropriateness of using and distributing the Program and assumes all risks
+      associated with its exercise of rights under this Agreement , including but not limited to the
+      risks and costs of program errors, compliance with applicable laws, damage to or loss of data,
+      programs or equipment, and unavailability or interruption of operations."
+    previous: dalicc:WarrantyDisclaimer "EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER
+      RECIPIENT NOR ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+      SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER
+      CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+      NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR
+      THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES."
+    reason: dalicc:WarrantyDisclaimer held the text of section 6, DISCLAIMER OF LIABILITY, and there
+      was no dalicc:LiabilityLimitation. Moved section 6 to the liability field and put section 5,
+      NO WARRANTY, in the warranty field.
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "version"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'Section 3 also states: "A Contributor may choose to distribute the Program in object
+      code form under its own license agreement, provided that ..." followed by four compliance conditions.
+      That is dalicc:ChangeLicense with a dalicc:compliantLicense duty, exactly as the EPL-2.0 record
+      models section 3.1(b). Added, which also brings the two Eclipse records into line.'
+    source: review-finding 3/odrl:permission
+  - action: removed
+    statement: prohibition cc:ShareAlike
+    reason: 'Section 3 states: "When the Program is made available in source code form ... it must
+      be made available under this Agreement". Prohibiting cc:ShareAlike asserts the opposite. Removed.'
+    source: review-finding 5/odrl:prohibition
+  - action: added
+    statement: spdx:licenseId "EPL-1.0"
+    reason: Added EPL-1.0; the title matches the SPDX name.
+    source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 4 finding 6.1 and consolidation decision 4: the record modelled no reciprocity although
+    section 3 says ''When the Program is made available in source code form: a) it must be made available
+    under this Agreement'', it made no patent statement although section 2(b) grants one and section
+    7 ends it on patent litigation, and dct:publisher and cc:attributionName both ended with a space.'
+  changes:
+  - action: changed
+    statement: cc:attributionName "Eclipse"
+    previous: cc:attributionName "Eclipse "
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: dct:publisher "Eclipse"
+    previous: dct:publisher "Eclipse "
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: permission dalicc:ChangeLicense
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: permission dalicc:patentGrant
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:ShareAlike]
+    previous: permission odrl:derive
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:ShareAlike, dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [dalicc:modificationNotice]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: prohibition dalicc:patentRetaliationTermination
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+- version: 4
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Weak-copyleft family alignment of 2026-09-15: the record is brought onto the shape of
+    CPL-1.0 and IPL-1.0, which model the same text. Section 2(a) grants the right to ''reproduce,
+    prepare derivative works of, publicly display, publicly perform, distribute and sublicense the
+    Contribution'', so dalicc:sublicense replaces the older spelling odrl:grantUse and dalicc:ModifiedWorks
+    is stated; the attribution, notice and source duties that sat on the derivative-works permission
+    move onto odrl:modify and odrl:derive, where the rest of the family carries them; the unsupported
+    dalicc:noWarrantyNotice permission and dalicc:addStatement prohibition go, because section 3 lets
+    a distributor add its own notices rather than forbidding it; and the dalicc:promote prohibition
+    goes, because this text has no trademark or endorsement clause at all.'
+  changes:
+  - action: changed
+    statement: permission cc:DerivativeWorks
+    previous: permission cc:DerivativeWorks with duties [cc:Attribution, cc:Notice, cc:SourceCode,
+      dalicc:modificationNotice]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: permission dalicc:ModifiedWorks
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: permission dalicc:noWarrantyNotice
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: permission dalicc:sublicense
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:ShareAlike]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: permission odrl:grantUse
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:ShareAlike, dalicc:modificationNotice]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:addStatement
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:promote
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

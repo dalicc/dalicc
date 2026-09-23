@@ -1,0 +1,178 @@
+id: CreativeCommonsAttributionNoncommercialNoderivs20Croatia
+title: Creative Commons Attribution-NonCommercial-NoDerivatives 2.0 Croatia
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by-nc-nd/2.0/hr/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the Attribution-NonCommercial-NoDerivatives element set of the Creative Commons
+  2.0 port for Croatia, read in Croatian from the legal code. The permissions, prohibitions and duties all
+  follow from the grant in Section 3 and the restrictions in Section 4, and the clause texts are quoted from
+  this port rather than from the unported version. Applied: dct:source. The remaining findings are library-wide
+  rather than defects of this record: the sublicensing prohibition, the no-additional-terms prohibition, the
+  asset types, and, for the version, the clauses that 2.0 settles per jurisdiction.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source, so it had a single provenance link where
+    the 4.0 International parents carry two. The canonical URL of the port, https://creativecommons.org/licenses/by-nc-nd/2.0/hr/,
+    was added, which is the pair, legal code plus deed, that the parents use and that the other 2.0 port batch
+    applied as well.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by-nc-nd/2.0/hr/> ;
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: SPDX has no identifier for this port. The legal-code URL implies CC-BY-NC-ND-2.0-HR, which the
+    SPDX licence list does not define, so none was invented.
+  action: none
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: The asset collection is dalicc:CreativeWork alone, while the 4.0 International parent carries
+    dalicc:CreativeWork and dcmitype:Dataset. The port grants the rights in all media and formats, and a database
+    is a protected work under the copyright law of the porting jurisdiction, so the legal text supports the
+    wider collection. The owner has decided that asset types follow the legal text; the change is proposed
+    rather than applied because it has to be made in all 287 Creative Commons ports at once, not in the seventeen
+    of this batch.
+  action: proposed
+  change: "odrl:target [ a odrl:AssetCollection ;\n        dct:type dalicc:CreativeWork,\n            dcmitype:Dataset\
+    \ ] ;"
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: Every modelled permission follows from the grant in Section 3, which gives a worldwide, royalty-free,
+    non-exclusive and perpetual licence, for the duration of the applicable copyright, to reproduce the work,
+    to incorporate it into collections, to distribute, to display and to perform it publicly, and expressly
+    not to create derivative works.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The record permits odrl:modify and dalicc:ModifiedWorks while prohibiting odrl:derive and cc:DerivativeWorks.
+    The text grants neither: Section 3 allows only the modifications that are technically necessary to exercise
+    the rights in another medium and then says that apart from that the licensee has no right to make derivative
+    works. dalicc:ModifiedWorks is defined in the vocabulary as distributing a modified version and making
+    it available to the public, which this licence does not allow. Proposed rather than applied, because all
+    97 NoDerivatives records of the library are modelled this way and the change belongs in one sweep.'
+  action: proposed
+  change: "remove:\n    odrl:permission [ a odrl:Permission ;\n            odrl:action dalicc:ModifiedWorks\
+    \ ]\nadd:\n    odrl:prohibition [ a odrl:Prohibition ;\n            odrl:action dalicc:ModifiedWorks ]\
+    \ ;"
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: The record permits dalicc:chargeDistributionFee while prohibiting cc:CommercialUse. The licence
+    forbids exercising the rights in any manner primarily intended for or directed toward commercial advantage
+    or private monetary compensation, and allows a file-sharing exchange without monetary compensation. A pure
+    cost-recovery fee is arguable under that test. The owner has decided provisionally to keep the present
+    modelling, so nothing was changed; the question is recorded as open and concerns all 145 NonCommercial
+    records of the library, not this port.
+  action: none
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: cc:CommercialUse is prohibited, which the NonCommercial clause of Section 4 states directly.
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The licence forbids sublicensing and the record does not say so. Section 4(a) of the port:
+    "Ne smijete podlicencirati Djelo." The vocabulary has dalicc:sublicense, defined and used by no record.
+    The owner has decided provisionally that the sublicensing prohibition should be modelled on every Creative
+    Commons record, so it is recorded here with the exact triple and applied in one library-wide sweep.'
+  action: proposed
+  change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: Section 4(a) also forbids imposing terms that alter or restrict the licence or the recipient's
+    exercise of the rights granted. dalicc:addLimitation expresses exactly that and the record does not carry
+    it. Proposed, not applied, because the same sentence stands in every Creative Commons record of the library.
+  action: proposed
+  change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:addLimitation ] ;"
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: dalicc:ChangeLicense is prohibited, which rests on the obligation to distribute only under the
+    terms of this licence. dalicc:promote is prohibited, which rests on the reservation of all rights not expressly
+    granted and on the trademark paragraph of the Creative Commons notice rather than on a clause of the licence
+    body.
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'cc:Attribution and cc:Notice hang on odrl:distribute, and cc:Attribution, cc:Notice and dalicc:modificationNotice
+    on odrl:modify and odrl:derive, which matches Section 4: a copy of the licence or its URI must travel with
+    every copy, all notices referring to the licence and to the warranty disclaimer must be kept intact, credit
+    must be given to the original author, and a derivative work must carry a credit identifying the use made
+    of the work. No duty is duplicated and none sits at the wrong level.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: 'The warranty disclaimer and the liability limitation are quoted in Croatian and are markedly
+    shorter than the Italian and Brazilian ones, because the Croatian port replaces the long common-law disclaimer
+    with the civil-law rule: the licensor is liable only for damage caused intentionally or by gross negligence.
+    That is a real jurisdictional difference and the record carries it correctly as clause text. The reservation
+    of unnamed rights, the downstream offer to recipients, the termination rule and the severability and entire-agreement
+    paragraphs are not carried anywhere: no Creative Commons record in the library uses dalicc:additionalClauses.'
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:Croatia, which matches the country of the legal-code URL, and
+    dalicc:validityType is dalicc:perpetual, which matches the grant for the duration of the applicable copyright.
+    The jurisdiction field records the legal home of the port, not a territorial limit: the grant itself is
+    worldwide.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The technological measures clause has no vocabulary term. Section 4(a) of the port: "Ne smijete
+    distribuirati, javno prikazivati, javno izvoditi ili javno digitalno izvoditi Djelo pomoću tehnoloških
+    mjera koje kontroliraju pristup ili korištenje Djela." Proposed term: dalicc:applyTechnicalProtectionMeasures,
+    an odrl:Action to be used as an odrl:Prohibition.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Automatic termination on breach and the survival of the disclaimer and the miscellaneous sections
+    have no term, and neither has the automatic offer the licensor makes to every downstream recipient. Proposed
+    terms: dalicc:terminationOnBreach and dalicc:downstreamOffer. The Croatian port has no collecting-society
+    clause at all, unlike the Italian and Brazilian ports of the same version, and no separate royalty arrangement
+    for musical works.'
+  action: none
+- rubric: 8
+  severity: info
+  field: record
+  description: The port is the shortest of the three and leans on Croatian copyright law for moral rights rather
+    than spelling them out.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the 41 axioms of licensedata/dependencygraph/dg_default.ttl reports
+    no conflict, before and after the correction, and the pre-review baseline listed none either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of the Attribution-NonCommercial-NoDerivatives element set. Its deontic model is identical,
+    statement for statement, to the 4.0 International record CC-BY-NC-ND-4.0 after that record was corrected
+    in this same batch, apart from the asset collection. What differs in the documents and not in the model
+    is the version: 2.0 prohibits sublicensing expressly, has no cure period for a breach, has no sui generis
+    database rights clause and settles the royalty and collecting-society question per jurisdiction, while
+    4.0 adds Section 4 on database rights and the 30 day cure period. The three ports of this element set in
+    this batch, Brazil, Croatia and Italy, carry one and the same model, so the compatibility checker cannot
+    tell them apart either.'
+  action: none
+family: 'Creative Commons 2.0 port: Croatia (HR)'
+port_of: CC-BY-NC-ND-4.0
+variant_kind: jurisdiction-port
+notes: The parent named in port_of is the 4.0 International record of the same element set, because the library
+  holds no unported or generic 2.0 record; the version difference, 2.0 against 4.0, is therefore part of the
+  port relation and not only the jurisdiction. The Croatian port has no collecting-society clause at all, unlike
+  the Italian and Brazilian ports of the same version, and no separate royalty arrangement for musical works.
+  Nothing in this review is legal advice.

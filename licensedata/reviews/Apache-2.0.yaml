@@ -1,0 +1,98 @@
+id: Apache-2.0
+title: Apache License, Version 2.0
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Apache-2.0.txt
+text_retrieved: true
+verdict: corrected
+summary: The record models the 2.0 license as a permissive license with attribution, notice and modification-notice
+  duties, a trademark prohibition and a permission to add different terms to your own modifications. That
+  is right as far as the vocabulary reaches. The express right to sublicense was missing, and the duty
+  to pass on a copy of the license was recorded for distribution only. The three clauses that make this
+  license distinctive, the patent grant, the patent retaliation and the NOTICE file, cannot be expressed
+  at all.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Section 2 grants a "perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+    copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense,
+    and distribute the Work". Sublicensing was not modelled. Added odrl:grantUse.
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action odrl:grantUse ] ;\n"
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'Section 4(a) reads: "You must give any other recipients of the Work or Derivative Works
+    a copy of this License". The cc:Notice duty was attached to odrl:distribute only, so a modified or
+    derived work looked as if it could be passed on without the license. Added cc:Notice to odrl:modify
+    and odrl:derive.'
+  action: applied
+  change: "odrl:duty [ a odrl:Duty ;\n        odrl:action cc:Notice ] ;\n"
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'Section 3 grants an express patent license: "each Contributor hereby grants to You a perpetual,
+    worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except as stated in this section)
+    patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the Work".
+    No existing action or policy quality covers it: dalicc:patentFree says the opposite and dalicc:patentNotice
+    is a notice duty, not a grant. Proposed term: dalicc:patentGrant, an odrl:Action usable as a permission.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'The same section 3 ends: "If You institute patent litigation against any entity ... alleging
+    that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent
+    infringement, then any patent licenses granted to You under this License for that Work shall terminate
+    as of the date such litigation is filed." This is the clause that decides compatibility with several
+    other licenses and it has no term. Proposed term: dalicc:patentRetaliationTermination.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'Section 4(d) requires that "any Derivative Works that You distribute must include a readable
+    copy of the attribution notices contained within such NOTICE file". This is narrower than cc:Attribution
+    and narrower than cc:Notice: it is a duty to carry a specific file forward. Bending cc:Notice to cover
+    it would lose the distinction. Proposed term: dalicc:includeNoticeFile.'
+  action: none
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: Section 4(c) requires retaining "all copyright, patent, trademark, and attribution notices".
+    The vocabulary defines dalicc:patentNotice and dalicc:trademarkNotice for exactly this but no record
+    in the library uses them, so adding them here alone would break family consistency. Left to the owner
+    as one decision for the library.
+  action: proposed
+  change: "# add to the odrl:distribute, odrl:modify and odrl:derive duties\nodrl:duty [ a odrl:Duty ;\n\
+    \        odrl:action dalicc:patentNotice ],\n    [ a odrl:Duty ;\n        odrl:action dalicc:trademarkNotice\
+    \ ] ;\n"
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:promote is prohibited and section 6 supports it: "This License does not grant permission
+    to use the trade names, trademarks, service marks, or product names of the Licensor".'
+  action: none
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'dalicc:ChangeLicense with a dalicc:compliantLicense duty is supported by the last paragraph
+    of section 4: "You may ... provide additional or different license terms and conditions for use, reproduction,
+    or distribution of Your modifications ... provided Your use, reproduction, and distribution of the
+    Work otherwise complies with the conditions stated in this License."'
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 2 finding 6.3: the record made no patent statement although
+    section 3 grants a patent license ''to make, have made, use, offer to sell, sell, import, and otherwise
+    transfer the Work'' and ends it ''If You institute patent litigation against any entity ... alleging
+    that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent
+    infringement''.'
+  action: applied
+family: Apache Software Foundation (1.1, 2.0)
+port_of: null
+variant_kind: version
+notes: 'The three vocabulary gaps recorded here are the highest-value additions for the whole library,
+  not only for this record: patent grant, patent retaliation and notice-file duty recur across Apache,
+  Eclipse, Mozilla, Common Development and Distribution, Microsoft Public and the Open Software License.'

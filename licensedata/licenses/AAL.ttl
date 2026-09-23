@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Attribution Assurance License" in the DALICC license library
+# Title: The machine-readable representation of "Attribution Assurance License" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/AAL
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:AAL a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -22,10 +23,16 @@ dalicclib:AAL a odrl:Set ;
     cc:attributionName "Edwin A. Suominen" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:AAL ;
-    dalicc:WarrantyDisclaimer """THIS FREE SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR ANY CONTRIBUTOR BE LIABLE FOR
+    dalicc:LiabilityLimitation """IN NO EVENT SHALL THE AUTHOR OR ANY CONTRIBUTOR BE LIABLE FOR
 ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, EFFECTS OF UNAUTHORIZED OR MALICIOUS NETWORK ACCESS; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.""" ;
+    dalicc:WarrantyDisclaimer """THIS FREE SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.""" ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/AAL/versions> ;
     dct:alternative "AAL" ;
+    dct:hasVersion "3" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Edwin A. Suominen" ;
     dct:source osl:AAL ;
     dct:title "Attribution Assurance License" ;

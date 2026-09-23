@@ -1,0 +1,151 @@
+id: LPPL-1.1
+title: LaTeX Project Public License, Version 1.1
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/LPPL-1.1.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models version 1.1 of the LaTeX Project Public License, which lets anyone distribute a complete
+  unmodified copy of The Program and distribute a modified file if eight conditions are met. Those conditions are
+  the duties on odrl:modify and odrl:derive: rename the file, credit the original, mark the change, and keep the
+  unmodified Program obtainable. Condition 7 lets a modified file go under another licence that keeps the file-name
+  rule, which is dalicc:ChangeLicense with a dalicc:compliantLicense duty.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, identifier, SPDX identifier and IRI agree. The library held only LatexProjectPublicLicenseVersion13c,
+    whose descriptive identifier predates the SPDX mapping; this record uses the SPDX identifier, carries dalicc:variantKind
+    "version" and dalicc:licenseVersion "1.1", and points cc:legalcode at the text on the LaTeX project's own site
+    because the Open Source Initiative lists only 1.3c.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dalicc:CreativeWork and dcmitype:Software. The licence governs
+    the files of a TeX or LaTeX distribution, which are program files and documentation in the same tree, and the
+    record says both. LatexProjectPublicLicenseVersion13c carries dcmitype:Software alone; adding dalicc:CreativeWork
+    there is proposed.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads: "You may distribute a complete, unmodified copy of The Program. Distribution of
+    only part of The Program is not allowed." and "You may distribute a modified file of The Program if, and only
+    if, the following eight conditions are met". That is odrl:reproduce, odrl:distribute, odrl:display, odrl:present,
+    odrl:modify, odrl:derive, cc:DerivativeWorks and dalicc:ModifiedWorks. Nothing in the text limits the field
+    of use or the price, and the preamble says "the act of running The Program is not restricted", so cc:CommercialUse
+    and dalicc:chargeDistributionFee stand as they do on the 1.3c record.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Condition 7 reads: "You must distribute the modified file under a license that forbids distribution
+    both of the modified file and of any files derived from the modified file with the filename of the original
+    file." A modified file may therefore travel under another licence, provided that licence keeps the file-name
+    rule. That is dalicc:ChangeLicense with a dalicc:compliantLicense duty, reciprocity shape 3, and it is the shape
+    the 1.3c record carries for clause 10(a).'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The eight conditions on a modified file are the duties on odrl:modify and odrl:derive. Condition
+    3: "You must not distribute the modified file with the filename of the original file." is dalicc:rename. Condition
+    4: "In the modified file, you must acknowledge the authorship and name of the original file, and the name (if
+    any) of the program which contains it." is cc:Attribution. Condition 5: "You must change any identification
+    string in the file to indicate clearly that the modified file is not part of The Program." is dalicc:modificationNotice.
+    Condition 8(A): "distribute a copy of The Program (that is, a complete, unmodified copy of The Program) together
+    with the modified file", or information sufficient to obtain a copy, is dalicc:originalVersionOffer, a term
+    defined by the review of 2026-09-15 and applied to no record until now. cc:Notice hangs on odrl:distribute,
+    because the conditions of the licence are borne by the files themselves.'
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: 'cc:SourceCode is not written. Version 1.1 has no Compiled Work: it speaks only of files of The Program,
+    and every file it governs is source. Version 1.3a introduced the Compiled Work and with it clause 7, which is
+    why the 1.3a record carries cc:SourceCode and this one does not.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'dalicc:addLimitation is prohibited. The preamble reads: "Individual files of The Program may bear
+    supplementary and/or superseding conditions on modification of themselves and on the distribution of modified
+    versions of themselves, but *no* file of The Program may bear supplementary or superseding conditions on the
+    distribution of an unmodified copy of the file." A licensee may not make the distribution of an unmodified copy
+    harder than the licence makes it.'
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: 'dalicc:promote is prohibited, as it is on LatexProjectPublicLicenseVersion13c and on 419 of the
+    460 records the library held. Version 1.1 has no trademark clause: the nearest sentences are condition 5, "You
+    must change any identification string in the file to indicate clearly that the modified file is not part of
+    The Program.", and condition 6, which asks you to redirect error reports away from the original maintainers.
+    The review record of the 1.3c version proposes dropping the prohibition from that record; the same question
+    is open here and the prohibition is kept so that the three LaTeX records answer it the same way.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: cc:ShareAlike is not prohibited. LatexProjectPublicLicenseVersion13c carries odrl:prohibition cc:ShareAlike,
+    one of only three records in the library that do, and its own review record proposes removing it. Neither the
+    1.1 text nor the 1.3a text states a share-alike condition or forbids one, so the statement is not repeated here.
+    Family rule 5 is not affected, because neither record is in the permissive set.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: 'The NO WARRANTY section holds two paragraphs and they go into two properties, which is family rule
+    10: the first into dalicc:WarrantyDisclaimer and the second, which begins "In no event unless agreed to in writing
+    will The Copyright Holder", into dalicc:LiabilityLimitation. The backtick-apostrophe quoting of the source (`as
+    is'') is kept as the text writes it. The text carries no long dash.'
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: 'Five clauses are quoted whole: the scope paragraph, the eight conditions on a modified file, the
+    definitions of distribution and modification, the rule on individual files, and the additional conditions on
+    LaTeX software files, which include "You may not modify any file with filename extension `.ins'' since these
+    are installation files containing the legal notices that are placed in the files they generate." The file-extension
+    rules for .ins, .fd and .cfg files have no term of their own and are quoted rather than modelled.'
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system, so cc:jurisdiction is dalicc:worldwide, and it sets no term, so dalicc:validityType
+    is dalicc:perpetual. There is no termination clause, so dalicc:terminatesOnBreach is not written. The example
+    notice in the "How to Use This License" section offers "either version 1.1 of this license or (at your option)
+    any later version", but that is a sentence an author puts in a file rather than a clause of the licence, so
+    dalicc:orLaterVersionOption is not written; the 1.3c record does not carry it either.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Two clauses no term can express. The first is "Distribution of only part of The Program is not allowed.",
+    a bar on partial distribution that is narrower than any prohibition in the vocabulary. Proposed term: dalicc:completeDistributionCondition.
+    The second is the maintainer construction the later versions turn into a named role: version 1.1 has no Current
+    Maintainer, but its conditions 6 and 7 already assume that somebody maintains the files. Both are quoted.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the axioms of licensedata/dependencygraph/dg_default.ttl
+    returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The nearest sibling is LatexProjectPublicLicenseVersion13c. This record differs from it in five
+    things: no cc:ShareAlike prohibition, dalicc:rename and dalicc:originalVersionOffer among the duties on odrl:modify
+    and odrl:derive, no cc:SourceCode duty, dalicc:CreativeWork beside dcmitype:Software on the target, and the
+    maintenance section quoted in dalicc:additionalClauses rather than in dalicc:WarrantyOrLiabilityAcceptance.
+    Version 1.1 has no maintenance section at all, so that last difference shows only on the 1.3a record.'
+  action: none
+family: Other OSI approved licenses (corporate, academic, weak copyleft)
+port_of: null
+variant_kind: version
+variant_of: null
+notes: Modelled from the SPDX plain text. The record follows LatexProjectPublicLicenseVersion13c, the only LaTeX
+  Project Public License the library held, and departs from it in the two places that record's own review record
+  proposes changing.

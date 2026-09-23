@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-NoDerivatives 2.0 Netherlands"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-NoDerivatives 2.0 Netherlands"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoderivs20Netherlands
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttributionNoderivs20Netherlands a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -25,6 +26,12 @@ dalicclib:CreativeCommonsAttributionNoderivs20Netherlands a odrl:Set ;
     dalicc:WarrantyDisclaimer """TENZIJ ANDERS SCHRIFTELIJK IS OVEREENGEKOMEN DOOR DE PARTIJEN, STELT DE LICENTIEGEVER HET WERK BESCHIKBAAR OP 'AS-IS' BASIS, ZONDER ENIGE GARANTIE, HETZIJ DIRECT, INDIRECT OF ANDERSZINS, MET BETREKKING TOT HET WERK, MET INBEGRIP VAN, MAAR NIET BEPERKT TOT GARANTIES MET BETREKKING TOT DE EIGENDOMSTITEL, DE VERKOOPBAARHEID, DE GESCHIKTHEID VOOR BEPAALDE DOELEINDEN, MOGELIJKE INBREUK, DE AFWEZIGHEID VAN LATENTE OF ANDERE TEKORTKOMINGEN, DE JUISTHEID OF DE AAN- OF AFWEZIGHEID VAN FOUTEN, ONGEACHT DE OPSPOORBAARHEID DAARVAN, INDIEN EN VOORZOVER DE WET NIET ANDERS BEPAALT.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-ND-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "2.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoderivs20Netherlands/versions> ;
     dct:alternative "Attribution NoDerivatives 2.0 Netherlands",
         "Attribution-NoDerivatives 2.0",
         "Attribution-NoDerivatives 2.0 Netherlands",
@@ -36,7 +43,10 @@ dalicclib:CreativeCommonsAttributionNoderivs20Netherlands a odrl:Set ;
         "CC-BY-ND 2.0 NL",
         "Creative Commons BY-ND 2.0",
         "Creative Commons BY-ND 2.0 NL" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/licenses/by-nd/2.0/nl/> ;
     dct:title "Creative Commons Attribution-NoDerivatives 2.0 Netherlands"@en ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:display ],
@@ -47,21 +57,11 @@ dalicclib:CreativeCommonsAttributionNoderivs20Netherlands a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ] ],
         [ a odrl:Permission ;
-            odrl:action odrl:modify ;
-            odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
-                [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
-                [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
-        [ a odrl:Permission ;
             odrl:action odrl:present ],
         [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
         [ a odrl:Permission ;
             odrl:action cc:CommercialUse ],
-        [ a odrl:Permission ;
-            odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:prohibition [ a odrl:Prohibition ;
@@ -69,8 +69,11 @@ dalicclib:CreativeCommonsAttributionNoderivs20Netherlands a odrl:Set ;
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
-            dct:type dalicc:CreativeWork ] ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset ] ;
     foaf:img <https://creativecommons.org/images/international/nl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nd/2.0/nl/88x31.png> .

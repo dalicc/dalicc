@@ -1,0 +1,171 @@
+id: CreativeCommonsAttribution20Germany
+title: Creative Commons Attribution 2.0 Germany
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by/2.0/de/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the BY element set of the Creative Commons 2.0 port for Germany and it does
+  so correctly: the attribution and notice duties hang on the acts that make the work public. The legal
+  text was read in German and the permissions, prohibitions and duties all follow from the grant and restriction
+  sections of the port. Corrections applied: dct:source. What remains are proposals that touch the whole
+  Creative Commons family rather than this record: the express prohibition of sublicensing, and the asset
+  types.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source. The legal-code page states the canonical
+    URL of the licence, https://creativecommons.org/licenses/by/2.0/de/, and the six 4.0 International
+    parents carry exactly that pair (legal code plus deed). Added.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by/2.0/de/> ;
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: SPDX has no identifier for this port. The legal-code URL implies CC-BY-2.0-DE, which the
+    SPDX licence list does not define, so no identifier was invented. Of the thirty six records in this
+    batch only the German NonCommercial-ShareAlike port has an SPDX identifier.
+  action: none
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: The record targets dalicc:CreativeWork only, while the 4.0 International parent CC-BY-4.0
+    targets dalicc:CreativeWork and dcmitype:Dataset. Creative Commons licences are media neutral, and
+    this port grants the rights in all media and formats now known or later devised. Aligning the ports
+    with the parents is a single library wide decision covering every Creative Commons port, so it is
+    left as a proposal rather than applied in thirty six records alone.
+  action: proposed
+  change: |-
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ,
+                dcmitype:Dataset ] ;
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: Every modelled permission is supported by the grant. Ziffer 3 grants a "lizenzgebuehrenfreies,
+    raeumlich und zeitlich (fuer die Dauer des Urheberrechts oder verwandten Schutzrechts) unbeschraenktes
+    einfaches Nutzungsrecht", a simple right of use unlimited in place and time. The grant covers reproduction,
+    incorporation into collections, distribution, public display, public performance and communication
+    to the public, and the creation and reproduction of derivative works, which the record models as odrl:reproduce,
+    odrl:distribute, odrl:display, odrl:present, odrl:derive and cc:DerivativeWorks.
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The licence forbids sublicensing and the record does not say so. Ziffer 4: "Sie duerfen
+    den Schutzgegenstand nicht unterlizenzieren." The vocabulary already has dalicc:sublicense, but it
+    is used by no record in the library and its skos:note says so, and the same sentence stands in every
+    Creative Commons 2.0 and 3.0 record, so adding it to thirty six ports alone would split the compatibility
+    behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
+    note.'
+  action: proposed
+  change: |-
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: the licensee may offer
+    the work only under the terms of this licence and may not offer or impose terms that alter or restrict
+    it. dalicc:promote is prohibited, which rests on the reservation of all rights not expressly granted
+    and on the trademark paragraph of the Creative Commons notice, not on a clause of the licence body.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The attribution and notice duties are present and supported: the licence requires a copy
+    of, or the URI for, the licence with every copy, that all notices referring to the licence and the
+    warranty disclaimer be kept intact, and that credit be given to the author. The German port owes attribution
+    to the "Urheber oder Rechteinhaber" (author or rights holder) rather than to an "original author",
+    and names the granting party "Lizenzgeber" and the requesting party "Rechtsinhaber". The attribution
+    clause also names a database ("Datenbank") next to derivative works and collections, which the English
+    texts do not. The duties hang on odrl:distribute, odrl:modify and odrl:derive, which matches the licence,
+    since the duties are triggered by making the work public rather than by private use.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation are quoted verbatim from the German
+    text of this port and not from the English unported version, and they match the disclaimer and the
+    limitation sections of the legal code.
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: The record has no dalicc:additionalClauses, so the clauses the ODRL policy cannot carry,
+    the reservation of unnamed rights, the downstream offer to recipients, the severability and entire
+    agreement paragraphs and the termination rule, are not visible in the record at all. The whole Creative
+    Commons family is modelled this way.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:Germany, which matches the country of the legal-code URL,
+    and dalicc:validityType is dalicc:perpetual, which matches the grant for the duration of copyright.
+    Ziffer 8: "Auf diesen Lizenzvertrag findet das Recht der Bundesrepublik Deutschland Anwendung." Note
+    that the jurisdiction field records the legal home of the port, not a territorial limit on the grant:
+    the grant itself is worldwide.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The licence forbids technological protection measures and the vocabulary has no term for
+    it. Ziffer 4: "Sie duerfen den Schutzgegenstand mit keinen technischen Schutzmassnahmen versehen,
+    die den Zugang oder den Gebrauch des Schutzgegenstandes in einer Weise kontrollieren, die mit den
+    Bedingungen dieser Lizenz im Widerspruch stehen." Proposed term: dalicc:applyTechnicalProtectionMeasures,
+    an odrl:Action to be used as an odrl:Prohibition. Not modelled, because bending an existing term would
+    be worse than the gap.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The automatic termination of the licence on breach, and the survival of the definitions,
+    the disclaimer, the limitation of liability and the miscellaneous sections, have no vocabulary term.
+    Proposed term: dalicc:terminationOnBreach. The downstream offer to every recipient of the work has
+    none either. Proposed term: dalicc:downstreamOffer.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Ziffer 4 keeps the grant within the limits of the personality rights of authors and performers:
+    the permission "findet ihre gesetzliche Grenze in den Persoenlichkeitsrechten der Urheber und ausuebenden
+    Kuenstler, deren berechtigte geistige und persoenliche Interessen bzw. deren Ansehen oder Ruf nicht
+    dadurch gefaehrdet werden duerfen". Not expressible with the present vocabulary.'
+  action: none
+- rubric: 8
+  severity: info
+  field: record
+  description: 'The German 2.0 port carries no collecting-society clause at all: the word "Verwertungsgesellschaft"
+    does not appear in any of the six German 2.0 legal texts. The GEMA clause that readers associate with
+    the German ports was added in the 3.0 port, not here. The Australian, South African and Polish 2.0
+    ports of the same version do carry such a clause, so this is a real divergence inside one version.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the forty one axioms of licensedata/dependencygraph/dg_default.ttl
+    reports no conflict, before and after the corrections, and the pre-review baseline listed none for
+    this record either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of Creative Commons Attribution 4.0 International. After the 4.0 parents were themselves
+    corrected, the deontic model of this record is identical to the parent, statement for statement, apart
+    from odrl:target: the same permissions with the same duties, the same prohibitions and the same set
+    level duties. What differs is the jurisdiction, the language of the legal text and the clause texts,
+    and the version specific clauses of 2.0 that the model does not carry, chiefly the express prohibition
+    of sublicensing, the technological measures clause and the royalty collection arrangements. The compatibility
+    checker cannot tell this record from the other records of the BY element set, across all three versions
+    and every jurisdiction the library holds.'
+  action: none
+family: 'Creative Commons 2.0 port: Germany (DE)'
+port_of: CC-BY-4.0
+variant_kind: jurisdiction-port
+notes: 'The parent is the 4.0 International record of the same element set, since the library holds no
+  unported or International 2.0 record; the version difference, 2.0 against 4.0, is therefore part of
+  the port relation and not only the jurisdiction. The 2.0 text differs from 4.0 in substance as well:
+  it prohibits sublicensing expressly, it has no thirty day cure period for a breach, it has no sui generis
+  database rights clause, and it settles the royalty collection question per jurisdiction. None of that
+  is visible in the model. Nothing in this review is legal advice.'

@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 3.0 Egypt"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 3.0 Egypt"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike30Egypt
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttributionSharealike30Egypt a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -25,18 +26,27 @@ dalicclib:CreativeCommonsAttributionSharealike30Egypt a odrl:Set ;
     dalicc:WarrantyDisclaimer """ما لم يتم الاتفاق المتبادل خطيا بين الأطراف وإلى المدى الذي يسمح به القانون، يقدم المُرَخِّص المصنف كما هو ولا يقدم أي ضمانات من أي نوع سواء كانت صريحة أو ضمنية أو قانونية أو غير ذلك، بما في ذلك على سبيل المثال لا الحصر ضمانات الملكية، وضمان رواج المصنف في السوق وضمان ملائمة المصنف لغاية معينة، وضمان عدم التعدي أو غياب العيب الخفي أو عيوب أخرى أو وجود أو عدم وجود أخطاء في المصنف سواء كانت أو لم تكن قابلة للاكتشاف. في التشريعات التي لا تجيز استثناء الضمانات غير الصريحة (الضمنية)، لا ينطبق هذا الاستثناء على المرخَّص له.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "3.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike30Egypt/versions> ;
     dct:alternative "Attribution ShareAlike 3.0 Egypt",
         "Attribution-ShareAlike 3.0",
         "Attribution-ShareAlike 3.0 Egypt",
         "CC BY SA 3.0",
-        "CC BY SA 3.0 eg",
+        "CC BY SA 3.0 EG",
         "CC BY-SA 3.0",
-        "CC BY-SA 3.0 eg",
+        "CC BY-SA 3.0 EG",
         "CC-BY-SA 3.0",
-        "CC-BY-SA 3.0 eg",
+        "CC-BY-SA 3.0 EG",
         "Creative Commons BY-SA 3.0",
-        "Creative Commons BY-SA 3.0 eg" ;
+        "Creative Commons BY-SA 3.0 EG" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/licenses/by-sa/3.0/eg/> ;
     dct:title "Creative Commons Attribution-ShareAlike 3.0 Egypt"@en ;
     odrl:duty [ a odrl:Duty ;
             odrl:action cc:ShareAlike ] ;
@@ -79,7 +89,9 @@ dalicclib:CreativeCommonsAttributionSharealike30Egypt a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/eg.png> ;

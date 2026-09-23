@@ -1,0 +1,83 @@
+id: CreativeCommonsAttributionNoncommercialSharealike30Brazil
+title: Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Brazil
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, changed
+    1 clause text and 1 identification detail, recorded the relation to the record this one was adapted
+    from and recorded the review state.
+  changes:
+  - action: changed
+    statement: "dalicc:WarrantyDisclaimer \"EXCETO QUANDO FOR DE OUTRA FORMA MUTUAMENTE ACORDADO PELAS\
+      \ PARTES POR\n ESCRITO, E NA MAIOR EXTENSÃO PERMITIDA PELA LEI APLICÁVEL, O LICENCIANTE\n OFERECE\
+      \ A OBRA “NO ESTADO EM QUE SE ENCONTRA” (AS\n IS) E NÃO PRESTA QUAISQUER GARANTIAS OU DECLARAÇÕES\
+      \ DE QUALQUER ESPÉCIE\n RELATIVAS À OBRA, SEJAM ELAS EXPRESSAS OU IMPLÍCITAS, DECORRENTES DA\
+      \ LEI OU\n QUAISQUER OUTRAS, INCLUINDO, SEM LIMITAÇÃO, QUAISQUER GARANTIAS SOBRE A\n TITULARIDADE\
+      \ DA OBRA, ADEQUAÇÃO PARA QUAISQUER PROPÓSITOS, NÃO-VIOLAÇÃO\n DE DIREITOS, OU INEXISTÊNCIA\
+      \ DE QUAISQUER DEFEITOS LATENTES, ACURACIDADE,\n PRESENÇA OU AUSÊNCIA DE ERROS, SEJAM ELES APARENTES\
+      \ OU OCULTOS. EM\n JURISDIÇÕES QUE NÃO ACEITEM A EXCLUSÃO DE GARANTIAS IMPLÍCITAS, ESTAS\n EXCLUSÕES\
+      \ PODEM NÃO SE APLICAR A VOCÊ. \n\""
+    previous: "dalicc:WarrantyDisclaimer \"EXCETO QUANDO FOR DE OUTRA FORMA MUTUAMENTE ACORDADO PELAS\
+      \ PARTES POR\n ESCRITO, O LICENCIANTE OFERECE A OBRA “NO ESTADO EM QUE SE ENCONTRA” (AS\n IS)\
+      \ E NÃO PRESTA QUAISQUER GARANTIAS OU DECLARAÇÕES DE QUALQUER ESPÉCIE\n RELATIVAS À OBRA, SEJAM\
+      \ ELAS EXPRESSAS OU IMPLÍCITAS, DECORRENTES DA LEI OU\n QUAISQUER OUTRAS, INCLUINDO, SEM LIMITAÇÃO,\
+      \ QUAISQUER GARANTIAS SOBRE A\n TITULARIDADE DA OBRA, ADEQUAÇÃO PARA QUAISQUER PROPÓSITOS, NÃO-VIOLAÇÃO\n\
+      \ DE DIREITOS, OU INEXISTÊNCIA DE QUAISQUER DEFEITOS LATENTES, ACURACIDADE,\n PRESENÇA OU AUSÊNCIA\
+      \ DE ERROS, SEJAM ELES APARENTES OU OCULTOS. EM\n JURISDIÇÕES QUE NÃO ACEITEM A EXCLUSÃO DE\
+      \ GARANTIAS IMPLÍCITAS, ESTAS\n EXCLUSÕES PODEM NÃO SE APLICAR A VOCÊ. \n\""
+    reason: The clause was quoted from the wrong element set. Section 5 of this legal code opens "EXCETO
+      QUANDO FOR DE OUTRA FORMA MUTUAMENTE ACORDADO PELAS PARTES POR ESCRITO, E NA MAIOR EXTENSAO
+      PERMITIDA PELA LEI APLICAVEL, O LICENCIANTE OFERECE A OBRA...", while the record carried the
+      Attribution wording, which lacks the clause limiting the disclaimer to the extent the applicable
+      law permits. It is the only one of the six Brazilian legal codes with that addition. Requoted
+      from this legal code. Section 5 (Declaracoes, garantias e exoneracao) is a disclaimer in capitals,
+      "O LICENCIANTE OFERECE A OBRA NO ESTADO EM QUE SE ENCONTRA (AS IS) E NAO PRESTA QUAISQUER GARANTIAS
+      OU DECLARACOES DE QUALQUER ESPECIE RELATIVAS A OBRA", and Section 6 (Limitacao de responsabilidade)
+      is the liability clause. Each sits in its own field.
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: added
+    statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-SA-4.0
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:licenseVersion "3.0"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "jurisdiction-port"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dct:source <https://creativecommons.org/licenses/by-nc-sa/3.0/br/>
+    reason: The record carried cc:legalcode but no dct:source. The legal code page of this port states
+      the canonical URL of the licence, https://creativecommons.org/licenses/by-nc-sa/3.0/br/, and
+      the six 4.0 International parents carry exactly that pair, legal code plus deed. Added.
+    source: review-finding 1/dct:source
+  - action: changed
+    statement: dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Brazil"@en
+    previous: dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Brazil "@en
+    reason: The dct:title literal ended in a space, "Creative Commons Attribution-NonCommercial-ShareAlike
+      3.0 Brazil ", which the library list and the search index carry through. Removed. The same defect
+      sits in the NonCommercial-ShareAlike record of every Creative Commons port in the library.
+    source: review-finding 1/dct:title
+  - action: added
+    statement: prohibition dalicc:sublicense
+    reason: 'Review decision 1: every Creative Commons record except the CC0 dedication, plus the
+      Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
+      as many words.'
+    source: consolidation-decision 1

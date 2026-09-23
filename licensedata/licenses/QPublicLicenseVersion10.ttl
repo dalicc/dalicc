@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Q Public License Version 1.0" in the DALICC license library
+# Title: The machine-readable representation of "Q Public License Version 1.0" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/QPublicLicenseVersion10
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,15 +15,23 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:QPublicLicenseVersion10 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "QPL-1.0" ;
     cc:attributionName "Trolltech AS" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:QPL-1.0 ;
     dalicc:WarrantyDisclaimer "The Software and this license document are provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE." ;
+    dalicc:LiabilityLimitation "In no event shall the initial developers or copyright holders be liable for any damages whatsoever, including - but not restricted to - lost revenue or profits or other direct, indirect, special, incidental or consequential damages, even if they have been advised of the possibility of such damages, except to the extent invariable law, if any, provides otherwise." ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/QPublicLicenseVersion10/versions> ;
     dct:alternative "QPL-1.0" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Trolltech AS" ;
     dct:source osl:QPL-1.0 ;
     dct:title "Q Public License Version 1.0" ;

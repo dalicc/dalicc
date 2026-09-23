@@ -1,0 +1,140 @@
+id: NLOD-2.0
+title: Norwegian Licence for Open Government Data (NLOD) 2.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://spdx.org/licenses/NLOD-2.0.html'
+text_retrieved: true
+verdict: created
+summary: >-
+  The Norwegian Licence for Open Government Data, version 2.0: a worldwide, perpetual
+  attribution licence over public sector information, covering the database right as well as
+  copyright, with a prescribed attribution wording, a closed list of licences compatible by
+  contract and an express refusal of sublicensing. The record follows the Open Government
+  Licence records for its duties and the Open Data Commons records for its database right.
+findings:
+- rubric: 1
+  severity: minor
+  field: 'spdx:licenseId'
+  description: >-
+    The record carries the SPDX id NLOD-2.0 and the SPDX name as dct:title. The library holds
+    no other Norwegian licence, so dalicc:variantKind and dalicc:jurisdictionPortOf are left
+    out.
+  action: applied
+- rubric: 2
+  severity: major
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Dataset and dalicc:CreativeWork. Information is defined as "texts, images,
+    recordings, data sets or other works protected under Section 1 of the Norwegian Copyright
+    Act, or which are protected under provisions addressing what is referred to as
+    neighbouring rights", so the licence reaches content as well as data. It names no
+    software, so dcmitype:Software was left out, unlike the Open Government Licence records.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 2 lets the licensee "use the information for any purpose and in all contexts" by
+    copying and distributing it, modifying it or combining it with other information, and
+    copying and distributing the changed or combined information. The record permits
+    reproduce, distribute, display, present, modify, derive, commercial use, derivative works,
+    modified works and the distribution fee. dalicc:suiGenerisDatabaseRights is permitted
+    because Information expressly covers databases protected under Section 43 of the Norwegian
+    Copyright Act. dalicc:ChangeLicense is permitted with a dalicc:compliantLicense duty, from
+    Section 9: an adapted or combined work may be distributed under a licence compatible by
+    contract, and the licence lists them.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    Three prohibitions. dalicc:sublicense is refused in one sentence, "The Licensee shall not
+    sub-license or transfer this licence", which makes this the only record of the batch to
+    prohibit it from the text rather than from review decision 1. dalicc:promote carries
+    Section 6, "Neither the licensor's nor other contributors' names or trademarks must be
+    used to support, recommend or market the licensee or any products or services using the
+    information". dalicc:exemptedMaterial carries the five exemptions of Section 3.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Section 5 is the core duty and it is owed for every use, but the library attaches duties
+    to the acts the text names, so cc:Attribution, cc:Notice and dalicc:addStatement hang off
+    odrl:distribute, odrl:modify and odrl:derive, with dalicc:modificationNotice added to the
+    last two from "If the information has been changed, the licensee must clearly indicate
+    that changes have been made by the licensee". dalicc:addStatement carries the prescribed
+    wording: "If the licensor has not specified how attributions shall be made, the licensee
+    shall normally state the following: «Contains data under the Norwegian licence for Open
+    Government data (NLOD) distributed by [name of licensor]»." No cc:ShareAlike duty is
+    written: the licence requires attribution, not that the reused information stay under it.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    The first paragraph of Section 7 goes into dalicc:WarrantyDisclaimer and the remaining two
+    into dalicc:LiabilityLimitation. dalicc:additionalClauses carries the preface, the licence
+    section with its no-sublicensing sentence, the exemptions, the effects of breach, the
+    attribution section with its prescribed wording, proper use, the data quality section, the
+    compatibility list, the new versions section and the governing law section.
+  action: applied
+- rubric: 7
+  severity: major
+  field: 'cc:jurisdiction'
+  description: >-
+    cc:jurisdiction stays dalicc:worldwide: Section 2 says "This is a non-exclusive, free,
+    perpetual and worldwide licence". Section 11 makes Norwegian law the governing law and the
+    licensor's ordinary legal venue the forum; it is quoted in dalicc:additionalClauses rather
+    than turned into a bpicounty IRI, because it binds the contract and not the territory of
+    the grant. dalicc:validityType is dalicc:perpetual, from the same sentence of Section 2.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Section 4 revokes the right to use the information immediately and without notice on any
+    breach. Quoted; proposed term dalicc:terminatesOnBreach.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Section 9 defines a closed list of licences compatible by contract, split by whether the
+    part of the information is a database. Neither the list nor the split can be modelled;
+    both are quoted. Proposed term dalicc:compatibleLicenseTest.
+  action: none
+- rubric: 8
+  severity: info
+  field: 'dalicc:orLaterVersionOption'
+  description: >-
+    Section 10 lets the licensee use the information under any new version of the NLOD unless
+    the licensor states that only version 2.0 may be used. Not written, for the reason given
+    in the other records of this addition; the triple would be dalicclib:NLOD-2.0
+    dalicc:orLaterVersionOption true.
+  action: proposed
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Family: the record follows the Open Government Licence records of this batch for its
+    attribution duties and the OdcOpenDatabaseLicense record for its database right. It is the
+    only record of the batch that prohibits sublicensing on the strength of its own text, and
+    one of four that permit dalicc:ChangeLicense with a compliant licence duty, the others
+    being CeCILL-B, LiLiQ-P-1.1 and etalab-2.0.
+  action: none
+family: National open government data licences
+port_of: null
+variant_kind: null
+notes: >-
+  Modelled from the SPDX plain text, which is the official English version published at
+  data.norge.no; that page is what cc:legalcode points at. No long dash appears in the source
+  text. The guillemets of the Norwegian original are reproduced as they stand in the quoted
+  clauses.

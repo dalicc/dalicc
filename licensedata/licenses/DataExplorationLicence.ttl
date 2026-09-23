@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Data Exploration Licence" in the DALICC license library
+# Title: The machine-readable representation of "Data Exploration Licence" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/DataExplorationLicence
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,20 +15,29 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:DataExplorationLicence a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "Ordnance Survey" ;
     cc:jurisdiction dalicc:worldwide ;
-    cc:legalcode <https://www.ordnancesurvey.co.uk/business-and-government/licensing/licences/data-exploration.html> ;
+    cc:legalcode <https://www.ordnancesurvey.co.uk/documents/licences/data-exploration-licence.pdf> ;
     dalicc:WarrantyDisclaimer "It is your responsibility to ensure that the Exploration Data you request is what you need. Exploration Data is provided ‘as is’ and without any warranty or condition express or implied, statutory or otherwise as to its quality or fitness for purpose. Except as expressly stated in this Licence, all conditions, warranties, terms and undertakings express or implied statutory or otherwise in respect of the Exploration Data are hereby excluded to the fullest extent permitted by law." ;
+    dalicc:validityType dalicc:specifyDate ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/DataExplorationLicence/versions> ;
     dct:alternative "OS Data Exploration Licence",
         "Ordnance Survey Data Exploration Licence" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Ordnance Survey" ;
-    dct:source <https://www.ordnancesurvey.co.uk/business-and-government/licensing/licences/data-exploration.html> ;
+    dct:source <https://www.ordnancesurvey.co.uk/licensing/data-exploration-licence> ;
     dct:title "Data Exploration Licence" ;
     scho:endDate "2018-12-31" ;
     scho:startDate "2018-01-01" ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:Attribution ] ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:derive ],
         [ a odrl:Permission ;
@@ -40,45 +49,11 @@ dalicclib:DataExplorationLicence a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ] ],
         [ a odrl:Permission ;
-            odrl:action odrl:derive ],
-        [ a odrl:Permission ;
-            odrl:action cc:ShareAlike ;
-            odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ] ],
-        [ a odrl:Permission ;
-            odrl:action odrl:modify ;
-            odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
-        [ a odrl:Permission ;
-            odrl:action odrl:reproduce ],
-        [ a odrl:Permission ;
-            odrl:action dalicc:noWarrantyNotice ],
-        [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
         [ a odrl:Permission ;
             odrl:action dalicc:noWarrantyNotice ] ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action odrl:display ],
-        [ a odrl:Prohibition ;
-            odrl:action odrl:display ],
-        [ a odrl:Prohibition ;
-            odrl:action odrl:distribute ],
-        [ a odrl:Prohibition ;
-            odrl:action odrl:grantUse ],
-        [ a odrl:Prohibition ;
-            odrl:action odrl:present ],
-        [ a odrl:Prohibition ;
-            odrl:action cc:CommercialUse ],
-        [ a odrl:Prohibition ;
-            odrl:action cc:DerivativeWorks ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:addStatement ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:chargeDistributionFee ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:chargeLicenseFee ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
         [ a odrl:Prohibition ;
             odrl:action odrl:distribute ],
         [ a odrl:Prohibition ;

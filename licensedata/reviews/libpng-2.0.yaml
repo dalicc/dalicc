@@ -1,0 +1,93 @@
+id: libpng-2.0
+title: PNG Reference Library version 2
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/libpng-2.0.txt
+text_retrieved: true
+verdict: created
+summary: Models version 2 of the PNG Reference Library licence, the short text that replaced the long libpng notice
+  in 2018. The disclaimer comes first, then a grant to use, copy, modify and distribute for any purpose without fee,
+  subject to the three zlib restrictions. The record follows TheZlibLibpngLicense.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all libpng-2.0. The identifier
+    of the older text is Libpng, which this addition also creates.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant reads "Permission is hereby granted to use, copy, modify, and distribute this software, or
+    portions hereof, for any purpose, without fee, subject to the following restrictions". The record permits reproduce,
+    distribute, modify, derive, display, present, commercial use, derivative works, modified works and the distribution
+    fee; "for any purpose" carries commercial use.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: dalicc:ChangeLicense is permitted with the dalicc:compliantLicense duty. Restriction 3 keeps the copyright
+    notice in place, which has to survive a relicensing, and nothing in the text bars one.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: No prohibitions. The text has no endorsement, trademark or advertising clause.
+  action: none
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Notice hangs off odrl:distribute, odrl:modify and odrl:derive for restriction 3, "This Copyright
+    notice may not be removed or altered from any source or altered source distribution". dalicc:modificationNotice
+    and dalicc:rename hang off odrl:modify and odrl:derive for restriction 2, "Altered source versions must be plainly
+    marked as such, and must not be misrepresented as being the original software".
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: No cc:Attribution. Restriction 1 says an acknowledgment "would be appreciated, but is not required",
+    the same reading Libpng and TheZlibLibpngLicense get.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The opening paragraph carries the warranty sentence and the liability sentence and is split at the
+    sentence boundary. The quoted clauses come from a text that wraps lines and uses two spaces after a full stop.
+    Line breaks and repeated spaces are collapsed to a single space, which is how every other record in the library
+    quotes a multi-line clause. No word and no punctuation mark is changed.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: info
+  field: dalicc:additionalClauses
+  description: No clause of this text needs a term the vocabulary does not have.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Read against the Libpng record of this addition the duty set is identical. The differences are the clause
+    texts, the added warranties of title and non-infringement, and the absence of the sentence about commercial products,
+    which version 2 dropped; cc:CommercialUse here rests on "for any purpose" in the grant instead.
+  action: none
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: cc:legalcode points at the file the PNG project serves, which now holds version 2 of the notice, and dct:source
+  at the SPDX page. The copyright roll at the top of the text is provenance and is not quoted.

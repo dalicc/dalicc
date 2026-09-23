@@ -1,0 +1,159 @@
+id: LGPL-3.0-only
+title: GNU Lesser General Public License version 3.0
+current_version: 4
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail, 1 permission and 1 statement,
+    recorded the relation to the record this one was adapted from and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:orLaterVersionOption "false"^^xsd:boolean
+    reason: 'Review decision 6: the four GNU records model the ''-only'' reading, so the or-later
+      option is recorded as false rather than left unsaid.'
+    source: consolidation-decision 6
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "version"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: permission dalicc:chargeDistributionFee
+    reason: 'Section 4 of the GPL, which the Lesser GPL incorporates, states: "You may charge any
+      price or no price for each copy that you convey." Added the missing dalicc:chargeDistributionFee
+      permission.'
+    source: review-finding 3/odrl:permission
+  - action: added
+    statement: spdx:licenseId "LGPL-3.0-only"
+    reason: Added the SPDX list id LGPL-3.0-only.
+    source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 1 finding 7.3: the record carried neither a warranty disclaimer nor a liability
+    limitation although ''This version of the GNU Lesser General Public License incorporates the terms
+    and conditions of version 3 of the GNU General Public License'', whose sections 15 and 16 are
+    the two clauses, and it did not carry section 4 of that text either.'
+  changes:
+  - action: added
+    statement: dalicc:LiabilityLimitation "IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED
+      TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS THE
+      PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL
+      OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT
+      NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR
+      THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH
+      HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: dalicc:WarrantyDisclaimer "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED
+      BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER
+      PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED,
+      INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+      PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD
+      THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: dalicc:WarrantyOrLiabilityAcceptance "You may charge any price or no price for each
+      copy that you convey, and you may offer support or warranty protection for a fee."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: 'dalicc:additionalClauses "You may convey a Combined Work under terms of your choice
+      that, taken together, effectively do not restrict modification of the portions of the Library
+      contained in the Combined Work and reverse engineering for debugging such modifications, if
+      you also do each of the following: a) Give prominent notice with each copy of the Combined Work
+      that the Library is used in it and that the Library and its use are covered by this License.
+      b) Accompany the Combined Work with a copy of the GNU GPL and this license document. c) For
+      a Combined Work that displays copyright notices during execution, include the copyright notice
+      for the Library among these notices, as well as a reference directing the user to the copies
+      of the GNU GPL and this license document. d) Do one of the following: 0) Convey the Minimal
+      Corresponding Source under the terms of this License, and the Corresponding Application Code
+      in a form suitable for, and under terms that permit, the user to recombine or relink the Application
+      with a modified version of the Linked Version to produce a modified Combined Work, in the manner
+      specified by section 6 of the GNU GPL for conveying Corresponding Source. 1) Use a suitable
+      shared library mechanism for linking with the Library. A suitable mechanism is one that (a)
+      uses at run time a copy of the Library already present on the user''s computer system, and (b)
+      will operate properly with a modified version of the Library that is interface-compatible with
+      the Linked Version. e) Provide Installation Information, but only if you would otherwise be
+      required to provide such information under section 6 of the GNU GPL, and only to the extent
+      that such information is necessary to install and execute a modified version of the Combined
+      Work produced by recombining or relinking the Application with a modified version of the Linked
+      Version. (If you use option 4d0, the Installation Information must accompany the Minimal Corresponding
+      Source and Corresponding Application Code. If you use option 4d1, you must provide the Installation
+      Information in the manner specified by section 6 of the GNU GPL for conveying Corresponding
+      Source.) Combined Libraries. You may place library facilities that are a work based on the Library
+      side by side in a single library together with other library facilities that are not Applications
+      and are not covered by this License, and convey such a combined library under terms of your
+      choice, if you do both of the following: a) Accompany the combined library with a copy of the
+      same work based on the Library, uncombined with any other library facilities, conveyed under
+      the terms of this License. b) Give prominent notice with the combined library that part of it
+      is a work based on the Library, and explaining where to find the accompanying uncombined form
+      of the same work."'
+    previous: 'dalicc:additionalClauses " You may convey a Combined Work under terms of your choice
+      that, taken together, effectively do not restrict modification of the portions of the Library
+      contained in the Combined Work and reverse engineering for debugging such modifications, if
+      you also do each of the following: a) Give prominent notice with each copy of the Combined Work
+      that the Library is used in it and that the Library and its use are covered by this License.
+      b) Accompany the Combined Work with a copy of the GNU GPL and this license document. c) For
+      a Combined Work that displays copyright notices during execution, include the copyright notice
+      for the Library among these notices, as well as a reference directing the user to the copies
+      of the GNU GPL and this license document. d) Do one of the following: 0) Convey the Minimal
+      Corresponding Source under the terms of this License, and the Corresponding Application Code
+      in a form suitable for, and under terms that permit, the user to recombine or relink the Application
+      with a modified version of the Linked Version to produce a modified Combined Work, in the manner
+      specified by section 6 of the GNU GPL for conveying Corresponding Source. 1) Use a suitable
+      shared library mechanism for linking with the Library. A suitable mechanism is one that (a)
+      uses at run time a copy of the Library already present on the user''s computer system, and (b)
+      will operate properly with a modified version of the Library that is interface-compatible with
+      the Linked Version. e) Provide Installation Information, but only if you would otherwise be
+      required to provide such information under section 6 of the GNU GPL, and only to the extent
+      that such information is necessary to install and execute a modified version of the Combined
+      Work produced by recombining or relinking the Application with a modified version of the Linked
+      Version. (If you use option 4d0, the Installation Information must accompany the Minimal Corresponding
+      Source and Corresponding Application Code. If you use option 4d1, you must provide the Installation
+      Information in the manner specified by section 6 of the GNU GPL for conveying Corresponding
+      Source.) Combined Libraries. You may place library facilities that are a work based on the Library
+      side by side in a single library together with other library facilities that are not Applications
+      and are not covered by this License, and convey such a combined library under terms of your
+      choice, if you do both of the following: a) Accompany the combined library with a copy of the
+      same work based on the Library, uncombined with any other library facilities, conveyed under
+      the terms of this License. b) Give prominent notice with the combined library that part of it
+      is a work based on the Library, and explaining where to find the accompanying uncombined form
+      of the same work."'
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+- version: 4
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: 'The licence incorporates the terms of the GNU General Public License version 3, and the
+    record now states what those sections say. Section 8: "Any attempt otherwise to propagate or modify
+    it is void, and will automatically terminate your rights under this License", with reinstatement
+    if "you cure the violation prior to 30 days after your receipt of the notice". Section 11: "Each
+    contributor grants you a non-exclusive, worldwide, royalty-free patent license under the contributor''s
+    essential patent claims".'
+  changes:
+  - action: added
+    statement: dalicc:curePeriod "30 days"
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: permission dalicc:patentGrant
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

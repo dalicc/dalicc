@@ -1,0 +1,164 @@
+id: DeepFloyd-IF-License
+title: DeepFloyd IF License Agreement
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/deep-floyd/IF/develop/LICENSE-MODEL
+text_retrieved: true
+verdict: created
+summary: >-
+  A non-commercial research licence for a released model and its documentation, with a long
+  list of withheld uses: commercial and production use, military and nuclear use,
+  surveillance, biometric processing and anything that breaks an export control or a privacy
+  law. Redistribution is allowed and must carry a copy of the licence and the prescribed
+  attribution line. The record prohibits cc:CommercialUse, dalicc:ChangeLicense and
+  dalicc:addLimitation from the restrictions section and quotes the whole of that section,
+  which no vocabulary term can hold.
+findings:
+- rubric: 1
+  severity: info
+  field: 'dct:title'
+  description: >-
+    File name, record identifier and IRI local name agree. There is no SPDX identifier, so no
+    spdx:licenseId triple is written. dct:title is the heading of the document; the name the
+    evidence list uses and the model-hub tag are in dct:alternative.
+  action: applied
+- rubric: 2
+  severity: major
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Dataset and dcmitype:Software. The agreement applies "to your use of any computer
+    program, algorithm, source code, object code, or software that is made available by
+    Stability AI under this License ("Software") and any specifications, manuals,
+    documentation, and other written information provided by Stability AI related to the
+    Software ("Documentation")", and it is declared on released model weights, which are data.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Clause 1.a grants "a non-exclusive, worldwide, non-transferable, non-sublicensable,
+    revocable, royalty free and limited license under Stability AI's copyright interests to
+    reproduce, distribute, and create derivative works of the Software solely for your
+    non-commercial research purposes." That gives odrl:reproduce, odrl:distribute,
+    odrl:derive, cc:DerivativeWorks and dalicc:ModifiedWorks. odrl:modify is written as well,
+    because clause 2.a bars modification only "for (i) any commercial or production purposes"
+    and the listed purposes, which leaves modification for non-commercial research inside the
+    grant.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    Six prohibitions. cc:CommercialUse from clause 2.a, "for (i) any commercial or production
+    purposes". dalicc:ChangeLicense and dalicc:addLimitation both from clause 2.d, "offer or
+    impose any terms on the Software Products that alter, restrict, or are inconsistent with
+    the terms of this License". dalicc:sublicense from "non-sublicensable" and from "you may
+    not assign or sublicense this License or any other rights or obligations under this
+    License without Stability AI's prior written consent". dalicc:promote from section 9,
+    "Licensee has not been granted any trademark license as part of this License".
+    dalicc:exemptedMaterial from section 8, under which third-party components "are subject to
+    the license terms of the respective third-party licensors".
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Four duties on odrl:distribute, from section 3 and clause 2.e. cc:Notice and
+    dalicc:addStatement come from "you must provide (i) a copy of this License, and (ii) the
+    following attribution notice: "DeepFloyd is licensed under the DeepFloyd License,
+    Copyright (c) Stability AI Ltd. All Rights Reserved.""; cc:Attribution carries the same
+    notice as credit, and is also what clause 2.b protects by barring you from altering or
+    removing the proprietary notices. dalicc:exportControlNotice comes from clause 2.e, the
+    export and sanctions paragraph. The duties hang on distribution because that is the act
+    both clauses address.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:LiabilityLimitation'
+  description: >-
+    Section 4 goes to dalicc:WarrantyDisclaimer and section 5 to dalicc:LiabilityLimitation.
+    Section 5 is kept whole, including the high-risk-use paragraph, because the licence
+    numbers it as one clause under one heading. dalicc:additionalClauses carries the parties
+    and acceptance paragraph, the three parts of the grant, the whole restrictions section,
+    the attribution section, the indemnity, the termination and survival clause, the
+    third-party clause, the trademark clause, the applicable-law clause and the miscellaneous
+    clause.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    The disclaimer is quoted as the source writes it, including the run-together words
+    "STABILITY AIEXPRESSLY DISCLAIMS", which is how the published text reads. No wording was
+    corrected. No long dash appears in the text.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    cc:jurisdiction is dalicc:worldwide from the worldwide grant; dalicc:governingLaw names
+    California, from "This License will be governed and construed under the laws of the State
+    of California without regard to conflicts of law provisions." dalicc:validityType is
+    dalicc:perpetual, and dalicc:terminatesOnBreach is true from "This License will
+    automatically terminate upon any breach by you of the terms of this License." No cure
+    period is given, and the licensor may also terminate at will on notice, which is quoted.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Clause 2.c bars the licensee from circumventing a protection: "utilize any equipment,
+    device, software, or other means to circumvent or remove any security or protection used
+    by Stability AI in connection with the Software, or to circumvent or remove any usage
+    restrictions, or to enable functionality disabled by Stability AI".
+    dalicc:applyTechnicalProtectionMeasures is the opposite idea, the licensee putting a
+    measure in place, and was not stretched to cover this. Quoted; the proposed term is
+    dalicc:circumventTechnicalProtectionMeasures.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:fieldOfUseRestriction'
+  description: >-
+    The withheld uses of clause 2.a are a list, not a single field: "(ii) military purposes or
+    in the service of nuclear technology, (iii) purposes of surveillance, including any
+    research or development relating to surveillance, (iv) biometric processing". The literal
+    names only the field the grant confines the licensee to; the list is quoted. Proposed term
+    dalicc:prohibitedUsePolicy, an annotation carrying the list or the policy a licence
+    applies.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The grant is revocable and the licensor may terminate "in whole or in part, at any time
+    upon notice (including electronic) to you". No term says a grant may be withdrawn at will.
+    Quoted; the proposed term is dalicc:revocableGrant.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer against dg_default returned an empty
+    conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Family: one of the three research-only records. It agrees with the other two in
+    prohibiting cc:CommercialUse and naming the field, and differs in carrying an export
+    control duty, an indemnity and a trademark clause, and in permitting modification, which
+    the Intel text withholds. The publisher of this text also publishes one of the
+    responsible-use records of this family, whose shape is entirely different: that one grants
+    commercial use and carries a patent licence.
+  action: none
+family: Model licences
+port_of: null
+variant_kind: null
+variant_of: null
+notes: >-
+  Modelled from the model licence file in the publisher's source repository. cc:legalcode
+  points at the raw file and dct:source at the same file in its repository. dct:publisher is
+  Stability AI Ltd., the party the agreement names. dalicc:promote is prohibited although
+  section 3 requires the attribution line, because section 9 licenses the name only "to the
+  extent necessary to make the reference required by the "ATTRIBUTION" section".

@@ -1,0 +1,95 @@
+id: Multics
+title: Multics License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://opensource.org/license/Multics
+text_retrieved: true
+verdict: created
+summary: 'Models the Multics License, an MIT-style permissive grant with one extra condition: the historical background
+  of the software must travel with every copy. The record follows MIT and adds dalicc:addStatement for that condition.
+  The licence carries no warranty disclaimer at all.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, license id, SPDX id and IRI agree. dct:publisher is left out: the text names donors and
+    copyright holders but no steward of the licence.'
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only, following MIT. The text covers 'these programs and their documentation',
+    which is the same wording MIT uses, and the MIT record carries no creative-work type.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads: ''Permission to use, copy, modify, and distribute these programs and their documentation
+    for any purpose and without fee is hereby granted''. The record permits reproduce, distribute, modify, derive,
+    display, present, commercial use, derivative works, modified works and the distribution fee. No sublicensing
+    is granted, so no odrl:grantUse, which is where the record differs from MIT.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote for 'that the names of MIT, HIS, BULL or BULL HN not be used in advertising or publicity
+    pertaining to distribution of the programs without specific prior written permission'.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:Attribution, cc:Notice and dalicc:addStatement hang off distribute, modify and derive: the proviso
+    requires ''that the below copyright notice and historical background appear in all copies and that both the
+    copyright notice and historical background and this permission notice appear in supporting documentation''.
+    dalicc:addStatement carries the historical background, which is a prescribed statement rather than a licence
+    notice.'
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: 'The licence has no warranty clause and no liability clause, so neither dalicc:WarrantyDisclaimer
+    nor dalicc:LiabilityLimitation is written. This is unusual for the library, where 329 of 344 records carry a
+    disclaimer, and it is faithful: there is nothing to quote. The grant proviso is quoted in dalicc:additionalClauses
+    instead.'
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'No legal system and no term named: dalicc:worldwide, dalicc:perpetual.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: No vocabulary gap. The licence is silent about patents and about termination.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run with the 39 axioms of licensedata/dependencygraph/dg_default.ttl,
+    returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Nearest siblings are MIT and IscLicense. Multics differs from MIT by the historical-background statement,
+    by the express no-advertising bar and by the absence of both a sublicensing grant and a warranty disclaimer.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Permission to use, copy, modify, and distribute these programs
+    and their documentation for any purpose and without fee is hereby granted,provided that the below copyright
+    notice and historical background appear in all copies and that both the copyright notice and historical background
+    and this permission notice appear in supporting documentation, and that the names of MIT, HIS, BULL or BULL
+    HN not be used in advertising or publicity pertaining to distribution of the programs without specific prior
+    written permission." The permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the
+    notice has to survive the relicensing.'
+  action: applied
+family: Reciprocal and source-available
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. The source has a missing space after 'granted,provided'; the quotation
+  keeps it as it stands, because the rubric asks for the clause word for word.

@@ -1,0 +1,138 @@
+id: GPL-2.0-only-with-Font-exception-2.0
+title: GNU General Public License, Version 2 with Font exception 2.0
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/GPL-2.0-only.txt
+text_retrieved: true
+verdict: created
+summary: The record models GNU General Public License, Version 2 with the exception the SPDX list calls
+  Font-exception-2.0. It copies the model of GPL-2.0-only statement for statement and adds what the exception
+  grants. The exception keeps a document that embeds the font out of the reach of the licence. The copyleft
+  of the base licence still reaches the font, not a document that embeds it, and the exception text is
+  quoted in full in dalicc:additionalClauses.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: The file name, the identifier and the local name of the odrl:Set IRI are all GPL-2.0-only-with-Font-exception-2.0.
+    spdx:licenseId carries the SPDX expression "GPL-2.0-only WITH Font-exception-2.0", with one space,
+    an upper-case WITH and one more space, which is how the SPDX list writes a licence combined with an
+    exception.
+  action: applied
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: The base record targets dcmitype:Software alone. A font is a program file and a creative
+    work at once, so the target of this record carries dalicc:CreativeWork as well, which is the pair
+    the library uses for OFL-1.1. Nothing was removed.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 1 reads: "You may copy and distribute verbatim copies of the Program''s source
+    code as you receive it, in any medium, provided that you conspicuously and appropriately publish on
+    each copy an appropriate copyright notice and disclaimer of warranty; keep intact all the notices
+    that refer to this License and to the absence of any warranty; and give any other recipients of the
+    Program a copy of this License along with the Program." Section 2 adds the right to modify and to
+    distribute the modified work. The record therefore keeps every permission of GPL-2.0-only: reproduce,
+    distribute, modify, derive, display, present, commercial use, derivative works, modified works and
+    charging a distribution fee. The exception adds one more. It reads: "As a special exception, if you
+    create a document which uses this font, and embed this font or unaltered portions of this font into
+    the document, this font does not by itself cause the resulting document to be covered by the GNU General
+    Public License." That is material the licence carves out of its own condition, so it is modelled as
+    a permission dalicc:exceptedCombination.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The prohibitions of GPL-2.0-only stay as they are. dalicc:ChangeLicense is still prohibited,
+    because the exception narrows the reach of the reciprocity and does not let the covered work itself
+    leave the licence. The exception addresses embedding rather than linking: "if you create a document
+    which uses this font, and embed this font or unaltered portions of this font into the document, this
+    font does not by itself cause the resulting document to be covered by the GNU General Public License".'
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:promote is prohibited because GPL-2.0-only prohibits it and an exception record
+    keeps every statement of its base. Neither the base text nor the exception has a trademark or endorsement
+    clause, so the prohibition is a library convention here and not text-supported. The review of GPL-2.0-only
+    proposed removing it library-wide.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: The licence-wide cc:ShareAlike duty of GPL-2.0-only stays on the odrl:Set, because the
+    reciprocity of the base licence still covers the whole work. cc:Attribution, cc:Notice and cc:SourceCode
+    stay on distribute, modify and derive, and dalicc:modificationNotice on modify and derive. The carve-out
+    reaches the font itself or unaltered portions of it. The exception adds that it "does not however
+    invalidate any other reasons why the document might be covered by the GNU General Public License",
+    so it removes one ground of coverage and no other.
+  action: applied
+- rubric: 5
+  severity: minor
+  field: dalicc:reciprocityScope
+  description: 'dalicc:reciprocityScope says in words how far the copyleft reaches after the exception:
+    "the font, not a document that embeds it". The base record carries no such annotation, because without
+    the exception the reciprocity reaches the whole work.'
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:additionalClauses
+  description: The exception text is quoted verbatim as one literal of dalicc:additionalClauses, from
+    https://spdx.org/licenses/Font-exception-2.0.html. Line breaks and runs of spaces were collapsed to
+    single spaces, the way every other clause literal in the library is written; no word was changed,
+    added or dropped. The warranty disclaimer and the limitation of liability are the ones of GPL-2.0-only,
+    quoted verbatim from the base text, because the exception changes neither.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The base text and the exception name no legal system, so cc:jurisdiction stays dalicc:worldwide,
+    dalicc:validityType stays dalicc:perpetual and no dalicc:governingLaw is stated. The termination and
+    cure terms of the base licence are untouched by the exception.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:exceptedCombination
+  description: 'The exception carves the combination out of the condition of the licence, not out
+    of its grant. dalicc:exemptedMaterial says the opposite and is prohibited on OGL-UK-1.0, OGL-UK-2.0 and
+    NLOD-2.0, where it means material the licence never granted. The vocabulary defines
+    dalicc:exceptedCombination for this side of it since 2026-09-23, and the record carries it as
+    a permission.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The exception may be dropped. The text says: "If you modify this font, you may extend
+    this exception to your version of the font, but you are not obligated to do so. If you do not wish
+    to do so, delete this exception statement from your version." Nothing in the vocabulary says that
+    a permission is optional for a downstream modifier, so a copy of this work may carry the base licence
+    alone and still be true to the text. Proposed term: dalicc:removableAdditionalPermission, an annotation
+    saying that a modifier may delete the exception statement.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check against dg_default returned no conflicts. The exempted permission
+    is a new action for the checker, it is not prohibited anywhere and the dependency graph holds no relation
+    for it, so it neither triggers nor hides a conflict. The share-alike rule is not triggered, because
+    dalicc:ChangeLicense stays prohibited.
+  action: none
+- rubric: 10
+  severity: info
+  field: dalicc:variantOf
+  description: 'The record is the base licence plus the exception, so it repeats GPL-2.0-only statement
+    for statement and adds four things: the dalicc:exceptedCombination permission, the dalicc:reciprocityScope
+    annotation, the exception text in dalicc:additionalClauses and the pair dalicc:variantKind "exception"
+    with dalicc:variantOf dalicclib:GPL-2.0-only. Nothing the base states was removed.'
+  action: applied
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: exception
+variant_of: GPL-2.0-only
+notes: 'The base licence text is the SPDX text of GPL-2.0-only, retrieved on 2026-09-22; the exception
+  text is the SPDX text of Font-exception-2.0, from https://spdx.org/licenses/Font-exception-2.0.html.
+  Nothing here is legal advice: the record says what the two texts say and quotes them. An exception record
+  never removes a statement its base carries, so anything that looks wrong in this record and is also
+  in GPL-2.0-only belongs to the base record and is written up as a proposal instead.'

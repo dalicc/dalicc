@@ -1,0 +1,79 @@
+id: GPL-3.0-only
+title: GNU General Public License 3
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/GPL-3.0-only.txt
+text_retrieved: true
+verdict: corrected
+summary: 'The record models GPL version 3 exactly like GPL version 2: the same permissions, the same license-wide
+  share-alike duty and the same source-code, attribution and notice duties. That is correct for the clauses
+  the vocabulary can express. The SPDX id was added, the unversioned gnu.org URLs were pinned to the 3.0
+  text, and the right to charge for conveying copies was added.'
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: Added the SPDX list id GPL-3.0-only.
+  action: applied
+  change: 'spdx:licenseId "GPL-3.0-only" ;
+
+    '
+- rubric: 1
+  severity: minor
+  field: cc:legalcode
+  description: cc:legalcode and dct:source pointed at https://www.gnu.org/licenses/gpl.html, which always
+    redirects to the newest GPL and would silently start describing a later version. Pinned both to the
+    3.0 text.
+  action: applied
+  change: 'cc:legalcode <https://www.gnu.org/licenses/gpl-3.0.html> ;
+
+    dct:source <https://www.gnu.org/licenses/gpl-3.0.html> ;
+
+    '
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 4 states: "You may charge any price or no price for each copy that you convey,
+    and you may offer support or warranty protection for a fee." Added the missing dalicc:chargeDistributionFee
+    permission.'
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:chargeDistributionFee ] ;\n"
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'Three clauses of version 3 have no vocabulary term and are invisible to the compatibility
+    checker: the express patent licence of section 11, the patent retaliation of section 10, and the anti
+    circumvention clause of section 3 ("No covered work shall be deemed part of an effective technological
+    measure"). Proposed terms: dalicc:patentGrant, dalicc:patentRetaliationTermination, dalicc:antiTechnicalMeasures.'
+  action: none
+- rubric: 6
+  severity: minor
+  field: dalicc:LiabilityLimitation
+  description: The stored liability text begins "N NO EVENT UNLESS REQUIRED BY APPLICABLE LAW", a truncated
+    first word of "IN NO EVENT". Left as is because correcting it silently changes a published literal.
+  action: proposed
+  change: 'dalicc:LiabilityLimitation "IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+    WILL ANY COPYRIGHT HOLDER, ..." ;
+
+    '
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:promote is prohibited although GPL version 3 has no trademark clause of its own
+    (section 7(e) only allows a licensor to decline trademark rights as an added term). Library-wide default,
+    left untouched.
+  action: proposed
+  change: "# remove\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:promote ] ;\n"
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 1 finding 5.2: the record did not carry section 4 of the text,
+    ''You may charge any price or no price for each copy that you convey, and you may offer support or
+    warranty protection for a fee''. The liability literal also began ''N NO EVENT'' because its first
+    letter had been lost.'
+  action: applied
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: version
+notes: Version variant inside the GNU family.

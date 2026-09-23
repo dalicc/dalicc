@@ -1,0 +1,124 @@
+# Title: The machine-readable representation of "Reciprocal Public License 1.1"@en in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/RPL-1.1
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:RPL-1.1 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "RPL-1.1" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://opensource.org/license/RPL-1.1> ;
+    dalicc:LiabilityLimitation "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER TORT (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE LICENSOR, ANY CONTRIBUTOR, OR ANY DISTRIBUTOR OF LICENSED SOFTWARE, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON FOR ANY INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR LOSSES, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES. THIS LIMITATION OF LIABILITY SHALL NOT APPLY TO LIABILITY FOR DEATH OR PERSONAL INJURY RESULTING FROM SUCH PARTY'S NEGLIGENCE TO THE EXTENT APPLICABLE LAW PROHIBITS SUCH LIMITATION. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS EXCLUSION AND LIMITATION MAY NOT APPLY TO YOU." ;
+    dalicc:WarrantyDisclaimer "LICENSED SOFTWARE IS PROVIDED UNDER THIS LICENSE ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT THE LICENSED SOFTWARE IS FREE OF DEFECTS, MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. FURTHER THERE IS NO WARRANTY MADE AND ALL IMPLIED WARRANTIES ARE DISCLAIMED THAT THE LICENSED SOFTWARE MEETS OR COMPLIES WITH ANY DESCRIPTION OF PERFORMANCE OR OPERATION, SAID COMPATIBILITY AND SUITABILITY BEING YOUR RESPONSIBILITY. LICENSOR DISCLAIMS ANY WARRANTY, IMPLIED OR EXPRESSED, THAT ANY CONTRIBUTOR'S EXTENSIONS MEET ANY STANDARD OF COMPATIBILITY OR DESCRIPTION OF PERFORMANCE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE LICENSED SOFTWARE IS WITH YOU. SHOULD LICENSED SOFTWARE PROVE DEFECTIVE IN ANY RESPECT, YOU (AND NOT THE LICENSOR OR ANY OTHER CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. UNDER THE TERMS OF THIS LICENSOR WILL NOT SUPPORT THIS SOFTWARE AND IS UNDER NO OBLIGATION TO ISSUE UPDATES TO THIS SOFTWARE. LICENSOR HAS NO KNOWLEDGE OF ERRANT CODE OR VIRUS IN THIS SOFTWARE, BUT DOES NOT WARRANT THAT THE SOFTWARE IS FREE FROM SUCH ERRORS OR VIRUSES. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF LICENSED SOFTWARE IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER." ;
+    dalicc:WarrantyOrLiabilityAcceptance "You may choose to offer, and charge a fee for, warranty, support, indemnity or liability obligations to one or more recipients of Licensed Software. However, You may do so only on Your own behalf, and not on behalf of the Licensor or any Contributor. You must make it clear that any such warranty, support, indemnity or liability obligation is offered by You alone, and You hereby agree to indemnify the Licensor and every Contributor for any liability plus attorney fees, costs, and related expenses due to any such action or claim incurred by the Licensor or such Contributor as a result of warranty, support, indemnity or liability terms You offer." ;
+    dalicc:additionalClauses "\"Deploy\" means to use, Serve, sublicense or distribute Licensed Software other than for Your internal Research and/or Personal Use, and includes without limitation, any and all internal use or distribution of Licensed Software within Your business or organization other than for Research and/or Personal Use, as well as direct or indirect sublicensing or distribution of Licensed Software by You to any third party in any form or manner.",
+        "\"Serve\" means to deliver Licensed Software and/or Your Extensions by means of a computer network to one or more computers for purposes of execution of Licensed Software and/or Your Extensions.",
+        "You must make available, under the terms of this License, the Source Code of the Licensed Software and any Extensions that You Deploy, either on the same media as You distribute any executable or other form of the Licensed Software, or via an Electronic Distribution Mechanism. The Source Code for any version of Licensed Software, or its Extensions that You Deploy must be made available at the time of Deployment and must remain available for as long as You Deploy the Extensions or at least twelve (12) months after the date You Deploy, whichever is longer. You are responsible for ensuring that the Source Code version remains available even if the Electronic Distribution Mechanism is maintained by a third party. You may not charge a fee for the Source Code distributed under this Section in excess of Your actual cost of duplication and distribution where such duplication and distribution involve physical media.",
+        "Nothing in this License shall be deemed to grant any rights to trademarks, copyrights, patents, trade secrets or any other intellectual property of Licensor or any Contributor except as expressly stated herein. Except as expressly stated in Sections 3 and 4, no other patent rights, express or implied, are granted herein. Your Extensions may require additional patent licenses from Licensor or Contributors which each may grant in its sole discretion. No right is granted to the trademarks of Licensor or any Contributor even if such marks are included in the Licensed Software. Nothing in this License shall be interpreted to prohibit Licensor from licensing under different terms from this License any code that Licensor otherwise would have a right to license.",
+        "This License and the rights granted hereunder will terminate automatically if You fail to comply with the terms herein and fail to cure such breach within thirty (30) days of becoming aware of the breach. All sublicenses to the Licensed Software that are properly granted shall survive any termination of this License. Provisions that, by their nature, must remain in effect beyond the termination of this License, shall survive.",
+        "If You initiate litigation by asserting a patent infringement claim (excluding declaratory judgment actions) against Licensor or a Contributor (Licensor or Contributor against whom You file such an action is referred to herein as \"Respondent\") alleging that Licensed Software directly or indirectly infringes any patent, then any and all rights granted by such Respondent to You under Sections 3 or 4 of this License shall terminate prospectively upon sixty (60) days notice from Respondent (the \"Notice Period\") unless within that Notice Period You either agree in writing (i) to pay Respondent a mutually agreeable reasonably royalty for Your past or future use of Licensed Software made by such Respondent, or (ii) withdraw Your litigation claim with respect to Licensed Software against such Respondent. If within said Notice Period a reasonable royalty and payment arrangement are not mutually agreed upon in writing by the parties or the litigation claim is not withdrawn, the rights granted by Licensor to You under Sections 3 and 4 automatically terminate at the expiration of said Notice Period.",
+        "You may be restricted with respect to downloading or otherwise acquiring, exporting, or reexporting the Licensed Software or any underlying information or technology by United States and other applicable laws and regulations. By downloading or by otherwise obtaining the Licensed Software, You are agreeing to be responsible for compliance with all applicable laws and regulations.",
+        "This License shall be governed by Colorado law provisions (except to the extent applicable law, if any, provides otherwise), excluding its conflict-of-law provisions. You expressly agree that any dispute relating to this License shall be submitted to binding arbitration under the rules then prevailing of the American Arbitration Association. You further agree that Adams County, Colorado USA is proper venue and grant such arbitration proceeding jurisdiction as may be appropriate for purposes of resolving any dispute under this License. Judgement upon any award made in arbitration may be entered and enforced in any court of competent jurisdiction. The arbitrator shall award attorney's fees and costs of arbitration to the prevailing party. Should either party find it necessary to enforce its arbitration award or seek specific performance of such award in a civil court of competent jurisdiction, the prevailing party shall be entitled to reasonable attorney's fees and costs. The application of the United Nations Convention on Contracts for the International Sale of Goods is expressly excluded. You and Licensor expressly waive any rights to a jury trial in any litigation concerning Licensed Software or this License. Any law or regulation that provides that the language of a contract shall be construed against the drafter shall not apply to this License." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:orLaterVersionOption true ;
+    dalicc:terminatesOnBreach true ;
+    dalicc:curePeriod "30 days" ;
+    dalicc:sourcePublicationPeriod "available at the time of deployment, and for as long as the extensions are deployed or at least twelve (12) months after deployment, whichever is longer" ;
+    dalicc:governingLaw "the law of the State of Colorado, United States" ;
+    dalicc:variantKind "version" ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/RPL-1.1/versions> ;
+    dct:alternative "RPL 1.1",
+        "RPL-1.1",
+        "Reciprocal Public License",
+        "Reciprocal Public License 1.1" ;
+    dct:hasVersion "1" ;
+    dct:modified "2026-09-15"^^xsd:date ;
+    dct:publisher "Technical Pursuit Inc." ;
+    dct:source <https://opensource.org/license/RPL-1.1> ;
+    dct:title "Reciprocal Public License 1.1"@en ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ] ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:includeNoticeFile ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:exportControlNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:includeNoticeFile ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:rename ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:includeNoticeFile ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:rename ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:patentGrant ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:networkUseTrigger ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ] ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:patentRetaliationTermination ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:addLimitation ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Software ] .

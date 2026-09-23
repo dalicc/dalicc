@@ -1,0 +1,128 @@
+id: GPL-3.0-only-with-GPL-3.0-linking-exception
+title: GNU General Public License 3 with GPL-3.0 Linking Exception
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/GPL-3.0-only.txt
+text_retrieved: true
+verdict: created
+summary: The record models GPL version 3 with the linking exception that several OCaml and Ada libraries
+  carry. It keeps every statement of the GPL-3.0-only record and adds one permission for the work that
+  results from linking the program with the library the notice names. The exception text is a template
+  with two placeholders, so the record models the shape of the permission and not one particular combination.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, record identifier, IRI local name and title agree. spdx:licenseId carries the
+    SPDX expression "GPL-3.0-only WITH GPL-3.0-linking-exception": the base identifier, one space, WITH
+    in capitals, one space, the exception identifier. No record in the library carried an expression before,
+    so the SPDX mapping and the spdx route have to accept the space and the keyword.'
+  action: applied
+- rubric: 1
+  severity: info
+  field: cc:legalcode
+  description: cc:legalcode points at the text of the base licence, https://www.gnu.org/licenses/gpl-3.0.html,
+    because that is the licence the record models. dct:source points at the SPDX page of the exception,
+    https://spdx.org/licenses/GPL-3.0-linking-exception.html, because that is where the additional permission
+    is published.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'odrl:target is the one the base record carries: an odrl:AssetCollection of dct:type dcmitype:Software.
+    The exception is about program files, so nothing changes.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The whole exception reads: "If you modify this Program, or any covered work, by linking
+    or combining it with [name of library] (or a modified version of that library), containing parts covered
+    by the terms of [name of library''s license], the licensors of this Program grant you additional permission
+    to convey the resulting work." The resulting work is material the share-alike condition no longer
+    reaches, which is the permission dalicc:exceptedCombination.'
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:exceptedCombination ] ;\n"
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: Every permission of GPL-3.0-only is kept, in the same place and with the same duties. An
+    exception adds an additional permission to a licence; it never takes a granted right away.
+  action: applied
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'The exception lets the combined result travel under other terms, and the vocabulary cannot
+    say that of a part of a work. The exception says: "the licensors of this Program grant you additional
+    permission to convey the resulting work". A dalicc:ChangeLicense permission would say the licence
+    of the covered work itself may be replaced, which is false and would contradict the whole-work share-alike
+    duty. The record therefore keeps the prohibition, states the narrowed reach in dalicc:reciprocityScope
+    and quotes the clause. Proposed term: dalicc:combinedWorkRelicensing, a permission for putting a larger
+    work that contains the covered material under other terms.'
+  action: applied
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: The licence-wide cc:ShareAlike duty stays on the odrl:Set. The exception lifts the duty
+    for the resulting work only, which dalicc:reciprocityScope states.
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: The exception text is quoted verbatim as one literal, taken from https://raw.githubusercontent.com/spdx/license-list-data/main/text/GPL-3.0-linking-exception.txt.
+    Line breaks and the indentation of the source file are collapsed to single spaces, which is how every
+    clause literal in the library is written; the wording is untouched. The warranty disclaimer and the
+    liability limitation are the ones the base record quotes from the base licence.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: The quoted clause keeps the two placeholders of the published text, "[name of library]"
+    and "[name of library's license]", because they are what the SPDX text says. They are the licence's
+    own words and not a value left open by the reviewer, so the family rule that looks for a literal filled
+    with a placeholder word does not reach them.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction stays dalicc:worldwide and dalicc:validityType stays dalicc:perpetual:
+    the exception names no territory and no term. The termination clause of the base licence still applies,
+    and the record says no more about it than the base record does.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:exceptedCombination
+  description: 'The exception carves the combination out of the condition of the licence, not out
+    of its grant. dalicc:exemptedMaterial says the opposite and is prohibited on OGL-UK-1.0, OGL-UK-2.0 and
+    NLOD-2.0, where it means material the licence never granted. The vocabulary defines
+    dalicc:exceptedCombination for this side of it since 2026-09-23, and the record carries it as
+    a permission.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The library that the exception covers is named by the licensor when the notice is written,
+    and no term can hold that name. The record cannot say which combination is permitted, only that one
+    is. Proposed term: dalicc:exceptedCombinationSubject, an annotation naming the work the exception
+    lets the covered work be combined with.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: app.services.composer.consistency_check with the default dependency graph reports 0 conflicts
+    for this record. dalicc:exceptedCombination takes part in no dependency relation, so it neither creates
+    nor hides one.
+  action: applied
+- rubric: 10
+  severity: info
+  field: record
+  description: The nearest siblings are GPL-3.0-only-with-GCC-exception-3.1 and LGPL-3.0-only-with-LGPL-3.0-linking-exception,
+    which this addition creates in another set of records. All three are additional permissions under
+    section 7 of GPL version 3; this one is the shortest and the only one written as a template.
+  action: applied
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: exception
+variant_of: GPL-3.0-only
+notes: The licensor fills the two placeholders in when applying the exception, so the name of the library
+  and the name of its licence are not facts about the licence text. A compatibility answer computed from
+  this record is about the shape of the permission; the notice on the work decides which library it covers.

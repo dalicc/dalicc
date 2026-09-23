@@ -1,0 +1,118 @@
+id: Apache-1.0
+title: Apache License 1.0
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Apache-1.0.txt
+text_retrieved: true
+verdict: created
+summary: Models the first Apache licence, the six-clause BSD-style text the Apache Group used before version 1.1.
+  It keeps the two retention clauses of BSD, adds the advertising acknowledgement, the endorsement bar and the bar
+  on calling a derived product Apache, and adds a sixth clause that puts the acknowledgement on every redistribution
+  of any form. The record follows Apache-1.1 for its clause texts and for dalicc:PromotionSpecification.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all Apache-1.0.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software. The text licenses source and binary forms of
+    a program.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant reads "Redistribution and use in source and binary forms, with or without modification, are
+    permitted provided that the following conditions are met". The record therefore permits reproduce, distribute,
+    modify, derive, display, present, commercial use, derivative works, modified works and the distribution fee, the
+    set Apache-1.1 carries.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: dalicc:ChangeLicense is permitted and carries the dalicc:compliantLicense duty. The text keeps conditions
+    that have to survive a relicensing, and it nowhere bars putting a copy under other terms, which is family rule
+    15.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: Clause 4 reads "The names "Apache" and "Apache Software Foundation" must not be used to endorse or
+    promote products derived from this software without prior written permission", so dalicc:promote is prohibited.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Attribution and cc:Notice hang off odrl:distribute, odrl:modify and odrl:derive, because clauses
+    1 and 2 make the copyright notice, the list of conditions and the disclaimer travel with every source and every
+    binary copy. dalicc:advertisingAcknowledgement carries clause 3 and dalicc:addStatement carries clause 6; both
+    hang off odrl:distribute, since each is triggered by handing the work on rather than by changing it.
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: dalicc:rename hangs off odrl:modify and odrl:derive for clause 5, "Products derived from this software
+    may not be called "Apache" nor may "Apache" appear in their name". Apache-1.1 attaches the same duty for the same
+    clause.
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: No dalicc:modificationNotice. The text asks nowhere for a record of the changes made, and the consolidation
+    decision of 2026-09-15 is that a permissive record gets that duty only where its text asks for one. The Apache-1.1
+    record carries the duty although its text is silent in the same way; the divergence is reported rather than edited.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: 'The single disclaimer paragraph carries two clauses. The record splits it at the sentence boundary:
+    the warranty sentence goes to dalicc:WarrantyDisclaimer and the liability sentence to dalicc:LiabilityLimitation,
+    both verbatim. This follows BSD-1-Clause, which split the same paragraph on 2026-09-15.'
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:PromotionSpecification
+  description: dalicc:PromotionSpecification carries the acknowledgement wording itself, following Apache-1.1, and
+    clauses 3 and 6 are quoted in full in dalicc:additionalClauses so that a reader sees where the wording has to
+    appear.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The disclaimer uses the typewriter quotation marks of the original (``AS IS''), which are kept verbatim.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: info
+  field: dalicc:additionalClauses
+  description: Every clause of the text is either modelled or quoted. No clause needed a term the vocabulary does
+    not have.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Read against licensedata/licenses/Apache-1.1.ttl, the differences are: the sixth clause, carried by
+    the dalicc:addStatement duty; an explicit dalicc:advertisingAcknowledgement duty, which the Apache-1.1 record
+    does not carry although its clause 3 is the same; no dalicc:modificationNotice duty; a warranty and a liability
+    clause, which the Apache-1.1 record leaves out; and odrl:target dcmitype:Software alone.'
+  action: none
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: cc:legalcode points at the publisher's own copy of the text and dct:source at the SPDX page. cc:attributionName
+  says The Apache Group, which is the name the 1.0 text uses; dct:publisher says The Apache Software Foundation, which
+  is the body that keeps the text today.

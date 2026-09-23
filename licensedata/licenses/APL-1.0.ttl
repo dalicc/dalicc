@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Adaptive Public License 1.0" in the DALICC license library
+# Title: The machine-readable representation of "Adaptive Public License 1.0" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/APL-1.0
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,17 +15,23 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:APL-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "APL-1.0" ;
-    cc:attributionName "- not specified - " ;
+    cc:attributionName "- not specified -" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:APL-1.0 ;
     dalicc:WarrantyDisclaimer "EXCEPT AS EXPRESSLY SET FORTH IN THIS LICENSE, THE LICENSED WORK IS PROVIDED UNDER THIS LICENSE ON AN \"AS IS\" BASIS, WITHOUT ANY REPRESENTATION, WARRANTY, GUARANTEE, ASSURANCE OR CONDITION OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE LICENSED WORK IS WITH RECIPIENT. SHOULD ANY LICENSED WORK PROVE DEFECTIVE IN ANY RESPECT, RECIPIENT (NOT THE INITIAL CONTRIBUTOR OR ANY SUBSEQUENT CONTRIBUTOR) ASSUMES THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS CLAUSE CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY LICENSED WORK IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS LICENSE INCLUDING WITHOUT LIMITATION THIS DISCLAIMER." ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/APL-1.0/versions> ;
     dct:alternative "APL-1.0" ;
-    dct:publisher "- not specified - " ;
+    dct:hasVersion "3" ;
+    dct:modified "2026-09-15"^^xsd:date ;
+    dct:publisher "- not specified -" ;
     dct:source osl:APL-1.0 ;
     dct:title "Adaptive Public License 1.0" ;
     odrl:permission [ a odrl:Permission ;
@@ -69,8 +75,6 @@ dalicclib:APL-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:noWarrantyNotice ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action cc:ShareAlike ],
-        [ a odrl:Prohibition ;
             odrl:action dalicc:addStatement ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:promote ] ;

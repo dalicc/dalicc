@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Artistic License 2.0" in the DALICC license library
+# Title: The machine-readable representation of "Artistic License 2.0" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/Artistic-2.0
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:Artistic-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -22,14 +23,22 @@ dalicclib:Artistic-2.0 a odrl:Set ;
     cc:attributionName "Perl Foundation" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:Artistic-2.0 ;
+    dalicc:WarrantyDisclaimer "THE PACKAGE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS \"AS IS\" AND WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES. THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT ARE DISCLAIMED TO THE EXTENT PERMITTED BY YOUR LOCAL LAW." ;
+    dalicc:LiabilityLimitation "UNLESS REQUIRED BY LAW, NO COPYRIGHT HOLDER OR CONTRIBUTOR WILL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING IN ANY WAY OUT OF THE USE OF THE PACKAGE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/Artistic-2.0/versions> ;
     dct:alternative "Artistic License v2",
         "Artistic Version 2.0",
         "Artistic-2.0" ;
-    dct:publisher "N.N." ;
+    dct:hasVersion "3" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:source osl:Artistic-2.0 ;
     dct:title "Artistic License 2.0" ;
     odrl:permission [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
@@ -74,6 +83,8 @@ dalicclib:Artistic-2.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action cc:CommercialUse ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:chargeLicenseFee ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

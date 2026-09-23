@@ -1,0 +1,92 @@
+id: CNRI-Python
+title: CNRI Python License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://opensource.org/license/CNRI-Python
+text_retrieved: true
+verdict: created
+summary: Models the CNRI Open Source License Agreement for Python 1.6 beta 1, one of the agreements in the chain
+  behind the PythonLicense20 record the library already holds. Its one retention condition is the licence agreement
+  itself, not a copyright notice, which is what separates it from the GPL compatible CNRI agreement. Nothing here
+  is legal advice.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Clause 2 grants "a non-exclusive, royalty-free, world-wide license to reproduce, analyze, test, perform
+    and/or display publicly, prepare derivative works, distribute, and otherwise use Python 1.6b1 alone or in any
+    derivative version". The record therefore permits reproduce, display, present, distribute, modify, derive, commercial
+    use, derivative works and modified works. The agreement says nothing about charging, so dalicc:chargeDistributionFee
+    is permitted, as in 333 of the 344 existing records.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'Clause 7 states "This License Agreement does not grant permission to use CNRI trademarks or trade
+    name in a trademark sense to endorse or promote products or services of Licensee, or any third party", modelled
+    as a dalicc:promote prohibition. No right to relicense is granted, so dalicc:ChangeLicense is prohibited. No
+    sublicensing right is granted either; the record makes no odrl:grantUse statement rather than prohibiting it.
+    (Corrected on 2026-09-15 by the verification pass: see the rubric 3 finding on relicensing below.)'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'Clause 2 conditions the grant on one thing only: "that CNRIs License Agreement is retained in Python
+    1.6b1, alone or in any derivative version prepared by Licensee". That is cc:Notice, and it is attached to odrl:distribute,
+    odrl:modify and odrl:derive. No cc:Attribution duty is written, because this agreement, unlike the GPL compatible
+    one, does not require a copyright notice to be retained. Clause 3 adds dalicc:modificationNotice on odrl:modify
+    and odrl:derive.'
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:additionalClauses
+  description: Clauses 4 and 5 are quoted word for word in dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation.
+    The substitute notice text of clause 2, the automatic termination of clause 6 and the whole of clause 7 are
+    quoted in dalicc:additionalClauses.
+  action: applied
+- rubric: 7
+  severity: major
+  field: cc:jurisdiction
+  description: Clause 7 states "This License Agreement shall be governed by and interpreted in all respects by the
+    law of the State of Virginia, excluding conflict of law provisions", while the grant itself is world-wide. Virginia
+    is a state, not a country, and the bpicounty vocabulary the library uses for jurisdiction ports has no IRI for
+    it, so cc:jurisdiction stays dalicc:worldwide and the clause is quoted. The owner may want to decide whether
+    a sub-national choice of law deserves its own property.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: Automatic termination on breach has no property to hang it on; proposed term dalicc:terminatesOnBreach
+    over the existing dalicc:terminationOnBreach concept. The clause is quoted.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer with the dependency graph dg_default returned an empty
+    conflict list.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: Follows licensedata/licenses/PythonLicense20.ttl for the permission set and the modification notice.
+    It deliberately does not copy four of that record's prohibitions (odrl:grantUse, cc:ShareAlike, dalicc:addLimitation
+    and dalicc:addStatement) nor its dalicc:chargeDistributionFee prohibition, because neither this text nor the
+    PSF text states any of them. The existing record was not edited; the observation is passed to the consolidation
+    pass.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Subject to the terms and conditions of this License Agreement,
+    CNRI hereby grants Licensee a non-exclusive, royalty-free, world-wide license to reproduce, analyze, test, perform
+    and/or display publicly, prepare derivative works, distribute, and otherwise use Python 1.6, beta 1 alone or
+    in any derivative version, provided ... CNRI''s License Agreement is retained in Python 1.6, beta ..." The permission
+    carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the relicensing.'
+  action: applied
+family: Python, PHP, Unicode and W3C
+port_of: null
+variant_kind: version
+notes: The SPDX text spells the possessive without an apostrophe ("CNRIs License Agreement"); it is reproduced verbatim.

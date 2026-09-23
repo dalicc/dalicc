@@ -1,0 +1,61 @@
+id: 0BSD
+title: Free Public License 1.0.0
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/0BSD.txt
+text_retrieved: true
+verdict: corrected
+summary: The record models the Zero Clause BSD license, which grants use, copying, modification and distribution
+  "for any purpose with or without fee" and attaches no condition at all. Twelve permissions and no duties
+  is the right shape. The record prohibited cc:ShareAlike, which the text contradicts; that prohibition
+  was removed.
+findings:
+- rubric: 5
+  severity: major
+  field: odrl:prohibition
+  description: 'The text reads in full: "Permission to use, copy, modify, and/or distribute this software
+    for any purpose with or without fee is hereby granted." A prohibition of cc:ShareAlike asserts that
+    a licensee may not put the work out under these same terms, which the unconditional grant contradicts.
+    cc:ShareAlike is a duty term; a license that is silent about relicensing must carry no share-alike
+    statement at all. Removed. Flagged as rule 5b in family_rules_baseline.md.'
+  action: applied
+  change: "# removed\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action cc:ShareAlike ] ;\n"
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The record carries no duty. That is correct and it is the only member of the BSD family
+    for which it is correct: the Zero Clause BSD license is the ISC license with the copyright-notice
+    condition struck out. The note in family_rules_baseline.md that "0BSD ... require the notice to be
+    kept" is wrong.'
+  action: none
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:addStatement and dalicc:promote remain prohibited although the text says nothing
+    about additional notices or trademarks. They are the library-wide default and were left alone, but
+    neither is text-supported here.
+  action: proposed
+  change: "# remove both\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:addStatement\
+    \ ],\n    [ a odrl:Prohibition ;\n        odrl:action dalicc:promote ] ;\n"
+- rubric: 1
+  severity: info
+  field: dct:title
+  description: The title "Free Public License 1.0.0" is the name the Open Source Initiative uses for this
+    text; SPDX calls it "BSD Zero Clause License". Both spellings are in dct:alternative and cc:legalcode
+    points at the OSI page, so the record is findable under either name.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 1 finding 7.5 and 7.6: the record permitted dalicc:noWarrantyNotice
+    and prohibited dalicc:addStatement, neither of which the Zero Clause BSD text states, and carried
+    the placeholder ''- not specified - '' as its publisher and attribution name. The whole operative
+    text is ''Permission to use, copy, modify, and/or distribute this software for any purpose with or
+    without fee is hereby granted.'' The disclaimer paragraph is split at ''IN NO EVENT SHALL THE AUTHOR
+    BE LIABLE''.'
+  action: applied
+family: BSD family (0BSD, 2, 3 and 4 clause)
+port_of: null
+variant_kind: version
+notes: Permissive member of the BSD family. Public-domain-equivalent, hence no duties.

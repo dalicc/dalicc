@@ -1,0 +1,98 @@
+id: OSC-1.0
+title: OSC License 1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://opensource.org/license/OSC-1.0
+text_retrieved: true
+verdict: created
+summary: Models the OSC License 1.0, which is the MIT licence translated into German and given a German-law liability
+  clause in place of the usual warranty disclaimer. The record follows MIT statement for statement. The clause texts
+  are quoted in German, the language of the text named in cc:legalcode.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, license id, SPDX id and IRI agree. dct:publisher is left out: the text names no steward.
+    dct:title is the SPDX name, which is English even though the licence text is not.'
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'dcmitype:Software only, following MIT: ''diese Software und der zugehoerigen Dokumentationsdateien''
+    is the German rendering of the MIT formula.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant is the MIT grant: ''wird hiermit kostenlos die Erlaubnis erteilt, ohne Einschraenkung
+    die Software zu verwenden, einschliesslich und ohne Einschraenkung der Rechte zur Nutzung, zum Kopieren, Aendern,
+    Zusammenfuehren, Veroeffentlichen, Verteilen, Unterlizenzieren und/oder Verkaufen von Kopien der Software''.
+    The record therefore carries reproduce, distribute, modify, derive, display, present, grant use (Unterlizenzieren),
+    commercial use, derivative works, modified works and the distribution fee (Verkaufen von Kopien).'
+  action: applied
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: No prohibition. The text has no trademark clause, no endorsement clause and no patent clause, exactly
+    like MIT, whose record also carries none.
+  action: none
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:Attribution and cc:Notice hang off distribute, modify and derive: ''Der obige Urheberrechtshinweis
+    und dieser Genehmigungshinweis muessen in allen Kopien oder wesentlichen Teilen der Software enthalten sein.''
+    Nothing is license-wide.'
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:LiabilityLimitation
+  description: The text has no warranty disclaimer. In its place stands a graduated German liability clause, which
+    is quoted verbatim into dalicc:LiabilityLimitation; dalicc:WarrantyDisclaimer is absent. The grant and the notice
+    condition are quoted in dalicc:additionalClauses so the German wording of the operative terms is on the record.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: cc:jurisdiction
+  description: The liability clause is drafted for German law (Kardinalpflicht, the statutory limits on excluding
+    liability), but the text names no governing law and no territory for the grant, so cc:jurisdiction stays dalicc:worldwide
+    and the clause is quoted. Recorded so a reader does not mistake the silence for a choice.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'No vocabulary gap. The record carries no language property: the library has none, and dct:language
+    is not in the prefix block. Proposed for the consolidation pass: a dct:language triple on records whose legal
+    code is not English, which would also serve the CeCILL, LiLiQ and DL-DE records.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run with the 39 axioms of licensedata/dependencygraph/dg_default.ttl,
+    returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Deontically identical to MIT except that MIT''s record keeps warranty and liability in one dalicc:WarrantyDisclaimer
+    while this text has only a liability clause. A separate record is justified: the licence is a distinct SPDX
+    entry with its own liability regime, not a translation the library could point at MIT.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Jedem, der eine Kopie dieser Software und der zugehoerigen
+    Dokumentationsdateien erhaelt, wird hiermit kostenlos die Erlaubnis erteilt, ohne Einschraenkung die Software
+    zu verwenden, einschliesslich ... des Rechts zum Unterlizenzieren und/oder Verkaufen von Kopien der Software
+    ... unter den folgenden Bedingungen: Der obige Urheberrechtshinweis und dieser Genehmigungshinweis muessen in
+    allen Kopien enthalten sein." The permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because
+    the notice has to survive the relicensing.'
+  action: applied
+family: Reciprocal and source-available
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text, which is German. The quotations keep the German typographic quotation
+  marks around the defined term for Software and the umlauts of the source; no long dash appears in the text. There
+  is no English text of this licence to quote, so text_source and the clause language are both German.

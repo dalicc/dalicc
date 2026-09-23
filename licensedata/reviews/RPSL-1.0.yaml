@@ -1,0 +1,137 @@
+id: RPSL-1.0
+title: RealNetworks Public Source License v1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://helixcommunity.org/content/rpsl
+text_retrieved: true
+verdict: created
+summary: Models version 1.0 of the RealNetworks Public Source License, an Apple Public Source
+  License descendant whose duties are triggered by External Deployment rather than by distribution.
+  The record follows APSL-2.0 for its shape and OSL-3.0 for whole-work reciprocity. The External
+  Deployment definition is quoted, because the vocabulary has no term for a network-use trigger.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, license id, SPDX id and IRI agree. cc:legalcode is the licensor's own
+    URL, the first seeAlso of the SPDX entry; dct:source is the OSI page. dct:publisher is 'RealNetworks,
+    Inc.'
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only, following APSL-2.0.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 2.1 grants the right to ''reproduce, display, perform, modify and Deploy
+    Covered Code'' and 2.3 a patent licence ''to make, use, sell, offer for sale and import the
+    Covered Code''. The record carries reproduce, distribute, modify, derive, display, present,
+    commercial use, derivative works, modified works and dalicc:patentGrant. odrl:grantUse is
+    not written although Deploy includes sublicensing, for the same reason as in the RPL records:
+    the composer treats it as contradicting the share-alike duty.'
+  action: applied
+- rubric: 3
+  severity: minor
+  field: dalicc:chargeDistributionFee
+  description: 'No distribution-fee permission: section 4.1 requires a Derivative Work to be ''licensed
+    as a whole at no charge to all third parties under the terms of this License''. Section 6,
+    which lets a licensee charge for warranty and support, is carried as dalicc:WarrantyOrLiabilityAcceptance
+    instead.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote for section 5.1, dalicc:addLimitation for 2.1(b) ('You may not offer
+    or impose any terms on such Source Code that alter or restrict this License or the recipients'
+    rights hereunder'), dalicc:patentRetaliationTermination for 11.1(c) and (d), and dalicc:ChangeLicense
+    for 4.1.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:ShareAlike is license-wide: ''You must cause any Derivative Work that you distribute,
+    publish or Externally Deploy ... to be licensed as a whole at no charge to all third parties
+    under the terms of this License and no other license except as provided in Section 4.2.''
+    cc:SourceCode, cc:Attribution, cc:Notice and dalicc:addStatement (the Exhibit A notice that
+    must be duplicated in each modified file, and the Object Code Notice) hang off distribute,
+    modify and derive; dalicc:modificationNotice is added to modify and derive.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyOrLiabilityAcceptance
+  description: Sections 8 and 9 are quoted verbatim into dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation,
+    section 6 into dalicc:WarrantyOrLiabilityAcceptance. Six further clauses are quoted in dalicc:additionalClauses,
+    among them the External Deployment definition, the twelve-month source availability duty,
+    the compatible-source-licence rule of 4.2, the termination grounds of 11.1 and the governing
+    law.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The licence is triggered by deployment or by serving the work over a network,
+    not only by distribution. The vocabulary has no term for that trigger, so the definition is
+    quoted in dalicc:additionalClauses and the source-code duty is attached to distribute, modify
+    and derive. Proposed term: dalicc:networkUseTrigger. Text: ''"Externally Deploy" means to
+    Deploy the Covered Code in any way that may be accessed or used by anyone other than You,
+    used to provide any services to anyone other than You, or used in any way to deliver any content
+    to anyone other than You.'''
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The source-code duty carries a deadline and a minimum availability period. cc:SourceCode
+    cannot hold a period, so the clause is quoted in dalicc:additionalClauses. Proposed term:
+    dalicc:sourcePublicationPeriod as a literal qualifier on a cc:SourceCode duty. Text: section
+    2.1(d), under which the source of Externally Deployed Modifications must stay public ''for
+    as long as you Deploy the Covered Code or twelve (12) months from the date of initial Deployment,
+    whichever is longer''.'
+  action: none
+- rubric: 7
+  severity: gap
+  field: cc:jurisdiction
+  description: 'The grant itself is worldwide, so cc:jurisdiction stays dalicc:worldwide; only
+    the governing law is national. The vocabulary has no property for a governing law that is
+    separate from the territory of the grant, so the clause is quoted in dalicc:additionalClauses.
+    Proposed term: dalicc:governingLaw. Text: ''This License shall be governed by the laws of
+    the United States and the State of Washington.'' (section 12.8)'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Automatic termination on breach has no property that a record can carry: dalicc:terminationOnBreach
+    is a policy quality with no predicate. The clause is quoted in dalicc:additionalClauses. Proposed
+    term: dalicc:terminatesOnBreach as a boolean property on odrl:Set, with the cure period as
+    a literal. Text: ''automatically without notice from Licensor if You fail to comply with any
+    term(s) of this License and fail to cure such breach within 30 days of becoming aware of such
+    breach'' (section 11.1(a)).'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Section 4.2 lists the licences a module may carry inside a larger Derivative Work.
+    The vocabulary has no term for a compatibility list; the clause is quoted. Proposed term:
+    dalicc:compatibleLicenseTest.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run with the 39 axioms of licensedata/dependencygraph/dg_default.ttl,
+    returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'RPSL-1.0 and Watcom-1.0 are both Apple Public Source License descendants and share
+    whole sections word for word: the definition of Deploy, the additional terms clause, the no-warranty
+    section and the termination grounds. They differ in reciprocity scope: RPSL binds the whole
+    Derivative Work, Watcom binds only the Source Code and lets object code go out under another
+    agreement.'
+  action: none
+family: Reciprocal and source-available
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. Exhibit C, which names the licensor's trademark policy,
+  was not reachable from the text and is not quoted; the trademark bar of section 5.1 is quoted
+  in its place.

@@ -1,0 +1,101 @@
+id: PolyForm-Strict-1.0.0
+title: PolyForm Strict License 1.0.0
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://scancode-licensedb.aboutcode.org/polyform-strict-1.0.0.LICENSE
+text_retrieved: true
+verdict: created
+summary: The record models the PolyForm Strict License 1.0.0, the narrowest of the PolyForm set. The permitted purposes
+  are the noncommercial ones, and the copyright licence expressly stops short of distribution and of changes or new works,
+  so the licensee may run and read the software and nothing else. It is not an open source licence.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, record identifier and IRI local name agree. The triple is left out: the SPDX list does not carry
+    this licence and no identifier is invented. cc:legalcode and dct:source are the URL the licence text gives for itself.'
+  action: applied
+- rubric: 1
+  severity: minor
+  field: dct:title
+  description: The published text heads itself 'Polyform Strict License 1.0.0' with a small f, while the project and the
+    other three texts write 'PolyForm'. dct:title uses the project's spelling and the text's spelling is carried as a dct:alternative,
+    so a search for either finds the record.
+  action: applied
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The publisher's page for this licence answered with an HTTP 404 when the text was fetched, so the text quoted
+    is the copy held by ScanCode LicenseDB, whose URL is in text_source.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only, the same as the other PolyForm records.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'One grant, cut short by its own words: ''The licensor grants you a copyright license for the software to
+    do everything you might do with the software that would otherwise infringe the licensor''s copyright in it for any permitted
+    purpose, other than distributing the software or making changes or new works based on the software.'' What is left is
+    odrl:reproduce, odrl:display and odrl:present, plus dalicc:patentGrant for the patent licence, which this text keeps.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'odrl:distribute, odrl:modify, odrl:derive, cc:DerivativeWorks and dalicc:ModifiedWorks are prohibited, because
+    the grant carves them out by name and ''These terms do not imply any other licenses.'' cc:CommercialUse is prohibited
+    for the same reason as in PolyForm-Noncommercial-1.0.0: the permitted purposes are exhaustively noncommercial. dalicc:sublicense,
+    dalicc:ChangeLicense and dalicc:patentRetaliationTermination follow the other PolyForm records.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The record carries no duty. This text has no Notices section at all, because a licensee who may not distribute
+    has nobody to pass a notice to. That is the one place where the PolyForm skeleton loses a whole section rather than
+    swapping the permitted-purpose clause. Family rule 6, which expects every record to carry an attribution or a notice
+    duty, therefore reports this record. The report is correct and the record is correct: the licence has no such clause,
+    and the only other records in that position are a public domain dedication and a research-use licence.'
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: The No Liability sentence is quoted whole into dalicc:WarrantyDisclaimer, with the emphasis asterisks dropped.
+    Ten further clauses are quoted in dalicc:additionalClauses.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'dalicc:terminatesOnBreach is true and dalicc:curePeriod is ''32 days'', which is the unusual figure the
+    Violations section gives: ''The first time you are notified in writing that you have violated any of these terms ...
+    your licenses can nonetheless continue if you come into full compliance with these terms, and take practical steps to
+    correct past violations, within 32 days of receiving notice.'' The cure is available once only. cc:jurisdiction stays
+    dalicc:worldwide and the text names no governing law.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:fieldOfUseRestriction
+  description: 'As in PolyForm-Noncommercial-1.0.0, the permitted-purpose mechanism has no term and dalicc:fieldOfUseRestriction
+    names the field in a literal. Proposed term: dalicc:permittedPurpose.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run against licensedata/dependencygraph/dg_default.ttl, returned
+    no conflicts. Prohibiting odrl:distribute, odrl:modify and odrl:derive while permitting odrl:reproduce raises nothing,
+    because none of the three is a special case of reproduction in the dependency graph.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Against PolyForm-Noncommercial-1.0.0 this record keeps the same permitted purposes and the same patent terms
+    and differs in the grant: five permissions become prohibitions and the three notice duties disappear with the Notices
+    section. It is the only record in the library that prohibits odrl:distribute, odrl:modify and odrl:derive together.'
+  action: none
+family: Source-available licences and riders
+port_of: null
+variant_kind: null
+variant_of: null
+notes: A licensee under this text may run and read the software but may not pass it on, so a compatibility question about
+  it is usually answered by the fact that there is no distribution right at all.

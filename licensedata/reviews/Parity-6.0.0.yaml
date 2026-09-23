@@ -1,0 +1,100 @@
+id: Parity-6.0.0
+title: The Parity Public License 6.0.0
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Parity-6.0.0.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models the Parity Public License 6.0.0, a strong copyleft licence written in plain language. You may
+  do everything the contributor''s copyright and patents would otherwise forbid, on condition that you contribute back:
+  publish the source of your changes, of anything you combine the software with, and of anything you develop, deploy, monitor
+  or run with it. That reach is wider than the work itself, which is why cc:ShareAlike and cc:SourceCode are licence-wide
+  duties here.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, record identifier, SPDX identifier and IRI local name agree. cc:legalcode points at the publisher''s
+    page for version 6.0.0 and dct:source at the SPDX entry. dct:publisher is left out: the Contributor and Source Code
+    lines at the head of the text are per-project fill-ins, not a steward.'
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only. The text speaks of software and source code throughout.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: '''If you follow the rules below, you may do everything with this software that would otherwise infringe
+    either the contributor''s copyright in it, any patent claim the contributor can license, or both.'' Everything gives
+    reproduce, distribute, modify, derive, display, present, cc:DerivativeWorks, dalicc:ModifiedWorks and cc:CommercialUse,
+    and the patent half gives dalicc:patentGrant.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:ChangeLicense, because rule 4 makes the licence travel with every copy in any form and nothing in
+    the text lets a licensee put this software under other terms. dalicc:patentRetaliationTermination for rule 5, 'Do not
+    make any legal claim against anyone accusing this software, with or without changes, alone or with other software, of
+    infringing any patent claim.' dalicc:promote is absent because the text has no trademark or endorsement clause at all.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:ShareAlike and cc:SourceCode are licence-wide, because rules 1 to 3 reach past distribution: ''Contribute
+    software you develop, deploy, monitor, or run with this software'', and contributing means ''publish all its source
+    code, in the preferred form for making changes, through a freely accessible distribution system widely used for similar
+    source code''. cc:Notice and cc:Attribution hang on odrl:distribute, odrl:modify and odrl:derive for rule 4, which asks
+    for the text of the licence and for the contributor and source code lines.'
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: The last paragraph disclaims warranty and liability in one sentence, so the whole sentence goes into dalicc:WarrantyDisclaimer
+    and dalicc:LiabilityLimitation is left out, as in CAL-1.0. Four further clauses are quoted in dalicc:additionalClauses.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The published text wraps that sentence in a pair of double asterisks, which is the markup the document uses
+    for bold. The asterisks are dropped from the quoted literal; nothing else in the sentence is changed.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'dalicc:terminatesOnBreach is true and dalicc:curePeriod is ''30 days'': the rules are conditions of the
+    licence, and ''You are excused for unknowingly breaking 1, 2, or 3 if you contribute as required, or stop doing anything
+    requiring this license, within 30 days of learning you broke the rule.'' cc:jurisdiction is dalicc:worldwide; the text
+    names no jurisdiction and no governing law.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:compatibleLicenseTest
+  description: 'The licence states a test for the licence of the software you contribute, ''terms as permissive as this
+    license'', which dalicc:compatibleLicenseTest carries. The annotation normally sits beside a dalicc:ChangeLicense permission,
+    and here dalicc:ChangeLicense is prohibited, because the test governs the other software you must publish and not this
+    software. Proposed term: dalicc:outboundLicenseTest, so that a record can say which licence the material a copyleft
+    duty reaches may carry, separately from whether this work may be relicensed.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run against licensedata/dependencygraph/dg_default.ttl, returned
+    no conflicts. A licence-wide cc:ShareAlike duty beside a prohibited dalicc:ChangeLicense is the whole-work copyleft
+    shape the check expects.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: Its nearest sibling is CAL-1.0, which also carries a licence-wide cc:ShareAlike duty and a source-code condition
+    reaching past distribution. The difference is that CAL-1.0 permits dalicc:ChangeLicense with a dalicc:compliantLicense
+    duty and this record prohibits it, and that Parity states its reciprocity as five rules rather than as conditions on
+    named acts.
+  action: none
+family: Source-available licences and riders
+port_of: null
+variant_kind: null
+variant_of: null
+notes: The record models the template. The Contributor and Source Code lines at the head of the text are filled in per project
+  and are not part of the terms.

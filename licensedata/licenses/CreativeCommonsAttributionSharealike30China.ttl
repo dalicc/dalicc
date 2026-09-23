@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 3.0 China"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 3.0 China"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike30China
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttributionSharealike30China a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -25,18 +26,27 @@ dalicclib:CreativeCommonsAttributionSharealike30China a odrl:Set ;
     dalicc:WarrantyDisclaimer """除非本许可的当事人相互以书面的方式做出相反约定，且在相关法律所允许的最大范围内，否则许可人按其现状提供本作品，对本作品不作任何明示或者默示、依照法律或者其他规定的陈述或担保，包括但是不限于任何有关可否商业性使用、是否符合特定的目的、不具有潜在的或者其他缺陷、准确性或者不存在不论能否被发现的错误的担保。有些司法管辖区不允许排除前述默示保证，因此这些排除性规定并不一定适用于您。
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "3.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike30China/versions> ;
     dct:alternative "Attribution ShareAlike 3.0 China",
         "Attribution-ShareAlike 3.0",
         "Attribution-ShareAlike 3.0 China",
         "CC BY SA 3.0",
-        "CC BY SA 3.0 cn",
+        "CC BY SA 3.0 CN",
         "CC BY-SA 3.0",
-        "CC BY-SA 3.0 cn",
+        "CC BY-SA 3.0 CN",
         "CC-BY-SA 3.0",
-        "CC-BY-SA 3.0 cn",
+        "CC-BY-SA 3.0 CN",
         "Creative Commons BY-SA 3.0",
-        "Creative Commons BY-SA 3.0 cn" ;
+        "Creative Commons BY-SA 3.0 CN" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/licenses/by-sa/3.0/cn/> ;
     dct:title "Creative Commons Attribution-ShareAlike 3.0 China"@en ;
     odrl:duty [ a odrl:Duty ;
             odrl:action cc:ShareAlike ] ;
@@ -79,7 +89,9 @@ dalicclib:CreativeCommonsAttributionSharealike30China a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cn.png> ;

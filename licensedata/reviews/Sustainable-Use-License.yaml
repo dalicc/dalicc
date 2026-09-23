@@ -1,0 +1,101 @@
+id: Sustainable-Use-License
+title: Sustainable Use License
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/n8n-io/n8n/master/LICENSE.md
+text_retrieved: true
+verdict: created
+summary: 'The record models the Sustainable Use License, version 1.0, written on the same skeleton as the Elastic License
+  2.0. The grant is the same but the limitation is different in kind: you may use or modify the software only for your own
+  internal business purposes or for non-commercial or personal use, and you may pass it on only free of charge and for non-commercial
+  purposes. It is not an open source licence, and the file that publishes it also carves out the source files marked as
+  enterprise code.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, record identifier and IRI local name agree. The triple is left out: the SPDX list does not carry
+    this licence and no identifier is invented. cc:legalcode points at the file the publisher ships and dct:source at the
+    same file''s page.'
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only. The text speaks of source code files and of the software.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: '''The licensor grants you a non-exclusive, royalty-free, worldwide, non-sublicensable, non-transferable
+    license to use, copy, distribute, make available, and prepare derivative works of the software.'' That gives odrl:reproduce,
+    odrl:distribute, odrl:modify, odrl:derive, cc:DerivativeWorks and dalicc:ModifiedWorks, and the Patents section gives
+    dalicc:patentGrant.'
+  action: applied
+- rubric: 3
+  severity: minor
+  field: cc:CommercialUse
+  description: cc:CommercialUse is left unstated. The Limitations section allows use 'for your own internal business purposes',
+    which a company may well do to earn money, and at the same time allows passing the software on only 'free of charge
+    for non-commercial purposes'. The text draws its line around the act rather than around the character of the use, so
+    the line is carried by the two fee prohibitions and by dalicc:fieldOfUseRestriction, and the clause is quoted.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'dalicc:chargeDistributionFee and dalicc:chargeLicenseFee for ''You may distribute the software or provide
+    it to others only if you do so free of charge''. dalicc:sublicense for ''non-sublicensable''. dalicc:ChangeLicense for
+    ''These terms do not imply any licenses other than those expressly granted in these terms'', read with the Notices section.
+    dalicc:promote because no trademark rights are granted. dalicc:patentRetaliationTermination for the written-claim sentence.
+    dalicc:exemptedMaterial for the carve-out at the head of the file: ''Source code files that contain ".ee." in their
+    filename or ".ee" in their dirname are NOT licensed under the Sustainable Use License.'' That is the same use of the
+    term as on OGL-UK-2.0 and NLOD-2.0, material outside the grant.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Notice and cc:ShareAlike on odrl:distribute for 'You must ensure that anyone who gets a copy of any part
+    of the software from you also gets a copy of these terms', with dalicc:modificationNotice added on odrl:modify and odrl:derive
+    for the prominent-notice sentence.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: The No Liability section is one sentence covering warranty and liability, quoted whole into dalicc:WarrantyDisclaimer
+    as in CAL-1.0 and Elastic-2.0. Eight further clauses are quoted in dalicc:additionalClauses, including the carve-out
+    paragraphs that open the file.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: dalicc:terminatesOnBreach is true and dalicc:curePeriod is '30 days'. cc:jurisdiction stays dalicc:worldwide
+    and the text names no governing law.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:fieldOfUseRestriction
+  description: '''Your own internal business purposes'' has no term. dalicc:fieldOfUseRestriction is the nearest literal
+    and the clause is quoted. Proposed term: dalicc:internalUseOnly, a duty action for a licence that confines the licensee
+    to use inside its own organization, which several source-available texts need.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run against licensedata/dependencygraph/dg_default.ttl, returned
+    no conflicts. Prohibiting both fee actions raises nothing, because neither odrl:sell nor odrl:commercialize is permitted
+    in this record.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Against Elastic-2.0 this record keeps the grant, the patent terms, the notice duties and the termination
+    clause word for word, and differs in the limitation: two fee prohibitions and a field-of-use restriction here, a hosted-service
+    bar and a licence-key clause there. It is the only record in this set that carries dalicc:exemptedMaterial.'
+  action: none
+family: Source-available licences and riders
+port_of: null
+variant_kind: null
+variant_of: null
+notes: The file that publishes the licence is a project's own LICENSE file and starts with three paragraphs about which
+  parts of that project the licence covers. Those paragraphs are quoted because the carve-out they make is part of what
+  a reader gets, but they are the project's words rather than the licence's, and another project using the same licence
+  would not have them.

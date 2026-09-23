@@ -1,0 +1,204 @@
+id: CreativeCommonsAttributionSharealike20Austria
+title: Creative Commons Attribution-ShareAlike 2.0 Austria
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by-sa/2.0/at/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the BY-SA element set of the Creative Commons 2.0 port for Austria and it
+  does so correctly: the ShareAlike element carries a cc:ShareAlike duty, the attribution and notice duties
+  hang on the acts that make the work public, and the permissions, prohibitions and duties all follow
+  from the grant and the restrictions sections of the port. The legal text was read in German. Corrections
+  applied: dct:source, odrl:target dcmitype:Dataset. What remains are proposals that touch the whole Creative
+  Commons family rather than this record, chiefly the express prohibition of sublicensing.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source. The legal code page states the canonical
+    URL of the licence, https://creativecommons.org/licenses/by-sa/2.0/at/, and the six 4.0 International
+    parents carry exactly that pair, legal code plus deed. Added.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by-sa/2.0/at/> ;
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: 'The record targeted dalicc:CreativeWork only, while the 4.0 International parent CC-BY-SA-4.0
+    targets dalicc:CreativeWork and dcmitype:Dataset. This port licenses database rights in its own words,
+    so the asset type is text supported rather than merely plausible. Ziffer 1 counts a database among
+    the objects of a related right: a "verwandtes Schutzrecht" is the right in a protected subject matter
+    other than a work, "zum Beispiel einem nachgelassenen Werk, einem Lichtbild, einer Datenbank, einem
+    Schalltraeger, einer Rundfunksendung, einem Laufbild oder einer Darbietung eines ausuebenden Kuenstlers",
+    and the Schutzgegenstand offered under the licence is the work, the collection or the object of such
+    a related right. Ziffer 4 and Ziffer 7 name "eine Datenbank" next to an adaptation and a collection.
+    Added dcmitype:Dataset.'
+  action: applied
+  change: |-
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset ] ;
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'Every modelled permission is supported by the grant. Ziffer 3 grants a "unentgeltliche,
+    raeumlich und zeitlich (fuer die Dauer des Urheberrechts oder verwandten Schutzrechts) unbeschraenkte,
+    nicht-ausschliessliche Nutzungsbewilligung", a free non exclusive permission of use unlimited in place
+    and time. It covers exploitation in physical form (reproduction and distribution), communication to
+    the public in non physical form (broadcasting, rebroadcasting, recitation, performance, presentation
+    and making available), and fixation on image or sound carriers, and translation and other adaptation
+    of the protected subject matter and the publication and exploitation of the adaptation (Ziffer 3.d).
+    The record models this as odrl:reproduce, odrl:distribute, odrl:display, odrl:present, odrl:derive
+    and cc:DerivativeWorks, plus odrl:modify and dalicc:ModifiedWorks, which rest on the technical modification
+    sentence of the grant: Ziffer 3: "Die genannte Nutzungsbewilligung beinhaltet die Befugnis, solche
+    Veraenderungen an dem Werk vorzunehmen, die technisch erforderlich sind, um die Nutzungsbewilligung
+    fuer alle Nutzungsarten wahrzunehmen." cc:CommercialUse is permitted, which follows from a grant that
+    puts no purpose limit on the rights.'
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The licence forbids sublicensing and the record does not say so. Ziffer 4: "Sie duerfen
+    den Schutzgegenstand nicht unterlizenzieren." The vocabulary already has dalicc:sublicense, but no
+    record in the library uses it and its skos:note says so, and the same sentence stands in every Creative
+    Commons 2.0 and 3.0 record, so adding it to this batch alone would split the compatibility behaviour
+    of one family. Proposed as one library wide correction, together with an update of the vocabulary
+    note.'
+  action: proposed
+  change: |-
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: Ziffer 4: "Sie duerfen
+    keine Vertragsbedingungen anbieten oder fordern, die die Bedingungen dieser Lizenz oder die durch
+    sie gewaehrten Befugnisse aendern oder beschraenken." dalicc:promote is prohibited, which rests on
+    the reservation of all rights not expressly granted and the Creative Commons trademark paragraph of
+    the notice around the licence body, not a clause of the licence itself'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: The attribution and notice duties are present and supported. Ziffer 4 requires a copy or
+    the full URI of the licence with every copy, distribution or communication to the public, and that
+    all notices referring to the licence and to the exclusion of warranty and liability be left unchanged.
+    Credit is owed to the "Urheber oder Rechtsinhaber", the author or the rights holder, rather than to
+    an "original author"; an adaptation must state in which form the protected subject matter entered
+    it; and the notice must be at least as prominent as comparable notices "bei einer Bearbeitung, einer
+    Datenbank oder einem Sammelwerk". Ziffer 4 requires a derivative to say in which form the protected
+    subject matter entered it ("Bei einer Bearbeitung ist ein Hinweis darauf aufzufuehren, in welcher
+    Form der Schutzgegenstand in die Bearbeitung eingegangen ist"). The duties hang on odrl:distribute,
+    odrl:modify and odrl:derive, which matches the licence, since they are triggered by making the work
+    public rather than by private use. The cc:ShareAlike duty is carried at the level of the odrl:Set,
+    as in the parent CC-BY-SA-4.0.
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The share alike clause of this port is wider than a flat prohibition of relicensing. Ziffer
+    4: "Sie duerfen eine Bearbeitung ausschliesslich unter den Bedingungen dieser Lizenz, einer spaeteren
+    Version dieser Lizenz mit denselben Lizenzelementen wie diese Lizenz oder einer Creative Commons iCommons
+    Lizenz, die dieselben Lizenzelemente wie diese Lizenz enthaelt, vervielfaeltigen, verbreiten oder
+    im Sinne von Ziffer 3.b. dieses Vertrags oeffentlich wiedergeben." The record expresses it as a cc:ShareAlike
+    duty plus a dalicc:ChangeLicense prohibition, which cannot say that a later version of the same licence,
+    or another jurisdiction port with the same licence elements, is an acceptable outgoing licence. The
+    4.0 International parent CC-BY-SA-4.0 has the same limitation, and the consistency check would report
+    a conflict if dalicc:ChangeLicense were permitted next to cc:ShareAlike, so the present modelling
+    is the only one the checker allows.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: 'dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation are quoted from the German text
+    of this port and not from the English unported version, and each field holds its own clause. Ziffer
+    5 (Gewaehrleistung) and Ziffer 6 (Haftung) are separate sections of the legal code and the record
+    keeps them apart: dalicc:WarrantyDisclaimer holds Ziffer 5 and dalicc:LiabilityLimitation holds Ziffer
+    6, both quoted verbatim in German. Ziffer 6 carries the Austrian consumer protection carve out for
+    dealings between businesses and consumers under the Konsumentenschutzgesetz, which no other port in
+    the library has.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: 'The record has no dalicc:additionalClauses, so the clauses the ODRL policy cannot carry
+    stay invisible: the reservation of unnamed rights, the downstream offer to recipients, the severability,
+    waiver and entire agreement paragraphs and the termination rule. Ziffer 7 ends the licence automatically
+    on any breach and keeps Ziffern 1, 2, 5, 6, 7 and 8 alive; Ziffer 8 makes the licensor offer every
+    recipient of the work, the adaptation or the collection a licence on the same terms. The whole Creative
+    Commons family is modelled this way.'
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:Austria, which matches the country of the legal code URL
+    https://creativecommons.org/licenses/by-sa/2.0/at/legalcode, and dalicc:validityType is dalicc:perpetual,
+    which matches a grant made for the duration of copyright. Ziffer 8: "Auf diesen Lizenzvertrag findet
+    das Recht der Bundesrepublik Oesterreich Anwendung." Note that cc:jurisdiction records the legal home
+    of the port, not a territorial limit: the grant itself is unlimited in place.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The licence forbids technological protection measures and the vocabulary has no term for
+    it. Ziffer 4: "Sie duerfen den Schutzgegenstand mit keinen technischen Schutzmassnahmen versehen,
+    die den Zugang oder den Gebrauch des Schutzgegenstandes in einer Weise kontrollieren, die mit den
+    Bedingungen dieser Lizenz im Widerspruch stehen." Proposed term: dalicc:applyTechnicalProtectionMeasures,
+    an odrl:Action to be used as an odrl:Prohibition. Not modelled, because bending an existing term would
+    be worse than the gap.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The automatic termination of the licence on breach, the survival of the named sections
+    and the licence the licensor offers to every downstream recipient have no vocabulary terms. Ziffer
+    7 ends the licence automatically on any breach and keeps Ziffern 1, 2, 5, 6, 7 and 8 alive; Ziffer
+    8 makes the licensor offer every recipient of the work, the adaptation or the collection a licence
+    on the same terms. Proposed terms: dalicc:terminationOnBreach and dalicc:downstreamOffer.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Ziffer 4 keeps the grant inside the personality rights of authors and performers: the
+    permission "findet ihre gesetzliche Grenze in den Persoenlichkeitsrechten sowie im Schutz der berechtigten
+    geistigen Interessen der Urheber und ausuebenden Kuenstler, die nicht dadurch gefaehrdet werden duerfen,
+    dass ein Schutzgegenstand ueber das gesetzlich zulaessige Mass hinaus beeintraechtigt wird". The clause
+    restricts the licensee. Not expressible with the present vocabulary. Proposed terms: dalicc:moralRightsRestriction
+    for the ports that bind the licensee and dalicc:moralRightsNonAssertion for the ports that bind the
+    licensor.'
+  action: none
+- rubric: 8
+  severity: info
+  field: record
+  description: 'The Austrian 2.0 port carries no collecting society clause at all: the word "Verwertungsgesellschaft"
+    appears in none of its six legal texts, and no royalty is reserved or waived anywhere in the licence.
+    The Australian, South African and Polish 2.0 ports of the same version do carry such a clause, and
+    the German collecting society clause arrived only with the 3.0 port, so this is a real divergence
+    inside one version.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the forty one axioms of licensedata/dependencygraph/dg_default.ttl
+    reports no conflict, before and after the corrections, and the pre review baseline listed none for
+    this record either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of Creative Commons Attribution-ShareAlike 4.0 International. The deontic model of
+    this record is identical to the parent, statement for statement: the same permissions with the same
+    duties, the same prohibitions and the same set level duties, and after the correction above the same
+    odrl:target as well. What differs is the jurisdiction, the language of the legal text, the clause
+    texts, and the version specific clauses of 2.0 that the model does not carry, chiefly the express
+    prohibition of sublicensing, the technological measures clause and the royalty collection arrangements.
+    The compatibility checker cannot tell this record from any other record of the BY-SA element set,
+    across all three versions and every jurisdiction the library holds.'
+  action: none
+family: 'Creative Commons 2.0 port: Austria (AT)'
+port_of: CC-BY-SA-4.0
+variant_kind: jurisdiction-port
+notes: The parent is the 4.0 International record of the same element set, since the library holds no
+  unported and no International 2.0 record; the version difference, 2.0 against 4.0, is therefore part
+  of the port relation and not only the jurisdiction. The SPDX licence list defines no identifier for
+  this port, so the record carries no spdx:licenseId and none was invented. Nothing in this review is
+  legal advice.

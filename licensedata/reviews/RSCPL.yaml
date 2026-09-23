@@ -1,0 +1,96 @@
+id: RSCPL
+title: Ricoh Source Code Public License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://opensource.org/license/RSCPL'
+text_retrieved: true
+verdict: created
+summary: >-
+  Models the Ricoh Source Code Public License, an MPL 1.1 derivative with a trademark section
+  of its own that adds a BSD style advertising acknowledgement to the MPL obligations. Nothing
+  here is legal advice.
+findings:
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 2.1(a) grants a licence "to use, reproduce, modify, create derivative works of,
+    display, perform, sublicense and distribute the Original Code (or portions thereof) with
+    or without Modifications, or as part of a Larger Work", so dalicc:sublicense is a
+    permission, and 2.1(b) grants a patent licence, so dalicc:patentGrant is a permission.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    Section 5.2 states that the names "Ricoh," "Ricoh Silicon Valley," and "RSV" must not be
+    used to endorse or promote Contributor Versions or Larger Works without prior written
+    permission, and section 5.3 bars the word "Ricoh" from product names; both are modelled as
+    a dalicc:promote prohibition and quoted. Section 8.2 is a patent retaliation clause,
+    modelled as dalicc:patentRetaliationTermination.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    The reciprocity of this licence is file level, not whole work: the Source Code form of the
+    covered code must stay under this licence, while a Larger Work combining it with other
+    code may be distributed as a single product. The record therefore attaches cc:ShareAlike
+    to odrl:distribute, odrl:modify and odrl:derive rather than to the odrl:Set, which is the
+    shape the existing CommonDevelopmentAndDistributionLicense10 record uses. cc:SourceCode,
+    cc:Notice and cc:Attribution hang off the same three acts, and dalicc:modificationNotice
+    off odrl:modify and odrl:derive.
+  action: applied
+- rubric: 6
+  severity: major
+  field: 'dalicc:PromotionSpecification'
+  description: >-
+    Section 5.1 requires that "All advertising materials mentioning features or use of the
+    Governed Code must display the following acknowledgement: This product includes software
+    developed by Ricoh Silicon Valley, Inc." The library keeps the exact wording of such an
+    acknowledgement in dalicc:PromotionSpecification, as the PhpLicense30 record does.
+    Sections 3.6, 5.2, 5.3, 8 and 11 are quoted in dalicc:additionalClauses.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    Section 11 chooses California law and the Federal Courts of the Northern District of
+    California, while the grant in section 2.1 is worldwide. cc:jurisdiction stays
+    dalicc:worldwide and the clause is quoted.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The advertising acknowledgement of section 5.1 is an obligation, not a permission, but the
+    library has no duty action for it; BSD-4-Clause records the same clause in
+    dalicc:additionalClauses. Proposed term: dalicc:advertisingAcknowledgement, a duty action
+    attachable to odrl:distribute. Termination on breach has no property either (proposed
+    dalicc:terminatesOnBreach).
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the dependency graph dg_default
+    returned an empty conflict list. cc:ShareAlike is required and dalicc:ChangeLicense is
+    prohibited, which is the combination the check expects; asserting both cc:ShareAlike and a
+    dalicc:ChangeLicense permission would have been reported as a direct conflict.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Diffed against MPL-1.1. The only structural addition is the trademark section, which is
+    why this record carries dalicc:PromotionSpecification where the other members of the
+    family do not.
+  action: none
+family: Mozilla and CDDL
+port_of: null
+variant_kind: null
+notes: >-
+  The liability clause also excludes use in nuclear, aviation, mass transit and medical
+  applications and caps liability at five thousand dollars; both sentences are inside the
+  quoted dalicc:LiabilityLimitation. The spelling of the source ("NUCLER") is reproduced
+  verbatim.

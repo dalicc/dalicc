@@ -1,0 +1,104 @@
+id: PolyForm-Shield-1.0.0
+title: PolyForm Shield License 1.0.0
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://scancode-licensedb.aboutcode.org/polyform-shield-1.0.0.LICENSE
+text_retrieved: true
+verdict: created
+summary: 'The record models the PolyForm Shield License 1.0.0. It is the PolyForm skeleton with a noncompete section in
+  place of a noncommercial one: any purpose is permitted except providing a product that competes with the software or with
+  a product the licensor provides using the software. Four further sections say what competing means, what happens when
+  the licensor moves into your market, what happens when it leaves one, and who may enforce the clause after a sale of the
+  business.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, record identifier and IRI local name agree. The triple is left out: the SPDX list carries the
+    Noncommercial and Small Business PolyForm licences but not this one, and no identifier is invented. cc:legalcode and
+    dct:source are the URL the licence text gives for itself.'
+  action: applied
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The publisher's page for this licence answered with an HTTP 404 when the text was fetched, so the text quoted
+    is the copy held by ScanCode LicenseDB, whose URL is in text_source. cc:legalcode still points at the publisher's own
+    URL, which the licence text prints in its second line.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only, the same as the other PolyForm records.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The same three grants as PolyForm-Noncommercial-1.0.0, so the permission set is the same. cc:CommercialUse
+    is permitted: ''Any purpose is a permitted purpose, except for providing any product that competes with the software
+    or any product the licensor or any of its affiliates provides using the software.'''
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'dalicc:patentRetaliationTermination for ''If you make any written claim that the software infringes or contributes
+    to infringement of any patent, your patent license for the software granted under these terms ends immediately.'' dalicc:sublicense
+    and dalicc:ChangeLicense for ''These terms do not allow you to sublicense or transfer any of your licenses to anyone
+    else'', read with the Notices section, which makes the terms travel with every copy. dalicc:promote is absent: the licence
+    has no trademark or endorsement clause at all.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Notice, cc:Attribution and cc:ShareAlike on odrl:distribute, odrl:modify and odrl:derive, for the Notices
+    section, exactly as in PolyForm-Noncommercial-1.0.0.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: The No Liability sentence is quoted whole into dalicc:WarrantyDisclaimer, with the emphasis asterisks dropped.
+    Fifteen further clauses are quoted in dalicc:additionalClauses, including all five sections that build the noncompete.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'dalicc:terminatesOnBreach is true and dalicc:curePeriod is ''32 days'', which is the unusual figure the
+    Violations section gives: ''The first time you are notified in writing that you have violated any of these terms ...
+    your licenses can nonetheless continue if you come into full compliance with these terms, and take practical steps to
+    correct past violations, within 32 days of receiving notice.'' The cure is available once only. cc:jurisdiction stays
+    dalicc:worldwide and the text names no governing law.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:fieldOfUseRestriction
+  description: 'The noncompete has no term. dalicc:fieldOfUseRestriction names it in a literal and the five sections are
+    quoted. Proposed term: dalicc:competingProductRestriction, a rule action for providing a product that competes with
+    the licensed work or with the licensor''s own products, distinct from dalicc:competingServiceRestriction, which the
+    Elastic and Redis licences need for a hosted service.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The New Products section freezes a licensee on the versions available before the licensor brought its product
+    into competition: ''you may continue using versions of the software available under these terms beforehand to provide
+    your competing product, but not any later versions.'' Nothing in the vocabulary can express a grant that covers some
+    versions of a work and not others. Quoted. Proposed term: dalicc:versionScopedGrant.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run against licensedata/dependencygraph/dg_default.ttl, returned
+    no conflicts.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: Against PolyForm-Noncommercial-1.0.0 this record differs in one statement, cc:CommercialUse moving from prohibition
+    to permission, and in the permitted-purpose clauses. It has no spdx:licenseId, which the Noncommercial and Small Business
+    records do have.
+  action: none
+family: Source-available licences and riders
+port_of: null
+variant_kind: null
+variant_of: null
+notes: The Discontinued Products and Sales of Business sections turn on plain-text lines the licensor may ship with the
+  software, so two projects using the same licence text can be in different positions. The record cannot show those lines.

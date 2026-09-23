@@ -1,0 +1,77 @@
+id: GnuFreeDocumentationLicense
+title: GNU Free Documentation License version 1.3
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://www.gnu.org/licenses/fdl-1.3.html
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the Free Documentation License version 1.3 with the GNU copyleft shape: share-alike
+  license-wide, source-code, attribution, notice and modification-notice duties. Two things were wrong:
+  the license was said to forbid charging for distribution, which the text expressly allows, and the record
+  has no SPDX id. Three duty nodes use dct:source as an odrl:action, which is not an action at all.'
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: The title names version 1.3 and the fetched legal code is fdl-1.3. SPDX splits the license
+    into GFDL-1.3-only and GFDL-1.3-or-later; the record models no "or any later version" option, so the
+    "-only" id was added.
+  action: applied
+  change: |
+    spdx:licenseId "GFDL-1.3-only" ;
+- rubric: 3
+  severity: major
+  field: odrl:prohibition
+  description: 'Section 2 states: "you may accept compensation in exchange for copies". The record prohibited
+    dalicc:chargeDistributionFee, which contradicts the text and would make every paid documentation reprint
+    look unlicensed. Removed the prohibition and added the permission.'
+  action: applied
+  change: |
+    # removed
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    # added
+    odrl:permission [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: Three duty nodes carried "odrl:action dct:source". dct:source is a Dublin Core property,
+    not an action, so the dependency graph could not see it and the duty was invisible to the compatibility
+    checker. The three nodes are removed. Each of the three permissions already carries cc:SourceCode for
+    the same rule of section 3, so nothing the licence says was lost.
+  action: applied
+  change: |
+    # removed from the distribute, modify and derive duties
+    # odrl:action dct:source
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: The asset collection lists dcmitype:Software. The Free Documentation License governs manuals,
+    textbooks and other written documents; section 1 defines the "Document" as a "manual or other work,
+    in any medium". dcmitype:Text is the right type. Removing a target type changes faceted search results,
+    so it is proposed.
+  action: proposed
+  change: |
+    # remove dcmitype:Software from odrl:target, add
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Text ] ;
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'Section 2 states: "You may not use technical measures to obstruct or control the reading
+    or further copying of the copies you make or distribute." The Invariant Sections, Cover Texts and
+    Transparent Copy duties of sections 3 and 4 have no term either. Proposed terms: dalicc:antiTechnicalMeasures,
+    dalicc:invariantSections, dalicc:transparentCopy.'
+  action: none
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The stored disclaimer is the section 1 definition of what a Warranty Disclaimer is, not
+    a disclaimer given by this license. The Free Documentation License has no warranty clause of its own,
+    so the field is arguably empty rather than wrong.
+  action: none
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: version
+notes: Documentation license inside the GNU family. Not a software license despite the target type.

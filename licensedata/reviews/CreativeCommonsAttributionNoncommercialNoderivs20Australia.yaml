@@ -1,0 +1,199 @@
+id: CreativeCommonsAttributionNoncommercialNoderivs20Australia
+title: Creative Commons Attribution-NonCommercial-NoDerivatives 2.0 Australia
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by-nc-nd/2.0/au/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the BY-NC-ND element set of the Creative Commons 2.0 port for Australia and
+  it does so correctly: the NonCommercial element prohibits cc:CommercialUse, the NoDerivatives element
+  prohibits odrl:derive, the attribution and notice duties hang on the acts that make the work public.
+  The legal text was read in English and the permissions, prohibitions and duties all follow from the
+  grant and restriction sections of the port. Corrections applied: dct:source. What remains are proposals
+  that touch the whole Creative Commons family rather than this record: the express prohibition of sublicensing,
+  and the asset types.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source. The legal-code page states the canonical
+    URL of the licence, https://creativecommons.org/licenses/by-nc-nd/2.0/au/, and the six 4.0 International
+    parents carry exactly that pair (legal code plus deed). Added.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by-nc-nd/2.0/au/> ;
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: SPDX has no identifier for this port. The legal-code URL implies CC-BY-NC-ND-2.0-AU, which
+    the SPDX licence list does not define, so no identifier was invented. Of the thirty six records in
+    this batch only the German NonCommercial-ShareAlike port has an SPDX identifier.
+  action: none
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: The record targets dalicc:CreativeWork only, while the 4.0 International parent CC-BY-NC-ND-4.0
+    targets dalicc:CreativeWork and dcmitype:Dataset. Creative Commons licences are media neutral, and
+    this port grants the rights in all media and formats now known or later devised. Aligning the ports
+    with the parents is a single library wide decision covering every Creative Commons port, so it is
+    left as a proposal rather than applied in thirty six records alone.
+  action: proposed
+  change: |-
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ,
+                dcmitype:Dataset ] ;
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: Every modelled permission is supported by the grant. Section 3 grants a "worldwide, royalty-free,
+    non-exclusive, perpetual (for the duration of the applicable copyright) licence". The grant covers
+    reproduction, incorporation into collections, distribution, public display, public performance and
+    communication to the public, and no adaptation right, which the record models as odrl:reproduce, odrl:distribute,
+    odrl:display, odrl:present.
+  action: none
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: 'The record permits dalicc:chargeDistributionFee while prohibiting cc:CommercialUse. Section
+    4(b): "You may not exercise any of the rights granted to You in Section 3 above in any manner that
+    is primarily intended for or directed toward commercial advantage or private monetary compensation."
+    The vocabulary defines dalicc:chargeDistributionFee as a fee covering the act of providing the work
+    to a third party, so a pure cost recovery fee is arguable under the commercial advantage test of the
+    other five ports, but the statement sits uneasily next to the prohibition and the Japanese port has
+    no such test at all. The same statement is in the 4.0 International parent CC-BY-NC-ND-4.0 and in
+    all one hundred and forty five NonCommercial records of the library, so removing it is one library
+    wide decision, not a defect of this port.'
+  action: proposed
+  change: |-
+    remove:
+        odrl:permission [ a odrl:Permission ;
+                odrl:action dalicc:chargeDistributionFee ]
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: The record permits odrl:modify and dalicc:ModifiedWorks while prohibiting odrl:derive.
+    Section 3 of the NoDerivatives port omits the grant "to create and reproduce Derivative Works" that
+    the other element sets carry, and keeps only "the right to make such modifications as are technically
+    necessary to exercise the rights in other media and formats". The vocabulary defines dalicc:ModifiedWorks
+    as the counterpart of cc:DerivativeWorks for alterations that do not amount to a new derivative work,
+    so the pair is defensible for the technically necessary format changes the port does allow, but the
+    record does not say that the modification right stops there. The 4.0 International parent CC-BY-NC-ND-4.0
+    models it the same way, so any change belongs to the whole NoDerivatives family.
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The licence forbids sublicensing and the record does not say so. Section 4(a): "You may
+    not sublicense the Work." The vocabulary already has dalicc:sublicense, but it is used by no record
+    in the library and its skos:note says so, and the same sentence stands in every Creative Commons 2.0
+    and 3.0 record, so adding it to thirty six ports alone would split the compatibility behaviour of
+    one family. Proposed as one library wide correction, together with an update of the vocabulary note.'
+  action: proposed
+  change: |-
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: the licensee may offer
+    the work only under the terms of this licence and may not offer or impose terms that alter or restrict
+    it. dalicc:promote is prohibited, which rests on the reservation of all rights not expressly granted
+    and on the trademark paragraph of the Creative Commons notice, not on a clause of the licence body.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The attribution and notice duties are present and supported: the licence requires a copy
+    of, or the URI for, the licence with every copy, that all notices referring to the licence and the
+    warranty disclaimer be kept intact, and that credit be given to the author. Attribution is owed to
+    the "Original Author", with the title, the licensor URI and, for a derivative work, a credit identifying
+    the use made of the work. The duties hang on odrl:distribute, which matches the licence, since the
+    duties are triggered by making the work public rather than by private use.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation are quoted verbatim from the English
+    text of this port and not from the English unported version, and they match the disclaimer and the
+    limitation sections of the legal code.
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: The record has no dalicc:additionalClauses, so the clauses the ODRL policy cannot carry,
+    the reservation of unnamed rights, the downstream offer to recipients, the severability and entire
+    agreement paragraphs and the termination rule, are not visible in the record at all. The whole Creative
+    Commons family is modelled this way.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:Australia, which matches the country of the legal-code URL,
+    and dalicc:validityType is dalicc:perpetual, which matches the grant for the duration of copyright.
+    Section 8: "The construction, validity and performance of this Licence shall be governed by the laws
+    in force in New South Wales, Australia." Note that the jurisdiction field records the legal home of
+    the port, not a territorial limit on the grant: the grant itself is worldwide.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The licence forbids technological protection measures and the vocabulary has no term for
+    it. Section 4(a): "You may not publish, communicate to the public, distribute, publicly exhibit or
+    display, publicly perform, or publicly digitally perform the Work with any technological measures
+    that control access or use of the Work in a manner inconsistent with the terms of this Licence." Proposed
+    term: dalicc:applyTechnicalProtectionMeasures, an odrl:Action to be used as an odrl:Prohibition. Not
+    modelled, because bending an existing term would be worse than the gap.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The automatic termination of the licence on breach, and the survival of the definitions,
+    the disclaimer, the limitation of liability and the miscellaneous sections, have no vocabulary term.
+    Proposed term: dalicc:terminationOnBreach. The downstream offer to every recipient of the work has
+    none either. Proposed term: dalicc:downstreamOffer.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The port adds two moral-rights restrictions that the 4.0 International text does not carry
+    as separate clauses: "False attribution prohibited" (Section 4(e)) and "Prejudice to honour or reputation
+    prohibited" (Section 4(f)), both resting on the defined term "Moral rights law". Neither is expressible
+    with the present vocabulary.'
+  action: none
+- rubric: 8
+  severity: info
+  field: record
+  description: Sections 4(c) and 4(d) reserve to the licensor the exclusive right to collect performance,
+    mechanical and webcasting royalties, individually or through a collecting society (ASCAP, BMI, SESAC,
+    Harry Fox Agency, SoundExchange are named), where the use is primarily intended for or directed toward
+    commercial advantage. The Australian port keeps this reservation in every element set, including plain
+    Attribution, so even the BY record is not a full royalty waiver. The 4.0 International parent waives
+    the collection right instead. The reservation is not expressible with the present vocabulary.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the forty one axioms of licensedata/dependencygraph/dg_default.ttl
+    reports no conflict, before and after the corrections, and the pre-review baseline listed none for
+    this record either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International. After
+    the 4.0 parents were themselves corrected, the deontic model of this record is identical to the parent,
+    statement for statement, apart from odrl:target: the same permissions with the same duties, the same
+    prohibitions and the same set level duties. What differs is the jurisdiction, the language of the
+    legal text and the clause texts, and the version specific clauses of 2.0 that the model does not carry,
+    chiefly the express prohibition of sublicensing, the technological measures clause and the royalty
+    collection arrangements. The compatibility checker cannot tell this record from the other records
+    of the BY-NC-ND element set, across all three versions and every jurisdiction the library holds.'
+  action: none
+family: 'Creative Commons 2.0 port: Australia (AU)'
+port_of: CC-BY-NC-ND-4.0
+variant_kind: jurisdiction-port
+notes: 'The parent is the 4.0 International record of the same element set, since the library holds no
+  unported or International 2.0 record; the version difference, 2.0 against 4.0, is therefore part of
+  the port relation and not only the jurisdiction. The 2.0 text differs from 4.0 in substance as well:
+  it prohibits sublicensing expressly, it has no thirty day cure period for a breach, it has no sui generis
+  database rights clause, and it settles the royalty collection question per jurisdiction. None of that
+  is visible in the model. Nothing in this review is legal advice.'

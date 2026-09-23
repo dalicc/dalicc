@@ -1,0 +1,218 @@
+id: AttributionNoncommercial30Egypt
+title: Creative Commons Attribution-NonCommercial 3.0 Egypt
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by-nc/3.0/eg/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the BY-NC element set of the Creative Commons 3.0 port for Egypt and it does
+  so correctly: the NonCommercial element prohibits cc:CommercialUse, the attribution and notice duties
+  hang on the acts that make the work public. The legal text was read in Arabic and the permissions, prohibitions
+  and duties all follow from the grant and restriction sections of the port. Corrections applied: dct:source.
+  What remains are proposals that touch the whole Creative Commons family rather than this record: the
+  express prohibition of sublicensing, the asset types.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source. The legal-code page states the canonical
+    URL of the licence, https://creativecommons.org/licenses/by-nc/3.0/eg/, and the six 4.0 International
+    parents carry exactly that pair (legal code plus deed). Added.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by-nc/3.0/eg/> ;
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'SPDX has no identifier for this port. The legal-code URL implies CC-BY-NC-3.0-EG, which
+    the SPDX licence list does not define: of the ported 3.0 licences SPDX knows only the Austrian, Australian,
+    German, Dutch, United States and IGO ones. No identifier was invented, and none of the forty two records
+    in this batch carries one.'
+  action: none
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: 'The record targets dalicc:CreativeWork only, while the 4.0 International parent CC-BY-NC-4.0
+    targets dalicc:CreativeWork and dcmitype:Dataset. This port has no sui generis database rights clause:
+    unlike the French and Polish ports in this batch it neither grants extraction and re-utilisation nor
+    waives the database producer right, so the case for dcmitype:Dataset rests only on the media neutrality
+    of the grant, which runs to all media and formats now known or later devised. Aligning the ports with
+    the parents is a single library wide decision covering every Creative Commons port, so it is left
+    as a proposal.'
+  action: proposed
+  change: "odrl:target [ a odrl:AssetCollection ;\n        dct:type dalicc:CreativeWork,\n           \
+    \ dcmitype:Dataset ] ;"
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: The grant supports the modelled permissions. clause 3 grants a worldwide, non-exclusive,
+    royalty free licence for the whole term of copyright protection, covering reproduction, incorporation
+    in collections, the creation and reproduction of derivative works including translations, and the
+    distribution and public performance of the work and of derivative works. The record models the grant
+    as odrl:reproduce, odrl:distribute, odrl:display, odrl:present, odrl:derive, odrl:modify, cc:DerivativeWorks,
+    and dalicc:ModifiedWorks for alterations short of a new derivative work.
+  action: none
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: The record permits dalicc:chargeDistributionFee while prohibiting cc:CommercialUse. The
+    NonCommercial restriction of this port forbids exercising the granted rights in a way primarily intended
+    for or directed toward commercial advantage or private monetary compensation, and the vocabulary defines
+    dalicc:chargeDistributionFee narrowly, as a fee covering the act of providing the work to a third
+    party, so a pure cost recovery fee is arguable but the statement sits uneasily next to the prohibition.
+    The same statement is in the 4.0 International parent CC-BY-NC-4.0 and in all one hundred and forty
+    five NonCommercial records of the library, so removing it is one library wide decision, not a defect
+    of this port.
+  action: proposed
+  change: "remove:\n    odrl:permission [ a odrl:Permission ;\n            odrl:action dalicc:chargeDistributionFee\
+    \ ]"
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The licence forbids sublicensing and the record does not say so. clause 4(a): the work
+    may not be sublicensed ("wa-la yajuzu kadhalika tarkhis al-musannaf min al-batin"). The vocabulary
+    already has dalicc:sublicense, but it is used by no record in the library and its skos:note says so,
+    and the same sentence stands in every Creative Commons 2.0 and 3.0 record, so adding it to this batch
+    alone would split the compatibility behaviour of one family. Proposed as one library wide correction,
+    together with an update of the vocabulary note.'
+  action: proposed
+  change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: the work may be distributed
+    or publicly performed only under the terms of this licence and the licensee may not offer or impose
+    terms that restrict it. dalicc:promote is prohibited, which in a 3.0 port rests on an express sentence
+    of the attribution clause: the licensee may not implicitly or explicitly assert or imply any connection
+    with, sponsorship or endorsement by the original author, the licensor or the attribution parties without
+    their separate prior written permission. That is firmer support than the 2.0 ports have, where the
+    same prohibition rested on the reservation of unnamed rights and on the trademark paragraph of the
+    Creative Commons notice.'
+  action: none
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'cc:CommercialUse is prohibited, which the NonCommercial restriction of this port supports:
+    the licensee may not exercise the granted rights in a way primarily intended for or directed toward
+    commercial advantage or private monetary compensation, and the exchange of the work for other copyrighted
+    works by digital file sharing is not treated as such a use as long as no monetary compensation changes
+    hands.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The attribution and notice duties are present and supported: the licence requires a copy
+    of, or the URI for, the licence with every copy distributed or publicly performed, that all notices
+    referring to the licence and to the warranty disclaimer be kept intact, and that credit be given with
+    the name of the author or pseudonym, the title of the work, the URI the licensor associates with it
+    and, for an adaptation, a credit identifying the use made of the work. In this port the parties are
+    the licensor (al-murakhkhis) and the licensee (al-murakhkhas lahu), and credit is owed to the author
+    or the copyright owner, or to the attribution parties the licensor designates. The duties hang on
+    odrl:distribute, odrl:modify and odrl:derive, which matches the licence, since they are triggered
+    by making the work public rather than by private use.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'dalicc:modificationNotice is attached to odrl:modify and odrl:derive and the text supports
+    it directly: the grant of the adaptation right is conditional on the adaptation taking reasonable
+    steps to label, demarcate or otherwise identify that changes were made to the original work, with
+    the translation example given in the port language.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: 'dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation each hold their own clause and
+    nothing else: the disclaimer field carries the disclaimer section of this port and the liability field
+    carries the limitation of liability section, both quoted from the Arabic text of the port and not
+    from the English unported version, and both checked word for word against the legal code. The Arabic
+    quotations match the clause 5 and clause 6 text of the port, with two orthographic differences from
+    the legal code of some element sets: the record writes the word for "liable" without the final tanwin
+    and joins a conjunction that the published page separates with a space. The wording and the substance
+    are the same, and all six records of the port carry the same two quotations.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: 'The record has no dalicc:additionalClauses, so the clauses the ODRL policy cannot carry
+    are not visible in the record at all: the reservation of rights not expressly granted, the downstream
+    offer to every recipient, the automatic termination on breach with the survival of the named sections,
+    and the severability, waiver and entire agreement paragraphs. The whole Creative Commons family is
+    modelled this way.'
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:Egypt, which matches the country of the legal-code URL https://creativecommons.org/licenses/by-nc/3.0/eg/legalcode,
+    and dalicc:validityType is dalicc:perpetual, which matches a grant made for the duration of the applicable
+    copyright. Note that the jurisdiction field records the legal home of the port, not a territorial
+    limit: the grant itself is worldwide. The Egyptian port carries no choice of law clause; clause 8
+    closes with the usual Berne style statement that rights granted by a national intellectual property
+    law beyond those named here are covered by the licence and that the licence is not meant to restrict
+    any other applicable right.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The licence forbids technological protection measures and the vocabulary has no term for
+    it. The clause is in clause 4(a): when the work is distributed or publicly performed, no technological
+    measure may be imposed on it that would limit the ability of a recipient to exercise the rights granted
+    under the licence. Proposed term: dalicc:applyTechnicalProtectionMeasures, an odrl:Action to be used
+    as an odrl:Prohibition. Not modelled, because bending an existing term would be worse than the gap.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Three clauses of every 3.0 port have no vocabulary term. The automatic termination of
+    the licence on breach, with the survival of the definitions, the disclaimer, the limitation of liability
+    and the miscellaneous sections: proposed term dalicc:terminationOnBreach. The direct offer the licensor
+    makes to every recipient of the work or of an adaptation, on the same terms: proposed term dalicc:downstreamOffer.
+    The reservation of all rights not expressly granted: no term either.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Moral rights have no vocabulary term, in either direction: a clause that restricts the
+    licensee, and a clause that leaves the author personal rights untouched by the licence. Clause 4(f)
+    is a numbered sub-section of its own, headed moral rights: the moral rights of the author are inalienable
+    and are not affected by the terms of this licence. Egypt is the only port in this batch that gives
+    moral rights their own numbered sub-section. Proposed terms: dalicc:moralRightsRestriction and dalicc:moralRightsNonAssertion.'
+  action: none
+- rubric: 8
+  severity: info
+  field: record
+  description: 'The royalty collection arrangements are not expressible either, and they are the clause
+    that differs most between the ports of one version. Clause 4(e) splits the royalty question in three:
+    under a non waivable compulsory licensing scheme the licensor reserves the exclusive right to collect;
+    under a waivable one it reserves the right where the exercise is commercial, subject to clause 4(c),
+    and may waive it otherwise; and under a voluntary scheme it reserves the right, individually or through
+    the collective management society it belongs to, for commercial uses.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the forty one axioms of licensedata/dependencygraph/dg_default.ttl
+    reports no conflict, before and after the corrections, and the pre-review baseline listed none for
+    this record either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of Creative Commons Attribution-NonCommercial 4.0 International (CC-BY-NC-4.0). The
+    deontic model of this record is identical to the parent, statement for statement: the same permissions
+    with the same duties attached, the same prohibitions and the same set level duties, and, apart from
+    odrl:target, nothing else. What differs is the jurisdiction, the language of the legal text and the
+    clause texts quoted from it, and the version specific clauses of 3.0 that the model does not carry,
+    chiefly the express prohibition of sublicensing, the technological measures clause, the moral rights
+    clause and the royalty collection arrangements. The compatibility checker cannot tell this record
+    from the other records of the BY-NC element set, across all three versions and every jurisdiction
+    the library holds.'
+  action: none
+family: 'Creative Commons 3.0 port: Egypt (EG)'
+port_of: CC-BY-NC-4.0
+variant_kind: jurisdiction-port
+notes: 'The parent is the 4.0 International record of the same element set, since the library holds no
+  unported 3.0 record; the version difference, 3.0 against 4.0, is therefore part of the port relation
+  and not only the jurisdiction. The 3.0 text differs from 4.0 in substance as well: it prohibits sublicensing
+  expressly, it has no thirty day cure period for a breach, it settles the royalty collection question
+  per jurisdiction, and it states the moral rights position of the jurisdiction. None of that is visible
+  in the model. Nothing in this review is legal advice.'

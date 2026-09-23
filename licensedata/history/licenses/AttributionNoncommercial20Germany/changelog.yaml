@@ -1,0 +1,47 @@
+id: AttributionNoncommercial20Germany
+title: Creative Commons Attribution-NonCommercial 2.0 Germany
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, recorded
+    the relation to the record this one was adapted from and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-4.0
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:licenseVersion "2.0"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "jurisdiction-port"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dct:source <https://creativecommons.org/licenses/by-nc/2.0/de/>
+    reason: The record carried cc:legalcode but no dct:source. The legal-code page states the canonical
+      URL of the licence, https://creativecommons.org/licenses/by-nc/2.0/de/, and the six 4.0 International
+      parents carry exactly that pair (legal code plus deed). Added.
+    source: review-finding 1/dct:source
+  - action: added
+    statement: prohibition dalicc:sublicense
+    reason: 'Review decision 1: every Creative Commons record except the CC0 dedication, plus the
+      Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
+      as many words.'
+    source: consolidation-decision 1

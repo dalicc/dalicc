@@ -1,0 +1,63 @@
+id: DeveloperLicense
+title: Developer License
+current_version: 3
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 statement, changed 1 asset target and 1 statement,
+    recorded the relation to the record this one was adapted from and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:jurisdictionPortOf dalicclib:DataExplorationLicence
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:recordStatus dalicc:testFixture
+    reason: 'Review decision 13: the record is a composer or test fixture rather than a published
+      license, and says so instead of being deleted.'
+    source: consolidation-decision 13
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: changed
+    statement: dalicc:validityType dalicc:specifyPeriod
+    previous: dalicc:validityType dalicc:perpetual
+    reason: 'dalicc:validityType said dalicc:perpetual. The licence is not perpetual: it "lets you
+      use [Licensor] Data for 12 months", renews automatically unless either party ends it, ends automatically
+      24 months after the last request for updates, grants a "revocable licence" and can be terminated
+      by either party with immediate effect. Changed to dalicc:specifyPeriod, the vocabulary term
+      the composer already writes for a licence granted for a period.'
+    source: review-finding 7/dalicc:validityType
+  - action: added
+    statement: dalicc:variantKind "edition"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: changed
+    statement: target asset types [dalicc:CreativeWork, dcmitype:Dataset]
+    previous: target asset types [dalicc:CreativeWork, dcmitype:Dataset, dcmitype:Software]
+    reason: The asset collection included dcmitype:Software. The subject of this licence is Exploration
+      Data, defined as data made available for research and development; unlike the other National
+      Archives records, whose definition of Information names source code expressly, this document
+      never mentions software. Removed, under the owner's decision that asset types follow the legal
+      text.
+    source: review-finding 2/odrl:target
+- version: 3
+  date: '2026-09-16'
+  reviewer: Giray Havur
+  summary: Recorded the twelve-month term of the licence, so the validity period the record declares
+    has a length and the guided form can carry the record.
+  changes:
+  - action: added
+    statement: scho:validFor "P1Y"^^xsd:duration
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

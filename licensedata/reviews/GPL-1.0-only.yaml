@@ -1,0 +1,166 @@
+id: GPL-1.0-only
+title: GNU General Public License v1.0 only
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/GPL-1.0-only.txt
+text_retrieved: true
+verdict: created
+summary: >-
+  The record models the first version of the GNU General Public License, of February 1989, as
+  the version the licensee may not exchange for a later one. It is the ancestor of the GPL
+  version 2 record: the same whole-work copyleft, the same duties on distribution, modification
+  and derivation, and the same warranty and liability clauses. Four things the later records do
+  not carry are modelled here because the text states them plainly: the licence ends on breach,
+  the licences a recipient already holds survive, further restrictions may not be imposed
+  downstream, and sublicensing is not granted.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: >-
+    File name, record id, SPDX identifier and the local name of the IRI are all GPL-1.0-only.
+    The deprecated SPDX id GPL-1.0 is carried as a dct:alternative. cc:legalcode and dct:source
+    point at the page the Free Software Foundation keeps for the old licence, which is the
+    convention the GPL-2.0-only record follows for version 2.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: >-
+    The asset collection carries dcmitype:Software. Section 0 applies the licence to "any
+    program or other work which contains a notice placed by the copyright holder saying it may
+    be distributed under the terms of this General Public License".
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: >-
+    Section 1: "You may copy and distribute verbatim copies of the Program's source code as you
+    receive it, in any medium" and "You may charge a fee for the physical act of transferring a
+    copy." Section 2: "You may modify your copy or copies of the Program or any portion of it,
+    and copy and distribute such modifications under the terms of Paragraph 1 above." Section 3
+    permits distribution in object code or executable form. From those sentences:
+    odrl:reproduce, odrl:distribute, odrl:modify, odrl:derive, cc:DerivativeWorks,
+    dalicc:ModifiedWorks, cc:CommercialUse and dalicc:chargeDistributionFee.
+  action: applied
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: >-
+    odrl:display and odrl:present are not named in the text. They are carried because the GNU
+    records carry them: the licence governs copying, distribution and modification and places no
+    condition on showing or running the program. The reading follows GPL-2.0-only, whose text
+    states the same scope in more words.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: >-
+    Section 2(b) requires "the whole of any work that you distribute or publish, that in whole
+    or in part contains the Program or any part thereof ... to be licensed at no charge to all
+    third parties under the terms of this General Public License", so the share-alike condition
+    reaches the whole work and cc:ShareAlike is a duty of the licence itself rather than of one
+    act. Section 1 requires the copyright notice, the disclaimer, the intact notices and a copy
+    of the licence, which are the cc:Attribution, cc:Notice and cc:SourceCode duties on
+    distribute, modify and derive. Section 2(a) requires you to "cause the modified files to
+    carry prominent notices stating that you changed the files and the date of any change",
+    which is dalicc:modificationNotice on modify and derive.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: >-
+    dalicc:ChangeLicense is prohibited because section 2(b) requires the whole work to stay
+    under this licence and section 8 tells a licensee who wants other distribution conditions to
+    "write to the author to ask for permission". dalicc:addLimitation is prohibited from section
+    6: "You may not impose any further restrictions on the recipients' exercise of the rights
+    granted herein." dalicc:sublicense is prohibited from section 4: "You may not copy, modify,
+    sublicense, distribute or transfer the Program except as expressly provided under this
+    General Public License", and the licence grants no sublicensing anywhere.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: >-
+    dalicc:promote is prohibited although version 1 has no trademark or endorsement clause. The
+    statement is the library-wide default that 419 of the 460 records carry, and the record
+    keeps it so that it reads like its siblings; it is not supported by this text.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: >-
+    Section 9 (the warranty disclaimer) and section 10 (the limitation of liability) are quoted
+    verbatim as separate literals, each starting at the sentence its own property names. Section
+    2(d), "You may charge a fee for the physical act of transferring a copy, and you may at your
+    option offer warranty protection in exchange for a fee", is dalicc:WarrantyOrLiabilityAcceptance.
+    The three literals are word for word those of GPL-2.0-only, because version 2 kept the
+    sentences of version 1.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:additionalClauses
+  description: >-
+    Three clauses are quoted verbatim because the deontic model cannot carry them in full: the
+    interactive announcement of section 2(c), the termination and survival sentences of section
+    4, and section 6, which gives every recipient a licence directly from the original licensor
+    and forbids further restrictions. dalicc:alternativeConditionSet says in one sentence what
+    section 3 does, namely let the licensee satisfy the source-code condition for object code in
+    any one of three listed ways.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:orLaterVersionOption
+  description: >-
+    cc:jurisdiction is dalicc:worldwide and dalicc:validityType is dalicc:perpetual: the text
+    limits neither the territory nor the term. dalicc:orLaterVersionOption is false, because
+    this identifier is the one a licensor uses to name version 1 and nothing else, while section
+    7 gives the option only where the program says so: "If the Program specifies a version
+    number of the license which applies to it and "any later version", you have the option of
+    following the terms and conditions either of that version or of any later version published
+    by the Free Software Foundation." The record for that case is GPL-1.0-or-later.
+    dalicc:terminatesOnBreach and dalicc:sublicenseSurvival are both true, from section 4: an
+    attempt to act outside the licence "is void, and will automatically terminate your rights to
+    use the Program under this License", while "parties who have received copies, or rights to
+    use copies, from you under this General Public License will not have their licenses
+    terminated so long as such parties remain in full compliance".
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer, run with
+    licensedata/dependencygraph/dg_default.ttl, reports 0 conflicts for this record.
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: >-
+    Two clauses have no term. Section 2(c) requires an interactive program to print or display
+    an announcement with the copyright notice, the absence of warranty and the redistribution
+    terms when it starts; no duty action covers a notice the running program must show, as
+    against a notice that travels with the copy. Proposed term: dalicc:interactiveNotice.
+    Section 6 gives every recipient a licence directly from the original licensor;
+    dalicc:downstreamOffer is close but is a duty, and this clause asks nothing of the licensee,
+    it happens by itself. Both clauses are quoted in dalicc:additionalClauses.
+  action: none
+- rubric: 10
+  severity: major
+  field: family
+  description: >-
+    The nearest sibling is GPL-2.0-only, and the two records differ in four statements:
+    dalicc:terminatesOnBreach, dalicc:sublicenseSurvival, the dalicc:addLimitation prohibition
+    and the dalicc:sublicense prohibition. GPL version 2 states the same three clauses in
+    sections 4 and 6 and could carry the same statements; they are proposed for GPL-2.0-only,
+    GPL-3.0-only, LGPL-3.0-only and AGPL-3.0 in the set report rather than applied here. Apart
+    from those, the model is the GNU whole-work copyleft shape, statement for statement.
+  action: applied
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: version
+variant_of: null
+notes: >-
+  Version 1 is rarely declared on its own, but it is the base of GPL-1.0-or-later, which package
+  managers still report as GPL-1.0+, and SPDX keeps both identifiers. The legal-code URL follows
+  the pattern of the pages the Free Software Foundation keeps for its old licences; it could not
+  be fetched from the machine the record was written on.

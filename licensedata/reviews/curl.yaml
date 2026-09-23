@@ -1,0 +1,83 @@
+id: curl
+title: curl License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/curl.txt
+text_retrieved: true
+verdict: created
+summary: The record models the curl license, an ISC-form permission notice with the MIT warranty and liability paragraph
+  and a separate advertising bar. Use, copying, modification and distribution are permitted for any purpose with
+  or without fee, the copyright notice and the permission notice must appear in all copies, and the copyright holder's
+  name may not be used to promote products.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads: "Permission to use, copy, modify, and distribute this software for any purpose
+    with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear
+    in all copies." The record permits reproduce, distribute, modify, derive, display, present, commercial use,
+    derivative works and modified works, and the words with or without fee support dalicc:chargeDistributionFee.
+    Sublicensing is not named.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Attribution and cc:Notice on distribute, modify and derive, from the notice condition in the grant
+    sentence.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The text reads: "Except as contained in this notice, the name of a copyright holder shall not be
+    used in advertising or otherwise to promote the sale, use or other dealings in this Software without prior written
+    authorization of the copyright holder." That is dalicc:promote as a prohibition, and the paragraph is also quoted
+    in dalicc:additionalClauses. dalicc:ChangeLicense is prohibited because the text requires the license itself
+    to travel with every copy, which is the reading IscLicense and BSD-3-Clause take of the same clause. The MIT
+    record does not carry the prohibition although its text has the same requirement, so the library is not uniform
+    here. (Corrected on 2026-09-15 by the verification pass: see the rubric 3 finding on relicensing below.)'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The disclaimer paragraph is the MIT one with non-infringement of third party rights added; it is
+    split into the warranty sentence and the liability sentence.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following IscLicense. The text licenses the
+    software only.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The deontic model is that of NTP and HPND. The difference is in the clause texts: curl carries the
+    MIT disclaimer and states the advertising bar as a paragraph of its own.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Permission to use, copy, modify, and distribute this software
+    for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission
+    notice appear in all copies." The permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because
+    the notice has to survive the relicensing.'
+  action: applied
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. cc:legalcode is the COPYING file of the curl repository, which is the
+  canonical text; the license has no separate steward, so there is no dct:publisher.

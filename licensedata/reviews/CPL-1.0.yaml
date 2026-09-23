@@ -1,0 +1,110 @@
+id: CPL-1.0
+title: Common Public License 1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://opensource.org/license/CPL-1.0
+text_retrieved: true
+verdict: created
+summary: 'The Common Public License is the agreement the Eclipse Public License 1.0 was cut from: the same definitions,
+  the same grant of copyright and patent rights, the same commercial distribution indemnity. Source form must stay
+  under this Agreement, which the record carries as a licence-wide share-alike duty. The record follows EclipsePublicLicense10
+  and departs from it in the two places section 3 requires. Nothing here is legal advice.'
+findings:
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software alone, following EclipsePublicLicense10 and EPL-2.0, the two records of this family
+    already in the library. The text licenses a Program, that is software in source code and object code form, so
+    neither dalicc:CreativeWork nor dcmitype:Dataset is written.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Section 2(a) grants "a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare
+    derivative works of, publicly display, publicly perform, distribute and sublicense the Contribution of such
+    Contributor, if any, and such derivative works, in source code and object code form", so dalicc:sublicense is
+    a permission; section 2(b) grants a patent licence, so dalicc:patentGrant is one. Section 4 contemplates a commercial
+    product offering, so cc:CommercialUse, dalicc:chargeDistributionFee and dalicc:chargeLicenseFee are permitted,
+    as in EclipsePublicLicense10.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, because section 3 says that when the Program is made available
+    in source code form "it must be made available under this Agreement". dalicc:patentRetaliationTermination comes
+    from section 7. dalicc:promote is not written: unlike the AFL and OSL texts, this Agreement has no trademark
+    or endorsement clause, although EclipsePublicLicense10 carries the prohibition.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: dalicc:ChangeLicense
+  description: 'Section 3 also says: "A Contributor may choose to distribute the Program in object code form under
+    its own license agreement, provided that: a) it complies with the terms and conditions of this Agreement". Read
+    alone that is dalicc:ChangeLicense with a dalicc:compliantLicense duty, which is what EclipsePublicLicense10
+    carries. It is not written here because the consistency check reports a permitted change of licence together
+    with a share-alike duty as a direct conflict, and the source-form reciprocity is the stronger statement. The
+    clause is quoted in dalicc:additionalClauses; the owner has to decide which of the two readings the library
+    keeps.'
+  action: proposed
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'Section 3 carries the reciprocity: "When the Program is made available in source code form: a) it
+    must be made available under this Agreement; and b) a copy of this Agreement must be included with each copy
+    of the Program." That is a licence-wide cc:ShareAlike duty and cc:Notice. "Contributors may not remove or alter
+    any copyright notices contained within the Program" and "Each Contributor must identify itself as the originator
+    of its Contribution" give cc:Attribution on the three acts and dalicc:modificationNotice on odrl:modify and
+    odrl:derive. Section 3(b)(iv), which requires a distributor''s own licence to state where the source code is
+    available, gives cc:SourceCode on odrl:distribute.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: Sections 5 and 6 are quoted into dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation. dalicc:additionalClauses
+    carries section 3, the commercial distribution indemnity of section 4, the patent litigation clause, the termination
+    clause, the agreement-steward clause and the governing-law clause.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'Section 7 states: "This Agreement is governed by the laws of the State of New York and the intellectual
+    property laws of the United States of America." The record keeps cc:jurisdiction dalicc:worldwide and quotes
+    the clause, which is what EclipsePublicLicense10 does and what the batch does for every governing-law clause;
+    bpicounty:UnitedStates would overstate a choice-of-law clause as a territorial limit.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: The indemnity of section 4, which obliges a commercial distributor to defend the other contributors,
+    has no term; proposed dalicc:commercialDistributorIndemnity. The automatic termination on breach has no property;
+    proposed dalicc:terminatesOnBreach. Both are quoted.
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: CPL-1.0, IPL-1.0 and the two Lucent licences are one text with four stewards. EclipsePublicLicense10
+    is the same document again, with the Eclipse Foundation as steward and the New York choice of law kept. Where
+    this record has a licence-wide cc:ShareAlike duty and a dalicc:ChangeLicense prohibition, the existing EclipsePublicLicense10
+    record has a dalicc:ChangeLicense permission and no share-alike, so the two disagree about the same sentence;
+    the batch report raises it.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer with the axioms of dg_default returned an empty list
+    for this record.
+  action: none
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'Weak-copyleft family alignment of 2026-09-15: section 3 requires a distributor who distributes the
+    Program in object code form to state that the source code is available and how to obtain it. The duty was on
+    odrl:distribute alone; it is now also on odrl:modify and odrl:derive, which is where the other twenty-four records
+    of the weak-copyleft family carry it, so a comparison of two of them shows a difference between the licences
+    and not between two reviewers.'
+  action: applied
+family: Eclipse, Common Public and Lucent
+port_of: null
+variant_kind: null
+notes: 'Modelled from the SPDX plain text of CPL-1.0 and checked against the URL in cc:legalcode. The record is
+  not marked as a version variant: CPL-1.0 is the parent of EPL-1.0 but carries its own name and id.'

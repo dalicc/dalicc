@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Computer Associates Trusted Open Source License 1.1" in the DALICC license library
+# Title: The machine-readable representation of "Computer Associates Trusted Open Source License 1.1" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CATOSL-1.1
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CATOSL-1.1 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -22,9 +23,14 @@ dalicclib:CATOSL-1.1 a odrl:Set ;
     cc:attributionName "Computer Associates International, Inc. (CA)" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:CATOSL-1.1 ;
-    dalicc:WarrantyDisclaimer "EXCEPT AS EXPRESSLY SET FORTH IN THIS LICENSE, AND TO THE EXTENT PERMITTED BY LAW, NO CONTRIBUTOR SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. " ;
+    dalicc:WarrantyDisclaimer "EXCEPT AS EXPRESSLY SET FORTH IN THIS LICENSE, AND TO THE EXTENT PERMITTED BY LAW, NO CONTRIBUTOR SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES." ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CATOSL-1.1/versions> ;
     dct:alternative "CATOSL-1.1" ;
+    dct:hasVersion "3" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Computer Associates International, Inc. (CA)" ;
     dct:source osl:CATOSL-1.1 ;
     dct:title "Computer Associates Trusted Open Source License 1.1" ;
@@ -65,8 +71,6 @@ dalicclib:CATOSL-1.1 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:noWarrantyNotice ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action cc:ShareAlike ],
-        [ a odrl:Prohibition ;
             odrl:action dalicc:addStatement ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:promote ] ;

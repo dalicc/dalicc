@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial 3.0 Philippines"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial 3.0 Philippines"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/AttributionNoncommercial30Philippines
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:AttributionNoncommercial30Philippines a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -25,6 +26,12 @@ dalicclib:AttributionNoncommercial30Philippines a odrl:Set ;
     dalicc:WarrantyDisclaimer """UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, LICENSOR OFFERS THE WORK AS-IS AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING, WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTIBILITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, OR THE ABSENCE OF LATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS, WHETHER OR NOT DISCOVERABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO SUCH EXCLUSION MAY NOT APPLY TO YOU.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "3.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/AttributionNoncommercial30Philippines/versions> ;
     dct:alternative "Attribution NonCommercial 3.0 Philippines",
         "Attribution-NonCommercial 3.0",
         "Attribution-NonCommercial 3.0 Philippines",
@@ -36,7 +43,10 @@ dalicclib:AttributionNoncommercial30Philippines a odrl:Set ;
         "CC-BY-NC 3.0 PH",
         "Creative Commons BY-NC 3.0",
         "Creative Commons BY-NC 3.0 PH" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/licenses/by-nc/3.0/ph/> ;
     dct:title "Creative Commons Attribution-NonCommercial 3.0 Philippines"@en ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:display ],
@@ -77,7 +87,9 @@ dalicclib:AttributionNoncommercial30Philippines a odrl:Set ;
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ph.png> ;

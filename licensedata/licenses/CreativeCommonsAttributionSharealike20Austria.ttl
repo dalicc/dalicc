@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 2.0 Austria"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 2.0 Austria"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike20Austria
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttributionSharealike20Austria a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -25,6 +26,12 @@ dalicclib:CreativeCommonsAttributionSharealike20Austria a odrl:Set ;
     dalicc:WarrantyDisclaimer """Sofern dies von den Vertragsparteien nicht schriftlich anders vereinbart wurde, bietet der Lizenzgeber keine Gewährleistung für die in diesem Lizenzvertrag erteilte Nutzungsbewilligung. Für Mängel anderer Art, insbesondere bei der mangelhaften Lieferung von Verkörperungen des Schutzgegenstandes, richtet sich die Gewährleistung nach der Regelung, die die Person, die Ihnen den Schutzgegenstand zur Verfügung stellt, mit Ihnen außerhalb der Lizenz vereinbart, oder - wenn eine solche Regelung nicht getroffen wurde - nach den gesetzlichen Vorschriften.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "2.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike20Austria/versions> ;
     dct:alternative "Attribution ShareAlike 2.0 Austria",
         "Attribution-ShareAlike 2.0",
         "Attribution-ShareAlike 2.0 Austria",
@@ -36,7 +43,10 @@ dalicclib:CreativeCommonsAttributionSharealike20Austria a odrl:Set ;
         "CC-BY-SA 2.0 AT",
         "Creative Commons BY-SA 2.0",
         "Creative Commons BY-SA 2.0 AT" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/licenses/by-sa/2.0/at/> ;
     dct:title "Creative Commons Attribution-ShareAlike 2.0 Austria"@en ;
     odrl:duty [ a odrl:Duty ;
             odrl:action cc:ShareAlike ] ;
@@ -79,8 +89,11 @@ dalicclib:CreativeCommonsAttributionSharealike20Austria a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
-            dct:type dalicc:CreativeWork ] ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset ] ;
     foaf:img <https://creativecommons.org/images/international/at.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/2.0/at/88x31.png> .

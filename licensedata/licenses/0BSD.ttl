@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Free Public License 1.0.0" in the DALICC license library
+# Title: The machine-readable representation of "Free Public License 1.0.0" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/0BSD
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,18 +15,24 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:0BSD a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "0BSD" ;
-    cc:attributionName "- not specified - " ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:FPL-1.0.0 ;
-    dalicc:WarrantyDisclaimer "THE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE." ;
+    dalicc:LiabilityLimitation "IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE." ;
+    dalicc:WarrantyDisclaimer "THE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS." ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:variantKind "version" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/0BSD/versions> ;
     dct:alternative "0BSD",
         "Zero Clause BSD License" ;
-    dct:publisher "- not specified - " ;
+    dct:hasVersion "4" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:source osl:FPL-1.0.0 ;
     dct:title "Free Public License 1.0.0" ;
     odrl:permission [ a odrl:Permission ;
@@ -52,12 +58,8 @@ dalicclib:0BSD a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeLicenseFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:noWarrantyNotice ] ;
+            odrl:action dalicc:ChangeLicense ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action cc:ShareAlike ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:addStatement ],
-        [ a odrl:Prohibition ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

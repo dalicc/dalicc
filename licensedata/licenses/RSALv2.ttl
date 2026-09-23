@@ -1,0 +1,96 @@
+# Title: The machine-readable representation of "Redis Source Available License 2.0"@en in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/RSALv2
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:RSALv2 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://raw.githubusercontent.com/redis/redis/unstable/LICENSE.txt> ;
+    dalicc:WarrantyDisclaimer "As far as the law allows, the Software comes as is, without any warranty or condition, and the Licensor will not be liable to You for any damages arising out of this Agreement or the Use or nature of the Software, under any kind of legal claim." ;
+    dalicc:additionalClauses "This Agreement sets forth the terms and conditions on which the Licensor makes available the Software. By installing, downloading, accessing, Using, or distributing any of the Software, You agree to all of the terms and conditions of this Agreement.",
+        "Licensor: the entity offering these terms, which includes Redis Ltd. on behalf of itself and its subsidiaries and affiliates worldwide.",
+        "The Licensor grants You a non-exclusive, royalty-free, worldwide, non-sublicensable, non-transferable license to use, copy, distribute, make available, and prepare derivative works of the Software, in each case subject to the limitations and conditions below.",
+        "You may not make the functionality of the Software or a Modified version available to third parties as a service or distribute the Software or a Modified version in a manner that makes the functionality of the Software available to third parties. Making the functionality of the Software or Modified version available to third parties includes, without limitation, enabling third parties to interact with the functionality of the Software or Modified version in distributed form or remotely through a computer network, offering a product or service, the value of which entirely or primarily derives from the value of the Software or Modified version, or offering a product or service that accomplishes for users the primary purpose of the Software or Modified version.",
+        "You may not alter, remove, or obscure any licensing, copyright, or other notices of the Licensor in the Software. Any use of the Licensor's Trademarks is subject to applicable law.",
+        "The Licensor grants You a License, under any patent claims the Licensor can License, or becomes able to License, to make, have made, use, sell, offer for sale, import and have imported the Software, in each case subject to the limitations and conditions in this License. This License does not cover any patent claims that You cause to be infringed by Modifications or additions to the Software. If You or Your Company make any written claim that the Software infringes or contributes to infringement of any patent, your patent License for the Software granted under this Agreement ends immediately. If Your Company makes such a claim, your patent License ends immediately for work on behalf of Your Company.",
+        "You must ensure that anyone who gets a copy of any part of the Software from You also gets a copy of the terms and conditions in this Agreement.",
+        "If You modify the Software, You must include in any Modified copies of the Software prominent notices stating that You have Modified the Software.",
+        "The terms and conditions of this Agreement do not imply any Licenses other than those expressly granted in this Agreement.",
+        "If You Use the Software in violation of this Agreement, such Use is not Licensed, and Your Licenses will automatically terminate. If the Licensor provides You with a notice of your violation, and You cease all violations of this License no later than 30 days after You receive that notice, Your Licenses will be reinstated retroactively. However, if You violate this Agreement after such reinstatement, any additional violation of this Agreement will cause your Licenses to terminate automatically and permanently.",
+        "If You are located in Asia, Pacific, Americas, or other jurisdictions not listed below, the Agreement will be construed and enforced in all respects in accordance with the laws of the State of California, U.S.A., without reference to its choice of law rules. The courts located in the County of Santa Clara, California, have exclusive jurisdiction for all purposes relating to this Agreement.",
+        "If You are located in Israel, the Agreement will be construed and enforced in all respects in accordance with the laws of the State of Israel without reference to its choice of law rules. The courts located in the Central District of the State of Israel have exclusive jurisdiction for all purposes relating to this Agreement.",
+        "If You are located in Europe, United Kingdom, Middle East or Africa, the Agreement will be construed and enforced in all respects in accordance with the laws of England and Wales without reference to its choice of law rules. The competent courts located in London, England, have exclusive jurisdiction for all purposes relating to this Agreement." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
+    dalicc:curePeriod "30 days" ;
+    dalicc:governingLaw "the law of the State of California, the State of Israel or England and Wales, according to where the licensee is located" ;
+    dalicc:fieldOfUseRestriction "any use other than making the functionality of the software available to third parties as a service or in a distributed form that gives them that functionality" ;
+    dalicc:licenseVersion "2.0" ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-22"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/RSALv2/versions> ;
+    dct:alternative "RSAL 2.0",
+        "RSALv2",
+        "Redis Source Available License 2.0 Agreement" ;
+    dct:hasVersion "1" ;
+    dct:modified "2026-09-22"^^xsd:date ;
+    dct:publisher "Redis Ltd." ;
+    dct:source <https://github.com/redis/redis/blob/unstable/LICENSE.txt> ;
+    dct:title "Redis Source Available License 2.0"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:ShareAlike ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:ShareAlike ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:ShareAlike ] ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:patentGrant ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:patentRetaliationTermination ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Software ] .

@@ -1,0 +1,102 @@
+id: OSL-2.0
+title: Open Software License 2.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'http://web.archive.org/web/20041020171434/http://www.rosenlaw.com/osl2.0.html'
+text_retrieved: true
+verdict: created
+summary: >-
+  The Open Software License in the fifteen-section form: a reciprocal licence whose clause
+  1(c) requires every copy distributed to be licensed under the Open Software License, with an
+  express patent grant, an attribution condition, an external deployment clause and patent
+  retaliation. The record follows OSL-3.0. Version 2.0 is the first sublicenseable OSL.
+  Nothing here is legal advice.
+findings:
+- rubric: 2
+  severity: info
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Software alone, the type 32 of the library's software records carry, among them
+    MIT, BSD-3-Clause, GPL-3.0-only and the sibling OSL-3.0. These texts license an "original
+    work of authorship", which would also fit dalicc:CreativeWork, the type the AFL-3.0 record
+    carries beside Software and Dataset; the batch keeps the narrower reading its batch entry
+    prescribes, so that all nine records of the family answer alike and the owner can widen
+    them in one pass.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 1 grants a "world-wide, royalty-free, non-exclusive, perpetual, sublicenseable
+    license", so dalicc:sublicense is a permission, and section 2 grants a patent licence "to
+    make, use, sell and offer for sale the Original Work and Derivative Works", so
+    dalicc:patentGrant is a permission and dalicc:chargeLicenseFee follows the right to sell.
+    odrl:grantUse is not written, because the consistency check reads grant-use together with
+    a share-alike duty as a conflict; the OSL-3.0 review records the same decision.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    dalicc:ChangeLicense, because clause 1(c) admits no other licence for the copies You
+    distribute; dalicc:promote, from section 4, which bars the use of the names and marks of
+    the Licensor and of any contributor to endorse or promote products; and
+    dalicc:patentRetaliationTermination from section 10.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Clause 1(c) carries "the proviso that copies of Original Work or Derivative Works that You
+    distribute shall be licensed under the Open Software License", which is a licence-wide
+    cc:ShareAlike duty. Section 6, Attribution Rights, puts cc:Attribution, cc:Notice and
+    dalicc:modificationNotice on odrl:modify and odrl:derive; cc:SourceCode hangs on
+    odrl:distribute following OSL-3.0.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Sections 7 and 8 are quoted into their own fields. dalicc:additionalClauses carries
+    sections 3, 4, 5, 9, 10, 11 and 15 and the notice that the licence text may not be
+    modified.
+  action: applied
+- rubric: 7
+  severity: info
+  field: 'cc:jurisdiction'
+  description: >-
+    Section 11 names no legal system, only the forum where the Licensor resides or does
+    business, so cc:jurisdiction stays dalicc:worldwide and the clause is quoted.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Section 5 treats external deployment, including making the work available as an
+    application over a computer network, as a distribution, which triggers the share-alike
+    duty; proposed term dalicc:networkUseTrigger. Section 9 requires a reasonable effort to
+    obtain the express assent of recipients; proposed term dalicc:recipientAssent. The
+    automatic termination has no property; proposed term dalicc:terminatesOnBreach. All three
+    are quoted instead.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty list for this record.
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: >-
+    OSL-2.0 and OSL-2.1 carry the same model and differ only in section 10, the patent
+    retaliation clause, which version 2.1 narrows to an action alleging that the Original Work
+    itself infringes a patent. Against OSL-1.0 both add the sublicensing grant, the
+    attribution clause and the right to use.
+  action: none
+family: Academic Free and Open Software
+port_of: null
+variant_kind: version
+notes: >-
+  Modelled from the SPDX plain text and checked against the URL in cc:legalcode.

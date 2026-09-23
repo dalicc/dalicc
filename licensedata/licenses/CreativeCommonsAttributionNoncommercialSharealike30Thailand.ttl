@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Thailand "@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Thailand "@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialSharealike30Thailand
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Thailand a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -25,6 +26,12 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Thailand a odrl:Set
     dalicc:WarrantyDisclaimer """เว้นแต่คู่สัญญาได้ตกลงทำหนังสือกันไว้เป็นอย่างอื่น ผู้อนุญาตนำเสนองานตามสภาพที่เป็นอยู่ และไม่ได้ให้คำรับรองหรือคำรับประกันใด ๆ เกี่ยวกับงาน ไม่ว่าโดยชัดแจ้งหรือโดยปริยาย โดยกฎหมายหรือโดยประการอื่น รวมทั้งแต่ไม่จำกัดเพียงคำรับประกันใด ๆ เกี่ยวกับกรรมสิทธิ์ ความเหมาะสมในการใช้เป็นสินค้า หรือความเหมาะสมในการใช้เพื่อวัตถุประสงค์เฉพาะเรื่อง การไม่ละเมิดหรือการไม่มีความชำรุดบกพร่องที่ซ่อนเร้น หรือการไม่มีความชำรุดบกพร่องอื่น ๆ ความถูกต้องหรือการไม่มีข้อผิดพลาดต่าง ๆ ไม่ว่าจะพบหรือไม่ก็ตาม
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-SA-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "3.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialSharealike30Thailand/versions> ;
     dct:alternative "Attribution NonCommercial ShareAlike 3.0 Thailand",
         "Attribution-NonCommercial-ShareAlike 3.0",
         "Attribution-NonCommercial-ShareAlike 3.0 Thailand",
@@ -36,8 +43,11 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Thailand a odrl:Set
         "CC-BY-NC-SA 3.0 TH",
         "Creative Commons BY-NC-SA 3.0",
         "Creative Commons BY-NC-SA 3.0 TH" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
-    dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Thailand "@en ;
+    dct:source <https://creativecommons.org/licenses/by-nc-sa/3.0/th/> ;
+    dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Thailand"@en ;
     odrl:duty [ a odrl:Duty ;
             odrl:action cc:ShareAlike ] ;
     odrl:permission [ a odrl:Permission ;
@@ -79,7 +89,9 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Thailand a odrl:Set
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/th.png> ;

@@ -1,0 +1,216 @@
+id: AttributionNoncommercial30Italy
+title: Creative Commons Attribution-NonCommercial 3.0 Italy
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by-nc/3.0/it/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the BY-NC element set of the Creative Commons 3.0 port for Italy and the model
+  follows the grant and the restrictions section of that port. The legal text was read in Italian. Corrections
+  applied: dalicc:WarrantyDisclaimer, dct:source, odrl:target. What remains are proposals that touch the
+  whole Creative Commons family rather than this record, chiefly the express prohibition of sublicensing.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source. The legal-code page states the canonical
+    URL of the licence, https://creativecommons.org/licenses/by-nc/3.0/it/, and the six 4.0 International
+    parents carry exactly that pair, legal code plus deed. Added.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by-nc/3.0/it/> ;
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: SPDX has no identifier for this port. The legal-code URL implies CC-BY-NC-3.0-IT, which
+    the SPDX licence list does not define, so no spdx:licenseId was invented. Of the forty two records
+    of this batch only the Attribution 3.0 Netherlands record can take one.
+  action: none
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: 'The record targeted dalicc:CreativeWork only, while the 4.0 International parent CC-BY-NC-4.0
+    targets dalicc:CreativeWork and dcmitype:Dataset. This port licenses database rights in terms. The
+    definition of Opera in article 1 is explicit: "l''opera dell''ingegno o, comunque, qualsiasi bene
+    o prestazione suscettibile di protezione in forza delle leggi sul diritto d''autore (diritto d''autore,
+    diritti connessi, diritto sui generis sulle banche dati, ecc.)". Article 3 adds that where the licensed
+    Opera includes databases over which the licensor holds a sui generis right under the national law
+    implementing Directive 96/9/CE, the licensor waives it, and article 4(e) carves the restrictions out
+    of the parts that qualify only under that right. Since the text is explicit, dcmitype:Dataset was
+    added, which also brings the record into line with its parent.'
+  action: applied
+  change: "odrl:target [ a odrl:AssetCollection ;\n        dct:type dalicc:CreativeWork,\n           \
+    \ dcmitype:Dataset ] ;"
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: Every modelled permission is supported by the grant. Article 3 grants a worldwide, free
+    of charge, non-exclusive and perpetual licence (for the duration of the applicable copyright) covering
+    reproduction, inclusion in Collezioni di Opere, the creation and reproduction of Opere Derivate, distribution
+    of copies and phonograms, lending, communication to the public, performance, recitation and public
+    display including digital audio transmission, of the Opera and of Opere Derivate. The record models
+    that as odrl:reproduce, odrl:distribute, odrl:display, odrl:present, odrl:derive, odrl:modify, cc:DerivativeWorks
+    and dalicc:ModifiedWorks. The rights may be exercised in all media and formats now known or later
+    devised.
+  action: none
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: The record permits dalicc:chargeDistributionFee while prohibiting cc:CommercialUse. The
+    vocabulary defines dalicc:chargeDistributionFee as a fee covering the act of providing the work to
+    a third party, so a pure cost recovery fee is arguable under the commercial advantage test of this
+    port, but the statement sits uneasily next to the prohibition. The same statement is in the 4.0 International
+    parent CC-BY-NC-4.0 and in every NonCommercial record of the library, so removing it is one library
+    wide decision about the NonCommercial family.
+  action: proposed
+  change: "remove:\n    odrl:permission [ a odrl:Permission ;\n            odrl:action dalicc:chargeDistributionFee\
+    \ ]"
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The licence forbids sublicensing and the record does not say so: article 4(a): "Non puoi
+    concedere l''Opera in sublicenza.". The vocabulary already has dalicc:sublicense, but no record in
+    the library uses it and its skos:note says so, and the same sentence stands in every Creative Commons
+    2.0 and 3.0 record, so adding it to this batch alone would split the compatibility behaviour of one
+    family. Proposed as one library wide correction, together with an update of the vocabulary note. Not
+    applied for that reason.'
+  action: proposed
+  change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: the licensee may offer
+    the work only under the terms of this licence and may not offer or impose terms that alter or restrict
+    it or the recipient ability to exercise the rights granted. dalicc:promote is prohibited, which rests
+    on the reservation of all rights not expressly granted and on the endorsement bar in the attribution
+    clause rather than on a trademark clause of the licence body. cc:CommercialUse is prohibited, which
+    is the NonCommercial element of this set and is stated in the restrictions section.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The attribution and notice duties are present and supported: the licence requires a copy
+    of, or the URI for, the licence with every copy distributed or communicated to the public, that all
+    notices referring to the licence and to the disclaimer be kept intact, and that credit be given. The
+    attribution clause owes credit to the Autore Originario and to the Parti Designate, and names the
+    parties Licenziante and Tu. The Italian text adds the lending right and the digital audio transmission
+    to the acts that trigger the duty, which the model folds into odrl:distribute and odrl:present. The
+    duties hang on odrl:distribute, odrl:modify and odrl:derive, which matches the licence, since they
+    are triggered by making the work public rather than by private use.'
+  action: none
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: 'dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation are quoted from the Italian text
+    of this port and not from the English unported version, and each field holds its own clause rather
+    than a copy of the other. Article 5, Dichiarazioni, Garanzie ed Esonero da responsabilita, is the
+    warranty disclaimer and article 6, Limitazione di Responsabilita, the limitation, both in capitals.
+    The Italian limitation ends with a sentence the unported text does not have: "NESSUNA CLAUSOLA DI
+    QUESTA LICENZA ESCLUDE O LIMITA LA RESPONSABILITA NEL CASO IN CUI QUESTA DIPENDA DA DOLO O COLPA GRAVE."
+    Each field holds its own article. One transcription defect was corrected: the disclaimer field read
+    "COSI COME" where the legal code reads "COSI COM''E", a dropped apostrophe inside the quoted text.
+    All six Italian records carried it.'
+  action: applied
+  change: dalicc:WarrantyDisclaimer """SALVO CHE SIA ESPRESSAMENTE CONVENUTO ALTRIMENTI PER ISCRITTO FRA
+    LE PARTI, IL LICENZIANTE OFFRE L'OPERA IN LICENZA "COSI COM'E" ...""" ;
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: The record has no dalicc:additionalClauses, so the clauses the ODRL policy cannot carry,
+    the reservation of unnamed rights, the downstream offer to every recipient, the severability and entire
+    agreement paragraphs, the termination rule and the royalty collection arrangements, are not visible
+    in the record at all. The whole Creative Commons family is modelled this way.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:Italy, which matches the country of the legal-code URL https://creativecommons.org/licenses/by-nc/3.0/it/legalcode,
+    and dalicc:validityType is dalicc:perpetual, which matches a grant made for the duration of the applicable
+    rights. Article 8 closes: "La presente licenza e stata redatta sulla base della legge italiana, in
+    particolare del Codice Civile del 1942 e della legge 22 Aprile 1941, n. 633 e successive modificazioni
+    sulla protezione del diritto d''autore e di altri diritti connessi al suo esercizio." That is a statement
+    about the drafting basis rather than a choice-of-law clause, and it is the closest any port of this
+    batch other than Armenia comes to one. Note that the jurisdiction field records the legal home of
+    the port, not a territorial limit on the grant: the grant itself runs worldwide.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The licence forbids technological protection measures and the vocabulary has no term for
+    it: article 4(a): when distributing or communicating the Opera to the public the licensee "non puoi
+    utilizzare alcuna misura tecnologica tale da limitare la capacita di chiunque riceva l''Opera da Te
+    di esercitare gli stessi diritti concessi a Te con la presente licenza". Proposed term: dalicc:applyTechnicalProtectionMeasures,
+    an odrl:Action to be used as an odrl:Prohibition. Not modelled, because bending an existing term would
+    be worse than the gap.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The automatic termination of the licence on breach, and the survival of the definitions,
+    the disclaimer, the limitation of liability and the miscellaneous sections, have no vocabulary term.
+    Proposed term: dalicc:terminationOnBreach. The offer of a direct licence from the licensor to every
+    recipient of the work has none either. Proposed term: dalicc:downstreamOffer.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Moral rights are not expressible with the present vocabulary. Article 3 closes: "Tutti
+    i diritti morali irrinunciabili riconosciuti dalla legge applicabile rimangono riservati." The inalienable
+    moral rights of Italian law are reserved against the licensee. Proposed terms: dalicc:moralRightsRestriction
+    for a clause that binds the licensee and dalicc:moralRightsNonAssertion for one in which the licensor
+    undertakes not to assert.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The royalty collection arrangements are not expressible either. Articles 4(f) and 4(g)
+    are the longest collecting-society clauses in the batch and the only ones that name the societies.
+    For musical works the licensor reserves the exclusive right to collect, personally or through a collecting
+    society such as SIAE, the fees for communication to the public and for performance, and the fees for
+    cover versions; for sound recordings the same reservation runs through a society such as IMAIE; and
+    a fourth paragraph reserves the other fees Italian copyright law assigns to the author, naming article
+    70 of law 633/1941 for school anthologies and the non-waivable equitable remuneration of article 18-bis.
+    In the NonCommercial sets the reservation bites for uses primarily directed at commercial advantage;
+    in the others it is drawn correspondingly. Proposed term: dalicc:royaltyCollectionReserved, with a
+    companion for the waived case. The clause differs between the element sets of one and the same port,
+    which is exactly what the model cannot show.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The sui generis database right is handled by the text in a way the model cannot carry:
+    the licensor waives its own database right and the restrictions of the licence do not apply to the
+    parts of the work that qualify only under that right. dcmitype:Dataset in odrl:target says that a
+    dataset may be licensed, not that the database right is waived and not that the attribution and share-alike
+    conditions fall away for the database layer. Proposed terms: dalicc:databaseRightWaiver and a marker
+    for the carve-out.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the forty one axioms of licensedata/dependencygraph/dg_default.ttl
+    reports no conflict, before and after the corrections, and the pre-review baseline listed none for
+    this record either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of Creative Commons Attribution-NonCommercial 4.0 International. The deontic model
+    of this record is identical to the parent CC-BY-NC-4.0, statement for statement: the same permissions
+    with the same duties, the same prohibitions and the same set level duties. What differs is the jurisdiction,
+    the language of the legal text, the clause texts quoted from it, and the version specific clauses
+    of 3.0 that the model does not carry, chiefly the express prohibition of sublicensing, the technological
+    measures clause, the moral rights clause and the royalty collection arrangements. After the correction
+    the odrl:target of this record also matches the parent. The compatibility checker cannot tell this
+    record from the other records of the BY-NC element set, across all three versions and every jurisdiction
+    the library holds.'
+  action: none
+family: 'Creative Commons 3.0 port: Italy (IT)'
+port_of: CC-BY-NC-4.0
+variant_kind: jurisdiction-port
+notes: 'The parent is the 4.0 International record of the same element set, since the library holds no
+  unported and no International 3.0 record; the version difference, 3.0 against 4.0, is therefore part
+  of the port relation and not only the jurisdiction. The 3.0 text differs from 4.0 in substance as well:
+  it prohibits sublicensing expressly, it has no thirty day cure period for a breach, its share-alike
+  clause accepts a later version or another port with the same licence elements, and it settles the moral
+  rights and royalty collection questions per jurisdiction. None of that is visible in the model. Nothing
+  in this review is legal advice.'

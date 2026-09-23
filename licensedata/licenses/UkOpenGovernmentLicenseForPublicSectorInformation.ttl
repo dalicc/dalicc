@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "UK Open Government License for Public Sector Information" in the DALICC license library
+# Title: The machine-readable representation of "UK Open Government License for Public Sector Information" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/UkOpenGovernmentLicenseForPublicSectorInformation
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,16 +15,23 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:UkOpenGovernmentLicenseForPublicSectorInformation a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "OGL-UK-3.0" ;
     cc:attributionName "UK Government" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/> ;
-    dalicc:WarrantyDisclaimer """The Information is licensed 'as is' and the Information Provider and/or Licensor excludes all representations, warranties, obligations and liabilities in relation to the Information to the maximum extent permitted by law.
-The Information Provider and/or Licensor are not liable for any errors or omissions in the Information and shall not be liable for any loss, injury or damage of any kind caused by its use. The Information Provider does not guarantee the continued supply of the Information.""" ;
+    dalicc:LiabilityLimitation """The Information Provider and/or Licensor are not liable for any errors or omissions in the Information and shall not be liable for any loss, injury or damage of any kind caused by its use. The Information Provider does not guarantee the continued supply of the Information.""" ;
+    dalicc:WarrantyDisclaimer """The Information is licensed 'as is' and the Information Provider and/or Licensor excludes all representations, warranties, obligations and liabilities in relation to the Information to the maximum extent permitted by law.""" ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/UkOpenGovernmentLicenseForPublicSectorInformation/versions> ;
     dct:alternative "Open Government License" ;
+    dct:hasVersion "4" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "UK Government" ;
     dct:source <http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/> ;
     dct:title "UK Open Government License for Public Sector Information" ;
@@ -33,11 +40,15 @@ The Information Provider and/or Licensor are not liable for any errors or omissi
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ] ],
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ] ],
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -55,12 +66,16 @@ The Information Provider and/or Licensor are not liable for any errors or omissi
         [ a odrl:Permission ;
             odrl:action dalicc:chargeLicenseFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:noWarrantyNotice ] ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:noWarrantyNotice ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:suiGenerisDatabaseRights ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ChangeLicense ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action dalicc:compliantLicense ] ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action cc:ShareAlike ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:addStatement ],
-        [ a odrl:Prohibition ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,

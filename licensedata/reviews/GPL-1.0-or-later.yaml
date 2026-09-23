@@ -1,0 +1,107 @@
+id: GPL-1.0-or-later
+title: GNU General Public License v1.0 or later
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/GPL-1.0-or-later.txt
+text_retrieved: true
+verdict: created
+summary: >-
+  The record models the "or later" form of the first version of the GNU General Public License.
+  Its legal text is the same document that GPL-1.0-only models, so the deontic model is that
+  record statement for statement. What the identifier adds is the option section 7 gives the
+  licensee to follow version 1 or any later version the Free Software Foundation publishes,
+  which in practice means GPL version 2 or version 3.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: >-
+    File name, record id, SPDX identifier and the local name of the IRI are all
+    GPL-1.0-or-later. The deprecated short form GPL-1.0+ is carried as a dct:alternative so that
+    a search for it reaches this record.
+  action: applied
+- rubric: 10
+  severity: major
+  field: dalicc:variantOf
+  description: >-
+    The record copies GPL-1.0-only statement for statement. Five things differ: the identifier,
+    dct:title, dct:alternative, dalicc:orLaterVersionOption (true here, false there) and the
+    pair dalicc:variantKind "version-option" with dalicc:variantOf dalicclib:GPL-1.0-only.
+    Everything else, including the three quoted clauses and the four statements that set the
+    pair apart from the GPL version 2 records, is carried over unchanged.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:orLaterVersionOption
+  description: >-
+    Section 7 is the clause the flag stands for: "If the Program specifies a version number of
+    the license which applies to it and "any later version", you have the option of following
+    the terms and conditions either of that version or of any later version published by the
+    Free Software Foundation." The same section adds that where the program names no version at
+    all, "you may choose any version ever published by the Free Software Foundation".
+    cc:jurisdiction stays dalicc:worldwide and dalicc:validityType stays dalicc:perpetual.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: >-
+    The permissions are those of the base record and come from the same sentences: section 1
+    (verbatim copies of the source, and a fee for the physical act of transferring a copy),
+    section 2 (modification and distribution of the modified work) and section 3 (object code or
+    executable form).
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: >-
+    cc:ShareAlike is a duty of the licence itself, from section 2(b), and the attribution,
+    notice and source-code duties hang on distribute, modify and derive, with
+    dalicc:modificationNotice on modify and derive from section 2(a). Nothing moved when the
+    model was copied.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: >-
+    The four prohibitions of the base record are kept: dalicc:ChangeLicense from section 2(b),
+    dalicc:addLimitation from section 6, dalicc:sublicense from section 4, and dalicc:promote,
+    which is the library-wide default and is not supported by this text.
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: >-
+    The warranty disclaimer of section 9, the limitation of liability of section 10, the fee and
+    warranty sentence of section 2(d) and the three quoted clauses (sections 2(c), 4 and 6) are
+    byte for byte the literals of GPL-1.0-only, because the text is the same document.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: >-
+    The asset collection carries dcmitype:Software, as in the base record.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer, run with
+    licensedata/dependencygraph/dg_default.ttl, reports 0 conflicts for this record.
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: >-
+    The gaps are those of the base record: the interactive announcement of section 2(c), for
+    which no duty action exists (proposed term dalicc:interactiveNotice), and the automatic
+    downstream licence of section 6, which dalicc:downstreamOffer nearly covers but which asks
+    nothing of the licensee. Both are quoted in dalicc:additionalClauses.
+  action: none
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: version-option
+variant_of: GPL-1.0-only
+notes: >-
+  A licensee who takes the later-version option under this identifier ends up under GPL version
+  2 or version 3, whose records model those texts. The record says only that the option exists;
+  it does not try to model the terms of the version the licensee may move to.

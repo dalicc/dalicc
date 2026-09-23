@@ -1,0 +1,80 @@
+id: BSD-1-Clause
+title: BSD 1-Clause License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/BSD-1-Clause.txt
+text_retrieved: true
+verdict: created
+summary: Models the one-clause BSD licence, which keeps only the source-form retention condition of the BSD family.
+  The record follows BSD-2-Clause for everything the two share and drops nothing else. Nothing here is legal advice.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant reads "Redistribution and use in source and binary forms, with or without modification,
+    are permitted provided that the following conditions are met". The record therefore permits reproduce, distribute,
+    modify, derive, display, present, commercial use, derivative works, modified works and the distribution fee,
+    the same set the BSD-2-Clause record carries.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: 'The licence has no endorsement clause, so no dalicc:promote statement is made at all: silence about
+    trademarks is not a grant and not a refusal. This departs from the existing BSD-2-Clause record, which permits
+    dalicc:promote although the two-clause text is equally silent. dalicc:ChangeLicense is prohibited, as in every
+    other BSD record. (Corrected on 2026-09-15 by the verification pass: see the rubric 3 finding on relicensing
+    below.)'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: The retention conditions are the whole content of the licence. cc:Attribution and cc:Notice hang
+    off odrl:distribute, odrl:modify and odrl:derive, because the text requires the copyright notice, the list of
+    conditions and the disclaimer to travel with every redistributed and every modified copy.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: 'The single disclaimer paragraph of the BSD family carries two distinct clauses. This record splits
+    it at the sentence boundary: the warranty sentence goes to dalicc:WarrantyDisclaimer and the "IN NO EVENT SHALL"
+    sentence to dalicc:LiabilityLimitation, both verbatim. The existing BSD-2-Clause, BSD-3-Clause and BSD-4-Clause
+    records keep the whole paragraph in dalicc:WarrantyDisclaimer and carry no dalicc:LiabilityLimitation; those
+    records were not edited, and the divergence is reported for the consolidation pass.'
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer with the dependency graph dg_default returned an empty
+    conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Follows licensedata/licenses/BSD-2-Clause.ttl. The only modelled difference is that the one-clause
+    text has no binary-form retention condition; since the library expresses both conditions with the same cc:Attribution
+    and cc:Notice duties, the two records carry the same duty set, and the difference is visible only in the quoted
+    clause text.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
+    or without modification, are permitted provided that the following conditions are met: 1. Redistributions of
+    source code must retain the above copyright notice, this list of conditions and the following disclaimer." The
+    permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the
+    relicensing.'
+  action: applied
+family: BSD variants
+port_of: null
+variant_kind: null
+notes: cc:legalcode points at the FreeBSD source file that SPDX names as the canonical location of this wording.
+  The disclaimer uses the typewriter quotation marks of the original (``AS IS''), which are kept verbatim.

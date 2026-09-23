@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "INSPIRE End User Licence" in the DALICC license library
+# Title: The machine-readable representation of "INSPIRE End User Licence" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/InspireEndUserLicence
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:InspireEndUserLicence a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -27,9 +28,16 @@ dalicclib:InspireEndUserLicence a odrl:Set ;
 
 5.3 Nothing in this Licence shall exclude or limit liability of a party for death or personal injury resulting from the negligence of that party or its servants, agents or employees or for fraudulent misrepresentation.""" ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/InspireEndUserLicence/versions> ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Ordnance Survey Limited" ;
-    dct:source <https://www.ordnancesurvey.co.uk/business-and-government/public-sector/mapping-agreements/inspire-licence.html> ;
+    dct:source <http://web.archive.org/web/20190330210447/https://www.ordnancesurvey.co.uk/business-and-government/public-sector/mapping-agreements/inspire-licence.html> ;
     dct:title "INSPIRE End User Licence" ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:Notice ] ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:modify ],
         [ a odrl:Permission ;

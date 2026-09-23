@@ -1,0 +1,78 @@
+id: Jam
+title: Jam License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Jam.txt
+text_retrieved: true
+verdict: created
+summary: The record models the Jam license, three lines granting free use and distribution as long as the copyright
+  notice is retained and modifications are clearly marked. It is the one record of this batch with a modification
+  notice duty and without a notice duty for the license text itself.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The whole grant reads: "License is hereby granted to use this software and distribute it freely,
+    as long as this copyright notice is retained and modifications are clearly marked." Distributing modified copies
+    is assumed by the marking condition, so modify, derive, modified works and derivative works are permitted alongside
+    reproduce, distribute, display, present and commercial use.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:Attribution on distribute, modify and derive, from the retention of the copyright notice, and
+    dalicc:modificationNotice on modify and derive, from the words modifications are clearly marked. There is no
+    cc:Notice duty: the text asks for the copyright notice, not for the license text. Review decision 8 removed
+    the modification notice from MIT because MIT says nothing about changes; here the text says it in as many words.'
+  action: applied
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: No prohibitions. dalicc:ChangeLicense is not prohibited, unlike almost every other record of this
+    batch, because the text requires only the copyright notice to be retained and says nothing about the license
+    travelling with a copy.
+  action: none
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The disclaimer is one line, "ALL WARRANTIES ARE HEREBY DISCLAIMED.", quoted verbatim. There is no
+    liability clause.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following MIT. The text licenses the software
+    only.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: The license of the Perforce Jam build tool, distributed with Boost. It has no sibling in the library;
+    the closest shape is MIT without the notice condition and with a change-marking duty.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "License is hereby granted to use this software and distribute
+    it freely, as long as this copyright notice is retained and modifications are clearly marked." The permission
+    carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the relicensing.'
+  action: applied
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. cc:legalcode points at the Boost documentation copy SPDX lists first;
+  the second reference SPDX gives is an archived copy of the Jam README.

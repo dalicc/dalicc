@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution 3.0 Chile"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution 3.0 Chile"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttribution30Chile
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttribution30Chile a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -25,6 +26,12 @@ dalicclib:CreativeCommonsAttribution30Chile a odrl:Set ;
     dalicc:WarrantyDisclaimer """A MENOS QUE LAS PARTES LO CONVINIERAN DE OTRA FORMA POR ESCRITO, Y HASTA LA MAYOR EXTENSIÓN PERMITIDA POR LA LEGISLACIÓN APLICABLE, EL LICENCIANTE OFRECE LA OBRA "TAL CUAL", SIN BRINDAR GARANTÍAS DE CLASE ALGUNA RESPECTO DE LA OBRA, YA SEA EXPRESA, IMPLÍCITA, LEGAL O CUALQUIERA OTRA, INCLUYENDO, SIN LIMITACIÓN, GARANTÍAS DE TITULARIDAD, COMERCIABILIDAD, ADAPTABILIDAD A PROPÓSITO DETERMINADO, AUSENCIA DE INFRACCIÓN, DE DEFECTOS LATENTES O DE OTRO TIPO, PRECISIÓN O ERRORES, SEAN O NO DESCUBRIBLES. ALGUNOS PAÍSES NO PERMITEN LA EXCLUSIÓN DE GARANTÍAS IMPLÍCITAS, EN CUYO CASO ESTA EXCLUSIÓN PUEDE NO APLICARSE A USTED.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "3.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttribution30Chile/versions> ;
     dct:alternative "Attribution 3.0",
         "Attribution 3.0 Chile",
         "CC BY 3.0",
@@ -34,7 +41,10 @@ dalicclib:CreativeCommonsAttribution30Chile a odrl:Set ;
         "CC-BY-3.0 CL",
         "Creative Commons BY 3.0",
         "Creative Commons BY 3.0 CL" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/licenses/by/3.0/cl/> ;
     dct:title "Creative Commons Attribution 3.0 Chile"@en ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:display ],
@@ -75,7 +85,9 @@ dalicclib:CreativeCommonsAttribution30Chile a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cl.png> ;

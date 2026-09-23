@@ -1,0 +1,224 @@
+id: AttributionNoncommercial30Romania
+title: Creative Commons Attribution-NonCommercial 3.0 Romania
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by-nc/3.0/ro/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the BY-NC element set of the Creative Commons 3.0 port for Romania and the
+  grant and restriction sections support it: the attribution and notice duties hang on the acts that share
+  the work with the public, and the prohibitions follow the restrictions clause. The legal text was read
+  in Romanian. Corrections applied: dct:source, odrl:target, dalicc:WarrantyDisclaimer requoted from this
+  element set. What remains are proposals that touch the whole Creative Commons family rather than this
+  record, chiefly the express prohibition of sublicensing.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source. The legal code page of this port states
+    the canonical URL of the licence, https://creativecommons.org/licenses/by-nc/3.0/ro/, and the six
+    4.0 International parents carry exactly that pair, legal code plus deed. Added.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by-nc/3.0/ro/> ;
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: SPDX has no identifier for this port. The legal code URL implies CC-BY-NC-3.0-RO, which
+    the SPDX licence list does not define, so none was invented. Of the thirty five records in this batch
+    only the six German ones take an SPDX identifier.
+  action: none
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: The record targeted dalicc:CreativeWork only, while the 4.0 International parent CC-BY-NC-4.0
+    targets dalicc:CreativeWork and dcmitype:Dataset. This port settles the sui generis database right
+    expressly. Section 1 defines "Opera" to include "o baza de date in conformitate cu definitiile din
+    legislatia in vigoare privind drepturile de autor si drepturile conexe" (a database as defined by
+    the copyright and neighbouring rights legislation in force), Section 3 grants "in cazul in care opera
+    este o baza de date, dreptul de a extrage si/sau a reutiliza parti substantiale din Opera" (where
+    the work is a database, the right to extract and reuse substantial parts of it) and closes with "Daca
+    Licentiatorul este titularul drepturilor sui-generis asupra unei baze de date, in conformitate cu
+    legea nationala care implementeaza Directiva Europeana privind Bazele de Date, Licentiatorul va renunta
+    la aceste drepturi" (if the Licensor holds sui generis database rights under the national law implementing
+    the European Database Directive, the Licensor waives them). Section 4 adds that the restrictions do
+    not apply to the parts of the Work that qualify only under the Romanian sui generis database right.
+    Because the legal text names databases as licensed subject matter and disposes of the database maker's
+    right in the grant itself, dcmitype:Dataset was added here rather than left as a proposal, which is
+    how the same question was decided for the Portuguese, Czech and Azerbaijani ports. The ports in this
+    batch whose text has no database clause at all, Ecuador and Brazil, keep the proposal.
+  action: applied
+  change: "odrl:target [ a odrl:AssetCollection ;\n        dct:type dalicc:CreativeWork,\n           \
+    \ dcmitype:Dataset ] ;"
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'The modelled permissions follow the grant. Section 3 (Autorizare) grants, for the whole
+    term of protection, that "Licentiatorul acorda Licentiatului in mod neexclusiv, nelimitat teritorial
+    si cu titlu gratuit autorizarea de a exercita urmatoarele drepturi" (the Licensor grants the Licensee,
+    non exclusively, without territorial limit and free of charge, the authorisation to exercise the following
+    rights): to reproduce the Work and incorporate it into Collections, to create and reproduce Adaptations,
+    to distribute and communicate the Work and Adaptations to the public, and, where the Work is a database,
+    to extract and reuse substantial parts of it. The record models this as odrl:reproduce, odrl:distribute,
+    odrl:display, odrl:present, odrl:modify, odrl:derive, cc:DerivativeWorks and dalicc:ModifiedWorks.
+    cc:CommercialUse is prohibited rather than permitted, which is the NonCommercial element.'
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: The licence forbids sublicensing and the record does not say so. "Licentiatul nu are dreptul
+    de a sublicentia Opera." (the Licensee has no right to sublicense the Work), Section 4(a). The vocabulary
+    already has dalicc:sublicense, but no record in the library uses it and its skos:note says so, and
+    the same sentence stands in every Creative Commons 2.0 and 3.0 record, so adding it to the thirty
+    five ports of this batch alone would split the compatibility behaviour of one family. Proposed as
+    one library wide correction, together with an update of the vocabulary note. Batches 3 and 6 made
+    the same recommendation.
+  action: proposed
+  change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: the work may be shared
+    only under the terms of this licence and the licensee may not offer or impose terms that alter or
+    restrict it or the rights of downstream recipients. dalicc:promote is prohibited, which the 3.0 text
+    supports better than the 2.0 text did, because the no endorsement rule sits in the licence body rather
+    than in the Creative Commons notice printed around it. Section 4(e): the Licensee "nu are dreptul
+    de a sustine sau a sugera, direct sau indirect, orice legatura, finantare sau sustinere din partea
+    Autorului, Titularului de Drepturi Conexe, Licentiatorului si/sau partii desemnate de acestia pentru
+    atribuire". cc:CommercialUse is prohibited. Section 4(c): "Licentiatul nu poate exercita niciunul
+    dintre drepturile acordate prin articolul 3 cu intentia directa sau scopul de a obtine un avantaj
+    sau profit comercial sau o compensatie financiara personala", with the usual file sharing carve out
+    where no payment changes hands.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The attribution and notice duties are present and supported: the licence requires a copy
+    of the licence or its URI with every copy shared, that the notices referring to the licence and to
+    the warranty clause be kept intact, and that credit be given, and in this port credit is owed to the
+    "Autor" and to the "Titular de drepturi conexe" or to the party they designate, and the grant reaches
+    phonograms, videograms, broadcasts and databases, since Section 1 brings all of them inside the definition
+    of the Work. The duties hang on odrl:distribute, odrl:modify and odrl:derive, which matches the licence,
+    since they are triggered by distributing or communicating the work to the public rather than by private
+    use. dalicc:modificationNotice is supported by the duty to take reasonable steps to label a change.'
+  action: none
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: dalicc:chargeDistributionFee is permitted while cc:CommercialUse is prohibited. Under the
+    test of this port, "Licentiatul nu poate exercita niciunul dintre drepturile acordate prin articolul
+    3 cu intentia directa sau scopul de a obtine un avantaj sau profit comercial sau o compensatie financiara
+    personala", with the usual file sharing carve out where no payment changes hands, a pure cost recovery
+    fee is arguable rather than plainly allowed. The statement also sits in the 4.0 International parent
+    CC-BY-NC-4.0 and in every NonCommercial record of the library, so this is one decision about the whole
+    NonCommercial family rather than about this record. Not applied.
+  action: proposed
+  change: "remove:\n  odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:chargeDistributionFee\
+    \ ] ;"
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: 'The clause was quoted from the wrong element set. The warranty clause of the Romanian
+    port carries an internal cross reference to the royalty paragraph, and the letter and article of that
+    reference differ per element set: the Attribution and Attribution-ShareAlike legal codes say "articolul
+    3 litera (f)", this one says "articolul 4 litera (e)". The record carried the Attribution wording.
+    Requoted from this legal code, so that the field is now verbatim. Section 5 is headed "Garantie si
+    exonerarea de raspundere" and carries two things at once: an affirmative good faith representation
+    by the Licensor that it has obtained the rights needed and that the Work infringes nobody, and then
+    the disclaimer sentence "Cu exceptia cazurilor prevazute expres in prezenta licenta sau intr-un alt
+    acord scris, sau cerute de legea aplicabila, Opera este pusa la dispozitie fara vreo garantie de orice
+    fel, expresa sau tacita". The record holds the whole section, which is the accurate reading of the
+    field, since the section does contain a disclaimer. Section 6 (Limitarea raspunderii) sits in dalicc:LiabilityLimitation
+    on its own.'
+  action: applied
+  change: dalicc:WarrantyDisclaimer """... mecanismele de gestiune colectiva obligatorie descrise la articolul
+    4 litera (e); ..."""
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: 'The clauses the ODRL policy cannot carry are not visible in the record: the reservation
+    of unnamed rights, the direct licence that every recipient receives from the licensor, the automatic
+    termination on breach with the survival list, the severability, waiver and entire agreement paragraphs,
+    and the royalty collection arrangements. The whole Creative Commons family is modelled this way, so
+    this is a family observation rather than a defect of this record.'
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:Romania, which matches the country of the legal code URL
+    https://creativecommons.org/licenses/by-nc/3.0/ro/legalcode, and dalicc:validityType is dalicc:perpetual,
+    which matches a grant for the duration of the applicable copyright. Note that the jurisdiction field
+    records the legal home of the port, not a territorial limit: the grant itself is worldwide. The port
+    names no governing law.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The licence forbids technological protection measures and the vocabulary has no term for
+    it. Section 4(a): "Licentiatul nu are dreptul de a distribui sau de a comunica public Opera folosind
+    masuri tehnice de protectie care restrang posibilitatea tertilor dobanditori de a-si exercita drepturile
+    obtinute in conditiile prezentei licente." Proposed term: dalicc:applyTechnicalProtectionMeasures,
+    an odrl:Action to be used as an odrl:Prohibition. Not modelled, because bending an existing term would
+    be worse than the gap.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Two clauses of the licence body have no vocabulary term. Section 7: the licence terminates
+    automatically on any breach, licences granted downstream survive, and Sections 1, 2, 5, 6, 7 and 8
+    survive termination. Proposed term: dalicc:terminationOnBreach. Section 8: on every reproduction or
+    communication to the public in digital form the Licensor offers the recipient a licence to the Work
+    on the same terms. Proposed term: dalicc:downstreamOffer.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Moral rights have no vocabulary term, in either direction. Section 4 closes with "Drepturile
+    morale raman nemodificate, in masura in care sunt recunoscute si nu pot face obliectul unor renuntari
+    in conformitate cu legea aplicabila" (moral rights remain unaffected so far as applicable law recognises
+    them and does not allow a waiver), the deferring formula. Proposed terms: dalicc:moralRightsRestriction
+    for a clause that binds the licensee and dalicc:moralRightsNonAssertion for one in which the licensor
+    undertakes not to assert them.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The royalty collection arrangement has no vocabulary term. Section 4(f) splits royalty
+    collection three ways: a mandatory collective management regime (private copying levy is the example
+    given), where the Licensor reserves the exclusive right to collect through the competent collecting
+    society for commercial and non commercial use alike; an optional collective management regime (public
+    lending right is the example), reserved for commercial use and waived for non commercial use; and
+    voluntary collective management, waived for non commercial use and reserved for commercial use. The
+    societies are described generically, none is named. Proposed term: dalicc:royaltyCollectionReserved,
+    with a counterpart for the waiver. It is one of the few places where the ports of one version really
+    differ from each other.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the forty one axioms of licensedata/dependencygraph/dg_default.ttl
+    reports no conflict, before and after the corrections, and the pre review baseline listed none for
+    this record either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of CC-BY-NC-4.0, the 4.0 International record of the same element set. The deontic
+    model of this record is identical to the parent, statement for statement: the same permissions with
+    the same duties, the same prohibitions and the same set level duties, and the same asset types too,
+    now that the database clause of this port has brought dcmitype:Dataset into odrl:target. What differs
+    is the jurisdiction, the language of the legal text, the clause texts and the version specific clauses
+    of 3.0 that the model does not carry, chiefly the express prohibition of sublicensing, the technological
+    measures clause, the royalty collection arrangement and the moral rights clause. The compatibility
+    checker cannot tell this record from the other records of the BY-NC element set, across all three
+    versions and every jurisdiction the library holds.'
+  action: none
+family: 'Creative Commons 3.0 port: Romania (RO)'
+port_of: CC-BY-NC-4.0
+variant_kind: jurisdiction-port
+notes: 'The parent is the 4.0 International record of the same element set, since the library holds no
+  unported and no International 3.0 record; the version difference, 3.0 against 4.0, is therefore part
+  of the port relation and not only the jurisdiction. The 3.0 text differs from 4.0 in substance as well:
+  it prohibits sublicensing expressly, it forbids technological protection measures, it has no thirty
+  day cure period for a breach, and it settles the royalty collection question and the moral rights question
+  per jurisdiction. None of that is visible in the model. This port is a translation as well as a jurisdiction
+  port, so dalicc:translationOf would fit it when the term exists. Nothing in this review is legal advice.'

@@ -1,0 +1,98 @@
+id: CERN-OHL-P-2.0
+title: CERN Open Hardware Licence Version 2 - Permissive
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://www.ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2
+text_retrieved: true
+verdict: created
+summary: Models the permissive variant of version 2 of the CERN Open Hardware Licence. The record
+  follows Apache-2.0 for its permissive shape and carries no reciprocity at all, which is exactly
+  what separates it from the W and S variants written in the same batch. A reader should note
+  that the subject matter is hardware design material, not only software.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, license id, SPDX id and IRI agree. The SPDX name carries a plain hyphen
+    before 'Permissive', so dct:title needed no correction. cc:legalcode and dct:source point
+    at the CERN wiki page that publishes all three variants.
+  action: none
+- rubric: 2
+  severity: major
+  field: odrl:target
+  description: 'dalicc:CreativeWork is carried next to dcmitype:Software because the licensed
+    material is not software: ''Source means information such as design materials or digital code
+    which can be applied to Make or test a Product''. Design materials, schematics and documentation
+    are creative works, and the Product made from them is a physical object the asset vocabulary
+    cannot name at all.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 3.1 to 3.4 and section 4 grant copying, conveying, modification, conveyance
+    of modified source and the making and conveying of Products. dalicc:ChangeLicense with a dalicc:compliantLicense
+    duty models 3.4: ''You may Convey Covered Source or modified Covered Source under licence
+    terms which differ from the terms of this Licence''. dalicc:patentGrant models section 6.1.
+    dalicc:chargeDistributionFee is carried because the patent grant expressly covers ''offer
+    to sell, sell, import, and otherwise transfer'' the Products.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'Three prohibitions: dalicc:promote for 7.2, dalicc:addLimitation for 2.3 (''You
+    shall not attempt to restrict by contract or otherwise the rights granted under this Licence
+    to other Licensees'') and dalicc:patentRetaliationTermination for 6.2.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'Notices travel with the work, so cc:Notice and cc:Attribution hang off distribute,
+    modify and derive, and dalicc:modificationNotice off modify and derive: ''add a Notice to
+    the modified Covered Source stating that You have modified it, with the date and brief description
+    of how You have modified it''. No cc:SourceCode duty and no cc:ShareAlike: the permissive
+    variant requires neither, and section 4 asks only that ''the recipient of the Product has
+    access to any Notices applicable to the Product''. This departs from the batch note, which
+    expected a source duty on all three variants; the text does not support one for P.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: 'Sections 5.1 and 5.2 are quoted verbatim into dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation,
+    headings included. Six further clauses are quoted in dalicc:additionalClauses: 2.3, 3.4, section
+    4, the patent grant 6.1, the patent retaliation 6.2 and the name and logo clause 7.2.'
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: Section 2.2 says the licence 'shall apply worldwide and without limitation in time',
+    so dalicc:worldwide and dalicc:perpetual are the text's own words.
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Section 7.3 lets a licensor release under ''any version of the CERN-OHL with that
+    variant'' and makes CERN-OHL-S the default when no variant is named. That is an or-later option
+    scoped by variant, which dalicc:orLaterVersionOption (a plain boolean) cannot express; it
+    is left off rather than bent. Proposed: reuse dalicc:shareAlikeVersionQualifier, which the
+    2026-09-15 review defined and applied nowhere.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run with the 39 axioms of licensedata/dependencygraph/dg_default.ttl,
+    returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'P, W and S share definitions, the disclaimer, the liability limitation, the patent
+    grant, the patent retaliation, the name and logo bar and the no-restriction bar. Three separate
+    records are justified: the share-alike scope is different in each and it changes every compatibility
+    answer.'
+  action: none
+family: Educational, hardware and logistics
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text, which is identical to the text at the CERN wiki. The
+  licence writes 'Licence' and spells its disclaimer headings with a double hyphen; both are kept
+  as they stand. No long dash appears in the source.

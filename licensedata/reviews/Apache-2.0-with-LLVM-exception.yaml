@@ -1,0 +1,134 @@
+id: Apache-2.0-with-LLVM-exception
+title: Apache License, Version 2.0 with LLVM Exception
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Apache-2.0.txt
+text_retrieved: true
+verdict: created
+summary: The record models the Apache licence version 2.0 as the LLVM project distributes it, with the
+  LLVM exception added. It keeps every statement of the Apache-2.0 record and adds one permission for
+  the portions of the software that a compiler embeds in object code, which may be redistributed without
+  the notice conditions of sections 4(a), 4(b) and 4(d). The second paragraph of the exception, which
+  lets you deem a conflicting section waived when the result is combined with software under GPL version
+  2, has no term in the vocabulary and is quoted instead.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, record identifier, IRI local name and title agree. spdx:licenseId carries the
+    SPDX expression "Apache-2.0 WITH LLVM-exception": the base identifier, one space, WITH in capitals,
+    one space, the exception identifier. No record in the library carried an expression before, so the
+    SPDX mapping and the spdx route have to accept the space and the keyword.'
+  action: applied
+- rubric: 1
+  severity: info
+  field: cc:legalcode
+  description: cc:legalcode points at the text of the base licence, http://www.apache.org/licenses/LICENSE-2.0,
+    because that is the licence the record models. dct:source points at the SPDX page of the exception,
+    https://spdx.org/licenses/LLVM-exception.html, because that is where the additional permission is
+    published.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'odrl:target is the one the Apache-2.0 record carries: dalicc:CreativeWork, dcmitype:Dataset
+    and dcmitype:Software. The licence speaks of a "Work" of authorship of any kind, so the wide target
+    is the base record''s reading and the exception gives no reason to narrow it.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The exception reads: "As an exception, if, as a result of your compiling your source code,
+    portions of this Software are embedded into an Object form of such source code, you may redistribute
+    such embedded portions in such Object form without complying with the conditions of Sections 4(a),
+    4(b) and 4(d) of the License." The embedded portions are material that the redistribution conditions
+    no longer reach, which is the permission dalicc:exceptedCombination.'
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:exceptedCombination ] ;\n"
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: Every permission of Apache-2.0 is kept, in the same place and with the same duties. An
+    exception adds an additional permission to a licence; it never takes a granted right away.
+  action: applied
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'The two prohibitions of the base record are kept: dalicc:promote, supported by section
+    6 of the licence, and dalicc:patentRetaliationTermination, supported by section 3. The exception does
+    not touch either, although it lets you waive section 3 in one narrow case, which the next finding
+    records.'
+  action: applied
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: The attribution, notice and modification-notice duties stay on odrl:distribute, odrl:modify
+    and odrl:derive. The exception lifts them for one kind of material only, the portions embedded in
+    object form, and the record says that in dalicc:reciprocityScope rather than by removing a duty.
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: The exception text is quoted verbatim as one literal, taken from https://raw.githubusercontent.com/spdx/license-list-data/main/text/LLVM-exception.txt.
+    Line breaks and the indentation of the source file are collapsed to single spaces, which is how every
+    clause literal in the library is written; the wording is untouched. The warranty disclaimer and the
+    liability limitation are the ones the base record quotes from the base licence.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction stays dalicc:worldwide and dalicc:validityType stays dalicc:perpetual:
+    the exception names no territory and no term. The termination clause of the base licence still applies,
+    and the record says no more about it than the base record does.'
+  action: applied
+- rubric: 7
+  severity: minor
+  field: dalicc:reciprocityScope
+  description: dalicc:reciprocityScope is defined as how far a share-alike condition reaches. Apache 2.0
+    has no share-alike condition, so here the literal names how far the redistribution conditions of section
+    4 reach after the exception. That is the same question one step weaker, and no other annotation asks
+    it.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:exceptedCombination
+  description: 'The exception carves the combination out of the condition of the licence, not out
+    of its grant. dalicc:exemptedMaterial says the opposite and is prohibited on OGL-UK-1.0, OGL-UK-2.0 and
+    NLOD-2.0, where it means material the licence never granted. The vocabulary defines
+    dalicc:exceptedCombination for this side of it since 2026-09-23, and the record carries it as
+    a permission.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The second paragraph cannot be expressed: "if you combine or link compiled forms of this
+    Software with software that is licensed under the GPLv2 ("Combined Software") and if a court of competent
+    jurisdiction determines that the patent provision (Section 3), the indemnity provision (Section 9)
+    or other Section of the License conflicts with the conditions of the GPLv2, you may retroactively
+    and prospectively choose to deem waived or otherwise exclude such Section(s) of the License, but only
+    in their entirety and only with respect to the Combined Software." It is a conditional waiver of the
+    licence''s own sections, granted to make the result compatible with another licence. Proposed term:
+    dalicc:conflictingTermWaiver, an annotation naming the sections that may be waived and the licence
+    the conflict is measured against.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: app.services.composer.consistency_check with the default dependency graph reports 0 conflicts
+    for this record. dalicc:exceptedCombination takes part in no dependency relation, so it neither creates
+    nor hides one.
+  action: applied
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The nearest sibling is Apache-2.0 itself. This record differs from it in five statements:
+    the SPDX expression, the exception text in dalicc:additionalClauses, the dalicc:exceptedCombination permission,
+    dalicc:reciprocityScope, and dalicc:variantKind "exception" with dalicc:variantOf. Everything else
+    is copied, including the patent grant and the patent retaliation prohibition, which travel together.'
+  action: applied
+family: Apache Software Foundation (1.1, 2.0)
+port_of: null
+variant_kind: exception
+variant_of: Apache-2.0
+notes: dct:publisher stays "The Apache Software Foundation", the publisher of the licence text. The exception
+  itself comes from the LLVM project and names no publisher of its own.

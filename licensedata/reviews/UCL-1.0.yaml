@@ -1,0 +1,105 @@
+id: UCL-1.0
+title: Upstream Compatibility License v1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://opensource.org/license/UCL-1.0'
+text_retrieved: true
+verdict: created
+summary: >-
+  The Open Software License 3.0 with one clause changed: a derivative work must be licensed
+  under both this licence and the Apache License 2.0 or later, so that changes can travel back
+  upstream to a permissively licensed project. The record keeps the OSL reciprocity and adds a
+  compliant-licence duty on the two acts that create a derivative work. Nothing here is legal
+  advice.
+findings:
+- rubric: 2
+  severity: info
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Software alone, the type 32 of the library's software records carry, among them
+    MIT, BSD-3-Clause, GPL-3.0-only and the sibling OSL-3.0. These texts license an "original
+    work of authorship", which would also fit dalicc:CreativeWork, the type the AFL-3.0 record
+    carries beside Software and Dataset; the batch keeps the narrower reading its batch entry
+    prescribes, so that all nine records of the family answer alike and the owner can widen
+    them in one pass.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 1 grants a "worldwide, royalty-free, non-exclusive, sublicensable license, for the
+    duration of the copyright", so dalicc:sublicense is a permission; section 2 grants a
+    patent licence "to make, use, sell, offer for sale, have made, and import the Original
+    Work and Derivative Works", so dalicc:patentGrant is a permission and
+    dalicc:chargeLicenseFee follows the right to sell. odrl:grantUse is not written, as in the
+    other reciprocal records of this family.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    dalicc:ChangeLicense, because 1(c) prescribes which licences a copy may carry and no
+    others; dalicc:promote, from section 4, which bars the use of the names and marks of the
+    Licensor and of any contributor to endorse or promote products; and
+    dalicc:patentRetaliationTermination from section 10.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Clause 1(c) reads: "copies of Original Work You distribute or communicate shall be
+    licensed under this Upstream Compatibility License and all Derivative Work You distribute
+    or communicate shall be licensed under both this Upstream Compatibility License and the
+    Apache License 2.0 or later". The first half is the licence-wide cc:ShareAlike duty; the
+    second is modelled as a dalicc:compliantLicense duty on odrl:modify and odrl:derive, with
+    the clause quoted, because the vocabulary has no way to name the second licence. Section 6
+    adds cc:Attribution, cc:Notice and dalicc:modificationNotice to the same two acts, and
+    cc:SourceCode hangs on odrl:distribute.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Sections 7 and 8 are quoted into their own fields; UCL restores the warranty of provenance
+    that the Non-Profit amendment strikes. dalicc:additionalClauses carries clause 1(c) itself
+    and sections 3, 4, 5, 9, 10, 11 and 16.
+  action: applied
+- rubric: 7
+  severity: info
+  field: 'cc:jurisdiction'
+  description: >-
+    Section 11 names no legal system, so cc:jurisdiction stays dalicc:worldwide and the clause
+    is quoted.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The external deployment trigger of section 5 (proposed dalicc:networkUseTrigger), the
+    assent requirement of section 9 (proposed dalicc:recipientAssent) and the automatic
+    termination (proposed dalicc:terminatesOnBreach) are quoted. A fourth gap is specific to
+    this licence: a duty to license under a named second licence has no term; proposed
+    dalicc:additionalLicenseRequired with the licence id as its object.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty list for this record.
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: >-
+    UCL-1.0 is OSL-3.0 with clause 1(c) extended and a second copyright holder in section 16.
+    It is not a version of the OSL in the SPDX sense, so dalicc:variantKind is left out,
+    unlike the AFL and OSL records of this batch.
+  action: none
+family: Academic Free and Open Software
+port_of: null
+variant_kind: null
+notes: >-
+  Modelled from the SPDX plain text of UCL-1.0 and checked against the URL in cc:legalcode.
+  The text uses typographic apostrophes and quotation marks in sections 4 and 9; the quoted
+  clauses keep them.

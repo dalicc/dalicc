@@ -1,0 +1,84 @@
+id: Sleepycat
+title: Sleepycat License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Sleepycat.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models the Sleepycat License, the Berkeley DB license. It is BSD-3-Clause with a fourth
+  condition that makes it reciprocal in substance: any redistribution, in any form, must be accompanied by
+  information on how to obtain the complete source code of the DB software and of any software that uses it.
+  That condition is modelled as a cc:SourceCode duty on distribute, modify and derive and quoted in dalicc:additionalClauses.'
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: '"Redistribution and use in source and binary forms, with or without modification, are permitted
+    provided that the following conditions are met". The permissive core, as on BSD-3-Clause.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The third condition reads: "Redistributions in any form must be accompanied by information
+    on how to obtain complete source code for the DB software and any accompanying software that uses the DB
+    software." cc:SourceCode is therefore a duty on distribute, modify and derive, alongside cc:Attribution
+    and cc:Notice from the first two conditions.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: No cc:ShareAlike duty is written, although this license is often called copyleft. The condition
+    requires the source of the work and of software that uses it to be obtainable and freely redistributable
+    under reasonable conditions; it does not require the whole work to be licensed under these terms, which
+    is what cc:ShareAlike says in this library. The reciprocity a reader should know about is in the quoted
+    clause.
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The second and third blocks of the text carry the endorsement clause: "Neither the name of
+    the University nor the names of its contributors may be used to endorse or promote products derived from
+    this software without specific prior written permission." That is dalicc:promote as a prohibition. dalicc:ChangeLicense
+    is prohibited because the text requires the license itself to travel with every copy, which is the reading
+    IscLicense and BSD-3-Clause take of the same clause. The MIT record does not carry the prohibition although
+    its text has the same requirement, so the library is not uniform here.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The text repeats three BSD blocks, one for Sleepycat Software, one for the Regents of the University
+    of California and one for Harvard. The quoted warranty and liability clauses are the Sleepycat block, which
+    is the operative one; the two backticks and two apostrophes around AS IS are the typography of the published
+    text and are kept.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'One odrl:AssetCollection of dct:type dcmitype:Software, following BSD-3-Clause. The text licenses
+    a database library. dcmitype:Dataset is not written: the license covers the DB software, not the data a
+    user puts in it.'
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Against BSD-3-Clause the difference is the source-code duty. Against the GNU records the difference
+    is that there is no license-wide cc:ShareAlike duty, so a compatibility result will treat this license
+    as permissive with a source obligation.
+  action: none
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. The source-availability condition is both a duty and a quoted clause,
+  because the detail (no more than the cost of distribution plus a nominal fee, freely redistributable under
+  reasonable conditions) changes what the duty means.

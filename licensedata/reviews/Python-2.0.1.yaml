@@ -1,0 +1,91 @@
+id: Python-2.0.1
+title: Python License 2.0.1
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://www.python.org/download/releases/2.0.1/license/
+text_retrieved: true
+verdict: created
+summary: Models the Python 2.0.1 licence, that is the Python Software Foundation License Version 2 stacked on the
+  BeOpen, CNRI and CWI agreements that the history of the interpreter drags along. The operative terms are those
+  of the PSF agreement, so the record follows PythonLicense20. Nothing here is legal advice.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: PSF clause 2 grants "a nonexclusive, royalty-free, world-wide license to reproduce, analyze, test,
+    perform and/or display publicly, prepare derivative works, distribute, and otherwise use Python alone or in
+    any derivative version". The record therefore permits reproduce, distribute, modify, derive, display, present,
+    commercial use, derivative works, modified works and, since no text in the stack says otherwise, the distribution
+    fee.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'PSF clause 7 states "This License Agreement does not grant permission to use PSF trademarks or trade
+    name in a trademark sense to endorse or promote products or services of Licensee, or any third party", and the
+    BeOpen and CNRI sections repeat it for their own marks, so dalicc:promote is a prohibition. dalicc:ChangeLicense
+    is prohibited because no agreement in the stack grants a right to relicense. (Corrected on 2026-09-15 by the
+    verification of this batch: see the rubric 3 finding on relicensing below.)'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: PSF clause 2 conditions the grant on "PSF's License Agreement and PSF's notice of copyright ... are
+    retained in Python alone or in any derivative version prepared by Licensee", which is cc:Attribution and cc:Notice,
+    and clause 3 requires "a brief summary of the changes made to Python", which is dalicc:modificationNotice on
+    odrl:modify and odrl:derive. The same duties satisfy the BeOpen, CNRI and CWI sections, so they are not repeated.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:additionalClauses
+  description: PSF clauses 4 and 5 are quoted word for word in their own predicates. dalicc:additionalClauses carries
+    PSF clauses 6 and 7, the BeOpen choice of California law with its logo exception, the CNRI choice of federal
+    and Virginia law with its GPL carve-out, and the CWI permission notice, so that a reader can see the whole stack.
+  action: applied
+- rubric: 7
+  severity: major
+  field: cc:jurisdiction
+  description: 'Three different choice-of-law clauses appear in one file: none for the PSF agreement itself, California
+    for BeOpen and federal or Virginia law for CNRI. No single legal system governs, so cc:jurisdiction is dalicc:worldwide
+    and all three clauses are quoted.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: Two gaps. Automatic termination on breach has no property (proposed dalicc:terminatesOnBreach). A
+    licence that is a stack of agreements, each of which must be complied with, has no term either; proposed dalicc:composedOf,
+    an object property from a record to the records of the agreements it stacks, which would let the Python 2.0.1
+    record point at CNRI-Python-GPL-Compatible.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer with the dependency graph dg_default returned an empty
+    conflict list.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Follows licensedata/licenses/PythonLicense20.ttl. Two deliberate differences: this record adds cc:Attribution
+    to odrl:distribute (the PSF clause requires the copyright notice as well as the agreement to be retained) and
+    it does not repeat that record''s prohibitions of odrl:grantUse, cc:ShareAlike, dalicc:addLimitation, dalicc:addStatement
+    and dalicc:chargeDistributionFee, none of which the PSF text states. The existing record was not edited.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Permission to use, copy, modify, and distribute this software
+    and its documentation for any purpose and without fee is hereby granted, provided that the above copyright notice
+    appear in all copies and that both that copyright notice and this permission notice appear in supporting documentation,
+    and that the name of Stichting Mathematisch Centrum or CWI not be used in advertising or publicity pertaining
+    to distribution of the software without specific, written prior permission." The permission carries the dalicc:compliantLicense
+    duty, as Apache-2.0 does, because the notice has to survive the relicensing.'
+  action: applied
+family: Python, PHP, Unicode and W3C
+port_of: null
+variant_kind: version
+notes: dalicc:noWarrantyNotice is kept as a permission, as on the PythonLicense20 record, because the agreement
+  lets a redistributor pass the disclaimer on.

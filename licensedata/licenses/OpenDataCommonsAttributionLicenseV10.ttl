@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Open Data Commons Attribution License v1.0" in the DALICC license library
+# Title: The machine-readable representation of "Open Data Commons Attribution License v1.0" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/OpenDataCommonsAttributionLicenseV10
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,26 +15,29 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:OpenDataCommonsAttributionLicenseV10 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "ODC-By-1.0" ;
     cc:attributionName "Open Data Commons" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://opendatacommons.org/licenses/by/1.0/> ;
-    dalicc:WarrantyDisclaimer """ Open Data Commons is not a law firm and does not provide legal services of any kind.
-
-Open Data Commons has no formal relationship with you. Your receipt of this document does not create any kind of agent-client relationship. Please seek the advice of a suitably qualified legal professional licensed to practice in your jurisdiction before using this document.
-
-No warranties and disclaimer of any damages. This information is provided ‘as is‘, and this site makes no warranties on the information provided. Any damages resulting from its use are disclaimed.""" ;
+    dalicc:LiabilityLimitation """Subject to any liability that may not be excluded or limited by law, the Licensor is not liable for, and expressly excludes, all liability for loss or damage however and whenever caused to anyone by any use under this License, whether by You or by anyone else, and whether caused by any fault on the part of the Licensor or not. This exclusion of liability includes, but is not limited to, any special, incidental, consequential, punitive, or exemplary damages such as loss of revenue, data, anticipated profits, and lost business. This exclusion applies even if the Licensor has been advised of the possibility of such damages.
+If liability may not be excluded by law, it is limited to actual and direct financial loss to the extent it is caused by proved negligence on the part of the Licensor.""" ;
+    dalicc:WarrantyDisclaimer """The Database is licensed by the Licensor "as is" and without any warranty of any kind, either express, implied, or arising by statute, custom, course of dealing, or trade usage. Licensor specifically disclaims any and all implied warranties or conditions of title, non-infringement, accuracy or completeness, the presence or absence of errors, fitness for a particular purpose, merchantability, or otherwise. Some jurisdictions do not allow the exclusion of implied warranties, so this exclusion may not apply to You.""" ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/OpenDataCommonsAttributionLicenseV10/versions> ;
     dct:alternative "ODC Attribution License",
         "ODC By",
         "ODC-By" ;
+    dct:hasVersion "3" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Open Data Commons" ;
     dct:source <https://opendefinition.org/licenses/odc-by/> ;
     dct:title "Open Data Commons Attribution License v1.0" ;
-    odrl:duty [ a odrl:Duty ;
-            odrl:action cc:ShareAlike ] ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
         [ a odrl:Permission ;
@@ -68,10 +71,14 @@ No warranties and disclaimer of any damages. This information is provided ‘as 
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
-            odrl:action cc:CommercialUse ] ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ChangeLicense ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action dalicc:compliantLicense ] ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:ChangeLicense ],
+            odrl:action dalicc:promote ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Dataset ] .

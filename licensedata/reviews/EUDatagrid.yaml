@@ -1,0 +1,96 @@
+id: EUDatagrid
+title: EU DataGrid Software License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/EUDatagrid.txt
+text_retrieved: true
+verdict: created
+summary: The record models the EU DataGrid Software License, a BSD-form license with a prescribed acknowledgment
+  notice and a grant-back clause. Installation, use, reproduction, display, modification and redistribution are
+  permitted; the notices and the list of conditions must be reproduced; the user documentation must carry a named
+  acknowledgment; and the names of the project may not be used to endorse products.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads: "Installation, use, reproduction, display, modification and redistribution of this
+    software, with or without modification, in source and binary forms, are permitted." It names display expressly,
+    which few permissive texts do. The same sentence speaks of your sub-licensees, so odrl:grantUse is permitted;
+    the text never uses the word sublicense as a grant, so dalicc:sublicense is not written.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'Condition 1 requires the copyright notice, the license statement and the list of conditions to be
+    reproduced in the software, the user documentation and any other material: cc:Attribution and cc:Notice on distribute,
+    modify and derive. Condition 2 prescribes the exact words of an acknowledgment, "This product includes software
+    developed by the EU DataGrid", in the user documentation of a redistribution: that is dalicc:addStatement as
+    a duty on odrl:distribute, the term the vocabulary defines for attaching a prescribed notice.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'Condition 3 forbids using the names EDG, EDG Toolkit, EU DataGrid and EU DataGrid Project to endorse
+    or promote software or products derived from it without prior written permission: dalicc:promote as a prohibition.
+    dalicc:ChangeLicense is prohibited because the text requires the license itself to travel with every copy, which
+    is the reading IscLicense and BSD-3-Clause take of the same clause. The MIT record does not carry the prohibition
+    although its text has the same requirement, so the library is not uniform here. (Corrected on 2026-09-15 by
+    the verification of this batch: see the rubric 3 finding on relicensing below.)'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Condition 4 is a grant-back: a licensee who publishes modifications without requiring a separate
+    written license is deemed to have granted the project participants a worldwide, non-exclusive, royalty-free,
+    perpetual license to those modifications. No vocabulary term expresses an obligation that runs from the licensee
+    back to the licensor. Proposed term: dalicc:contributionGrantBack, as an action usable as an odrl:Duty. Quoted
+    in dalicc:additionalClauses for now.'
+  action: none
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: The acknowledgment condition is quoted as well as modelled, because its exact wording and its alternative
+    placement in the software itself are part of the obligation. The typographic quotation marks around one of the
+    project names are those of the published text.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following BSD-3-Clause. The text licenses
+    software in source and binary form.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Against BSD-3-Clause the record adds odrl:grantUse and the dalicc:addStatement duty. Apache-2.0 is
+    the closest existing record for the prescribed-notice idea, but Apache carries it as a notice file rather than
+    a fixed sentence.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Any exercise of rights under this license by you or your
+    sub-licensees is subject to the following conditions: 1. Redistributions of this software, with or without modification,
+    must reproduce the above copyright notice and the above license statement as well as this list of conditions,
+    in the software, the user documentation and any other materials provided with the software." The permission
+    carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the relicensing.'
+  action: applied
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. The disclaimer and the limitation of liability are sections 5 and 6 of
+  the license and are quoted without their headings.

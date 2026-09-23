@@ -1,0 +1,111 @@
+id: OpenSSL
+title: OpenSSL License
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/OpenSSL.txt
+text_retrieved: true
+verdict: created
+summary: 'Models the licence that governed OpenSSL up to version 3: two agreements in one document, the OpenSSL License
+  and the original SSLeay License, both of which a licensee must satisfy. Both are six- and four-clause BSD texts
+  with advertising acknowledgements. The SSLeay half ends with a sentence that forbids changing the licence terms,
+  which is why this record prohibits dalicc:ChangeLicense.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all OpenSSL. The SPDX identifier
+    covers both halves of the document, so one record models both.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software. Both halves govern source and binary forms
+    of a library.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant of the OpenSSL half reads "Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met", and the SSLeay half says "This library
+    is free for commercial and non-commercial use as long as the following conditions are aheared to". The record
+    permits reproduce, distribute, modify, derive, display, present, commercial use, derivative works, modified works
+    and the distribution fee.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:ChangeLicense is prohibited. The last sentence of the SSLeay half reads "The licence and distribution
+    terms for any publically available version or derivative of this code cannot be changed. i.e. this code cannot
+    simply be copied and put under another distribution licence [including the GNU Public Licence.]" That is an express
+    bar on relicensing, not a notice condition, so the record departs from family rule 15 here.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote is prohibited for clause 4 of the OpenSSL half, "The names "OpenSSL Toolkit" and "OpenSSL
+    Project" must not be used to endorse or promote products derived from this software without prior written permission".
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Attribution and cc:Notice hang off odrl:distribute, odrl:modify and odrl:derive for clauses 1 and
+    2 of both halves and for the SSLeay sentence "any Copyright notices in the code are not to be removed ... Eric
+    Young should be given attribution as the author of the parts of the library used".
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: dalicc:advertisingAcknowledgement hangs off odrl:distribute for clause 3 of each half, and dalicc:addStatement
+    for clause 6 of the OpenSSL half and clause 4 of the SSLeay half, which put a prescribed acknowledgement on a
+    redistribution of any form rather than on advertising. dalicc:rename hangs off odrl:modify and odrl:derive for
+    clause 5, "Products derived from this software may not be called "OpenSSL"".
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:PromotionSpecification
+  description: dalicc:PromotionSpecification carries the OpenSSL acknowledgement wording, following Apache-1.1. The
+    SSLeay acknowledgement wording is quoted inside its clause in dalicc:additionalClauses, because the property holds
+    one literal and the two wordings are different.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The document carries two disclaimer paragraphs, one per half. dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation
+    quote the OpenSSL one, which is the half the licence is named after; the SSLeay disclaimer is the same BSD wording
+    with another party named and is not quoted a second time. The typewriter quotation marks (``AS IS'') and the spellings
+    "aheared" and "rouines" are the text's own.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: info
+  field: dalicc:composedOf
+  description: The document is a stack of two agreements, which dalicc:composedOf is made for, but the library holds
+    no separate record for the SSLeay licence, so there is nothing to point at. Both halves are modelled in this record
+    instead and every clause of both is quoted.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Read against licensedata/licenses/Apache-1.0.ttl, which this addition also creates, the clause structure
+    is the same and the two records differ in one statement: OpenSSL prohibits dalicc:ChangeLicense because its text
+    says the terms cannot be changed. scripts/review/family_rules.py counted that as a violation of rule 15 until it gained an
+    exception list for the two texts that bar relicensing outright, which this record is on.'
+  action: applied
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: cc:legalcode and dct:source both point at the SPDX page, which serves the dual text as one document; the publisher's
+  own address now serves the Apache 2.0 licence that OpenSSL moved to. The two sentences naming Eric Young and Tim
+  Hudson as the authors of parts of the library are quoted because they carry the attribution duty of the SSLeay half.

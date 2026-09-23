@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 2.0 Italy"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 2.0 Italy"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike20Italy
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttributionSharealike20Italy a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -25,18 +26,27 @@ dalicclib:CreativeCommonsAttributionSharealike20Italy a odrl:Set ;
     dalicc:WarrantyDisclaimer """SALVO CHE SIA ESPRESSAMENTE CONVENUTO ALTRIMENTI PER ISCRITTO FRA LE PARTI, IL LICENZIANTE OFFRE L’OPERA IN LICENZA “COSI’ COM’E’” E NON FORNISCE ALCUNA DICHIARAZIONE O GARANZIA DI QUALSIASI TIPO CON RIGUARDO ALL’OPERA, SIA ESSA ESPRESSA OD IMPLICITA, DI FONTE LEGALE O DI ALTRO TIPO, ESSENDO QUINDI ESCLUSE, FRA LE ALTRE, LE GARANZIE RELATIVE AL TITOLO, ALLA COMMERCIABILITÀ, ALL’IDONEITÀ PER UN FINE SPECIFICO E ALLA NON VIOLAZIONE DI DIRITTI DI TERZI O ALLA MANCANZA DI DIFETTI LATENTI O DI ALTRO TIPO, ALL’ESATTEZZA OD ALLA PRESENZA DI ERRORI, SIANO ESSI ACCERTABILI O MENO. ALCUNE GIURISDIZIONI NON CONSENTONO L’ESCLUSIONE DI GARANZIE IMPLICITE E QUINDI TALE ESCLUSIONE PUÒ NON APPLICARSI A TE.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "2.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike20Italy/versions> ;
     dct:alternative "Attribution ShareAlike 2.0 Italy",
         "Attribution-ShareAlike 2.0",
         "Attribution-ShareAlike 2.0 Italy",
         "CC BY SA 2.0",
-        "CC BY SA 2.0 it",
+        "CC BY SA 2.0 IT",
         "CC BY-SA 2.0",
-        "CC BY-SA 2.0 it",
+        "CC BY-SA 2.0 IT",
         "CC-BY-SA 2.0",
-        "CC-BY-SA 2.0 it",
+        "CC-BY-SA 2.0 IT",
         "Creative Commons BY-SA 2.0",
-        "Creative Commons BY-SA 2.0 it" ;
+        "Creative Commons BY-SA 2.0 IT" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/licenses/by-sa/2.0/it/> ;
     dct:title "Creative Commons Attribution-ShareAlike 2.0 Italy"@en ;
     odrl:duty [ a odrl:Duty ;
             odrl:action cc:ShareAlike ] ;
@@ -79,7 +89,9 @@ dalicclib:CreativeCommonsAttributionSharealike20Italy a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/it.png> ;

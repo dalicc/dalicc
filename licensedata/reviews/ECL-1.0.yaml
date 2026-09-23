@@ -1,0 +1,103 @@
+id: ECL-1.0
+title: Educational Community License v1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://opensource.org/license/ECL-1.0
+text_retrieved: true
+verdict: created
+summary: Models the first Educational Community License, an Apache 1.1 era permissive grant over any original work
+  of authorship. The record follows MIT and Apache-1.1 for its shape and Apache-2.0 for its asset types, because
+  the text licenses software, source code, documents and other related items alike. The licence has no patent clause
+  at all, so the record makes no patent statement.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, license id, SPDX id and the IRI dalicclib:ECL-1.0 agree. cc:legalcode and dct:source both
+    point at the single seeAlso URL of the SPDX entry, which is the only published location of the version 1.0 text.
+  action: none
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: Asset types follow Apache-2.0 (dalicc:CreativeWork, dcmitype:Dataset, dcmitype:Software) rather than
+    the software-only shape of MIT, because the text says the licence applies to 'any original work of authorship
+    (the Original Work)' and that the Original Work includes 'software, source code, documents, or other related
+    items'.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads: ''Permission to use, copy, modify, merge, publish, distribute, and sublicense this
+    Original Work and its documentation, with or without modification, for any purpose, and without fee or royalty
+    to the copyright holder(s) is hereby granted''. The record therefore permits reproduce, distribute, modify,
+    derive, display, present, grant use (the sublicense wording, modelled as odrl:grantUse the way MIT and Apache-2.0
+    model it), commercial use, derivative works, modified works and the distribution fee.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'dalicc:promote is prohibited on the strength of: ''The name and trademarks of copyright holder(s)
+    may NOT be used in advertising or publicity pertaining to the Original or Derivative Works without specific,
+    written prior permission.'''
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The four conditions apply to ''ALL copies of the Original Work or portions thereof, including modifications
+    or derivatives, that you make'', so cc:Notice and cc:Attribution hang off distribute, modify and derive, and
+    dalicc:modificationNotice plus dalicc:rename hang off modify and derive only: ''Any modifications of the Original
+    Work must be distributed in such a manner as to avoid any confusion with the Original Work of the copyright
+    holders.'' No duty is license-wide: the licence imposes nothing on mere use.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: 'Two clauses the deontic model cannot carry are quoted verbatim: the trademark and advertising sentence,
+    and ''Title to copyright in the Original Work and any associated documentation will at all times remain with
+    the copyright holders.'''
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The licence is silent about patents. Following the trap list, silence is not a prohibition: the
+    record carries neither dalicc:patentGrant nor any patent prohibition. Nothing else in the text needed a term
+    the vocabulary lacks.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run with the 39 axioms of licensedata/dependencygraph/dg_default.ttl,
+    returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'ECL-1.0 is the predecessor of ECL-2.0, which is written in this batch, so both carry dalicc:variantKind
+    "version" the way Apache-1.1 and Apache-2.0 do. The two records differ deontically: 1.0 has no patent grant
+    and no patent retaliation, and it carries the rename duty that 2.0 drops.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Permission to use, copy, modify, merge, publish, distribute,
+    and/or sell copies of the Original Work, and to permit persons to whom the Original Work is furnished to do
+    so, subject to the following: the above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Original Work." The permission carries the dalicc:compliantLicense duty,
+    as Apache-2.0 does, because the notice has to survive the relicensing.'
+  action: applied
+family: Educational, hardware and logistics
+port_of: null
+variant_kind: version
+notes: Modelled from the SPDX plain text of the licence. The warranty paragraph carries the warranty disclaimer
+  and the liability limitation in one block of capitals; the record splits it at the sentence boundary, warranty
+  into dalicc:WarrantyDisclaimer and the IN NO EVENT sentence into dalicc:LiabilityLimitation, which is the split
+  the rubric asks for and is finer than the MIT record, which keeps both in dalicc:WarrantyDisclaimer.

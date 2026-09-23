@@ -1,0 +1,93 @@
+id: OpenDataLicenceAgreement
+title: Open Data Licence Agreement
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://web.archive.org/web/2020/https://lobbycanada.gc.ca/eic/site/012.nsf/eng/00873.html
+text_retrieved: true
+verdict: correct
+summary: 'The licence is the Office of the Commissioner of Lobbying edition of the Canadian Open Government
+  Licence: the freedoms list, the attribution condition, the exemptions, the non-endorsement section and the
+  no-warranty section are word for word those of OGL-Canada-2.0, with the attribution statement and the Information
+  Provider changed. The record models it correctly and nothing was changed. It is, together with NCGL 2.0,
+  the best modelled government record in the batch.'
+findings:
+- rubric: 1
+  severity: info
+  field: cc:legalcode
+  description: cc:legalcode and dct:source point at the Office of the Commissioner of Lobbying page, which
+    refuses automated requests with HTTP 403 but serves the page to a browser. The text for this review was
+    read from an Internet Archive snapshot of the same URL. No SPDX entry exists for this licence.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Dataset only. The licence is issued for the open data of the registry of lobbyists,
+    so the narrow asset type fits, even though the parent OGL-Canada-2.0 record also carries creative works
+    and software.
+  action: none
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'The permissions follow the freedoms list: "Copy, modify, publish, translate, adapt, distribute
+    or otherwise use the Information in any medium, mode or format for any lawful purpose." Commercial use
+    is express in the grant, "including for commercial purposes". cc:DerivativeWorks and dalicc:ModifiedWorks
+    are both present, which is what the freedoms list grants and what the parent record lacked before this
+    pass.'
+  action: none
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:promote is the only prohibition and it is supported twice: the Exemptions list excludes
+    "the names, crests, logos, or other official symbols of the Information Provider" and trade marks, and
+    the Non-endorsement section forbids any use suggesting official status or endorsement. The record does
+    not carry the unsupported cc:ShareAlike and dalicc:addStatement prohibitions that the three Open Government
+    Licence records carry, which is correct.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: cc:Attribution and cc:Notice hang on odrl:distribute, odrl:modify and odrl:derive, which matches
+    the condition "Acknowledge the source of the Information by including any attribution statement specified
+    by the Information Provider(s) and, where possible, provide a link to this licence", with the default statement
+    "Contains information licensed under the Open Data Licence Agreement, Office of the Commissioner of Lobbying."
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: dalicc:WarrantyDisclaimer holds both paragraphs of the No Warranty section verbatim, the second
+    being the liability exclusion, exactly as the parent record does. The Exemptions list and the Governing
+    Law section are not carried.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: dalicc:worldwide and dalicc:perpetual match the grant, "a worldwide, royalty-free, perpetual,
+    non-exclusive licence". The governing law is Ontario and the applicable laws of Canada, for which the model
+    has no field.
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'As for the parent: the exemptions list, the automatic end of the rights on breach and the reservation
+    of official symbols have no terms. Proposed terms: dalicc:exemptedMaterial, dalicc:terminationOnBreach.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check reports no conflict.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: The record is an institutional edition of OGL-Canada-2.0 and, after the corrections applied
+    to the parent, the two models agree on the permissions and the duties. What still differs is the asset
+    collection, this record carrying only dcmitype:Dataset, and the two unsupported prohibitions of the parent,
+    which are proposed for removal there. Both records should end up identical apart from the asset types,
+    because the documents are identical apart from the name of the Information Provider.
+  action: none
+family: Government licenses (United Kingdom, Canada)
+port_of: OpenGovernmentLicenceCanada
+variant_kind: edition
+notes: The batch input listed the text as unavailable because the site answers automated requests with 403.
+  It was read from an Internet Archive snapshot, so the verdict is correct rather than text-unavailable. Nothing
+  in this review is legal advice.

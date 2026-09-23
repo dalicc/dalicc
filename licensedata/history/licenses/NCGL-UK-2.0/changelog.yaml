@@ -1,0 +1,66 @@
+id: NCGL-UK-2.0
+title: Non-Commercial Government Licence
+current_version: 3
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, changed
+    1 identification detail, recorded the relation to the record this one was adapted from and recorded
+    the review state.
+  changes:
+  - action: added
+    statement: dalicc:jurisdictionPortOf dalicclib:UkOpenGovernmentLicenseForPublicSectorInformation
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "edition"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: changed
+    statement: dct:title "Non-Commercial Government Licence"
+    previous: dct:title "Non-Commercial Government Licence "
+    reason: The title literal ended with a trailing blank, "Non-Commercial Government Licence ". Removed.
+    source: review-finding 1/dct:title
+  - action: added
+    statement: prohibition dalicc:promote
+    reason: 'The non-endorsement clause was not modelled: "This licence does not grant you any right
+      to use the Information in a way that suggests any official status or that the Information Provider
+      and/or Licensor endorse you or your use of the Information", and the exemptions list excludes
+      logos, crests, military insignia, the Royal Arms and trade marks. The library expresses this
+      by prohibiting dalicc:promote, which the other three government records of this batch already
+      did. Added.'
+    source: review-finding 4/odrl:prohibition
+  - action: added
+    statement: spdx:licenseId "NCGL-UK-2.0"
+    reason: The record carried no SPDX identifier although its own DALICC identifier is the SPDX list
+      identifier NCGL-UK-2.0 and its cc:legalcode is the SPDX seeAlso URL. Added.
+    source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 5 finding 7 and consolidation decision 9: the record called itself a dalicc:jurisdictionPortOf
+    the Open Government Licence while its dalicc:variantKind said ''edition''. The Non-Commercial
+    Government Licence is an edition of the same licence for the same jurisdiction, not a port of
+    it, so the port relation is replaced by the general dct:isVersionOf and the variant kind stays.'
+  changes:
+  - action: removed
+    statement: dalicc:jurisdictionPortOf dalicclib:UkOpenGovernmentLicenseForPublicSectorInformation
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: dct:isVersionOf dalicclib:UkOpenGovernmentLicenseForPublicSectorInformation
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

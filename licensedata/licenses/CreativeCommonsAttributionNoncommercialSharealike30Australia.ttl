@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Australia "@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Australia "@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialSharealike30Australia
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Australia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -111,6 +112,12 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Australia a odrl:Se
  
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-SA-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "3.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialSharealike30Australia/versions> ;
     dct:alternative "Attribution NonCommercial ShareAlike 3.0 Australia",
         "Attribution-NonCommercial-ShareAlike 3.0",
         "Attribution-NonCommercial-ShareAlike 3.0 Australia",
@@ -122,8 +129,11 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Australia a odrl:Se
         "CC-BY-NC-SA 3.0 AU",
         "Creative Commons BY-NC-SA 3.0",
         "Creative Commons BY-NC-SA 3.0 AU" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
-    dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Australia "@en ;
+    dct:source <https://creativecommons.org/licenses/by-nc-sa/3.0/au/> ;
+    dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Australia"@en ;
     odrl:duty [ a odrl:Duty ;
             odrl:action cc:ShareAlike ] ;
     odrl:permission [ a odrl:Permission ;
@@ -165,7 +175,9 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Australia a odrl:Se
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/au.png> ;

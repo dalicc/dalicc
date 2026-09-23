@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution 2.0 Netherlands"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution 2.0 Netherlands"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttribution20Netherlands
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttribution20Netherlands a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -25,6 +26,12 @@ dalicclib:CreativeCommonsAttribution20Netherlands a odrl:Set ;
     dalicc:WarrantyDisclaimer """TENZIJ ANDERS SCHRIFTELIJK IS OVEREENGEKOMEN DOOR DE PARTIJEN, STELT DE LICENTIEGEVER HET WERK BESCHIKBAAR OP 'AS-IS' BASIS, ZONDER ENIGE GARANTIE, HETZIJ DIRECT, INDIRECT OF ANDERSZINS, MET BETREKKING TOT HET WERK, MET INBEGRIP VAN, MAAR NIET BEPERKT TOT GARANTIES MET BETREKKING TOT DE EIGENDOMSTITEL, DE VERKOOPBAARHEID, DE GESCHIKTHEID VOOR BEPAALDE DOELEINDEN, MOGELIJKE INBREUK, DE AFWEZIGHEID VAN LATENTE OF ANDERE TEKORTKOMINGEN, DE JUISTHEID OF DE AAN- OF AFWEZIGHEID VAN FOUTEN, ONGEACHT DE OPSPOORBAARHEID DAARVAN, INDIEN EN VOORZOVER DE WET NIET ANDERS BEPAALT.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "2.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttribution20Netherlands/versions> ;
     dct:alternative "Attribution 2.0",
         "Attribution 2.0 Netherlands",
         "CC BY 2.0",
@@ -34,7 +41,10 @@ dalicclib:CreativeCommonsAttribution20Netherlands a odrl:Set ;
         "CC-BY-2.0 NL",
         "Creative Commons BY 2.0",
         "Creative Commons BY 2.0 NL" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/licenses/by/2.0/nl/> ;
     dct:title "Creative Commons Attribution 2.0 Netherlands"@en ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:display ],
@@ -75,8 +85,11 @@ dalicclib:CreativeCommonsAttribution20Netherlands a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
-            dct:type dalicc:CreativeWork ] ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset ] ;
     foaf:img <https://creativecommons.org/images/international/nl.png> ;
     foaf:logo <https://licensebuttons.net/l/by/2.0/nl/88x31.png> .

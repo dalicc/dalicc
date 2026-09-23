@@ -1,0 +1,224 @@
+id: CreativeCommonsAttributionNoncommercialNoderivs30Ireland
+title: Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Ireland
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by-nc-nd/3.0/ie/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the BY-NC-ND element set of the Creative Commons 3.0 port for Ireland and
+  the model follows the grant and the restrictions section of that port. The legal text was read in English.
+  Corrections applied: dct:source, odrl:target. What remains are proposals that touch the whole Creative
+  Commons family rather than this record, chiefly the express prohibition of sublicensing and the NoDerivatives
+  permissions.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source. The legal-code page states the canonical
+    URL of the licence, https://creativecommons.org/licenses/by-nc-nd/3.0/ie/, and the six 4.0 International
+    parents carry exactly that pair, legal code plus deed. Added.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by-nc-nd/3.0/ie/> ;
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: SPDX has no identifier for this port. The legal-code URL implies CC-BY-NC-ND-3.0-IE, which
+    the SPDX licence list does not define, so no spdx:licenseId was invented. Of the forty two records
+    of this batch only the Attribution 3.0 Netherlands record can take one.
+  action: none
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: The record targeted dalicc:CreativeWork only, while the 4.0 International parent CC-BY-NC-ND-4.0
+    targets dalicc:CreativeWork and dcmitype:Dataset. This port licenses database rights in terms. The
+    licence notice states that the Work is protected by copyright, related rights and sui generis database
+    right; the definition of Work says that "a Work shall also be taken to mean a live Performance or
+    a database insofar as these are protected under the applicable law within Your jurisdiction"; the
+    grant runs for the duration of the sui generis database right; section 3 waives the licensor own database
+    rights under the national law implementing Directive 96/9/EC; and section 4 carves the restrictions
+    out of the parts that qualify only under that right. Since the text is explicit, dcmitype:Dataset
+    was added, which also brings the record into line with its parent.
+  action: applied
+  change: "odrl:target [ a odrl:AssetCollection ;\n        dct:type dalicc:CreativeWork,\n           \
+    \ dcmitype:Dataset ] ;"
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'Every modelled permission is supported by the grant. Section 3 grants a worldwide, royalty-free,
+    perpetual, non-exclusive licence for the duration of copyright, related right and/or sui generis database
+    right in the Work: to Reproduce the Work, to incorporate it into Collective Works, to Reproduce it
+    as incorporated in one, and to Distribute or Perform those to the public, with no right to make Derivative
+    Works. The record models that as odrl:reproduce, odrl:distribute, odrl:display and odrl:present. The
+    rights may be exercised in all media and formats now known or later devised.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The record permits odrl:modify and dalicc:ModifiedWorks although this is a NoDerivatives
+    licence: section 3: "The above rights include the right to make such modifications as are technically
+    necessary to exercise the rights in other media and formats, but otherwise You have no rights to make
+    Derivative Works.". The record does prohibit odrl:derive, so the two statements contradict each other
+    in substance, and a licensee reading the record would be told that modified works may be distributed.
+    The 4.0 International parent CC-BY-NC-ND-4.0 carries the same pair, and so does every NoDerivatives
+    record in the library, so removing the two permissions is one library wide decision about the NoDerivatives
+    family and not a defect of this port. Not applied for that reason.'
+  action: proposed
+  change: "remove:\n    odrl:permission [ a odrl:Permission ;\n            odrl:action odrl:modify ;\n\
+    \            odrl:duty [ a odrl:Duty ; odrl:action cc:Attribution ],\n                [ a odrl:Duty\
+    \ ; odrl:action cc:Notice ],\n                [ a odrl:Duty ; odrl:action dalicc:modificationNotice\
+    \ ] ] ,\n        [ a odrl:Permission ;\n            odrl:action dalicc:ModifiedWorks ]"
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: The record permits dalicc:chargeDistributionFee while prohibiting cc:CommercialUse. The
+    vocabulary defines dalicc:chargeDistributionFee as a fee covering the act of providing the work to
+    a third party, so a pure cost recovery fee is arguable under the commercial advantage test of this
+    port, but the statement sits uneasily next to the prohibition. The same statement is in the 4.0 International
+    parent CC-BY-NC-ND-4.0 and in every NonCommercial record of the library, so removing it is one library
+    wide decision about the NonCommercial family.
+  action: proposed
+  change: "remove:\n    odrl:permission [ a odrl:Permission ;\n            odrl:action dalicc:chargeDistributionFee\
+    \ ]"
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The licence forbids sublicensing and the record does not say so: section 4(a): "You may
+    not sublicense the Work.". The vocabulary already has dalicc:sublicense, but no record in the library
+    uses it and its skos:note says so, and the same sentence stands in every Creative Commons 2.0 and
+    3.0 record, so adding it to this batch alone would split the compatibility behaviour of one family.
+    Proposed as one library wide correction, together with an update of the vocabulary note. Not applied
+    for that reason.'
+  action: proposed
+  change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: the licensee may offer
+    the work only under the terms of this licence and may not offer or impose terms that alter or restrict
+    it or the recipient ability to exercise the rights granted. dalicc:promote is prohibited, which rests
+    on the reservation of all rights not expressly granted and on the endorsement bar in the attribution
+    clause rather than on a trademark clause of the licence body. cc:CommercialUse is prohibited, which
+    is the NonCommercial element of this set and is stated in the restrictions section. odrl:derive is
+    prohibited, which is the NoDerivatives element of this set.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The attribution and notice duties are present and supported: the licence requires a copy
+    of, or the URI for, the licence with every copy distributed or communicated to the public, that all
+    notices referring to the licence and to the disclaimer be kept intact, and that credit be given. The
+    attribution clause owes credit to the Original Author and to any Attribution Parties the licensor
+    designates, the title of the Work, the URI and, in the element sets that allow them, a credit identifying
+    the use made of the Work in a Derivative Work. The Irish text spells Licence and authorised in the
+    Irish and British forms throughout, which is why the clause fields of this port do not match the unported
+    wording. The duties hang on odrl:distribute, which matches the licence, since they are triggered by
+    making the work public rather than by private use.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: 'dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation are quoted from the Irish text
+    of this port and not from the unported version, and each field holds its own clause rather than a
+    copy of the other. Section 7, Warranties and Disclaimer, is a single sentence: "Except as required
+    by law, the Work is licensed by the Licensor on an ''as is'' and ''as available'' basis and without
+    any warranty of any kind, either express or implied." Section 8, Limit of Liability, is likewise one
+    sentence excluding all liability for loss or damage subject to any liability that may not be excluded
+    by law. They are the shortest pair in the batch and neither is set in capitals, unlike the other six
+    ports. Each field holds its own section verbatim.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: The record has no dalicc:additionalClauses, so the clauses the ODRL policy cannot carry,
+    the reservation of unnamed rights, the downstream offer to every recipient, the severability and entire
+    agreement paragraphs, the termination rule and the royalty collection arrangements, are not visible
+    in the record at all. The whole Creative Commons family is modelled this way.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:Ireland, which matches the country of the legal-code URL
+    https://creativecommons.org/licenses/by-nc-nd/3.0/ie/legalcode, and dalicc:validityType is dalicc:perpetual,
+    which matches a grant made for the duration of the applicable rights. The Irish port has no choice-of-law
+    clause. Section 10, General, holds only severability and the entire agreement paragraph. Note that
+    the jurisdiction field records the legal home of the port, not a territorial limit on the grant: the
+    grant itself runs worldwide.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The licence forbids technological protection measures and the vocabulary has no term for
+    it: section 4(a): "When You Distribute or Perform the Work, You must not impose any effective technological
+    measures on the Work or the Work as incorporated in a Collective Work that restrict the ability of
+    a recipient of the Work from You to exercise the rights granted to that recipient under the terms
+    of the Licence.". Proposed term: dalicc:applyTechnicalProtectionMeasures, an odrl:Action to be used
+    as an odrl:Prohibition. Not modelled, because bending an existing term would be worse than the gap.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The automatic termination of the licence on breach, and the survival of the definitions,
+    the disclaimer, the limitation of liability and the miscellaneous sections, have no vocabulary term.
+    Proposed term: dalicc:terminationOnBreach. The offer of a direct licence from the licensor to every
+    recipient of the work has none either. Proposed term: dalicc:downstreamOffer.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Moral rights are not expressible with the present vocabulary. Section 4 states: "Moral
+    rights remain unaffected to the extent they are recognised and not waivable by applicable law." It
+    restricts the licensee. Proposed terms: dalicc:moralRightsRestriction for a clause that binds the
+    licensee and dalicc:moralRightsNonAssertion for one in which the licensor undertakes not to assert.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The royalty collection arrangements are not expressible either. Section 6 splits the question
+    three ways: non-waivable compulsory schemes, where the right to collect is reserved; waivable compulsory
+    schemes, reserved in the NonCommercial sets and waived in the others; and voluntary schemes administered
+    by a collecting society, likewise reserved for other than non-commercial use in the NonCommercial
+    sets and waived in the others. The heading itself changes with the element set, from Reservation of
+    Rights to Reservation and Waiver of Rights. Proposed term: dalicc:royaltyCollectionReserved, with
+    a companion for the waived case. The clause differs between the element sets of one and the same port,
+    which is exactly what the model cannot show.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The sui generis database right is handled by the text in a way the model cannot carry:
+    the licensor waives its own database right and the restrictions of the licence do not apply to the
+    parts of the work that qualify only under that right. dcmitype:Dataset in odrl:target says that a
+    dataset may be licensed, not that the database right is waived and not that the attribution and share-alike
+    conditions fall away for the database layer. Proposed terms: dalicc:databaseRightWaiver and a marker
+    for the carve-out.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the forty one axioms of licensedata/dependencygraph/dg_default.ttl
+    reports no conflict, before and after the corrections, and the pre-review baseline listed none for
+    this record either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International. The
+    deontic model of this record is identical to the parent CC-BY-NC-ND-4.0, statement for statement:
+    the same permissions with the same duties, the same prohibitions and the same set level duties. What
+    differs is the jurisdiction, the language of the legal text, the clause texts quoted from it, and
+    the version specific clauses of 3.0 that the model does not carry, chiefly the express prohibition
+    of sublicensing, the technological measures clause, the moral rights clause and the royalty collection
+    arrangements. After the correction the odrl:target of this record also matches the parent. The compatibility
+    checker cannot tell this record from the other records of the BY-NC-ND element set, across all three
+    versions and every jurisdiction the library holds.'
+  action: none
+family: 'Creative Commons 3.0 port: Ireland (IE)'
+port_of: CC-BY-NC-ND-4.0
+variant_kind: jurisdiction-port
+notes: 'The parent is the 4.0 International record of the same element set, since the library holds no
+  unported and no International 3.0 record; the version difference, 3.0 against 4.0, is therefore part
+  of the port relation and not only the jurisdiction. The 3.0 text differs from 4.0 in substance as well:
+  it prohibits sublicensing expressly, it has no thirty day cure period for a breach, its share-alike
+  clause accepts a later version or another port with the same licence elements, and it settles the moral
+  rights and royalty collection questions per jurisdiction. None of that is visible in the model. Nothing
+  in this review is legal advice.'

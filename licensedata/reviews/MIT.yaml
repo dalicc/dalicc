@@ -1,0 +1,69 @@
+id: MIT
+title: The MIT License
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/MIT.txt
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the MIT license: all six core permissions, commercial use, and the copyright-and-permission
+  notice as cc:Attribution and cc:Notice duties on distribute, modify and derive. Two rights the text
+  names explicitly, sublicensing and selling copies, were missing and were added, and the SPDX id was
+  added. One duty, the modification notice, has no basis in the text.'
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: The record id is the SPDX list id but the field was absent. Added.
+  action: applied
+  change: 'spdx:licenseId "MIT" ;
+
+    '
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads: "to deal in the Software without restriction, including without limitation
+    the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
+    Software". Sublicensing (odrl:grantUse) and charging for a copy (dalicc:chargeDistributionFee) were
+    not modelled. Added both.'
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action odrl:grantUse ],\n    [ a odrl:Permission\
+    \ ;\n        odrl:action dalicc:chargeDistributionFee ] ;\n"
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: odrl:modify and odrl:derive carry a dalicc:modificationNotice duty. The MIT license has
+    exactly one condition, "The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software", and says nothing about documenting changes. The
+    duty makes MIT look more demanding than it is in every compatibility result. Removing it is a substantive
+    change to a heavily used record, so it is left to the owner.
+  action: proposed
+  change: "# remove from the odrl:modify and odrl:derive permissions\nodrl:duty [ a odrl:Duty ;\n    \
+    \    odrl:action dalicc:modificationNotice ] ;\n"
+- rubric: 1
+  severity: minor
+  field: dct:publisher
+  description: No dct:publisher. The MIT license has no steward, so "- not specified -" would at least
+    make the gap explicit.
+  action: none
+- rubric: 8
+  severity: info
+  field: vocabulary
+  description: The MIT license grants no patent rights. There is nothing to record, but once a dalicc:patentGrant
+    term exists its absence here is a real difference from Apache-2.0 that users compare these two licenses
+    for.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 1 finding 7.1 and 7.2: the record carried neither the relicensing
+    prohibition its siblings carry nor a separate liability clause. The MIT text says ''The above copyright
+    notice and this permission notice shall be included in all copies or substantial portions of the Software'',
+    which is the same clause IscLicense and BSD-3-Clause model as a dalicc:ChangeLicense prohibition,
+    and its disclaimer paragraph holds two sentences, the second beginning ''IN NO EVENT SHALL THE AUTHORS
+    OR COPYRIGHT HOLDERS BE LIABLE''.'
+  action: applied
+family: MIT, ISC, Zlib, Boost, UPL, WTFPL (permissive, short)
+port_of: null
+variant_kind: null
+notes: The most requested record in the library. The modification-notice duty is the only remaining overstatement.

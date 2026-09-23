@@ -1,0 +1,90 @@
+id: JSON
+title: JSON License
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/JSON.txt
+text_retrieved: true
+verdict: created
+summary: 'Models the licence of the reference JSON implementations: the MIT text with one sentence added, "The Software
+  shall be used for Good, not Evil". The grant and the notice condition are modelled as on MIT. The added sentence
+  is a use restriction that the vocabulary cannot express and that several reviewers treat as making the licence non-free,
+  so it is quoted and recorded as a gap.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all JSON.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following MIT.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant is the MIT grant: "Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction,
+    including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is furnished to do so". The record permits
+    reproduce, distribute, modify, derive, display, present, grantUse, sublicense, commercial use, derivative works,
+    modified works and the distribution fee.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: dalicc:ChangeLicense is permitted with the dalicc:compliantLicense duty, as on MIT.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: No prohibitions. The text has no trademark, endorsement or advertising clause, so dalicc:promote is
+    not prohibited. The good-not-evil sentence is a restriction on use and not a bar on using a name, and no vocabulary
+    term carries it; see the rubric 8 finding.
+  action: none
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Attribution and cc:Notice hang off odrl:distribute, odrl:modify and odrl:derive for "The above copyright
+    notice and this permission notice shall be included in all copies or substantial portions of the Software", exactly
+    as on MIT.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The disclaimer paragraph holds the warranty sentence and the liability sentence. They are split into
+    dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation, the split MIT-0 uses. The MIT record keeps both sentences
+    in dalicc:WarrantyDisclaimer, so the two records split the same paragraph differently.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: '"The Software shall be used for Good, not Evil." No term can carry it. It is not dalicc:fieldOfUseRestriction,
+    which names a field of activity, and it is not a prohibition of any act the vocabulary knows. The sentence is
+    quoted in dalicc:additionalClauses and a term such as dalicc:ethicalUseCondition is proposed, with the note that
+    the clause is why the Free Software Foundation and the Debian project treat this licence as non-free.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Read against licensedata/licenses/MIT.ttl the deontic model is the same. The difference is one literal
+    in dalicc:additionalClauses, and the split of the disclaimer paragraph into two predicates rather than one.
+  action: none
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: cc:legalcode points at the publisher's own licence page and dct:source at the SPDX page. dct:publisher says
+  JSON.org, the name the copyright line in the text uses.

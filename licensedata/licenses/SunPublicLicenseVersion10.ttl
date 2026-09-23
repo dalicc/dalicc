@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "SUN PUBLIC LICENSE Version 1.0" in the DALICC license library
+# Title: The machine-readable representation of "SUN PUBLIC LICENSE Version 1.0" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/SunPublicLicenseVersion10
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,20 +15,29 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:SunPublicLicenseVersion10 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "SPL-1.0" ;
     cc:attributionName "Sun Microsystems, Inc." ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:SPL-1.0 ;
     dalicc:WarrantyDisclaimer "COVERED CODE IS PROVIDED UNDER THIS LICENSE ON AN \"../AS IS'' BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT THE COVERED CODE IS FREE OF DEFECTS, MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE COVERED CODE IS WITH YOU. SHOULD ANY COVERED CODE PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL DEVELOPER OR ANY OTHER CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY COVERED CODE IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER." ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/SunPublicLicenseVersion10/versions> ;
     dct:alternative "SPL-1.0",
         "Sun Public License v1.0 (SPL-1.0)",
         "Sun Public License, Version 1.0 (SPL-1.0)" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Sun Microsystems, Inc." ;
     dct:source osl:SPL-1.0 ;
     dct:title "SUN PUBLIC LICENSE Version 1.0" ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ] ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:derive ],
         [ a odrl:Permission ;
@@ -46,12 +55,6 @@ dalicclib:SunPublicLicenseVersion10 a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
-                [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ] ],
-        [ a odrl:Permission ;
-            odrl:action cc:ShareAlike ;
-            odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ] ],
@@ -74,8 +77,6 @@ dalicclib:SunPublicLicenseVersion10 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:noWarrantyNotice ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action odrl:grantUse ],
-        [ a odrl:Prohibition ;
             odrl:action dalicc:addStatement ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:promote ] ;

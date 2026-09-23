@@ -1,0 +1,79 @@
+id: W3cSoftwareAndDocumentNoticeAndLicense
+title: W3C Software and Document Notice and License
+current_version: 3
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 2 clause texts, 1 identification detail, 1 permission
+    and 1 prohibition, recorded the relation to the record this one was adapted from and recorded
+    the review state.
+  changes:
+  - action: added
+    statement: dalicc:LiabilityLimitation "COPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT,
+      SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF ANY USE OF THE SOFTWARE OR DOCUMENT."
+    reason: The two paragraphs under "Disclaimers" were not recorded. Added both, quoted.
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: added
+    statement: dalicc:WarrantyDisclaimer "THIS WORK IS PROVIDED \"AS IS,\" AND COPYRIGHT HOLDERS MAKE
+      NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, WARRANTIES
+      OF MERCHANTABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF THE SOFTWARE OR
+      DOCUMENT WILL NOT INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS."
+    reason: The two paragraphs under "Disclaimers" were not recorded. Added both, quoted.
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "edition"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: permission cc:CommercialUse
+    reason: 'The grant reads: "Permission to copy, modify, and distribute this work, with or without
+      modification, for any purpose and without fee or royalty is hereby granted". "For any purpose"
+      includes commercial purposes, and the record''s own dalicc:additionalClauses already says so
+      in prose. cc:CommercialUse was not permitted. Added.'
+    source: review-finding 3/odrl:permission
+  - action: added
+    statement: prohibition dalicc:promote
+    reason: 'The text states: "The name and trademarks of copyright holders may NOT be used in advertising
+      or publicity pertaining to the work without specific, written prior permission." Added the dalicc:promote
+      prohibition.'
+    source: review-finding 4/odrl:prohibition
+  - action: added
+    statement: spdx:licenseId "W3C-20150513"
+    reason: 'Added W3C-20150513. Verified rather than assumed: cc:legalcode is exactly the URL the
+      SPDX entry lists under seeAlso, and the fetched page states "This license was in effect between
+      13 May 2015 and 31 December 2022", which is the 2015-05-13 edition SPDX names.'
+    source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Permit relicensing on permissive licences; the notice clause is a duty, not a bar. Family
+    rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no source
+    code asks only that the notice travels with the copy, which is a duty on the acts it governs and
+    not a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission
+    here, and the prohibition the earlier pass wrote is removed. The text reads: "Permission to copy,
+    modify, and distribute this work, with or without modification, for any purpose and without fee
+    or royalty is hereby granted, provided that you include the following on ALL copies of the work
+    or portions thereof, including modifications: The full text of this NOTICE in a location viewable
+    to users of the redistributed or derivative work." The permission carries the dalicc:compliantLicense
+    duty, as Apache-2.0 does, because the notice has to survive the relicensing.'
+  changes:
+  - action: added
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:ChangeLicense
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

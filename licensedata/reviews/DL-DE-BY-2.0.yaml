@@ -1,0 +1,111 @@
+id: DL-DE-BY-2.0
+title: Data licence Germany - attribution - version 2.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://spdx.org/licenses/DL-DE-BY-2.0.html
+text_retrieved: true
+verdict: created
+summary: 'The German attribution data licence, version 2.0: any use of the data and metadata provided, commercial
+  or not, on one condition, a source note naming the provider, the licence and the dataset. The record follows the
+  Open Government Licence records of this batch for its duties. What a reader should know: the licence carries no
+  warranty and no liability clause, so neither clause field is written, and the attribution duty applies only where
+  the provider supplies the three pieces of information the source note needs.'
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: The record carries the SPDX id DL-DE-BY-2.0. dct:title is the SPDX name with its two long dashes
+    replaced by plain hyphens, as the batch conventions require, and dct:alternative holds the German name, the
+    short form dl-de/by-2-0 and the SPDX id.
+  action: applied
+- rubric: 2
+  severity: major
+  field: odrl:target
+  description: dcmitype:Dataset and dalicc:CreativeWork. The object of the licence is "die bereitgestellten Daten
+    und Metadaten", data and metadata, which the English version lets the user copy, print and present, so the licence
+    reaches content as well as data. No software is named.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: '"Any use will be permitted provided it fulfils the requirements of this Data licence Germany - attribution
+    - Version 2.0", and the data "may, for commercial and non-commercial use, in particular be copied, printed,
+    presented, altered, processed and transmitted to third parties; be merged with own data and with the data of
+    others and be combined to form new and independent datasets; be integrated in internal and external business
+    processes, products and applications in public and non-public electronic networks". The record permits reproduce,
+    distribute, display, present, modify, derive, commercial use, derivative works, modified works and the distribution
+    fee. dalicc:suiGenerisDatabaseRights is not written: the text speaks of data and metadata and names no database
+    right.'
+  action: applied
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: No prohibition. The licence has no trademark clause, no endorsement clause and no exemption list;
+    it is two paragraphs of permission and one of condition.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The source note is the whole condition, so cc:Attribution, cc:Notice and dalicc:addStatement hang
+    off odrl:distribute, odrl:modify and odrl:derive, with dalicc:modificationNotice added to the last two from
+    paragraph (3), "Changes, editing, new designs or other amendments must be marked as such in the source note".
+    dalicc:addStatement carries the prescribed wording of paragraph (2): the name of the provider, the annotation
+    "Data licence Germany - attribution - Version 2.0" or "dl-de/by-2-0" with a reference to the licence text, and
+    a reference to the dataset URI. The duty is owed only where the entity keeping the data provides those three
+    pieces of information, which is quoted rather than modelled.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: 'Neither dalicc:WarrantyDisclaimer nor dalicc:LiabilityLimitation is written: the licence has no
+    warranty and no liability clause at all, which is unusual enough to be worth saying. dalicc:additionalClauses
+    carries the three paragraphs of the English version and the German wording of the source note, so a reader can
+    see the authoritative text.'
+  action: applied
+- rubric: 7
+  severity: minor
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction stays dalicc:worldwide and dalicc:validityType dalicc:perpetual: the licence names
+    no governing law, no territory and no term.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: The record cites a German legal text and quotes its official English version alongside the German
+    source note. dct:language would say which language a quoted clause is in; it is not in the prefix block or the
+    predicate order. Proposed, as in batch 2.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer with the axioms of dg_default returned an empty conflict
+    list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Family: the two DL-DE records of this batch are the same licence with and without conditions, as
+    CC BY and CC0 are. This one carries the attribution duties; DL-DE-ZERO-2.0 carries none. Against the other government
+    licences of the batch it is by far the shortest text and the only one with no warranty clause.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Die bereitgestellten Daten und Metadaten duerfen fuer die
+    kommerzielle und nicht kommerzielle Nutzung insbesondere vervielfaeltigt, ausgedruckt, praesentiert, veraendert,
+    bearbeitet sowie an Dritte uebermittelt werden ... Bei der Nutzung ist sicherzustellen, dass der Quellenvermerk
+    erhalten bleibt." The permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice
+    has to survive the relicensing.'
+  action: applied
+family: National open government data licences
+port_of: null
+variant_kind: null
+notes: 'The SPDX plain text holds the German original and the official English version one after the other. The
+  quoted clauses are taken from the English version, as the batch conventions prescribe where SPDX provides one,
+  and the German wording of the source note is quoted beside it because that is the wording a user has to reproduce.
+  The name of the licence carries two long dashes in the source and in the SPDX name; they are written as plain
+  hyphens throughout this record. dct:publisher is left out: the text names no steward, only the address of the
+  licence text at govdata.de.'

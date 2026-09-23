@@ -1,0 +1,69 @@
+id: TheZlibLibpngLicense
+title: The zlib libpng License
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://opensource.org/license/Zlib
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the zlib license correctly: the notice must be kept, altered versions must
+  be marked and must not be passed off as the original, which appear as cc:Notice, dalicc:modificationNotice
+  and dalicc:rename duties. There is no attribution duty and none is required by the text. The SPDX id
+  and the warranty disclaimer were missing.'
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: 'Added Zlib. Verified rather than taken on trust: cc:legalcode already points at the Open
+    Source Initiative page that the SPDX entry lists under seeAlso, and the fetched text is the same three-restriction
+    license.'
+  action: applied
+  change: 'spdx:licenseId "Zlib" ;
+
+    '
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The opening paragraph is a warranty disclaimer and was not recorded. Added, quoted from
+    the text.
+  action: applied
+  change: 'dalicc:WarrantyDisclaimer "This software is provided \u2018as-is\u2019, without any express
+    or implied warranty. In no event will the authors be held liable for any damages arising from the
+    use of this software." ;
+
+    '
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: Restriction 2, "Altered source versions must be plainly marked as such, and must not be
+    misrepresented as being the original software", is correctly split into dalicc:modificationNotice
+    and dalicc:rename on modify and derive.
+  action: none
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: The record has no prohibition. Restriction 1, "The origin of this software must not be
+    misrepresented; you must not claim that you wrote the original software", is a prohibition on misattribution,
+    which no existing action expresses. It is not a trademark clause, so dalicc:promote would be the wrong
+    term.
+  action: none
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'Proposed term: dalicc:misrepresentOrigin (as a prohibition) for restriction 1. Today the
+    restriction survives only as the dalicc:rename duty, which covers the naming half but not the "do
+    not claim you wrote it" half.'
+  action: none
+- rubric: 10
+  severity: minor
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9 and 10: the record was corrected against
+    its new siblings and versioned. Family rules 10 and 14 of scripts/review/family_rules.py: the disclaimer
+    held both sentences of the zlib notice, the second beginning ''In no event will the authors be held
+    liable for any damages arising from the use of this software'', and dct:publisher was the placeholder
+    ''N.N.''.'
+  action: applied
+family: MIT, ISC, Zlib, Boost, UPL, WTFPL (permissive, short)
+port_of: null
+variant_kind: null
+notes: 'Zero prohibitions is listed in family_rules_baseline.md rule 7 and is nearly right: the one prohibition
+  the text does have needs a new term.'

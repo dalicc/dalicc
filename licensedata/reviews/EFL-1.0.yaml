@@ -1,0 +1,79 @@
+id: EFL-1.0
+title: Eiffel Forum License v1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/EFL-1.0.txt
+text_retrieved: true
+verdict: created
+summary: The record models version 1 of the Eiffel Forum License. Use, copying, modification and distribution
+  are permitted provided the copyright notices stay unchanged and the license file travels with every distribution.
+  Distributing a binary that depends on a modified version of the package obliges the distributor to release
+  that modified version publicly, which the record carries as a cc:SourceCode duty on modify and derive. Version
+  2 drops that obligation, which is the whole difference between the two records.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: '"Permission is hereby granted to use, copy, modify and/or distribute this package, provided
+    that: - copyright notices are retained unchanged - any distribution of this package, whether modified or
+    not, includes this file." The record permits reproduce, distribute, modify, derive, display, present, commercial
+    use, derivative works, modified works and the distribution fee.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:Attribution from the unchanged copyright notices and cc:Notice from the requirement to include
+    the license file, both on distribute, modify and derive. cc:SourceCode on modify and derive comes from
+    the second grant: "if the binary program depends on a modified version of this package, you must publicly
+    release the modified version of this package."'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:ChangeLicense is prohibited because the text requires the license itself to travel with
+    every copy, which is the reading IscLicense and BSD-3-Clause take of the same clause. The MIT record does
+    not carry the prohibition although its text has the same requirement, so the library is not uniform here.
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: 'The batch notes expected a dalicc:modificationNotice duty and a dalicc:rename duty on this
+    record. The fetched text has neither: it asks for unchanged copyright notices, the license file and, for
+    a binary that depends on a modified package, the public release of that package. The record follows the
+    text.'
+  action: none
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: The second grant, about binary programs that depend on the package, is quoted verbatim, because
+    the cc:SourceCode duty does not say that the trigger is a dependent binary rather than a redistribution
+    of the package itself.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following MIT. The text licenses a package
+    of software.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: dalicc:variantKind is version, with EFL-2.0 as the other member of the chain. No parent is named,
+    in the way 0BSD and BSD-3-Clause name none.
+  action: none
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: version
+notes: Modelled from the SPDX plain text. The record and EFL-2.0 were written together and differ in exactly
+  one duty; see the rubric 10 finding of EFL-2.0.

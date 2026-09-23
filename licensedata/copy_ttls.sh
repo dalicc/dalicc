@@ -1,5 +1,6 @@
-mkdir ../virtuoso_data/ttl_dump
-cp dependencygraph/dg_default.ttl ../virtuoso_data/ttl_dump/dg_default.ttl
-cp dependencygraph/dg_default.ttl.graph ../virtuoso_data/ttl_dump/dg_default.ttl.graph
-cp licenselibrary/licenselibrary.ttl ../virtuoso_data/ttl_dump/licenselibrary.ttl
-cp licenselibrary/licenselibrary.ttl.graph ../virtuoso_data/ttl_dump/licenselibrary.ttl.graph
+#!/usr/bin/env bash
+# DEPRECATED: superseded by scripts/load_data.sh (see docs/DATA.md).
+# Kept so that older documentation and shell history keep working.
+set -euo pipefail
+printf '%s\n' "licensedata/copy_ttls.sh is deprecated -- calling scripts/load_data.sh instead." >&2
+exec "$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/scripts/load_data.sh" "$@"

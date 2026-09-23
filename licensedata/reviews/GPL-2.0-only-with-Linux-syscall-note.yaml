@@ -1,0 +1,141 @@
+id: GPL-2.0-only-with-Linux-syscall-note
+title: GNU General Public License, Version 2 with Linux Syscall Note
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/GPL-2.0-only.txt
+text_retrieved: true
+verdict: created
+summary: The record models GNU General Public License, Version 2 with the exception the SPDX list calls
+  Linux-syscall-note. It copies the model of GPL-2.0-only statement for statement and adds what the exception
+  grants. The note keeps a user program that calls the kernel through normal system calls outside the
+  covered work. The copyleft of the base licence still reaches the kernel, not a user program that uses
+  kernel services by normal system calls, and the exception text is quoted in full in dalicc:additionalClauses.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: The file name, the identifier and the local name of the odrl:Set IRI are all GPL-2.0-only-with-Linux-syscall-note.
+    spdx:licenseId carries the SPDX expression "GPL-2.0-only WITH Linux-syscall-note", with one space,
+    an upper-case WITH and one more space, which is how the SPDX list writes a licence combined with an
+    exception.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, copied from GPL-2.0-only. The exception
+    speaks of code, modules and executables throughout.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 1 reads: "You may copy and distribute verbatim copies of the Program''s source
+    code as you receive it, in any medium, provided that you conspicuously and appropriately publish on
+    each copy an appropriate copyright notice and disclaimer of warranty; keep intact all the notices
+    that refer to this License and to the absence of any warranty; and give any other recipients of the
+    Program a copy of this License along with the Program." Section 2 adds the right to modify and to
+    distribute the modified work. The record therefore keeps every permission of GPL-2.0-only: reproduce,
+    distribute, modify, derive, display, present, commercial use, derivative works, modified works and
+    charging a distribution fee. The exception adds one more. It reads: "NOTE! This copyright does *not*
+    cover user programs that use kernel services by normal system calls - this is merely considered normal
+    use of the kernel, and does *not* fall under the heading of "derived work"." That is material the
+    licence carves out of its own condition, so it is modelled as a permission dalicc:exceptedCombination.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: The prohibitions of GPL-2.0-only stay as they are. dalicc:ChangeLicense is still prohibited,
+    because the exception narrows the reach of the reciprocity and does not let the covered work itself
+    leave the licence. The note is about the boundary of the covered work rather than about linking. It
+    says that a user program which calls the kernel through normal system calls is "merely considered
+    normal use of the kernel" and is not a derived work.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:promote is prohibited because GPL-2.0-only prohibits it and an exception record
+    keeps every statement of its base. Neither the base text nor the exception has a trademark or endorsement
+    clause, so the prohibition is a library convention here and not text-supported. The review of GPL-2.0-only
+    proposed removing it library-wide.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: The licence-wide cc:ShareAlike duty of GPL-2.0-only stays on the odrl:Set, because the
+    reciprocity of the base licence still covers the whole work. cc:Attribution, cc:Notice and cc:SourceCode
+    stay on distribute, modify and derive, and dalicc:modificationNotice on modify and derive. The note
+    attaches no condition to the carve-out, so the dalicc:exceptedCombination permission carries no duty.
+  action: applied
+- rubric: 5
+  severity: minor
+  field: dalicc:reciprocityScope
+  description: 'dalicc:reciprocityScope says in words how far the copyleft reaches after the exception:
+    "the kernel, not a user program that uses kernel services by normal system calls". The base record
+    carries no such annotation, because without the exception the reciprocity reaches the whole work.'
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:additionalClauses
+  description: The exception text is quoted verbatim as one literal of dalicc:additionalClauses, from
+    https://spdx.org/licenses/Linux-syscall-note.html. Line breaks and runs of spaces were collapsed to
+    single spaces, the way every other clause literal in the library is written; no word was changed,
+    added or dropped. The warranty disclaimer and the limitation of liability are the ones of GPL-2.0-only,
+    quoted verbatim from the base text, because the exception changes neither.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The base text and the exception name no legal system, so cc:jurisdiction stays dalicc:worldwide,
+    dalicc:validityType stays dalicc:perpetual and no dalicc:governingLaw is stated. The termination and
+    cure terms of the base licence are untouched by the exception.
+  action: applied
+- rubric: 7
+  severity: info
+  field: dalicc:orLaterVersionOption
+  description: 'dalicc:orLaterVersionOption stays false, and the note itself says why: "the only valid
+    version of the GPL as far as the kernel is concerned is _this_ particular version of the license (ie
+    v2, not v2.2 or v3.x or whatever), unless explicitly otherwise stated". This is the one record of
+    the set whose flag is supported by the exception text and not only by the base text.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:exceptedCombination
+  description: 'The exception carves the combination out of the condition of the licence, not out
+    of its grant. dalicc:exemptedMaterial says the opposite and is prohibited on OGL-UK-1.0, OGL-UK-2.0 and
+    NLOD-2.0, where it means material the licence never granted. The vocabulary defines
+    dalicc:exceptedCombination for this side of it since 2026-09-23, and the record carries it as
+    a permission.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The note states the boundary of the covered work rather than granting anything: a user
+    program that uses kernel services by normal system calls "does *not* fall under the heading of "derived
+    work"". The vocabulary has no term for a statement about what the copyright reaches, so the record
+    carries it as an exempted permission and quotes it. Proposed term: dalicc:scopeClarification, an annotation
+    naming material the licensor states is outside the work.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check against dg_default returned no conflicts. The exempted permission
+    is a new action for the checker, it is not prohibited anywhere and the dependency graph holds no relation
+    for it, so it neither triggers nor hides a conflict. The share-alike rule is not triggered, because
+    dalicc:ChangeLicense stays prohibited.
+  action: none
+- rubric: 10
+  severity: info
+  field: dalicc:variantOf
+  description: 'The record is the base licence plus the exception, so it repeats GPL-2.0-only statement
+    for statement and adds four things: the dalicc:exceptedCombination permission, the dalicc:reciprocityScope
+    annotation, the exception text in dalicc:additionalClauses and the pair dalicc:variantKind "exception"
+    with dalicc:variantOf dalicclib:GPL-2.0-only. Nothing the base states was removed.'
+  action: applied
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: exception
+variant_of: GPL-2.0-only
+notes: 'The base licence text is the SPDX text of GPL-2.0-only, retrieved on 2026-09-22; the exception
+  text is the SPDX text of Linux-syscall-note, from https://spdx.org/licenses/Linux-syscall-note.html.
+  Nothing here is legal advice: the record says what the two texts say and quotes them. An exception record
+  never removes a statement its base carries, so anything that looks wrong in this record and is also
+  in GPL-2.0-only belongs to the base record and is written up as a proposal instead.'

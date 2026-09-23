@@ -1,0 +1,120 @@
+id: CreativeCommonsAttributionNoncommercialSharealike30Romania
+title: Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Romania
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, changed
+    1 clause text, 1 identification detail and 1 asset target, recorded the relation to the record
+    this one was adapted from and recorded the review state.
+  changes:
+  - action: changed
+    statement: "dalicc:WarrantyDisclaimer \"Prin punerea Operei la dispoziţia publicului în conformitate\
+      \ cu dispoziţiile prezentei licenţe, Licenţiatorul declară de bună credinţă că, în conformitate\
+      \ cu ceea ce cunoaşte şi în limite rezonabile:\n \n \n \n Licenţiatorul a obţinut toate drepturile\
+      \ necesare asupra Operei pentru a putea autoriza exerciţiul drepturilor acordate prin prezenta\
+      \ licenţă şi a permite utilizarea netulburată şi exerciţiul licit al acestor drepturi, aceasta\
+      \ fără ca Licenţiatul să aibă o obligaţie de a plăti vreo remuneraţie, cu excepţia celor prevăzute\
+      \ de mecanismele de gestiune colectivă obligatorie descrise la articolul 4 litera (f);\n Opera\
+      \ nu dă naştere vreunei încălcări a drepturilor unor terţe persoane, în special drepturi de\
+      \ autor sau drepturi conexe, drepturi privind mărcile, drepturi privind informaţia, drepturi\
+      \ patrimoniale sau oricare alte drepturi, şi nici vreunei defăimări, violări a dreptului la\
+      \ viaţa privată sau vreunui alt fapt ilicit cu privire la oricare altă terţă parte. \n \n \n\
+      \ Cu excepţia cazurilor prevăzute expres în prezenta licenţă sau într-un alt acord scris, sau\
+      \ cerute de legea aplicabilă, Opera este pusă la dispoziţie fără vreo garanţie de orice fel,\
+      \ expresă sau tacită, inclusiv în ceea ce priveşte conţinutul Operei sau exactitatea acesteia.\
+      \ \n \n\""
+    previous: "dalicc:WarrantyDisclaimer \"Prin punerea Operei la dispoziţia publicului în conformitate\
+      \ cu dispoziţiile prezentei licenţe, Licenţiatorul declară de bună credinţă că, în conformitate\
+      \ cu ceea ce cunoaşte şi în limite rezonabile:\n \n \n \n Licenţiatorul a obţinut toate drepturile\
+      \ necesare asupra Operei pentru a putea autoriza exerciţiul drepturilor acordate prin prezenta\
+      \ licenţă şi a permite utilizarea netulburată şi exerciţiul licit al acestor drepturi, aceasta\
+      \ fără ca Licenţiatul să aibă o obligaţie de a plăti vreo remuneraţie, cu excepţia celor prevăzute\
+      \ de mecanismele de gestiune colectivă obligatorie descrise la articolul 3 litera (f);\n Opera\
+      \ nu dă naştere vreunei încălcări a drepturilor unor terţe persoane, în special drepturi de\
+      \ autor sau drepturi conexe, drepturi privind mărcile, drepturi privind informaţia, drepturi\
+      \ patrimoniale sau oricare alte drepturi, şi nici vreunei defăimări, violări a dreptului la\
+      \ viaţa privată sau vreunui alt fapt ilicit cu privire la oricare altă terţă parte. \n \n \n\
+      \ Cu excepţia cazurilor prevăzute expres în prezenta licenţă sau într-un alt acord scris, sau\
+      \ cerute de legea aplicabilă, Opera este pusă la dispoziţie fără vreo garanţie de orice fel,\
+      \ expresă sau tacită, inclusiv în ceea ce priveşte conţinutul Operei sau exactitatea acesteia.\
+      \ \n \n\""
+    reason: 'The clause was quoted from the wrong element set. The warranty clause of the Romanian
+      port carries an internal cross reference to the royalty paragraph, and the letter and article
+      of that reference differ per element set: the Attribution and Attribution-ShareAlike legal codes
+      say "articolul 3 litera (f)", this one says "articolul 4 litera (f)". The record carried the
+      Attribution wording. Requoted from this legal code, so that the field is now verbatim. Section
+      5 is headed "Garantie si exonerarea de raspundere" and carries two things at once: an affirmative
+      good faith representation by the Licensor that it has obtained the rights needed and that the
+      Work infringes nobody, and then the disclaimer sentence "Cu exceptia cazurilor prevazute expres
+      in prezenta licenta sau intr-un alt acord scris, sau cerute de legea aplicabila, Opera este
+      pusa la dispozitie fara vreo garantie de orice fel, expresa sau tacita". The record holds the
+      whole section, which is the accurate reading of the field, since the section does contain a
+      disclaimer. Section 6 (Limitarea raspunderii) sits in dalicc:LiabilityLimitation on its own.'
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: added
+    statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-SA-4.0
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:licenseVersion "3.0"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "jurisdiction-port"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dct:source <https://creativecommons.org/licenses/by-nc-sa/3.0/ro/>
+    reason: The record carried cc:legalcode but no dct:source. The legal code page of this port states
+      the canonical URL of the licence, https://creativecommons.org/licenses/by-nc-sa/3.0/ro/, and
+      the six 4.0 International parents carry exactly that pair, legal code plus deed. Added.
+    source: review-finding 1/dct:source
+  - action: changed
+    statement: dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Romania"@en
+    previous: dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Romania "@en
+    reason: The dct:title literal ended in a space, "Creative Commons Attribution-NonCommercial-ShareAlike
+      3.0 Romania ", which the library list and the search index carry through. Removed. The same
+      defect sits in the NonCommercial-ShareAlike record of every Creative Commons port in the library.
+    source: review-finding 1/dct:title
+  - action: added
+    statement: prohibition dalicc:sublicense
+    reason: 'Review decision 1: every Creative Commons record except the CC0 dedication, plus the
+      Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
+      as many words.'
+    source: consolidation-decision 1
+  - action: changed
+    statement: target asset types [dalicc:CreativeWork, dcmitype:Dataset]
+    previous: target asset types [dalicc:CreativeWork]
+    reason: The record targeted dalicc:CreativeWork only, while the 4.0 International parent CC-BY-NC-SA-4.0
+      targets dalicc:CreativeWork and dcmitype:Dataset. This port settles the sui generis database
+      right expressly. Section 1 defines "Opera" to include "o baza de date in conformitate cu definitiile
+      din legislatia in vigoare privind drepturile de autor si drepturile conexe" (a database as defined
+      by the copyright and neighbouring rights legislation in force), Section 3 grants "in cazul in
+      care opera este o baza de date, dreptul de a extrage si/sau a reutiliza parti substantiale din
+      Opera" (where the work is a database, the right to extract and reuse substantial parts of it)
+      and closes with "Daca Licentiatorul este titularul drepturilor sui-generis asupra unei baze
+      de date, in conformitate cu legea nationala care implementeaza Directiva Europeana privind Bazele
+      de Date, Licentiatorul va renunta la aceste drepturi" (if the Licensor holds sui generis database
+      rights under the national law implementing the European Database Directive, the Licensor waives
+      them). Section 4 adds that the restrictions do not apply to the parts of the Work that qualify
+      only under the Romanian sui generis database right. Because the legal text names databases as
+      licensed subject matter and disposes of the database maker's right in the grant itself, dcmitype:Dataset
+      was added here rather than left as a proposal, which is how the same question was decided for
+      the Portuguese, Czech and Azerbaijani ports. The ports in this batch whose text has no database
+      clause at all, Ecuador and Brazil, keep the proposal.
+    source: review-finding 2/odrl:target

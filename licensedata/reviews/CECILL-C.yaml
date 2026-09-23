@@ -1,0 +1,155 @@
+id: CECILL-C
+title: CeCILL-C Free Software License Agreement
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://spdx.org/licenses/CECILL-C.html'
+text_retrieved: true
+verdict: created
+summary: >-
+  CeCILL-C, the file level reciprocal agreement of the CeCILL family: an Integrated
+  Contribution puts the whole Modified Software under the agreement, while a Derivative
+  Software that only adds a Related Module may go out under another licence. The record models
+  the first as cc:ShareAlike duties on distribution, modification and derivation, following
+  the MPL-1.1 and CDDL-1.1 records, and quotes the second, because the consistency check does
+  not allow a dalicc:ChangeLicense permission beside a share-alike duty.
+findings:
+- rubric: 1
+  severity: minor
+  field: 'spdx:licenseId'
+  description: >-
+    The record carries the SPDX id CECILL-C, the SPDX name as dct:title and the family
+    spellings as dct:alternative. dalicc:variantKind is "edition": CeCILL-B and CeCILL-C are
+    not versions of the CeCILL agreement the library holds as
+    CeaCnrsInriaLogicielLibreLicenseVersion21 but two sibling agreements published beside it,
+    with their own reciprocity.
+  action: applied
+- rubric: 2
+  severity: info
+  field: 'odrl:target'
+  description: >-
+    One odrl:AssetCollection of dct:type dcmitype:Software, as on the existing
+    CeaCnrsInriaLogicielLibreLicenseVersion21 record. The agreement defines the Software as
+    its object throughout and names no other kind of material.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Article 5 grants the right of use ("permanent or temporary reproduction of all or part of
+    the Software by any or all means and in any or all form", loading, displaying, running and
+    storing it), the right to make modifications, including a Derivative Software and the
+    right of distribution, which "includes the right to publish, transmit and communicate the
+    Software to the general public on any or all medium, and by any or all means, and the
+    right to market, either in consideration of a fee, or free of charge, one or more copies".
+    The record therefore permits reproduce, distribute, modify, derive, display, present,
+    commercial use, derivative works, modified works, the distribution fee and the licence
+    fee. dalicc:patentGrant carries the undertaking in Article 5 not to enforce the Licensor's
+    patents against licensees, which is a covenant not to sue rather than an express grant;
+    the sentence is quoted so the difference stays visible.
+  action: applied
+- rubric: 4
+  severity: info
+  field: 'odrl:prohibition'
+  description: >-
+    No prohibition is written. The agreement has no trademark or endorsement clause: what
+    Article 9.4 says about the name of the Software is a disclaimer of warranty and liability,
+    not a bar on use of the name. The existing CeaCnrsInriaLogicielLibreLicenseVersion21
+    record prohibits dalicc:promote and dalicc:addStatement; neither is supported by the
+    CeCILL-B or CeCILL-C text, and dalicc:addStatement is in fact required by Article 5.3.4 of
+    CeCILL-B. That record was not edited; the divergence is reported.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    Articles 9.3 and 9.4 are quoted in dalicc:WarrantyDisclaimer and Article 8 in
+    dalicc:LiabilityLimitation. Article 7.2 goes into dalicc:WarrantyOrLiabilityAcceptance,
+    because it lets a Licensor offer a warranty of its own under terms it is free to decide.
+    dalicc:additionalClauses carries the purpose, acceptance, term, patent, distribution,
+    intellectual property, termination, language, new versions and governing law articles.
+    Note for the consolidation pass: the existing CeCILL 2.1 record puts Article 8, the
+    liability article, into dalicc:WarrantyDisclaimer and carries no
+    dalicc:LiabilityLimitation; this record separates the two.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    CeCILL-C is file level reciprocal, so cc:ShareAlike hangs off odrl:distribute, odrl:modify
+    and odrl:derive rather than off the odrl:Set: Article 5.3.2 says that "when the Licensee
+    makes an Integrated Contribution to the Software, the terms and conditions for the
+    distribution of the resulting Modified Software become subject to all the provisions of
+    this Agreement", while Article 5.3.3 lets a Derivative Software that only adds a Related
+    Module go out under another agreement. This is the attachment the MPL-1.1 and CDDL-1.1
+    records of this review use for the same shape. cc:Notice and dalicc:noWarrantyNotice come
+    from Article 5.3.1 and 5.3.2, cc:SourceCode from the effective access those articles
+    require, cc:Attribution and dalicc:modificationNotice from Articles 5.2 and 6.4.
+    dalicc:ChangeLicense is not written although Article 5.3.3 allows it for a Derivative
+    Software: consistency_check reports a required cc:ShareAlike together with a permitted
+    dalicc:ChangeLicense as a direct conflict, so the article is quoted instead.
+  action: applied
+- rubric: 7
+  severity: major
+  field: 'cc:jurisdiction'
+  description: >-
+    cc:jurisdiction stays dalicc:worldwide and Article 13 is quoted instead: "The Agreement is
+    governed by French law. The Parties agree to endeavor to seek an amicable solution to any
+    disagreements or disputes that may arise during the performance of the Agreement." French
+    law governs the contract; the rights granted are not limited to French territory, and
+    Article 11.5 gives the French and English versions equal force. dalicc:validityType is
+    dalicc:perpetual, from Article 4.2: the Agreement "shall remain in force for the entire
+    legal term of protection of the economic rights over the Software".
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Article 10.1 terminates the agreement thirty days after an ineffective notice of breach,
+    and Article 10.2 keeps the licences granted before termination alive. Quoted; proposed
+    terms dalicc:terminatesOnBreach and dalicc:sublicenseSurvival.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Article 5.3.4 makes the credits, respectively the notice of rights, optional where the
+    Modified Software contains a contribution under another agreement of the CeCILL family.
+    That conditional relaxation of a duty has no term; the article is quoted. Proposed term
+    dalicc:compatibleLicenseTest, as in batch 2.
+  action: none
+- rubric: 8
+  severity: info
+  field: 'dalicc:orLaterVersionOption'
+  description: >-
+    Article 12.3 lets a licensee use software distributed under a given version of the
+    agreement under any later version. As in the other records of this addition the property
+    was not written outside the GNU family; the triple would be dalicclib:CECILL-C
+    dalicc:orLaterVersionOption true.
+  action: proposed
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Family: the record follows the existing CeaCnrsInriaLogicielLibreLicenseVersion21 record
+    for its metadata and its software target and the MPL family of this review for its deontic
+    shape. CeCILL-B and CeCILL-C share every clause outside Article 5.3 and Article 6; what
+    separates them is exactly the reciprocity, which is why the CeCILL-C record carries four
+    cc:ShareAlike duties and the CeCILL-B record carries none and permits dalicc:ChangeLicense
+    instead.
+  action: none
+family: CeCILL
+port_of: null
+variant_kind: edition
+notes: >-
+  Modelled from the SPDX plain text, which is the official English version of the agreement;
+  Article 11.5 states that the French and English versions have equal force, and cc:legalcode
+  points at the English text on the cecill.info site. No long dash appears in the source text.
+  The existing CeCILL 2.1 record was not edited, although its dalicc:WarrantyDisclaimer holds
+  the liability article.

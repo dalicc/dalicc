@@ -1,0 +1,82 @@
+id: EclipsePublicLicense10
+title: Eclipse Public License 1.0
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/EPL-1.0.txt
+text_retrieved: true
+verdict: corrected
+summary: The Eclipse Public License 1.0 requires source form to be made available under the same agreement
+  and lets a contributor distribute object code under its own terms, subject to conditions. The record
+  prohibited cc:ShareAlike, which reverses the first half, and did not model the second half at all. Both
+  were corrected, the SPDX id was added, and the warranty and liability clauses were separated.
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: Added EPL-1.0; the title matches the SPDX name.
+  action: applied
+  change: 'spdx:licenseId "EPL-1.0" ;
+
+    '
+- rubric: 5
+  severity: major
+  field: odrl:prohibition
+  description: 'Section 3 states: "When the Program is made available in source code form ... it must
+    be made available under this Agreement". Prohibiting cc:ShareAlike asserts the opposite. Removed.'
+  action: applied
+  change: "# removed\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action cc:ShareAlike ] ;\n"
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 3 also states: "A Contributor may choose to distribute the Program in object code
+    form under its own license agreement, provided that ..." followed by four compliance conditions. That
+    is dalicc:ChangeLicense with a dalicc:compliantLicense duty, exactly as the EPL-2.0 record models
+    section 3.1(b). Added, which also brings the two Eclipse records into line.'
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:ChangeLicense ;\n       \
+    \ odrl:duty [ a odrl:Duty ;\n                odrl:action dalicc:compliantLicense ] ] ;\n"
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: dalicc:WarrantyDisclaimer held the text of section 6, DISCLAIMER OF LIABILITY, and there
+    was no dalicc:LiabilityLimitation. Moved section 6 to the liability field and put section 5, NO WARRANTY,
+    in the warranty field.
+  action: applied
+  change: 'dalicc:WarrantyDisclaimer "EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE PROGRAM IS
+    PROVIDED ON AN \"AS IS\" BASIS ..." ;
+
+    dalicc:LiabilityLimitation "EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER RECIPIENT NOR
+    ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY ..." ;
+
+    '
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:promote is prohibited although version 1.0 has no trademark clause; version 2.0
+    has none either and its record has no such prohibition. dalicc:addStatement is prohibited although
+    section 3 expressly allows a contributor to add its own terms.
+  action: proposed
+  change: '# remove both prohibitions
+
+    '
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'Section 2(b) grants a patent license and section 7 terminates it on patent litigation.
+    Section 4 obliges a commercial distributor to indemnify the other contributors, which has no term
+    either. Proposed: dalicc:patentGrant, dalicc:patentRetaliationTermination, dalicc:indemnifyContributors.'
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 4 finding 6.1 and consolidation decision 4: the record modelled
+    no reciprocity although section 3 says ''When the Program is made available in source code form: a)
+    it must be made available under this Agreement'', it made no patent statement although section 2(b)
+    grants one and section 7 ends it on patent litigation, and dct:publisher and cc:attributionName both
+    ended with a space.'
+  action: applied
+family: Other OSI approved licenses (corporate, academic, weak copyleft)
+port_of: null
+variant_kind: version
+notes: Version variant inside the Eclipse family; now models section 3 the same way EPL-2.0 does.

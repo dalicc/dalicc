@@ -1,0 +1,71 @@
+id: GnuFreeDocumentationLicense
+title: GNU Free Documentation License version 1.3
+current_version: 3
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail and 1 permission, removed
+    1 prohibition, recorded the relation to the record this one was adapted from and recorded the
+    review state.
+  changes:
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "version"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: permission dalicc:chargeDistributionFee
+    reason: 'Section 2 states: "you may accept compensation in exchange for copies". The record prohibited
+      dalicc:chargeDistributionFee, which contradicts the text and would make every paid documentation
+      reprint look unlicensed. Removed the prohibition and added the permission.'
+    source: review-finding 3/odrl:prohibition
+  - action: removed
+    statement: prohibition dalicc:chargeDistributionFee
+    reason: 'Section 2 states: "you may accept compensation in exchange for copies". The record prohibited
+      dalicc:chargeDistributionFee, which contradicts the text and would make every paid documentation
+      reprint look unlicensed. Removed the prohibition and added the permission.'
+    source: review-finding 3/odrl:prohibition
+  - action: added
+    statement: spdx:licenseId "GFDL-1.3-only"
+    reason: The title names version 1.3 and the fetched legal code is fdl-1.3. SPDX splits the license
+      into GFDL-1.3-only and GFDL-1.3-or-later; the record models no "or any later version" option,
+      so the "-only" id was added.
+    source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: The three duty nodes whose odrl:action was dct:source are gone. dct:source is a Dublin
+    Core property and not an action, so the dependency graph could not see the duty and the validator
+    counted it among the actions outside the ODRL, CC and DALICC vocabularies. Each of the three permissions
+    already carries cc:SourceCode for the same rule of section 3, "you must either include a machine-readable
+    Transparent copy along with each Opaque copy, or state in or with each Opaque copy a computer-network
+    location ... containing a complete Transparent copy", so nothing the licence says was lost.
+  changes:
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice,
+      dct:source]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode, dct:source]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice,
+      dct:source]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Apache License, Version 1.1"@en in the DALICC license library
+# Title: The machine-readable representation of "Apache License, Version 1.1"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/Apache-1.1
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,21 +15,28 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:Apache-1.1 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "Apache-1.1" ;
-    cc:attributionName " The Apache Software Foundation" ;
+    cc:attributionName "The Apache Software Foundation" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://www.apache.org/licenses/LICENSE-1.1> ;
     dalicc:PromotionSpecification "This product includes software developed by the Apache Group for use in the Apache HTTP server project (http://www.apache.org/)" ;
     dalicc:additionalClauses "Products derived from this software may not be called \"Apache\", nor may \"Apache\" appear in their name, without prior written permission of the Apache Software Foundation." ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:variantKind "version" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/Apache-1.1/versions> ;
     dct:alternative "Apache 1.1",
         "Apache License 1.1",
         "Apache License Version 1.1",
         "Apache Version 1.1" ;
-    dct:publisher " The Apache Software Foundation" ;
+    dct:hasVersion "3" ;
+    dct:modified "2026-09-15"^^xsd:date ;
+    dct:publisher "The Apache Software Foundation" ;
     dct:source <http://www.apache.org/licenses/LICENSE-1.1> ;
     dct:title "Apache License, Version 1.1"@en ;
     odrl:permission [ a odrl:Permission ;
@@ -47,13 +54,17 @@ dalicclib:Apache-1.1 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:rename ] ],
+                    odrl:action dalicc:rename ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;

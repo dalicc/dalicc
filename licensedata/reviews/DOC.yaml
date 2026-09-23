@@ -1,0 +1,119 @@
+id: DOC
+title: DOC License
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/DOC.txt
+text_retrieved: true
+verdict: created
+summary: Models the licence of the ACE, TAO, CIAO, DAnCE and CoSMIC software, written as running prose rather than
+  as numbered clauses. It grants use, modification, copying and distribution perpetually and irrevocably, asks that
+  the copyright statement travel with released code, bars endorsement with the project and university names, and bars
+  misappropriating the code in a way that would stop it being distributed freely.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all DOC.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software. The text names source code and object code.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant reads "you are free to use, modify, copy, and distribute - perpetually and irrevocably -
+    the DOC software source code and object code produced from the source, as well as copy and distribute modified
+    versions of this software". The record permits reproduce, distribute, modify, derive, display, present, derivative
+    works, modified works and the distribution fee. cc:CommercialUse comes from "You can use DOC software in commercial
+    and/or binary software releases".
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: dalicc:ChangeLicense is permitted with the dalicc:compliantLicense duty. The text says a licensee is
+    "under no obligation to redistribute any of your source code that is built using DOC software", and it bars only
+    a misappropriation that would keep the DOC software itself from being distributed freely.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote is prohibited for "The names ACE(TM), TAO(TM), CIAO(TM), DAnCE(TM), CoSMIC(TM), Washington
+    University, UC Irvine, and Vanderbilt University, may not be used to endorse or promote products or services derived
+    from this source without express written permission".
+  action: applied
+- rubric: 4
+  severity: gap
+  field: odrl:prohibition
+  description: dalicc:addLimitation is prohibited for the misappropriation sentence, "you may not misappropriate the
+    DOC software code, such as copyrighting it yourself or claiming authorship of the DOC software code, in a way
+    that will prevent DOC software from being distributed freely using an open-source development model". The term
+    fits the second half of the sentence, the part about keeping the work distributable downstream. It does not reach
+    the first half, the false claim of authorship. A term such as dalicc:authorshipMisrepresentation would carry that
+    half; the whole sentence is quoted in dalicc:additionalClauses in the meantime.
+  action: none
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Attribution and cc:Notice hang off odrl:distribute, odrl:modify and odrl:derive for "You must, however,
+    include this copyright statement along with any code built using DOC software that you release". The following
+    sentence exempts a binary-only release from the statement; that carve-out is quoted with the duty clause rather
+    than modelled, because the vocabulary has no way to say that a duty falls away for one distribution form.
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: dalicc:rename hangs off odrl:modify and odrl:derive for "This license grants no permission to call
+    products or services derived from this source ACE(TM), TAO(TM), CIAO(TM), DAnCE(TM), or CoSMIC(TM)", the same
+    reading Apache-1.1 gives the corresponding clause.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The disclaimer runs over one long paragraph that mixes the warranty of the submitter with the warranty
+    of the software and then the liability of three universities. dalicc:WarrantyDisclaimer holds the two warranty
+    sentences and dalicc:LiabilityLimitation the three liability sentences, each verbatim and in the order the text
+    gives them. The typewriter quotation marks (``as is'') are kept.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:LiabilityLimitation
+  description: The long dashes the text sets around "perpetually and irrevocably" are written in the source as two
+    hyphens, so no long dash had to be replaced anywhere in this record. The rubric 3 finding above writes the phrase
+    with single hyphens and spaces for readability.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names three United States universities as the copyright holders but no governing law and no
+    term, and it says the grant is perpetual and irrevocable, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: The false-authorship half of the misappropriation sentence has no term. It is quoted in dalicc:additionalClauses
+    and the rubric 4 finding proposes dalicc:authorshipMisrepresentation.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The nearest sibling is licensedata/licenses/Apache-1.1.ttl: the same notice-plus-attribution duties,
+    the same endorsement bar and the same rename duty. The differences are the misappropriation prohibition, which
+    no other record in the family carries, and the sentence that lets a binary-only release ship without the copyright
+    statement.'
+  action: none
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: dct:publisher is left out. The text says the web sites are maintained by a research group at three universities
+  and names no single publishing body. The Y2K and daylight-saving paragraphs of the text are statements of fact about
+  the software rather than licence terms, so they are neither modelled nor quoted.

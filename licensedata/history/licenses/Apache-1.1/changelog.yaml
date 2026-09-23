@@ -1,0 +1,59 @@
+id: Apache-1.1
+title: Apache License, Version 1.1
+current_version: 3
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 changed 2 permissions, recorded the relation to the record
+    this one was adapted from and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "version"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, dalicc:modificationNotice]
+    reason: 'Clause 1 reads: "Redistributions of source code must retain the above copyright notice,
+      this list of conditions and the following disclaimer", and the whole condition block is introduced
+      by "Redistribution and use in source and binary forms, with or without modification, are permitted
+      provided that the following conditions are met". The cc:Notice duty was on odrl:distribute only.
+      Added it to odrl:modify and odrl:derive.'
+    source: review-finding 5/odrl:duty
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice,
+      dalicc:rename]
+    previous: permission odrl:modify with duties [cc:Attribution, dalicc:modificationNotice, dalicc:rename]
+    reason: 'Clause 1 reads: "Redistributions of source code must retain the above copyright notice,
+      this list of conditions and the following disclaimer", and the whole condition block is introduced
+      by "Redistribution and use in source and binary forms, with or without modification, are permitted
+      provided that the following conditions are met". The cc:Notice duty was on odrl:distribute only.
+      Added it to odrl:modify and odrl:derive.'
+    source: review-finding 5/odrl:duty
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 2 finding 6.5: cc:attributionName and dct:publisher both began with a space.'
+  changes:
+  - action: changed
+    statement: cc:attributionName "The Apache Software Foundation"
+    previous: cc:attributionName " The Apache Software Foundation"
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: dct:publisher "The Apache Software Foundation"
+    previous: dct:publisher " The Apache Software Foundation"
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

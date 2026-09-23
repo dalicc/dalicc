@@ -1,0 +1,97 @@
+id: VSL-1.0
+title: Vovida Software License v1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/VSL-1.0.txt
+text_retrieved: true
+verdict: created
+summary: The record models the Vovida Software License version 1.0, a four-condition BSD license. Conditions one
+  and two are the usual notice conditions, condition three is the endorsement bar and condition four requires a
+  derived product to carry a different name, which is modelled as a dalicc:rename duty on modify and derive. The
+  liability clause is the one clause in this batch that names a money figure.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: '"Redistribution and use in source and binary forms, with or without modification, are permitted
+    provided that the following conditions are met". The permissive core, as on BSD-3-Clause.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The conditions are the three BSD conditions: the copyright notice, the list of conditions and the
+    disclaimer must be retained in source redistributions and reproduced in binary redistributions, so cc:Attribution
+    and cc:Notice are duties on distribute, modify and derive.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'Condition 4 reads: "Products derived from this software may not be called "VOCAL", nor may "VOCAL"
+    appear in their name, without prior written permission." dalicc:rename is therefore a duty on modify and derive:
+    a changed work has to be given a different name. This is the same reading BSD-4-Clause style naming conditions
+    get elsewhere in the library.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'Condition 3 reads: "The names "VOCAL", "Vovida Open Communication Application Library", and "Vovida
+    Open Communication Application Library (VOCAL)" must not be used to endorse or promote products derived from
+    this software without prior written permission." That is dalicc:promote as a prohibition. dalicc:ChangeLicense
+    is prohibited because the text requires the license itself to travel with every copy, which is the reading IscLicense
+    and BSD-3-Clause take of the same clause. The MIT record does not carry the prohibition although its text has
+    the same requirement, so the library is not uniform here. (Corrected on 2026-09-15 by the verification of this
+    batch: see the rubric 3 finding on relicensing below.)'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:LiabilityLimitation
+  description: 'The liability clause caps damages at a figure: in no event shall the licensor be liable for any
+    damages in excess of $1,000. It is quoted verbatim, including the figure, because the cap is the substance of
+    the clause.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: 'Two sentences are quoted: the scope sentence, which excludes third party software incorporated in
+    the library and licensed separately, and condition 4, whose detail the dalicc:rename duty does not carry.'
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following BSD-3-Clause. The text licenses
+    software in source and binary form.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Against BSD-3-Clause the difference is the naming condition, which the library expresses as a dalicc:rename
+    duty, and the damages cap in the liability clause.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
+    or without modification, are permitted provided that the following conditions are met: 1. Redistributions of
+    source code must retain the above copyright notice, this list of conditions and the following disclaimer." The
+    permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the
+    relicensing.'
+  action: applied
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. dct:publisher names Vovida Networks, Inc., the licensor in the copyright
+  line.

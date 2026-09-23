@@ -1,0 +1,151 @@
+id: UkOpenGovernmentLicenseForPublicSectorInformation
+title: UK Open Government License for Public Sector Information
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+text_retrieved: true
+verdict: corrected
+summary: 'The record models version 3.0 of the UK Open Government Licence, confirmed from the legal text
+  itself, which closes with "This is version 3.0 of the Open Government Licence". The permissive side
+  of the model is right. Applied: the SPDX identifier OGL-UK-3.0, the licence-notice duty and the modified-works
+  permission. Two prohibitions that the text does not support, share alike and add statement, are proposed
+  for removal; they are shared with the Open Supreme Court Licence and the Canadian Open Government Licence.'
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: The record carried no SPDX identifier. cc:legalcode is the seeAlso URL of the SPDX entry
+    OGL-UK-3.0, Open Government Licence v3.0, and the fetched text confirms the version. The proposal
+    file rated this medium on the URL alone; the version statement in the document makes it certain. Added.
+  action: applied
+  change: spdx:licenseId "OGL-UK-3.0" ;
+- rubric: 1
+  severity: info
+  field: cc:legalcode
+  description: cc:legalcode and dct:source are the same National Archives URL, which redirects to https
+    and resolves. The http form is the one SPDX lists, so it was left unchanged.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'The asset collection is dalicc:CreativeWork, dcmitype:Dataset and dcmitype:Software. The
+    family-rule baseline flags the software type on the National Archives records as suspect; the text
+    settles it in favour of keeping it: the licence defines "Information" as "information protected by
+    copyright or by database right (for example, literary and artistic works, content, data and source
+    code)", so source code is expressly in scope.'
+  action: none
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'The permissions follow the freedoms list: copy, publish, distribute and transmit the Information;
+    adapt the Information; and exploit it commercially and non-commercially. odrl:grantUse, dalicc:chargeDistributionFee
+    and dalicc:chargeLicenseFee all rest on the commercial exploitation freedom and on the absence of
+    any onward-licensing restriction. dalicc:noWarrantyNotice rests on the no-warranty section.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: dalicc:ModifiedWorks, distributing a modified version and making it available to the public,
+    was missing although the licence permits adapting the Information and publishing, distributing and
+    transmitting it in the same list, and the sibling record NCGL-UK-2.0 carries the permission on the
+    identical wording. Added.
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:ModifiedWorks ] ;"
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The licence requires two things when the information is used and the record modelled only
+    one. Section "You must (where you do any of the above)": "acknowledge the source of the Information
+    in your product or application by including or linking to any attribution statement specified by the
+    Information Provider(s) and, where possible, provide a link to this licence", with the default statement
+    "Contains public sector information licensed under the Open Government Licence v3.0." cc:Attribution
+    was attached to cc:DerivativeWorks and odrl:distribute; cc:Notice was missing everywhere, although
+    the attribution statement is itself a licence notice and the licence asks for a link to itself. Added
+    next to cc:Attribution in both permissions, which is how the sibling record NCGL-UK-2.0 models the
+    same sentence.'
+  action: applied
+  change: "odrl:duty [ a odrl:Duty ;\n        odrl:action cc:Notice ] ;   # added to the cc:DerivativeWorks\
+    \ and odrl:distribute permissions"
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: cc:ShareAlike is modelled as an odrl:Prohibition. Nothing in the text forbids the licensee
+    from placing an adaptation under a share-alike licence; the opposite is true, the licence states that
+    its terms are compatible with the Creative Commons Attribution License 4.0 and with the Open Data
+    Commons Attribution License. In ODRL a prohibition says the licensee must not do the act, so this
+    statement asserts something the licence does not say, and it changes every compatibility answer against
+    a share-alike licence. The family-rule baseline raises the same point for permissive software licences
+    under rule 5b. Proposed for removal, together with the two sibling records that carry the identical
+    block.
+  action: proposed
+  change: "remove:\n    odrl:prohibition [ a odrl:Prohibition ;\n            odrl:action cc:ShareAlike\
+    \ ]"
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: 'dalicc:addStatement is modelled as an odrl:Prohibition, which the vocabulary reads as:
+    the licensee must pass the licence on unchanged and may not attach additional terms or notices. The
+    licence says the opposite in its permission list, the information may be combined with other information
+    or included in the licensee''s own product or application, and it imposes no pass-through condition
+    at all. Proposed for removal.'
+  action: proposed
+  change: "remove:\n    odrl:prohibition [ a odrl:Prohibition ;\n            odrl:action dalicc:addStatement\
+    \ ]"
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: dalicc:WarrantyDisclaimer holds both paragraphs of the No warranty section, quoted verbatim,
+    including the liability sentence. The record has no separate dalicc:LiabilityLimitation, which is
+    the convention of all four National Archives records in this batch and is left alone. The Exemptions
+    section, personal data, unpublished information, logos and crests, military insignia, third-party
+    rights, patents, trade marks and design rights, identity documents, is not carried anywhere in the
+    record.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'dalicc:worldwide and dalicc:perpetual match the grant, "a worldwide, royalty-free, perpetual,
+    non-exclusive licence". The governing law is the jurisdiction of the Information Provider''s principal
+    place of business, which the model has no field for: cc:jurisdiction records the territorial scope
+    of the grant, not the governing law.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Three clauses have no vocabulary term. The exemptions list, which carves personal data,
+    unpublished information, insignia and third-party rights out of the grant; the automatic end of the
+    rights on breach; and the statement of compatibility with CC-BY-4.0 and ODC-By-1.0, which is exactly
+    the kind of fact the compatibility checker should know. Proposed terms: dalicc:exemptedMaterial, dalicc:terminationOnBreach,
+    dalicc:compatibleWith.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check reports no conflict, before and after the corrections.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The National Archives records in this batch, OGL 3.0, NCGL 2.0, the Open Supreme Court
+    Licence and the Developer Licence, share one drafting pattern but were not modelled alike: OGL 3.0
+    and the Supreme Court licence carried the share-alike and add-statement prohibitions and no notice
+    duty, while NCGL 2.0 carried the notice duty and neither prohibition. After this pass the notice duty
+    and the modified-works permission are uniform; the two unsupported prohibitions are proposed for removal
+    in both records. review_duplicates.md section 4 flagged that this record, the Supreme Court licence
+    and the Canadian Open Government Licence had one identical deontic signature; they still do, and for
+    OGL 3.0 against the Canadian licence that is close to correct, since the two texts say almost the
+    same thing.'
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 5 finding 7: the record prohibited cc:ShareAlike and dalicc:addStatement
+    although the licence prescribes an attribution statement and says nothing about share-alike, and it
+    did not state the database right although the licence covers ''copyright and database right material''.'
+  action: applied
+family: Government licenses (United Kingdom, Canada)
+port_of: null
+variant_kind: null
+notes: The licence is the base document of the UK Government Licensing Framework and the parent of the
+  two other National Archives records reviewed here. Nothing in this review is legal advice.

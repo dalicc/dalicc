@@ -1,0 +1,146 @@
+id: LPPL-1.3a
+title: LaTeX Project Public License, Version 1.3a
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/LPPL-1.3a.txt
+text_retrieved: true
+verdict: created
+summary: The record models version 1.3a of the LaTeX Project Public License. Anyone may distribute a complete unmodified
+  copy of the Work, and anyone who is not the Current Maintainer may distribute a Derived Work if every component
+  carries a change notice, a replacement component identifies itself as modified, and the unmodified Work stays
+  obtainable. Clause 10(a) lets a Derived Work go under a different licence that honours those conditions, which
+  is dalicc:ChangeLicense with a dalicc:compliantLicense duty.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, identifier, SPDX identifier and IRI agree. The record carries dalicc:variantKind "version"
+    and dalicc:licenseVersion "1.3a", and cc:legalcode points at the text on the LaTeX project's own site because
+    the Open Source Initiative lists only 1.3c.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dalicc:CreativeWork and dcmitype:Software, the same as the 1.1
+    record. The licence governs the components of a work that is compiled by a Base Interpreter, so both types apply.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Clause 2 reads: "You may distribute a complete, unmodified copy of the Work as you received it."
+    Clause 5 reads: "If you are not the Current Maintainer of the Work, you may modify your copy of the Work, thus
+    creating a Derived Work based on the Work, and compile this Derived Work, thus creating a Compiled Work based
+    on the Derived Work." Clause 6 then sets the conditions on distributing a Derived Work. That is odrl:reproduce,
+    odrl:distribute, odrl:display, odrl:present, odrl:modify, odrl:derive, cc:DerivativeWorks and dalicc:ModifiedWorks.
+    Clause 1 says "the act of running the Work is not restricted and no requirements are made concerning any offers
+    of support for the Work", so the licence places no field-of-use or price limit and cc:CommercialUse and dalicc:chargeDistributionFee
+    stand.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Clause 10(a) reads: "A Derived Work may be distributed under a different license provided that license
+    itself honors the conditions listed in Clause 6 above, in regard to the Work, though it does not have to honor
+    the rest of the conditions in this license." That is dalicc:ChangeLicense with a dalicc:compliantLicense duty,
+    reciprocity shape 3, exactly as LatexProjectPublicLicenseVersion13c models the same clause.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The conditions of clause 6 are the duties on odrl:modify and odrl:derive. Clause 6(b): "Every component
+    of the Derived Work contains prominent notices detailing the nature of the changes to that component, or a prominent
+    reference to another file that is distributed as part of the Derived Work and that contains a complete and accurate
+    log of the changes." is dalicc:modificationNotice. Clause 6(d): "You distribute at least one of the following
+    with the Derived Work", either a complete unmodified copy of the Work or information sufficient to obtain one,
+    is dalicc:originalVersionOffer, which names the clause more exactly than the cc:SourceCode duty the 1.3c record
+    uses for it. Clause 7: "you may distribute a Compiled Work generated from a Derived Work, as long as the Derived
+    Work is distributed to all recipients of the Compiled Work" is cc:SourceCode, because a Compiled Work may not
+    travel without the Derived Work it came from. cc:Notice hangs on odrl:distribute.'
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: 'No cc:Attribution duty is written. Version 1.1 asked you to "acknowledge the authorship and name
+    of the original file"; version 1.3a dropped that condition and replaced it with the runtime identification of
+    clause 6(a): "the replacement component of this Derived Work clearly and unambiguously identifies itself as
+    a modified version of this component to the user when used interactively with that Base Interpreter". dalicc:rename
+    does not fit it either, which is what the review record of the 1.3c version says of the same clause, so clause
+    6(a) is a gap rather than a duty. The record still satisfies family rule 6 through cc:Notice.'
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:addLimitation is prohibited, following LatexProjectPublicLicenseVersion13c. The support for
+    it in this text is clause 9, "Distribution of the Work or any Derived Work in an alternative format ... does
+    not relax or nullify any sections of this license as they pertain to the results of applying that process",
+    and the rule in clause 6 that only the Current Maintainer may add a statement of exemption to a component. Clause
+    10(a) does let a Derived Work go under a stricter licence, so long as it honours clause 6, and a reader who
+    weighs that clause more heavily would drop the prohibition. The question is the same on the 1.3c record and
+    is left as it stands there.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: 'dalicc:promote is prohibited on the strength of clause 6(c): "No information in the Derived Work
+    implies that any persons, including (but not limited to) the authors of the original version of the Work, provide
+    any support unless those persons have stated explicitly that they do provide such support for the Derived Work."
+    That is an implied-endorsement bar rather than a trademark clause, and the review record of the 1.3c version
+    proposes dropping the prohibition for that reason. It is kept so that the LaTeX records agree with each other
+    and with the rest of the library, and the sentence is quoted so a reader can judge.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: cc:ShareAlike is not prohibited. The 1.3c record carries that prohibition and its own review record
+    proposes removing it; the 1.3a text states no share-alike condition and forbids none, so the statement is not
+    repeated here.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: 'The NO WARRANTY section holds two paragraphs and they go into two properties, which is family rule
+    10. The MAINTENANCE OF THE WORK section is quoted into dalicc:additionalClauses, not into dalicc:WarrantyOrLiabilityAcceptance,
+    where the 1.3c record keeps it: that property is for a clause under which a licensee takes a warranty on, and
+    the maintenance section is neither a warranty nor a liability clause.'
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system, so cc:jurisdiction is dalicc:worldwide, and it sets no term, so dalicc:validityType
+    is dalicc:perpetual. There is no termination clause and dalicc:terminatesOnBreach is not written. The example
+    notice offers "either version 1.3 of this license or (at your option) any later version", but that is an author's
+    notice rather than a clause, so dalicc:orLaterVersionOption is not written.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Three clauses no term can express, all quoted. The Current Maintainer role gives one party rights
+    that no other licensee has (clause 4 against clauses 5 to 7) and the model has one assignee; the review record
+    of the 1.3c version proposes dalicc:maintainerRole for it, and this record repeats the proposal. Clause 6(a)
+    asks a replacement component to identify itself as modified at runtime, which is neither dalicc:rename nor dalicc:modificationNotice;
+    proposed term: dalicc:runtimeIdentification. The maintenance section, with its six-month unmaintained test and
+    its three-month announcement, is a procedure rather than a duty.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the axioms of licensedata/dependencygraph/dg_default.ttl
+    returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The nearest sibling is LatexProjectPublicLicenseVersion13c, which the SPDX list calls LPPL-1.3c.
+    The two texts are nearly the same document. This record differs from that one in four things: no cc:ShareAlike
+    prohibition, dalicc:originalVersionOffer beside cc:SourceCode on odrl:modify and odrl:derive, dalicc:CreativeWork
+    beside dcmitype:Software on the target, and the maintenance section in dalicc:additionalClauses. It differs
+    from the 1.1 record in having cc:SourceCode and no cc:Attribution and no dalicc:rename, because version 1.3
+    replaced the file-name rule with the runtime identification of clause 6(a).'
+  action: none
+family: Other OSI approved licenses (corporate, academic, weak copyleft)
+port_of: null
+variant_kind: version
+variant_of: null
+notes: Modelled from the SPDX plain text. The record follows LatexProjectPublicLicenseVersion13c, the only LaTeX
+  Project Public License the library held, and departs from it in the two places that record's own review record
+  proposes changing.

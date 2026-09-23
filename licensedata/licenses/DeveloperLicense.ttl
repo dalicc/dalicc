@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Developer License" in the DALICC license library
+# Title: The machine-readable representation of "Developer License" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/DeveloperLicense
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:DeveloperLicense a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -22,10 +23,19 @@ dalicclib:DeveloperLicense a odrl:Set ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://www.nationalarchives.gov.uk/documents/information-management/developer-licence.pdf> ;
     dalicc:WarrantyDisclaimer "It is your responsibility to ensure that the [Licensor] Data you request is what you need. [Licensor] Data is provided ‘as is’ and without any warranty or condition express or implied, statutory or otherwise as to its quality or fitness for purpose. Except as expressly stated in this Licence, all conditions, warranties, terms and undertakings express or implied statutory or otherwise in respect of the [Licensor] Data are hereby excluded to the fullest extent permitted by law." ;
-    dalicc:validityType dalicc:perpetual ;
+    dalicc:validityType dalicc:specifyPeriod ;
+    dalicc:jurisdictionPortOf dalicclib:DataExplorationLicence ;
+    dalicc:variantKind "edition" ;
+    dalicc:recordStatus dalicc:testFixture ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/DeveloperLicense/versions> ;
+    dct:hasVersion "3" ;
+    dct:modified "2026-09-16"^^xsd:date ;
     dct:publisher "The National Archives" ;
     dct:source <http://www.nationalarchives.gov.uk/documents/information-management/developer-licence.pdf> ;
     dct:title "Developer License" ;
+    scho:validFor "P12M"^^xsd:duration ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -60,5 +70,4 @@ dalicclib:DeveloperLicense a odrl:Set ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
-                dcmitype:Dataset,
-                dcmitype:Software ] .
+                dcmitype:Dataset ] .

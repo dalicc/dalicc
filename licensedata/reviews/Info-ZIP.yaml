@@ -1,0 +1,105 @@
+id: Info-ZIP
+title: Info-ZIP License
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Info-ZIP.txt
+text_retrieved: true
+verdict: created
+summary: Models the licence of the Info-ZIP tools. It is a zlib-shaped grant with a BSD retention condition that reaches
+  source and binary form, a rule that altered versions be marked and not passed off as Info-ZIP releases, and a reservation
+  of the project's own names. The record carries a dalicc:promote prohibition for the misrepresentation clause.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all Info-ZIP.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software. The text names source code, compiled executables
+    and libraries.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant reads "Permission is granted to anyone to use this software for any purpose, including commercial
+    applications, and to alter it and redistribute it freely, subject to the above disclaimer and the following restrictions".
+    The record permits reproduce, distribute, modify, derive, display, present, commercial use, derivative works,
+    modified works and the distribution fee.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: dalicc:ChangeLicense is permitted with the dalicc:compliantLicense duty. The text keeps conditions
+    that must survive a relicensing and bars no change of terms.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote is prohibited for "Such altered versions are further prohibited from misrepresentative
+    use of the Zip-Bugs or Info-ZIP e-mail addresses or the Info-ZIP URL(s), such as to imply Info-ZIP will provide
+    support for the altered versions", read with the sentence that bars labelling an altered version with the Info-ZIP
+    names.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Attribution and cc:Notice hang off odrl:distribute, odrl:modify and odrl:derive. The first restriction
+    asks that source redistributions retain "the above copyright notice, definition, disclaimer, and this list of
+    conditions"; the second asks binary redistributions to reproduce the same four items in the documentation, so
+    the duty reaches binary form too.
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: dalicc:modificationNotice and dalicc:rename hang off odrl:modify and odrl:derive for "Altered versions
+    ... must be plainly marked as such and must not be misrepresented as being the original source" and for the bar
+    on labelling them with the Info-ZIP names.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The warranty sentence and the liability sentence sit in one paragraph before the grant. They are split
+    into dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation. The comma inside the quotation marks of "as is,"
+    is the text's own.
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: The binary-form condition with its UnZipSFX exception, the altered-versions clause and the reservation
+    of the project names are quoted in full, because the exception and the reservation say more than the duties can.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: info
+  field: dalicc:additionalClauses
+  description: The exception that lets a standard UnZipSFX binary travel inside a self-extracting archive without
+    the licence has no term. It is a carve-out from a condition rather than from the grant, so dalicc:exemptedMaterial
+    would not be right; the clause is quoted instead.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Read against licensedata/licenses/TheZlibLibpngLicense.ttl the record adds cc:Attribution, because
+    the Info-ZIP text asks for the definition of who Info-ZIP is to travel with the copy, and adds the dalicc:promote
+    prohibition, which the zlib text has no clause for.
+  action: none
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: The double hyphens in the altered-versions clause are the text's own punctuation and are quoted as they stand;
+  no long dash appears anywhere in the source. cc:legalcode points at the project's licence page and dct:source at
+  the SPDX page.

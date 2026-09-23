@@ -1,0 +1,103 @@
+id: Artistic-1.0-cl8
+title: Artistic License 1.0 w/clause 8
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://opensource.org/license/Artistic-1.0'
+text_retrieved: true
+verdict: created
+summary: >-
+  Models the Artistic License 1.0 in the reading that carries the aggregation clause numbered
+  8. The record is identical to Artistic-1.0 except that the aggregation clause is part of the
+  quoted dalicc:additionalClauses, which is the entire textual difference between the two.
+  Nothing here is legal advice.
+findings:
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Clause 1 grants verbatim copying of the source form ("You may make and give away verbatim
+    copies of the source form of the Standard Version of this Package without restriction,
+    provided that you duplicate all of the original copyright notices and associated
+    disclaimers"), clause 3 grants modification and clause 4 grants distribution in object or
+    executable form. The record therefore permits reproduce, distribute, modify, derive,
+    display, present, commercial use, derivative works, modified works and the distribution
+    fee (clause 5: "You may charge a reasonable copying fee for any distribution of this
+    Package").
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    Clause 5 states "You may not charge a fee for this Package itself", modelled as a
+    dalicc:chargeLicenseFee prohibition, and the endorsement clause states "The name of the
+    Copyright Holder may not be used to endorse or promote products derived from this software
+    without specific prior written permission", modelled as a dalicc:promote prohibition.
+    dalicc:ChangeLicense is prohibited because the text grants no right to replace these
+    terms; this follows the library convention carried by 309 of the 344 existing records.
+  action: applied
+- rubric: 5
+  severity: minor
+  field: 'odrl:duty'
+  description: >-
+    cc:Attribution and cc:Notice hang off odrl:distribute (clause 1, duplicate all original
+    copyright notices and associated disclaimers). cc:SourceCode, dalicc:modificationNotice
+    and dalicc:rename hang off odrl:modify and odrl:derive, following clause 3 ("insert a
+    prominent notice in each changed file stating how and when you changed that file" and the
+    option to "rename any non-standard executables"). Unlike the Artistic-2.0 record this
+    record does not put cc:SourceCode on odrl:distribute, because clause 4 makes the
+    machine-readable source only one of four alternatives.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    The warranty clause is quoted verbatim. The license carries no separate liability clause,
+    so dalicc:LiabilityLimitation is absent. The one-of-four option structure of clauses 3 and
+    4, the fee rules of clause 5 and the carve-outs of clauses 6 and 7 are quoted verbatim in
+    dalicc:additionalClauses because the deontic model cannot express a disjunction of
+    conditions.
+  action: applied
+- rubric: 7
+  severity: info
+  field: 'cc:jurisdiction'
+  description: >-
+    The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide
+    and dalicc:validityType is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The vocabulary has no term for a duty that is discharged by satisfying any one of several
+    listed alternatives. Proposed term: dalicc:alternativeConditionSet, a property over a list
+    of duty nodes of which one must be met. The clauses are quoted in dalicc:additionalClauses
+    meanwhile.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the dependency graph dg_default
+    returned an empty conflict list.
+  action: none
+- rubric: 10
+  severity: major
+  field: 'dalicc:additionalClauses'
+  description: >-
+    A line-by-line comparison with the Artistic-1.0 text shows exactly one substantive
+    difference, the inserted clause "Aggregation of this Package with a commercial
+    distribution is always permitted provided that the use of this Package is embedded; that
+    is, when no overt attempt is made to make this Package's interfaces visible to the end
+    user of the commercial distribution. Such use shall not be construed as a distribution of
+    this Package." The remaining differences are the renumbering of the endorsement and
+    warranty clauses. The clause widens what may be done without triggering the distribution
+    obligations, so it is quoted rather than modelled, and the permission and prohibition sets
+    stay identical to Artistic-1.0.
+  action: applied
+family: Artistic
+port_of: null
+variant_kind: version
+notes: >-
+  Modelled by diffing the SPDX plain text of Artistic-1.0-cl8 against Artistic-1.0 rather than
+  by re-reading the whole text. Separate records for Artistic-1.0 and Artistic-1.0-cl8 are
+  justified only by the aggregation clause; the deontic models are identical.

@@ -1,0 +1,58 @@
+id: TheUniversalPermissiveLicenseUplVersion10
+title: The Universal Permissive License (UPL), Version 1.0
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://opensource.org/license/upl-1.0
+text_retrieved: true
+verdict: corrected
+summary: 'The Universal Permissive License grants copyright and patent rights "without restriction", expressly
+  including sublicensing "on either these or other terms", subject to one condition: the copyright notice
+  and the permission notice (or a reference to the license) must be included. The record modelled that
+  correctly except that it prohibited cc:ShareAlike, which the text contradicts. The SPDX id was added.'
+findings:
+- rubric: 5
+  severity: major
+  field: odrl:prohibition
+  description: The grant ends "and to sublicense the foregoing rights on either these or other terms",
+    so relicensing under this same license is expressly allowed. Prohibiting cc:ShareAlike asserted the
+    opposite. cc:ShareAlike is a duty term and a permissive license that is silent about reciprocity must
+    carry no share-alike statement at all. Removed. Flagged as rule 5b in family_rules_baseline.md.
+  action: applied
+  change: "# removed\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action cc:ShareAlike ] ;\n"
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: Added UPL-1.0. The record title, dct:alternative and dct:source (the Open Source Initiative
+    page for UPL) all agree with the SPDX entry.
+  action: applied
+  change: 'spdx:licenseId "UPL-1.0" ;
+
+    '
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'The license grants "any and all patent rights owned or freely licensable by each licensor
+    ... covering either (i) the unmodified Software ... or (ii) the Larger Works". No vocabulary term
+    covers a patent grant, so this record is indistinguishable from MIT in any compatibility result. Proposed
+    term: dalicc:patentGrant. The Larger Work construction of clause (b) has no term either.'
+  action: none
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:addStatement is prohibited although the grant is "without restriction". Library-wide
+    default, but contradicted here.
+  action: proposed
+  change: "# remove\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:addStatement\
+    \ ] ;\n"
+- rubric: 10
+  severity: minor
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9 and 10: the record was corrected against
+    its new siblings and versioned. Family rules 10 and 14 of scripts/review/family_rules.py: the disclaimer
+    paragraph held the liability sentence, which begins ''IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+    BE LIABLE'', and dct:publisher and cc:attributionName were the placeholder ''- not specified -''.'
+  action: applied
+family: MIT, ISC, Zlib, Boost, UPL, WTFPL (permissive, short)
+port_of: null
+variant_kind: null
+notes: One of the three share-alike misuses flagged in family_rules_baseline.md rule 5b.

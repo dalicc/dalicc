@@ -1,0 +1,189 @@
+id: GFDL-1.1-only
+title: GNU Free Documentation License v1.1 only
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/GFDL-1.1-only.txt
+text_retrieved: true
+verdict: created
+summary: >-
+  The record models version 1.1 of the GNU Free Documentation License as the only reading,
+  with GnuFreeDocumentationLicense, the record for version 1.3, as the style reference.
+  Reciprocity is whole-work, so cc:ShareAlike is a license-wide duty and dalicc:ChangeLicense
+  is prohibited. Attribution, notice and source are duties on distribute, modify and derive,
+  and the modification notice and the distinct title are duties on modify and derive. The
+  conditions of sections 3 to 8, which carry the Invariant Sections, the Cover Texts and the
+  Transparent copy, have no deontic term and are quoted in dalicc:additionalClauses.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: >-
+    File name, identifier, SPDX identifier and the local name of the IRI are the same string,
+    GFDL-1.1-only. The SPDX list splits version 1.1 into GFDL-1.1-only and GFDL-1.1-or-later.
+    This record is the only reading; the or-later reading is a record of its own that copies
+    this one.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: >-
+    One odrl:AssetCollection of dct:type dalicc:CreativeWork and dcmitype:Software, the same
+    pair the record for version 1.3 carries. Section 1 applies the license to "any manual or
+    other work", and the addendum recommends releasing code examples under a separate free
+    software license, so dcmitype:Software is wider than the text. The review of the version
+    1.3 record already proposes dcmitype:Text instead; this record keeps the pair so that the
+    three Free Documentation License records can be narrowed in one step.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: >-
+    Section 2 grants the copying right: "You may copy and distribute the Document in any
+    medium, either commercially or noncommercially", and adds "you may publicly display
+    copies". Section 4 grants the right to copy and distribute a Modified Version, and section
+    8 says "Translation is considered a kind of modification". The record therefore permits
+    odrl:reproduce, odrl:distribute, odrl:display, odrl:present, odrl:modify, odrl:derive,
+    cc:DerivativeWorks, dalicc:ModifiedWorks and cc:CommercialUse. Section 2 also states
+    "However, you may accept compensation in exchange for copies", so
+    dalicc:chargeDistributionFee is permitted, as on the version 1.3 record after its
+    correction.
+  action: applied
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: >-
+    Section 2 names public display and lending, not public performance. odrl:present is
+    carried because 459 of the 460 existing records pair odrl:display with odrl:present and
+    the record for version 1.3 carries both; the text itself supports only the display half.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: >-
+    Three prohibitions come from the text. Section 4 requires "that you release the Modified
+    Version under precisely this License" and section 2 that "you add no other conditions
+    whatsoever to those of this License", so dalicc:ChangeLicense is prohibited. Section 2
+    states "You may not use technical measures to obstruct or control the reading or further
+    copying of the copies you make or distribute", which is
+    dalicc:applyTechnicalProtectionMeasures. Section 9 states "You may not copy, modify,
+    sublicense, or distribute the Document except as expressly provided for under this
+    License", so dalicc:sublicense is prohibited, the way LGPL-2.0-only reads the same
+    sentence in its section 8.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: >-
+    dalicc:promote is prohibited, and here the text supports it. Section 4 ends with "The
+    author(s) and publisher(s) of the Document do not by this License give permission to use
+    their names for publicity for or to assert or imply endorsement of any Modified Version."
+    On the GNU software records the same prohibition is a library convention without textual
+    support.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: >-
+    Section 4 requires that a Modified Version be released "under precisely this License, with
+    the Modified Version filling the role of the Document", which is whole-work reciprocity,
+    so cc:ShareAlike hangs off the odrl:Set itself. cc:Attribution and cc:Notice are duties on
+    distribute, modify and derive, from section 2 ("provided that this License, the copyright
+    notices, and the license notice saying this License applies to the Document are reproduced
+    in all copies") and section 4 items D and F. cc:SourceCode carries the Transparent copy
+    requirement of section 3 ("you must either include a machine-readable Transparent copy
+    along with each Opaque copy, or state in or with each Opaque copy a publicly-accessible
+    computer-network location containing a complete Transparent copy"), which is the
+    documentation counterpart of source. dalicc:modificationNotice sits on modify and derive
+    from section 4 item I, which requires an item in the History section "stating at least the
+    title, year, new authors, and publisher of the Modified Version". dalicc:rename sits on
+    the same two acts from section 4 item A, "Use in the Title Page (and on the covers, if
+    any) a title distinct from that of the Document".
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: >-
+    The record for version 1.3 hangs a fourth duty on distribute, modify and derive whose
+    odrl:action is dct:source. dct:source is a Dublin Core property and not an action, the
+    validator reports it, and cc:SourceCode already sits beside it, so this record does not
+    repeat it. The report proposes removing those three duty nodes from the version 1.3
+    record.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: >-
+    Ten clauses are quoted verbatim: the Cover Texts of section 3, the Transparent copy of
+    section 3, the conditions A to N of section 4, the optional invariant designation and the
+    Endorsements and cover text additions of section 4, the combination rule of section 5, the
+    collections of section 6, the aggregation of section 7, the translation of section 8, the
+    termination of section 9 and the future revisions of section 10. The lettered list of
+    section 4 is flattened onto one line with the letters kept, the way LGPL-2.0-only holds
+    the lettered list of its section 6.
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: >-
+    Version 1.1 has neither a warranty disclaimer nor a limitation of liability, so both
+    fields are absent. The paragraph "The Document may include Warranty Disclaimers next to
+    the notice which states that this License applies to the Document" first appears in
+    version 1.2, and even there it is a definition of what a Warranty Disclaimer is rather
+    than a disclaimer this license gives.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: >-
+    The text names no legal system and no end date, so cc:jurisdiction stays dalicc:worldwide
+    and dalicc:validityType stays dalicc:perpetual. Section 9 states that any attempt to copy,
+    modify, sublicense or distribute outside the license "is void, and will automatically
+    terminate your rights under this License", which is dalicc:terminatesOnBreach true, and
+    that "parties who have received copies, or rights, from you under this License will not
+    have their licenses terminated so long as such parties remain in full compliance", which
+    is dalicc:sublicenseSurvival true. There is no cure period.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: >-
+    Four duties of this license have no vocabulary term. The Invariant Sections must be
+    preserved unaltered (section 4 item L, "Preserve all the Invariant Sections of the
+    Document, unaltered in their text and in their titles"); proposed term
+    dalicc:invariantSections. The Cover Texts must be carried on the covers of quantity copies
+    (section 3); proposed term dalicc:coverTexts. A machine-readable Transparent copy must
+    accompany Opaque copies over 100 (section 3); proposed term dalicc:transparentCopy, which
+    would be more exact than the cc:SourceCode this record uses. The History section must be
+    kept and added to (section 4 item I); proposed term dalicc:historySection. All four
+    clauses are quoted in dalicc:additionalClauses.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty conflict list. cc:ShareAlike is required while dalicc:ChangeLicense is prohibited
+    and odrl:grantUse is not permitted, which is the combination the check expects.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    The nearest sibling is GnuFreeDocumentationLicense, the record for version 1.3. This
+    record differs from it in six deliberate ways, each supported by a sentence quoted in the
+    findings above: the duty dalicc:rename on modify and derive, the prohibition
+    dalicc:applyTechnicalProtectionMeasures, the prohibition dalicc:sublicense,
+    dalicc:terminatesOnBreach true, dalicc:sublicenseSurvival true and the ten quoted clauses.
+    It also leaves out the three duty nodes whose action is dct:source. The version 1.3 text
+    carries the same sentences for all of these, so the report proposes the same statements
+    for that record.
+  action: applied
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: version
+variant_of: null
+notes: >-
+  Modelled from the text the SPDX license list publishes for GFDL-1.1-only, which is the text
+  the Free Software Foundation published in March 2000. The quoted clauses are ASCII, the
+  license text contains no long dash, and the only change made in quoting is that line breaks
+  and runs of spaces inside a clause become single spaces.

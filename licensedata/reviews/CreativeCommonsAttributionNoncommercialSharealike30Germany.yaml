@@ -1,0 +1,239 @@
+id: CreativeCommonsAttributionNoncommercialSharealike30Germany
+title: Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Germany
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the BY-NC-SA element set of the Creative Commons 3.0 port for Germany and
+  the grant and restriction sections support it: the attribution and notice duties hang on the acts that
+  share the work with the public, and the prohibitions follow the restrictions clause. The legal text
+  was read in German. Corrections applied: dct:source, spdx:licenseId, dct:title, odrl:target. What remains
+  are proposals that touch the whole Creative Commons family rather than this record, chiefly the express
+  prohibition of sublicensing.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source. The legal code page of this port states
+    the canonical URL of the licence, https://creativecommons.org/licenses/by-nc-sa/3.0/de/, and the six
+    4.0 International parents carry exactly that pair, legal code plus deed. Added.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by-nc-sa/3.0/de/> ;
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: 'The SPDX licence list defines CC-BY-NC-SA-3.0-DE for this licence, with the legal code
+    URL https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode as its see_also, and the entry
+    is neither deprecated nor OSI approved. The record had no identifier. Added. Germany is the only port
+    in this batch that SPDX knows: the other five ports have no SPDX identifier and none was invented
+    for them.'
+  action: applied
+  change: spdx:licenseId "CC-BY-NC-SA-3.0-DE" ;
+- rubric: 1
+  severity: minor
+  field: dct:title
+  description: The dct:title literal ended in a space, "Creative Commons Attribution-NonCommercial-ShareAlike
+    3.0 Germany ", which the library list and the search index carry through. Removed. The same defect
+    sits in the NonCommercial-ShareAlike record of every Creative Commons port in the library.
+  action: applied
+  change: dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Germany"@en ;
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: The record targeted dalicc:CreativeWork only, while the 4.0 International parent CC-BY-NC-SA-4.0
+    targets dalicc:CreativeWork and dcmitype:Dataset. This port settles the sui generis database right
+    expressly. Section 1 defines the subject matter so that "Soweit Datenbanken oder Zusammenstellungen
+    von Daten einen immaterialgueterrechtlichen Schutz eigener Art geniessen, unterfallen auch sie dem
+    Begriff Schutzgegenstand im Sinne dieser Lizenz" (databases and compilations of data that enjoy sui
+    generis protection are themselves subject matter of this licence), and Section 3 closes with the waiver
+    "verzichtet der Lizenzgeber auf saemtliche aus diesem Schutz resultierenden Rechte". Section 4 adds
+    that the restrictions do not bite on the parts that are subject matter only because of that sui generis
+    protection. Because the legal text names databases as licensed subject matter and disposes of the
+    database maker's right in the grant itself, dcmitype:Dataset was added here rather than left as a
+    proposal, which is how the same question was decided for the Portuguese, Czech and Azerbaijani ports.
+    The ports in this batch whose text has no database clause at all, Ecuador and Brazil, keep the proposal.
+  action: applied
+  change: "odrl:target [ a odrl:AssetCollection ;\n        dct:type dalicc:CreativeWork,\n           \
+    \ dcmitype:Dataset ] ;"
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'The modelled permissions follow the grant. Section 3 (Einraeumung von Nutzungsrechten)
+    grants "das verguetungsfreie, raeumlich und zeitlich (fuer die Dauer des Schutzrechts am Schutzgegenstand)
+    unbeschraenkte einfache Recht", called "unentgeltlich eingeraeumtes einfaches Nutzungsrecht fuer jedermann":
+    to reproduce the subject matter in any form and quantity and to integrate it into collective works,
+    to make Abwandlungen (adaptations) including translations provided the change is made recognisable,
+    to show and distribute the subject matter publicly, and to publish, show and distribute Abwandlungen.
+    The record models this as odrl:reproduce, odrl:distribute, odrl:display, odrl:present, odrl:modify,
+    odrl:derive, cc:DerivativeWorks and dalicc:ModifiedWorks. cc:CommercialUse is prohibited rather than
+    permitted, which is the NonCommercial element.'
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: The licence forbids sublicensing and the record does not say so. "Sie duerfen den Schutzgegenstand
+    nicht unterlizenzieren." Section 4(a). The vocabulary already has dalicc:sublicense, but no record
+    in the library uses it and its skos:note says so, and the same sentence stands in every Creative Commons
+    2.0 and 3.0 record, so adding it to the thirty five ports of this batch alone would split the compatibility
+    behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
+    note. Batches 3 and 6 made the same recommendation.
+  action: proposed
+  change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: the work may be shared
+    only under the terms of this licence and the licensee may not offer or impose terms that alter or
+    restrict it or the rights of downstream recipients. dalicc:promote is prohibited, which the 3.0 text
+    supports better than the 2.0 text did, because the no endorsement rule sits in the licence body rather
+    than in the Creative Commons notice printed around it. Section 4(c): the Licensee may not "weder explizit
+    noch implizit irgendeine Verbindung zum Lizenzgeber oder Zuschreibungsempfaenger und ebenso wenig
+    eine Unterstuetzung oder Billigung durch ihn andeuten". cc:CommercialUse is prohibited. Section 4(b):
+    "Die Rechteeinraeumung gemaess Abschnitt 3 gilt nur fuer Handlungen, die nicht vorrangig auf einen
+    geschaeftlichen Vorteil oder eine geldwerte Verguetung gerichtet sind", with the file sharing carve
+    out where no payment is actually made.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The attribution and notice duties are present and supported: the licence requires a copy
+    of the licence or its URI with every copy shared, that the notices referring to the licence and to
+    the warranty clause be kept intact, and that credit be given, and in this port credit is owed to the
+    Rechteinhaber and to the "Zuschreibungsempfaenger", the party designated for attribution, and a copy
+    of the licence or its full URI must travel with every copy distributed or shown publicly. The duties
+    hang on odrl:distribute, odrl:modify and odrl:derive, which matches the licence, since they are triggered
+    by distributing or communicating the work to the public rather than by private use. dalicc:modificationNotice
+    is supported by the duty to take reasonable steps to label a change.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'cc:ShareAlike is a set level duty, which matches the licence: the share alike condition
+    bites on derivative works rather than on a single permission. Section 4(b) of the ShareAlike sets
+    accepts this licence, a later version with the same licence elements, a jurisdiction specific Creative
+    Commons licence with the same elements from version 3.0 upwards, the Unported licence with the same
+    elements from 3.0 upwards, or a licence declared compatible with Creative Commons. It is the only
+    port in this batch whose share alike clause carries the compatible licence option. The model cannot
+    express which other licences satisfy the duty, so the record cannot say that a differently ported
+    licence of the same element set will do.'
+  action: none
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: dalicc:chargeDistributionFee is permitted while cc:CommercialUse is prohibited. Under the
+    test of this port, "Die Rechteeinraeumung gemaess Abschnitt 3 gilt nur fuer Handlungen, die nicht
+    vorrangig auf einen geschaeftlichen Vorteil oder eine geldwerte Verguetung gerichtet sind", with the
+    file sharing carve out where no payment is actually made, a pure cost recovery fee is arguable rather
+    than plainly allowed. The statement also sits in the 4.0 International parent CC-BY-NC-SA-4.0 and
+    in every NonCommercial record of the library, so this is one decision about the whole NonCommercial
+    family rather than about this record. Not applied.
+  action: proposed
+  change: "remove:\n  odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:chargeDistributionFee\
+    \ ] ;"
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: 'dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation are quoted from the German text
+    of this port and not from the English unported version, each holds its own clause and nothing of the
+    other, and both were checked sentence by sentence against the legal code. Section 5 (Gewaehrleistung)
+    and Section 6 (Haftungsbeschraenkung) are separate clauses and sit in separate fields. Both are rewritten
+    for German law rather than translated: the warranty exclusion expressly does not apply where a defect
+    was fraudulently concealed or where the defect causes the kind of damage named in Section 6, and Section
+    6 limits liability for injury to life, body or health to at least negligence and all other damage
+    to gross negligence or intent. This is the furthest any clause pair in this batch travels from the
+    unported text.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: 'The clauses the ODRL policy cannot carry are not visible in the record: the reservation
+    of unnamed rights, the direct licence that every recipient receives from the licensor, the automatic
+    termination on breach with the survival list, the severability, waiver and entire agreement paragraphs,
+    and the royalty collection arrangements. The whole Creative Commons family is modelled this way, so
+    this is a family observation rather than a defect of this record.'
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:Germany, which matches the country of the legal code URL
+    https://creativecommons.org/licenses/by-nc-sa/3.0/de/legalcode, and dalicc:validityType is dalicc:perpetual,
+    which matches a grant for the duration of the applicable copyright. Note that the jurisdiction field
+    records the legal home of the port, not a territorial limit: the grant itself is worldwide. The port
+    names no governing law.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The licence forbids technological protection measures and the vocabulary has no term for
+    it. Section 4(a): "Wenn Sie den Schutzgegenstand verbreiten oder oeffentlich zeigen, duerfen Sie (in
+    Bezug auf den Schutzgegenstand) keine technischen Massnahmen ergreifen, die den Nutzer des Schutzgegenstandes
+    in der Ausuebung der ihm durch diese Lizenz gewaehrten Rechte behindern koennen." Proposed term: dalicc:applyTechnicalProtectionMeasures,
+    an odrl:Action to be used as an odrl:Prohibition. Not modelled, because bending an existing term would
+    be worse than the gap.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Two clauses of the licence body have no vocabulary term. Section 7 (Erloeschen): the licence
+    ends automatically on breach, downstream licences survive, and the named sections survive. Proposed
+    term: dalicc:terminationOnBreach. Section 8: every distribution or public showing carries an offer
+    of a licence from the Licensor to the recipient on the same terms. Proposed term: dalicc:downstreamOffer.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Moral rights have no vocabulary term, in either direction. Section 4: "Persoenlichkeitsrechte
+    bleiben - soweit sie bestehen - von dieser Lizenz unberuehrt." Short, and in German law weighty, since
+    the Urheberpersoenlichkeitsrecht cannot be assigned away. Proposed terms: dalicc:moralRightsRestriction
+    for a clause that binds the licensee and dalicc:moralRightsNonAssertion for one in which the licensor
+    undertakes not to assert them.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The royalty collection arrangement has no vocabulary term. Section 4(f) splits royalty
+    collection three ways, all in the vocabulary of German collecting society law: "Unverzichtbare gesetzliche
+    Verguetungsansprueche" (statutory licences and blank media levies), "Verguetung bei Zwangslizenzen"
+    (compulsory licences) and "Verguetung in sonstigen Fallen", with the Verwertungsgesellschaft named
+    as the channel and the reservation limited to uses that are not non commercial as defined in the NonCommercial
+    clause. Proposed term: dalicc:royaltyCollectionReserved, with a counterpart for the waiver. It is
+    one of the few places where the ports of one version really differ from each other.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:duty
+  description: 'The share alike duty that accepts a later version of the same licence, another jurisdiction
+    port with the same licence elements or, in the German port, a licence declared compatible with Creative
+    Commons, cannot be expressed. Proposed term: a property on the cc:ShareAlike duty, for example dalicc:shareAlikeAccepts.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the forty one axioms of licensedata/dependencygraph/dg_default.ttl
+    reports no conflict, before and after the corrections, and the pre review baseline listed none for
+    this record either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of CC-BY-NC-SA-4.0, the 4.0 International record of the same element set. The deontic
+    model of this record is identical to the parent, statement for statement: the same permissions with
+    the same duties, the same prohibitions and the same set level duties, and the same asset types too,
+    now that the database clause of this port has brought dcmitype:Dataset into odrl:target. What differs
+    is the jurisdiction, the language of the legal text, the clause texts and the version specific clauses
+    of 3.0 that the model does not carry, chiefly the express prohibition of sublicensing, the technological
+    measures clause, the royalty collection arrangement and the moral rights clause. The compatibility
+    checker cannot tell this record from the other records of the BY-NC-SA element set, across all three
+    versions and every jurisdiction the library holds.'
+  action: none
+family: 'Creative Commons 3.0 port: Germany (DE)'
+port_of: CC-BY-NC-SA-4.0
+variant_kind: jurisdiction-port
+notes: 'The parent is the 4.0 International record of the same element set, since the library holds no
+  unported and no International 3.0 record; the version difference, 3.0 against 4.0, is therefore part
+  of the port relation and not only the jurisdiction. The 3.0 text differs from 4.0 in substance as well:
+  it prohibits sublicensing expressly, it forbids technological protection measures, it has no thirty
+  day cure period for a breach, and it settles the royalty collection question and the moral rights question
+  per jurisdiction. None of that is visible in the model. This port is a translation as well as a jurisdiction
+  port, so dalicc:translationOf would fit it when the term exists. Nothing in this review is legal advice.'

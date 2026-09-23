@@ -1,0 +1,90 @@
+id: CreativeCommonsAttributionNoderivs20KoreaSouth
+title: Creative Commons Attribution-NoDerivatives 2.0 South Korea
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, removed
+    2 permissions, changed 2 clause texts, recorded the relation to the record this one was adapted
+    from and recorded the review state.
+  changes:
+  - action: changed
+    statement: 'dalicc:LiabilityLimitation "법이 달리 정하는 경우를 제외하고, 이용허락자는, 본 이용허락이나 저작물의 이용으로부터 야기되는
+      손해에 대하여 책임을 부담하지 않습니다.
+
+      "'
+    previous: "dalicc:LiabilityLimitation \"당사자간에 서면에 의하여 달리 합의되지 않는 한, 이용허락자는 저작물을 있는 그대로 제공하며 일체의\
+      \ 보증이나 담보책임을 부담하지 않습니다.\n \n 법이 달리 정하는 경우를 제외하고, 이용허락자는, 본 이용허락이나 저작물의 이용으로부터 야기되는 손해에 대하여 책임을\
+      \ 부담하지 않습니다.\n\""
+    reason: 'Section 5 of the Korean port covers the disclaimer of warranty and the limitation of
+      liability in two sentences under one heading. The record held the whole two sentence block twice,
+      once in dalicc:WarrantyDisclaimer and once in dalicc:LiabilityLimitation. Each field now holds
+      its own sentence, quoted verbatim: the first sentence, in which the licensor offers the work
+      as is and gives no warranty, is the disclaimer, the second, in which the licensor accepts no
+      liability for damage arising from the licence or from use of the work, is the limitation.'
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: changed
+    statement: 'dalicc:WarrantyDisclaimer "당사자간에 서면에 의하여 달리 합의되지 않는 한, 이용허락자는 저작물을 있는 그대로 제공하며 일체의
+      보증이나 담보책임을 부담하지 않습니다.
+
+      "'
+    previous: "dalicc:WarrantyDisclaimer \"당사자간에 서면에 의하여 달리 합의되지 않는 한, 이용허락자는 저작물을 있는 그대로 제공하며 일체의\
+      \ 보증이나 담보책임을 부담하지 않습니다.\n \n 법이 달리 정하는 경우를 제외하고, 이용허락자는, 본 이용허락이나 저작물의 이용으로부터 야기되는 손해에 대하여 책임을\
+      \ 부담하지 않습니다.\n\""
+    reason: 'Section 5 of the Korean port covers the disclaimer of warranty and the limitation of
+      liability in two sentences under one heading. The record held the whole two sentence block twice,
+      once in dalicc:WarrantyDisclaimer and once in dalicc:LiabilityLimitation. Each field now holds
+      its own sentence, quoted verbatim: the first sentence, in which the licensor offers the work
+      as is and gives no warranty, is the disclaimer, the second, in which the licensor accepts no
+      liability for damage arising from the licence or from use of the work, is the limitation.'
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: added
+    statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-ND-4.0
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:licenseVersion "2.0"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "jurisdiction-port"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dct:source <https://creativecommons.org/licenses/by-nd/2.0/kr/>
+    reason: The record carried cc:legalcode but no dct:source. The legal-code page states the canonical
+      URL of the licence, https://creativecommons.org/licenses/by-nd/2.0/kr/, and the six 4.0 International
+      parents carry exactly that pair (legal code plus deed). Added.
+    source: review-finding 1/dct:source
+  - action: removed
+    statement: permission dalicc:ModifiedWorks
+    reason: 'Review decision 2: a NoDerivatives license grants no right to modify, so the modification
+      permissions and the duties hanging off them were removed and the prohibition on derivatives
+      made explicit.'
+    source: consolidation-decision 2
+  - action: removed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    reason: 'Review decision 2: a NoDerivatives license grants no right to modify, so the modification
+      permissions and the duties hanging off them were removed and the prohibition on derivatives
+      made explicit.'
+    source: consolidation-decision 2
+  - action: added
+    statement: prohibition dalicc:sublicense
+    reason: 'Review decision 1: every Creative Commons record except the CC0 dedication, plus the
+      Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
+      as many words.'
+    source: consolidation-decision 1

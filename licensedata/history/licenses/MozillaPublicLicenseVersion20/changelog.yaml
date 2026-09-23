@@ -1,0 +1,107 @@
+id: MozillaPublicLicenseVersion20
+title: Mozilla Public License Version 2.0
+current_version: 4
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail, 1 permission and 1 prohibition
+    and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: permission cc:CommercialUse
+    reason: Section 2.1(a) grants a "world-wide, royalty-free, non-exclusive license ... to use, reproduce,
+      make available, modify, display, perform, distribute, and otherwise exploit its Contributions".
+      "Otherwise exploit" with no field-of-use limit is a commercial grant, and section 3.2 contemplates
+      charging for a distribution. The record did not permit cc:CommercialUse, which made a widely
+      used permissive-leaning copyleft license look non-commercial. Added.
+    source: review-finding 3/odrl:permission
+  - action: added
+    statement: prohibition dalicc:promote
+    reason: 'Section 2.3 ends: "This License does not grant any rights in the trademarks, service
+      marks, or logos of any Contributor (except as may be necessary to comply with the notice requirements
+      in Section 3.4)." Added the dalicc:promote prohibition that 332 other records carry for the
+      same clause.'
+    source: review-finding 4/odrl:prohibition
+  - action: added
+    statement: spdx:licenseId "MPL-2.0"
+    reason: Added MPL-2.0.
+    source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 2 finding 6.3 and 6.4 and consolidation decision 4: the record made no patent statement
+    although section 2.1(b) grants a patent license and section 5.2 is a retaliation clause, and it
+    hung cc:ShareAlike off the license although MPL 2.0 reciprocity is file level: ''You must inform
+    recipients that the Source Code Form of the Covered Software is governed by the terms of this
+    License'' (3.1), while 3.2(b) lets a Larger Work go out ''under terms of Your choice''.'
+  changes:
+  - action: removed
+    statement: duty cc:ShareAlike
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: permission dalicc:ChangeLicense
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: permission dalicc:patentGrant
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:ChangeLicense
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: prohibition dalicc:patentRetaliationTermination
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+- version: 4
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Weak-copyleft family alignment of 2026-09-15: the record said nothing about three clauses
+    its text-modelled sibling MPL-2.0-no-copyleft-exception quotes. Section 2.1 grants the right to
+    ''use, reproduce, make available, modify, display, perform, distribute, and otherwise exploit
+    its Contributions'', which is the derivative-works permission; section 3.2(a) lets the distributor
+    pass on the source ''at a charge no more than the cost of distribution to the recipient'', which
+    is the distribution fee; and section 3.2(b) lets the distributor ''distribute such Executable
+    Form under the terms of this License, or sublicense it under different terms'', which is the sublicensing
+    permission.'
+  changes:
+  - action: added
+    statement: permission cc:DerivativeWorks
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: permission dalicc:chargeDistributionFee
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: permission dalicc:sublicense
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

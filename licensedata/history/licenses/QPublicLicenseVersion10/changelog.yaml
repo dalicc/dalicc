@@ -1,0 +1,32 @@
+id: QPublicLicenseVersion10
+title: Q Public License Version 1.0
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 clause text and 1 identification detail and recorded
+    the review state.
+  changes:
+  - action: added
+    statement: dalicc:LiabilityLimitation "In no event shall the initial developers or copyright holders
+      be liable for any damages whatsoever, including - but not restricted to - lost revenue or profits
+      or other direct, indirect, special, incidental or consequential damages, even if they have been
+      advised of the possibility of such damages, except to the extent invariable law, if any, provides
+      otherwise."
+    reason: The section headed "Limitations of Liability" was not recorded. Added, quoted.
+    source: review-finding 6/dalicc:LiabilityLimitation
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: spdx:licenseId "QPL-1.0"
+    reason: Added QPL-1.0; the title matches the SPDX name.
+    source: review-finding 1/spdx:licenseId

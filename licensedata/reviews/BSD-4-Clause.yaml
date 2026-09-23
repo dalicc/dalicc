@@ -1,0 +1,84 @@
+id: BSD-4-Clause
+title: The 4-Clause BSD License
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/BSD-4-Clause.txt
+text_retrieved: true
+verdict: corrected
+summary: The record models the original four-clause BSD license and quotes the advertising acknowledgement
+  in dalicc:additionalClauses. Its identification pointed at the University of California variant while
+  the SPDX id and the quoted clause are the generic four-clause text; the URLs were corrected and a legal-code
+  link added.
+findings:
+- rubric: 1
+  severity: major
+  field: dct:source
+  description: dct:source pointed at https://spdx.org/licenses/BSD-4-Clause-UC.html, the University of
+    California specific license, while spdx:licenseId says BSD-4-Clause, which is the generic one. Repointed
+    dct:source at the generic SPDX page and added the same URL as cc:legalcode, which was missing entirely.
+  action: applied
+  change: 'cc:legalcode <https://spdx.org/licenses/BSD-4-Clause.html> ;
+
+    dct:source <https://spdx.org/licenses/BSD-4-Clause.html> ;
+
+    '
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: The quoted advertising clause names the University of California, which belongs to the
+    UC variant rather than to the generic four-clause text. Correcting a published literal is left to
+    the owner; the alternative is to change spdx:licenseId to BSD-4-Clause-UC instead and keep the clause.
+    One or the other has to give.
+  action: proposed
+  change: '# either
+
+    dalicc:additionalClauses "All advertising materials mentioning features or use of this software must
+    display the following acknowledgement: This product includes software developed by <organisation>."
+    ;
+
+    # or
+
+    spdx:licenseId "BSD-4-Clause-UC" ;
+
+    '
+- rubric: 1
+  severity: minor
+  field: dct:publisher
+  description: dct:publisher is "University of California-Specific", which is a label from the SPDX page
+    title, not a publisher. Same decision as the clause text above.
+  action: proposed
+  change: 'dct:publisher "The Regents of the University of California" ;
+
+    '
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: No warranty disclaimer, although the text carries the usual BSD paragraph. Not applied
+    because it would be the third change to a record whose identity (generic or UC variant) is still open.
+  action: proposed
+  change: 'dalicc:WarrantyDisclaimer "THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS \"AS IS\"
+    ..." ;
+
+    '
+- rubric: 3
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:ChangeLicense is prohibited without textual support, same as in the other BSD records.
+  action: proposed
+  change: "# remove\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:ChangeLicense\
+    \ ] ;\n"
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 3 finding 5 and batch 4 section 4: the disclaimer paragraph
+    held both sentences and the advertising clause had no duty. The text says ''All advertising materials
+    mentioning features or use of this software must display the following acknowledgement'', which is
+    the new dalicc:advertisingAcknowledgement duty on distribution; dct:publisher was the placeholder
+    ''N.N.''.'
+  action: applied
+family: BSD family (0BSD, 2, 3 and 4 clause)
+port_of: null
+variant_kind: version
+notes: The identity of this record (generic four-clause text or the University of California variant)
+  needs an owner decision.

@@ -1,0 +1,142 @@
+id: PythonLicense20
+title: Python License-2.0
+current_version: 4
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 clause text, 2 identification details and 2 permissions,
+    removed 2 prohibitions, changed 1 clause text and 1 permission and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:LiabilityLimitation "PSF SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS
+      OF PYTHON FOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS AS A RESULT OF MODIFYING,
+      DISTRIBUTING, OR OTHERWISE USING PYTHON, OR ANY DERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY
+      THEREOF."
+    reason: dalicc:WarrantyDisclaimer held clause 5, the liability clause, and there was no dalicc:LiabilityLimitation.
+      Moved clause 5 to the liability field and put clause 4, the warranty disclaimer, in the warranty
+      field.
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: changed
+    statement: dalicc:WarrantyDisclaimer "PSF is making Python available to Licensee on an \"AS IS\"
+      basis. PSF MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR IMPLIED. BY WAY OF EXAMPLE, BUT
+      NOT LIMITATION, PSF MAKES NO AND DISCLAIMS ANY REPRESENTATION OR WARRANTY OF MERCHANTABILITY
+      OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE OF PYTHON WILL NOT INFRINGE ANY THIRD
+      PARTY RIGHTS."
+    previous: 'dalicc:WarrantyDisclaimer "PSF SHALL NOT BE LIABLE TO LICENSEE OR ANY OTHER USERS OF
+      PYTHON
+
+      FOR ANY INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES OR LOSS AS
+
+      A RESULT OF MODIFYING, DISTRIBUTING, OR OTHERWISE USING PYTHON,
+
+      OR ANY DERIVATIVE THEREOF, EVEN IF ADVISED OF THE POSSIBILITY THEREOF."'
+    reason: dalicc:WarrantyDisclaimer held clause 5, the liability clause, and there was no dalicc:LiabilityLimitation.
+      Moved clause 5 to the liability field and put clause 4, the warranty disclaimer, in the warranty
+      field.
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dct:source osl:Python-2.0
+    reason: Added Python-2.0 and the missing dct:source.
+    source: review-finding 1/spdx:licenseId
+  - action: added
+    statement: permission cc:DerivativeWorks
+    reason: Clause 2 grants "a nonexclusive, royalty-free, world-wide license to reproduce, analyze,
+      test, perform and/or display publicly, prepare derivative works, distribute, and otherwise use
+      Python alone or in any derivative version". The record prohibited odrl:derive and cc:DerivativeWorks.
+      Removed both and added the permissions with the duties of clauses 2 and 3.
+    source: review-finding 3/odrl:prohibition
+  - action: added
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    reason: Clause 2 requires that "PSF's License Agreement and PSF's notice of copyright ... are
+      retained in Python alone or in any derivative version". The distribute permission carried cc:Attribution
+      but not cc:Notice. Added.
+    source: review-finding 5/odrl:duty
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution]
+    reason: Clause 2 requires that "PSF's License Agreement and PSF's notice of copyright ... are
+      retained in Python alone or in any derivative version". The distribute permission carried cc:Attribution
+      but not cc:Notice. Added.
+    source: review-finding 5/odrl:duty
+  - action: removed
+    statement: prohibition cc:DerivativeWorks
+    reason: Clause 2 grants "a nonexclusive, royalty-free, world-wide license to reproduce, analyze,
+      test, perform and/or display publicly, prepare derivative works, distribute, and otherwise use
+      Python alone or in any derivative version". The record prohibited odrl:derive and cc:DerivativeWorks.
+      Removed both and added the permissions with the duties of clauses 2 and 3.
+    source: review-finding 3/odrl:prohibition
+  - action: removed
+    statement: prohibition odrl:derive
+    reason: Clause 2 grants "a nonexclusive, royalty-free, world-wide license to reproduce, analyze,
+      test, perform and/or display publicly, prepare derivative works, distribute, and otherwise use
+      Python alone or in any derivative version". The record prohibited odrl:derive and cc:DerivativeWorks.
+      Removed both and added the permissions with the duties of clauses 2 and 3.
+    source: review-finding 3/odrl:prohibition
+  - action: added
+    statement: spdx:licenseId "Python-2.0"
+    reason: Added Python-2.0 and the missing dct:source.
+    source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 3 finding 5: the record prohibited odrl:grantUse, cc:ShareAlike, dalicc:addLimitation,
+    dalicc:addStatement and dalicc:chargeDistributionFee, none of which the PSF License Agreement
+    version 2 states. Clause 2 grants the right ''to reproduce, analyze, test, perform and/or display
+    publicly, prepare derivative works, distribute, and otherwise use Python alone or in any derivative
+    version'' and says nothing about fees, so the distribution fee is permitted as it is on the other
+    permissive records.'
+  changes:
+  - action: added
+    statement: permission dalicc:chargeDistributionFee
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition cc:ShareAlike
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:addLimitation
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:addStatement
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:chargeDistributionFee
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition odrl:grantUse
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+- version: 4
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Permit relicensing on permissive licences; the notice clause is a duty, not a bar. Family
+    rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no source
+    code asks only that the notice travels with the copy, which is a duty on the acts it governs and
+    not a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission
+    here, and the prohibition the earlier pass wrote is removed. The text reads: "Permission to use,
+    copy, modify, and distribute this software and its documentation for any purpose and without fee
+    is hereby granted, provided that the above copyright notice appear in all copies and that both
+    that copyright notice and this permission notice appear in supporting documentation, and that
+    the name of Stichting Mathematisch Centrum or CWI not be used in advertising or publicity pertaining
+    to distribution of the software without specific, written prior permission." The permission carries
+    the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the relicensing.'
+  changes:
+  - action: added
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

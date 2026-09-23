@@ -1,0 +1,97 @@
+id: MPL-1.1
+title: Mozilla Public License 1.1
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'http://www.mozilla.org/MPL/MPL-1.1.html'
+text_retrieved: true
+verdict: created
+summary: >-
+  Models the Mozilla Public License 1.1, the text from which CDDL, the Sun, Nokia and Ricoh
+  licences and the OSET licence are all derived. It adds to MPL-1.0 an explicit trademark
+  carve-out and the patent retaliation clause. Nothing here is legal advice.
+findings:
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 2.1(a) grants rights "under intellectual property rights (other than patent or
+    trademark) Licensable by Initial Developer to use, reproduce, modify, display, perform,
+    sublicense and distribute the Original Code", so dalicc:sublicense is a permission, and
+    2.1(b) and 2.2(b) grant patent licences, so dalicc:patentGrant is a permission.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    The grant excludes trademark rights in as many words, so dalicc:promote is a prohibition.
+    Section 8.2 ends the grant where the licensee sues over a patent, which is modelled as a
+    dalicc:patentRetaliationTermination prohibition and quoted in dalicc:additionalClauses so
+    that the mechanism, a termination rather than a ban, stays readable. dalicc:ChangeLicense
+    is prohibited for the covered code.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    The reciprocity of this licence is file level, not whole work: the Source Code form of the
+    covered code must stay under this licence, while a Larger Work combining it with other
+    code may be distributed as a single product. The record therefore attaches cc:ShareAlike
+    to odrl:distribute, odrl:modify and odrl:derive rather than to the odrl:Set, which is the
+    shape the existing CommonDevelopmentAndDistributionLicense10 record uses. cc:SourceCode,
+    cc:Notice and cc:Attribution hang off the same three acts, and dalicc:modificationNotice
+    off odrl:modify and odrl:derive.
+  action: applied
+- rubric: 6
+  severity: major
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Quoted verbatim: section 3.6, which lets the executable version go out "under a license of
+    Your choice, which may contain terms different from this License"; the whole of section 8,
+    including the patent retaliation limbs and the survival of end user licences; the U.S.
+    government end user clause; and the applicable-law clause. Sections 7 and 9 are quoted
+    word for word in dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    The grant itself is world-wide ("a world-wide, royalty-free, non-exclusive license"), so
+    cc:jurisdiction stays dalicc:worldwide and the applicable-law and venue clause is quoted
+    in dalicc:additionalClauses instead of being turned into a bpicounty IRI. A choice of law
+    is not a jurisdiction port and the library reserves cc:jurisdiction with a country for
+    ports.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Two clauses have no vocabulary term. Automatic termination on breach with a cure period is
+    a policy quality with no property to hang it on; proposed term dalicc:terminatesOnBreach
+    as a property over the existing dalicc:terminationOnBreach concept. The survival of
+    validly granted end user licences after termination has no term either; proposed term
+    dalicc:sublicenseSurvival. Both clauses are quoted in dalicc:additionalClauses.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the dependency graph dg_default
+    returned an empty conflict list. cc:ShareAlike is required and dalicc:ChangeLicense is
+    prohibited, which is the combination the check expects; asserting both cc:ShareAlike and a
+    dalicc:ChangeLicense permission would have been reported as a direct conflict.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Read as a diff against MPL-1.0 rather than in full. Shares its duty placement with
+    CommonDevelopmentAndDistributionLicense10 and is the parent text of CDDL-1.1, Nokia, SISSL
+    and RSCPL in this batch, which carry the same shape.
+  action: none
+family: Mozilla and CDDL
+port_of: null
+variant_kind: version
+notes: >-
+  The patent grant and the patent retaliation clause are modelled with the terms the
+  2026-09-15 review added to the vocabulary; this is the first use of
+  dalicc:patentRetaliationTermination on a record.

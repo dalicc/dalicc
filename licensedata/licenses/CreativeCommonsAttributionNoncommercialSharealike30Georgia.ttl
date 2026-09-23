@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Georgia "@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Georgia "@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialSharealike30Georgia
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Georgia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -22,11 +23,17 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Georgia a odrl:Set 
     cc:legalcode <https://creativecommons.org/licenses/by-nc-sa/3.0/ge/legalcode> ;
     dalicc:LiabilityLimitation """მუხ.5 გათვალისწინებული გარანტიების გარდა, ლიცენზიარი პასუხს აგებს მხოლოდ განზრახ ან გაუფრთხილებლობით მიყენებული ზიანისათვის.
 """ ;
-    dalicc:WarrantyDisclaimer """ლიცენზიარი გარანტიას იძლევა იმაზე, რომ ობიექტი ორიგინალურია, შემქმნელს ეკუთვნის სრული საკუთრების უფლება ობიექტზე და არავის არ აქვს პრეტენზია იმაზე, რომ ობიექტზე მითითებულ შემქმნელს შეუძლია განაცხადოს თავისი ავტორობა, და წინამდებარე ლიცენზიით გათვალისწინებული უფლებები არ არის საზიარო და არავისზე არ არის გადაცემული.
+    dalicc:additionalClauses """ლიცენზიარი გარანტიას იძლევა იმაზე, რომ ობიექტი ორიგინალურია, შემქმნელს ეკუთვნის სრული საკუთრების უფლება ობიექტზე და არავის არ აქვს პრეტენზია იმაზე, რომ ობიექტზე მითითებულ შემქმნელს შეუძლია განაცხადოს თავისი ავტორობა, და წინამდებარე ლიცენზიით გათვალისწინებული უფლებები არ არის საზიარო და არავისზე არ არის გადაცემული.
  
  ლიცენზიარი ათავისუფლებს ლიცენზიატს პასუხისმგებლობისაგან, რომელიც შეიძლება დადგეს წინამდებარე ლიცენზიით გათვალისწინებული პირობებით ობიექტზე უფლებებისა და მათ გამოყენების საგანზე მესამე პირების მხრიდან პრეტენზიის წარდგენის შემთხვევაში.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-SA-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "3.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialSharealike30Georgia/versions> ;
     dct:alternative "Attribution NonCommercial ShareAlike 3.0 Georgia",
         "Attribution-NonCommercial-ShareAlike 3.0",
         "Attribution-NonCommercial-ShareAlike 3.0 Georgia",
@@ -38,8 +45,11 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Georgia a odrl:Set 
         "CC-BY-NC-SA 3.0 GE",
         "Creative Commons BY-NC-SA 3.0",
         "Creative Commons BY-NC-SA 3.0 GE" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
-    dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Georgia "@en ;
+    dct:source <https://creativecommons.org/licenses/by-nc-sa/3.0/ge/> ;
+    dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Georgia"@en ;
     odrl:duty [ a odrl:Duty ;
             odrl:action cc:ShareAlike ] ;
     odrl:permission [ a odrl:Permission ;
@@ -81,8 +91,11 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Georgia a odrl:Set 
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
-            dct:type dalicc:CreativeWork ] ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset ] ;
     foaf:img <https://creativecommons.org/images/international/ge.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/ge/88x31.png> .

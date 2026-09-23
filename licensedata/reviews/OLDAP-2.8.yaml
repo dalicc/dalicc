@@ -1,0 +1,96 @@
+id: OLDAP-2.8
+title: Open LDAP Public License v2.8
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/OLDAP-2.8.txt
+text_retrieved: true
+verdict: created
+summary: The record models version 2.8 of the OpenLDAP Public License, a BSD-form license whose third condition
+  asks for a verbatim copy of the license document in every redistribution. It adds a revision clause that lets
+  a licensee use the software under any later revision of the license, and a sentence keeping title to copyright
+  with the copyright holders; both are quoted.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: '"Redistribution and use of this software and associated documentation ("Software"), with or without
+    modification, are permitted provided that the following conditions are met". The permissive core, as on BSD-3-Clause.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: The three conditions are the retention of copyright statements and notices in source form, their
+    reproduction with the list of conditions and the disclaimer in binary form, and a verbatim copy of the license
+    document in every redistribution. cc:Attribution and cc:Notice on distribute, modify and derive.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The text reads: "The names of the authors and copyright holders must not be used in advertising
+    or otherwise to promote the sale, use or other dealing in this Software without specific, written prior permission."
+    That is dalicc:promote as a prohibition. dalicc:ChangeLicense is prohibited because the text requires the license
+    itself to travel with every copy, which is the reading IscLicense and BSD-3-Clause take of the same clause.
+    The MIT record does not carry the prohibition although its text has the same requirement, so the library is
+    not uniform here. (Corrected on 2026-09-15 by the verification pass: see the rubric 3 finding on relicensing
+    below.)'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:orLaterVersionOption
+  description: 'The revision clause reads: "You may use this Software under terms of this license revision or under
+    the terms of any subsequent revision of the license." That is an or-later option outside the GNU family. dalicc:orLaterVersionOption
+    would express it as true, but the property is so far used only on the GNU records and the consolidation decision
+    that introduced it named those four records only, so the triple is proposed and not written, and the clause
+    is quoted in dalicc:additionalClauses instead.'
+  action: proposed
+  change: 'dalicc:orLaterVersionOption true ;
+
+    '
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: 'Three sentences are quoted: the revision clause, the advertising and title sentence, and the registered-trademark
+    sentence. The last one is a statement of fact rather than a term, but it is the reason the promote prohibition
+    matters here.'
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following BSD-3-Clause. The text licenses
+    software and associated documentation.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: The library holds no other OpenLDAP record, so no dalicc:variantKind is written even though the text
+    calls itself version 2.8. Against BSD-3-Clause the differences are the verbatim-copy condition, the revision
+    clause and the title sentence.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Redistribution and use of this software and associated documentation
+    ("Software"), with or without modification, are permitted provided that the following conditions are met: 1.
+    Redistributions in source form must retain copyright statements and notices ..." The permission carries the
+    dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the relicensing.'
+  action: applied
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. The last paragraph of the published text grants permission to copy and
+  distribute verbatim copies of the license document itself; that is a permission about the document, not about
+  the software, so it is not modelled.

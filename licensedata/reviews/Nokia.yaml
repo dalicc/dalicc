@@ -1,0 +1,96 @@
+id: Nokia
+title: Nokia Open Source License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://opensource.org/license/Nokia'
+text_retrieved: true
+verdict: created
+summary: >-
+  Models the Nokia Open Source License, an MPL 1.1 derivative in which Nokia takes the place
+  of the Initial Developer. The record was produced by diffing the text against MPL-1.1 and
+  carries the same shape. Nothing here is legal advice.
+findings:
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 2.1(a) grants a licence "under copyrights Licensable by Nokia to use, reproduce,
+    modify, display, perform, sublicense and distribute the Original Software (or portions
+    thereof) with or without Modifications, and/or as part of a Larger Work", so
+    dalicc:sublicense is a permission, and 2.1(b) grants a patent licence, so
+    dalicc:patentGrant is a permission.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    Section 10 states "Nothing in this License shall grant You any rights to use any of the
+    trademarks of Nokia or any of its Affiliates, even if any of such trademarks are included
+    in any part of Covered Software", so dalicc:promote is a prohibition. Section 8.2 is a
+    patent retaliation clause and is modelled as dalicc:patentRetaliationTermination as well
+    as quoted.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    The reciprocity of this licence is file level, not whole work: the Source Code form of the
+    covered code must stay under this licence, while a Larger Work combining it with other
+    code may be distributed as a single product. The record therefore attaches cc:ShareAlike
+    to odrl:distribute, odrl:modify and odrl:derive rather than to the odrl:Set, which is the
+    shape the existing CommonDevelopmentAndDistributionLicense10 record uses. cc:SourceCode,
+    cc:Notice and cc:Attribution hang off the same three acts, and dalicc:modificationNotice
+    off odrl:modify and odrl:derive.
+  action: applied
+- rubric: 6
+  severity: major
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Quoted verbatim: section 3.6 on distributing the executable version under another licence,
+    the whole of section 8 and section 10, which carries both the trademark sentence and the
+    choice of Finnish law with arbitration in Helsinki. The liability clause is unusual in
+    capping liability at fifty US dollars where a jurisdiction allows a cap rather than an
+    exclusion, and is quoted word for word.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    Section 10 states "This License is governed by the laws of Finland excluding its
+    conflict-of-law provisions", while the grant in section 2.1 is world-wide. cc:jurisdiction
+    stays dalicc:worldwide and the choice-of-law and arbitration clause is quoted in
+    dalicc:additionalClauses, because a choice of law is not a jurisdiction port.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Two clauses have no vocabulary term. Automatic termination on breach with a cure period is
+    a policy quality with no property to hang it on; proposed term dalicc:terminatesOnBreach
+    as a property over the existing dalicc:terminationOnBreach concept. The survival of
+    validly granted end user licences after termination has no term either; proposed term
+    dalicc:sublicenseSurvival. Both clauses are quoted in dalicc:additionalClauses.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the dependency graph dg_default
+    returned an empty conflict list. cc:ShareAlike is required and dalicc:ChangeLicense is
+    prohibited, which is the combination the check expects; asserting both cc:ShareAlike and a
+    dalicc:ChangeLicense permission would have been reported as a direct conflict.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Diffed against MPL-1.1 rather than read in full. The deontic model is identical to
+    MPL-1.1; the differences are the named licensor, the Finnish choice of law, the liability
+    cap and the trademark sentence, all of them quoted.
+  action: none
+family: Mozilla and CDDL
+port_of: null
+variant_kind: null
+notes: >-
+  The apostrophe in the liability clause ("A PARTY's") is reproduced verbatim from the source
+  text.

@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Academic Free License 3.0" in the DALICC license library
+# Title: The machine-readable representation of "Academic Free License 3.0" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/AFL-3.0
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,20 +15,29 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:AFL-3.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     spdx:licenseId "AFL-3.0" ;
-    cc:attributionName "- not specified - " ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:AFL-3.0 ;
-    dalicc:WarrantyDisclaimer "Under no circumstances and under no legal theory, whether in tort (including negligence), contract, or otherwise, shall the Licensor be liable to anyone for any indirect, special, incidental, or consequential damages of any character arising as a result of this License or the use of the Original Work including, without limitation, damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses. This limitation of liability shall not apply to the extent applicable law prohibits such limitation." ;
+    dalicc:LiabilityLimitation "Under no circumstances and under no legal theory, whether in tort (including negligence), contract, or otherwise, shall the Licensor be liable to anyone for any indirect, special, incidental, or consequential damages of any character arising as a result of this License or the use of the Original Work including, without limitation, damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses. This limitation of liability shall not apply to the extent applicable law prohibits such limitation." ;
+    dalicc:WarrantyDisclaimer "Licensor warrants that the copyright in and to the Original Work and the patent rights granted herein by Licensor are owned by the Licensor or are sublicensed to You under the terms of this License with the permission of the contributor(s) of those copyrights and patent rights. Except as expressly stated in the immediately preceding sentence, the Original Work is provided under this License on an \"AS IS\" BASIS and WITHOUT WARRANTY, either express or implied, including, without limitation, the warranties of non-infringement, merchantability or fitness for a particular purpose. THE ENTIRE RISK AS TO THE QUALITY OF THE ORIGINAL WORK IS WITH YOU. This DISCLAIMER OF WARRANTY constitutes an essential part of this License. No license to the Original Work is granted by this License except under this disclaimer." ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/AFL-3.0/versions> ;
     dct:alternative "AFL" ;
-    dct:publisher "- not specified - " ;
+    dct:hasVersion "3" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:source osl:AFL-3.0 ;
     dct:title "Academic Free License 3.0" ;
     odrl:permission [ a odrl:Permission ;
+            odrl:action dalicc:ChangeLicense ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action dalicc:compliantLicense ] ],
+        [ a odrl:Permission ;
             odrl:action odrl:derive ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ;
@@ -67,13 +76,11 @@ dalicclib:AFL-3.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeLicenseFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:noWarrantyNotice ] ;
+            odrl:action dalicc:patentGrant ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action cc:ShareAlike ],
+            odrl:action dalicc:promote ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:addStatement ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:patentRetaliationTermination ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset,

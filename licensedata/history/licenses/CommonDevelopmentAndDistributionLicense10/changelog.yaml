@@ -1,0 +1,135 @@
+id: CommonDevelopmentAndDistributionLicense10
+title: Common Development and Distribution License 1.0
+current_version: 4
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 2 clause texts, 1 identification detail and 1 prohibition,
+    removed 1 permission, changed 2 permissions and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:LiabilityLimitation "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER
+      TORT (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL YOU, THE INITIAL DEVELOPER, ANY OTHER
+      CONTRIBUTOR, OR ANY DISTRIBUTOR OF COVERED SOFTWARE, OR ANY SUPPLIER OF ANY OF SUCH PARTIES,
+      BE LIABLE TO ANY PERSON FOR ANY INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY
+      CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOST PROFITS, LOSS OF GOODWILL, WORK STOPPAGE,
+      COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER COMMERCIAL DAMAGES OR LOSSES, EVEN IF
+      SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES. THIS LIMITATION OF LIABILITY
+      SHALL NOT APPLY TO LIABILITY FOR DEATH OR PERSONAL INJURY RESULTING FROM SUCH PARTY’S NEGLIGENCE
+      TO THE EXTENT APPLICABLE LAW PROHIBITS SUCH LIMITATION. SOME JURISDICTIONS DO NOT ALLOW THE
+      EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS EXCLUSION AND LIMITATION
+      MAY NOT APPLY TO YOU."
+    reason: Sections 6 and 7 were not recorded. Added both, quoted from the text.
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: added
+    statement: dalicc:WarrantyDisclaimer "COVERED SOFTWARE IS PROVIDED UNDER THIS LICENSE ON AN “AS
+      IS” BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION,
+      WARRANTIES THAT THE COVERED SOFTWARE IS FREE OF DEFECTS, MERCHANTABLE, FIT FOR A PARTICULAR
+      PURPOSE OR NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE COVERED
+      SOFTWARE IS WITH YOU. SHOULD ANY COVERED SOFTWARE PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE
+      INITIAL DEVELOPER OR ANY OTHER CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR
+      OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO
+      USE OF ANY COVERED SOFTWARE IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER."
+    reason: Sections 6 and 7 were not recorded. Added both, quoted from the text.
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: removed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'Review decision 10: sections 3.1 and 3.2 are file-level reciprocity, so the share-alike
+      duty hangs on the acts that trigger it and relicensing is prohibited, aligning the record with
+      the Mozilla Public License 2.0.'
+    source: consolidation-decision 10
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Notice, cc:ShareAlike, cc:SourceCode]
+    previous: permission odrl:distribute with duties [cc:Notice, cc:SourceCode]
+    reason: 'Review decision 10: sections 3.1 and 3.2 are file-level reciprocity, so the share-alike
+      duty hangs on the acts that trigger it and relicensing is prohibited, aligning the record with
+      the Mozilla Public License 2.0.'
+    source: consolidation-decision 10
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
+    reason: 'Review decision 10: sections 3.1 and 3.2 are file-level reciprocity, so the share-alike
+      duty hangs on the acts that trigger it and relicensing is prohibited, aligning the record with
+      the Mozilla Public License 2.0.'
+    source: consolidation-decision 10
+  - action: added
+    statement: prohibition dalicc:ChangeLicense
+    reason: 'Review decision 10: sections 3.1 and 3.2 are file-level reciprocity, so the share-alike
+      duty hangs on the acts that trigger it and relicensing is prohibited, aligning the record with
+      the Mozilla Public License 2.0.'
+    source: consolidation-decision 10
+  - action: added
+    statement: spdx:licenseId "CDDL-1.0"
+    reason: Added CDDL-1.0; the title matches the SPDX name exactly.
+    source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 3 finding 5 and consolidation decision 4: the share-alike duty hung off odrl:distribute
+    and odrl:modify but not off odrl:derive, the record made no patent statement although section
+    2.1(b) grants one, relicensing was prohibited although section 3.6 lets an Executable go out ''under
+    the terms of a license of Your choice'', and dct:publisher was the placeholder ''N.N.''.'
+  changes:
+  - action: removed
+    statement: dct:publisher "N.N."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: permission dalicc:ChangeLicense
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: permission dalicc:patentGrant
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:ChangeLicense
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+- version: 4
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Weak-copyleft family alignment of 2026-09-15: the record said nothing about four clauses
+    its text-modelled sibling CDDL-1.1 quotes from the same sentences. Section 2.1(a) grants the right
+    to ''use, reproduce, modify, display, perform, sublicense and distribute the Original Software'',
+    which is the sublicensing permission, and grants it ''under intellectual property rights (other
+    than patent or trademark)'', which is the promotion prohibition; section 6.2 ends every right
+    granted ''upon 60 days notice'' after a patent infringement claim, which is the patent-retaliation
+    prohibition; and section 3.3 requires the distributor to keep ''any notices of licensing or any
+    descriptive text giving attribution to any Contributor'', which is the attribution duty on distribution.'
+  changes:
+  - action: added
+    statement: permission dalicc:sublicense
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    previous: permission odrl:distribute with duties [cc:Notice, cc:ShareAlike, cc:SourceCode]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: prohibition dalicc:patentRetaliationTermination
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: prohibition dalicc:promote
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

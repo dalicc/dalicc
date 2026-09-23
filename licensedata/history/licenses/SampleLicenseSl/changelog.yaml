@@ -1,0 +1,24 @@
+id: SampleLicenseSl
+title: Sample License (SL)
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 statement and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:recordStatus dalicc:testFixture
+    reason: 'Review decision 13: the record is a composer or test fixture rather than a published
+      license, and says so instead of being deleted.'
+    source: consolidation-decision 13
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Created
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state

@@ -1,0 +1,63 @@
+id: Apache-2.0
+title: Apache License, Version 2.0
+current_version: 3
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 permission, changed 2 permissions, recorded the
+    relation to the record this one was adapted from and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "version"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, dalicc:modificationNotice]
+    reason: 'Section 4(a) reads: "You must give any other recipients of the Work or Derivative Works
+      a copy of this License". The cc:Notice duty was attached to odrl:distribute only, so a modified
+      or derived work looked as if it could be passed on without the license. Added cc:Notice to odrl:modify
+      and odrl:derive.'
+    source: review-finding 5/odrl:duty
+  - action: added
+    statement: permission odrl:grantUse
+    reason: Section 2 grants a "perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform,
+      sublicense, and distribute the Work". Sublicensing was not modelled. Added odrl:grantUse.
+    source: review-finding 3/odrl:permission
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, dalicc:modificationNotice]
+    reason: 'Section 4(a) reads: "You must give any other recipients of the Work or Derivative Works
+      a copy of this License". The cc:Notice duty was attached to odrl:distribute only, so a modified
+      or derived work looked as if it could be passed on without the license. Added cc:Notice to odrl:modify
+      and odrl:derive.'
+    source: review-finding 5/odrl:duty
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 2 finding 6.3: the record made no patent statement although section 3 grants a patent
+    license ''to make, have made, use, offer to sell, sell, import, and otherwise transfer the Work''
+    and ends it ''If You institute patent litigation against any entity ... alleging that the Work
+    or a Contribution incorporated within the Work constitutes direct or contributory patent infringement''.'
+  changes:
+  - action: added
+    statement: permission dalicc:patentGrant
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: prohibition dalicc:patentRetaliationTermination
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

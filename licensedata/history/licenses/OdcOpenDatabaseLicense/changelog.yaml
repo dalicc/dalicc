@@ -1,0 +1,77 @@
+id: OdcOpenDatabaseLicense
+title: ODC Open Database License (ODbL)
+current_version: 3
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail, 1 permission and 2 prohibitions,
+    changed 1 identification detail and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: changed
+    statement: dct:title "ODC Open Database License (ODbL)"
+    previous: dct:title "ODC Open Database License (ODbL) "
+    reason: The title literal ended with a trailing blank, "ODC Open Database License (ODbL) ". Removed.
+    source: review-finding 1/dct:title
+  - action: added
+    statement: permission cc:CommercialUse
+    reason: 'cc:CommercialUse was missing. Section 3.1: "These rights explicitly include commercial
+      use, and do not exclude any field of endeavour." Without it the record read as if the licence
+      were silent on commercial use, and the compatibility outcome against any NonCommercial licence
+      was wrong. Added.'
+    source: review-finding 3/odrl:permission
+  - action: added
+    statement: prohibition dalicc:promote
+    reason: 'dalicc:promote was missing although Section 2.3(c) states: "This License does not cover
+      any trademarks associated with the Database." The two sibling records of the family, ODC-By
+      and PDDL, both carry the prohibition on the identical clause. Added.'
+    source: review-finding 4/odrl:prohibition
+  - action: added
+    statement: prohibition dalicc:sublicense
+    reason: 'Review decision 1: every Creative Commons record except the CC0 dedication, plus the
+      Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
+      as many words.'
+    source: consolidation-decision 1
+  - action: added
+    statement: spdx:licenseId "ODbL-1.0"
+    reason: The record carried no SPDX identifier. Its cc:legalcode, https://opendatacommons.org/licenses/odbl/1.0/,
+      is the seeAlso URL of the SPDX entry ODbL-1.0, and the fetched text is headed "Open Data Commons
+      Open Database License (ODbL) v1.0". The proposal file rated this medium; the version in the
+      document confirms it. Added.
+    source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 5 finding 7: the record prohibited dalicc:chargeDistributionFee although the ODbL
+    nowhere forbids charging for a copy. What it does is cap the price of the copy that has to accompany
+    a Restricted Database and of the derivative database file, and those two sentences are now quoted
+    instead; dct:source was missing.'
+  changes:
+  - action: added
+    statement: 'dalicc:additionalClauses "The Derivative Database (under a.) or alteration file (under
+      b.) must be available at no more than a reasonable production cost for physical distributions
+      and free of charge if distributed over the internet. b. Parallel distribution. You may impose
+      terms or technological measures on the Database, a Derivative Database, or the whole or a Substantial
+      part of the Contents (a “Restricted Database”) in contravention of Section 4.7 a. only if You
+      also make a copy of the Database or a Derivative Database available to the recipient of the
+      Restricted Database: i. That is available without additional fee."'
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: dct:source <https://opendatacommons.org/licenses/odbl/1.0/>
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:chargeDistributionFee
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

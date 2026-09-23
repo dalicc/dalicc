@@ -1,0 +1,127 @@
+id: InspireEndUserLicence
+title: INSPIRE End User Licence
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: http://web.archive.org/web/20190330210447/https://www.ordnancesurvey.co.uk/business-and-government/public-sector/mapping-agreements/inspire-licence.html
+text_retrieved: true
+verdict: corrected
+summary: 'The licence is the end user licence that a UK public body must pass on with Ordnance Survey data
+  published under the INSPIRE Regulations 2009. It is the most restrictive record in the batch: personal, non-commercial
+  use only, no sub-licensing, no distribution, no sale. The record models that correctly. Applied: the licence-wide
+  notice duty required by clause 3.1, which the record was missing and which made it the only record in the
+  library with no attribution or notice duty at all, and a working provenance link, since the recorded URL
+  is dead.'
+findings:
+- rubric: 1
+  severity: major
+  field: dct:source
+  description: cc:legalcode and dct:source both pointed at an Ordnance Survey URL that returns 404, and the
+    current site has no INSPIRE licence page, so the record had no working link to its text. dct:source now
+    points at the Internet Archive snapshot of 30 March 2019, which is the text that was read for this review.
+    cc:legalcode was left at the original URL, because it is the address the licence was published at and changing
+    it would erase that fact; the owner should replace it once Ordnance Survey republishes the licence.
+  action: applied
+  change: dct:source <http://web.archive.org/web/20190330210447/https://www.ordnancesurvey.co.uk/business-and-government/public-sector/mapping-agreements/inspire-licence.html>
+    ;
+- rubric: 1
+  severity: minor
+  field: dct:alternative
+  description: The record has no dct:alternative, so keyword search finds it only by its exact title. Proposed.
+  action: proposed
+  change: "dct:alternative \"INSPIRE Licence\",\n        \"OS INSPIRE End User Licence\",\n        \"Ordnance\
+    \ Survey INSPIRE End User Licence\" ;"
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Dataset only, which matches Supplied Data, the data a public body provides under the
+    INSPIRE Regulations.
+  action: none
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'Only reproduce, modify and the no-warranty notice are permitted. Clause 2.1: "The Licensor
+    grants you a non-exclusive, non-transferable licence to use Supplied Data for personal, non-commercial
+    use only (for the avoidance of doubt, this excludes use by you internally within your business)."'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'odrl:modify is permitted, which the text does not support. Clause 2.2: "This Licence is limited
+    specifically to the rights granted in Clause 2.1, and you shall not use the Supplied Data for any other
+    purpose." Clause 2.1 grants use for personal, non-commercial purposes and nothing else; adaptation is not
+    among the granted rights, and the record already prohibits odrl:derive and cc:DerivativeWorks. Proposed
+    for removal rather than applied, because a reading under which personal use includes reformatting the data
+    for one''s own viewer is arguable.'
+  action: proposed
+  change: "remove:\n    odrl:permission [ a odrl:Permission ;\n            odrl:action odrl:modify ]"
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'The prohibitions follow clause 2.1: "You may not sub-license, distribute, sell or otherwise
+    make available any part of the Supplied Data to third parties, save where expressly permitted in writing
+    by the Licensor and OS." odrl:distribute, odrl:grantUse, odrl:display, odrl:present, cc:CommercialUse,
+    the two fee prohibitions and cc:DerivativeWorks all rest on that sentence.'
+  action: none
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: 'cc:ShareAlike and dalicc:addStatement are prohibited, as in the three Open Government Licence
+    records. Neither is supported by the text: the licence says nothing about relicensing terms, for the good
+    reason that it forbids passing the data on at all. Proposed for removal together with the same statements
+    in the other records.'
+  action: proposed
+  change: "remove:\n    odrl:prohibition [ a odrl:Prohibition ;\n            odrl:action cc:ShareAlike ] ,\n\
+    \        [ a odrl:Prohibition ;\n            odrl:action dalicc:addStatement ]"
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The record carried no duty of any kind and was the single violation of rule 6 of the family-rule
+    baseline, every record needs an attribution or notice duty. The licence has one, clause 3.1: "You shall
+    not alter or remove any of the OS copyright / database right notices and licence numbers which are shown
+    on the Supplied Data." A licence-wide cc:Notice duty was added, licence-wide because the duty is owed for
+    any use and the acts that would normally carry it, distribution and public display, are prohibited here.'
+  action: applied
+  change: "odrl:duty [ a odrl:Duty ;\n        odrl:action cc:Notice ] ;"
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: dalicc:WarrantyDisclaimer holds clauses 5.1, 5.2 and 5.3 verbatim, including the carve-out for
+    death or personal injury caused by negligence and for fraudulent misrepresentation. There is no separate
+    dalicc:LiabilityLimitation, although 5.2 and 5.3 are liability clauses; splitting the value would be tidier
+    but the text is accurate and complete as it stands.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: dalicc:worldwide is a loose fit for a licence granted to an end user for personal use, but the
+    text states no territorial limit, so the field is not wrong. dalicc:perpetual matches clause 4.1, "This
+    End User Licence will continue unless and until terminated by the Licensor or OS where you are in breach
+    of this Licence."
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The non-transferability of the licence, the personal-use limitation as distinct from the non-commercial
+    one, and the Contracts (Rights of Third Parties) Act clause have no terms. Proposed terms: dalicc:nonTransferable
+    and dalicc:personalUseOnly. The second matters: cc:CommercialUse prohibited says less than the licence
+    does, since internal business use is excluded as well.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check reports no conflict, before and after the correction.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The record has no sibling in the library: it is an end user licence in a batch of open government
+    licences, and its deontic signature is its own. It sits with the Ordnance Survey records by publisher,
+    not by terms.'
+  action: none
+family: Government licenses (United Kingdom, Canada)
+port_of: null
+variant_kind: null
+notes: The text was read from an Internet Archive snapshot of 2019 because Ordnance Survey has taken the page
+  down. The licence may have been withdrawn or replaced; the owner should confirm whether the record still
+  describes a licence in use, and the site should say that the record documents a historical text. Nothing
+  in this review is legal advice.

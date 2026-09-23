@@ -1,0 +1,105 @@
+id: OSL-1.0
+title: Open Software License 1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://opensource.org/license/OSL-1.0'
+text_retrieved: true
+verdict: created
+summary: >-
+  The first Open Software License: the reciprocal twin of the Academic Free License, whose
+  clause 1(c) requires every copy the licensee distributes to be licensed under the Open
+  Software License. The record follows OSL-3.0, with a licence-wide cc:ShareAlike duty, and
+  differs from it where version 1.0 is different: it is not sublicenseable and it has no
+  attribution clause. Nothing here is legal advice.
+findings:
+- rubric: 2
+  severity: info
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Software alone, the type 32 of the library's software records carry, among them
+    MIT, BSD-3-Clause, GPL-3.0-only and the sibling OSL-3.0. These texts license an "original
+    work of authorship", which would also fit dalicc:CreativeWork, the type the AFL-3.0 record
+    carries beside Software and Dataset; the batch keeps the narrower reading its batch entry
+    prescribes, so that all nine records of the family answer alike and the owner can widen
+    them in one pass.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 1 grants a "non-sublicenseable license" to reproduce, prepare derivative works,
+    distribute to the public, perform and display publicly; section 2 grants a patent licence
+    "to make, use, sell and offer for sale the Original Work", so dalicc:patentGrant is a
+    permission and dalicc:chargeLicenseFee follows the right to sell. odrl:grantUse is
+    deliberately not written: the record carries a cc:ShareAlike duty and the consistency
+    check treats grant-use together with share-alike as a conflict.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    dalicc:sublicense, because the grant is expressly "non-sublicenseable";
+    dalicc:ChangeLicense, because clause 1(c) admits no other licence for the copies You
+    distribute; dalicc:promote, from section 4, "No right is granted to the trademarks of
+    Licensor even if such marks are included in the Original Work"; and
+    dalicc:patentRetaliationTermination from section 9.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Clause 1(c) grants the right "to distribute copies of the Original Work and Derivative
+    Works to the public, with the proviso that copies of Original Work or Derivative Works
+    that You distribute shall be licensed under the Open Software License". That is a
+    licence-wide cc:ShareAlike duty, the form OSL-3.0 and the GNU records use. cc:Notice hangs
+    on the three acts, cc:SourceCode on odrl:distribute. Version 1.0 has no attribution
+    clause, so cc:Attribution is not written, which is the one duty that separates this record
+    from OSL-2.0.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Sections 6 and 7 are quoted into their own fields. dalicc:additionalClauses carries
+    sections 3, 4, 5, 8, 9 and 10 and the notice that the licence text may not be modified.
+  action: applied
+- rubric: 7
+  severity: info
+  field: 'cc:jurisdiction'
+  description: >-
+    Section 10 points at "the courts of the jurisdiction wherein the Licensor resides or in
+    which Licensor conducts its primary business", which names no legal system, so
+    cc:jurisdiction stays dalicc:worldwide and the clause is quoted.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Section 5, External Deployment, makes any use over a computer network a distribution and
+    therefore a trigger of the share-alike duty. The vocabulary has no term for it; proposed
+    term dalicc:networkUseTrigger, the same gap the AGPL and OSL-3.0 reviews record. The
+    automatic termination in section 8 has no property either; proposed term
+    dalicc:terminatesOnBreach. Both clauses are quoted.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty list for this record.
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: >-
+    OSL-1.0 is AFL-1.1 with the proviso in clause 1(c) and the External Deployment clause
+    added, which is what makes it reciprocal. Against OSL-3.0 it lacks the attribution clause
+    and the sublicensing grant.
+  action: none
+family: Academic Free and Open Software
+port_of: null
+variant_kind: version
+notes: >-
+  Modelled from the SPDX plain text of OSL-1.0 and checked against the URL in cc:legalcode.
+  Version 1.0 prints the warranty and liability sections in upper case; they are quoted as
+  they stand.

@@ -1,0 +1,95 @@
+id: OLFL-1.3
+title: Open Logistics Foundation License Version 1.3
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://openlogisticsfoundation.org/licenses/
+text_retrieved: true
+verdict: created
+summary: Models version 1.3 of the Open Logistics Foundation License, an Apache 2.0 shaped permissive
+  licence drafted for German law. The record follows Apache-2.0 and adds dalicc:patentGrant and
+  dalicc:patentRetaliationTermination, which the Apache-2.0 record does not carry. The governing
+  law is German, which the record quotes rather than turning into a jurisdiction.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, license id, SPDX id and IRI agree. cc:legalcode is the foundation's
+    own licence page, dct:source the OSI page where the text was read.
+  action: none
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: dalicc:CreativeWork, dcmitype:Dataset and dcmitype:Software, as on Apache-2.0.
+    Dataset is justified by the text itself, which repeatedly speaks of 'the software and data
+    components of the Subject Matter of the License'.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Section 2 grants a 'royalty-free and non-exclusive, sub-licensable for commercial
+    and non-commercial purposes, worldwide and perpetual, irrevocable and non-terminable right
+    to reproduce, prepare Derivative Works of, publicly display, publicly perform, and distribute
+    the Subject Matter of the License'. The record carries reproduce, distribute, modify, derive,
+    display, present, grant use, commercial use, derivative works, modified works, the distribution
+    fee, dalicc:patentGrant for section 3 and dalicc:ChangeLicense with a dalicc:compliantLicense
+    duty for the section 4 allowance of different terms on Your modifications.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote for section 6 and dalicc:patentRetaliationTermination for the last
+    paragraph of section 3, under which the patent licences 'as well as this License itself shall
+    be deemed terminated as of the date on which the action is filed'.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'Section 4 conditions distribution, so cc:Attribution and cc:Notice hang off distribute,
+    modify and derive, and dalicc:modificationNotice off modify and derive: ''You must ensure
+    that modified files contain prominent notices indicating that You have modified the files.''
+    No source-code duty: the licence is permissive and asks only for notices.'
+  action: none
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyOrLiabilityAcceptance
+  description: Sections 7, 8 and 9 are quoted verbatim into dalicc:WarrantyDisclaimer, dalicc:LiabilityLimitation
+    and dalicc:WarrantyOrLiabilityAcceptance. The narrowed patent sentence, the retaliation paragraph,
+    the section 4 allowance, the trademark clause and the governing-law clause are quoted in dalicc:additionalClauses.
+  action: applied
+- rubric: 7
+  severity: gap
+  field: cc:jurisdiction
+  description: 'The grant itself is worldwide, so cc:jurisdiction stays dalicc:worldwide; only
+    the governing law is national. The vocabulary has no property for a governing law that is
+    separate from the territory of the grant, so the clause is quoted in dalicc:additionalClauses.
+    Proposed term: dalicc:governingLaw. Text: ''This License is governed by German law, excluding
+    its conflict of laws provisions and the provisions of the UN Convention on Contracts for the
+    International Sale of Goods (CISG).'''
+  action: none
+- rubric: 7
+  severity: info
+  field: dalicc:validityType
+  description: The grant is 'worldwide and perpetual, irrevocable and non-terminable', so dalicc:perpetual
+    is the text's own word. dalicc:irrevocable exists in the vocabulary as a policy quality but
+    has no property to hang it on; it is not written.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run with the 39 axioms of licensedata/dependencygraph/dg_default.ttl,
+    returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Against Apache-2.0 the differences are the patent statements, the German governing
+    law and the dataset target. Against ECL-2.0, which is also Apache 2.0 with a changed patent
+    clause, the record is the same shape; the two narrow the patent grant for different reasons
+    and both quote the narrowing sentence.
+  action: none
+family: Reciprocal and source-available
+port_of: null
+variant_kind: null
+notes: Modelled from the English text published by the foundation, which is the text the SPDX
+  entry mirrors. The licence numbers its sections with a section sign; the quotations start after
+  the heading.

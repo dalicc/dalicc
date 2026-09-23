@@ -1,0 +1,172 @@
+id: CreativeCommonsAttribution20Poland
+title: Creative Commons Attribution 2.0 Poland
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by/2.0/pl/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the BY element set of the Creative Commons 2.0 port for Poland and it does
+  so correctly: the attribution and notice duties hang on the acts that make the work public. The legal
+  text was read in Polish and the permissions, prohibitions and duties all follow from the grant and restriction
+  sections of the port. Corrections applied: dct:source. What remains are proposals that touch the whole
+  Creative Commons family rather than this record: the express prohibition of sublicensing, and the asset
+  types.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source. The legal-code page states the canonical
+    URL of the licence, https://creativecommons.org/licenses/by/2.0/pl/, and the six 4.0 International
+    parents carry exactly that pair (legal code plus deed). Added.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by/2.0/pl/> ;
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: SPDX has no identifier for this port. The legal-code URL implies CC-BY-2.0-PL, which the
+    SPDX licence list does not define, so no identifier was invented. Of the thirty six records in this
+    batch only the German NonCommercial-ShareAlike port has an SPDX identifier.
+  action: none
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: The record targets dalicc:CreativeWork only, while the 4.0 International parent CC-BY-4.0
+    targets dalicc:CreativeWork and dcmitype:Dataset. Creative Commons licences are media neutral, and
+    this port grants the rights in all media and formats now known or later devised. Aligning the ports
+    with the parents is a single library wide decision covering every Creative Commons port, so it is
+    left as a proposal rather than applied in thirty six records alone.
+  action: proposed
+  change: |-
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ,
+                dcmitype:Dataset ] ;
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: Every modelled permission is supported by the grant. Section IV grants a licence that is
+    "nieodplatna, niewylaczna, na czas nieoznaczony, ktorej stosowanie nie jest ograniczone terytorialnie"
+    (free of charge, non-exclusive, for an indefinite time, not limited territorially). The grant covers
+    reproduction, incorporation into collections, distribution, public display, public performance and
+    communication to the public, and the creation and reproduction of derivative works, which the record
+    models as odrl:reproduce, odrl:distribute, odrl:display, odrl:present, odrl:derive and cc:DerivativeWorks.
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The licence forbids sublicensing and the record does not say so. Section V: "Licencjobiorca
+    nie moze udzielac sublicencji." (the licensee may not grant sublicences). The vocabulary already has
+    dalicc:sublicense, but it is used by no record in the library and its skos:note says so, and the same
+    sentence stands in every Creative Commons 2.0 and 3.0 record, so adding it to thirty six ports alone
+    would split the compatibility behaviour of one family. Proposed as one library wide correction, together
+    with an update of the vocabulary note.'
+  action: proposed
+  change: |-
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: the licensee may offer
+    the work only under the terms of this licence and may not offer or impose terms that alter or restrict
+    it. dalicc:promote is prohibited, which rests on the reservation of all rights not expressly granted
+    and on the trademark paragraph of the Creative Commons notice, not on a clause of the licence body.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The attribution and notice duties are present and supported: the licence requires a copy
+    of, or the URI for, the licence with every copy, that all notices referring to the licence and the
+    warranty disclaimer be kept intact, and that credit be given to the author. The parties are named
+    "Licencjodawca" (licensor) and "Licencjobiorca" (licensee), and attribution is owed to the "Tworca"
+    (author), by name or pseudonym, with the title and the URI. The duties hang on odrl:distribute, odrl:modify
+    and odrl:derive, which matches the licence, since the duties are triggered by making the work public
+    rather than by private use.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation are quoted verbatim from the Polish
+    text of this port and not from the English unported version, and they match the disclaimer and the
+    limitation sections of the legal code.
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: The record has no dalicc:additionalClauses, so the clauses the ODRL policy cannot carry,
+    the reservation of unnamed rights, the downstream offer to recipients, the severability and entire
+    agreement paragraphs and the termination rule, are not visible in the record at all. The whole Creative
+    Commons family is modelled this way.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:Poland, which matches the country of the legal-code URL,
+    and dalicc:validityType is dalicc:perpetual, which matches the grant for the duration of copyright.
+    The Polish port carries no choice-of-law clause. Section IX (Postanowienia koncowe) ends with the
+    severability, waiver and entire-agreement paragraphs and names no governing law, unlike the Australian,
+    South African, German, Korean and Japanese ports. Note that the jurisdiction field records the legal
+    home of the port, not a territorial limit on the grant: the grant itself is worldwide.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The licence forbids technological protection measures and the vocabulary has no term for
+    it. Section V: "Licencjobiorca nie moze rozpowszechniac, publicznie odtwarzac, publicznie wykonywac,
+    publicznie odtwarzac droga cyfrowa Utworu przy uzyciu srodkow technicznych pozwalajacych kontrolowac
+    dostep lub uzycie Utworu, w sposob sprzeczny z postanowieniami niniejszej licencji." Proposed term:
+    dalicc:applyTechnicalProtectionMeasures, an odrl:Action to be used as an odrl:Prohibition. Not modelled,
+    because bending an existing term would be worse than the gap.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The automatic termination of the licence on breach, and the survival of the definitions,
+    the disclaimer, the limitation of liability and the miscellaneous sections, have no vocabulary term.
+    Proposed term: dalicc:terminationOnBreach. The downstream offer to every recipient of the work has
+    none either. Proposed term: dalicc:downstreamOffer.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: The Polish port states no moral-rights restriction at all. Polish copyright law treats
+    authors personal rights (autorskie prawa osobiste) as inalienable, so the port leaves them to the
+    statute rather than repeating them in the licence. This is a real divergence from the other five ports
+    in this batch and from the 4.0 International parent.
+  action: none
+- rubric: 8
+  severity: info
+  field: record
+  description: Section IV names the Polish collective management organisations generically ("organizacje
+    zbiorowego zarzadzania"). In the plain Attribution and ShareAlike sets the licensor waives the collection
+    right ("Licencjodawca zrzeka sie prawa do pobierania"); in the NonCommercial sets the licensor retains
+    it ("Licencjodawca zachowuje prawo do pobierania") for uses aimed at material gain. Not expressible
+    with the present vocabulary.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the forty one axioms of licensedata/dependencygraph/dg_default.ttl
+    reports no conflict, before and after the corrections, and the pre-review baseline listed none for
+    this record either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of Creative Commons Attribution 4.0 International. After the 4.0 parents were themselves
+    corrected, the deontic model of this record is identical to the parent, statement for statement, apart
+    from odrl:target: the same permissions with the same duties, the same prohibitions and the same set
+    level duties. What differs is the jurisdiction, the language of the legal text and the clause texts,
+    and the version specific clauses of 2.0 that the model does not carry, chiefly the express prohibition
+    of sublicensing, the technological measures clause and the royalty collection arrangements. The compatibility
+    checker cannot tell this record from the other records of the BY element set, across all three versions
+    and every jurisdiction the library holds.'
+  action: none
+family: 'Creative Commons 2.0 port: Poland (PL)'
+port_of: CC-BY-4.0
+variant_kind: jurisdiction-port
+notes: 'The parent is the 4.0 International record of the same element set, since the library holds no
+  unported or International 2.0 record; the version difference, 2.0 against 4.0, is therefore part of
+  the port relation and not only the jurisdiction. The 2.0 text differs from 4.0 in substance as well:
+  it prohibits sublicensing expressly, it has no thirty day cure period for a breach, it has no sui generis
+  database rights clause, and it settles the royalty collection question per jurisdiction. None of that
+  is visible in the model. Nothing in this review is legal advice.'

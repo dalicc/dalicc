@@ -1,0 +1,108 @@
+id: Ruby
+title: Ruby License
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Ruby.txt
+text_retrieved: true
+verdict: created
+summary: Models the licence of the Ruby language, an Artistic-shaped text in which the conditions on modification
+  and on binary distribution are each a choice of four alternatives. Because a licensee need satisfy only one of them,
+  none of the four becomes a duty; the choice is recorded in dalicc:alternativeConditionSet and both clauses are quoted
+  in full.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all Ruby.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software. The text speaks of source form, object code,
+    binaries and library files.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Clause 1 reads "You may make and give away verbatim copies of the source form of the software without
+    restriction, provided that you duplicate all of the original copyright notices and associated disclaimers", clause
+    2 permits modification and clause 4 says "You may modify and include the part of the software into any other software
+    (possibly commercial)". The record permits reproduce, distribute, modify, derive, display, present, commercial
+    use, derivative works, modified works and the distribution fee.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: dalicc:ChangeLicense is permitted with the dalicc:compliantLicense duty. Clause 4 lets the software
+    be included in any other software, and no sentence bars putting a copy under other terms; the notice condition
+    of clause 1 has to survive.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:exemptedMaterial is prohibited for clause 4, "But some files in the distribution are not written
+    by the author, so that they are not under these terms. For the list of those files and their copying conditions,
+    see the file LEGAL." That is material carved out of the grant, which is what the term means where it is used as
+    a prohibition.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:promote is not prohibited. The text has no endorsement or trademark clause; the non-standard-names
+    alternatives of clauses 2 and 3 are about telling versions apart, not about claiming a connection with the author.
+  action: none
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:Attribution and cc:Notice hang off odrl:distribute, odrl:modify and odrl:derive, and they are the
+    only unconditional duties in the text: clause 1 requires that you "duplicate all of the original copyright notices
+    and associated disclaimers".'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: No cc:SourceCode, no dalicc:rename and no dalicc:originalVersionOffer, although clauses 2 and 3 name
+    each of those acts. Each is one of four alternatives introduced by "provided that you do at least ONE of the following",
+    and a duty would say that the licensee has to do it. The existing Artistic-1.0 record reads the corresponding
+    clauses the other way and turns two of the alternatives into duties; that divergence is reported and not edited.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:LiabilityLimitation
+  description: No dalicc:LiabilityLimitation. Clause 6 is a warranty disclaimer and the text has no limitation of
+    liability at all, which is unusual for this family and is stated here so that a reader does not take the absence
+    for an oversight. The clause number is dropped from the quoted literal.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: info
+  field: dalicc:alternativeConditionSet
+  description: The one-of-four structure cannot be said in the deontic model. dalicc:alternativeConditionSet carries
+    it as a short literal, in the wording the three Artistic records use, and clauses 2 and 3 are quoted in full.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The nearest sibling is licensedata/licenses/Artistic-1.0.ttl, from which this text descends. The differences
+    are: no clause asking for a prominent notice in each changed file, so no dalicc:modificationNotice; no endorsement
+    clause, so no dalicc:promote prohibition; no fee clause, so no dalicc:chargeLicenseFee statement; relicensing
+    permitted rather than prohibited; and the alternatives left as alternatives.'
+  action: none
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: cc:legalcode points at the text the Ruby project serves and dct:source at the SPDX page. ScanCode files this
+  licence under Copyleft Limited because of alternative 2a; the record makes no share-alike statement, because 2a
+  is one choice of four and not a condition.

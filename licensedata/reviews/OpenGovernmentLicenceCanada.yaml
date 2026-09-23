@@ -1,0 +1,148 @@
+id: OpenGovernmentLicenceCanada
+title: Open Government Licence - Canada
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://open.canada.ca/en/open-government-licence-canada
+text_retrieved: true
+verdict: corrected
+summary: 'The record models version 2.0 of the Canadian Open Government Licence, confirmed from the Versioning
+  section of the text. The model is the same block the UK Open Government Licence record carries, which
+  fits, since the two documents say almost the same thing. Applied: the SPDX identifier OGL-Canada-2.0,
+  the licence-notice duty and the modified-works permission. The share-alike and add-statement prohibitions
+  are unsupported and proposed for removal.'
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: 'The record carried no SPDX identifier although its title is word for word the SPDX name
+    of OGL-Canada-2.0 and its cc:legalcode is the SPDX seeAlso URL. The text confirms the version: "This
+    is version 2.0 of the Open Government Licence - Canada." Added.'
+  action: applied
+  change: spdx:licenseId "OGL-Canada-2.0" ;
+- rubric: 1
+  severity: minor
+  field: dct:alternative
+  description: The record has no dct:alternative, so keyword search finds it only by its exact title.
+    Proposed.
+  action: proposed
+  change: "dct:alternative \"OGL Canada\",\n        \"OGL-Canada-2.0\",\n        \"Open Government Licence\
+    \ Canada 2.0\" ;"
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dalicc:CreativeWork, dcmitype:Dataset and dcmitype:Software. The definition of Information
+    is broad, "information resources protected by copyright or other information that is offered for use
+    under the terms of this licence", so no asset type is excluded. The family-rule baseline flags the
+    software type; here it is defensible rather than certain.
+  action: none
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'The permissions follow the freedoms list: "Copy, modify, publish, translate, adapt, distribute
+    or otherwise use the Information in any medium, mode or format for any lawful purpose." Commercial
+    use is express in the grant, "including for commercial purposes", so cc:CommercialUse and the two
+    fee permissions are supported.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: dalicc:ModifiedWorks was missing although the freedoms list names modify, adapt and distribute
+    in one sentence, so distributing a modified version is plainly granted. Added, which also aligns the
+    record with OpenDataLicenceAgreement, the record of the same text issued by the Office of the Commissioner
+    of Lobbying.
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:ModifiedWorks ] ;"
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: cc:ShareAlike is modelled as a prohibition. The licence says nothing that forbids the licensee
+    from placing an adaptation under a share-alike licence, and in ODRL a prohibition asserts that the
+    licensee must not do the act. Proposed for removal, together with the identical statements in the
+    UK Open Government Licence and the Open Supreme Court Licence.
+  action: proposed
+  change: "remove:\n    odrl:prohibition [ a odrl:Prohibition ;\n            odrl:action cc:ShareAlike\
+    \ ]"
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:addStatement is modelled as a prohibition, which the vocabulary reads as a duty
+    to pass the licence on unchanged. The licence imposes no such condition. Proposed for removal.
+  action: proposed
+  change: "remove:\n    odrl:prohibition [ a odrl:Prohibition ;\n            odrl:action dalicc:addStatement\
+    \ ]"
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:promote is supported twice over: the Exemptions list excludes "the names, crests,
+    logos, or other official symbols of the Information Provider" and trade marks and official marks,
+    and the Non-endorsement section forbids any use that suggests official status or endorsement.'
+  action: none
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The licence requires two things and the record modelled one: "Acknowledge the source of
+    the Information by including any attribution statement specified by the Information Provider(s) and,
+    where possible, provide a link to this licence." cc:Notice was missing. Added next to cc:Attribution
+    on the cc:DerivativeWorks and odrl:distribute permissions.'
+  action: applied
+  change: "odrl:duty [ a odrl:Duty ;\n        odrl:action cc:Notice ] ;   # added to the cc:DerivativeWorks\
+    \ and odrl:distribute permissions"
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: dalicc:WarrantyDisclaimer holds both paragraphs of the No Warranty section verbatim, the
+    second of which is the liability exclusion. The Exemptions list, which carves out personal information
+    and third-party rights, is not carried anywhere.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'dalicc:worldwide and dalicc:perpetual match the grant, "a worldwide, royalty-free, perpetual,
+    non-exclusive licence". The licence adds "This licence is governed by the laws of the province of
+    Ontario and the applicable laws of Canada" and puts the forum in Ontario or the Federal Court, which
+    the model has no field for: cc:jurisdiction records the scope of the grant, not the governing law.
+    Worth noting for a Canadian record, where a reader may expect the country.'
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:attributionName
+  description: cc:attributionName and dct:publisher say "Her Majesty the Queen in right of Canada". The
+    current text says His Majesty the King, the wording having changed with the accession in 2022. Cosmetic,
+    and the licence itself is unchanged; left alone so that the record is not edited for a reason that
+    has nothing to do with its terms.
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The exemptions list, the automatic end of the rights on breach and the reservation of
+    official symbols have no terms. Proposed terms: dalicc:exemptedMaterial, dalicc:terminationOnBreach.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check reports no conflict, before and after the corrections.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'review_duplicates.md section 4 flagged one identical signature across this record, the
+    UK Open Government Licence and the Open Supreme Court Licence. For the UK and Canadian Open Government
+    Licences that is nearly right, the two texts being close relatives; the differences that remain, the
+    UK exemptions list and the Canadian choice of law, are outside the model anyway. The stronger finding
+    is inside the Canadian pair: this record and OpenDataLicenceAgreement carry the same text and were
+    modelled differently, and after this pass they agree except for the two prohibitions proposed for
+    removal here.'
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 5 finding 7: the record prohibited cc:ShareAlike and dalicc:addStatement
+    without support from the text, which prescribes the attribution wording, and it carried no dct:alternative
+    at all, so it could not be found by searching for its SPDX identifier OGL-Canada-2.0.'
+  action: applied
+family: Government licenses (United Kingdom, Canada)
+port_of: null
+variant_kind: null
+notes: The licence is the base document for Canadian federal open data and the parent of OpenDataLicenceAgreement
+  in this batch. Nothing in this review is legal advice.

@@ -1,0 +1,127 @@
+id: Watcom-1.0
+title: Sybase Open Watcom Public License 1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://opensource.org/license/Watcom-1.0
+text_retrieved: true
+verdict: created
+summary: Models version 1.0 of the Sybase Open Watcom Public License, an Apple Public Source License
+  descendant whose duties are triggered by Deployment, which the text defines to include internal
+  use inside an organisation. The reciprocity binds the Source Code but not the object code, so
+  cc:ShareAlike is a duty on modify and derive rather than a license-wide duty.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, license id, SPDX id and IRI agree. The SPDX entry names one seeAlso,
+    so cc:legalcode and dct:source are the same URL. dct:publisher is 'Sybase, Inc.'
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'dcmitype:Software only: the licence applies to named compiler products.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 2.1 and 2.2 grant the right to ''use, reproduce, display, perform, modify
+    and Deploy Covered Code'', to the extent of ''Sybase''s Applicable Patent Rights and copyrights
+    covering the Original Code'', so the record carries reproduce, distribute, modify, derive,
+    display, present, commercial use, derivative works, modified works and dalicc:patentGrant.
+    No distribution-fee permission: the text allows a fee only for the additional terms of section
+    6, which is carried as dalicc:WarrantyOrLiabilityAcceptance.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote for section 10, dalicc:addLimitation for 2.1(b), dalicc:patentRetaliationTermination
+    for 12.1(c) and dalicc:ChangeLicense for the requirement that Deployed Modifications be published
+    'under the terms of this License'.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:ShareAlike is a duty on odrl:modify and odrl:derive, not license-wide, because
+    2.2(e) lets the object code go out on other terms: ''the object code form of the Covered Code
+    may be distributed under Your own license agreement, provided that such license agreement
+    contains terms no less protective of Sybase and each Contributor than the terms of this License''.
+    cc:SourceCode, cc:Attribution, cc:Notice and dalicc:addStatement (the Exhibit A notice and
+    the click-wrap or acceptance statement of 2.1(c)) hang off distribute, modify and derive;
+    dalicc:modificationNotice is added to modify and derive.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyOrLiabilityAcceptance
+  description: Sections 8 and 9 are quoted verbatim into dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation,
+    section 6 into dalicc:WarrantyOrLiabilityAcceptance. Seven further clauses are quoted in dalicc:additionalClauses,
+    among them the Deploy definition, the twelve-month source duty, the object-code allowance,
+    the termination grounds, the United States government end user clause and the governing law.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The licence is triggered by deployment or by serving the work over a network,
+    not only by distribution. The vocabulary has no term for that trigger, so the definition is
+    quoted in dalicc:additionalClauses and the source-code duty is attached to distribute, modify
+    and derive. Proposed term: dalicc:networkUseTrigger. Text: ''"Deploy" means to use, sublicense
+    or distribute Covered Code other than for Your internal research and development (R&D) and/or
+    Personal Use, and includes without limitation, any and all internal use or distribution of
+    Covered Code within Your business or organization except for R&D use and/or Personal Use''.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The source-code duty carries a deadline and a minimum availability period. cc:SourceCode
+    cannot hold a period, so the clause is quoted in dalicc:additionalClauses. Proposed term:
+    dalicc:sourcePublicationPeriod as a literal qualifier on a cc:SourceCode duty. Text: section
+    2.2(c), under which the source of Deployed Modifications must stay public ''for as long as
+    you Deploy the Covered Code or twelve (12) months from the date of initial Deployment, whichever
+    is longer''.'
+  action: none
+- rubric: 7
+  severity: gap
+  field: cc:jurisdiction
+  description: 'The grant itself is worldwide, so cc:jurisdiction stays dalicc:worldwide; only
+    the governing law is national. The vocabulary has no property for a governing law that is
+    separate from the territory of the grant, so the clause is quoted in dalicc:additionalClauses.
+    Proposed term: dalicc:governingLaw. Text: ''This License shall be governed by the laws of
+    the United States and the State of California, except that body of California law concerning
+    conflicts of law.'' (section 13.7)'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Automatic termination on breach has no property that a record can carry: dalicc:terminationOnBreach
+    is a policy quality with no predicate. The clause is quoted in dalicc:additionalClauses. Proposed
+    term: dalicc:terminatesOnBreach as a boolean property on odrl:Set, with the cure period as
+    a literal. Text: ''automatically without notice if You fail to comply with any term(s) of
+    this License and fail to cure such breach within 30 days of becoming aware of such breach''
+    (section 12.1(a)).'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Section 13.1 limits the rights of United States government end users to those
+    the licence gives everyone. The vocabulary has no term for a government-rights clause; it
+    is quoted. Proposed term: dalicc:governmentRightsLimitation.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run with the 39 axioms of licensedata/dependencygraph/dg_default.ttl,
+    returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Against RPSL-1.0 the record differs by the attachment level of cc:ShareAlike and
+    by the object-code allowance of 2.2(e); the definitions, the additional terms, the warranty
+    section and the termination grounds are shared text. Both belong with APSL-2.0, which the
+    library already holds.
+  action: none
+family: Reciprocal and source-available
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. Section 3, under which the licensee grants rights back
+  to the licensor and to third parties, is a grant by the licensee and not a permission of the
+  licensee; it is not modelled as an odrl:Permission.

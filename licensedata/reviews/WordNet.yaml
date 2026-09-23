@@ -1,0 +1,91 @@
+id: WordNet
+title: WordNet License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/WordNet.txt
+text_retrieved: true
+verdict: created
+summary: The record models the WordNet license, under which Princeton University licenses the WordNet software and
+  database. Use, copying, modification and distribution are permitted without fee or royalty, on the condition that
+  the copyright notice and the statements, including the disclaimer, appear on all copies, including modifications
+  made for internal use. The name of the university may not be used in advertising, and title to copyright stays
+  with the university.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads: "Permission to use, copy, modify and distribute this software and database and
+    its documentation for any purpose and without fee or royalty is hereby granted". The record permits reproduce,
+    distribute, modify, derive, display, present, commercial use, derivative works, modified works and the distribution
+    fee. Sublicensing is not named.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The condition reads: "provided that you agree to comply with the following copyright notice and
+    statements, including the disclaimer, and that the same appear on ALL copies of the software, database and documentation,
+    including modifications that you make for internal use or for distribution." cc:Attribution and cc:Notice on
+    distribute, modify and derive. The batch notes expected a source-code duty; the fetched text has no source obligation,
+    so cc:SourceCode is not written.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The text reads: "The name of Princeton University or Princeton may not be used in advertising or
+    publicity pertaining to distribution of the software and/or database." That is dalicc:promote as a prohibition.
+    dalicc:ChangeLicense is prohibited because the text requires the license itself to travel with every copy, which
+    is the reading IscLicense and BSD-3-Clause take of the same clause. The MIT record does not carry the prohibition
+    although its text has the same requirement, so the library is not uniform here. (Corrected on 2026-09-15 by
+    the verification of this batch: see the rubric 3 finding on relicensing below.)'
+  action: applied
+- rubric: 2
+  severity: major
+  field: odrl:target
+  description: The target carries dcmitype:Dataset as well as dcmitype:Software, because the license names the database
+    in every operative sentence and WordNet is used as data at least as often as it is used as software. The batch
+    entry proposed dcmitype:Software alone; the sibling for the two-type shape is OdcOpenDatabaseLicense, which
+    pairs a dataset with the software around it.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The disclaimer is quoted verbatim, including the hyphen inside the word MERCHANTABILITY, which is
+    in the published text. There is no liability clause, so dalicc:LiabilityLimitation is absent. The title sentence
+    is quoted in dalicc:additionalClauses.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The deontic model is the ISC model plus the advertising bar. What sets the record apart in the library
+    is the target: it is the only record of this batch that carries a dataset type.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Permission to use, copy, modify and distribute this software
+    and database and its documentation for any purpose and without fee or royalty is hereby granted, provided that
+    you agree to comply with the following copyright notice and statements, including the disclaimer, and that the
+    same appear on ALL copies of the software, database and documentation, including modifications that you make
+    for internal use or for distribution." The permission carries the dalicc:compliantLicense duty, as Apache-2.0
+    does, because the notice has to survive the relicensing.'
+  action: applied
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: 'Modelled from the SPDX plain text, which is the WordNet 3.0 license. The acceptance sentence (by obtaining,
+  using or copying you agree to the terms) is not modelled: it is a contract-formation clause and no deontic term
+  carries it.'

@@ -1,0 +1,202 @@
+id: CreativeCommonsAttribution30CostaRica
+title: Creative Commons Attribution 3.0 Costa Rica
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by/3.0/cr/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the BY element set of the Creative Commons 3.0 port for Costa Rica and it
+  does so correctly: the attribution and notice duties hang on the acts that make the work public, and
+  the permissions, prohibitions and duties all follow from the grant and the restrictions sections of
+  the port. The legal text was read in Spanish. Corrections applied: dct:source. What remains are proposals
+  that touch the whole Creative Commons family rather than this record, chiefly the express prohibition
+  of sublicensing.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source. The legal code page states the canonical
+    URL of the licence, https://creativecommons.org/licenses/by/3.0/cr/, and the six 4.0 International
+    parents carry exactly that pair, legal code plus deed. Added.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by/3.0/cr/> ;
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: 'The record targets dalicc:CreativeWork only, while the 4.0 International parent CC-BY-4.0
+    targets dalicc:CreativeWork and dcmitype:Dataset. The Costa Rican 3.0 port has no sui generis database
+    rights clause, which is what one expects of a jurisdiction outside the European Union: neither "base
+    de datos" nor "sui generis" occurs in any of its six legal texts. The definition of "Obra" does reach
+    "recopilaciones de datos en la medida en que esten protegidas como derechos de autor", compilations
+    of data in so far as they are protected by copyright, which is the Berne article 2(5) compilation
+    and not a database right. Creative Commons licences are media neutral and this one grants the rights
+    in all media and formats now known or later invented, so the asset type is plausible, but nothing
+    in this port''s text licenses a database right. Aligning the ports that are silent on the point with
+    the parents is a single library wide decision, so it is proposed rather than applied.'
+  action: proposed
+  change: |-
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset ] ;
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'Every modelled permission is supported by the grant. Section 3 grants "una licencia mundial,
+    libre de regalias, no exclusiva, perpetua (por la duracion de los derechos de autor aplicables)",
+    a worldwide, royalty free, non exclusive and perpetual licence. It covers reproduction, incorporation
+    into collections, and distribution and public performance of the work including as incorporated in
+    collections, and the creation and reproduction of derivative works and their distribution and public
+    performance (section 3.b and 3.d). The record models this as odrl:reproduce, odrl:distribute, odrl:display,
+    odrl:present, odrl:derive and cc:DerivativeWorks, plus odrl:modify and dalicc:ModifiedWorks, which
+    rest on the technical modification sentence of the grant: Section 3: "Los derechos antes mencionados
+    incluyen el derecho a efectuar las modificaciones que sean tecnicamente necesarias para ejercer los
+    derechos en otros medios y formatos." cc:CommercialUse is permitted, which follows from a grant that
+    puts no purpose limit on the rights.'
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The licence forbids sublicensing and the record does not say so. Section 4(a): "Usted
+    no puede sub-licenciar la Obra." The vocabulary already has dalicc:sublicense, but no record in the
+    library uses it and its skos:note says so, and the same sentence stands in every Creative Commons
+    2.0 and 3.0 record, so adding it to this batch alone would split the compatibility behaviour of one
+    family. Proposed as one library wide correction, together with an update of the vocabulary note.'
+  action: proposed
+  change: |-
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: Section 4(a): "Usted no
+    podra ofrecer o imponer ninguna condicion sobre la Obra que restrinja los terminos de esta Licencia,
+    o la capacidad del usuario de la Obra para ejercer los derechos otorgados al usuario bajo los terminos
+    de la Licencia." dalicc:promote is prohibited, which rests on section 4(d) itself, which is the 3.0
+    no endorsement clause: "Usted no podra implicita o explicitamente afirmar o implicar que existe conexion
+    con el Autor Original, el Licenciante y/o Partes de Atribucion, ni puede dar a entender que goza del
+    patrocinio o respaldo de los mismos, a menos que haya obtenido de manera previa la expresa autorizacion
+    por escrito". Version 3.0 therefore supports dalicc:promote in the licence body, which version 2.0
+    does not.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The attribution and notice duties are present and supported. Section 4(a) requires a copy
+    of the licence or a link to it with every copy distributed or publicly performed, and that all notices
+    referring to the licence be kept intact. Credit is owed to the "Autor Original" or, where the licensor
+    designates them, to the "Partes de Atribucion" (sponsoring institution, publisher, journal), with
+    the title of the work and a link where reasonably possible; section 4(d) closes with the no endorsement
+    sentence. Section 3(b) makes the marking of changes a condition of the grant itself: "Crear y Reproducir
+    Obras Derivadas, bajo la condicion de que dicha Obra Derivada tome las medidas razonables para identificar,
+    marcar y/o demarcar claramente de otra forma los cambios que se hicieron a la Obra original". The
+    duties hang on odrl:distribute, odrl:modify and odrl:derive, which matches the licence, since they
+    are triggered by making the work public rather than by private use.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: 'dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation are quoted from the Spanish text
+    of this port and not from the English unported version, and each field holds its own clause. Section
+    5 (Representaciones, Garantias y Responsabilidad) and section 6 (Limites de responsabilidad) are separate
+    sections and the record keeps them apart: dalicc:WarrantyDisclaimer holds section 5 and dalicc:LiabilityLimitation
+    holds section 6, both quoted verbatim in Spanish. Unlike the other five ports of this batch the Costa
+    Rican port prints the disclaimer in ordinary case rather than in capitals, and the record follows
+    the text.'
+  action: none
+- rubric: 6
+  severity: minor
+  field: dalicc:LiabilityLimitation
+  description: dalicc:LiabilityLimitation opens with the section heading "Limites de responsabilidad."
+    because the legal code page runs the heading into the sentence. The quote is otherwise verbatim and
+    was left untouched.
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: 'The record has no dalicc:additionalClauses, so the clauses the ODRL policy cannot carry
+    stay invisible: the reservation of unnamed rights, the downstream offer to recipients, the severability,
+    waiver and entire agreement paragraphs and the termination rule. Section 7 ends the licence automatically
+    on breach, keeps the licences of downstream recipients of derivative works and collections alive and
+    lets sections 1, 2, 5, 6, 7 and 8 survive; section 8 makes the licensor offer every recipient a licence
+    on the same terms. The whole Creative Commons family is modelled this way.'
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:CostaRica, which matches the country of the legal code URL
+    https://creativecommons.org/licenses/by/3.0/cr/legalcode, and dalicc:validityType is dalicc:perpetual,
+    which matches a grant made for the duration of copyright. The Costa Rican 3.0 port has no choice of
+    law clause. Section 8 instead records the statutes the wording was drawn from: "Los derechos concedidos
+    y la materia de referencia, en esta Licencia se elaboraron utilizando la terminologia de la Ley 6683
+    sobre Derechos de Autor y Derechos Conexos, la Ley 7968 ... la Convencion de Berna ... el Convenio
+    de Roma de 1961". cc:jurisdiction bpicounty:CostaRica records the port; the grant itself is worldwide.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The licence forbids technological protection measures and the vocabulary has no term for
+    it. Section 4(a): "Cuando Usted Distribuya o Ejecute Publicamente la Obra, no puede imponer cualquier
+    medida tecnologica efectiva que restrinja la capacidad de un destinatario de la Obra para ejercer
+    los derechos otorgados al receptor bajo los terminos de esta Licencia." Proposed term: dalicc:applyTechnicalProtectionMeasures,
+    an odrl:Action to be used as an odrl:Prohibition. Not modelled, because bending an existing term would
+    be worse than the gap.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The automatic termination of the licence on breach, the survival of the named sections
+    and the licence the licensor offers to every downstream recipient have no vocabulary terms. Section
+    7 ends the licence automatically on breach, keeps the licences of downstream recipients of derivative
+    works and collections alive and lets sections 1, 2, 5, 6, 7 and 8 survive; section 8 makes the licensor
+    offer every recipient a licence on the same terms. Proposed terms: dalicc:terminationOnBreach and
+    dalicc:downstreamOffer.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Section 4(e) closes with a neutral moral rights reservation: "Los derechos morales de
+    autor no se veran afectados en la presente Licencia en la medida que sean reconocidos y no puedan
+    renunciarse de acuerdo a la ley aplicable." It neither restricts the licensee, as Austria and the
+    Netherlands do, nor binds the licensor, as Estonia does. Not expressible with the present vocabulary.
+    Proposed terms: dalicc:moralRightsRestriction for the ports that bind the licensee and dalicc:moralRightsNonAssertion
+    for the ports that bind the licensor.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Section 4(e) settles royalty collection in three parts, and the Costa Rican port reserves
+    where the 3.0 Unported text waives. Non waivable statutory schemes: the licensor reserves the exclusive
+    right to collect. Waivable statutory schemes: in the NonCommercial sets the licensor reserves for
+    uses outside section 4(c) and waives for non commercial use, but in the Attribution, Attribution-ShareAlike
+    and Attribution-NoDerivatives sets the licensor reserves "para cualquier ejercicio que Usted haga
+    de los derechos concedidos bajo esta licencia", for any exercise at all. Voluntary schemes: the licensor
+    reserves, individually or through a collecting society. The vocabulary has no term for any of it.
+    Proposed term: dalicc:royaltyCollectionReserved, with a companion for the waiver.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the forty one axioms of licensedata/dependencygraph/dg_default.ttl
+    reports no conflict, before and after the corrections, and the pre review baseline listed none for
+    this record either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of Creative Commons Attribution 4.0 International. The deontic model of this record
+    is identical to the parent, statement for statement, apart from odrl:target: the same permissions
+    with the same duties, the same prohibitions and the same set level duties. What differs is the jurisdiction,
+    the language of the legal text, the clause texts, and the version specific clauses of 3.0 that the
+    model does not carry, chiefly the express prohibition of sublicensing, the technological measures
+    clause and the royalty collection arrangements. The compatibility checker cannot tell this record
+    from any other record of the BY element set, across all three versions and every jurisdiction the
+    library holds.'
+  action: none
+family: 'Creative Commons 3.0 port: Costa Rica (CR)'
+port_of: CC-BY-4.0
+variant_kind: jurisdiction-port
+notes: The parent is the 4.0 International record of the same element set, since the library holds no
+  unported and no International 3.0 record; the version difference, 3.0 against 4.0, is therefore part
+  of the port relation and not only the jurisdiction. The SPDX licence list defines no identifier for
+  this port, so the record carries no spdx:licenseId and none was invented. Nothing in this review is
+  legal advice.

@@ -1,0 +1,152 @@
+id: GFDL-1.3-invariants-only
+title: GNU Free Documentation License v1.3 only - invariants
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/GFDL-1.3-invariants-only.txt
+text_retrieved: true
+verdict: created
+summary: >-
+  The record models the identifier SPDX uses for a document released under version 1.3 of the
+  GNU Free Documentation License, with Invariant Sections, and under that version only. The
+  legal text is the same document that the GnuFreeDocumentationLicense record models, so the
+  deontic model is that record statement for statement. Whether a document has Invariant
+  Sections is stated in the document's own licence notice, not in the licence text, so no
+  statement of the record can differ on it; the record says which identifier it stands for and
+  the gap finding below says what the library would need to model the difference.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: >-
+    File name, record id, SPDX identifier and the local name of the IRI are all
+    GFDL-1.3-invariants-only. SPDX splits version 1.3 into six identifiers, by whether the
+    document has Invariant Sections and by whether a later version may be used; the record for
+    the plain GFDL-1.3-only identifier is GnuFreeDocumentationLicense, which carries the older
+    descriptive file name.
+  action: applied
+- rubric: 10
+  severity: major
+  field: dalicc:variantOf
+  description: >-
+    The record copies GnuFreeDocumentationLicense statement for statement. What differs: the
+    identifier, the SPDX identifier, dct:title, dct:alternative, the pair dalicc:variantKind
+    "version-option" with dalicc:variantOf dalicclib:GnuFreeDocumentationLicense, and
+    dalicc:orLaterVersionOption, which the base record does not carry at all. The record
+    GFDL-1.3-no-invariants-only carries the same model, for the same reason: one text, two
+    identifiers.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:orLaterVersionOption
+  description: >-
+    dalicc:orLaterVersionOption is false. This identifier names version 1.3 and no later one,
+    which is what the "-only" in it says, and section 10 gives the option only where the
+    document asks for it: "If the Document specifies that a particular numbered version of this
+    License "or any later version" applies to it, you have the option of following the terms and
+    conditions either of that specified version or of any later version that has been published
+    (not as a draft) by the Free Software Foundation." cc:jurisdiction stays dalicc:worldwide
+    and dalicc:validityType stays dalicc:perpetual; section 1 grants "a world-wide,
+    royalty-free license, unlimited in duration".
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: >-
+    Section 2: "You may copy and distribute the Document in any medium, either commercially or
+    noncommercially", "you may accept compensation in exchange for copies" and "You may also
+    lend copies, under the same conditions stated above, and you may publicly display copies."
+    Section 4 permits a Modified Version. The ten permissions of the base record follow from
+    those sentences: odrl:reproduce, odrl:distribute, odrl:display, odrl:present, odrl:modify,
+    odrl:derive, cc:DerivativeWorks, dalicc:ModifiedWorks, cc:CommercialUse and
+    dalicc:chargeDistributionFee.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: >-
+    cc:ShareAlike is a duty of the licence itself, from section 4: a Modified Version must be
+    released "under precisely this License, with the Modified Version filling the role of the
+    Document". Attribution, notice and source-code duties hang on distribute, modify and derive,
+    and dalicc:modificationNotice on modify and derive, from the conditions of section 4. The
+    three duty nodes whose action is dct:source are carried over from the base record unchanged;
+    see the finding below.
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: >-
+    Three duty nodes, on distribute, modify and derive, carry "odrl:action dct:source". dct:source
+    is a Dublin Core property and not an action, so the dependency graph cannot see the duty and
+    the validator counts it among the actions outside the ODRL, CC and DALICC vocabularies. The
+    review of GnuFreeDocumentationLicense already proposes replacing it with cc:SourceCode,
+    which each of the three nodes already carries beside it. The proposal is repeated in the set
+    report; changing it here alone would break the rule that this record equals its base, and
+    the three records of the pair should be corrected in one step.
+  action: proposed
+  change: |
+    # in the distribute, modify and derive permissions of all three GFDL 1.3 records
+    # odrl:action dct:source  ->  remove the duty node, cc:SourceCode is already there
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: >-
+    dalicc:ChangeLicense is prohibited, which is the whole-work copyleft shape and follows
+    section 4. dalicc:promote is prohibited although the text has no trademark clause; that
+    statement is the library-wide default and comes from the base record. Section 2 states a
+    prohibition the record does not carry: "You may not use technical measures to obstruct or
+    control the reading or further copying of the copies you make or distribute."
+    dalicc:applyTechnicalProtectionMeasures covers it exactly and is proposed for the three
+    records of the family together.
+  action: proposed
+  change: |
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:applyTechnicalProtectionMeasures ] ;
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: >-
+    The record carries one clause literal, the section 1 sentence about Warranty Disclaimers
+    included by reference, and no dalicc:LiabilityLimitation. That is the state of the base
+    record, and its review already says that this licence has no warranty clause of its own, so
+    the field is arguably empty rather than wrong. Nothing was added here, because the text is
+    the same document.
+  action: applied
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: >-
+    The asset collection carries dalicc:CreativeWork and dcmitype:Software, as in the base
+    record. Section 1 defines the Document as "any manual or other work, in any medium", so
+    dcmitype:Text would fit better than dcmitype:Software; the review of the base record already
+    proposes that change, and it belongs to all three records at once.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer, run with
+    licensedata/dependencygraph/dg_default.ttl, reports 0 conflicts for this record.
+  action: none
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: >-
+    Nothing in the vocabulary says whether a document carries Invariant Sections, which is the
+    only thing this identifier adds to GFDL-1.3-only. Section 4(L) requires you to "Preserve all
+    the Invariant Sections of the Document, unaltered in their text and in their titles", and
+    section 1 says "The Document may contain zero Invariant Sections." Proposed terms:
+    dalicc:invariantSectionsOption as an annotation naming which of the SPDX identifiers the
+    record stands for, and dalicc:invariantSections, dalicc:coverTexts and
+    dalicc:transparentCopy as duty actions for the three conditions of sections 3 and 4 that no
+    term reaches. Until they exist, the identifier, the title and the alternatives are the only
+    place where the distinction is visible.
+  action: none
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: version-option
+variant_of: GnuFreeDocumentationLicense
+notes: >-
+  The text file SPDX publishes for this identifier and the one it publishes for
+  GFDL-1.3-no-invariants-only are the same bytes, which is why the two records are the same
+  model. A reader who needs to know whether a particular manual has Invariant Sections has to
+  read the licence notice of that manual.

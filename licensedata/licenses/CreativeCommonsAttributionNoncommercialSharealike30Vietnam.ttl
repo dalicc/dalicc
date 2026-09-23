@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Vietnam "@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Vietnam "@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialSharealike30Vietnam
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Vietnam a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -25,6 +26,12 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Vietnam a odrl:Set 
     dalicc:WarrantyDisclaimer """THEO GIẤY PHÉP NÀY, BÊN CẤP PHÉP KHẲNG ĐỊNH RẰNG HỌ CUNG CẤP TÁC PHẨM NHƯ NÓ VỐN CÓ VÀ TRỪ TRƯỜNG HỢP LUẬT ÁP DỤNG YÊU CẦU, KHÔNG CÓ BẤT KỲ TUYÊN BỐ HAY BẢO ĐẢM DƯỚI BẤT KỲ HÌNH THỨC NÀO LIÊN QUAN ĐẾN TÁC PHẨM, DÙ LÀ BẢO ĐẢM RÕ RÀNG HOẶC NGẦM ĐỊNH, DO PHÁP LUẬT QUY ĐỊNH HAY DƯỚI HÌNH THỨC KHÁC, BAO GỒM, NHƯNG KHÔNG GIỚI HẠN, CÁC BẢO ĐẢM VỀ QUYỀN SỞ HỮU, VỀ TÍNH THƯƠNG MẠI, VỀ SỰ PHÙ HỢP CHO MỘT MỤC ĐÍCH CỤ THỂ, VỀ HÀNH VI KHÔNG VI PHẠM, HOẶC BẢO ĐẢM KHÔNG CÓ LỖI TIỀM TÀNG HOẶC CÁC LỖI KHÁC, BẢO ĐẢM VỀ TÍNH CHÍNH XÁC, HOẶC BẢO ĐẢM KHÔNG CÓ LỖI DÙ LÀ LỖI CÓ THỂ PHÁT HIỆN HAY KHÔNG THỂ PHÁT HIỆN. 
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-SA-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "3.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialSharealike30Vietnam/versions> ;
     dct:alternative "Attribution NonCommercial ShareAlike 3.0 Vietnam",
         "Attribution-NonCommercial-ShareAlike 3.0",
         "Attribution-NonCommercial-ShareAlike 3.0 Vietnam",
@@ -36,8 +43,11 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Vietnam a odrl:Set 
         "CC-BY-NC-SA 3.0 VN",
         "Creative Commons BY-NC-SA 3.0",
         "Creative Commons BY-NC-SA 3.0 VN" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
-    dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Vietnam "@en ;
+    dct:source <https://creativecommons.org/licenses/by-nc-sa/3.0/vn/> ;
+    dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Vietnam"@en ;
     odrl:duty [ a odrl:Duty ;
             odrl:action cc:ShareAlike ] ;
     odrl:permission [ a odrl:Permission ;
@@ -79,7 +89,9 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Vietnam a odrl:Set 
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/vn.png> ;

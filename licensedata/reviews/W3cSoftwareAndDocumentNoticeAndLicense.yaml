@@ -1,0 +1,85 @@
+id: W3cSoftwareAndDocumentNoticeAndLicense
+title: W3C Software and Document Notice and License
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://www.w3.org/copyright/software-license-2015/
+text_retrieved: true
+verdict: corrected
+summary: This is the 2015 edition of the W3C software and document license, in force between 13 May 2015
+  and 31 December 2022 and superseded since. It permits copying, modification and distribution for any
+  purpose without fee or royalty, subject to three notices. The record did not permit commercial use,
+  did not carry the trademark restriction, and had no warranty or liability clause. All four were added,
+  with the SPDX id.
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: 'Added W3C-20150513. Verified rather than assumed: cc:legalcode is exactly the URL the
+    SPDX entry lists under seeAlso, and the fetched page states "This license was in effect between 13
+    May 2015 and 31 December 2022", which is the 2015-05-13 edition SPDX names.'
+  action: applied
+  change: |
+    spdx:licenseId "W3C-20150513" ;
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads: "Permission to copy, modify, and distribute this work, with or without
+    modification, for any purpose and without fee or royalty is hereby granted". "For any purpose" includes
+    commercial purposes, and the record''s own dalicc:additionalClauses already says so in prose. cc:CommercialUse
+    was not permitted. Added.'
+  action: applied
+  change: |
+    odrl:permission [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ] ;
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The text states: "The name and trademarks of copyright holders may NOT be used in advertising
+    or publicity pertaining to the work without specific, written prior permission." Added the dalicc:promote
+    prohibition.'
+  action: applied
+  change: |
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The two paragraphs under "Disclaimers" were not recorded. Added both, quoted.
+  action: applied
+  change: |
+    dalicc:WarrantyDisclaimer "THIS WORK IS PROVIDED \"AS IS,\" AND COPYRIGHT HOLDERS MAKE NO REPRESENTATIONS OR WARRANTIES ..." ;
+    dalicc:LiabilityLimitation "COPYRIGHT HOLDERS WILL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, SPECIAL OR CONSEQUENTIAL DAMAGES ..." ;
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: The stored clause, "Can be used for commercial purposes but without fee or royalty.", is
+    a paraphrase, not a quotation, which rubric 6 asks to avoid. The sentence it paraphrases is the grant
+    itself.
+  action: proposed
+  change: |
+    dalicc:additionalClauses "Permission to copy, modify, and distribute this work, with or without modification, for any purpose and without fee or royalty is hereby granted, provided that you include the following on ALL copies of the work or portions thereof, including modifications." ;
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:chargeDistributionFee is prohibited, which the phrase "without fee or royalty" supports.
+    dalicc:chargeLicenseFee should be prohibited for the same reason and is not. dalicc:ChangeLicense
+    is prohibited although the text imposes only the three notice conditions.
+  action: proposed
+  change: |
+    # add
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:chargeLicenseFee ] ;
+    # consider removing the dalicc:ChangeLicense prohibition
+- rubric: 1
+  severity: info
+  field: dct:title
+  description: The record does not say which edition it models. Since the 2015 text is superseded by the
+    2023 version, a dct:hasVersion or an edition note would stop the record from silently ageing.
+  action: proposed
+  change: |
+    dct:alternative "W3C Software and Document License (2015-05-13)" ;
+family: Other OSI approved licenses (corporate, academic, weak copyleft)
+port_of: null
+variant_kind: edition
+notes: 'Edition variant: the 2015 text, superseded on 31 December 2022 by the 2023 version, which the
+  library does not carry.'

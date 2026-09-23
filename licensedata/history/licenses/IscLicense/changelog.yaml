@@ -1,0 +1,102 @@
+id: IscLicense
+title: ISC License
+current_version: 4
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail and 1 permission, changed
+    3 permissions and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: permission dalicc:chargeLicenseFee
+    reason: The grant is "for any purpose with or without fee". dalicc:chargeDistributionFee was already
+      permitted; added dalicc:chargeLicenseFee so that the record says the same as 0BSD, whose text
+      is this text minus the notice condition.
+    source: review-finding 3/odrl:permission
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:derive with duties [cc:Attribution]
+    reason: 'The condition reads: "provided that the above copyright notice and this permission notice
+      appear in all copies". The record required cc:Attribution only. Added cc:Notice to the distribute,
+      modify and derive duties, matching MIT and the BSD records.'
+    source: review-finding 5/odrl:duty
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution]
+    reason: 'The condition reads: "provided that the above copyright notice and this permission notice
+      appear in all copies". The record required cc:Attribution only. Added cc:Notice to the distribute,
+      modify and derive duties, matching MIT and the BSD records.'
+    source: review-finding 5/odrl:duty
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:modify with duties [cc:Attribution]
+    reason: 'The condition reads: "provided that the above copyright notice and this permission notice
+      appear in all copies". The record required cc:Attribution only. Added cc:Notice to the distribute,
+      modify and derive duties, matching MIT and the BSD records.'
+    source: review-finding 5/odrl:duty
+  - action: added
+    statement: spdx:licenseId "ISC"
+    reason: Added the SPDX list id ISC.
+    source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 1 finding 7.6: dct:publisher was the placeholder ''N.N.''; the ISC text names no
+    steward, so the predicate is left out rather than filled with a placeholder. The disclaimer paragraph
+    is split at ''IN NO EVENT SHALL THE AUTHOR BE LIABLE'', the split the new ISC-form records use.'
+  changes:
+  - action: added
+    statement: dalicc:LiabilityLimitation "IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL,
+      DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF
+      USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
+      ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: dalicc:WarrantyDisclaimer "THE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS
+      ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+      AND FITNESS."
+    previous: dalicc:WarrantyDisclaimer "THE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS
+      ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+      AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL
+      DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+      ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH
+      THE USE OR PERFORMANCE OF THIS SOFTWARE."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: dct:publisher "N.N."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+- version: 4
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Permit relicensing on permissive licences; the notice clause is a duty, not a bar. Family
+    rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no source
+    code asks only that the notice travels with the copy, which is a duty on the acts it governs and
+    not a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission
+    here, and the prohibition the earlier pass wrote is removed. The text reads: "Permission to use,
+    copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted,
+    provided that the above copyright notice and this permission notice appear in all copies." The
+    permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has
+    to survive the relicensing.'
+  changes:
+  - action: added
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:ChangeLicense
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

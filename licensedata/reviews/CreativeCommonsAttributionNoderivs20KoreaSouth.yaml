@@ -1,0 +1,186 @@
+id: CreativeCommonsAttributionNoderivs20KoreaSouth
+title: Creative Commons Attribution-NoDerivatives 2.0 South Korea
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by-nd/2.0/kr/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the BY-ND element set of the Creative Commons 2.0 port for South Korea and
+  it does so correctly: the NoDerivatives element prohibits odrl:derive, the attribution and notice duties
+  hang on the acts that make the work public. The legal text was read in Korean and the permissions, prohibitions
+  and duties all follow from the grant and restriction sections of the port. Corrections applied: dct:source,
+  and the split of the warranty disclaimer from the limitation of liability. What remains are proposals
+  that touch the whole Creative Commons family rather than this record: the express prohibition of sublicensing,
+  and the asset types.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source. The legal-code page states the canonical
+    URL of the licence, https://creativecommons.org/licenses/by-nd/2.0/kr/, and the six 4.0 International
+    parents carry exactly that pair (legal code plus deed). Added.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by-nd/2.0/kr/> ;
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: SPDX has no identifier for this port. The legal-code URL implies CC-BY-ND-2.0-KR, which
+    the SPDX licence list does not define, so no identifier was invented. Of the thirty six records in
+    this batch only the German NonCommercial-ShareAlike port has an SPDX identifier.
+  action: none
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: The record targets dalicc:CreativeWork only, while the 4.0 International parent CC-BY-ND-4.0
+    targets dalicc:CreativeWork and dcmitype:Dataset. Creative Commons licences are media neutral, and
+    this port grants the rights in all media and formats now known or later devised. Aligning the ports
+    with the parents is a single library wide decision covering every Creative Commons port, so it is
+    left as a proposal rather than applied in thirty six records alone.
+  action: proposed
+  change: |-
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ,
+                dcmitype:Dataset ] ;
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: Every modelled permission is supported by the grant. Section 3 grants a worldwide, free
+    of charge, non-exclusive and perpetual licence for the duration of copyright, and it names compilations
+    and databases and the neighbouring rights in performances, phonograms and broadcasts as covered subject
+    matter. The grant covers reproduction, incorporation into collections, distribution, public display,
+    public performance and communication to the public, and no adaptation right, which the record models
+    as odrl:reproduce, odrl:distribute, odrl:display, odrl:present.
+  action: none
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: The record permits odrl:modify and dalicc:ModifiedWorks while prohibiting odrl:derive.
+    Section 3 of the NoDerivatives port omits the grant to create and reproduce derivative works that
+    the other element sets carry. The vocabulary defines dalicc:ModifiedWorks as the counterpart of cc:DerivativeWorks
+    for alterations that do not amount to a new derivative work, so the pair is defensible for the technically
+    necessary format changes the port does allow, but the record does not say that the modification right
+    stops there. The 4.0 International parent CC-BY-ND-4.0 models it the same way, so any change belongs
+    to the whole NoDerivatives family.
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The licence forbids sublicensing and the record does not say so. Section 4: the licensee
+    may not grant a further licence in the work that was licensed to the licensee. The vocabulary already
+    has dalicc:sublicense, but it is used by no record in the library and its skos:note says so, and the
+    same sentence stands in every Creative Commons 2.0 and 3.0 record, so adding it to thirty six ports
+    alone would split the compatibility behaviour of one family. Proposed as one library wide correction,
+    together with an update of the vocabulary note.'
+  action: proposed
+  change: |-
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: the licensee may offer
+    the work only under the terms of this licence and may not offer or impose terms that alter or restrict
+    it. dalicc:promote is prohibited, which rests on the reservation of all rights not expressly granted
+    and on the trademark paragraph of the Creative Commons notice, not on a clause of the licence body.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The attribution and notice duties are present and supported: the licence requires a copy
+    of, or the URI for, the licence with every copy, that all notices referring to the licence and the
+    warranty disclaimer be kept intact, and that credit be given to the author. Attribution is owed to
+    the original author by name or pseudonym, with the title, the licensor URI and, for a derivative work,
+    a credit identifying the use made of the work. The parties are named licensor and You. The duties
+    hang on odrl:distribute, which matches the licence, since the duties are triggered by making the work
+    public rather than by private use.'
+  action: none
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: 'Section 5 of the Korean port covers the disclaimer of warranty and the limitation of liability
+    in two sentences under one heading. The record held the whole two sentence block twice, once in dalicc:WarrantyDisclaimer
+    and once in dalicc:LiabilityLimitation. Each field now holds its own sentence, quoted verbatim: the
+    first sentence, in which the licensor offers the work as is and gives no warranty, is the disclaimer,
+    the second, in which the licensor accepts no liability for damage arising from the licence or from
+    use of the work, is the limitation.'
+  action: applied
+  change: |-
+    dalicc:WarrantyDisclaimer now holds the first sentence of section 5;
+    dalicc:LiabilityLimitation now holds the second sentence of section 5.
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: The record has no dalicc:additionalClauses, so the clauses the ODRL policy cannot carry,
+    the reservation of unnamed rights, the downstream offer to recipients, the severability and entire
+    agreement paragraphs and the termination rule, are not visible in the record at all. The whole Creative
+    Commons family is modelled this way.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:KoreaSouth, which matches the country of the legal-code URL,
+    and dalicc:validityType is dalicc:perpetual, which matches the grant for the duration of copyright.
+    Section 8 (the governing-law section) provides that the licence is governed by and construed under
+    Korean law. Section 7 adds that the Korean text prevails over the English translation. Note that the
+    jurisdiction field records the legal home of the port, not a territorial limit on the grant: the grant
+    itself is worldwide.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The licence forbids technological protection measures and the vocabulary has no term for
+    it. Section 4: the licensee may not distribute, transmit, display, perform or broadcast the work using
+    technological protection measures that control access to or use of the work in a way that breaches
+    the licence. Proposed term: dalicc:applyTechnicalProtectionMeasures, an odrl:Action to be used as
+    an odrl:Prohibition. Not modelled, because bending an existing term would be worse than the gap.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The automatic termination of the licence on breach, and the survival of the definitions,
+    the disclaimer, the limitation of liability and the miscellaneous sections, have no vocabulary term.
+    Proposed term: dalicc:terminationOnBreach. The downstream offer to every recipient of the work has
+    none either. Proposed term: dalicc:downstreamOffer.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Section 3 closes with a moral-rights non-assertion: the licensor undertakes not to exercise
+    the author personal rights over uses made under the licence. Section 4 keeps one integrity restriction,
+    that the licensee may not alter the content, form or title of the work to a degree that defames the
+    author. The non-assertion is the opposite of the Australian and South African approach, which restricts
+    the licensee instead, and is not expressible with the present vocabulary.'
+  action: none
+- rubric: 8
+  severity: info
+  field: record
+  description: The Korean 2.0 port carries no collecting-society or royalty-collection clause.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the forty one axioms of licensedata/dependencygraph/dg_default.ttl
+    reports no conflict, before and after the corrections, and the pre-review baseline listed none for
+    this record either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of Creative Commons Attribution-NoDerivatives 4.0 International. After the 4.0 parents
+    were themselves corrected, the deontic model of this record is identical to the parent, statement
+    for statement, apart from odrl:target: the same permissions with the same duties, the same prohibitions
+    and the same set level duties. What differs is the jurisdiction, the language of the legal text and
+    the clause texts, and the version specific clauses of 2.0 that the model does not carry, chiefly the
+    express prohibition of sublicensing, the technological measures clause and the royalty collection
+    arrangements. The compatibility checker cannot tell this record from the other records of the BY-ND
+    element set, across all three versions and every jurisdiction the library holds.'
+  action: none
+family: 'Creative Commons 2.0 port: South Korea (KR)'
+port_of: CC-BY-ND-4.0
+variant_kind: jurisdiction-port
+notes: 'The parent is the 4.0 International record of the same element set, since the library holds no
+  unported or International 2.0 record; the version difference, 2.0 against 4.0, is therefore part of
+  the port relation and not only the jurisdiction. The 2.0 text differs from 4.0 in substance as well:
+  it prohibits sublicensing expressly, it has no thirty day cure period for a breach, it has no sui generis
+  database rights clause, and it settles the royalty collection question per jurisdiction. None of that
+  is visible in the model. Nothing in this review is legal advice.'

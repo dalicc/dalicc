@@ -1,0 +1,108 @@
+id: NPOSL-3.0
+title: Non-Profit Open Software License 3.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://opensource.org/license/NPOSL-3.0'
+text_retrieved: true
+verdict: created
+summary: >-
+  The Open Software License 3.0 with a Non-Profit Amendment: the same reciprocal grant, the
+  same external deployment clause and the same patent retaliation, but only a not-for-profit
+  organisation that derives no revenue from the work may distribute under it. The record is
+  OSL-3.0 with commercial use and both fee permissions turned into prohibitions. Nothing here
+  is legal advice.
+findings:
+- rubric: 2
+  severity: info
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Software alone, the type 32 of the library's software records carry, among them
+    MIT, BSD-3-Clause, GPL-3.0-only and the sibling OSL-3.0. These texts license an "original
+    work of authorship", which would also fit dalicc:CreativeWork, the type the AFL-3.0 record
+    carries beside Software and Dataset; the batch keeps the narrower reading its batch entry
+    prescribes, so that all nine records of the family answer alike and the owner can widen
+    them in one pass.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 1 grants a "worldwide, royalty-free, non-exclusive, sublicensable license, for the
+    duration of the copyright" to reproduce, adapt, distribute or communicate, perform and
+    display, so dalicc:sublicense is a permission, and section 2 grants a patent licence, so
+    dalicc:patentGrant is one. odrl:grantUse is not written, for the reason the OSL-3.0 review
+    gives: it would conflict with the share-alike duty under the current axioms.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    Amendment 17(a) says the Licensor "is a not-for-profit organization that derives no
+    revenue whatsoever from the distribution of the Original Work or Derivative Works thereof,
+    or from support or services relating thereto", and 17(d) lets You distribute under this
+    licence "only if You make the representation and declaration in paragraph (a)".
+    cc:CommercialUse, dalicc:chargeDistributionFee and dalicc:chargeLicenseFee are therefore
+    prohibited, which is where this record parts company with OSL-3.0. dalicc:ChangeLicense,
+    dalicc:promote and dalicc:patentRetaliationTermination are prohibited as in OSL-3.0.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Clause 1(c) keeps the proviso that copies You distribute or communicate "shall be licensed
+    under this Non-Profit Open Software License or as provided in section 17(d)", so
+    cc:ShareAlike is a licence-wide duty. Section 6, Attribution Rights, puts cc:Attribution,
+    cc:Notice and dalicc:modificationNotice on odrl:modify and odrl:derive; cc:SourceCode
+    hangs on odrl:distribute.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    Amendment 17(b) strikes the warranty of provenance, so the quoted disclaimer begins at
+    "The Original Work is provided under this License on an "AS IS" BASIS"; 17(c) adds direct
+    damages to the limitation of liability, which the quoted section 8 carries.
+    dalicc:additionalClauses holds sections 3, 4, 5, 9, 10, 11, 16 and the whole of the
+    Non-Profit Amendment.
+  action: applied
+- rubric: 7
+  severity: info
+  field: 'cc:jurisdiction'
+  description: >-
+    Section 11 names no legal system, only the forum where the Licensor resides or does
+    business, so cc:jurisdiction stays dalicc:worldwide.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Three gaps, all quoted instead: the external deployment trigger of section 5 (proposed
+    dalicc:networkUseTrigger), the assent requirement of section 9 (proposed
+    dalicc:recipientAssent) and the automatic termination (proposed
+    dalicc:terminatesOnBreach). A fourth would be useful here: the non-profit status of the
+    distributor is a property of the licensee, not an action, and the record expresses it only
+    through the three prohibitions; proposed dalicc:nonProfitLicenseeOnly.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty list for this record.
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: >-
+    NPOSL-3.0 is OSL-3.0 plus section 17. The library decision on charging under a
+    non-commercial licence (keep dalicc:chargeDistributionFee under NC) was not followed here,
+    because 17(a) bars revenue from distribution in as many words, which is stricter than the
+    Creative Commons non-commercial clause the decision was taken for.
+  action: none
+family: Academic Free and Open Software
+port_of: null
+variant_kind: version
+notes: >-
+  Modelled from the SPDX plain text of NPOSL-3.0 and checked against the URL in cc:legalcode.
+  The record is a version variant of OSL-3.0 in substance; port_of stays null because the
+  vocabulary reserves that key for jurisdiction ports.

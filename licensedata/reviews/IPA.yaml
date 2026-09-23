@@ -1,0 +1,115 @@
+id: IPA
+title: IPA Font License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://opensource.org/license/IPA'
+text_retrieved: true
+verdict: created
+summary: >-
+  The IPA Font License lets anyone install, use, embed and redistribute the font and build
+  derived fonts from it, but a derived font must ship its own source, must offer recipients a
+  way back to the original, must not carry the name of the original and must stay under this
+  agreement. Documents that merely embed the font carry no obligation at all. Nothing here is
+  legal advice.
+findings:
+- rubric: 2
+  severity: info
+  field: 'odrl:target'
+  description: >-
+    dalicc:CreativeWork and dcmitype:Software, the pair used for the OFL records. The licence
+    defines a "Digital Font Program" as "a computer program containing, or used to render or
+    display fonts", which is the software side, and Article 2 licenses its use in printed
+    materials and digital content, which is the creative work side.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Article 2 lets the Recipient install the Licensed Program on any number of computers, use
+    it with or without modification in printed materials or digital content, "conduct
+    Reproduction and Other Exploitation of the printed materials and Digital Content ... for
+    commercial or non-commercial purposes", redistribute the program as is, and create, use,
+    reproduce and redistribute a Derived Program. That is the permissive base set with
+    cc:CommercialUse. dalicc:chargeDistributionFee is permitted because Article 3 allows a
+    cost "which does not exceed the total costs of postage, storage medium and handling fees";
+    dalicc:chargeLicenseFee is not written, because no clause allows the font itself to be
+    sold.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    dalicc:ChangeLicense, from Article 3.1(3): "The Recipient must license the Derived Program
+    under the terms and conditions of this Agreement." dalicc:promote, from Article 2: "In no
+    sense is this Agreement intended to transfer ... any right relating to any trademark,
+    trade name, or service mark to the Recipient."
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Article 3.1 puts four duties on a redistributed Derived Program: a copy of the Derived
+    Program and the files needed for further modification must travel with it (cc:SourceCode);
+    recipients must be given the means to replace the Derived Program with the original, "a
+    difference file from the Original Program, or instructions setting out a method to
+    replace" it (dalicc:modificationNotice); "No one may use or include the name of the
+    Licensed Program as a program name, font name or file name of the Derived Program"
+    (dalicc:rename); and the Derived Program must be licensed under this Agreement
+    (cc:ShareAlike). Article 3.2 puts cc:Notice on plain redistribution, "The Recipient must
+    attach a copy of this Agreement to the Licensed Program". cc:Attribution is not written:
+    no clause requires a copyright notice to be retained.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Article 3.3 holds the warranty disclaimer and the limitation of liability in one
+    paragraph; it is split at "IN NO EVENT SHALL" into the two fields.
+    dalicc:additionalClauses carries Article 2's reservation of rights, the whole of Article
+    3.1 and 3.2, the no-support clause of 3.4, the term and termination of Article 4 and the
+    governing law of Article 5.
+  action: applied
+- rubric: 7
+  severity: info
+  field: 'cc:jurisdiction'
+  description: >-
+    Article 5.2 states: "This Agreement shall be construed under the laws of Japan." Article 2
+    nonetheless grants "a license to use the Licensed Program in any and all countries", so
+    the record keeps cc:jurisdiction dalicc:worldwide and quotes the choice of law;
+    bpicounty:Japan is the alternative if the owner reads a choice of law as a jurisdiction.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Three gaps, all quoted. Article 3.2 forbids a plain redistributor to change the name of
+    the Licensed Program or to modify it, a duty of verbatim redistribution with no term;
+    proposed dalicc:verbatimRedistribution. Article 3.1(2) requires the means to go back to
+    the original program; dalicc:modificationNotice is the closest term the library has and a
+    term such as dalicc:originalVersionOffer would be more honest, the same gap the OGTSL
+    record records. Article 4.2 terminates the agreement automatically on breach; proposed
+    dalicc:terminatesOnBreach.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty list for this record.
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: >-
+    Against the OFL records, the IPA licence is the stricter font licence: the rename duty is
+    unconditional rather than tied to a declared reserved name, a derived font must ship the
+    files needed to modify it further, and a way back to the original must be offered. Like
+    the OFL it leaves documents made with the font untouched.
+  action: none
+family: Fonts and documentation
+port_of: null
+variant_kind: null
+notes: >-
+  Modelled from the SPDX plain text of the IPA Font License and checked against the URL in
+  cc:legalcode. Article 5 chooses Japanese law; the clause is quoted and cc:jurisdiction stays
+  dalicc:worldwide, as everywhere in this batch.

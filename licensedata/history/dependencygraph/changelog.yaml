@@ -1,0 +1,110 @@
+id: dg_default
+title: DALICC deontic dependency graph
+current_version: 4
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 removed the pair of axioms that made a reciprocal license
+    which also grants sublicensing contradict itself.
+  changes:
+  - action: removed
+    statement: cc:ShareAlike dalicc:contradicts odrl:grantUse
+    reason: 'Review decision 5: passing the same terms on is the normal way to satisfy a share-alike
+      condition, not a contradiction of it.'
+    source: consolidation-decision 5
+  - action: removed
+    statement: odrl:grantUse dalicc:contradicts cc:ShareAlike
+    reason: 'Review decision 5: passing the same terms on is the normal way to satisfy a share-alike
+      condition, not a contradiction of it.'
+    source: consolidation-decision 5
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'The standard-license addition of 2026-09-15 related the two terms that name the same act:
+    dalicc:sublicense, which 295 records use as a prohibition, and odrl:grantUse, which the permissive
+    records use as a permission.'
+  changes:
+  - action: added
+    statement: dalicc:sublicense owl:sameAs odrl:grantUse
+    reason: 'Open issue 9 of the content review is decided: the two terms denote the same act, so
+      a bundle of a license that forbids sublicensing with one that permits it must report a conflict
+      instead of no conflict.'
+    source: consolidation-decision 5
+  - action: added
+    statement: odrl:grantUse owl:sameAs dalicc:sublicense
+    reason: The inverse spelling, written explicitly because the graph states every owl:sameAs pair
+      in both directions.
+    source: consolidation-decision 5
+- version: 4
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: 'The review of 2026-09-23 read every action the vocabulary defines against the axioms that
+    mention it. Eight statements were added, three were removed, and the graph now holds 46. The commercial-use
+    cluster is the substance of the change: the term 579 library statements use was not in the graph
+    at all, so the axioms about selling and charging a fee concluded nothing.'
+  changes:
+  - action: added
+    statement: cc:CommercialUse owl:sameAs odrl:commercialize
+    reason: cc:CommercialUse is 'income-generating use of any kind, whether direct or indirect' and
+      odrl:commercialize is 'use the asset in a business environment', the reasoning counterpart of
+      commercial use. 579 statements of the library name the first and none names the second, so the
+      three axioms written about odrl:commercialize reached nothing. A license that permits charging
+      a license fee now meets one that prohibits commercial use.
+    source: dependency-graph-review 2026-09-23
+  - action: added
+    statement: odrl:commercialize owl:sameAs cc:CommercialUse
+    reason: The inverse spelling, written explicitly because the graph states every owl:sameAs pair
+      in both directions.
+    source: dependency-graph-review 2026-09-23
+  - action: added
+    statement: dalicc:sellCopy odrl:includedIn odrl:sell
+    reason: dalicc:sellCopy is 'the Assignee may sell the copies of the License Material' and odrl:sell
+      is 'trade the asset for consideration', so selling copies is one way of selling. Through odrl:sell
+      odrl:includedIn odrl:commercialize a prohibition of commercial use now reaches it.
+    source: dependency-graph-review 2026-09-23
+  - action: added
+    statement: cc:DerivativeWorks odrl:includedIn odrl:distribute
+    reason: cc:DerivativeWorks is 'to distribute the derivative and making it available to the public',
+      which is one kind of odrl:distribute, 'providing the work to the public or making it accessible
+      to anyone else'. A license that forbids distribution now meets one that permits publishing a
+      derivative.
+    source: dependency-graph-review 2026-09-23
+  - action: added
+    statement: dalicc:ModifiedWorks odrl:includedIn odrl:distribute
+    reason: dalicc:ModifiedWorks is 'distributing a modified version of the work and making it available
+      to the public', the counterpart of cc:DerivativeWorks for alterations that do not amount to
+      a new work, and it is distribution for the same reason.
+    source: dependency-graph-review 2026-09-23
+  - action: added
+    statement: odrl:AttachPolicy owl:sameAs cc:Notice
+    reason: The inverse of cc:Notice owl:sameAs odrl:AttachPolicy. The change log of version 3 says
+      the graph states every owl:sameAs pair in both directions; three pairs did not, and now every
+      one of them does.
+    source: dependency-graph-review 2026-09-23
+  - action: added
+    statement: odrl:attachSource owl:sameAs cc:SourceCode
+    reason: The inverse of cc:SourceCode owl:sameAs odrl:attachSource, for the same reason.
+    source: dependency-graph-review 2026-09-23
+  - action: added
+    statement: odrl:shareAlike owl:sameAs cc:ShareAlike
+    reason: The inverse of cc:ShareAlike owl:sameAs odrl:shareAlike, for the same reason.
+    source: dependency-graph-review 2026-09-23
+  - action: removed
+    statement: odrl:extract owl:sameAs odrl:copy
+    reason: odrl:extract is 'extract part of the asset', which the term's own definition places inside
+      odrl:reproduce rather than beside it. Calling it the same act as odrl:copy put extract, copy
+      and reproduce in one equivalence class, so permitting the extraction of a part permitted copying
+      the whole. odrl:extract odrl:includedIn odrl:reproduce carries the conclusions that do hold.
+    source: dependency-graph-review 2026-09-23
+  - action: removed
+    statement: odrl:reproduce odrl:includedIn odrl:copy
+    reason: odrl:copy owl:sameAs odrl:reproduce already says the two names denote one act, so a subsumption
+      between them states nothing and shows the pair twice with two different readings.
+    source: dependency-graph-review 2026-09-23
+  - action: removed
+    statement: odrl:display odrl:includedIn odrl:play
+    reason: odrl:display is 'create a static and transient rendition of the work' and odrl:play is
+      'render the asset in an audio or video form'. A static rendition is not an audio or video one,
+      so displaying is not a kind of playing. Both remain kinds of odrl:present.
+    source: dependency-graph-review 2026-09-23

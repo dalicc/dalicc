@@ -1,0 +1,95 @@
+# Title: The machine-readable representation of "The Parity Public License 7.0.0"@en in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/Parity-7.0.0
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:Parity-7.0.0 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "Parity-7.0.0" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://paritylicense.com/versions/7.0.0.html> ;
+    dalicc:WarrantyDisclaimer "As far as the law allows, this software comes as is, without any warranty or condition, and the contributor won't be liable to anyone for any damages related to this software or this license, under any kind of legal claim." ;
+    dalicc:additionalClauses "This license allows you to use and share this software for free, but you have to share software that builds on it alike.",
+        "In order to receive this license, you have to agree to its rules. Those rules are both obligations under that agreement and conditions to your license. Don't do anything with this software that triggers a rule you can't or won't follow.",
+        "Make sure everyone who gets a copy of any part of this software from you, with or without changes, also gets the text of this license and the contributor and source code lines above.",
+        "[Contribute](#contribute) software you develop, operate, or analyze with this software, including changes or additions to this software. When in doubt, [contribute](#contribute).",
+        "You don't have to [contribute](#contribute) any change, addition, or other software that meets all these criteria: 1. You don't use it for more than thirty days. 2. You don't share it outside the team developing it, other than for non-production user testing. 3. You don't develop, operate, or analyze other software with it for anyone outside the team developing it.",
+        "You may use this software to operate and analyze software you can't [contribute](#contribute) in order to develop alternatives you can and do [contribute](#contribute).",
+        "To [contribute](#contribute) software: 1. Publish all source code for the software in the preferred form for making changes through a freely accessible distribution system widely used for similar source code so the contributor and others can find and copy it. 2. Make sure every part of the source code is available under this license or another license that allows everything this license does, such as [the Blue Oak Model License 1.0.0](https://blueoakcouncil.org/license/1.0.0), [the Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html), [the MIT license](https://spdx.org/licenses/MIT.html), or [the two-clause BSD license](https://spdx.org/licenses/BSD-2-Clause.html). 3. Take these steps within thirty days. 4. Note that this license does not allow you to change the license terms for this software. You must follow [Notices](#notices).",
+        "You're excused for unknowingly breaking [Copyleft](#copyleft) if you [contribute](#contribute) as required, or stop doing anything requiring this license, within thirty days of learning you broke the rule. You're excused for unknowingly breaking [Notices](#notices) if you take all practical steps to comply within thirty days of learning you broke the rule.",
+        "Don't make any legal claim against anyone accusing this software, with or without changes, alone or with other technology, of infringing any patent.",
+        "The contributor licenses you to do everything with this software that would otherwise infringe their copyright in it.",
+        "The contributor licenses you to do everything with this software that would otherwise infringe any patents they can license or become able to license.",
+        "The contributor can't revoke this license." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
+    dalicc:curePeriod "30 days" ;
+    dalicc:compatibleLicenseTest "another license that allows everything this license does" ;
+    dalicc:reciprocityScope "software you develop, operate or analyze with this software, including changes or additions to this software" ;
+    dalicc:licenseVersion "7.0.0" ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-22"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/Parity-7.0.0/versions> ;
+    dct:alternative "Parity 7.0.0",
+        "Parity Public License 7.0.0",
+        "Parity-7.0.0" ;
+    dct:hasVersion "1" ;
+    dct:modified "2026-09-22"^^xsd:date ;
+    dct:source <https://spdx.org/licenses/Parity-7.0.0.html> ;
+    dct:title "The Parity Public License 7.0.0"@en ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ],
+        [ a odrl:Duty ;
+            odrl:action cc:SourceCode ] ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Attribution ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Attribution ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Attribution ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:patentGrant ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:patentRetaliationTermination ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Software ] .

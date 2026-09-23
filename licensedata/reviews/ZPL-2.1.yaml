@@ -1,0 +1,75 @@
+id: ZPL-2.1
+title: Zope Public License 2.1
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: http://old.zope.org/Resources/ZPL/
+text_retrieved: true
+verdict: created
+summary: Models version 2.1 of the Zope Public License, which is version 2.0 with every reference to Zope Corporation
+  replaced by a reference to the copyright holders named in the accompanying notice. The deontic model is identical
+  to ZPL-2.0. Nothing here is legal advice.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant is unchanged from 2.0: "Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met".'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'Clause 3 now reads "Names of the copyright holders must not be used to endorse or promote products
+    derived from this software without prior written permission from the copyright holders", which is the same dalicc:promote
+    prohibition applied to a generic licensor. dalicc:ChangeLicense is prohibited as on ZPL-2.0. (Corrected on 2026-09-15
+    by the verification pass: see the rubric 3 finding on relicensing below.)'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: Clauses 1 and 2 require "the accompanying copyright notice, this list of conditions, and the following
+    disclaimer" to be retained, which is cc:Attribution and cc:Notice, and clause 5 keeps the change-notice requirement,
+    which is dalicc:modificationNotice. The duty set is identical to ZPL-2.0.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: Clause 4 is quoted verbatim; it now refers to the Servicemarks and Trademarks "of the copyright holders"
+    and to a separate agreement with them rather than to the Zope Marks page. The warranty and liability sentences
+    are split into their own predicates.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer with the dependency graph dg_default returned an empty
+    conflict list.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: Diffed against ZPL-2.0. Every difference is the generalisation from Zope Corporation to the copyright
+    holders, plus the dropping of the closing credits paragraph. The two records therefore carry the same permissions,
+    prohibitions and duties, and the separation is justified only by the different licensor wording. No cc:attributionName
+    and no dct:publisher are written, because the 2.1 text names no licensor.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
+    or without modification, are permitted provided that the following conditions are met: 1. Redistributions in
+    source code must retain the accompanying copyright notice, this list of conditions, and the following disclaimer."
+    The permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive
+    the relicensing.'
+  action: applied
+family: Python, PHP, Unicode and W3C
+port_of: null
+variant_kind: version
+notes: The disclaimer uses the typewriter quotation marks of the original (``AS IS''), which are reproduced verbatim.

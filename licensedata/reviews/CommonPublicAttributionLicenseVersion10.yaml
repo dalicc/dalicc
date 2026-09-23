@@ -1,0 +1,88 @@
+id: CommonPublicAttributionLicenseVersion10
+title: Common Public Attribution License Version 1.0
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/CPAL-1.0.txt
+text_retrieved: true
+verdict: corrected
+summary: 'The Common Public Attribution License is the Mozilla Public License 1.1 with two additions:
+  a required attribution notice (Exhibit B) and a network-use trigger. The record was the worst in the
+  batch: it prohibited derivative works, which the license grants, prohibited share-alike, which the license
+  requires, and repeated three permission statements. All of that was corrected. It had no dct:source
+  and no SPDX id.'
+findings:
+- rubric: 5
+  severity: minor
+  field: odrl:permission
+  description: 'Three permission statements were present twice: odrl:display, odrl:distribute with its
+    three duties, and odrl:modify with its two. Removed the duplicates, as flagged in family_rules_baseline.md
+    rule 11.'
+  action: applied
+  change: |
+    # removed 3 duplicate odrl:permission blocks
+- rubric: 3
+  severity: major
+  field: odrl:prohibition
+  description: Sections 2.1(b) and 2.2(b) grant the right "to use, reproduce, modify, display, perform,
+    sublicense and distribute the Original Code (or portions thereof) with or without Modifications".
+    The record prohibited both odrl:derive and cc:DerivativeWorks, so the compatibility checker treated
+    every adaptation as forbidden. Removed both prohibitions and added the permissions with the duties
+    the license does impose.
+  action: applied
+  change: |
+    # removed the odrl:derive and cc:DerivativeWorks prohibitions; added
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ] ;
+- rubric: 5
+  severity: major
+  field: odrl:prohibition
+  description: Section 3.1 requires Covered Code to be distributed "only under the terms of this License".
+    The record prohibited cc:ShareAlike, the reverse. Removed.
+  action: applied
+  change: |
+    # removed
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action cc:ShareAlike ] ;
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: Added CPAL-1.0 and the missing dct:source.
+  action: applied
+  change: |
+    spdx:licenseId "CPAL-1.0" ;
+    dct:source osl:CPAL-1.0 ;
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The positive half of the share-alike finding: a license-wide cc:ShareAlike duty. Held
+    back because the record permits odrl:grantUse, which sections 2.1(b) and 2.2(b) do grant, and the
+    dependency graph treats the two as contradictory.'
+  action: proposed
+  change: |
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ] ;
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'Two clauses that define this license have no term. Exhibit B requires every user-visible
+    screen to display an attribution logo and phrase of a set size for a set period, which cc:Attribution
+    cannot express (proposed: dalicc:runtimeAttributionDisplay). Section 1.4 defines "Deploy" to include
+    use "to provide services ... or otherwise" over a network, which triggers the source obligation (proposed:
+    dalicc:networkUseTrigger). The patent grant and patent termination of sections 2 and 8.2 are further
+    gaps.'
+  action: none
+family: Other OSI approved licenses (corporate, academic, weak copyleft)
+port_of: null
+variant_kind: null
+notes: Named in family_rules_baseline.md rule 11 as one of three records with repeated statements. The
+  repetitions were the least of its problems.

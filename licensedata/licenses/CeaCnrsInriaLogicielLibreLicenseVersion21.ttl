@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Cea Cnrs Inria Logiciel Libre License, version 2.1" in the DALICC license library
+# Title: The machine-readable representation of "Cea Cnrs Inria Logiciel Libre License, version 2.1" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CeaCnrsInriaLogicielLibreLicenseVersion21
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,18 +15,26 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CeaCnrsInriaLogicielLibreLicenseVersion21 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
-    cc:attributionName " CEA, CNRS, INRIA" ;
+    spdx:licenseId "CECILL-2.1" ;
+    cc:attributionName "CEA, CNRS, INRIA" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://www.cecill.info/licences/Licence_CeCILL_V2.1-fr.html> ;
-    dalicc:WarrantyDisclaimer """8.1 Subject to the provisions of Article 8.2, the Licensee shall be entitled to claim compensation for any direct loss it may have suffered from the Software as a result of a fault on the part of the relevant Licensor, subject to providing evidence thereof.
+    dalicc:LiabilityLimitation """8.1 Subject to the provisions of Article 8.2, the Licensee shall be entitled to claim compensation for any direct loss it may have suffered from the Software as a result of a fault on the part of the relevant Licensor, subject to providing evidence thereof.
 
 8.2 The Licensor's liability is limited to the commitments made under this Agreement and shall not be incurred as a result of in particular: (i) loss due the Licensee's total or partial failure to fulfill its obligations, (ii) direct or consequential loss that is suffered by the Licensee due to the use or performance of the Software, and (iii) more generally, any consequential loss. In particular the Parties expressly agree that any or all pecuniary or business loss (i.e. loss of data, loss of profits, operating loss, loss of customers or orders, opportunity cost, any disturbance to business activities) or any or all legal proceedings instituted against the Licensee by a third party, shall constitute consequential loss and shall not provide entitlement to any or all compensation from the Licensor.""" ;
+    dalicc:WarrantyDisclaimer """9.3 Le Licencié reconnaît que le Logiciel est fourni "en l'état" par le Concédant sans autre garantie, expresse ou tacite, que celle prévue à l'article 9.2 et notamment sans aucune garantie sur sa valeur commerciale, son caractère sécurisé, innovant ou pertinent. En particulier, le Concédant ne garantit pas que le Logiciel est exempt d'erreur, qu'il fonctionnera sans interruption, qu'il sera compatible avec l'équipement du Licencié et sa configuration logicielle ni qu'il remplira les besoins du Licencié.""" ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CeaCnrsInriaLogicielLibreLicenseVersion21/versions> ;
     dct:alternative "CECILL-2.1" ;
-    dct:publisher " CEA, CNRS, INRIA" ;
+    dct:hasVersion "3" ;
+    dct:modified "2026-09-15"^^xsd:date ;
+    dct:publisher "CEA, CNRS, INRIA" ;
     dct:source osl:CECILL-2.1 ;
     dct:title "Cea Cnrs Inria Logiciel Libre License, version 2.1" ;
     odrl:permission [ a odrl:Permission ;
@@ -65,11 +73,5 @@ dalicclib:CeaCnrsInriaLogicielLibreLicenseVersion21 a odrl:Set ;
             odrl:action dalicc:chargeLicenseFee ],
         [ a odrl:Permission ;
             odrl:action dalicc:noWarrantyNotice ] ;
-    odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action cc:ShareAlike ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:addStatement ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

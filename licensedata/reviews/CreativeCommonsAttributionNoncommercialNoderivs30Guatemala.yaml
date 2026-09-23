@@ -1,0 +1,210 @@
+id: CreativeCommonsAttributionNoncommercialNoderivs30Guatemala
+title: Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Guatemala
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by-nc-nd/3.0/gt/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the BY-NC-ND element set of the Creative Commons 3.0 port for Guatemala and
+  the model follows the grant and the restrictions section of that port. The legal text was read in Spanish.
+  Corrections applied: dct:source. What remains are proposals that touch the whole Creative Commons family
+  rather than this record, chiefly the express prohibition of sublicensing and the NoDerivatives permissions.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source. The legal-code page states the canonical
+    URL of the licence, https://creativecommons.org/licenses/by-nc-nd/3.0/gt/, and the six 4.0 International
+    parents carry exactly that pair, legal code plus deed. Added.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by-nc-nd/3.0/gt/> ;
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: SPDX has no identifier for this port. The legal-code URL implies CC-BY-NC-ND-3.0-GT, which
+    the SPDX licence list does not define, so no spdx:licenseId was invented. Of the forty two records
+    of this batch only the Attribution 3.0 Netherlands record can take one.
+  action: none
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: 'The record targets dalicc:CreativeWork only, while the 4.0 International parent CC-BY-NC-ND-4.0
+    targets dalicc:CreativeWork and dcmitype:Dataset. The Guatemalan port has no database language at
+    all: neither the definitions nor the grant nor the restrictions mention a base de datos or a sui generis
+    right. The four European Union ports of this batch, Italy, the Netherlands, Ireland and Croatia, were
+    corrected because their texts license database rights in terms; this one was not, and aligning it
+    with the parent is part of the single library wide decision on the asset types of the Creative Commons
+    family.'
+  action: proposed
+  change: "odrl:target [ a odrl:AssetCollection ;\n        dct:type dalicc:CreativeWork,\n           \
+    \ dcmitype:Dataset ] ;"
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: Every modelled permission is supported by the grant. Clause 3 grants a licence valid in
+    any country of the world, without royalties, non-exclusive and for the duration of the author right,
+    to reproduce the Obra and have it form part of Colecciones and to distribute and perform the Obra
+    in public; Obras Derivadas are not in the list. The record models that as odrl:reproduce, odrl:distribute,
+    odrl:display and odrl:present. The rights may be exercised in all media and formats now known or later
+    devised.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The record permits odrl:modify and dalicc:ModifiedWorks although this is a NoDerivatives
+    licence: the clause 3 list omits Obras Derivadas entirely and the clause closes "Todos los derechos
+    no otorgados expresamente por el Licenciante son derechos reservados.". The record does prohibit odrl:derive,
+    so the two statements contradict each other in substance, and a licensee reading the record would
+    be told that modified works may be distributed. The 4.0 International parent CC-BY-NC-ND-4.0 carries
+    the same pair, and so does every NoDerivatives record in the library, so removing the two permissions
+    is one library wide decision about the NoDerivatives family and not a defect of this port. Not applied
+    for that reason.'
+  action: proposed
+  change: "remove:\n    odrl:permission [ a odrl:Permission ;\n            odrl:action odrl:modify ;\n\
+    \            odrl:duty [ a odrl:Duty ; odrl:action cc:Attribution ],\n                [ a odrl:Duty\
+    \ ; odrl:action cc:Notice ],\n                [ a odrl:Duty ; odrl:action dalicc:modificationNotice\
+    \ ] ] ,\n        [ a odrl:Permission ;\n            odrl:action dalicc:ModifiedWorks ]"
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: The record permits dalicc:chargeDistributionFee while prohibiting cc:CommercialUse. The
+    vocabulary defines dalicc:chargeDistributionFee as a fee covering the act of providing the work to
+    a third party, so a pure cost recovery fee is arguable under the commercial advantage test of this
+    port, but the statement sits uneasily next to the prohibition. The same statement is in the 4.0 International
+    parent CC-BY-NC-ND-4.0 and in every NonCommercial record of the library, so removing it is one library
+    wide decision about the NonCommercial family.
+  action: proposed
+  change: "remove:\n    odrl:permission [ a odrl:Permission ;\n            odrl:action dalicc:chargeDistributionFee\
+    \ ]"
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The licence forbids sublicensing and the record does not say so: clause 4: the licensee
+    is "ni esta facultado para otorgar sub-licencias sobre la misma". The vocabulary already has dalicc:sublicense,
+    but no record in the library uses it and its skos:note says so, and the same sentence stands in every
+    Creative Commons 2.0 and 3.0 record, so adding it to this batch alone would split the compatibility
+    behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
+    note. Not applied for that reason.'
+  action: proposed
+  change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: the licensee may offer
+    the work only under the terms of this licence and may not offer or impose terms that alter or restrict
+    it or the recipient ability to exercise the rights granted. dalicc:promote is prohibited, which rests
+    on the reservation of all rights not expressly granted and on the endorsement bar in the attribution
+    clause rather than on a trademark clause of the licence body. cc:CommercialUse is prohibited, which
+    is the NonCommercial element of this set and is stated in the restrictions section. odrl:derive is
+    prohibited, which is the NoDerivatives element of this set.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The attribution and notice duties are present and supported: the licence requires a copy
+    of, or the URI for, the licence with every copy distributed or communicated to the public, that all
+    notices referring to the licence and to the disclaimer be kept intact, and that credit be given. The
+    attribution clause owes credit to the Autor, which the Guatemalan text defines to include performers,
+    phonogram producers, broadcasters and, for audiovisual works, the director, and to the institutions
+    that contributed to the work. The endorsement bar is part of the same clause. The duties hang on odrl:distribute,
+    which matches the licence, since they are triggered by making the work public rather than by private
+    use.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: 'dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation are quoted from the Spanish text
+    of this port and not from the English unported version, and each field holds its own clause rather
+    than a copy of the other. Clause 5 is not a pure disclaimer. It offers the Obra in its present condition
+    and denies any warranty of commercial quality or fitness for a particular purpose, but in the same
+    sentence it gives a warranty: "EL AUTOR GARANTIZA LA AUTORIA Y ORIGINALIDAD DE LA OBRA". Guatemala
+    is the only port of this batch whose warranty section warrants authorship and originality. Clause
+    6 is a conventional exclusion of damages. Each field carries its own clause verbatim in Spanish.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: The record has no dalicc:additionalClauses, so the clauses the ODRL policy cannot carry,
+    the reservation of unnamed rights, the downstream offer to every recipient, the severability and entire
+    agreement paragraphs, the termination rule and the royalty collection arrangements, are not visible
+    in the record at all. The whole Creative Commons family is modelled this way.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:Guatemala, which matches the country of the legal-code URL
+    https://creativecommons.org/licenses/by-nc-nd/3.0/gt/legalcode, and dalicc:validityType is dalicc:perpetual,
+    which matches a grant made for the duration of the applicable rights. The Guatemalan port has no choice-of-law
+    clause in clause 8. It reaches Guatemalan law twice inside the body instead: the definition of Autor
+    applies the related-rights extension only where the rights are exercised in Guatemala or in another
+    jurisdiction that recognises related rights, and clause 4 states that under Guatemalan law it is forbidden
+    to remove from the Obra any information identifying the work, its author, its performer or its producer,
+    or any code representing that information. Note that the jurisdiction field records the legal home
+    of the port, not a territorial limit on the grant: the grant itself runs worldwide.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The licence forbids technological protection measures and the vocabulary has no term for
+    it: clause 4 forbids the licensee to add or impose on the Obra effective technological measures that
+    restrict for others the rights the licensee itself obtained. Proposed term: dalicc:applyTechnicalProtectionMeasures,
+    an odrl:Action to be used as an odrl:Prohibition. Not modelled, because bending an existing term would
+    be worse than the gap.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The automatic termination of the licence on breach, and the survival of the definitions,
+    the disclaimer, the limitation of liability and the miscellaneous sections, have no vocabulary term.
+    Proposed term: dalicc:terminationOnBreach. The offer of a direct licence from the licensor to every
+    recipient of the work has none either. Proposed term: dalicc:downstreamOffer.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Moral rights are not expressible with the present vocabulary. Clause 4 carries a separate
+    heading, Derechos Morales: "Los derechos morales del Autor respecto de la Obra permanecen intactos,
+    en la medida que sean reconocidos e irrenunciables por la ley aplicable." It restricts the licensee.
+    Proposed terms: dalicc:moralRightsRestriction for a clause that binds the licensee and dalicc:moralRightsNonAssertion
+    for one in which the licensor undertakes not to assert.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The royalty collection arrangements are not expressible either. Clause 4 waives the right
+    to collect royalties, individually or through a sociedad de gestion colectiva, for the non-commercial
+    uses of the Obra and reserves it for the commercial ones in the NonCommercial sets; in the other sets
+    the right is waived for every use the licence grants. Proposed term: dalicc:royaltyCollectionReserved,
+    with a companion for the waived case. The clause differs between the element sets of one and the same
+    port, which is exactly what the model cannot show.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the forty one axioms of licensedata/dependencygraph/dg_default.ttl
+    reports no conflict, before and after the corrections, and the pre-review baseline listed none for
+    this record either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International. The
+    deontic model of this record is identical to the parent CC-BY-NC-ND-4.0, statement for statement:
+    the same permissions with the same duties, the same prohibitions and the same set level duties. What
+    differs is the jurisdiction, the language of the legal text, the clause texts quoted from it, and
+    the version specific clauses of 3.0 that the model does not carry, chiefly the express prohibition
+    of sublicensing, the technological measures clause, the moral rights clause and the royalty collection
+    arrangements. The odrl:target still differs from the parent, which is the open proposal recorded above.
+    The compatibility checker cannot tell this record from the other records of the BY-NC-ND element set,
+    across all three versions and every jurisdiction the library holds.'
+  action: none
+family: 'Creative Commons 3.0 port: Guatemala (GT)'
+port_of: CC-BY-NC-ND-4.0
+variant_kind: jurisdiction-port
+notes: 'The parent is the 4.0 International record of the same element set, since the library holds no
+  unported and no International 3.0 record; the version difference, 3.0 against 4.0, is therefore part
+  of the port relation and not only the jurisdiction. The 3.0 text differs from 4.0 in substance as well:
+  it prohibits sublicensing expressly, it has no thirty day cure period for a breach, its share-alike
+  clause accepts a later version or another port with the same licence elements, and it settles the moral
+  rights and royalty collection questions per jurisdiction. None of that is visible in the model. Nothing
+  in this review is legal advice.'

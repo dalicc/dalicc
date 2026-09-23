@@ -1,0 +1,84 @@
+id: Unicode-DFS-2016
+title: Unicode License Agreement - Data Files and Software (2016)
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: http://www.unicode.org/copyright.html
+text_retrieved: true
+verdict: created
+summary: Models the 2016 Unicode licence agreement for data files and software, which Unicode License v3 replaced
+  in 2024. The grant is the same MIT style grant as in v3; what this text adds is the list of directories whose
+  contents count as Data Files and as Software. Nothing here is legal advice.
+findings:
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: The agreement defines Data Files by the directories they live in and Software as "any source code
+    published in the Unicode Standard or under the directories" it lists, so the asset collection carries dcmitype:Dataset
+    next to dcmitype:Software.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant reads "Permission is hereby granted, free of charge, to any person obtaining a copy of
+    the Unicode data files and any associated documentation ... to deal in the Data Files or Software without restriction,
+    including without limitation the rights to use, copy, modify, merge, publish, distribute, and/or sell copies
+    ... and to permit persons to whom the Data Files or Software are furnished to do so", which is the same grant
+    as Unicode-3.0 and the same permission set.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: The closing sentence bars use of a copyright holder's name "in advertising or otherwise to promote
+    the sale, use or other dealings in these Data Files or Software", modelled as a dalicc:promote prohibition.
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: The condition is the same two-limbed notice requirement as in Unicode-3.0, so cc:Attribution and
+    cc:Notice hang off odrl:distribute, odrl:modify and odrl:derive.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:additionalClauses
+  description: The scope paragraphs, which are the substantive difference from the 2023 text, are quoted in full,
+    together with the acceptance notice and the advertising sentence. The 2016 text runs the warranty and liability
+    sentences into one paragraph; this record splits them at the sentence boundary into dalicc:WarrantyDisclaimer
+    and dalicc:LiabilityLimitation.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer with the dependency graph dg_default returned an empty
+    conflict list.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Modelled together with Unicode-3.0 and deliberately given the same deontic model, so that a consumer
+    who moves from the 2016 agreement to v3 sees no change in the compatibility answers, which is correct: the grant
+    did not change.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Permission is hereby granted, free of charge, to any person
+    obtaining a copy of the Unicode data files and any associated documentation (the "Data Files") or Unicode software
+    and any associated documentation (the "Software") to deal in the Data Files or Software without restriction,
+    including without limitation the rights to use, copy, modify, merge, publish, distribute, and/or sell copies."
+    The permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive
+    the relicensing.'
+  action: applied
+family: Python, PHP, Unicode and W3C
+port_of: null
+variant_kind: version
+notes: cc:legalcode points at the Unicode copyright page rather than the current license.txt, because license.txt
+  now serves the v3 text; the archived 2016 wording is the second see-also URL SPDX lists.

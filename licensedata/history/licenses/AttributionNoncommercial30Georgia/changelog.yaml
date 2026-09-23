@@ -1,0 +1,84 @@
+id: AttributionNoncommercial30Georgia
+title: Creative Commons Attribution-NonCommercial 3.0 Georgia
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 clause text, 1 identification detail and 1 prohibition,
+    removed 1 clause text, changed 1 asset target, recorded the relation to the record this one was
+    adapted from and recorded the review state.
+  changes:
+  - action: removed
+    statement: "dalicc:WarrantyDisclaimer \"ლიცენზიარი გარანტიას იძლევა იმაზე, რომ ობიექტი ორიგინალურია,\
+      \ შემქმნელს ეკუთვნის სრული საკუთრების უფლება ობიექტზე და არავის არ აქვს პრეტენზია იმაზე, რომ\
+      \ ობიექტზე მითითებულ შემქმნელს შეუძლია განაცხადოს თავისი ავტორობა, და წინამდებარე ლიცენზიით\
+      \ გათვალისწინებული უფლებები არ არის საზიარო და არავისზე არ არის გადაცემული.\n \n ლიცენზიარი\
+      \ ათავისუფლებს ლიცენზიატს პასუხისმგებლობისაგან, რომელიც შეიძლება დადგეს წინამდებარე ლიცენზიით\
+      \ გათვალისწინებული პირობებით ობიექტზე უფლებებისა და მათ გამოყენების საგანზე მესამე პირების მხრიდან\
+      \ პრეტენზიის წარდგენის შემთხვევაში.\n\""
+    reason: 'Review decision 14: section 5 of the Georgian port warrants rather than disclaims, so
+      the clause moved to the additional clauses.'
+    source: consolidation-decision 14
+  - action: added
+    statement: "dalicc:additionalClauses \"ლიცენზიარი გარანტიას იძლევა იმაზე, რომ ობიექტი ორიგინალურია,\
+      \ შემქმნელს ეკუთვნის სრული საკუთრების უფლება ობიექტზე და არავის არ აქვს პრეტენზია იმაზე, რომ\
+      \ ობიექტზე მითითებულ შემქმნელს შეუძლია განაცხადოს თავისი ავტორობა, და წინამდებარე ლიცენზიით\
+      \ გათვალისწინებული უფლებები არ არის საზიარო და არავისზე არ არის გადაცემული.\n \n ლიცენზიარი\
+      \ ათავისუფლებს ლიცენზიატს პასუხისმგებლობისაგან, რომელიც შეიძლება დადგეს წინამდებარე ლიცენზიით\
+      \ გათვალისწინებული პირობებით ობიექტზე უფლებებისა და მათ გამოყენების საგანზე მესამე პირების მხრიდან\
+      \ პრეტენზიის წარდგენის შემთხვევაში.\n\""
+    reason: 'Review decision 14: section 5 of the Georgian port warrants rather than disclaims, so
+      the clause moved to the additional clauses.'
+    source: consolidation-decision 14
+  - action: added
+    statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-4.0
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:licenseVersion "3.0"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "jurisdiction-port"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dct:source <https://creativecommons.org/licenses/by-nc/3.0/ge/>
+    reason: The record carried cc:legalcode but no dct:source. The legal code page of the port states
+      the canonical URL of the licence, https://creativecommons.org/licenses/by-nc/3.0/ge/, and the
+      six 4.0 International parents carry exactly that pair, legal code plus deed. Added.
+    source: review-finding 1/dct:source
+  - action: added
+    statement: prohibition dalicc:sublicense
+    reason: 'Review decision 1: every Creative Commons record except the CC0 dedication, plus the
+      Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
+      as many words.'
+    source: consolidation-decision 1
+  - action: changed
+    statement: target asset types [dalicc:CreativeWork, dcmitype:Dataset]
+    previous: target asset types [dalicc:CreativeWork]
+    reason: 'The record targeted dalicc:CreativeWork alone, while the 4.0 International parent CC-BY-NC-4.0
+      targets dalicc:CreativeWork and dcmitype:Dataset. This port names a database as licensed subject
+      matter in its own text: clause 1 defines the "Object" as a work of literature, science or art
+      and/or a performance, phonogram, videogram, broadcast and/or a database as protected by the
+      Georgian law on copyright and neighbouring rights, and clause 1 counts the maker of a database
+      among the "Authors". Clause 3 adds that where national law recognises sui generis database rights
+      of the Licensor, the Licensor waives them, and clause 4 exempts parts that are covered only
+      by those rights from the restrictions. Since the text is explicit, dcmitype:Dataset was added
+      here rather than left to the library wide decision that covers the ports whose text says nothing
+      about databases.'
+    source: review-finding 2/odrl:target

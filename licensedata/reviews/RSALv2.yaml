@@ -1,0 +1,115 @@
+id: RSALv2
+title: Redis Source Available License 2.0
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/redis/redis/unstable/LICENSE.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models the Redis Source Available License 2.0. It is built on the same skeleton as the Elastic License
+  2.0 and grants the same acts, with one limitation that goes further: you may not make the functionality available to third
+  parties as a service, and you may not distribute the software in a way that gives them that functionality either. It is
+  not an open source licence. The licence also picks a governing law that depends on where the licensee is.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, record identifier and IRI local name agree. The triple is left out: the SPDX list does not carry
+    this licence and no identifier is invented. cc:legalcode points at the file the publisher ships and dct:source at the
+    same file''s page. dct:publisher is Redis Ltd., which the definition of Licensor names.'
+  action: applied
+- rubric: 1
+  severity: minor
+  field: cc:legalcode
+  description: The file the text comes from holds three licences, this one and then the Server Side Public License and the
+    GNU Affero General Public License, because the project offers a choice between them. Only the first part is modelled
+    here; the other two have their own records.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only. The text defines the Software as components designed to work with the publisher's
+    database.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: '''The Licensor grants You a non-exclusive, royalty-free, worldwide, non-sublicensable, non-transferable
+    license to use, copy, distribute, make available, and prepare derivative works of the Software.'' That gives odrl:reproduce,
+    odrl:distribute, odrl:modify, odrl:derive, cc:DerivativeWorks and dalicc:ModifiedWorks, and the Patents section gives
+    dalicc:patentGrant. cc:CommercialUse is permitted, because the limitation is about offering the software itself to third
+    parties and not about earning money with it.'
+  action: applied
+- rubric: 3
+  severity: minor
+  field: odrl:distribute
+  description: odrl:distribute stays permitted although the limitation also bars distributing 'in a manner that makes the
+    functionality of the Software available to third parties'. The grant names distribution expressly, and the limitation
+    qualifies the manner rather than withdrawing the act, so the act is permitted and the limitation is quoted and named
+    in dalicc:fieldOfUseRestriction. A reader has to weigh the two.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:sublicense for 'non-sublicensable'. dalicc:ChangeLicense for 'The terms and conditions of this Agreement
+    do not imply any Licenses other than those expressly granted in this Agreement', read with the Notices section. dalicc:promote,
+    because no trademark rights are granted and 'Any use of the Licensor's Trademarks is subject to applicable law'. dalicc:patentRetaliationTermination
+    for the written-claim sentence of the Patents section.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Notice and cc:ShareAlike on odrl:distribute for 'You must ensure that anyone who gets a copy of any part
+    of the Software from You also gets a copy of the terms and conditions in this Agreement', and dalicc:modificationNotice
+    added on odrl:modify and odrl:derive for the prominent-notice sentence.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: The No Liability section is one sentence covering warranty and liability, quoted whole into dalicc:WarrantyDisclaimer
+    as in CAL-1.0 and Elastic-2.0. Thirteen further clauses are quoted in dalicc:additionalClauses, including all three
+    governing-law paragraphs.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:governingLaw
+  description: 'dalicc:governingLaw is a single literal naming the three laws the text picks between, because the property
+    takes one short literal and the choice depends on where the licensee is: California for Asia, the Pacific and the Americas,
+    Israel for Israel, England and Wales for Europe, the United Kingdom, the Middle East and Africa. All three paragraphs
+    are quoted. cc:jurisdiction stays dalicc:worldwide, because the grant says worldwide; the governing law is not the territory
+    of the grant. dalicc:terminatesOnBreach is true with a 30 day cure.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:fieldOfUseRestriction
+  description: 'The service bar has no term. dalicc:fieldOfUseRestriction is the nearest literal and the clause is quoted
+    in full. Proposed term: dalicc:competingServiceRestriction, the same term Elastic-2.0 needs, with a note that this text
+    extends it to distribution that has the same effect.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:governingLaw
+  description: 'The governing law depends on the licensee''s location, which the property cannot express: it takes one literal
+    and says nothing about who the licensee is. Proposed term: dalicc:governingLawByLocation, an annotation that pairs a
+    territory of the licensee with the law that then governs. dalicc:governmentRightsLimitation is the only existing property
+    that makes the governing law depend on who the licensee is, and it is about governments, so it is not used here.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run against licensedata/dependencygraph/dg_default.ttl, returned
+    no conflicts.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Against Elastic-2.0 this record differs in three places: it has no licence-key clause, so no gap is recorded
+    for circumventing one; its service bar also reaches distribution; and it carries dalicc:governingLaw, which Elastic-2.0
+    does not. The statement sets are otherwise the same.'
+  action: none
+family: Source-available licences and riders
+port_of: null
+variant_kind: null
+variant_of: null
+notes: The project that publishes this licence offers its code under a choice of three licences, so a repository declaring
+  it may also be usable under the Server Side Public License or the GNU Affero General Public License. That choice is a
+  fact about the project, not about this licence, and is not modelled here.

@@ -1,0 +1,119 @@
+id: BUSL-1.1
+title: Business Source License 1.1
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/BUSL-1.1.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models the Business Source License 1.1 as the template it is. The licence grants copying, modification,
+  derivative works and redistribution but only ''non-production use'', and each licensor fills in a Change Date, a Change
+  License and an Additional Use Grant of its own. This is not an open source licence while the grant is in force: production
+  use needs either an Additional Use Grant or a commercial licence bought from the licensor.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name agree. cc:legalcode points at the publisher's
+    own page for the text and dct:source at the SPDX entry. dct:publisher is MariaDB Corporation Ab, which the text names
+    in its copyright line.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'dcmitype:Software only, following CAL-1.0 and the other software records: the text speaks of the Licensed
+    Work as software distributed in versions.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant is one sentence: ''The Licensor hereby grants you the right to copy, modify, create derivative
+    works, redistribute, and make non-production use of the Licensed Work.'' That gives odrl:reproduce, odrl:modify, odrl:derive,
+    cc:DerivativeWorks, odrl:distribute and dalicc:ModifiedWorks. No display or performance permission: the text does not
+    mention either. No dalicc:patentGrant: the text grants no patent licence.'
+  action: applied
+- rubric: 3
+  severity: minor
+  field: cc:CommercialUse
+  description: cc:CommercialUse is left unstated. The licence draws its line between production and non-production use,
+    not between commercial and non-commercial use, so a commercial licensee may still use the work outside production. The
+    line is carried by dalicc:fieldOfUseRestriction and by the quoted clause 'you must purchase a commercial license from
+    the Licensor, its affiliated entities, or authorized resellers, or you must refrain from using the Licensed Work'.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:ChangeLicense for 'All copies of the original and modified Licensed Work, and derivative works of
+    the Licensed Work, are subject to this License.' dalicc:promote for 'This License does not grant you any right in any
+    trademark or logo of Licensor or its affiliates'.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Notice for 'You must conspicuously display this License on each original or modified copy of the Licensed
+    Work' and cc:ShareAlike for 'All copies of the original and modified Licensed Work, and derivative works of the Licensed
+    Work, are subject to this License.' Both hang on odrl:distribute, odrl:modify and odrl:derive rather than on the licence
+    as a whole, because the sentence binds copies and derivative works of the Licensed Work and reaches nothing else. The
+    licence requires no source publication, so there is no cc:SourceCode duty.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: The disclaimer is quoted verbatim. dalicc:LiabilityLimitation is left out because the text carries no limitation
+    of liability at all, only the warranty disclaimer. Ten further clauses are quoted in dalicc:additionalClauses, including
+    the three Covenants of Licensor that tell a licensor what it may fill in.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:validityType
+  description: 'dalicc:validityType stays dalicc:perpetual and cc:jurisdiction dalicc:worldwide. The Change Date is a fact
+    about a project that uses the template, not about the template: ''Effective on the Change Date, or the fourth anniversary
+    of the first publicly available distribution of a specific version of the Licensed Work under this License, whichever
+    comes first, the Licensor hereby grants you rights under the terms of the Change License, and the rights granted in
+    the paragraph above terminate.'' That clause is quoted instead of being turned into a date. dalicc:terminatesOnBreach
+    is true for ''Any use of the Licensed Work in violation of this License will automatically terminate your rights under
+    this License''; no cure period is offered.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The change date and the change licence have no term. The clause is quoted. Proposed terms: dalicc:changeDate,
+    a date after which the licence becomes another one, and dalicc:changeLicense, an object property naming the record the
+    licence turns into. The template leaves both blank, so a record for a project that uses it would carry the filled-in
+    values.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The Additional Use Grant has no term: ''The Licensor may make an Additional Use Grant, above, permitting
+    limited production use.'' It is the licensor''s own text and differs per project. Quoted. Proposed term: dalicc:additionalUseGrant,
+    a literal holding the extra permission a licensor writes into the template.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:fieldOfUseRestriction
+  description: '''Non-production use'' has no action term. dalicc:fieldOfUseRestriction is the nearest literal and carries
+    it, following C-UDA-1.0, which uses the same property for ''Computational Use''. Proposed term: dalicc:productionUse
+    as a rule action, so that a record can prohibit it outright instead of naming it in a literal.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run against licensedata/dependencygraph/dg_default.ttl, returned
+    no conflicts. cc:ShareAlike hangs on three permissions rather than on the licence as a whole, so the rule about a whole-work
+    share-alike duty beside a relicensing permission does not apply, and dalicc:ChangeLicense is prohibited in any case.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: Its nearest sibling in the library is C-UDA-1.0, which also prohibits dalicc:ChangeLicense, carries cc:ShareAlike
+    as a duty on the acts that pass the work on, and names its restriction in dalicc:fieldOfUseRestriction. The difference
+    is that C-UDA-1.0 permits cc:CommercialUse and this record leaves it unstated, and that this licence changes into another
+    licence on a date the licensor sets.
+  action: none
+family: Source-available licences and riders
+port_of: null
+variant_kind: null
+variant_of: null
+notes: The record models the template. A project that uses the Business Source License fills in the Licensed Work, the Additional
+  Use Grant, the Change Date and the Change License, and the four Covenants of Licensor limit what those fill-ins may say.
+  The covenants are quoted so that a reader can tell a conforming use of the template from a modified one.

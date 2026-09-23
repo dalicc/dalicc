@@ -1,0 +1,109 @@
+id: PolyForm-Noncommercial-1.0.0
+title: PolyForm Noncommercial License 1.0.0
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/PolyForm-Noncommercial-1.0.0.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models the PolyForm Noncommercial License 1.0.0. The grant is wide but reaches only a permitted purpose,
+  and the permitted purposes here are noncommercial ones: personal use, and use by charitable, educational, public research,
+  public safety or health, environmental protection and government organizations. It is not an open source licence, because
+  it bars commercial use.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name agree. cc:legalcode is the URL the licence
+    text gives for itself and dct:source the SPDX entry. dct:publisher is the PolyForm Project, which that URL names.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only. The text defines 'the software' as the software the licensor makes available under
+    the terms.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Three grants together make the permission set: the copyright licence ''to do everything you might do with
+    the software that would otherwise infringe the licensor''s copyright in it for any permitted purpose'', the distribution
+    licence and the changes and new works licence. That gives odrl:reproduce, odrl:display, odrl:present, odrl:distribute,
+    odrl:modify, odrl:derive, cc:DerivativeWorks and dalicc:ModifiedWorks, plus dalicc:patentGrant for the patent licence.'
+  action: applied
+- rubric: 3
+  severity: minor
+  field: dalicc:chargeDistributionFee
+  description: Neither fee permission is stated. The licence says nothing about charging, and charging for a copy would
+    itself be a commercial purpose, which the licence does not permit. Open issue 1 of the review notes says the same question
+    is open in the Creative Commons noncommercial records; the reasoning applies here and the record stays silent rather
+    than guessing.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'cc:CommercialUse is prohibited, because the permitted purposes are exhaustively noncommercial: ''Any noncommercial
+    purpose is a permitted purpose'', followed by the personal-use and noncommercial-organization sections and nothing else.
+    dalicc:patentRetaliationTermination for ''If you make any written claim that the software infringes or contributes to
+    infringement of any patent, your patent license for the software granted under these terms ends immediately.'' dalicc:sublicense
+    and dalicc:ChangeLicense for ''These terms do not allow you to sublicense or transfer any of your licenses to anyone
+    else'', read with the Notices section, which makes the terms travel with every copy. dalicc:promote is absent: the licence
+    has no trademark or endorsement clause at all.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:Notice, cc:Attribution and cc:ShareAlike hang on odrl:distribute, odrl:modify and odrl:derive for the
+    Notices section: ''You must ensure that anyone who gets a copy of any part of the software from you also gets a copy
+    of these terms or the URL for them above, as well as copies of any plain-text lines beginning with `Required Notice:`
+    that the licensor provided with the software.'' The Required Notice line is the attribution, the terms themselves are
+    the notice, and the fact that the recipient gets the same terms is the share-alike.'
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: The No Liability section is one sentence covering warranty and liability, quoted whole into dalicc:WarrantyDisclaimer
+    as in CAL-1.0. Thirteen further clauses are quoted in dalicc:additionalClauses, including all three sections that define
+    what a permitted purpose is.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The published text wraps that sentence in three asterisks on each side, the markup the document uses for
+    emphasis. The asterisks are dropped from the quoted literal; nothing else is changed.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'dalicc:terminatesOnBreach is true and dalicc:curePeriod is ''32 days'', which is the unusual figure the
+    Violations section gives: ''The first time you are notified in writing that you have violated any of these terms ...
+    your licenses can nonetheless continue if you come into full compliance with these terms, and take practical steps to
+    correct past violations, within 32 days of receiving notice.'' The cure is available once only. cc:jurisdiction stays
+    dalicc:worldwide and the text names no governing law.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:fieldOfUseRestriction
+  description: 'The permitted-purpose mechanism has no term. dalicc:fieldOfUseRestriction names the field in a literal,
+    following C-UDA-1.0, and the three sections that define it are quoted. Proposed term: dalicc:permittedPurpose, an annotation
+    that holds the purpose a licence confines the grant to, so that the several PolyForm licences can be compared on the
+    one clause in which they differ.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run against licensedata/dependencygraph/dg_default.ttl, returned
+    no conflicts. cc:CommercialUse is not in the dependency graph, so prohibiting it derives nothing.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: The four PolyForm records in the library share one skeleton and differ only in the permitted-purpose section.
+    This one prohibits cc:CommercialUse; PolyForm-Small-Business-1.0.0 permits it below a size threshold, PolyForm-Shield-1.0.0
+    permits it except against the licensor, and PolyForm-Strict-1.0.0 prohibits it and also withholds distribution and modification.
+  action: none
+family: Source-available licences and riders
+port_of: null
+variant_kind: null
+variant_of: null
+notes: The Required Notice mechanism means a licensor can add attribution lines that are not in the licence text, so a record
+  of a project using this licence may carry attribution wording this record cannot show.

@@ -1,0 +1,40 @@
+id: Cc010Universal
+title: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 clause text and 1 identification detail and recorded
+    the review state.
+  changes:
+  - action: added
+    statement: dalicc:additionalClauses "Public License Fallback. Should any part of the Waiver for
+      any reason be judged legally invalid or ineffective under applicable law, then the Waiver shall
+      be preserved to the maximum extent permitted taking into account Affirmer's express Statement
+      of Purpose. In addition, to the extent the Waiver is so judged Affirmer hereby grants to each
+      affected person a royalty-free, non transferable, non sublicensable, non exclusive, irrevocable
+      and unconditional license to exercise Affirmer's Copyright and Related Rights in the Work (i)
+      in all territories worldwide, (ii) for the maximum duration provided by applicable law or treaty
+      (including future time extensions), (iii) in any current or future medium and for any number
+      of copies, and (iv) for any purpose whatsoever, including without limitation commercial, advertising
+      or promotional purposes (the \"License\")."
+    reason: 'Section 3, the public-licence fallback, was missing from the record although it is the
+      operative clause wherever the waiver fails: it grants a royalty-free, irrevocable, unconditional
+      licence for any purpose whatsoever as a second line of defence. Quoted verbatim into dalicc:additionalClauses.'
+    source: review-finding 6/dalicc:additionalClauses
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: spdx:licenseId "CC0-1.0"
+    reason: The record carried no SPDX identifier. Its cc:legalcode, https://creativecommons.org/publicdomain/zero/1.0/legalcode,
+      is the seeAlso URL of the SPDX entry CC0-1.0, Creative Commons Zero v1.0 Universal. Added.
+    source: review-finding 1/spdx:licenseId

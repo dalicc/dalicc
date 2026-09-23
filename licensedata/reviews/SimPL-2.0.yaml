@@ -1,0 +1,103 @@
+id: SimPL-2.0
+title: Simple Public License 2.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://opensource.org/license/SiMPL-2.0
+text_retrieved: true
+verdict: created
+summary: 'Models the Simple Public License 2.0, a plain-language rendering of GPL 2.0. The record
+  follows GPL-2.0-only: license-wide cc:ShareAlike, source code on distribution, modification
+  notices, and a bar on relicensing. The licence says it should be read as consistent with GPL
+  2.0, and the record models what it says rather than what GPL 2.0 says.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, license id, SPDX id and IRI agree. cc:legalcode keeps the mixed-case
+    spelling SiMPL-2.0 of the OSI URL named in the SPDX seeAlso list, while the id is the SPDX
+    spelling SimPL-2.0. dct:publisher is left out: the text names no steward.'
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'dcmitype:Software only: ''The SimPL applies to the software''s source and object
+    code''.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: '''You get the royalty free right to: Use the software for any purpose; Make derivative
+    works of it (this is called a "Derived Work"); Copy and distribute it and any Derived Work.''
+    The record carries reproduce, distribute, modify, derive, display, present, commercial use,
+    derivative works and modified works; dalicc:chargeDistributionFee follows GPL-2.0-only, whose
+    record carries it for the same plain-language grant.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote for 'comes with any rights that I have in it (other than trademarks)',
+    dalicc:addLimitation for 'without adding further restrictions to the rights provided', and
+    dalicc:ChangeLicense for the share-alike condition.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:ShareAlike is license-wide, matching GPL-2.0-only: the give-back conditions
+    bind whatever you distribute, not only the files you changed. cc:SourceCode, cc:Attribution,
+    cc:Notice and dalicc:addStatement (''Conspicuously announcing that it is available under that
+    license'') hang off distribute, modify and derive; dalicc:modificationNotice is added to modify
+    and derive for ''Prominently noting the date of any changes you make''.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: '''You get NO WARRANTIES. None of any kind;'' is quoted into dalicc:WarrantyDisclaimer
+    and the damages bullet into dalicc:LiabilityLimitation, both with the bullet marker stripped
+    and nothing else changed. The share-alike bullet, the termination bullets and the licence
+    for the licence text are quoted in dalicc:additionalClauses.'
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: '''The SimPL continues perpetually'' is the text''s own word for dalicc:validityType
+    dalicc:perpetual; no legal system is named.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:duty
+  description: 'The share-alike condition accepts ''substantially similar terms (such as GPL 2.0)''.
+    dalicc:shareAlikeVersionQualifier, defined by the 2026-09-15 review and applied to no record,
+    is the term for this; it is not in the predicate order the modelling conventions give, so
+    the clause is quoted instead. Proposed: add dalicc:shareAlikeVersionQualifier "the same licence
+    or substantially similar terms" to this record.'
+  action: proposed
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Automatic termination on breach has no property that a record can carry: dalicc:terminationOnBreach
+    is a policy quality with no predicate. The clause is quoted in dalicc:additionalClauses. Proposed
+    term: dalicc:terminatesOnBreach as a boolean property on odrl:Set, with the cure period as
+    a literal. Text: ''The SimPL continues perpetually, except that your license rights end automatically
+    if: You do not abide by the "give back to the community" terms''.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run with the 39 axioms of licensedata/dependencygraph/dg_default.ttl,
+    returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Deontically almost identical to GPL-2.0-only, which is what the licence intends.
+    It differs by the dalicc:addStatement duty, by the addLimitation prohibition and by the wider
+    share-alike target. A separate record is justified: it is a distinct SPDX entry whose plain
+    wording is what a user of it actually agrees to.'
+  action: none
+family: Reciprocal and source-available
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. The share-alike condition accepts 'substantially similar
+  terms (such as GPL 2.0)', which is wider than the same licence; it is quoted rather than modelled
+  as a relicensing permission, because the model cannot hold a share-alike duty and a ChangeLicense
+  permission at the same time.

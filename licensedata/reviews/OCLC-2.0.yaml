@@ -1,0 +1,113 @@
+id: OCLC-2.0
+title: OCLC Research Public License 2.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'http://www.oclc.org/research/activities/software/license/v2final.htm'
+text_retrieved: true
+verdict: created
+summary: >-
+  The OCLC Research Public License is a reciprocal licence for research code: distribution
+  must be under this licence, at no charge beyond the cost of transferring the files, with the
+  warranty disclaimer prominently displayed and a prescribed notice in every source file. The
+  record carries a licence-wide share-alike duty and five prohibitions. Nothing here is legal
+  advice.
+findings:
+- rubric: 2
+  severity: info
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Software alone, following EclipsePublicLicense10 and EPL-2.0, the two records of
+    this family already in the library. The text licenses a Program, that is software in
+    source code and object code form, so neither dalicc:CreativeWork nor dcmitype:Dataset is
+    written.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 1 grants "a non-exclusive, worldwide, no-charge, transferable license to execute,
+    prepare derivative works of, and distribute (internally and externally), for commercial
+    and noncommercial purposes, the original code contributed by Original Contributor and all
+    Modifications". cc:CommercialUse is therefore expressly permitted.
+    dalicc:chargeDistributionFee is permitted because the licence allows the costs of
+    physically transferring the files to be recovered. The word sublicense appears only in
+    section 4, where You grant rights to OCLC, so dalicc:sublicense is not written as a
+    permission of the licensee.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    Five. dalicc:ChangeLicense, because "The distribution of the Program must be under the
+    terms of this license"; dalicc:chargeLicenseFee, because "The Program must be distributed
+    without charge beyond the costs of physically transferring the files to the recipient";
+    dalicc:addLimitation, because a distribution "must not put any further restrictions on the
+    recipient's exercise of the rights granted herein"; dalicc:promote, because "you may not
+    use any trademark of any of the Contributors without the prior written consent of the
+    relevant Contributor"; and dalicc:patentRetaliationTermination for section 5, which is
+    wider than a patent clause, since it terminates the licence for any action for
+    intellectual property infringement against a Contributor.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    cc:ShareAlike is licence-wide, from section 2. cc:SourceCode hangs on odrl:distribute,
+    from section 3.C: "the source code must be included with the object code distribution or
+    the distributor must provide the source code to the recipient upon request".
+    dalicc:noWarrantyNotice is on odrl:distribute too, because the warranty disclaimer "must
+    be prominently displayed with every distribution of the Program in any form". The
+    prescribed notice of section 3.B and the copyright statement of 3.C give
+    dalicc:addStatement, cc:Notice and cc:Attribution on the three acts. There is no
+    requirement to mark changes, so dalicc:modificationNotice is not written.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The warranty and liability paragraph of section 3.A is split at "IN NO EVENT SHALL" into
+    the two fields. dalicc:additionalClauses carries sections 3.A, 3.B, 3.C, 3.D, the
+    grant-back of section 4, the termination of section 5 and the whole of section 6.
+  action: applied
+- rubric: 7
+  severity: info
+  field: 'cc:jurisdiction'
+  description: >-
+    Section 6 states that the licence "shall be governed by and construed in accordance with
+    the laws of the State of Ohio and the United States of America". As everywhere in this
+    batch, cc:jurisdiction stays dalicc:worldwide and the clause is quoted.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Three gaps, all quoted. Section 4 grants OCLC and other licensees a sublicensable licence
+    over your Modifications; proposed dalicc:contributionGrantBack, the term the EU DataGrid
+    record also needs. Section 6 requires any patent covering the Program to allow free
+    commercial and non-commercial use by any third party; proposed
+    dalicc:patentFreedomCondition. Section 6 also puts export control on the distributor and
+    requires a distributor who learns of a third party claim to redo the Program and inform
+    recipients; no term is proposed for the latter.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty list for this record.
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: >-
+    OCLC-2.0 belongs to no family in this batch. Its licence-wide cc:ShareAlike duty, its
+    no-charge rule and its further-restrictions bar put it next to SimPL-2.0 and the GNU
+    records rather than next to the Common Public License.
+  action: none
+family: 'Eclipse, Common Public and Lucent'
+port_of: null
+variant_kind: null
+notes: >-
+  Modelled from the SPDX plain text of OCLC-2.0 and checked against the OCLC URL in
+  cc:legalcode. The text uses a typographic apostrophe in section 3.A and the quoted clause
+  keeps it.

@@ -1,0 +1,76 @@
+id: BSD-3-Clause-Clear
+title: BSD 3-Clause Clear License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/BSD-3-Clause-Clear.txt
+text_retrieved: true
+verdict: created
+summary: Models the Clear BSD licence, which is the three-clause BSD text with an express refusal of any patent
+  licence. The record follows BSD-3-Clause exactly and adds the patent sentence as a quoted clause. Nothing here
+  is legal advice.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant reads "Redistribution and use in source and binary forms, with or without modification,
+    are permitted (subject to the limitations in the disclaimer below) provided that the following conditions are
+    met". The permission set is that of BSD-3-Clause.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The third condition, "Neither the name of [Owner Organization] nor the names of its contributors
+    may be used to endorse or promote products derived from this software without specific prior written permission",
+    is modelled as a dalicc:promote prohibition. dalicc:ChangeLicense is prohibited as in the rest of the family.
+    (Corrected on 2026-09-15 by the verification pass: see the rubric 3 finding on relicensing below.)'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: The retention conditions are the whole content of the licence. cc:Attribution and cc:Notice hang
+    off odrl:distribute, odrl:modify and odrl:derive, because the text requires the copyright notice, the list of
+    conditions and the disclaimer to travel with every redistributed and every modified copy.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:additionalClauses
+  description: The sentence "NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS LICENSE"
+    is the reason this licence exists. It is an express refusal of a patent licence, not a dalicc:patentGrant prohibition,
+    so it is quoted verbatim in dalicc:additionalClauses together with the parenthesis that makes the grant subject
+    to the limitations in the disclaimer. No dalicc:patentGrant statement is made.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer with the dependency graph dg_default returned an empty
+    conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Follows licensedata/licenses/BSD-3-Clause.ttl. The deontic model is identical; the patent refusal
+    is carried only as quoted text, which is what keeps the two records distinguishable to a reader.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
+    or without modification, are permitted (subject to the limitations in the disclaimer below) provided that the
+    following conditions are met: * Redistributions of source code must retain the above copyright notice, this
+    list of conditions and the following disclaimer." The permission carries the dalicc:compliantLicense duty, as
+    Apache-2.0 does, because the notice has to survive the relicensing.'
+  action: applied
+family: BSD variants
+port_of: null
+variant_kind: null
+notes: cc:legalcode points at the MetaCarta page SPDX names as the origin of the wording; that host may no longer
+  answer, and the SPDX landing page in dct:source is the reliable copy.

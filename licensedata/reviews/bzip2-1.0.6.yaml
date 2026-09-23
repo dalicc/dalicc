@@ -1,0 +1,94 @@
+id: bzip2-1.0.6
+title: bzip2 and libbzip2 License v1.0.6
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/bzip2-1.0.6.txt
+text_retrieved: true
+verdict: created
+summary: Models the licence of bzip2 and libbzip2 as of version 1.0.6. It opens with the BSD redistribution sentence
+  and the BSD source-retention condition, takes its second and third conditions from the zlib licence, and closes
+  with the endorsement bar of the three-clause BSD text.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all bzip2-1.0.6. SPDX deprecated
+    bzip2-1.0.5 and keeps this identifier for the text of version 1.0.6.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software. The text names the program, the library and
+    all documentation.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant reads "Redistribution and use in source and binary forms, with or without modification, are
+    permitted provided that the following conditions are met". The record permits reproduce, distribute, modify, derive,
+    display, present, commercial use, derivative works, modified works and the distribution fee.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'dalicc:ChangeLicense is permitted with the dalicc:compliantLicense duty: the retention condition has
+    to survive a relicensing and nothing bars one.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote is prohibited for condition 4, "The name of the author may not be used to endorse or
+    promote products derived from this software without specific prior written permission".
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Attribution and cc:Notice hang off odrl:distribute, odrl:modify and odrl:derive for condition 1,
+    "Redistributions of source code must retain the above copyright notice, this list of conditions and the following
+    disclaimer". dalicc:modificationNotice and dalicc:rename hang off odrl:modify and odrl:derive for condition 3,
+    "Altered source versions must be plainly marked as such, and must not be misrepresented as being the original
+    software", the pair TheZlibLibpngLicense uses for that sentence.
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: 'Condition 2 asks for no acknowledgment: it says one "would be appreciated but is not required". It
+    adds no duty and is quoted instead.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: 'The single disclaimer paragraph carries two clauses. The record splits it at the sentence boundary:
+    the warranty sentence goes to dalicc:WarrantyDisclaimer and the liability sentence to dalicc:LiabilityLimitation,
+    both verbatim. This follows BSD-1-Clause, which split the same paragraph on 2026-09-15.'
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: info
+  field: dalicc:additionalClauses
+  description: No clause of this text needs a term the vocabulary does not have.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The record stands between licensedata/licenses/BSD-3-Clause.ttl and licensedata/licenses/TheZlibLibpngLicense.ttl:
+    it has the BSD notice and attribution duties and the BSD endorsement bar, and the zlib modification-notice and
+    rename duties. It has no binary-form retention condition, which the three-clause BSD text does have.'
+  action: none
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: cc:legalcode and dct:source both point at the SPDX page. The typewriter quotation marks in the disclaimer (``AS
+  IS'') are the text's own. The line naming the author and the release date is provenance and is not quoted.

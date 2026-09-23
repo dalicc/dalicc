@@ -1,0 +1,62 @@
+id: AttributionNoncommercial30Netherlands
+title: Creative Commons Attribution-NonCommercial 3.0 Netherlands
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, changed
+    1 asset target, recorded the relation to the record this one was adapted from and recorded the
+    review state.
+  changes:
+  - action: added
+    statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-4.0
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:licenseVersion "3.0"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "jurisdiction-port"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dct:source <https://creativecommons.org/licenses/by-nc/3.0/nl/>
+    reason: The record carried cc:legalcode but no dct:source. The legal-code page states the canonical
+      URL of the licence, https://creativecommons.org/licenses/by-nc/3.0/nl/, and the six 4.0 International
+      parents carry exactly that pair, legal code plus deed. Added.
+    source: review-finding 1/dct:source
+  - action: added
+    statement: prohibition dalicc:sublicense
+    reason: 'Review decision 1: every Creative Commons record except the CC0 dedication, plus the
+      Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
+      as many words.'
+    source: consolidation-decision 1
+  - action: changed
+    statement: target asset types [dalicc:CreativeWork, dcmitype:Dataset]
+    previous: target asset types [dalicc:CreativeWork]
+    reason: The record targeted dalicc:CreativeWork only, while the 4.0 International parent CC-BY-NC-4.0
+      targets dalicc:CreativeWork and dcmitype:Dataset. This port licenses database rights in terms.
+      The definition of Werk in article 1 says that for the purposes of the licence the Werk also
+      means the phonogram, the first fixation of a film, the broadcast programme and the databank
+      in the sense of the Databankenwet, insofar as they are protected in the jurisdiction of the
+      user; the definition of Maker includes the producer of a databank; the article 3 grant includes
+      the right to extract and re-use the Werk and waives the licensor own exclusive rights under
+      the national law implementing the European database directive; and article 4 carves the restrictions
+      out of the parts that qualify only under the sui generis database right. Since the text is explicit,
+      dcmitype:Dataset was added, which also brings the record into line with its parent.
+    source: review-finding 2/odrl:target

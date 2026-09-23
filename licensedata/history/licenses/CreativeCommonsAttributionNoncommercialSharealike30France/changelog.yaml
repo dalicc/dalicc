@@ -1,0 +1,69 @@
+id: CreativeCommonsAttributionNoncommercialSharealike30France
+title: Creative Commons Attribution-NonCommercial-ShareAlike 3.0 France
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, changed
+    1 identification detail and 1 asset target, recorded the relation to the record this one was adapted
+    from and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-SA-4.0
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:licenseVersion "3.0"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "jurisdiction-port"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dct:source <https://creativecommons.org/licenses/by-nc-sa/3.0/fr/>
+    reason: The record carried cc:legalcode but no dct:source. The legal-code page states the canonical
+      URL of the licence, https://creativecommons.org/licenses/by-nc-sa/3.0/fr/, and the six 4.0 International
+      parents carry exactly that pair (legal code plus deed). Added.
+    source: review-finding 1/dct:source
+  - action: changed
+    statement: dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 France"@en
+    previous: dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 France "@en
+    reason: The dct:title literal ended in a space, "Creative Commons Attribution-NonCommercial-ShareAlike
+      3.0 France ", which the library list and the search index carry through. The same defect sits
+      on the BY-NC-SA record of every port in this batch. Removed.
+    source: review-finding 1/dct:title
+  - action: added
+    statement: prohibition dalicc:sublicense
+    reason: 'Review decision 1: every Creative Commons record except the CC0 dedication, plus the
+      Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
+      as many words.'
+    source: consolidation-decision 1
+  - action: changed
+    statement: target asset types [dalicc:CreativeWork, dcmitype:Dataset]
+    previous: target asset types [dalicc:CreativeWork]
+    reason: 'The record targeted dalicc:CreativeWork alone, while the 4.0 International parent CC-BY-NC-SA-4.0
+      targets dalicc:CreativeWork and dcmitype:Dataset. This port licenses database rights expressly.
+      Article 3 grants, over and above the copyright acts, the right to "extraire et reutiliser des
+      parties substantielles" when the work is a database protected by the database producer right,
+      the definition of "Oeuvre" covers "une base de donnees dans la mesure ou elle est protegee par
+      le droit d''auteur ou le droit des producteurs de bases de donnees", and the licensor waives
+      its own sui generis right where it holds one: "l''Offrant renonce a ce droit". Article 4(e)
+      adds that article 3 and articles 4(a) and 4(b) do not apply to the part of the work that is
+      covered by the database producer right alone. Because the grant of the database right is explicit
+      in the text, dcmitype:Dataset was added rather than proposed.'
+    source: review-finding 2/odrl:target

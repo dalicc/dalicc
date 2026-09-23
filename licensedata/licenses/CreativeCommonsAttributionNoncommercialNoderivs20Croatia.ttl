@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-NoDerivatives 2.0 Croatia"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-NoDerivatives 2.0 Croatia"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialNoderivs20Croatia
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Croatia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -25,6 +26,12 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Croatia a odrl:Set ;
     dalicc:WarrantyDisclaimer """OSIM AKO STRANKE NISU DRUGAČIJE NAPISMENO UGOVORILE ILI JE ODREĐENO MJERODAVNIM PRAVOM, DAVATELJ LICENCE NUDI DJELO "KAKVO JEST", BEZ JAMSTAVA BILO KOJE VRSTE VEZANIH UZ DJELO.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-ND-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "2.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialNoderivs20Croatia/versions> ;
     dct:alternative "Attribution NonCommercial NoDerivatives 2.0 Croatia",
         "Attribution-NonCommercial-NoDerivatives 2.0 Croatia",
         "Attribution-NonCommercial-NoDerivatives 4.0",
@@ -37,7 +44,10 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Croatia a odrl:Set ;
         "Creative Commons Attribution NonCommercial NoDerivatives 2.0 Croatia",
         "Creative Commons BY-NC-ND 2.0",
         "Creative Commons BY-NC-ND 2.0 HR" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/licenses/by-nc-nd/2.0/hr/> ;
     dct:title "Creative Commons Attribution-NonCommercial-NoDerivatives 2.0 Croatia"@en ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:display ],
@@ -48,19 +58,9 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Croatia a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ] ],
         [ a odrl:Permission ;
-            odrl:action odrl:modify ;
-            odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
-                [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
-                [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
-        [ a odrl:Permission ;
             odrl:action odrl:present ],
         [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
-        [ a odrl:Permission ;
-            odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:prohibition [ a odrl:Prohibition ;
@@ -70,7 +70,9 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Croatia a odrl:Set ;
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/hr.png> ;

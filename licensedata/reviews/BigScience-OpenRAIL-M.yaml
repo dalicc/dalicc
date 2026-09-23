@@ -1,0 +1,183 @@
+id: BigScience-OpenRAIL-M
+title: BigScience Open RAIL-M License
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://scancode-licensedb.aboutcode.org/bigscience-open-rail-m.LICENSE
+text_retrieved: true
+verdict: created
+summary: >-
+  The general responsible-use licence of this family, adapted from the licence written for one
+  model so that it can be applied to any machine-learning model. It grants the copyright and
+  patent rights of a permissive licence and takes back a list of uses in an attachment, which
+  every downstream agreement must carry as an enforceable provision. The record follows the
+  compatibility shape: relicensing is permitted and carries dalicc:compliantLicense, and
+  dalicc:reciprocityScope says how far that reaches.
+findings:
+- rubric: 1
+  severity: info
+  field: 'dct:title'
+  description: >-
+    File name, record identifier and IRI local name agree. The licence has no SPDX identifier,
+    so no spdx:licenseId triple is written. dct:title is the name the document gives itself;
+    the short forms and the model-hub tag are in dct:alternative.
+  action: applied
+- rubric: 2
+  severity: major
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Dataset and dcmitype:Software. The licensed material is the model itself, "any
+    accompanying machine-learning based assemblies (including checkpoints), consisting of
+    learnt weights, parameters (including optimizer states)", which is data, together with the
+    Complementary Material, "the accompanying source code and scripts used to define, run,
+    load, benchmark or evaluate the Model", which is software.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    The copyright grant reads "each Contributor hereby grants to You a perpetual, worldwide,
+    non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce,
+    prepare, publicly display, publicly perform, sublicense, and distribute the Complementary
+    Material, the Model, and Derivatives of the Model." That gives odrl:reproduce,
+    odrl:display, odrl:present, odrl:distribute, dalicc:sublicense, cc:DerivativeWorks and
+    dalicc:ModifiedWorks, and odrl:modify and odrl:derive for the changes the licence calls
+    Derivatives of the Model. dalicc:patentGrant comes from the separate patent licence.
+    cc:CommercialUse is permitted because the licence names no limit of purpose: the licensee
+    is defined as a person "making use of the Model for whichever purpose and in any field of
+    use", and the only limits are the restricted uses of the attachment.
+    dalicc:useForModelTraining is permitted because paragraph 5 says in terms that "Use may
+    include creating any content with, finetuning, updating, running, training, evaluating
+    and/or reparametrizing the Model", and because a model trained from this one by
+    distillation or on synthetic data is a Derivative of the Model, which the grant licenses.
+    dalicc:networkUseTrigger carries the hosting limb of Distribution, "You may host for Third
+    Party remote access purposes (e.g. software-as-a-service), reproduce and distribute copies
+    of the Model or Derivatives of the Model thereof in any medium", and it carries the same
+    notice duties, because the licence treats hosting as a form of it. dalicc:ChangeLicense is
+    permitted and carries dalicc:compliantLicense; see rubric 10.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    Three prohibitions. dalicc:promote from the trademark clause, "Nothing in this License
+    permits You to make use of Licensors' trademarks, trade names, logos or to otherwise
+    suggest endorsement or misrepresent the relationship between the parties; and any rights
+    not expressly granted herein are reserved by the Licensors."
+    dalicc:patentRetaliationTermination from the patent clause, under which patent litigation
+    over the model ends the patent licence. dalicc:exemptedMaterial from the definition that
+    carves the training data out of the grant: "The Data is not licensed under this License."
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Four duties on each of odrl:distribute, odrl:modify and odrl:derive, and three of them
+    again on dalicc:networkUseTrigger. cc:Notice comes from "You must give any Third Party
+    recipients of the Model or Derivatives of the Model a copy of this License";
+    cc:Attribution from "You must retain all copyright, patent, trademark, and attribution
+    notices"; dalicc:modificationNotice from "You must cause any modified files to carry
+    prominent notices stating that You changed the files"; and dalicc:addStatement from the
+    duty to "give notice to subsequent users You Distribute to, that the Model or Derivatives
+    of the Model are subject to paragraph 5". The modification notice does not hang on the
+    hosting trigger, because hosting ships no files.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    The disclaimer clause goes to dalicc:WarrantyDisclaimer, the limitation clause to
+    dalicc:LiabilityLimitation and the clause that lets a redistributor offer and charge for a
+    warranty to dalicc:WarrantyOrLiabilityAcceptance, each whole and verbatim.
+    dalicc:additionalClauses carries the definitions, the sentence that makes the model
+    subject to the conditions of section III, the copyright grant, the patent grant, the
+    distribution conditions, the use-based restrictions clause, the output clause, the runtime
+    clause, the trademark clause, the severability clause and the whole of the attachment.
+    Curly quotation marks in the source are kept; no long dash appears in the text.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    cc:jurisdiction is dalicc:worldwide and dalicc:validityType is dalicc:perpetual, both from
+    the grant, which is "perpetual, worldwide, non-exclusive, no-charge, royalty-free,
+    irrevocable". The licence names no governing law and no court, so dalicc:governingLaw is
+    left out. It has no general termination clause either, so dalicc:terminatesOnBreach is
+    left out: the only ending the text provides is the patent clause, which is modelled as a
+    prohibition.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The condition that carries the restrictions downstream has no term: "Use-based
+    restrictions as referenced in paragraph 5 MUST be included as an enforceable provision by
+    You in any type of legal agreement (e.g. a license) governing the use and/or distribution
+    of the Model or Derivatives of the Model, and You shall give notice to subsequent users
+    You Distribute to, that the Model or Derivatives of the Model are subject to paragraph 5."
+    dalicc:addStatement covers the notice half of it, the duty to tell subsequent users that
+    the model is subject to the restrictions, but not the half that obliges the licensee to
+    write the restrictions into its own agreement as an enforceable provision. Quoted; the
+    proposed term is dalicc:passThroughUseRestrictions, a duty action.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:fieldOfUseRestriction'
+  description: >-
+    The attachment lists thirteen uses the licensee agrees not to make of the model.
+    dalicc:fieldOfUseRestriction takes a short literal naming the field, not a list, so the
+    literal names the field and the whole attachment is quoted verbatim in
+    dalicc:additionalClauses. The proposed term is dalicc:prohibitedUsePolicy, an annotation
+    carrying the list or the policy a licence applies.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The output clause has no term: "Except as set forth herein, Licensor claims no rights in
+    the Output You generate using the Model. You are accountable for the Output you generate
+    and its subsequent uses. No use of the output can contravene any provision as stated in
+    the License." It is neither a permission nor a duty but a statement about what the
+    licensor does not claim, and the composer has nowhere to put it. Quoted; the proposed term
+    is dalicc:outputRightsStatement, an annotation.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The runtime clause reserves a power rather than granting or withholding a right: "To the
+    maximum extent permitted by law, Licensor reserves the right to restrict (remotely or
+    otherwise) usage of the Model in violation of this License, update the Model through
+    electronic means, or modify the Output of the Model based on updates. You shall undertake
+    reasonable efforts to use the latest version of the Model." Quoted; the proposed term is
+    dalicc:runtimeRestrictionReserved, an annotation for a licence whose licensor may switch
+    off a non-compliant use.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer against dg_default returned an empty
+    conflict list. The licence-wide position holds no share-alike duty, so the
+    dalicc:ChangeLicense permission raises no conflict; it carries dalicc:compliantLicense all
+    the same, because the replacement terms must keep the restrictions.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Family: the template of the four texts in this library that share the section layout of
+    the responsible-use family. Its sibling for one named model differs only in the preamble,
+    in the definition of the training data and in two extra items of the attachment; the two
+    image-model texts differ in the preamble, in the copyright line and, in the later one, in
+    a shortened runtime clause. The record is modelled identically to all three, statement for
+    statement.
+  action: none
+family: Model licences
+port_of: null
+variant_kind: null
+variant_of: null
+notes: >-
+  The page the evidence names lists the licences of the family but does not carry the text of
+  this one, so the text was taken from the plain-text copy in the ScanCode license database.
+  cc:legalcode points there and dct:source at the publisher's own page. The document is dated
+  August 18, 2022 and carries no version number, so dalicc:licenseVersion is left out.

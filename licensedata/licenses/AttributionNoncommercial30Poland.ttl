@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial 3.0 Poland"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial 3.0 Poland"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/AttributionNoncommercial30Poland
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:AttributionNoncommercial30Poland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -25,6 +26,12 @@ dalicclib:AttributionNoncommercial30Poland a odrl:Set ;
     dalicc:WarrantyDisclaimer """JEŻELI STRONY NIE POSTANOWIĄ INACZEJ W ODRĘBNYM POROZUMIENIU SPORZĄDZONYM NA PIŚMIE POD RYGOREM NIEWAŻNOŚCI, LICENCJODAWCA UDOSTĘPNIA UTWÓR W TAKIEJ FORMIE W JAKIEJ ZAPOZNAŁ SIĘ Z NIM LICENCJOBIORCA I W NAJDALEJ IDĄCYM STOPNIU NA JAKI POZWALA PRAWO WŁAŚCIWE NIE SKŁADA ŻADNYCH ZAPEWNIEŃ ORAZ NIE UDZIELA ŻADNYCH GWARANCJI A TAKŻE WYŁĄCZA RĘKOJMIĘ, CZY TO WYRAŹNĄ, DOROZUMIANĄ CZY INNĄ, W SZCZEGÓLNOŚCI DOTYCZĄCYCH TYTUŁU, MOŻLIWOŚCI KORZYSTANIA Z UTWORU ZGODNIE Z JEGO PRZEZNACZENIEM, PRZEZNACZENIA UTWORU DO KONKRETNEGO CELU, CO DO TEGO, ŻE NIE NARUSZA ON PRAW INNYCH OSÓB, BRAKU JAWNYCH LUB UKRYTYCH WAD, DOKŁADNOŚCI, WYSTĘPOWANIA LUB NIEWYSTĘPOWANIA WAD WIDOCZNYCH JAK I UKRYTYCH. PRAWO WŁAŚCIWE MOŻE NIE ZEZWALAĆ NA NIEKTÓRE SPOŚRÓD POWYŻSZYCH WYŁĄCZEŃ, WIĘC MOGĄ ONE NIE MIEĆ ZASTOSOWANIA.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "3.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/AttributionNoncommercial30Poland/versions> ;
     dct:alternative "Attribution NonCommercial 3.0 Poland",
         "Attribution-NonCommercial 3.0",
         "Attribution-NonCommercial 3.0 Poland",
@@ -36,7 +43,10 @@ dalicclib:AttributionNoncommercial30Poland a odrl:Set ;
         "CC-BY-NC 3.0 PL",
         "Creative Commons BY-NC 3.0",
         "Creative Commons BY-NC 3.0 PL" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/licenses/by-nc/3.0/pl/> ;
     dct:title "Creative Commons Attribution-NonCommercial 3.0 Poland"@en ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:display ],
@@ -77,8 +87,11 @@ dalicclib:AttributionNoncommercial30Poland a odrl:Set ;
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
-            dct:type dalicc:CreativeWork ] ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset ] ;
     foaf:img <https://creativecommons.org/images/international/pl.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc/3.0/pl/88x31.png> .

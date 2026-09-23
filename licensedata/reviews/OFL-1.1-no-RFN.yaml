@@ -1,0 +1,116 @@
+id: OFL-1.1-no-RFN
+title: SIL Open Font License 1.1 with no Reserved Font Name
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'http://scripts.sil.org/cms/scripts/page.php?item_id=OFL_web'
+text_retrieved: true
+verdict: created
+summary: >-
+  The SIL Open Font License 1.1 as used by a font whose copyright statement declares no
+  Reserved Font Name, so that condition 3 has nothing to bite on and a modified version may
+  keep the original name. The licence text is that of OFL-1.1 and the record differs from the
+  OFL-1.1 record only in the missing rename duty. Nothing here is legal advice.
+findings:
+- rubric: 2
+  severity: info
+  field: 'odrl:target'
+  description: >-
+    A font is a computer program and a work of design at once, so the record carries
+    dalicc:CreativeWork and dcmitype:Software, the pair the batch uses for all four font
+    records. The licence itself speaks of "Font Software" and defines it as "the set of files
+    released by the Copyright Holder(s) under this license", which may include "source files,
+    build scripts and documentation".
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    The grant reads: "Permission is hereby granted, free of charge, to any person obtaining a
+    copy of the Font Software, to use, study, copy, merge, embed, modify, redistribute, and
+    sell modified and unmodified copies of the Font Software, subject to the following
+    conditions." That is the permissive base set, including cc:CommercialUse and
+    dalicc:chargeDistributionFee. The licence says nothing about patents or sublicensing, so
+    neither is written.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    Three. dalicc:sellCopy, because condition 1 says "Neither the Font Software nor any of its
+    individual components, in Original or Modified Versions, may be sold by itself"; this is a
+    restriction on how a copy may be sold, not a ban on commercial use, which condition 2
+    expressly allows when the font is bundled with software. dalicc:promote, from condition 4,
+    which bars the use of the names of the Copyright Holders or Authors to promote, endorse or
+    advertise a Modified Version. dalicc:ChangeLicense, from condition 5: the Font Software
+    "must not be distributed under any other license".
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Condition 5 requires the Font Software, modified or unmodified, to be "distributed
+    entirely under this license", which is cc:ShareAlike. Condition 2 requires each copy to
+    contain "the above copyright notice and this license", which is cc:Attribution and
+    cc:Notice. The duties hang on odrl:distribute, odrl:modify and odrl:derive rather than on
+    the licence, because the last sentence of condition 5 takes documents made with the font
+    out of the reciprocity: "The requirement for fonts to remain under this license does not
+    apply to any document created using the Font Software."
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'dalicc:rename'
+  description: >-
+    Condition 3 is quoted in dalicc:additionalClauses but no dalicc:rename duty is written:
+    this id is the case the SPDX list calls "with no Reserved Font Name", where the copyright
+    statement declares none, so the condition, which reads "No Modified Version of the Font
+    Software may use the Reserved Font Name(s)", has no name to protect. That missing duty is
+    the whole difference between this record and OFL-1.1-RFN.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The disclaimer is split at "IN NO EVENT SHALL" into dalicc:WarrantyDisclaimer and
+    dalicc:LiabilityLimitation. dalicc:additionalClauses carries all five conditions and the
+    termination sentence, so that a reader can see the wording the duties were read from.
+  action: applied
+- rubric: 7
+  severity: info
+  field: 'cc:jurisdiction'
+  description: >-
+    The licence names no governing law and no term, so cc:jurisdiction is dalicc:worldwide and
+    dalicc:validityType is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Two gaps. The termination sentence, "This license becomes null and void if any of the
+    above conditions are not met", has no property; proposed dalicc:terminatesOnBreach. The
+    reserved font name is a named string that the copyright statement declares, and
+    dalicc:rename cannot carry which name is reserved; proposed dalicc:reservedName as a
+    literal qualifier on the rename duty.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty list for this record.
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: >-
+    The text of OFL-1.1-no-RFN is the text of OFL-1.1. This record is the one of the three
+    without the dalicc:rename duty, which makes it the most permissive of them for anyone
+    building a modified font.
+  action: none
+family: Fonts and documentation
+port_of: null
+variant_kind: edition
+notes: >-
+  Modelled from the SPDX plain text and checked against the SIL URL in cc:legalcode. The
+  definition of "Modified Version" in the source text uses two em dashes; the sentence is not
+  quoted in this record, and no quoted clause carries a long dash. The SPDX text of this id is
+  identical to the text of OFL-1.1.

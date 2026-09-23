@@ -1,0 +1,92 @@
+id: zlib-acknowledgement
+title: zlib/libpng License with Acknowledgement
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/zlib-acknowledgement.txt
+text_retrieved: true
+verdict: created
+summary: 'Models the zlib text as the NUnit authors published it, with one word changed that changes the licence:
+  the acknowledgment in the product documentation is required rather than appreciated. The record is TheZlibLibpngLicense
+  plus a cc:Attribution and a dalicc:addStatement duty, and the prescribed acknowledgement wording is quoted.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all zlib-acknowledgement.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following TheZlibLibpngLicense.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant reads "Permission is granted to anyone to use this software for any purpose, including commercial
+    applications, and to alter it and redistribute it freely, subject to the following restrictions". The record permits
+    reproduce, distribute, modify, derive, display, present, commercial use, derivative works, modified works and
+    the distribution fee.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'dalicc:ChangeLicense is permitted with the dalicc:compliantLicense duty: the notice and the acknowledgement
+    have to survive a relicensing, and nothing bars one.'
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: No prohibitions. The text has no endorsement or trademark clause, as the zlib text has none.
+  action: none
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Attribution and dalicc:addStatement hang off odrl:distribute, odrl:modify and odrl:derive for restriction
+    1, "If you use this software in a product, an acknowledgment (see the following) in the product documentation
+    is required". cc:Attribution carries the credit and dalicc:addStatement carries the prescribed wording that has
+    to be attached; the wording itself is quoted in dalicc:additionalClauses.
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: cc:Notice hangs off the same three acts for restriction 3, "This notice may not be removed or altered
+    from any source distribution", and dalicc:modificationNotice and dalicc:rename off odrl:modify and odrl:derive
+    for restriction 2.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The opening paragraph carries the warranty sentence and the liability sentence and is split into the
+    two predicates, as on TheZlibLibpngLicense, which keeps the same two sentences.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: info
+  field: dalicc:additionalClauses
+  description: No clause of this text needs a term the vocabulary does not have. The prescribed acknowledgement is
+    quoted as a literal of its own so that a reader sees the exact wording the duty asks for.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Read against licensedata/licenses/TheZlibLibpngLicense.ttl the record adds two duties, cc:Attribution
+    and dalicc:addStatement, and nothing else. That is the whole difference between the two licences: the zlib text
+    says an acknowledgment "would be appreciated but is not required" and this one says it is required.'
+  action: none
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: cc:legalcode and dct:source both point at the SPDX page. The prescribed acknowledgement names the NUnit copyright
+  holders, because the SPDX text is the one that project published.

@@ -1,0 +1,112 @@
+id: SSH-OpenSSH
+title: SSH OpenSSH license
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/SSH-OpenSSH.txt
+text_retrieved: true
+verdict: created
+summary: Models the notice that governs the original ssh code inside OpenSSH. The whole grant is one sentence, "the
+  code I have written for this software can be used freely for any purpose", and the only condition is that a derived
+  version be marked as such and renamed if it departs from the protocol description in the RFC file. There is no clause
+  asking for the copyright notice to be kept.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all SSH-OpenSSH.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software. The text governs a program.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant reads "As far as I am concerned, the code I have written for this software can be used freely
+    for any purpose". The record permits reproduce, distribute, modify, derive, display, present, commercial use,
+    derivative works, modified works and the distribution fee; "for any purpose" carries commercial use.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'dalicc:ChangeLicense is permitted with the dalicc:compliantLicense duty: the marking condition on
+    a derived version has to survive a relicensing, and nothing bars one.'
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: No prohibitions. The text has no endorsement or trademark clause. The rule about the names "ssh" and
+    "Secure Shell" is a condition on a derived work that departs from the RFC, which the duties carry, and not a bar
+    on using a name.
+  action: none
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: dalicc:modificationNotice hangs off odrl:modify and odrl:derive for "Any derived versions of this software
+    must be clearly marked as such".
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'dalicc:standardsConformance hangs off odrl:modify and odrl:derive for "if the derived work is incompatible
+    with the protocol description in the RFC file, it must be called by a name other than "ssh" or "Secure Shell"".
+    The term is exactly this shape: a modification that stays with the named external standard carries no further
+    duty, and one that departs from it does. dalicc:rename is not used on its own, because the renaming is conditional
+    and an unconditional duty would overstate the text. SISSL is the other record in the library that uses the term.'
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: No cc:Notice and no cc:Attribution. The text asks nowhere that the copyright notice travel with a copy,
+    which sets it apart from every other record in this set.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The NO WARRANTY section is the two-paragraph disclaimer of the GNU General Public License. The first
+    paragraph goes to dalicc:WarrantyDisclaimer and the second to dalicc:LiabilityLimitation, verbatim. The quoted
+    clauses come from a text that wraps lines and uses two spaces after a full stop. Line breaks and repeated spaces
+    are collapsed to a single space, which is how every other record in the library quotes a multi-line clause. No
+    word and no punctuation mark is changed.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: The SPDX text carries editorial notes in square brackets, added by the OpenSSH maintainers to say which
+    of the restrictively licensed components have since been removed. They are not licence terms and are neither modelled
+    nor quoted.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The author writes that he makes no claim whether possessing or using the program is legal in the reader's
+    country. That is a disclaimer, not a territorial limit, so cc:jurisdiction stays dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: info
+  field: dalicc:additionalClauses
+  description: No clause of this text needs a term the vocabulary does not have. The sentence about patents and copyrights
+    held by third parties is quoted, because it qualifies the scope of the grant without carving named material out
+    of it.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Read against the other records in this set, this is the only one with no notice duty at all, and the
+    only one whose rename condition depends on conformity with an external standard. Family rule 7 asks after a record
+    with neither a prohibition nor a duty; this record has two duties, so it is not one of those.
+  action: none
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: cc:legalcode and dct:source both point at the SPDX page, which is where this compilation of the original notice
+  and the maintainers' remarks is served.

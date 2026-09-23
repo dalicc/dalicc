@@ -1,0 +1,57 @@
+id: CC-BY-NC-SA-4.0
+title: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail, 1 permission and 1 prohibition,
+    changed 1 identification detail and 1 asset target and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: changed
+    statement: dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"@en
+    previous: dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International "@en
+    reason: The title literal ended with a trailing blank, "Creative Commons Attribution-NonCommercial-ShareAlike
+      4.0 International ". Removed. Thirty six further records of the library, all of them NonCommercial-ShareAlike
+      ports in other batches, carry the same defect and need the same sweep.
+    source: review-finding 1/dct:title
+  - action: added
+    statement: permission dalicc:chargeDistributionFee
+    reason: 'dalicc:chargeDistributionFee was missing, although the other four 4.0 records and all
+      287 Creative Commons ports of the library carry it, and nothing in this licence limits what
+      the licensee may charge: Section 2(a)(1) grants the rights royalty-free and the NonCommercial
+      definition only excludes uses primarily intended for commercial advantage or monetary compensation,
+      which is the same test that the BY-NC and BY-NC-ND records of this set already model alongside
+      the same permission. Section 4 of the legal code, the sui generis database rights section, says
+      nothing about fees either. Added, so that the six records of the 4.0 set model the fee question
+      identically. This was flagged before the review in review_duplicates.md section 6.'
+    source: review-finding 3/odrl:permission
+  - action: added
+    statement: prohibition dalicc:sublicense
+    reason: 'Review decision 1: every Creative Commons record except the CC0 dedication, plus the
+      Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
+      as many words.'
+    source: consolidation-decision 1
+  - action: changed
+    statement: target asset types [dalicc:CreativeWork, dcmitype:Dataset]
+    previous: target (untyped)
+    reason: The record carried an empty odrl:target [ ] with neither rdf:type nor dct:type, the only
+      one in the library, so the licence never matched an asset-type facet in POST /licenselibrary/facetedsearch
+      and was invisible in any asset-type filtered result. Filled in with the asset collection its
+      five siblings carry. The defect is listed in docs/DATA.md section 7.
+    source: review-finding 2/odrl:target
+  - action: added
+    statement: spdx:licenseId "CC-BY-NC-SA-4.0"
+    reason: The record carried no SPDX identifier although its own DALICC identifier is the SPDX list
+      identifier CC-BY-NC-SA-4.0, whose SPDX seeAlso URL is the cc:legalcode of this record. Added.
+    source: review-finding 1/spdx:licenseId

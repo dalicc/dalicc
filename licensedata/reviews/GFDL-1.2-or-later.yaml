@@ -1,0 +1,122 @@
+id: GFDL-1.2-or-later
+title: GNU Free Documentation License v1.2 or later
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/GFDL-1.2-or-later.txt
+text_retrieved: true
+verdict: created
+summary: >-
+  The record models the or-later reading of version 1.2 of the GNU Free Documentation
+  License. The legal text is the same document as GFDL-1.2-only, so the record copies that
+  record statement for statement and changes the identifier, the SPDX identifier, the title,
+  the alternative names and dalicc:orLaterVersionOption, which is true here.
+  dalicc:variantKind "version-option" and dalicc:variantOf point back at GFDL-1.2-only. Read
+  the review of GFDL-1.2-only for what every statement is based on.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: >-
+    File name, identifier, SPDX identifier and the local name of the IRI are the same string,
+    GFDL-1.2-or-later. SPDX gives the or-later reading an identifier of its own, which is why
+    it is a record of its own.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: >-
+    The odrl:target of GFDL-1.2-only is copied unchanged: one odrl:AssetCollection of
+    dct:type dalicc:CreativeWork and dcmitype:Software.
+  action: applied
+- rubric: 3
+  severity: major
+  field: dalicc:orLaterVersionOption
+  description: >-
+    Section 10 states: "If the Document specifies that a particular numbered version of this
+    License "or any later version" applies to it, you have the option of following the terms
+    and conditions either of that specified version or of any later version that has been
+    published (not as a draft) by the Free Software Foundation." That sentence is the whole
+    difference between this record and GFDL-1.2-only. The clause is quoted in
+    dalicc:additionalClauses because the base record quotes it there.
+  action: applied
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: >-
+    Every permission of GFDL-1.2-only is copied with the same duties in the same places:
+    dalicc:chargeDistributionFee, odrl:reproduce, odrl:distribute, odrl:display, odrl:present,
+    odrl:modify, dalicc:ModifiedWorks, odrl:derive, cc:DerivativeWorks and cc:CommercialUse.
+  action: applied
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: >-
+    The four prohibitions of GFDL-1.2-only are copied: dalicc:ChangeLicense,
+    dalicc:applyTechnicalProtectionMeasures, dalicc:promote and dalicc:sublicense.
+  action: applied
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: >-
+    The license-wide cc:ShareAlike duty is copied, as are cc:Attribution, cc:Notice and
+    cc:SourceCode on distribute, modify and derive and dalicc:modificationNotice and
+    dalicc:rename on modify and derive.
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: >-
+    The Warranty Disclaimers paragraph of section 1 is copied verbatim from GFDL-1.2-only, and
+    so are the ten quoted clauses. Version 1.2 gives no limitation of liability, so
+    dalicc:LiabilityLimitation is absent here as well.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: >-
+    cc:jurisdiction dalicc:worldwide, dalicc:validityType dalicc:perpetual,
+    dalicc:terminatesOnBreach true and dalicc:sublicenseSurvival true are copied from the base
+    record. cc:legalcode and dct:source point at the same text as the base record, because the
+    text is the same document.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:variantOf
+  description: >-
+    dalicc:variantOf is not defined in the vocabulary yet, so the validator reports it as an
+    undefined DALICC term, and the value "version-option" is not in the list of variant kinds
+    the vocabulary comment gives. Both are needed for a record that keeps the text of another
+    record and changes what that text grants or requires.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: >-
+    The vocabulary gaps of the base record are inherited: the Invariant Sections, the Cover
+    Texts, the Transparent copy, the History section and the preservation of Warranty
+    Disclaimers have no term. Proposed terms dalicc:invariantSections, dalicc:coverTexts,
+    dalicc:transparentCopy and dalicc:historySection, with the clauses quoted.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty conflict list, the same result as for GFDL-1.2-only.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Against GFDL-1.2-only the record differs in the identifier, the SPDX identifier, the
+    title, the four alternative names, dalicc:orLaterVersionOption, dalicc:variantKind and the
+    new dalicc:variantOf relation, and in nothing else.
+  action: applied
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: version-option
+variant_of: GFDL-1.2-only
+notes: >-
+  The SPDX text for GFDL-1.2-or-later is byte for byte the text for GFDL-1.2-only; both files
+  have the same checksum. The or-later identifier says how a document uses the license, not
+  what the license says.

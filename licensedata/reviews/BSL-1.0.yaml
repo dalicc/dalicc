@@ -1,0 +1,69 @@
+id: BSL-1.0
+title: Boost Software License 1.0
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/BSL-1.0.txt
+text_retrieved: true
+verdict: corrected
+summary: 'The Boost license grants use, reproduction, display, distribution, execution, transmission and
+  derivative works, and lets the licensee pass those rights on to third parties, subject to one condition:
+  the notice must travel with every copy except machine-executable object code. The record said the opposite
+  of the text on passing rights on, and used cc:ShareAlike as a permission. Both were corrected.'
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:prohibition
+  description: The grant runs "to use, reproduce, display, distribute, execute, and transmit the Software,
+    and to prepare derivative works of the Software, and to permit third-parties to whom the Software
+    is furnished to do so". The record prohibited odrl:grantUse, the exact opposite. Removed the prohibition
+    and added the permission.
+  action: applied
+  change: "# removed\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action odrl:grantUse ] ;\n\
+    # added\nodrl:permission [ a odrl:Permission ;\n        odrl:action odrl:grantUse ] ;\n"
+- rubric: 5
+  severity: major
+  field: odrl:permission
+  description: 'cc:ShareAlike was modelled as a permission carrying a cc:Notice duty. cc:ShareAlike is
+    a duty term: as a permission it means nothing the general grant does not already say, and the dependency
+    graph treats an asserted share-alike as contradicting odrl:grantUse, which is why the record had to
+    prohibit sublicensing to stay consistent. The Boost license imposes no share-alike. Removed. Flagged
+    as rule 5b in family_rules_baseline.md.'
+  action: applied
+  change: "# removed\nodrl:permission [ a odrl:Permission ;\n        odrl:action cc:ShareAlike ;\n   \
+    \     odrl:duty [ a odrl:Duty ;\n                odrl:action cc:Notice ] ] ;\n"
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: 'The notice condition has an exception the model cannot show: it does not apply "unless
+    such copies or derivative works are solely in the form of machine-executable object code generated
+    by a source language processor". The cc:Notice duty on distribute is therefore stricter than the text
+    for binary-only distribution.'
+  action: none
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:addStatement and dalicc:promote remain prohibited with no support in the text. Library-wide
+    default, left alone.
+  action: proposed
+  change: '# remove both prohibitions
+
+    '
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'The object-code exception to the notice duty cannot be expressed. Proposed term: dalicc:sourceFormOnlyCondition,
+    or a scope qualifier on the duty node.'
+  action: none
+- rubric: 10
+  severity: minor
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9 and 10: the record was corrected against
+    its new siblings and versioned. Family rules 10 and 14 of scripts/review/family_rules.py: the disclaimer
+    paragraph held the liability sentence, which begins ''IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE
+    DISTRIBUTING THE SOFTWARE BE LIABLE'', and dct:publisher and cc:attributionName were the placeholder
+    ''- not specified - ''.'
+  action: applied
+family: MIT, ISC, Zlib, Boost, UPL, WTFPL (permissive, short)
+port_of: null
+variant_kind: null
+notes: One of the three share-alike misuses flagged in family_rules_baseline.md rule 5b.

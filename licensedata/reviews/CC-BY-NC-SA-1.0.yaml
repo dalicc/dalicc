@@ -1,0 +1,164 @@
+id: CC-BY-NC-SA-1.0
+title: Creative Commons Attribution-NonCommercial-ShareAlike 1.0 Generic
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/CC-BY-NC-SA-1.0.txt
+text_retrieved: true
+verdict: created
+summary: The record models the BY-NC-SA element set of the Creative Commons 1.0 generic legal code,
+  the text the library's 1.0 jurisdiction ports were adapted from. The deontic model is the one the
+  4.0 record of the same element set and all of its ports use, so a compatibility answer for this record
+  matches theirs; what the text adds over 4.0, and what it lacks, is quoted in dalicc:additionalClauses
+  and set out in the findings. Nothing here is legal advice.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: The file name, the local name of the odrl:Set IRI, the SPDX identifier and the id of
+    this review record are all CC-BY-NC-SA-1.0. The text modelled is the plain text the SPDX license
+    list publishes for that identifier. cc:legalcode points at the legal code page of the licence and
+    dct:source at its deed, which is the pair every Creative Commons record in the library carries.
+  action: applied
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: odrl:target carries dalicc:CreativeWork only. The 1.0 text defines the Work as "the copyrightable
+    work of authorship offered under the terms of this License" and names neither data nor a database
+    right, so dcmitype:Dataset is left off. The 4.0 record of this element set carries it because the
+    4.0 text has a sui generis database rights section; the 2.0 ports in the library carry only dalicc:CreativeWork,
+    which is the same reading.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 3 grants "to reproduce the Work, to incorporate the Work into one or more Collective
+    Works, and to reproduce the Work as incorporated in the Collective Works" and "to distribute copies
+    or phonorecords of, display publicly, perform publicly, and perform publicly by means of a digital
+    audio transmission the Work including as incorporated in Collective Works", which are odrl:reproduce,
+    odrl:distribute, odrl:display and odrl:present. It also grants "to create and reproduce Derivative
+    Works", which is odrl:modify, odrl:derive, cc:DerivativeWorks and dalicc:ModifiedWorks. cc:CommercialUse
+    is not permitted, because the NonCommercial element bars it; see the prohibitions. dalicc:chargeDistributionFee
+    is permitted: the licence says nothing about a fee for handing a copy over, and every Creative Commons
+    record in the library reads that silence the same way.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:sublicense, from "You may not sublicense the Work.", which this text states in
+    as many words; this is consolidation decision 1 of the 2026-09-15 review and the validator enforces
+    it. dalicc:ChangeLicense, from "You may distribute, publicly display, publicly perform, or publicly
+    digitally perform the Work only under the terms of this License". dalicc:promote. The 1.0 text carries
+    no endorsement clause in its body. The bar rests on the Creative Commons trademark notice printed
+    with the licence, which says that apart from indicating to the public that the Work is licensed
+    under the CCPL, neither party will use the Creative Commons trademark or logo without the prior
+    written consent of Creative Commons. That is the reading the 2.0 jurisdiction ports in the library
+    take, and it is weaker than the 3.0 one, which states the endorsement bar in the licence body. cc:CommercialUse
+    is prohibited, from "You may not exercise any of the rights granted to You in Section 3 above in
+    any manner that is primarily intended for or directed toward commercial advantage or private monetary
+    compensation."
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Notice and cc:Attribution hang on odrl:distribute, from "You must include a copy of,
+    or the Uniform Resource Identifier for, this License with every copy or phonorecord of the Work
+    You distribute, publicly display, publicly perform, or publicly digitally perform" and "You must
+    keep intact all copyright notices for the Work and give the Original Author credit reasonable to
+    the medium or means You are utilizing". The same two, plus dalicc:modificationNotice, hang on odrl:modify
+    and odrl:derive. dalicc:modificationNotice rests on "in the case of a Derivative Work, a credit
+    identifying the use of the Work in the Derivative Work". cc:ShareAlike is a licence-wide duty, as
+    on the 4.0 record of this element set. dalicc:reciprocityScope says how far it reaches, because
+    the licence puts the condition on the Derivative Work and expressly leaves the Collective Work out
+    of it, and dalicc:shareAlikeVersionQualifier names the licences the condition accepts. Both literals
+    are a first in the library; no record used either term before. The duties hang on the acts that
+    share the work with the public rather than on the licence as a whole, which is how the whole Creative
+    Commons family is modelled.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: 'dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation are quoted verbatim and each
+    holds its own clause: the disclaimer is Section 5 and the limitation is Section 6, and the wording
+    of both moves a little from version to version, so neither is copied from the 4.0 record. dalicc:additionalClauses
+    carries the clauses the ODRL policy cannot express, in the order the licence states them. They are
+    the share-alike clause, the non-commercial test with its file-sharing proviso, the representations
+    and warranties the licensor gives, the termination clause, the direct licence every recipient receives
+    from the licensor. The 4.0 records and the 287 jurisdiction ports carry no dalicc:additionalClauses
+    at all, so this record shows more of its text than its siblings do.'
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is dalicc:worldwide. This is the generic text, not a jurisdiction port:
+    it names no country and no governing law, and the grant itself is "worldwide, royalty-free, non-exclusive,
+    perpetual (for the duration of the applicable copyright)", so dalicc:validityType is dalicc:perpetual.
+    dalicc:terminatesOnBreach is true, from "This License and the rights granted hereunder will terminate
+    automatically upon any breach by You of the terms of this License." There is no cure period and
+    no reinstatement, which is where this text differs from 4.0; dalicc:curePeriod is therefore absent.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The licence makes the licensee take the credit down again on request: "If You create
+    a Collective Work, upon notice from any Licensor You must, to the extent practicable, remove from
+    the Collective Work any reference to such Licensor or the Original Author, as requested". No vocabulary
+    term can say that. Proposed term: dalicc:creditRemovalOnRequest, a duty action on the acts that
+    carry cc:Attribution. The clause is quoted instead.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:WarrantyOrLiabilityAcceptance
+  description: 'The 1.0 text is the only one in this line where the licensor gives a warranty rather
+    than disclaiming one: "By offering the Work for public release under this License, Licensor represents
+    and warrants that, to the best of Licensor''s knowledge after reasonable inquiry" that it has secured
+    the rights and that the Work infringes nothing. dalicc:WarrantyOrLiabilityAcceptance is the wrong
+    property, because it is about a warranty the licensee may accept, not one the licensor gives. Proposed
+    term: dalicc:licensorWarranty. The clause is quoted in dalicc:additionalClauses instead.'
+  action: none
+- rubric: 8
+  severity: info
+  field: odrl:prohibition
+  description: 'Three clauses of this text have a vocabulary term that no Creative Commons record uses:
+    the technological measures bar (dalicc:applyTechnicalProtectionMeasures, used on two records in
+    the library), the bar on offering or imposing further terms (dalicc:addLimitation) and the direct
+    licence the recipient receives (dalicc:downstreamOffer, used nowhere). Adding them to the records
+    of this set alone would split the compatibility behaviour of a family of 305 records, so they are
+    quoted or left to the prohibition of dalicc:ChangeLicense, and proposed as one library-wide change.
+    The royalty clause is different: dalicc:royaltyCollectionReserved carries it on the NonCommercial
+    records of versions 2.0, 2.5 and 3.0, whose texts reserve, and on none of the 1.0 records, whose
+    texts have no royalty clause. dalicc:moralRightsRestriction is stated on the 3.0 records only,
+    because the honour and reputation clause arrived with that version.'
+  action: proposed
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the axioms of licensedata/dependencygraph/dg_default.ttl
+    returns an empty list for this record.
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: 'The nearest sibling is CC-BY-NC-SA-4.0, the 4.0 International record of the same element
+    set, and the deontic model here is identical to it, statement for statement, as it is on every jurisdiction
+    port of this element set. What differs: the 1.0 text has no database clause, no cure period and
+    no automatic reinstatement after a breach, and its asset types are narrower; the share-alike condition
+    names the licences it accepts, which 4.0 states differently. dalicc:variantKind is "version" and
+    dalicc:licenseVersion is "1.0", the two predicates the library already uses to say that a record
+    models an earlier text of a licence it also holds. There is no dalicc:jurisdictionPortOf and no
+    country: this is the generic original the ports were adapted from, not a port.'
+  action: none
+- rubric: 10
+  severity: minor
+  field: dalicc:additionalClauses
+  description: The six records of this version quote the same passages of the version's text, each
+    literal a single verbatim run of this record's own legal code, in the order the text states them.
+    A passage the element set does not have is absent, which is a difference between the texts and
+    not between two readings.
+  action: applied
+family: Creative Commons 1.0 Generic
+port_of: null
+variant_kind: version
+variant_of: null
+notes: Modelled from the SPDX plain text of CC-BY-NC-SA-1.0, checked sentence by sentence against the
+  legal code at https://creativecommons.org/licenses/by-nc-sa/1.0/legalcode. Every quoted clause was
+  verified to occur in that text. No quoted clause carries a long dash.

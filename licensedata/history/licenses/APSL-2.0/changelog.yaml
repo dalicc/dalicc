@@ -1,0 +1,116 @@
+id: APSL-2.0
+title: Apple Public Source License 2.0
+current_version: 4
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 removed 1 prohibition and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: removed
+    statement: prohibition cc:ShareAlike
+    reason: 'Section 2.2(c) states: "Source Code of Your Externally Deployed Modifications must be
+      released under the terms set forth in this License". The record prohibited cc:ShareAlike. Removed.'
+    source: review-finding 5/odrl:prohibition
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 5 finding 7: the record made no patent statement although section 2 grants one and
+    12.1(c) is a retaliation clause, it prohibited dalicc:addStatement without support, it modelled
+    no reciprocity although 2.2(c) requires the Source Code of Externally Deployed Modifications to
+    be ''released under the terms set forth in this License'', and dalicc:WarrantyDisclaimer held
+    section 9, the limitation of liability, while section 8, the disclaimer of warranty, was absent.'
+  changes:
+  - action: added
+    statement: 'dalicc:LiabilityLimitation "TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT SHALL
+      APPLE OR ANY CONTRIBUTOR BE LIABLE FOR ANY INCIDENTAL, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES
+      ARISING OUT OF OR RELATING TO THIS LICENSE OR YOUR USE OR INABILITY TO USE THE COVERED CODE,
+      OR ANY PORTION THEREOF, WHETHER UNDER A THEORY OF CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE),
+      PRODUCTS LIABILITY OR OTHERWISE, EVEN IF
+
+      APPLE OR SUCH CONTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND NOTWITHSTANDING
+      THE FAILURE OF ESSENTIAL PURPOSE OF ANY REMEDY. SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION
+      OF LIABILITY OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS LIMITATION MAY NOT APPLY TO YOU.
+      In no event shall Apple''s total liability to You for all damages (other than as may be required
+      by applicable law) under this License exceed the amount of fifty dollars ($50.00)."'
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: dalicc:WarrantyDisclaimer "THE COVERED CODE IS PROVIDED \"AS IS\" AND WITHOUT WARRANTY,
+      UPGRADES OR SUPPORT OF ANY KIND AND APPLE AND APPLE'S LICENSOR(S) (COLLECTIVELY REFERRED TO
+      AS \"APPLE\" FOR THE PURPOSES OF SECTIONS 8 AND 9) AND ALL CONTRIBUTORS EXPRESSLY DISCLAIM ALL
+      WARRANTIES AND/OR CONDITIONS, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+      WARRANTIES AND/OR CONDITIONS OF MERCHANTABILITY, OF SATISFACTORY QUALITY, OF FITNESS FOR A PARTICULAR
+      PURPOSE, OF ACCURACY, OF QUIET ENJOYMENT, AND NONINFRINGEMENT OF THIRD PARTY RIGHTS."
+    previous: 'dalicc:WarrantyDisclaimer "TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT SHALL APPLE
+      OR ANY CONTRIBUTOR BE LIABLE FOR ANY INCIDENTAL, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES
+      ARISING OUT OF OR RELATING TO THIS LICENSE OR YOUR USE OR INABILITY TO USE THE COVERED CODE,
+      OR ANY PORTION THEREOF, WHETHER UNDER A THEORY OF CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE),
+      PRODUCTS LIABILITY OR OTHERWISE, EVEN IF
+
+      APPLE OR SUCH CONTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND NOTWITHSTANDING
+      THE FAILURE OF ESSENTIAL PURPOSE OF ANY REMEDY. SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION
+      OF LIABILITY OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS LIMITATION MAY NOT APPLY TO YOU.
+      In no event shall Apple''s total liability to You for all damages (other than as may be required
+      by applicable law) under this License exceed the amount of fifty dollars ($50.00)."'
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: permission dalicc:ChangeLicense
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: permission dalicc:patentGrant
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:ShareAlike]
+    previous: permission odrl:derive
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:ShareAlike, dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [dalicc:modificationNotice]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:addStatement
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: prohibition dalicc:patentRetaliationTermination
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+- version: 4
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Weak-copyleft family alignment of 2026-09-15: sections 2.1 and 2.2 require the Source
+    Code of every Modification and of every Covered Code that is deployed to be made available, so
+    the source duty belongs on odrl:modify and odrl:derive as well as on odrl:distribute, which is
+    where APSL-1.0, APSL-1.1 and APSL-1.2 carry it.'
+  changes:
+  - action: changed
+    statement: permission odrl:derive with duties [cc:ShareAlike, cc:SourceCode]
+    previous: permission odrl:derive with duties [cc:ShareAlike]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:ShareAlike, cc:SourceCode, dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:ShareAlike, dalicc:modificationNotice]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

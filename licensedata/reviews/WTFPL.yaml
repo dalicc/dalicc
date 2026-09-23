@@ -1,0 +1,61 @@
+id: WTFPL
+title: WTFPL
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/WTFPL.txt
+text_retrieved: true
+verdict: corrected
+summary: The record models a license whose only operative term is "You just DO WHAT THE FUCK YOU WANT
+  TO." Eleven permissions, no prohibitions and no duties is exactly right; it is the only record in the
+  library with that shape and family_rules_baseline.md rules 6 and 7 both list it as an intentional exception.
+  The SPDX id was missing.
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: Added the SPDX list id WTFPL.
+  action: applied
+  change: 'spdx:licenseId "WTFPL" ;
+
+    '
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: Added odrl:grantUse. Term 0 grants everything without reservation, and passing the rights
+    on to a third party is part of "what the fuck you want to".
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action odrl:grantUse ] ;\n"
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: No duty is correct. The one condition in the text, "changing it is allowed as long as the
+    name is changed", applies to the license document itself, not to works licensed under it, so it is
+    not a duty of the licensee of a work.
+  action: none
+- rubric: 1
+  severity: minor
+  field: cc:legalcode
+  description: cc:legalcode points at http://www.wtfpl.net/about/, an explanatory page. The text itself
+    is at http://www.wtfpl.net/txt/COPYING. Left alone because the about page does reproduce the license.
+  action: proposed
+  change: 'cc:legalcode <http://www.wtfpl.net/txt/COPYING> ;
+
+    '
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: The asset collection lists software, dataset and creative work. The license is media neutral,
+    so all three are right.
+  action: none
+- rubric: 10
+  severity: minor
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9 and 10: the record was corrected against
+    its new siblings and versioned. Family rule 14 of scripts/review/family_rules.py: dct:publisher was
+    the placeholder ''N.N.''; the text names Sam Hocevar as the author of the licence, not a steward of
+    it, so the predicate is left out.'
+  action: applied
+family: MIT, ISC, Zlib, Boost, UPL, WTFPL (permissive, short)
+port_of: null
+variant_kind: null
+notes: Public-domain-equivalent. Correctly modelled with no duty and no prohibition.

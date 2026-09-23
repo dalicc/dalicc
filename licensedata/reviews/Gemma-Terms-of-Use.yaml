@@ -1,0 +1,173 @@
+id: Gemma-Terms-of-Use
+title: Gemma Terms of Use
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://ai.google.dev/gemma/terms
+text_retrieved: true
+verdict: created
+summary: >-
+  The terms under which a family of open model weights is released, last modified on April 1,
+  2026. They grant use, reproduction, modification, distribution, performance and display,
+  including as a hosted service, on the condition that a prohibited use policy is carried into
+  every downstream agreement, that recipients get a copy of the terms and a named notice file,
+  and that changed files say so. The record follows the compatibility shape: relicensing is
+  permitted and carries dalicc:compliantLicense, because the terms allow different terms for
+  your own modifications provided they do not conflict.
+findings:
+- rubric: 1
+  severity: info
+  field: 'dct:title'
+  description: >-
+    File name, record identifier and IRI local name agree. The terms have no SPDX identifier,
+    so no spdx:licenseId triple is written. dct:title is the name of the document; the
+    model-hub tag and the short form are in dct:alternative.
+  action: applied
+- rubric: 2
+  severity: major
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Dataset and dcmitype:Software. The licensed material is defined as "the set of
+    machine learning language models, trained model weights and parameters identified in the
+    Appendix, regardless of the source that you obtained it from": weights and parameters are
+    data and the models are software. The appendix lists more than twenty releases, all under
+    the same terms.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Clause 2.2 reads "You may use, reproduce, modify, Distribute, perform or display any of
+    the Gemma Services only in accordance with the terms of this Agreement", and clause 3.1
+    lets you "reproduce or Distribute copies of Gemma or Model Derivatives" on four
+    conditions. That gives odrl:reproduce, odrl:modify, odrl:distribute, odrl:present,
+    odrl:display, odrl:derive, cc:DerivativeWorks and dalicc:ModifiedWorks. cc:CommercialUse
+    is permitted because the terms name no limit of purpose beyond the policy and the law.
+    dalicc:networkUseTrigger carries the hosted service, which the definition of Distribution
+    covers: "including by providing or making Gemma or its functionality available as a hosted
+    service via API, web access, or any other electronic or remote means". Model Derivatives
+    are defined to include distillation and synthetic-data training, so
+    dalicc:useForModelTraining is permitted. dalicc:ChangeLicense is permitted and carries
+    dalicc:compliantLicense, from "may provide additional or different terms and conditions
+    for use, reproduction, or Distribution of your modifications" and "Any additional or
+    different terms and conditions you impose must not conflict with the terms of this
+    Agreement."
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    One prohibition, dalicc:promote, from clause 4.2: "Nothing in this Agreement grants you
+    any rights to use Google's trademarks, trade names, logos or to otherwise suggest
+    endorsement or misrepresent the relationship between you and Google." There is no patent
+    grant in the text and no patent retaliation clause, so neither is written. The use
+    restrictions of clause 3.2 are not modelled as prohibitions; see the rubric 8 finding.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Four duties on each of odrl:distribute, odrl:modify and odrl:derive, and two of them on
+    dalicc:networkUseTrigger. cc:Notice comes from "You must provide all third party
+    recipients of Gemma or Model Derivatives a copy of this Agreement."
+    dalicc:includeNoticeFile and dalicc:addStatement come from "All Distributions (other than
+    through a Hosted Service) must be accompanied by a "Notice" text file that contains the
+    following notice: "Gemma is provided under and subject to the Gemma Terms of Use found at
+    ai.google.dev/gemma/terms"", and dalicc:addStatement also carries the duty to include the
+    use restrictions as an enforceable provision in any downstream agreement.
+    dalicc:modificationNotice comes from "You must cause any modified files to carry prominent
+    notices stating that you modified the files." Only cc:Notice and dalicc:addStatement hang
+    on the hosting trigger, because the terms say in terms that the notice file is not
+    required for a hosted service. cc:Attribution is not written: the terms have no clause
+    asking you to retain the existing copyright or attribution notices.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    Clause 4.3 goes to dalicc:WarrantyDisclaimer and clause 4.4 to dalicc:LiabilityLimitation,
+    each whole and verbatim. dalicc:additionalClauses carries the acceptance sentence, the
+    definitions, the eligibility and use clauses, the distribution conditions, the use
+    restrictions, the generated output clause, the updates and trademark clauses, the term and
+    governing law clauses, the severability, entire agreement and no waiver clauses, and one
+    literal that quotes the incorporation clause of the prohibited use policy and gives its
+    address. The document also carries an appendix listing the releases the terms apply to,
+    which is not a clause and is not quoted. No long dash appears in the agreement; the eight
+    in the retrieved page are in the site navigation around it.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    cc:jurisdiction is dalicc:worldwide: the terms name no territory for the grant.
+    dalicc:governingLaw names California, from "This Agreement will be governed by the laws of
+    the State of California without regard to choice of law principles." dalicc:validityType
+    is dalicc:perpetual, because the term runs from acceptance until terminated, and
+    dalicc:terminatesOnBreach is true from "Google may terminate this Agreement if you are in
+    breach of any term of this Agreement." No cure period is given.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:fieldOfUseRestriction'
+  description: >-
+    The use restrictions are a separate document incorporated by reference: "You must not use
+    any of the Gemma Services: for the restricted uses set forth in the Gemma Prohibited Use
+    Policy at ai.google.dev/gemma/prohibited_use_policy ("Prohibited Use Policy"), which is
+    hereby incorporated by reference into this Agreement; or in violation of applicable laws
+    and regulations." dalicc:fieldOfUseRestriction names the field in a short literal, but
+    there is no term for a policy the licence pulls in by reference and whose content is not
+    in the text. The incorporation clause and the address are quoted in one literal; the
+    proposed term is dalicc:incorporatedUsePolicy, an annotation carrying the address.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The output clause has no term: "Google claims no rights in Outputs you generate using
+    Gemma. You and your users are solely responsible for Outputs and their subsequent uses."
+    It is a statement about what the licensor does not claim, which is neither a permission
+    nor a duty. Quoted; the proposed term is dalicc:outputRightsStatement, an annotation.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Two reserved powers have no term. "To the maximum extent permitted by law, Google reserves
+    the right to restrict (remotely or otherwise) usage of any of the Gemma Services that
+    Google reasonably believes are in violation of this Agreement", and "Google may update
+    Gemma from time to time." Both are quoted; the proposed term is
+    dalicc:runtimeRestrictionReserved, an annotation for a licence whose licensor may switch
+    off a non-compliant use or change the licensed material.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer against dg_default returned an empty
+    conflict list. The record states no share-alike duty, so the dalicc:ChangeLicense
+    permission raises no conflict; it carries dalicc:compliantLicense because the replacement
+    terms must not conflict with these.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Family: this record sits between the responsible-use group and the community licences of
+    this family. Like the responsible-use group it carries its restrictions downstream through
+    the recipient's own agreement, which is why dalicc:reciprocityScope and
+    dalicc:compatibleLicenseTest are written; unlike that group it grants no patent licence
+    and has no patent retaliation clause, its restrictions live in a separate policy rather
+    than in an attachment, and it terminates on breach. Unlike the community licences it sets
+    no user threshold and asks for no built-with line.
+  action: none
+family: Model licences
+port_of: null
+variant_kind: null
+variant_of: null
+notes: >-
+  Modelled from the page the publisher serves the terms on; the retrieved copy carries the
+  whole agreement inside the site navigation, and only the agreement was quoted. cc:legalcode
+  and dct:source both point at that page, which is also the address the prescribed notice
+  names. The page says the terms below apply to the releases in the appendix and that a newer
+  release has terms of its own; this record models the document at the address the notice
+  names, and a second reader should check whether the newer document needs a record of its
+  own.

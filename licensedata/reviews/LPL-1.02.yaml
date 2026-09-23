@@ -1,0 +1,104 @@
+id: LPL-1.02
+title: Lucent Public License v1.02
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'http://plan9.bell-labs.com/plan9/license.html'
+text_retrieved: true
+verdict: created
+summary: >-
+  The Lucent Public License is the Common Public License with the source-form reciprocity
+  removed: a distributor may distribute the Program in any form under its own license
+  agreement, provided the agreement disclaims the warranties, excludes the liability and says
+  that differing provisions come from the distributor alone. The record therefore carries a
+  dalicc:ChangeLicense permission with a dalicc:compliantLicense duty and no share-alike duty,
+  which is the shape EclipsePublicLicense10 uses. Nothing here is legal advice.
+findings:
+- rubric: 2
+  severity: info
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Software alone, following EclipsePublicLicense10 and EPL-2.0, the two records of
+    this family already in the library. The text licenses a Program, that is software in
+    source code and object code form, so neither dalicc:CreativeWork nor dcmitype:Dataset is
+    written.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 2(a) grants the right "to reproduce, prepare derivative works of, publicly
+    display, publicly perform, distribute and sublicense the Contribution of such
+    Contributor", so dalicc:sublicense is a permission, and 2(b) grants a patent licence, so
+    dalicc:patentGrant is one. Section 3.A lets a Distributor "distribute the Program in any
+    form under this Agreement or under its own license agreement", which is
+    dalicc:ChangeLicense with a dalicc:compliantLicense duty, the pattern
+    EclipsePublicLicense10 and Apache-2.0 use.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    Only dalicc:patentRetaliationTermination, from the general section: patent litigation
+    against a Contributor ends the patent licences. There is no trademark clause, so
+    dalicc:promote is not written, and no reciprocity clause, so dalicc:ChangeLicense is a
+    permission rather than a prohibition.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Section 3.A.2 requires "a copy of this Agreement or Distributor's own license agreement is
+    included with each copy of the Program" (cc:Notice); section 3.B requires the copyright
+    legend in a conspicuous location (dalicc:addStatement); section 3.C requires each
+    Contributor to identify itself as the originator of its Contribution (cc:Attribution, and
+    dalicc:modificationNotice on odrl:modify and odrl:derive). cc:SourceCode is deliberately
+    not written: the Lucent text drops the item of CPL section 3(b) that required a
+    distributor's own licence to say where the source code is available.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Sections 5 and 6 are quoted into dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation.
+    dalicc:additionalClauses carries section 3, the commercial distribution indemnity, the
+    export control clause where the version has one, the patent litigation clause, the
+    termination clause, the steward clause and the governing-law clause.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The commercial distributor indemnity (proposed dalicc:commercialDistributorIndemnity) and
+    the automatic termination on breach (proposed dalicc:terminatesOnBreach) have no terms and
+    are quoted.
+  action: none
+- rubric: 7
+  severity: info
+  field: 'cc:jurisdiction'
+  description: >-
+    Section 8 states that the Agreement "is governed by the laws of the State of New York and
+    the intellectual property laws of the United States of America", and section 7 puts the
+    responsibility for United States export control on the recipient. Both are quoted and
+    cc:jurisdiction stays dalicc:worldwide.
+  action: applied
+- rubric: 10
+  severity: info
+  field: family
+  description: >-
+    LPL-1.02 is LPL-1.0 with Lucent Technologies filled into the placeholders, New York as the
+    chosen law, an export control section added and the consent mechanism of section 3.C
+    simplified. The two records carry the same deontic model and differ in the quoted clauses.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty list for this record.
+  action: none
+family: 'Eclipse, Common Public and Lucent'
+port_of: null
+variant_kind: version
+notes: >-
+  Modelled from the SPDX plain text of LPL-1.02 and checked against the Plan 9 licence page in
+  cc:legalcode. Version 1.02 is the version Plan 9 from Bell Labs was released under.

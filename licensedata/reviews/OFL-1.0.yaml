@@ -1,0 +1,109 @@
+id: OFL-1.0
+title: SIL Open Font License 1.0
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/OFL-1.0.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models version 1.0 of the SIL Open Font License, the first edition of the standard
+  licence for open fonts. It grants use, study, copying, merging, embedding, modification, redistribution
+  and sale on four conditions: the font is never sold on its own, the notice and the licence travel
+  with every copy, a modified version does not use a reserved font name, and the font software stays
+  under this licence. The model is the one the library''s OFL-1.1 record uses. Nothing here is legal
+  advice.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: The file name, the local name of the odrl:Set IRI, the SPDX identifier and the id of
+    this review record are all OFL-1.0. cc:legalcode points at the text the Open Font License site publishes
+    for version 1.0 and dct:source at the SPDX page.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'odrl:target carries dalicc:CreativeWork and dcmitype:Software, the pair the three OFL-1.1
+    records carry. The licence defines "Font Software" as "any and all of the following: - font files
+    - data files - source code - build scripts - documentation", with the list markers of the text kept,
+    which makes a font a program and a work of design at once.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads: "Permission is hereby granted, free of charge, to any person obtaining
+    a copy of the Font Software, to use, study, copy, merge, embed, modify, redistribute, and sell modified
+    and unmodified copies of the Font Software, subject to the following conditions". That gives odrl:reproduce,
+    odrl:distribute, odrl:display, odrl:present, odrl:modify, odrl:derive, cc:DerivativeWorks, dalicc:ModifiedWorks,
+    cc:CommercialUse and dalicc:chargeDistributionFee, which is the permission set of the OFL-1.1 record.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'Three, the same three as OFL-1.1. dalicc:sellCopy, from condition 1, "Neither the Font
+    Software nor any of its individual components, in Standard or Modified Versions, may be sold by
+    itself"; condition 2 expressly allows selling the font bundled with software, so this is a restriction
+    on how a copy is sold and not a bar on commercial use. dalicc:promote, from condition 4, which bars
+    the use of the names of the Copyright Holder or the Authors to promote, endorse or advertise a Modified
+    Version. dalicc:ChangeLicense, from condition 5: the Font Software "must be distributed using this
+    license, and may not be distributed under any other license".'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:ShareAlike hangs on odrl:distribute, odrl:modify and odrl:derive rather than on the
+    licence, from condition 5. cc:Attribution and cc:Notice hang on the same three, from condition 2,
+    "provided that each copy contains the above copyright notice and this license". dalicc:rename hangs
+    on odrl:modify and odrl:derive, from condition 3, "No Modified Version of the Font Software may
+    use the Reserved Font Name(s), in part or in whole, unless explicit written permission is granted
+    by the Copyright Holder".
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: The disclaimer paragraph is split at "IN NO EVENT SHALL" into dalicc:WarrantyDisclaimer
+    and dalicc:LiabilityLimitation, the way the OFL-1.1 record splits it. dalicc:additionalClauses carries
+    the five conditions and the termination sentence as one literal, with the licence's own numbering
+    removed, which is again what the OFL-1.1 record does.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is dalicc:worldwide and dalicc:validityType is dalicc:perpetual: the
+    licence names no governing law and no term. dalicc:terminatesOnBreach is true, from "This license
+    becomes null and void if any of the above conditions are not met." The OFL-1.1 record carries the
+    same flag; the gap its review recorded for that sentence is closed by the property the vocabulary
+    gained in version 4.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:rename
+  description: 'The reserved font name is a string that the copyright statement of a particular font
+    declares, and dalicc:rename cannot carry which name is reserved. Proposed term: dalicc:reservedName,
+    a literal qualifier on the rename duty. This is the same gap the OFL-1.1 review records.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the axioms of licensedata/dependencygraph/dg_default.ttl
+    returns an empty list for this record.
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: 'The nearest sibling is OFL-1.1, and the deontic model here is identical to it. The texts
+    differ in wording rather than in effect: 1.0 says "Standard Version" where 1.1 says "Original Version",
+    its reserved font name rule reaches "all references stored in the Font Software, such as the font
+    menu name and other font description fields" where 1.1 narrows it to the primary font name as presented
+    to the users, and 1.0 has no sentence taking documents made with the font out of the reciprocity.
+    SPDX also lists OFL-1.0-RFN and OFL-1.0-no-RFN, the two editions that say whether a font actually
+    declares a reserved font name, exactly as OFL-1.1-RFN and OFL-1.1-no-RFN do for 1.1. Neither is
+    created here; both are left as a queue item. dalicc:variantKind is "version", the kind the library
+    gives a record that models an earlier text of a licence it also holds.'
+  action: none
+family: Fonts and documentation
+port_of: null
+variant_kind: version
+variant_of: null
+notes: Modelled from the SPDX plain text of OFL-1.0 and checked against the Open Font License site.
+  The definition of "Modified Version" in the source text carries an em dash; that sentence is not quoted
+  in this record, and no quoted clause carries a long dash.

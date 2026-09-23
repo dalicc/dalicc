@@ -1,0 +1,70 @@
+id: CreativeCommonsAttributionNoncommercialSharealike30Croatia
+title: Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Croatia
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, changed
+    1 identification detail and 1 asset target, recorded the relation to the record this one was adapted
+    from and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-SA-4.0
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:licenseVersion "3.0"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "jurisdiction-port"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dct:source <https://creativecommons.org/licenses/by-nc-sa/3.0/hr/>
+    reason: The record carried cc:legalcode but no dct:source. The legal-code page states the canonical
+      URL of the licence, https://creativecommons.org/licenses/by-nc-sa/3.0/hr/, and the six 4.0 International
+      parents carry exactly that pair, legal code plus deed. Added.
+    source: review-finding 1/dct:source
+  - action: changed
+    statement: dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Croatia"@en
+    previous: dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Croatia "@en
+    reason: The dct:title literal ended in a space, "Creative Commons Attribution-NonCommercial-ShareAlike
+      3.0 Croatia ", which the library list and the search index carry through. The space was removed.
+      All seven BY-NC-SA records of this batch carried the same defect. The header comment on line
+      1 of the file still quotes the old title with the space, as in the other ports of the library,
+      and was left alone because it is a comment and not RDF.
+    source: review-finding 1/dct:title
+  - action: added
+    statement: prohibition dalicc:sublicense
+    reason: 'Review decision 1: every Creative Commons record except the CC0 dedication, plus the
+      Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
+      as many words.'
+    source: consolidation-decision 1
+  - action: changed
+    statement: target asset types [dalicc:CreativeWork, dcmitype:Dataset]
+    previous: target asset types [dalicc:CreativeWork]
+    reason: The record targeted dalicc:CreativeWork only, while the 4.0 International parent CC-BY-NC-SA-4.0
+      targets dalicc:CreativeWork and dcmitype:Dataset. This port licenses database rights in terms.
+      The definition of Djelo in article 1 counts a database (baza podataka) as a Work, the definition
+      of the original author counts the maker of a database, article 3 grants the right to extract
+      and re-use substantial and insubstantial parts of the content when the Work is a database and
+      waives the licensor own database producer right under the national law implementing the EC database
+      directive, and article 4 carves the restrictions out of the parts that qualify only under the
+      sui generis right. Since the text is explicit, dcmitype:Dataset was added, which also brings
+      the record into line with its parent.
+    source: review-finding 2/odrl:target

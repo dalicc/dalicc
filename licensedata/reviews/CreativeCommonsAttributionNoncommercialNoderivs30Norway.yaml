@@ -1,0 +1,86 @@
+id: CreativeCommonsAttributionNoncommercialNoderivs30Norway
+title: Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Norway
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by-nc-nd/3.0/no/legalcode
+text_retrieved: true
+verdict: corrected
+summary: >-
+  The record was added at consolidation. Batch 9 found that the library held five of the
+  six Norwegian 3.0 element sets and no Attribution-NonCommercial-NoDerivatives record,
+  although the legal code exists. The record is modelled on the five Norwegian siblings,
+  with the NonCommercial prohibition of the Norwegian by-nc port and the NoDerivatives
+  shape the whole element set now carries, and its warranty and liability clauses were
+  checked word for word against sections 5 and 6 of the by-nc-nd legal code.
+findings:
+- rubric: 1
+  severity: major
+  field: record
+  description: The library carried no Attribution-NonCommercial-NoDerivatives 3.0 Norway
+    record although the legal code is published and the other five element sets of the
+    port are in the library. Added at consolidation, with cc:legalcode, dct:source,
+    dct:title, dct:alternative, foaf:img and foaf:logo following the pattern of the five
+    siblings.
+  action: applied
+  change: |
+    dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Norway a odrl:Set ;
+        cc:legalcode <https://creativecommons.org/licenses/by-nc-nd/3.0/no/legalcode> ;
+        dct:source <https://creativecommons.org/licenses/by-nc-nd/3.0/no/> ;
+        dct:title "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Norway"@en ;
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 3 grants reproduction, inclusion in a collection and public
+    distribution and communication, plus the format changes the exercise of those rights
+    technically requires: "men bortsett fra det har du ikke rett til aa lage
+    bearbeidelser". The record therefore permits reproduce, distribute, display, present
+    and the distribution fee, and no modification or derivative right.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'Section 4 forbids three things the record states: adaptations
+    (odrl:derive), any use primarily directed toward commercial advantage
+    (cc:CommercialUse) and sublicensing, "Du kan ikke gi underlisenser til
+    frembringelsen" (dalicc:sublicense). The endorsement bar of the attribution clause
+    supports dalicc:promote and the no-further-terms sentence supports
+    dalicc:ChangeLicense, as in the five siblings.'
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: cc:Attribution and cc:Notice hang on odrl:distribute, which is the only
+    act the licence grants that triggers them. No modification notice duty, because the
+    licence grants no adaptation right.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: Sections 5 and 6 of the by-nc-nd legal code carry the same warranty
+    disclaimer and the same limitation of liability as the other five Norwegian element
+    sets, word for word. Both clause texts were checked against the fetched legal code
+    before they were copied from the sibling records.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'The same four gaps batch 9 recorded for every Norwegian record apply
+    here: technological protection measures, termination on breach, the downstream offer
+    and the royalty collection clause, together with the database right waiver of section
+    3. Proposed terms exist in the vocabulary as of this consolidation and are not used
+    on this record, because the sweep applied them to no record.'
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: The record is deontically identical to CC-BY-NC-ND-4.0 and to every other
+    NonCommercial-NoDerivatives port, which is what the family observation of batches 3
+    to 9 says about the whole Creative Commons family.
+  action: none
+family: 'Creative Commons 3.0 port: Norway (NO)'
+port_of: CC-BY-NC-ND-4.0
+variant_kind: jurisdiction-port
+notes: Added at consolidation on 2026-09-15, the only record the review pass created.
+  The parent is the 4.0 International record of the same element set, so the relation
+  carries a version difference as well as a jurisdiction difference. Nothing in this
+  review is legal advice.

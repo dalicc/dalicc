@@ -1,0 +1,160 @@
+id: GFDL-1.3-invariants-or-later
+title: GNU Free Documentation License v1.3 or later - invariants
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/GFDL-1.3-invariants-or-later.txt
+text_retrieved: true
+verdict: created
+summary: >-
+  The record models the or-later reading of version 1.3 of the GNU Free Documentation License
+  for a document that has Invariant Sections. The legal text is the same document as version
+  1.3, so the record copies GnuFreeDocumentationLicense statement for statement and sets
+  dalicc:orLaterVersionOption true, dalicc:variantKind "version-option" and dalicc:variantOf.
+  What the identifier adds is a fact about the document, not about the license, and the model
+  cannot yet express it.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: >-
+    File name, identifier, SPDX identifier and the local name of the IRI are the same string,
+    GFDL-1.3-invariants-or-later. SPDX added the invariants and no-invariants identifiers so
+    that a document that designates Invariant Sections can be told apart from one that does
+    not. The legal text behind all four version 1.3 identifiers is one and the same document.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: >-
+    The odrl:target of GnuFreeDocumentationLicense is copied unchanged: one
+    odrl:AssetCollection of dct:type dalicc:CreativeWork and dcmitype:Software. The review of
+    the base record proposes dcmitype:Text in place of dcmitype:Software; that proposal covers
+    this record too.
+  action: applied
+- rubric: 3
+  severity: major
+  field: dalicc:orLaterVersionOption
+  description: >-
+    Section 10 states: "If the Document specifies that a particular numbered version of this
+    License "or any later version" applies to it, you have the option of following the terms
+    and conditions either of that specified version or of any later version that has been
+    published (not as a draft) by the Free Software Foundation." Version 1.3 adds: "If the
+    Document specifies that a proxy can decide which future versions of this License can be
+    used, that proxy's public statement of acceptance of a version permanently authorizes you
+    to choose that version for the Document." Those sentences are why
+    dalicc:orLaterVersionOption is true here. They are not quoted in dalicc:additionalClauses,
+    because the base record carries no dalicc:additionalClauses at all and an or-later record
+    keeps the clause literals of its base.
+  action: applied
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: >-
+    Every permission of GnuFreeDocumentationLicense is copied with the same duties in the same
+    places: dalicc:chargeDistributionFee, odrl:reproduce, odrl:distribute, odrl:display,
+    odrl:present, odrl:modify, dalicc:ModifiedWorks, odrl:derive, cc:DerivativeWorks and
+    cc:CommercialUse. Taking a later version is a choice about which text applies, not a
+    further permission.
+  action: applied
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: >-
+    The two prohibitions of the base record are copied: dalicc:ChangeLicense and
+    dalicc:promote. The records this set adds for versions 1.1 and 1.2 also prohibit
+    dalicc:applyTechnicalProtectionMeasures and dalicc:sublicense, because section 2 states
+    "You may not use technical measures to obstruct or control the reading or further copying
+    of the copies you make or distribute" and section 9 states "You may not copy, modify,
+    sublicense, or distribute the Document except as expressly provided for under this
+    License". Version 1.3 carries both sentences as well, but an or-later record may not add
+    a statement its base does not have, so the report proposes the two prohibitions for the
+    base record instead.
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: >-
+    The license-wide cc:ShareAlike duty and the duties on distribute, modify and derive are
+    copied node for node, which includes the three duty nodes whose odrl:action is dct:source.
+    dct:source is a Dublin Core property and not an action, so the validator reports it, and
+    cc:SourceCode already sits beside it in each of the three lists. Copying the base exactly
+    is what an or-later record does, so the report proposes removing those duty nodes from all
+    four version 1.3 records in one step rather than dropping them here.
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: >-
+    The Warranty Disclaimers paragraph of section 1 is copied verbatim from the base record.
+    The license gives no limitation of liability, so dalicc:LiabilityLimitation is absent, and
+    the base record carries no dalicc:additionalClauses, so this record carries none either.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: >-
+    cc:jurisdiction dalicc:worldwide and dalicc:validityType dalicc:perpetual are copied, and
+    so are cc:legalcode and dct:source, which point at the text of the license on the Free
+    Software Foundation site. The base record states no dalicc:terminatesOnBreach although
+    section 9 provides for automatic termination; the report proposes that property for the
+    base record rather than adding it here.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:variantOf
+  description: >-
+    dalicc:variantOf is not defined in the vocabulary yet, so the validator reports it as an
+    undefined DALICC term, and the value "version-option" is not in the list of variant kinds
+    the vocabulary comment gives. Both are needed for a record that keeps the text of another
+    record and changes what that text grants or requires.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: >-
+    The vocabulary gaps of the base record are inherited: the Invariant Sections, the Cover
+    Texts, the Transparent copy and the History section of sections 3 and 4 have no term, and
+    neither has the relicensing window of section 11. Proposed terms dalicc:invariantSections,
+    dalicc:coverTexts, dalicc:transparentCopy and dalicc:historySection. The base record
+    quotes none of those clauses, so this record quotes none either.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty conflict list, the same result as for the base record.
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:variantKind
+  description: >-
+    Nothing in the record says that this identifier is the one for a document with Invariant
+    Sections. Section 1 defines them: "The "Invariant Sections" are certain Secondary Sections
+    whose titles are designated, as being those of Invariant Sections, in the notice that says
+    that the Document is released under this License." Section 4 item L requires: "Preserve
+    all the Invariant Sections of the Document, unaltered in their text and in their titles."
+    A term for the duty, proposed as dalicc:invariantSections, would let this record carry the
+    duty and let GFDL-1.3-no-invariants-or-later leave it out, which is the only difference
+    between the two identifiers. Until then the three version 1.3 or-later records hold the
+    same model and differ only in their identifier, title and alternative names.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Against GnuFreeDocumentationLicense the record differs in the identifier, the SPDX
+    identifier, the title, the alternative names, dalicc:orLaterVersionOption,
+    dalicc:variantKind, the new dalicc:variantOf relation and the review state. Against
+    GFDL-1.3-or-later and GFDL-1.3-no-invariants-or-later it differs only in those same
+    identification fields, for the reason the rubric 8 finding gives.
+  action: applied
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: version-option
+variant_of: GnuFreeDocumentationLicense
+notes: >-
+  The SPDX text for GFDL-1.3-invariants-or-later has the same checksum as the
+  text for GFDL-1.3-or-later. A reader who needs to know whether a particular document has
+  Invariant Sections has to read that document's license notice; the license record cannot
+  say it.

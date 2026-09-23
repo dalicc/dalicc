@@ -1,0 +1,126 @@
+id: NASA-1.3
+title: NASA Open Source Agreement 1.3
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: http://ti.arc.nasa.gov/opensource/nosa/
+text_retrieved: true
+verdict: created
+summary: Models version 1.3 of the NASA Open Source Agreement, a government copyleft that binds
+  redistribution to the agreement itself and asks recipients to register. The record follows GPL-2.0-only
+  for the license-wide share-alike duty and Apache-2.0 for the acceptance-of-warranty clause.
+  The text is a template with blanks for the agency and the copyright notice, so no publisher
+  is recorded.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, license id, SPDX id and IRI agree. cc:legalcode is the agency URL named
+    first in the SPDX seeAlso list and dct:source the OSI page. dct:publisher is left out: the
+    text says ''Government Agency'' and leaves the name blank.'
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'dcmitype:Software only: the agreement licenses ''Subject Software'' and its documentation.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant of rights lists, under non-patent rights, 'Use, Distribution, Reproduction,
+    Modification, Redistribution, Display' and, under patent rights, 'Use, Distribution, Reproduction,
+    Sale, Offer for Sale'. The record therefore carries reproduce, distribute, modify, derive,
+    display, present, commercial use, derivative works, modified works, dalicc:patentGrant and
+    dalicc:chargeDistributionFee, the last because Sale and Offer for Sale are expressly granted.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'dalicc:promote for clause 3.E: ''A Recipient may not make any representation in
+    the Subject Software or in any promotional, advertising or other material that may be construed
+    as an endorsement by Government Agency''. dalicc:ChangeLicense for clause 3.A. The agreement
+    has no patent retaliation clause, so no such prohibition is written.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:ShareAlike is license-wide: ''Distribution or Redistribution of the Subject
+    Software must be made under this Agreement except for additions covered under paragraph 3H.''
+    cc:SourceCode hangs off distribute for 3.A.2; cc:Attribution, cc:Notice and dalicc:addStatement
+    (the prescribed copyright notice of 3.B) hang off distribute, modify and derive; dalicc:modificationNotice
+    and dalicc:includeNoticeFile (''Contributor must include a file (e.g., a change log file)
+    that describes the alterations made and the date of the alterations'') are on modify and derive.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyOrLiabilityAcceptance
+  description: Clause 4.A is quoted into dalicc:WarrantyDisclaimer, 4.B into dalicc:LiabilityLimitation
+    and 3.H into dalicc:WarrantyOrLiabilityAcceptance. Seven clauses are quoted in dalicc:additionalClauses,
+    among them the sublicensing clause 3.D, the registration request 3.F, the Larger Work clause
+    3.I, the export-control notice 3.J, the termination clause and the applicable law clause.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: odrl:permission
+  description: 'Clause 3.D expressly allows sublicensing on the same terms: ''The rights granted
+    in Paragraphs A. and B. allow the Recipient to sublicense those same rights. Such sublicense
+    must be under the same terms and conditions of this Agreement.'' The record does not carry
+    odrl:grantUse, because the composer reports a share-alike duty together with a grant-use permission
+    as a direct conflict. That rule is too wide: sublicensing under the same terms is exactly
+    what a share-alike condition asks for. Proposed for the consolidation pass: narrow the rule
+    so it fires only when the outgoing licence may differ, and then add odrl:grantUse here.'
+  action: proposed
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Clause 3.F asks every recipient to register with the agency and to report how
+    a modification can be reached. There is no term for a reporting or registration request, and
+    it is a request rather than an obligation. Quoted; proposed term: dalicc:recipientRegistrationRequest.'
+  action: none
+- rubric: 7
+  severity: gap
+  field: cc:jurisdiction
+  description: 'The grant itself is worldwide, so cc:jurisdiction stays dalicc:worldwide; only
+    the governing law is national. The vocabulary has no property for a governing law that is
+    separate from the territory of the grant, so the clause is quoted in dalicc:additionalClauses.
+    Proposed term: dalicc:governingLaw. Text: ''This Agreement shall be subject to United States
+    federal law only for all purposes, including, but not limited to, determining the validity
+    of this Agreement, the meaning of its provisions and the rights, obligations and remedies
+    of the parties.'' (clause 5.C)'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Automatic termination on breach has no property that a record can carry: dalicc:terminationOnBreach
+    is a policy quality with no predicate. The clause is quoted in dalicc:additionalClauses. Proposed
+    term: dalicc:terminatesOnBreach as a boolean property on odrl:Set, with the cure period as
+    a literal. Text: ''This Agreement and the rights granted hereunder will terminate automatically
+    if a Recipient fails to comply with these terms and conditions, and fails to cure such noncompliance
+    within thirty (30) days of becoming aware of such noncompliance.'' (clause 5.A)'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Clause 3.J is an export-control notice. No term exists; quoted. Proposed term:
+    dalicc:exportControlNotice, the same term the RPL records need.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run with the 39 axioms of licensedata/dependencygraph/dg_default.ttl,
+    returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: The closest siblings in the library are GPL-2.0-only for the reciprocity and Apache-2.0
+    for the acceptance clause. What sets NASA-1.3 apart is the government-specific waiver and
+    indemnity in place of an ordinary liability limitation, and the registration request, neither
+    of which any other record carries.
+  action: none
+family: Reciprocal and source-available
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. The agreement contains bracketed drafting instructions
+  for the releasing agency; the quotations avoid them and take the operative paragraphs only.
+  The registration request of clause 3.F is a request, not an obligation, so it is quoted rather
+  than modelled as a duty.

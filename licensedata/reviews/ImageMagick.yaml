@@ -1,0 +1,116 @@
+id: ImageMagick
+title: ImageMagick License
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/ImageMagick.txt
+text_retrieved: true
+verdict: created
+summary: Models the licence ImageMagick Studio applies to ImageMagick. The binding part of the text is the Apache
+  2.0 text with the licensor's name in place of the Apache one, so the record follows Apache-2.0 and adds the dalicc:includeNoticeFile
+  duty the NOTICE clause asks for. The plain-language summary printed before the terms is not the licence and is not
+  modelled.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all ImageMagick.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software. The text defines the Work as source form, object
+    form and documentation source of a program.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Section 2 reads "each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge,
+    royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly
+    perform, sublicense, and distribute the Work and such Derivative Works in Source or Object form". The record permits
+    reproduce, distribute, modify, derive, display, present, grantUse, sublicense, commercial use, derivative works,
+    modified works and the distribution fee. dalicc:sublicense is used because the grant names sublicensing in as
+    many words; odrl:grantUse follows the Apache-2.0 record.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: dalicc:patentGrant is permitted for section 3, "each Contributor hereby grants to You a perpetual,
+    worldwide, non-exclusive, no-charge, royalty-free, irrevocable patent license to make, have made, use, offer to
+    sell, sell, import, and otherwise transfer the Work".
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: dalicc:ChangeLicense is permitted with the dalicc:compliantLicense duty. Section 4 says a licensee
+    "may provide additional or different license terms and conditions for use, reproduction, or distribution of Your
+    modifications, or for any such Derivative Works as a whole, provided Your use, reproduction, and distribution
+    of the Work otherwise complies with the conditions stated in this License", which is the compliant-licence shape.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote is prohibited for section 6, "This License does not grant permission to use the trade
+    names, trademarks, service marks, or product names of the Licensor". dalicc:patentRetaliationTermination is prohibited
+    for section 3, "If You institute patent litigation against any entity (including a cross-claim or counterclaim
+    in a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory
+    patent infringement, then any patent licenses granted to You under this License for that Work shall terminate
+    as of the date such litigation is filed".
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Attribution and cc:Notice hang off odrl:distribute, odrl:modify and odrl:derive for conditions 4a
+    and 4c. dalicc:modificationNotice hangs off odrl:modify and odrl:derive for 4b, "You must cause any modified files
+    to carry prominent notices stating that You changed the files".
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: dalicc:includeNoticeFile hangs off odrl:distribute and odrl:derive for 4d, the NOTICE clause. The existing
+    Apache-2.0 record does not carry that duty although its text has the same clause; the divergence is reported as
+    a proposal rather than applied to that record.
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyOrLiabilityAcceptance
+  description: Sections 7, 8 and 9 go into dalicc:WarrantyDisclaimer, dalicc:LiabilityLimitation and dalicc:WarrantyOrLiabilityAcceptance
+    respectively, verbatim, as on Apache-2.0.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: 'The text before the words "Terms and Conditions for Use, Reproduction, and Distribution" is a plain-language
+    summary that the licence itself sets aside: "The legally binding and authoritative terms and conditions for use,
+    reproduction, and distribution of ImageMagick follow". Nothing in the record is taken from it.'
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The grant is "perpetual, worldwide" and the text names no governing law, so cc:jurisdiction is dalicc:worldwide
+    and dalicc:validityType is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: info
+  field: dalicc:additionalClauses
+  description: No clause of this text needs a term the vocabulary does not have.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Read against licensedata/licenses/Apache-2.0.ttl the record adds dalicc:includeNoticeFile and dalicc:sublicense
+    and targets dcmitype:Software alone rather than the three asset types the older Apache-2.0 record carries. Everything
+    else is the same, because the binding text is the same text with another name in it.
+  action: none
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: 'cc:legalcode points at the publisher''s licence page, which is the address the boilerplate at the end of the
+  text names, and dct:source at the SPDX page. The record does not say that the licence is the Apache text: that is
+  an observation for the review, not a statement about the licence.'

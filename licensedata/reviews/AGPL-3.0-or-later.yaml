@@ -1,0 +1,136 @@
+id: AGPL-3.0-or-later
+title: GNU Affero General Public License v3.0 or later
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/AGPL-3.0-or-later.txt
+text_retrieved: true
+verdict: created
+summary: >-
+  The record models the "or later" form of the Affero GPL version 3. Its legal text is the same
+  document that the AGPL-3.0 record models, so the deontic model is that record statement for
+  statement. What the identifier adds is the option section 14 gives the licensee to follow this
+  version or any later version the Free Software Foundation publishes. The network clause of
+  section 13, which is what distinguishes this licence from GPL version 3, is quoted in
+  dalicc:additionalClauses as in the base record.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: >-
+    File name, record id, SPDX identifier and the local name of the IRI are all
+    AGPL-3.0-or-later. The other half of the pair is the record AGPL-3.0, whose file name is the
+    older descriptive id and whose SPDX identifier is AGPL-3.0-only. The deprecated short form
+    AGPL-3.0+ is carried here as a dct:alternative so that a search for it reaches this record.
+  action: applied
+- rubric: 10
+  severity: major
+  field: dalicc:variantOf
+  description: >-
+    The record copies AGPL-3.0 statement for statement. What differs: the identifier, the SPDX
+    identifier, dct:title, dct:alternative, dalicc:orLaterVersionOption (true here, false there)
+    and the pair dalicc:variantKind "version-option" with dalicc:variantOf dalicclib:AGPL-3.0.
+    The foaf:logo of the base record is kept, because it is the logo of the same licence text.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:orLaterVersionOption
+  description: >-
+    Section 14 is the clause the flag stands for: "If the Program specifies that a certain
+    numbered version of the GNU Affero General Public License "or any later version" applies to
+    it, you have the option of following the terms and conditions either of that numbered
+    version or of any later version published by the Free Software Foundation."
+    cc:jurisdiction stays dalicc:worldwide and dalicc:validityType stays dalicc:perpetual: the
+    text limits neither the territory nor the term.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: >-
+    Section 4 grants conveying verbatim copies, section 5 conveying modified source versions,
+    section 6 conveying object code, and section 4 adds: "You may charge any price or no price
+    for each copy that you convey, and you may offer support or warranty protection for a fee."
+    The ten permissions of the base record follow from those sentences: odrl:reproduce,
+    odrl:distribute, odrl:modify, odrl:derive, cc:DerivativeWorks, dalicc:ModifiedWorks,
+    odrl:display, odrl:present, cc:CommercialUse and dalicc:chargeDistributionFee.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: >-
+    Section 5(c) requires the whole work to be licensed under this License to anyone who comes
+    into possession of a copy, so cc:ShareAlike is a duty of the licence itself. Attribution,
+    notice and source-code duties hang on distribute, modify and derive, and
+    dalicc:modificationNotice on modify and derive, from section 5(a): "The work must carry
+    prominent notices stating that you modified it, and giving a relevant date."
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: >-
+    dalicc:ChangeLicense is prohibited, which is the whole-work copyleft shape, and
+    dalicc:promote is prohibited although the text has no trademark or endorsement clause. Both
+    come from the base record.
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: >-
+    The warranty disclaimer of section 15 and the limitation of liability of section 16 are kept
+    as separate literals, the fee sentence of section 4 is dalicc:WarrantyOrLiabilityAcceptance,
+    and the two paragraphs of section 13 are quoted in dalicc:additionalClauses. All of them are
+    byte for byte the literals of the base record, because the text is the same document.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: >-
+    The asset collection carries dcmitype:Software, as in the base record. The Affero GPL
+    governs programs, and section 13 is about a program users interact with over a network.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer, run with
+    licensedata/dependencygraph/dg_default.ttl, reports 0 conflicts for this record.
+  action: none
+- rubric: 8
+  severity: minor
+  field: odrl:permission
+  description: >-
+    The defining clause of this licence is prose only in both records of the pair. Section 13:
+    "Notwithstanding any other provision of this License, if you modify the Program, your
+    modified version must prominently offer all users interacting with it remotely through a
+    computer network (if your version supports such interaction) an opportunity to receive the
+    Corresponding Source of your version by providing access to the Corresponding Source from a
+    network server at no charge, through some standard or customary means of facilitating
+    copying of software." When the base record was reviewed, no term covered a network
+    deployment; dalicc:networkUseTrigger now exists in the vocabulary and carries the duties
+    such a deployment fires. Adding it here alone would break the rule that this record equals
+    its base, so it is proposed for both records of the pair together.
+  action: proposed
+  change: |
+    odrl:permission [ a odrl:Permission ;
+            odrl:action dalicc:networkUseTrigger ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ] ] ;
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: >-
+    The same clauses that are gaps in GPL version 3 are gaps here, because the text is that text
+    plus section 13: the anti-circumvention waiver of section 3 and the Installation Information
+    duty of section 6. Proposed terms: dalicc:antiCircumventionWaiver and
+    dalicc:installationInformation. The termination clause of section 8, the patent grant of
+    section 11 and the litigation bar of section 10 could be modelled with terms that already
+    exist, and are proposed for the GPL version 3 records in the same way; here too they belong
+    to both records of the pair at once.
+  action: none
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: version-option
+variant_of: AGPL-3.0
+notes: >-
+  The base record carries the descriptive id AGPL-3.0 with the SPDX id AGPL-3.0-only, so the
+  pair does not look symmetrical in the file names. Nothing else about it is asymmetrical: the
+  two records model the same text and differ only in the version option.

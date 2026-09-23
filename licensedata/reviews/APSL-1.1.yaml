@@ -1,0 +1,157 @@
+id: APSL-1.1
+title: Apple Public Source License 1.1
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://spdx.org/licenses/APSL-1.1.html'
+text_retrieved: true
+verdict: created
+summary: >-
+  Version 1.1 of the Apple Public Source License. The deontic model is identical to the
+  APSL-1.0 record; the text differs in that the notification of Deployed Modifications is owed
+  to other users rather than to Apple, the export law clause is gone, and section 9.1 replaces
+  the termination of the rights in Affected Original Code with a suspension that can be
+  lifted. Those differences are in the quoted clauses, not in the permissions or duties.
+findings:
+- rubric: 1
+  severity: minor
+  field: 'spdx:licenseId'
+  description: >-
+    The record carries the SPDX id APSL-1.1 as its file name, its IRI and its spdx:licenseId,
+    the SPDX name as dct:title and the short forms people search for as dct:alternative.
+    dalicc:variantKind is "version", because the library already holds APSL-2.0, of which this
+    text is an earlier version.
+  action: applied
+- rubric: 2
+  severity: info
+  field: 'odrl:target'
+  description: >-
+    One odrl:AssetCollection of dct:type dcmitype:Software, the target the existing APSL-2.0
+    record carries. The licence speaks of Original Code, Modifications and Covered Code
+    throughout and of nothing else, so no second asset type was added.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 2 grants, in its own words, a licence "to the extent of Apple's Applicable Patent
+    Rights and copyrights covering the Original Code", and section 2.1 lets the licensee "use,
+    copy, modify and distribute Original Code, with or without Modifications". The record
+    therefore permits reproduce, distribute, modify, derive, display, present, commercial use,
+    derivative works, modified works and the distribution fee, and adds dalicc:patentGrant for
+    the patent limb of the same sentence. dalicc:sublicense is permitted because the
+    definition of Deploy names sublicensing as one of the acts the licensee may perform under
+    section 2.2.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    Three prohibitions. dalicc:promote comes from section 10, which states that the licence
+    grants no right to the Apple marks and that "no Apple Marks may be used to endorse or
+    promote products derived from the Original Code". dalicc:ChangeLicense comes from section
+    2.1(b), "You may not offer or impose any terms on such Source Code that alter or restrict
+    this License or the recipients' rights hereunder, except as permitted under Section 6".
+    dalicc:patentRetaliationTermination comes from section 12.1(c), under which the licence
+    terminates "automatically without notice from Apple if You, at any time during the term of
+    this License, commence an action for patent infringement against Apple".
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    The duties hang off the acts the text names, not off the licence as a whole, because the
+    reciprocity of the APSL is file level: section 2.2(b) reaches the Deployed Modifications,
+    not the Larger Work, and section 4 expressly allows a Larger Work that combines Covered
+    Code with code not governed by this licence. odrl:distribute carries cc:Attribution and
+    cc:Notice (section 2.1(a) and (b)), cc:SourceCode and cc:ShareAlike (section 2.2(b),
+    source of the Deployed Modifications "under the terms of this License"). odrl:modify and
+    odrl:derive carry the same four plus dalicc:modificationNotice for the duty to document
+    the modifications and to carry the Exhibit A notice. This is the shape the MPL-1.1,
+    CDDL-1.1 and Nokia records of this review use.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    Section 8 is quoted verbatim in dalicc:WarrantyDisclaimer and the limitation of liability
+    in dalicc:LiabilityLimitation. Section 6 goes into dalicc:WarrantyOrLiabilityAcceptance,
+    because it lets a distributor offer and charge for warranty, support, indemnity or
+    liability obligations of its own. dalicc:additionalClauses carries the definition of
+    Deploy, the conditions of section 2.2, the grant back of section 3, the larger work
+    clause, the patent limitation, the version clause, the trademark clause, the ownership
+    clause, the termination clauses and the miscellaneous clauses.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    cc:jurisdiction stays dalicc:worldwide: section 2 grants a "world-wide" licence and the
+    choice of California law and of the Northern District of California in section 13 governs
+    the contract, not the territory of the grant. Both sentences are quoted in
+    dalicc:additionalClauses. dalicc:validityType is dalicc:perpetual, since the text sets no
+    term.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The external deployment trigger has no vocabulary term. Deploy is defined as "to use,
+    sublicense or distribute Covered Code other than for Your internal research and
+    development (R&D)" and it, rather than distribution, is what triggers the source
+    publication duty of section 2.2(b). The clause is quoted; proposed term
+    dalicc:networkUseTrigger, the same term batch 2 of this addition proposed for the RPL and
+    CAL records.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Automatic termination on breach with a thirty day cure period (section 12.1(a)) has no
+    property a record can carry. Quoted in dalicc:additionalClauses; proposed term
+    dalicc:terminatesOnBreach as a property over the existing dalicc:terminationOnBreach
+    concept.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Section 2.2(b) fixes how long the source of the Deployed Modifications must stay available
+    ("for as long as you Deploy the Covered Code or twelve (12) months from the date of
+    initial Deployment, whichever is longer"). No qualifier on a cc:SourceCode duty can carry
+    that period; proposed term dalicc:sourcePublicationPeriod, as in batch 2.
+  action: none
+- rubric: 8
+  severity: info
+  field: 'dalicc:orLaterVersionOption'
+  description: >-
+    Section 7 lets the licensee use the Original Code under the terms of any subsequent
+    version of the licence Apple publishes, which is the shape dalicc:orLaterVersionOption
+    expresses. The property is used only on the four GNU records today, so it was not written
+    here; the clause is quoted instead. The triple would be dalicclib:APSL-1.1
+    dalicc:orLaterVersionOption true.
+  action: proposed
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Family: identical in every modelled statement to the APSL-1.0 record. The two differ only
+    in the quoted clauses: version 1.1 drops the export law assurance, replaces the
+    notification of Apple in section 2.2(c) with a duty to inform others, and rewrites section
+    9.1 as a suspension of the rights in the Affected Original Code rather than a termination
+    of them. A separate record is justified by the separate SPDX id and by those clause texts,
+    not by a different compatibility answer.
+  action: none
+family: Apple Public Source License
+port_of: null
+variant_kind: version
+notes: >-
+  Modelled from the SPDX plain text of APSL-1.1, read as a difference against the 1.0 text.
+  cc:legalcode points at the copy in Apple's own source release named in the SPDX seeAlso
+  list. No long dash appears in the source text.

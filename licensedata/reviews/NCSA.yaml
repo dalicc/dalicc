@@ -1,0 +1,87 @@
+id: NCSA
+title: University of Illinois/NCSA Open Source License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/NCSA.txt
+text_retrieved: true
+verdict: created
+summary: The record models the University of Illinois/NCSA Open Source License, which joins the MIT grant to the
+  three BSD conditions. The permissions are MIT's, including sublicensing, and the duties and the endorsement prohibition
+  are BSD-3-Clause's.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads: "Permission is hereby granted, free of charge, to any person obtaining a copy of
+    this software and associated documentation files (the "Software"), to deal with the Software without restriction,
+    including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+    sell copies of the Software". That is the MIT grant, so the record adds odrl:grantUse and dalicc:sublicense
+    to the permissive core. The grant names sublicensing in as many words, so dalicc:sublicense is a permission,
+    and the clause that lets the recipient of a copy do the same is odrl:grantUse, the term the MIT record already
+    uses for it.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The conditions are the three BSD conditions: the copyright notice, the list of conditions and the
+    disclaimer must be retained in source redistributions and reproduced in binary redistributions, so cc:Attribution
+    and cc:Notice are duties on distribute, modify and derive.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The third condition reads: "Neither the names of <Name of Development Group, Name of Institution>,
+    nor the names of its contributors may be used to endorse or promote products derived from this Software without
+    specific prior written permission." That is dalicc:promote as a prohibition. dalicc:ChangeLicense is prohibited
+    because the text requires the license itself to travel with every copy, which is the reading IscLicense and
+    BSD-3-Clause take of the same clause. The MIT record does not carry the prohibition although its text has the
+    same requirement, so the library is not uniform here. (Corrected on 2026-09-15 by the verification pass:
+    see the rubric 3 finding on relicensing below.)'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The disclaimer is the MIT disclaimer with the contributors added; it is split into the warranty sentence
+    and the liability sentence.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following BSD-3-Clause. The text licenses
+    software and associated documentation.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: The record differs from BSD-3-Clause only in the two permissions that come with the MIT grant, odrl:grantUse
+    and dalicc:sublicense. Everything else is BSD-3-Clause.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Permission is hereby granted, free of charge, to any person
+    obtaining a copy of this software and associated documentation files (the "Software"), to deal with the Software
+    without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute,
+    sublicense, and/or sell copies of the Software ... subject to the following conditions: Redistributions of source
+    code must retain the above copyright notice." The permission carries the dalicc:compliantLicense duty, as Apache-2.0
+    does, because the notice has to survive the relicensing.'
+  action: applied
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. The text names placeholders rather than a steward, so there is no dct:publisher;
+  cc:legalcode is the technology management page of the University of Illinois that SPDX lists first.

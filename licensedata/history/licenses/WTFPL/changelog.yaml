@@ -1,0 +1,40 @@
+id: WTFPL
+title: WTFPL
+current_version: 3
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail and 1 permission and recorded
+    the review state.
+  changes:
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: permission odrl:grantUse
+    reason: Added odrl:grantUse. Term 0 grants everything without reservation, and passing the rights
+      on to a third party is part of "what the fuck you want to".
+    source: review-finding 3/odrl:permission
+  - action: added
+    statement: spdx:licenseId "WTFPL"
+    reason: Added the SPDX list id WTFPL.
+    source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Family rule 14 of scripts/review/family_rules.py: dct:publisher was the placeholder ''N.N.'';
+    the text names Sam Hocevar as the author of the licence, not a steward of it, so the predicate
+    is left out.'
+  changes:
+  - action: removed
+    statement: dct:publisher "N.N."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

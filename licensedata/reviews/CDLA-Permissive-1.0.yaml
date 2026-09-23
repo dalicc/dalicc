@@ -1,0 +1,132 @@
+id: CDLA-Permissive-1.0
+title: Community Data License Agreement Permissive 1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://spdx.org/licenses/CDLA-Permissive-1.0.html'
+text_retrieved: true
+verdict: created
+summary: >-
+  The permissive Community Data License Agreement, version 1.0: use and publish the data,
+  including under a licence of your choice, as long as the text of the agreement travels with
+  it, changed files are marked and the credit of the data providers is preserved. The record
+  follows the OdcOpenDatabaseLicense and OpenDataCommonsAttributionLicenseV10 records for its
+  dataset target and its attribution duties, and is the first record in the library to carry
+  dalicc:suiGenerisDatabaseRights and dalicc:moralRightsNonAssertion together.
+findings:
+- rubric: 1
+  severity: minor
+  field: 'spdx:licenseId'
+  description: >-
+    The record carries the SPDX id CDLA-Permissive-1.0 and the SPDX name as dct:title, with
+    the two long dashes of the licence's own name replaced by plain hyphens in
+    dct:alternative. No dalicc:variantKind is written: version 2.0 is a different text, and it
+    is the 2.0 record that carries the version marker.
+  action: applied
+- rubric: 2
+  severity: major
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Dataset and dalicc:CreativeWork, because Data is defined as "the information
+    (including copyrightable information, such as images or text), collectively or
+    individually, whether created or gathered by a Data Provider": images and text are
+    creative works, not only data. No software is named.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 2.1 grants "a worldwide, non-exclusive, irrevocable (except as provided in Section
+    5) right to: (a) Use Data; and (b) Publish Data", and Use is defined to include copying,
+    adapting and computational use. The record permits reproduce, distribute, display,
+    present, modify, derive, commercial use, derivative works, modified works and the
+    distribution fee. dalicc:suiGenerisDatabaseRights carries section 2.2, which licenses the
+    data "to the extent that the Data or the coordination, selection or arrangement of Data is
+    protected or protectable under copyright, Sui Generis Database Rights, or other law".
+    dalicc:moralRightsNonAssertion carries section 7.2, where the parties "waive and/or agree
+    not to assert, to the extent permitted by law, any moral rights". dalicc:ChangeLicense
+    with a cc:Notice duty and dalicc:sublicense carry section 3.1(a), "You may do so under a
+    license of Your choice provided that You give anyone who Receives the Data from You the
+    text of this Agreement".
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    One prohibition, dalicc:patentRetaliationTermination, from section 5.2: "If You institute
+    litigation against a Data Provider or anyone else who Receives the Data (including a
+    cross-claim in a lawsuit) based on the Data, other than a claim asserting breach of this
+    Agreement, then any rights previously granted to You to Receive, Use and Publish Data
+    under this Agreement will terminate as of the date such litigation is filed." The clause
+    is wider than the term, which the vocabulary defines for patent claims: it covers any
+    litigation based on the Data. It is quoted in full so the difference is readable.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Section 3.1 states the conditions for publishing, so cc:Attribution and cc:Notice hang off
+    odrl:distribute, and odrl:modify and odrl:derive add dalicc:modificationNotice from
+    3.1(b), "You must cause any Data files containing Enhanced Data to carry prominent notices
+    that You have changed those files". No cc:ShareAlike is written: this is the permissive
+    member of the family, and section 3.2 expressly allows additional or different licence
+    terms for Enhanced Data.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    Section 6.1 goes into dalicc:WarrantyDisclaimer and 6.2 into dalicc:LiabilityLimitation.
+    dalicc:additionalClauses carries the grant, the conditions, the representations, both
+    termination clauses, the compliance, moral rights, privacy and steward paragraphs of
+    section 7 and the definition of Sui Generis Database Rights.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    cc:jurisdiction stays dalicc:worldwide, which section 2.1 states in as many words, and
+    dalicc:validityType stays dalicc:perpetual: the agreement names no term and calls the
+    grant irrevocable except on the termination of section 5. The agreement names no governing
+    law at all.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Section 5.1 terminates the rights on an uncured material breach and keeps alive what was
+    published before. Quoted; proposed terms dalicc:terminatesOnBreach and
+    dalicc:sublicenseSurvival.
+  action: none
+- rubric: 8
+  severity: info
+  field: 'dalicc:orLaterVersionOption'
+  description: >-
+    Section 7.5 lets the recipient use the data under the version received or any later
+    version published by the steward. Not written, for the reason given in the other records
+    of this addition.
+  action: proposed
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Family: the three Community Data License Agreement records of this batch share their
+    definitions and their warranty and liability sections. This one is the permissive member:
+    no share-alike, a licence of your choice on publication, and attribution preserved.
+    CDLA-Sharing-1.0 replaces 3.1(a) with reciprocity and CDLA-Permissive-2.0 rewrites the
+    whole agreement in one page and drops the attribution condition.
+  action: none
+family: Community Data License Agreement
+port_of: null
+variant_kind: null
+notes: >-
+  Modelled from the SPDX plain text. cc:legalcode points at the agreement on the steward's own
+  site, dct:source at the SPDX page the text was taken from. The name of the agreement carries
+  long dashes in the source; they are written as plain hyphens in dct:alternative and in the
+  quoted clauses.

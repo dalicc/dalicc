@@ -1,0 +1,63 @@
+id: SampleLicenseSl
+title: Sample License (SL)
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: unavailable
+text_retrieved: false
+verdict: text-unavailable
+summary: This is not a license. It is the composer test fixture "Sample License (SL)", with a Sample Licensor,
+  a Sample Creator, a joke warranty disclaimer and a stray odrl:assignee "Sample Licensee", shipped as
+  production data under a public IRI. There is no legal text to check it against, so no finding about
+  its permissions can be made. It needs a deprecation route, not a correction.
+findings:
+- rubric: 1
+  severity: major
+  field: dct:title
+  description: The record has no cc:legalcode, no dct:source and no dct:alternative, so nothing in it
+    points at a document. The warranty disclaimer reads "This is a disclaimer. No programmer were harmed
+    during the creation of this license :)." This is a fixture that reached production, as docs/DATA.md
+    already records.
+  action: none
+- rubric: 1
+  severity: major
+  field: cc:license
+  description: The record carries two cc:license values, dalicclib:CC-BY-4.0 and dalicclib:MIT. The composer
+    wrote the user's "licensed under" choice to the same predicate the library uses for the record's own
+    license. A separate predicate is needed; that is a code fix, not a data fix.
+  action: none
+- rubric: 1
+  severity: minor
+  field: odrl:assignee
+  description: A stray odrl:assignee "Sample Licensee" is present. No other record has one and nothing
+    renders it.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Recommendation: keep the IRI, mark the record as withdrawn rather than delete it, and
+    exclude it from the library list, the search index and the homepage count. A dct:isReplacedBy is not
+    appropriate because nothing replaces it. The two triples below make the status explicit and machine-readable
+    without removing a published IRI; they need a vocabulary term first.'
+  action: proposed
+  change: |
+    dalicc:recordStatus dalicc:deprecated ;
+    dalicc:additionalClauses "Test fixture of the license composer. Not a license and not legal advice. Retained because the identifier has been published; excluded from the license library listing." ;
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'There is no way to say that a record is not a public license. Proposed terms: dalicc:recordStatus
+    with the values dalicc:active, dalicc:deprecated and dalicc:testFixture. The same mechanism would
+    serve any future withdrawal.'
+  action: none
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: The asset collection lists dcmitype:Software, which family_rules_baseline.md rule 8b flags.
+    For a fixture the target type means nothing.
+  action: none
+family: Sample and test records
+port_of: null
+variant_kind: null
+notes: No legal text exists, so the verdict is text-unavailable rather than correct or corrected. Nothing
+  was changed in the file. DeveloperLicense, the other record with fixture characteristics, is in batch
+  2 and was not touched here.

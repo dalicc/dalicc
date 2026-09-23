@@ -1,0 +1,65 @@
+id: IscLicense
+title: ISC License
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/ISC.txt
+text_retrieved: true
+verdict: corrected
+summary: 'The ISC license is the Zero Clause BSD text plus one condition: the copyright notice and the
+  permission notice must appear in all copies. The record modelled only cc:Attribution for that condition,
+  dropping the permission notice, and had no SPDX id. Both were fixed, and the explicit right to charge
+  a fee was added.'
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: Added the SPDX list id ISC.
+  action: applied
+  change: 'spdx:licenseId "ISC" ;
+
+    '
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The condition reads: "provided that the above copyright notice and this permission notice
+    appear in all copies". The record required cc:Attribution only. Added cc:Notice to the distribute,
+    modify and derive duties, matching MIT and the BSD records.'
+  action: applied
+  change: "odrl:duty [ a odrl:Duty ;\n        odrl:action cc:Notice ] ;\n"
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: The grant is "for any purpose with or without fee". dalicc:chargeDistributionFee was already
+    permitted; added dalicc:chargeLicenseFee so that the record says the same as 0BSD, whose text is this
+    text minus the notice condition.
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:chargeLicenseFee ] ;\n"
+- rubric: 3
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:ChangeLicense is prohibited although the text imposes no condition beyond the notice.
+    0BSD, whose text differs only by that notice, does not prohibit it. Same family-level decision as
+    in the BSD records.
+  action: proposed
+  change: "# remove\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:ChangeLicense\
+    \ ] ;\n"
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: odrl:grantUse is not permitted here although 0BSD permits it on a text that grants strictly
+    less. The ISC text does not use the word sublicense, so this is left open.
+  action: proposed
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action odrl:grantUse ] ;\n"
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 1 finding 7.6: dct:publisher was the placeholder ''N.N.''; the
+    ISC text names no steward, so the predicate is left out rather than filled with a placeholder. The
+    disclaimer paragraph is split at ''IN NO EVENT SHALL THE AUTHOR BE LIABLE'', the split the new ISC-form
+    records use.'
+  action: applied
+family: MIT, ISC, Zlib, Boost, UPL, WTFPL (permissive, short)
+port_of: null
+variant_kind: null
+notes: The record now states the permission-notice condition that the license actually has.

@@ -1,0 +1,86 @@
+id: HPND
+title: Historical Permission Notice and Disclaimer
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/HPND.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models the Historical Permission Notice and Disclaimer, the template SPDX uses for the family
+  of pre-MIT permission notices. Its terms are those of the NTP license: permission to use, copy, modify and distribute
+  for any purpose without fee, the notice condition, and a bar on using the copyright holder''s name in advertising.'
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads: "Permission to use, copy, modify, and distribute this software and its documentation
+    for any purpose and without fee is hereby granted". The record permits reproduce, distribute, modify, derive,
+    display, present, commercial use, derivative works and modified works. The words without fee describe what the
+    licensor charges; nothing in the text stops the licensee charging for a copy, so dalicc:chargeDistributionFee
+    is permitted, as on IscLicense.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The condition is that the copyright notice appears in all copies and that both the copyright notice
+    and the permission notice appear in supporting documentation: cc:Attribution and cc:Notice on distribute, modify
+    and derive.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The text bars advertising use of the name: "and that the name of <copyright holder> or <related
+    entities> not be used in advertising or publicity pertaining to distribution of the software without specific,
+    written prior permission". That is dalicc:promote as a prohibition. dalicc:ChangeLicense is prohibited because
+    the text requires the license itself to travel with every copy, which is the reading IscLicense and BSD-3-Clause
+    take of the same clause. The MIT record does not carry the prohibition although its text has the same requirement,
+    so the library is not uniform here. (Corrected on 2026-09-15 by the verification pass: see the rubric
+    3 finding on relicensing below.)'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: dalicc:WarrantyDisclaimer joins the two warranty sentences of the text, the one at the end of the
+    grant paragraph and the capitalised one that follows it. The stray comma before the full stop after MERCHANTABILITY
+    AND FITNESS is in the published text and is kept.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following IscLicense. The text licenses software
+    and its documentation.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: The deontic model is identical to NTP and to curl. HPND is the template rather than one project's
+    license, which is the reason to keep it as a record of its own.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Permission to use, copy, modify, and distribute this software
+    and its documentation for any purpose and without fee is hereby granted, provided that the above copyright notice
+    appear in all copies, and that both that copyright notice and this permission notice appear in supporting documentation,
+    and that the name of <copyright holder> or <related entities> not be used in advertising or publicity pertaining
+    to distribution of the software without specific, written prior permission." The permission carries the dalicc:compliantLicense
+    duty, as Apache-2.0 does, because the notice has to survive the relicensing.'
+  action: applied
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. The placeholders <year>, <copyright holder> and <related entities> are
+  part of the published template and are kept in the quoted clauses.

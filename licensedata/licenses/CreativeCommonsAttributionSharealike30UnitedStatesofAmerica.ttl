@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 3.0 United States of America"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 3.0 United States of America"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike30UnitedStatesofAmerica
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttributionSharealike30UnitedStatesofAmerica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -43,19 +44,28 @@ dalicclib:CreativeCommonsAttributionSharealike30UnitedStatesofAmerica a odrl:Set
  APPLY TO YOU.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "3.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike30UnitedStatesofAmerica/versions> ;
     dct:alternative "Attribution ShareAlike 3.0 United States of America",
         "Attribution-ShareAlike 3.0",
         "Attribution-ShareAlike 3.0 United States of America",
         "CC BY SA 3.0",
-        "CC BY SA 3.0 us",
+        "CC BY SA 3.0 US",
         "CC BY-SA 3.0",
-        "CC BY-SA 3.0 us",
+        "CC BY-SA 3.0 US",
         "CC-BY-SA 3.0",
-        "CC-BY-SA 3.0 us",
+        "CC-BY-SA 3.0 US",
         "Creative Commons BY-SA 3.0",
-        "Creative Commons BY-SA 3.0 us" ;
+        "Creative Commons BY-SA 3.0 US" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
-    dct:title "Creative Commons Attribution-ShareAlike 3.0 United States of America"@en ;
+    dct:source <https://creativecommons.org/licenses/by-sa/3.0/us/> ;
+    dct:title "Creative Commons Attribution-ShareAlike 3.0 United States"@en ;
     odrl:duty [ a odrl:Duty ;
             odrl:action cc:ShareAlike ] ;
     odrl:permission [ a odrl:Permission ;
@@ -97,7 +107,9 @@ dalicclib:CreativeCommonsAttributionSharealike30UnitedStatesofAmerica a odrl:Set
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/us.png> ;

@@ -1,0 +1,124 @@
+id: OGL-UK-1.0
+title: Open Government Licence v1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://spdx.org/licenses/OGL-UK-1.0.html
+text_retrieved: true
+verdict: created
+summary: 'Version 1.0 of the UK Open Government Licence, modelled on the existing version 3.0 record (UkOpenGovernmentLicenseForPublicSectorInformation).
+  A worldwide, royalty-free, perpetual licence to copy, publish, distribute, transmit, adapt and commercially exploit
+  public sector information, conditional on acknowledging the source and linking to the licence. What a reader should
+  know: the Exemptions section takes personal data, insignia and third party rights out of the grant, which the
+  record carries as a dalicc:exemptedMaterial prohibition, and the licence grants the database right as well as
+  copyright.'
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: The record carries the SPDX id OGL-UK-1.0, the SPDX name as dct:title and the short forms as dct:alternative.
+    dalicc:variantKind is "version", because the library already holds version 3.0 of this licence as UkOpenGovernmentLicenseForPublicSectorInformation.
+  action: applied
+- rubric: 2
+  severity: major
+  field: odrl:target
+  description: 'Three asset types, dalicc:CreativeWork, dcmitype:Dataset and dcmitype:Software, exactly as on the
+    version 3.0 record, because the definition of Information names all three: "information protected by copyright
+    or by database right (for example, literary and artistic works, content, data and source code) offered for use
+    under the terms of this licence".'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant is "a worldwide, royalty-free, perpetual, non-exclusive licence to use the Information",
+    and the list under "You are free to" names copying, publishing, distributing, transmitting, adapting and exploiting
+    the Information commercially. The record therefore permits reproduce, distribute, display, present, modify,
+    derive, commercial use, derivative works, modified works and the distribution fee. dalicc:suiGenerisDatabaseRights
+    is permitted because the licence covers "copyright and database right material" in as many words, which is the
+    first record in the library to state the database right as a grant rather than leave it implicit in the dataset
+    target.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: Two prohibitions. dalicc:promote carries the non-endorsement condition, "ensure that you do not use
+    the Information in a way that suggests any official status or that the Information Provider endorses you or
+    your use of the Information", which version 2.0 sets out under its own Non-endorsement heading. dalicc:exemptedMaterial
+    carries the Exemptions section, which takes personal data, unpublished information, logos, crests, the Royal
+    Arms, military insignia, third party rights, other intellectual property rights and identity documents out of
+    the licence altogether. Both lists are quoted in dalicc:additionalClauses. The version 3.0 record prohibits
+    cc:ShareAlike and dalicc:addStatement as well; neither is supported by the text of version 1.0, which in fact
+    prescribes an attribution statement, so neither was written here.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The condition is one sentence, "You must, where you do any of the above", so the same three duties
+    hang off odrl:distribute, odrl:modify and odrl:derive: cc:Attribution and cc:Notice for "acknowledge the source
+    of the Information by including any attribution statement specified by the Information Provider(s) and, where
+    possible, provide a link to this licence", and dalicc:addStatement for the wording the licence prescribes where
+    the Information Provider specifies none, "Contains public sector information licensed under the Open Government
+    Licence v1.0." The duty not to mislead is quoted rather than modelled.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The no warranty paragraph goes into dalicc:WarrantyDisclaimer and the paragraph that follows it into
+    dalicc:LiabilityLimitation. The existing version 3.0 record keeps both paragraphs in dalicc:WarrantyDisclaimer
+    and carries no dalicc:LiabilityLimitation; this record splits them, as the other records of this addition do.
+    dalicc:additionalClauses carries the grant, the fair dealing sentence, the freedoms, the conditions, the termination
+    sentence, the exemptions, the governing law clause, the definition of Information and the interoperability statement.
+  action: applied
+- rubric: 7
+  severity: major
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction stays dalicc:worldwide, which the grant states in as many words. The governing law
+    clause names no country either: "This licence is governed by the laws of the jurisdiction in which the Information
+    Provider has its principal place of business, unless otherwise specified by the Information Provider." It is
+    quoted in dalicc:additionalClauses. dalicc:validityType is dalicc:perpetual, again from the grant.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: '"These are important conditions of this licence and if you fail to comply with them the rights granted
+    to you under this licence, or any similar licence granted by the Licensor, will end automatically." Automatic
+    termination has no property a record can carry; quoted, with dalicc:terminatesOnBreach proposed.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: The compatibility statement of the About section (interoperable with the Creative Commons Attribution
+    Licence and the Open Data Commons Attribution License) is not an operative clause but it is what a user compares
+    licences for. No term expresses it; proposed term dalicc:compatibleLicenseTest, quoted for now.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer with the axioms of dg_default returned an empty conflict
+    list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Family: the two OGL records of this batch and the existing version 3.0 record share one model. Version
+    1.0 differs from 2.0 in three quoted places only: version 2.0 pulls the non-endorsement condition out into its
+    own section, says "commercially and non-commercially" where 1.0 says "commercially", and drops the reference
+    to the Data Protection Act 1998 that 1.0 lists among its conditions. Version 3.0 adds the Information Provider''s
+    right to require the attribution to be removed. The NCGL-UK-2.0 record in the library is the non-commercial
+    edition of the same text and prohibits cc:CommercialUse, which these records permit.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "The Licensor grants you a worldwide, royalty-free, perpetual,
+    non-exclusive licence to use the Information subject to the conditions below." The permission carries the dalicc:compliantLicense
+    duty, as Apache-2.0 does, because the notice has to survive the relicensing.'
+  action: applied
+family: Open Government Licence
+port_of: null
+variant_kind: version
+notes: Modelled from the SPDX plain text. cc:legalcode points at the licence on The National Archives site, dct:source
+  at the SPDX page the text was taken from. No long dash appears in the source text; the typographic quotation marks
+  of the original are reproduced as they stand.

@@ -1,0 +1,223 @@
+id: CreativeCommonsAttributionSharealike20Chile
+title: Creative Commons Attribution-ShareAlike 2.0 Chile
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by-sa/2.0/cl/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the BY-SA element set of the Creative Commons 2.0 port for Chile and it does
+  so correctly: the ShareAlike element carries a cc:ShareAlike duty, the attribution and notice duties
+  hang on the acts that make the work public, and the permissions, prohibitions and duties all follow
+  from the grant and the restrictions sections of the port. The legal text was read in Spanish. Corrections
+  applied: dct:source. What remains are proposals that touch the whole Creative Commons family rather
+  than this record, chiefly the express prohibition of sublicensing.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source. The legal code page states the canonical
+    URL of the licence, https://creativecommons.org/licenses/by-sa/2.0/cl/, and the six 4.0 International
+    parents carry exactly that pair, legal code plus deed. Added.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by-sa/2.0/cl/> ;
+- rubric: 1
+  severity: minor
+  field: dct:alternative
+  description: 'Four of the eleven dct:alternative labels carry the country code in lower case ("CC BY
+    SA 2.0 cl", "CC BY-SA 2.0 cl", "CC-BY-SA 2.0 cl", "Creative Commons BY-SA 2.0 cl") while every other
+    record of the library writes it in upper case. This is not specific to this port: the same lower case
+    labels sit in forty six Attribution-ShareAlike port records across versions 2.0 and 3.0, so normalising
+    them is one library wide edit at consolidation rather than five records here.'
+  action: proposed
+  change: |-
+    dct:alternative "CC BY SA 2.0 CL",
+            "CC BY-SA 2.0 CL",
+            "CC-BY-SA 2.0 CL",
+            "Creative Commons BY-SA 2.0 CL" ;   # replacing the lower case forms
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: 'The record targets dalicc:CreativeWork only, while the 4.0 International parent CC-BY-SA-4.0
+    targets dalicc:CreativeWork and dcmitype:Dataset. The Chilean 2.0 port names no database and no data
+    compilation anywhere: the word "base de datos" does not occur in any of its six legal texts. The "Obra"
+    is "aquella creacion derivada de la inteligencia en los dominios literarios, artisticos y cientificos
+    ... susceptible de proteccion via derecho de autor". Creative Commons licences are media neutral and
+    this one grants the rights in all media and formats now known or later invented, so the asset type
+    is plausible, but nothing in this port''s text licenses a database right. Aligning the ports that
+    are silent on the point with the parents is a single library wide decision, so it is proposed rather
+    than applied.'
+  action: proposed
+  change: |-
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset ] ;
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'Every modelled permission is supported by the grant. Section 3 grants "una licencia mundial,
+    gratuita, no exclusiva y permanente (durante todo el periodo de vigencia de los derechos de autor)",
+    a worldwide, free, non exclusive and permanent licence. It covers reproduction, incorporation into
+    collective works, distribution of copies, public exhibition, public performance and making available
+    to the public, and the creation and reproduction of derivative works and their distribution, public
+    exhibition, performance and making available (section 3.b and 3.d). The record models this as odrl:reproduce,
+    odrl:distribute, odrl:display, odrl:present, odrl:derive and cc:DerivativeWorks, plus odrl:modify
+    and dalicc:ModifiedWorks, which rest on the technical modification sentence of the grant: Section
+    3: "Los derechos antes mencionados incluyen el derecho a realizar dichas modificaciones en la medida
+    que sean tecnicamente necesarias para ejercer los derechos en otro medio o formatos." cc:CommercialUse
+    is permitted, which follows from a grant that puts no purpose limit on the rights.'
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The licence forbids sublicensing and the record does not say so. Section 4: "No es posible
+    sublicenciar la Obra." The vocabulary already has dalicc:sublicense, but no record in the library
+    uses it and its skos:note says so, and the same sentence stands in every Creative Commons 2.0 and
+    3.0 record, so adding it to this batch alone would split the compatibility behaviour of one family.
+    Proposed as one library wide correction, together with an update of the vocabulary note.'
+  action: proposed
+  change: |-
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: Section 4: "No es posible
+    ofrecer o imponer ninguna condicion sobre la Obra que altere o limite las condiciones de esta Licencia
+    o el ejercicio de los derechos de los destinatarios otorgados en este documento." dalicc:promote is
+    prohibited, which rests on the reservation of all rights not expressly granted and the Creative Commons
+    trademark paragraph of the notice around the licence body, not a clause of the licence itself'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: The attribution and notice duties are present and supported. Section 4 requires a copy
+    of the licence or its Uniform Resource Identifier with every copy or recording distributed, exhibited,
+    performed or made available, and that every notice referring to the licence and to the warranty clause
+    of section 5 be kept intact. Credit is owed to the "Autor Original", by name or pseudonym if given,
+    with the title of the work and, where practicable, the URI the licensor specifies; a derivative work
+    must carry a credit identifying the use made of the work, for example "Traduccion al frances de la
+    Obra del Autor Original". Section 4 requires a derivative work to carry "un credito que identifique
+    el uso de la Obra en la Obra Derivada". The duties hang on odrl:distribute, odrl:modify and odrl:derive,
+    which matches the licence, since they are triggered by making the work public rather than by private
+    use. The cc:ShareAlike duty is carried at the level of the odrl:Set, as in the parent CC-BY-SA-4.0.
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The share alike clause of this port is wider than a flat prohibition of relicensing. Section
+    4: "Usted puede distribuir, exhibir publicamente, ejecutar publicamente, o poner a disposicion publica
+    una Obra Derivada solo de acuerdo con las condiciones de esta Licencia, una version posterior de la
+    licencia o una Licencia iCommons de Creative Commons que contenga los mismos Elementos de la Licencia."
+    The record expresses it as a cc:ShareAlike duty plus a dalicc:ChangeLicense prohibition, which cannot
+    say that a later version of the same licence, or another jurisdiction port with the same licence elements,
+    is an acceptable outgoing licence. The 4.0 International parent CC-BY-SA-4.0 has the same limitation,
+    and the consistency check would report a conflict if dalicc:ChangeLicense were permitted next to cc:ShareAlike,
+    so the present modelling is the only one the checker allows.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: 'dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation are quoted from the Spanish text
+    of this port and not from the English unported version, and each field holds its own clause. Section
+    5 (Garantia) and section 6 (Limitacion de responsabilidad) are separate sections of the legal code
+    and the record keeps them apart: dalicc:WarrantyDisclaimer holds section 5 and dalicc:LiabilityLimitation
+    holds section 6, both quoted verbatim in Spanish and in the upper case of the original.'
+  action: none
+- rubric: 6
+  severity: minor
+  field: dalicc:LiabilityLimitation
+  description: dalicc:LiabilityLimitation reproduces the Chilean text as the Attribution 2.0 Chile page
+    publishes it, including the misspelling "PATRINMONIALES" for "PATRIMONIALES" and the closing sentence
+    "ALGUNAS LEYES NO PERMITEN LA EXCLUSION DE CIERTA RESPONSABILIDAD, EN CUYO CASO ESTA EXCLUSION PUEDE
+    NO APLICARSE A USTED", which the by-sa, by-nd and by-nc-nd pages of the same port do not print. The
+    substance is the same in all six pages, so this is a quotation source note, not a modelling defect,
+    and the quote was left untouched.
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: 'The record has no dalicc:additionalClauses, so the clauses the ODRL policy cannot carry
+    stay invisible: the reservation of unnamed rights, the downstream offer to recipients, the severability,
+    waiver and entire agreement paragraphs and the termination rule. Section 7 ends the licence automatically
+    on breach, keeps the licences of downstream recipients of derivative and collective works alive and
+    lets sections 1, 2, 5, 6, 7 and 8 survive; section 8 makes the licensor offer every recipient a licence
+    on the same terms. The whole Creative Commons family is modelled this way.'
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:Chile, which matches the country of the legal code URL https://creativecommons.org/licenses/by-sa/2.0/cl/legalcode,
+    and dalicc:validityType is dalicc:perpetual, which matches a grant made for the duration of copyright.
+    The Chilean 2.0 port has no choice of law clause at all: section 8 ends with the severability, waiver
+    and entire agreement paragraphs and says nothing about the applicable law. cc:jurisdiction bpicounty:Chile
+    therefore records the port, not a forum chosen by the text.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The licence forbids technological protection measures and the vocabulary has no term for
+    it. Section 4: "Usted no puede distribuir, exhibir publicamente, ejecutar publicamente, o poner a
+    disposicion publica la Obra con alguna medida tecnologica que controle el acceso o la utilizacion
+    de ella de una forma que sea inconsistente con las condiciones de esta Licencia." Proposed term: dalicc:applyTechnicalProtectionMeasures,
+    an odrl:Action to be used as an odrl:Prohibition. Not modelled, because bending an existing term would
+    be worse than the gap.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The automatic termination of the licence on breach, the survival of the named sections
+    and the licence the licensor offers to every downstream recipient have no vocabulary terms. Section
+    7 ends the licence automatically on breach, keeps the licences of downstream recipients of derivative
+    and collective works alive and lets sections 1, 2, 5, 6, 7 and 8 survive; section 8 makes the licensor
+    offer every recipient a licence on the same terms. Proposed terms: dalicc:terminationOnBreach and
+    dalicc:downstreamOffer.'
+  action: none
+- rubric: 8
+  severity: info
+  field: record
+  description: 'The Chilean 2.0 port has no moral rights clause at all: neither "derechos morales" nor
+    any equivalent appears in the licence body, so the inalienable moral rights of Chilean law (Ley 17.336)
+    are left to the statute. Section 6 mentions "danos morales" only as a head of damage. Among the ports
+    reviewed so far this puts Chile with France and Poland rather than with Austria, the Netherlands or
+    Germany. Nothing is missing from the record here, but the silence is worth recording next to the ports
+    that do speak.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Section 4 reserves royalty collection for musical works in all six element sets, including
+    the plain Attribution licence: "Cuando la Obra es una composicion o interpretacion musical el Licenciante
+    se reserva el derecho exclusivo de percibir, ya sea individualmente o a traves de una sociedad de
+    gestion de derechos (p. ej. SCD u otras), los derechos por ejecucion publica o puesta a disposicion
+    publica de la Obra (p. ej webcast), si dicha ejecucion esta basicamente intencionada o dirigida a
+    obtener un provecho comercial o una compensacion monetaria privada." The vocabulary has no term for
+    a reserved or waived royalty collection right. Proposed term: dalicc:royaltyCollectionReserved, with
+    a companion for the waiver.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the forty one axioms of licensedata/dependencygraph/dg_default.ttl
+    reports no conflict, before and after the corrections, and the pre review baseline listed none for
+    this record either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of Creative Commons Attribution-ShareAlike 4.0 International. The deontic model of
+    this record is identical to the parent, statement for statement, apart from odrl:target: the same
+    permissions with the same duties, the same prohibitions and the same set level duties. What differs
+    is the jurisdiction, the language of the legal text, the clause texts, and the version specific clauses
+    of 2.0 that the model does not carry, chiefly the express prohibition of sublicensing, the technological
+    measures clause and the royalty collection arrangements. The compatibility checker cannot tell this
+    record from any other record of the BY-SA element set, across all three versions and every jurisdiction
+    the library holds.'
+  action: none
+family: 'Creative Commons 2.0 port: Chile (CL)'
+port_of: CC-BY-SA-4.0
+variant_kind: jurisdiction-port
+notes: The parent is the 4.0 International record of the same element set, since the library holds no
+  unported and no International 2.0 record; the version difference, 2.0 against 4.0, is therefore part
+  of the port relation and not only the jurisdiction. The SPDX licence list defines no identifier for
+  this port, so the record carries no spdx:licenseId and none was invented. Nothing in this review is
+  legal advice.

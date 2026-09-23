@@ -1,0 +1,97 @@
+id: BSD-3-Clause-Attribution
+title: BSD with attribution
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/BSD-3-Clause-Attribution.txt
+text_retrieved: true
+verdict: created
+summary: Models the three-clause BSD text with a fourth clause that puts a prescribed acknowledgement on every redistribution
+  of any form. The model is the model of BSD-3-Clause plus a dalicc:addStatement duty on odrl:distribute, and the
+  prescribed wording is quoted in dalicc:additionalClauses.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all BSD-3-Clause-Attribution.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following BSD-3-Clause.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant reads "Redistribution and use in source and binary forms, with or without modification, are
+    permitted provided that the following conditions are met", so the record carries the permission set of BSD-3-Clause.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: dalicc:ChangeLicense is permitted with the dalicc:compliantLicense duty. Nothing in the text bars a
+    relicensing; what it asks is that the notice and the acknowledgement travel with the copy.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: Clause 3 reads "Neither the name of the copyright holder nor the names of its contributors may be used
+    to endorse or promote products derived from this software without specific prior written permission", so dalicc:promote
+    is prohibited, as on BSD-3-Clause.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Attribution and cc:Notice hang off odrl:distribute, odrl:modify and odrl:derive for clauses 1 and
+    2. dalicc:addStatement hangs off odrl:distribute for clause 4, "Redistributions of any form whatsoever must retain
+    the following acknowledgment", because the clause asks for a prescribed statement to travel with the work rather
+    than for credit in the abstract.
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: dalicc:advertisingAcknowledgement is not used. That term is for an acknowledgement in advertising materials,
+    which is the BSD-4-Clause clause; clause 4 here reaches every redistribution of any form, advertising or not.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: 'The single disclaimer paragraph carries two clauses. The record splits it at the sentence boundary:
+    the warranty sentence goes to dalicc:WarrantyDisclaimer and the liability sentence to dalicc:LiabilityLimitation,
+    both verbatim. This follows BSD-1-Clause, which split the same paragraph on 2026-09-15.'
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: Clause 4 is quoted in full, with the single quotation marks and the double quotation marks the text
+    uses around the name of the university.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: info
+  field: dalicc:additionalClauses
+  description: No clause of this text needs a term the vocabulary does not have.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Read against licensedata/licenses/BSD-3-Clause.ttl the record adds one duty, dalicc:addStatement on
+    odrl:distribute. On the ladder of the four BSD records it stands between BSD-3-Clause and BSD-4-Clause: it has
+    the endorsement bar of the third rung and a prescribed acknowledgement that is not limited to advertising.'
+  action: none
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: 'The prescribed wording names the Universidad de Palermo because the SPDX text is the one that university published.
+  dct:publisher is left out: SPDX lists no steward for the text.'

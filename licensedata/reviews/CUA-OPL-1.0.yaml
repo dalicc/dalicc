@@ -1,0 +1,112 @@
+id: CUA-OPL-1.0
+title: CUA Office Public License v1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://opensource.org/license/CUA-OPL-1.0'
+text_retrieved: true
+verdict: created
+summary: >-
+  The CUA Office Public License is the Mozilla Public License 1.1 with the CUA Office Project
+  as steward: the same two-part grant, the same file-level reciprocity on modifications, the
+  same LEGAL file, the same patent retaliation and the same Californian choice of law. The
+  record follows the MPL-1.1 record of this library statement for statement. Nothing here is
+  legal advice.
+findings:
+- rubric: 2
+  severity: info
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Software alone, following MPL-1.1, the parent text, and the two Eclipse records
+    of this family. The licence covers Covered Code and Modifications, which is software.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 2.1(a) grants rights "to use, reproduce, modify, display, perform, sublicense and
+    distribute the Original Code (or portions thereof) with or without Modifications, and/or
+    as part of a Larger Work", so dalicc:sublicense is a permission, and 2.1(b) and 2.2(b)
+    grant patent licences, so dalicc:patentGrant is one. Commercial use is contemplated
+    throughout, so cc:CommercialUse and dalicc:chargeDistributionFee are permitted.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    dalicc:ChangeLicense, because section 3.1 says "The Source Code version of Covered Code
+    may be distributed only under the terms of this License or a future version of this
+    License released under Section 6.1"; dalicc:promote, because section 6.3 forbids the
+    phrases "CUA Office", "CUA", "CUAPL" or any confusingly similar phrase in the name of a
+    modified licence; and dalicc:patentRetaliationTermination from section 8.2.
+  action: applied
+- rubric: 3
+  severity: minor
+  field: 'dalicc:ChangeLicense'
+  description: >-
+    Section 3.6 lets You "distribute the Executable version of Covered Code or ownership
+    rights under a license of Your choice, which may contain terms different from this
+    License". A dalicc:ChangeLicense permission with a dalicc:compliantLicense duty would
+    express it, but it would contradict the prohibition that section 3.1 requires for the
+    source form, and the MPL-1.1 record takes the same decision. The clause is quoted instead.
+  action: proposed
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Section 3.1 governs the Modifications by this licence and requires a copy of the licence
+    with every copy of the Source Code; 3.2 requires any Modification to be made available in
+    Source Code form; 3.3 requires a file documenting the changes and a prominent statement of
+    derivation; 3.5 requires the Exhibit A notice in each file. cc:ShareAlike, cc:SourceCode,
+    cc:Attribution and cc:Notice therefore hang on odrl:distribute, odrl:modify and
+    odrl:derive, with dalicc:modificationNotice on the last two. The reciprocity is
+    file-level, so it hangs on the acts rather than on the licence, exactly as in MPL-1.1.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyOrLiabilityAcceptance'
+  description: >-
+    Section 7 is quoted into dalicc:WarrantyDisclaimer, section 9 into
+    dalicc:LiabilityLimitation and the warranty and support offer of section 3.5 into
+    dalicc:WarrantyOrLiabilityAcceptance. dalicc:additionalClauses carries sections 3.4, 3.6,
+    3.7, 6.3, 8, 10, 11 and 13.
+  action: applied
+- rubric: 7
+  severity: info
+  field: 'cc:jurisdiction'
+  description: >-
+    Section 11 chooses Californian law and the Federal Courts of the Northern District of
+    California. The record keeps cc:jurisdiction dalicc:worldwide and quotes the clause, as
+    the MPL records do.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The LEGAL file of section 3.4 could use dalicc:includeNoticeFile, but MPL-1.1, the parent
+    record, quotes it instead and this record follows. The termination and cure period of
+    section 8.1 have no property; proposed dalicc:terminatesOnBreach with a companion for the
+    cure period.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty list for this record.
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: >-
+    Against MPL-1.1 the differences are the steward, the licence name in section 6.3 and the
+    reference to the NPL in section 13. The deontic model is identical, which is the answer to
+    whether a separate record is justified: it is, because the SPDX id and the notice text
+    differ, but a reader should treat the two as one licence.
+  action: none
+family: 'Eclipse, Common Public and Lucent'
+port_of: null
+variant_kind: null
+notes: >-
+  Modelled from the SPDX plain text of CUA-OPL-1.0 and checked against the URL in
+  cc:legalcode. The licence is grouped with the Eclipse and Common Public family in this
+  batch, but its parent is the Mozilla Public License 1.1.

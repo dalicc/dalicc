@@ -1,0 +1,95 @@
+id: NGPL
+title: Nethack General Public License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://opensource.org/license/NGPL
+text_retrieved: true
+verdict: created
+summary: 'Models the Nethack General Public License, a pre-GPL-1.0 copyleft derived from the Bison
+  licence. The record follows GPL-2.0-only: whole-work reciprocity as a license-wide cc:ShareAlike
+  duty, a source-code duty on distribution and an express bar on sublicensing. The licence has
+  no formal warranty disclaimer, only a duty to keep the absence-of-warranty notices intact.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, license id, SPDX id and IRI agree. dct:publisher is left out: the text
+    names the copyright holders of the game, not a steward of the licence.'
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only, following GPL-2.0-only.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Paragraph 1 grants verbatim copying and distribution of source, paragraph 2 modification
+    and distribution of modifications, paragraph 3 distribution in object or executable form.
+    Paragraph 2(c) is express about money: ''You may charge a distribution fee for the physical
+    act of transferring a copy, and you may at your option offer warranty protection in exchange
+    for a fee'', so dalicc:chargeDistributionFee is carried.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'dalicc:sublicense is prohibited, which few records in the library carry as a software
+    prohibition: ''You may not copy, sublicense, distribute or transfer NetHack except as expressly
+    provided under this License Agreement.'' dalicc:ChangeLicense is prohibited because paragraph
+    2(b) requires terms identical to this agreement.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:ShareAlike is license-wide, because the reciprocity reaches the whole work
+    and not the changed files: paragraph 2(b) requires you to ''cause the whole of any work that
+    you distribute or publish, that in whole or in part contains or is a derivative of NetHack
+    or any part thereof, to be licensed at no charge to all third parties on terms identical to
+    those contained in this License Agreement''. cc:SourceCode, cc:Attribution, cc:Notice and
+    dalicc:noWarrantyNotice hang off distribute, modify and derive; dalicc:modificationNotice
+    is added to modify and derive for 2(a).'
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: The licence carries no warranty disclaimer and no liability clause, so neither
+    predicate is written. Paragraph 1 instead makes the licensee keep 'the notices on all files
+    that refer to copyrights, to this License Agreement, and to the absence of any warranty',
+    which the record models as a dalicc:noWarrantyNotice duty. Paragraphs 2(b), 3(b) and 4 are
+    quoted in dalicc:additionalClauses.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'No legal system and no term named: dalicc:worldwide, dalicc:perpetual.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Automatic termination on breach has no property that a record can carry: dalicc:terminationOnBreach
+    is a policy quality with no predicate. The clause is quoted in dalicc:additionalClauses. Proposed
+    term: dalicc:terminatesOnBreach as a boolean property on odrl:Set, with the cure period as
+    a literal. Text: ''Any attempt otherwise to copy, sublicense, distribute or transfer NetHack
+    is void and your rights to use the program under this License agreement shall be automatically
+    terminated'' (paragraph 4).'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run with the 39 axioms of licensedata/dependencygraph/dg_default.ttl,
+    returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Closest sibling is GPL-2.0-only, which has the same license-wide cc:ShareAlike,
+    the same source duty and the same ChangeLicense prohibition. NGPL differs by the express sublicensing
+    bar, by the absence of a warranty disclaimer and by the noncommercial limit on the written-offer
+    route to source.
+  action: none
+family: Reciprocal and source-available
+port_of: null
+variant_kind: null
+notes: 'Modelled from the SPDX plain text. Paragraph 3(b), which allows a written offer of source
+  only for noncommercial distribution, is quoted rather than modelled as a restriction on cc:CommercialUse:
+  it limits one way of discharging the source duty, not commercial use itself.'

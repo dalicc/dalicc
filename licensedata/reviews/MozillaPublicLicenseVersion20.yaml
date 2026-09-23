@@ -1,0 +1,74 @@
+id: MozillaPublicLicenseVersion20
+title: Mozilla Public License Version 2.0
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/MPL-2.0.txt
+text_retrieved: true
+verdict: corrected
+summary: The record models the Mozilla Public License 2.0 with a license-wide share-alike duty, source-code,
+  attribution and notice duties and a prohibition on changing the license. That is the right shape for
+  file-level copyleft. Commercial use was not permitted at all and the trademark reservation of section
+  2.3 was not modelled; both were added, together with the SPDX id.
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: Added MPL-2.0.
+  action: applied
+  change: 'spdx:licenseId "MPL-2.0" ;
+
+    '
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Section 2.1(a) grants a "world-wide, royalty-free, non-exclusive license ... to use, reproduce,
+    make available, modify, display, perform, distribute, and otherwise exploit its Contributions". "Otherwise
+    exploit" with no field-of-use limit is a commercial grant, and section 3.2 contemplates charging for
+    a distribution. The record did not permit cc:CommercialUse, which made a widely used permissive-leaning
+    copyleft license look non-commercial. Added.
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action cc:CommercialUse ] ;\n"
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'Section 2.3 ends: "This License does not grant any rights in the trademarks, service marks,
+    or logos of any Contributor (except as may be necessary to comply with the notice requirements in
+    Section 3.4)." Added the dalicc:promote prohibition that 332 other records carry for the same clause.'
+  action: applied
+  change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:promote ] ;\n"
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: odrl:derive is permitted but cc:DerivativeWorks, the right to distribute the adaptation,
+    is not, while dalicc:ModifiedWorks is. Every other copyleft record in the batch carries both.
+  action: proposed
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action cc:DerivativeWorks ] ;\n"
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'Section 2.1(b) grants a patent license and section 5.2 terminates it on patent litigation.
+    Section 3.3, which lets a Larger Work be distributed under other terms as long as the Covered Software
+    files stay under this license, is the whole point of file-level copyleft and is expressed only as
+    a blunt dalicc:ChangeLicense prohibition. Proposed: dalicc:patentGrant, dalicc:patentRetaliationTermination,
+    dalicc:fileLevelCopyleft.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: Sections 6 and 7 are both recorded and quoted accurately.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 2 finding 6.3 and 6.4 and consolidation decision 4: the record
+    made no patent statement although section 2.1(b) grants a patent license and section 5.2 is a retaliation
+    clause, and it hung cc:ShareAlike off the license although MPL 2.0 reciprocity is file level: ''You
+    must inform recipients that the Source Code Form of the Covered Software is governed by the terms
+    of this License'' (3.1), while 3.2(b) lets a Larger Work go out ''under terms of Your choice''.'
+  action: applied
+family: Other OSI approved licenses (corporate, academic, weak copyleft)
+port_of: null
+variant_kind: null
+notes: The reference model for file-level copyleft in this library. The Common Development and Distribution
+  License record should follow it.

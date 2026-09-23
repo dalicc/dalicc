@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution 3.0 Austria"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution 3.0 Austria"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttribution30Austria
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,9 +15,11 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttribution30Austria a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "CC-BY-3.0-AT" ;
     cc:jurisdiction bpicounty:Austria ;
     cc:legalcode <https://creativecommons.org/licenses/by/3.0/at/legalcode> ;
     dalicc:LiabilityLimitation """ÜBER DIE IN ZIFFER 5 GENANNTE GEWÄHRLEISTUNG HINAUS HAFTET DER LIZENZGEBER IHNEN GEGENÜBER FÜR SCHÄDEN JEGLICHER ART NUR BEI GROBER FAHRLÄSSIGKEIT ODER VORSATZ, UND ÜBERNIMMT DARÜBER HINAUS KEINERLEI FREIWILLIGE HAFTUNG FÜR FOLGE- ODER ANDERE SCHÄDEN, AUCH WENN ER ÜBER DIE MÖGLICHKEIT IHRES EINTRITTS UNTERRICHTET WURDE.
@@ -25,6 +27,12 @@ dalicclib:CreativeCommonsAttribution30Austria a odrl:Set ;
     dalicc:WarrantyDisclaimer """SOFERN KEINE ANDERS LAUTENDE, SCHRIFTLICHE VEREINBARUNG ZWISCHEN DEM LIZENZGEBER UND IHNEN GESCHLOSSEN WURDE UND SOWEIT MÄNGEL NICHT ARGLISTIG VERSCHWIEGEN WURDEN, BIETET DER LIZENZGEBER DEN SCHUTZGEGENSTAND UND DIE ERTEILUNG DER NUTZUNGSBEWILLIGUNG UNTER AUSSCHLUSS JEGLICHER GEWÄHRLEISTUNG AN UND ÜBERNIMMT WEDER AUSDRÜCKLICH NOCH KONKLUDENT GARANTIEN IRGENDEINER ART. DIES UMFASST INSBESONDERE DAS FREISEIN VON SACH- UND RECHTSMÄNGELN, UNABHÄNGIG VON DEREN ERKENNBARKEIT FÜR DEN LIZENZGEBER, DIE VERKEHRSFÄHIGKEIT DES SCHUTZGEGENSTANDES, SEINE VERWENDBARKEIT FÜR EINEN BESTIMMTEN ZWECK SOWIE DIE KORREKTHEIT VON BESCHREIBUNGEN.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "3.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttribution30Austria/versions> ;
     dct:alternative "Attribution 3.0",
         "Attribution 3.0 Austria",
         "CC BY 3.0",
@@ -34,7 +42,10 @@ dalicclib:CreativeCommonsAttribution30Austria a odrl:Set ;
         "CC-BY-3.0 AT",
         "Creative Commons BY 3.0",
         "Creative Commons BY 3.0 AT" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/licenses/by/3.0/at/> ;
     dct:title "Creative Commons Attribution 3.0 Austria"@en ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:display ],
@@ -75,8 +86,11 @@ dalicclib:CreativeCommonsAttribution30Austria a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
-            dct:type dalicc:CreativeWork ] ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset ] ;
     foaf:img <https://creativecommons.org/images/international/at.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/at/88x31.png> .

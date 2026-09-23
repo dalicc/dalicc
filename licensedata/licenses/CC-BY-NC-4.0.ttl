@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial 4.0 International"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial 4.0 International"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CC-BY-NC-4.0
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,14 +15,19 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CC-BY-NC-4.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "CC-BY-NC-4.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc/4.0/legalcode> ;
     dalicc:LiabilityLimitation "To the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You." ;
     dalicc:WarrantyDisclaimer "Unless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You." ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CC-BY-NC-4.0/versions> ;
     dct:alternative "Attribution NonCommercial 4.0 International",
         "Attribution-NonCommercial 4.0",
         "Attribution-NonCommercial 4.0 International",
@@ -34,6 +39,8 @@ dalicclib:CC-BY-NC-4.0 a odrl:Set ;
         "CC-BY-NC 4.0 International",
         "Creative Commons BY-NC 4.0",
         "Creative Commons BY-NC 4.0 International" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc/4.0/> ;
     dct:title "Creative Commons Attribution-NonCommercial 4.0 International"@en ;
@@ -76,7 +83,9 @@ dalicclib:CC-BY-NC-4.0 a odrl:Set ;
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset ] ;

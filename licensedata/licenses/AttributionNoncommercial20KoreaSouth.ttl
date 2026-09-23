@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial 2.0 South Korea"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial 2.0 South Korea"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/AttributionNoncommercial20KoreaSouth
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,20 +15,23 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:AttributionNoncommercial20KoreaSouth a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:jurisdiction bpicounty:KoreaSouth ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc/2.0/kr/legalcode> ;
-    dalicc:LiabilityLimitation """당사자간에 서면에 의하여 달리 합의되지 않는 한, 이용허락자는 저작물을 있는 그대로 제공하며 일체의 보증이나 담보책임을 부담하지 않습니다.
- 
- 법이 달리 정하는 경우를 제외하고, 이용허락자는, 본 이용허락이나 저작물의 이용으로부터 야기되는 손해에 대하여 책임을 부담하지 않습니다.
+    dalicc:LiabilityLimitation """법이 달리 정하는 경우를 제외하고, 이용허락자는, 본 이용허락이나 저작물의 이용으로부터 야기되는 손해에 대하여 책임을 부담하지 않습니다.
 """ ;
     dalicc:WarrantyDisclaimer """당사자간에 서면에 의하여 달리 합의되지 않는 한, 이용허락자는 저작물을 있는 그대로 제공하며 일체의 보증이나 담보책임을 부담하지 않습니다.
- 
- 법이 달리 정하는 경우를 제외하고, 이용허락자는, 본 이용허락이나 저작물의 이용으로부터 야기되는 손해에 대하여 책임을 부담하지 않습니다.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "2.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/AttributionNoncommercial20KoreaSouth/versions> ;
     dct:alternative "Attribution NonCommercial 2.0 South Korea",
         "Attribution-NonCommercial 2.0",
         "Attribution-NonCommercial 2.0 South Korea",
@@ -40,7 +43,10 @@ dalicclib:AttributionNoncommercial20KoreaSouth a odrl:Set ;
         "CC-BY-NC 2.0 KR",
         "Creative Commons BY-NC 2.0",
         "Creative Commons BY-NC 2.0 KR" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/licenses/by-nc/2.0/kr/> ;
     dct:title "Creative Commons Attribution-NonCommercial 2.0 South Korea"@en ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:display ],
@@ -81,7 +87,9 @@ dalicclib:AttributionNoncommercial20KoreaSouth a odrl:Set ;
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/kr.png> ;

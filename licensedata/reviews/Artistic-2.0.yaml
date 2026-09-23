@@ -1,0 +1,87 @@
+id: Artistic-2.0
+title: Artistic License 2.0
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Artistic-2.0.txt
+text_retrieved: true
+verdict: corrected
+summary: The Artistic License 2.0 permits use and modification "for any purpose without restriction" and
+  distribution gratis or for a Distributor Fee; the one money restriction is that no licensing fee may
+  be charged for the Package. The record prohibited commercial use outright, which reverses that, and
+  carried no trademark prohibition and no warranty clause. All were corrected.
+findings:
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'Clause 1 states: "You are permitted to use the Standard Version and create and use Modified
+    Versions for any purpose without restriction", and clause 2 allows distribution "either gratis or
+    for a Distributor Fee". The record prohibited cc:CommercialUse. Removed it, added the permission,
+    and added the prohibition the text actually states, clause 7: "provided that you do not charge a licensing
+    fee for the Package".'
+  action: applied
+  change: "# removed the cc:CommercialUse prohibition; added\nodrl:permission [ a odrl:Permission ;\n\
+    \        odrl:action cc:CommercialUse ] ;\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action\
+    \ dalicc:chargeLicenseFee ] ;\n"
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'Clause 12 states: "This license does not grant you the right to use any trademark, service
+    mark, tradename, or logo of the Copyright Holder." Added the dalicc:promote prohibition.'
+  action: applied
+  change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:promote ] ;\n"
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: Clause 14 was not recorded. Added, split into the warranty and the liability field.
+  action: applied
+  change: 'dalicc:WarrantyDisclaimer "THE PACKAGE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS
+    \"AS IS\" AND WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES. ..." ;
+
+    dalicc:LiabilityLimitation "UNLESS REQUIRED BY LAW, NO COPYRIGHT HOLDER OR CONTRIBUTOR WILL BE LIABLE
+    ..." ;
+
+    '
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: odrl:display and odrl:present are absent, which makes this the only software record in
+    the batch without them. Clause 1 permits use "for any purpose without restriction", which covers both,
+    but the license never names public display or performance, so it is proposed rather than applied.
+  action: proposed
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action odrl:display ],\n    [ a odrl:Permission\
+    \ ;\n        odrl:action odrl:present ] ;\n"
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The dalicc:rename duty on modify and derive is supported by clause 4(b): "the Modified
+    Version must bear a name that is different from the name of the Standard Version." dalicc:ChangeLicense
+    with a compliance duty is supported by clause 4(c)(ii).'
+  action: none
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'Clause 13 grants a patent license and terminates the whole license on patent litigation.
+    Clause 4 offers three alternative ways to comply, a structure the model cannot express: it can only
+    state all three duties as if they were cumulative. Proposed: dalicc:patentGrant, dalicc:patentRetaliationTermination,
+    dalicc:alternativeConditions.'
+  action: none
+- rubric: 1
+  severity: minor
+  field: dct:publisher
+  description: dct:publisher is the placeholder "N.N." while cc:attributionName says "Perl Foundation".
+  action: proposed
+  change: 'dct:publisher "The Perl Foundation" ;
+
+    '
+- rubric: 10
+  severity: minor
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9 and 10: the record was corrected against
+    its new siblings and versioned. Family rule 14 of scripts/review/family_rules.py: dct:publisher was
+    the placeholder ''N.N.'' and the clause literals carried a padding space.'
+  action: applied
+family: Other OSI approved licenses (corporate, academic, weak copyleft)
+port_of: null
+variant_kind: null
+notes: The commercial-use prohibition made a permissive license look non-commercial in every compatibility
+  result.

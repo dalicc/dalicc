@@ -1,0 +1,55 @@
+id: DataExplorationLicence
+title: Data Exploration Licence
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 license-wide duty and 1 statement, changed 2 identification
+    details and recorded the review state.
+  changes:
+  - action: changed
+    statement: cc:legalcode <https://www.ordnancesurvey.co.uk/documents/licences/data-exploration-licence.pdf>
+    previous: cc:legalcode <https://www.ordnancesurvey.co.uk/business-and-government/licensing/licences/data-exploration.html>
+    reason: cc:legalcode and dct:source both pointed at https://www.ordnancesurvey.co.uk/business-and-government/licensing/licences/data-exploration.html,
+      which returns 404, so the record had no working link to the licence at all. cc:legalcode now
+      points at the terms PDF, https://www.ordnancesurvey.co.uk/documents/licences/data-exploration-licence.pdf,
+      and dct:source at the product page, https://www.ordnancesurvey.co.uk/licensing/data-exploration-licence.
+      Both resolve.
+    source: review-finding 1/cc:legalcode
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:validityType dalicc:specifyDate
+    reason: 'The record was the only one in the library without a dalicc:validityType, and it carries
+      scho:startDate 2018-01-01 and scho:endDate 2018-12-31. dalicc:specifyDate is the vocabulary
+      term the composer pairs with those two properties, so it was added. The licence itself is time
+      limited: "You can use the OS Data for 6 months from the date you first access the OS Data",
+      three months for third party data.'
+    source: review-finding 7/dalicc:validityType
+  - action: changed
+    statement: dct:source <https://www.ordnancesurvey.co.uk/licensing/data-exploration-licence>
+    previous: dct:source <https://www.ordnancesurvey.co.uk/business-and-government/licensing/licences/data-exploration.html>
+    reason: cc:legalcode and dct:source both pointed at https://www.ordnancesurvey.co.uk/business-and-government/licensing/licences/data-exploration.html,
+      which returns 404, so the record had no working link to the licence at all. cc:legalcode now
+      points at the terms PDF, https://www.ordnancesurvey.co.uk/documents/licences/data-exploration-licence.pdf,
+      and dct:source at the product page, https://www.ordnancesurvey.co.uk/licensing/data-exploration-licence.
+      Both resolve.
+    source: review-finding 1/cc:legalcode
+  - action: added
+    statement: duty cc:Attribution
+    reason: 'The record had no attribution duty at all, although the licence makes the acknowledgement
+      mandatory: "You need to display the OS acknowledgement statement. To acknowledge that the OS
+      Exploration Data is from OS and is protected by law, you must clearly display the following
+      statement alongside your use of the data: Crown copyright and database rights Ordnance Survey
+      Limited (insert year)." A licence-wide cc:Attribution duty was added, licence-wide because the
+      duty is owed for any use and not only when the data is passed on.'
+    source: review-finding 5/odrl:duty

@@ -1,0 +1,97 @@
+id: Cube
+title: Cube License
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Cube.txt
+text_retrieved: true
+verdict: created
+summary: 'Models the licence of the Cube game engine: the three restrictions of the zlib licence with a fourth clause
+  of its own that forbids relicensing a source version without the author''s written permission. The record follows
+  TheZlibLibpngLicense for the first three clauses and prohibits dalicc:ChangeLicense for the fourth.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all Cube.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following TheZlibLibpngLicense.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant reads "Permission is granted to anyone to use this software for any purpose, including commercial
+    applications, and to alter it and redistribute it freely, subject to the following restrictions". The record permits
+    reproduce, distribute, modify, derive, display, present, commercial use, derivative works, modified works and
+    the distribution fee. Commercial use is named in the grant itself.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:ChangeLicense is prohibited. Clause 4, the clause the text itself marks as "additional clause
+    specific to Cube", reads "Source versions may not be "relicensed" under a different license without my explicitly
+    written permission". This is the one point where the record departs from family rule 15, and it departs because
+    the text states the bar in as many words rather than leaving a notice condition to be read as one.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:promote is not prohibited. The text has no endorsement or trademark clause; clause 1 bars misrepresenting
+    the origin of the software, which is a duty on the person altering it and not a bar on using a name.
+  action: none
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Notice hangs off odrl:distribute, odrl:modify and odrl:derive for clause 3, "This notice may not
+    be removed or altered from any source distribution". dalicc:modificationNotice and dalicc:rename hang off odrl:modify
+    and odrl:derive for clause 2, "Altered source versions must be plainly marked as such, and must not be misrepresented
+    as being the original software", the same pair TheZlibLibpngLicense uses for the same sentence.
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: No cc:Attribution. Clause 1 says an acknowledgment "would be appreciated but is not required", so there
+    is no credit duty to record.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The opening paragraph carries the warranty sentence and the liability sentence in one breath. They
+    are split into dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation, verbatim, including the single quotation
+    marks around 'as-is'.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: info
+  field: dalicc:additionalClauses
+  description: No clause needs a term the vocabulary does not have. Clause 4 is carried by the dalicc:ChangeLicense
+    prohibition and quoted in full.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Read against licensedata/licenses/TheZlibLibpngLicense.ttl the record has the same duties and one
+    statement more: dalicc:ChangeLicense is prohibited rather than permitted. scripts/review/family_rules.py counts
+    this as a violation of rule 15, because the rule has no exception list for a permissive text that bars relicensing
+    outright. scripts/review/family_rules.py carries such a list since 2026-09-23, and this
+    record is on it.'
+  action: applied
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: cc:legalcode and dct:source both point at the SPDX page; the original release note the text comes from is no
+  longer served. The quotation marks around "relicensed" are the author's own.

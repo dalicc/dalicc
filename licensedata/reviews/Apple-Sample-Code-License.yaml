@@ -1,0 +1,124 @@
+id: Apple-Sample-Code-License
+title: Apple Sample Code License
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://scancode-licensedb.aboutcode.org/apple-sscl.LICENSE
+text_retrieved: true
+verdict: created
+summary: >-
+  Four sentences that let you put the sample source code into your own program without
+  restriction, on the condition that a changed copy is not passed on under the original
+  designation and that the source says where it came from. It is the shortest text of this
+  family and the only one that licenses code rather than a model, although model repositories
+  declare it. The record follows the permissive shape: relicensing is a permission with a
+  compliant-licence duty, and the renaming condition is a duty on the acts that trigger it.
+findings:
+- rubric: 1
+  severity: info
+  field: 'dct:title'
+  description: >-
+    File name, record identifier and IRI local name agree. There is no SPDX identifier, so no
+    spdx:licenseId triple is written. dct:title is the name of the document the publisher
+    distributes; the heading the text itself carries, "Apple Sample Source Code License", and
+    the two model-hub tags are in dct:alternative.
+  action: applied
+- rubric: 2
+  severity: major
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Software alone. The text speaks only of "this Apple sample source code" and of
+    incorporating it "into your program(s)", and it licenses no weights, no data and no
+    documentation. This is the one record of the family that does not also carry
+    dcmitype:Dataset; the asset types follow what the text licenses, not the kind of
+    repository that declares it.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    The grant is "You may incorporate this Apple sample source code into your program(s)
+    without restriction." Incorporation into another program covers copying, changing and
+    passing the result on, so the record permits odrl:reproduce, odrl:distribute, odrl:modify,
+    odrl:derive, cc:DerivativeWorks and dalicc:ModifiedWorks, and cc:CommercialUse because the
+    grant names no limit of purpose. dalicc:ChangeLicense is permitted and carries
+    dalicc:compliantLicense: the text lets the code travel inside your own program under your
+    own terms, provided the two conditions below are met.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: 'odrl:prohibition'
+  description: >-
+    The record states no prohibition. There is no trademark or endorsement clause, so
+    dalicc:promote is absent, which is unusual in this library and is stated here for that
+    reason. The one bar the text does carry, "You are not permitted to redistribute this Apple
+    sample source code as 'Apple sample source code' after having made changes", is a
+    condition on how a changed copy is named, so it is modelled as the dalicc:rename duty
+    rather than as a prohibition.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Two duties on each of odrl:distribute, odrl:modify and odrl:derive. dalicc:rename comes
+    from the bar on redistributing a changed copy under the original designation.
+    dalicc:modificationNotice and cc:Attribution come from "If you're going to re-distribute
+    the source, we require that you make it clear in the source that the code was descended
+    from Apple sample source code, but that you've made changes." cc:Attribution hangs on
+    odrl:distribute only, because it is redistribution that the sentence addresses.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    dalicc:WarrantyDisclaimer carries "This Apple sample source code has been provided "AS IS"
+    and the responsibility for its operation is yours." There is no limitation-of- liability
+    clause, so dalicc:LiabilityLimitation is left out rather than filled with the disclaimer.
+    dalicc:additionalClauses carries the grant, the redistribution bar and the descended-from
+    condition, one literal each. No long dash appears in the text.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    cc:jurisdiction is dalicc:worldwide and dalicc:validityType is dalicc:perpetual. The text
+    names no territory, no governing law, no term and no termination clause, so
+    dalicc:governingLaw and dalicc:terminatesOnBreach are left out.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The sentence "You are not permitted to redistribute this Apple sample source code as
+    'Apple sample source code' after having made changes" bars the use of the original
+    designation for a changed copy. dalicc:rename says the changed work must be
+    distinguishable, which is the effect, but the text is a bar on a designation rather than a
+    duty to choose a new title. Quoted; the proposed term is dalicc:originalDesignationBar, a
+    rule action for a licence that reserves its own naming for the unchanged work.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer against dg_default returned an empty
+    conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Family: the outlier of the model family. Every other record of the family carries a use
+    restriction, a termination clause or an acceptable-use policy; this one carries none, and
+    it is the only record whose target is software alone. Its nearest sibling in the library
+    is the short permissive group, whose records also permit relicensing with a compliant-
+    licence duty.
+  action: none
+family: Model licences
+port_of: null
+variant_kind: null
+variant_of: null
+notes: >-
+  The publisher distributes the document as a PDF, which could not be converted, so the text
+  was taken from the plain-text copy in the ScanCode license database; cc:legalcode points
+  there and dct:source points at the publisher's own PDF. The short form of the name is used
+  as dct:title because that is how the publisher names the file; the heading inside the text
+  is kept as an alternative.

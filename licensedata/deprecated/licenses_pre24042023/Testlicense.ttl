@@ -1,0 +1,47 @@
+# Title: The machine-readable representation of "TestLicense" in the DALICC license library
+# Author: DALICC
+# Source: http://dalicc.net/licenselibrary/Testlicense
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <http://dalicc.net/ns#> .
+@prefix dalicclib: <http://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+
+dalicclib:Testlicense a odrl:Set ;
+    cc:license dalicclib:CC-BY_v4 ;
+    cc:License dalicclib:CC-BY-NC_v4 ;
+    cc:attributionName "LicenseCreator" ;
+    cc:jurisdiction dalicc:worldwide ;
+    dalicc:validityType dalicc:perpetual ;
+    dct:publisher "LicensorName" ;
+    dct:title "TestLicense" ;
+    odrl:assignee "LicenseeName" ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action odrl:derive ],
+        [ a odrl:Prohibition ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ] .

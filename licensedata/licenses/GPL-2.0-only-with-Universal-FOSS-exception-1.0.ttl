@@ -1,0 +1,101 @@
+# Title: The machine-readable representation of "GNU General Public License, Version 2 with Universal FOSS Exception, Version 1.0"@en in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/GPL-2.0-only-with-Universal-FOSS-exception-1.0
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:GPL-2.0-only-with-Universal-FOSS-exception-1.0 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "GPL-2.0-only WITH Universal-FOSS-exception-1.0" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://www.gnu.org/licenses/old-licenses/gpl-2.0.html> ;
+    dalicc:LiabilityLimitation "IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES." ;
+    dalicc:WarrantyDisclaimer "BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM \"AS IS\" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION." ;
+    dalicc:WarrantyOrLiabilityAcceptance "You may charge a fee for the physical act of transferring a copy, and you may at your option offer warranty protection in exchange for a fee." ;
+    dalicc:additionalClauses "The Universal FOSS Exception, Version 1.0 In addition to the rights set forth in the other license(s) included in the distribution for this software, data, and/or documentation (collectively the \"Software,\" and such licenses collectively with this additional permission the \"Software License\"), the copyright holders wish to facilitate interoperability with other software, data, and/or documentation distributed with complete corresponding source under a license that is OSI-approved and/or categorized by the FSF as free (collectively \"Other FOSS\"). We therefore hereby grant the following additional permission with respect to the use and distribution of the Software with Other FOSS, and the constants, function signatures, data structures and other invocation methods used to run or interact with each of them (as to each, such software's \"Interfaces\"): (i) The Software's Interfaces may, to the extent permitted by the license of the Other FOSS, be copied into, used and distributed in the Other FOSS in order to enable interoperability, without requiring a change to the license of the Other FOSS other than as to any Interfaces of the Software embedded therein. The Software's Interfaces remain at all times under the Software License, including without limitation as used in the Other FOSS (which upon any such use also then contains a portion of the Software under the Software License). (ii) The Other FOSS's Interfaces may, to the extent permitted by the license of the Other FOSS, be copied into, used and distributed in the Software in order to enable interoperability, without requiring that such Interfaces be licensed under the terms of the Software License or otherwise altering their original terms, if this does not require any portion of the Software other than such Interfaces to be licensed under the terms other than the Software License. (iii) If only Interfaces and no other code is copied between the Software and the Other FOSS in either direction, the use and/or distribution of the Software with the Other FOSS shall not be deemed to require that the Other FOSS be licensed under the license of the Software, other than as to any Interfaces of the Software copied into the Other FOSS. This includes, by way of example and without limitation, statically or dynamically linking the Software together with Other FOSS after enabling interoperability using the Interfaces of one or both, and distributing the resulting combination under different licenses for the respective portions thereof. For avoidance of doubt, a license which is OSI-approved or categorized by the FSF as free, includes, for the purpose of this permission, such licenses with additional permissions, and any license that has previously been so-approved or categorized as free, even if now deprecated or otherwise no longer recognized as approved or free. Nothing in this additional permission grants any right to distribute any portion of the Software on terms other than those of the Software License or grants any additional permission of any kind for use or distribution of the Software in conjunction with software other than Other FOSS." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:orLaterVersionOption false ;
+    dalicc:terminatesOnBreach true ;
+    dalicc:compatibleLicenseTest "a license that is OSI-approved and/or categorized by the FSF as free" ;
+    dalicc:reciprocityScope "the Software and its Interfaces, not Other FOSS that only exchanges Interfaces with it" ;
+    dalicc:variantKind "exception" ;
+    dalicc:variantOf dalicclib:GPL-2.0-only ;
+    dalicc:licenseVersion "2.0" ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-22"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/GPL-2.0-only-with-Universal-FOSS-exception-1.0/versions> ;
+    dct:alternative "GNU General Public License v2.0 only with Universal FOSS Exception, Version 1.0",
+        "GPL-2.0 with Universal FOSS Exception",
+        "GPL-2.0-only WITH Universal-FOSS-exception-1.0",
+        "GPL-2.0-only-with-Universal-FOSS-exception-1.0",
+        "GPLv2 with Universal FOSS Exception" ;
+    dct:hasVersion "1" ;
+    dct:modified "2026-09-22"^^xsd:date ;
+    dct:publisher "Free Software Foundation" ;
+    dct:source <https://spdx.org/licenses/Universal-FOSS-exception-1.0.html> ;
+    dct:title "GNU General Public License, Version 2 with Universal FOSS Exception, Version 1.0"@en ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ] ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:exceptedCombination ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Software ] .

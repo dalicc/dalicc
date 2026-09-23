@@ -1,0 +1,100 @@
+id: MPL-1.0
+title: Mozilla Public License 1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'http://www.mozilla.org/MPL/MPL-1.0.html'
+text_retrieved: true
+verdict: created
+summary: >-
+  Models the first Mozilla Public License as the earliest member of the chain whose 2.0
+  version the library already holds as MozillaPublicLicenseVersion20. The reciprocity is file
+  level and is attached to the acts the text names. Nothing here is legal advice.
+findings:
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 2.1(a) grants a licence "to use, reproduce, modify, display, perform, sublicense
+    and distribute the Original Code (or portions thereof) with or without Modifications, or
+    as part of a Larger Work", so dalicc:sublicense is a permission. Section 2.1(b) grants a
+    licence "under patents now or hereafter owned or controlled by Initial Developer, to make,
+    have made, use and sell", so dalicc:patentGrant is a permission. The batch notes suggested
+    MPL-1.0 has no patent clause; the text does carry one, in 2.1(b) and 2.2(b).
+  action: applied
+- rubric: 4
+  severity: minor
+  field: 'odrl:prohibition'
+  description: >-
+    No dalicc:promote statement is made: unlike MPL-1.1, the 1.0 grant is not qualified by the
+    words "other than patent or trademark" and the text says nothing about trademarks at all,
+    so the library records neither a grant nor a refusal. There is no patent retaliation
+    clause in 1.0, so dalicc:patentRetaliationTermination is absent too. dalicc:ChangeLicense
+    is prohibited because the covered code itself may not be moved to other terms.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    The reciprocity of this licence is file level, not whole work: the Source Code form of the
+    covered code must stay under this licence, while a Larger Work combining it with other
+    code may be distributed as a single product. The record therefore attaches cc:ShareAlike
+    to odrl:distribute, odrl:modify and odrl:derive rather than to the odrl:Set, which is the
+    shape the existing CommonDevelopmentAndDistributionLicense10 record uses. cc:SourceCode,
+    cc:Notice and cc:Attribution hang off the same three acts, and dalicc:modificationNotice
+    off odrl:modify and odrl:derive.
+  action: applied
+- rubric: 6
+  severity: major
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Section 3.6 permits the executable version to be distributed "under a license of Your
+    choice, which may contain terms different from this License, provided that You are in
+    compliance with the terms of this License", which the model cannot express next to a
+    cc:ShareAlike duty without contradicting itself. It is quoted verbatim, together with the
+    termination clause, the U.S. government end user clause and the applicable-law clause. The
+    warranty and liability sections are quoted word for word in their own predicates.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    The grant itself is world-wide ("a world-wide, royalty-free, non-exclusive license"), so
+    cc:jurisdiction stays dalicc:worldwide and the applicable-law and venue clause is quoted
+    in dalicc:additionalClauses instead of being turned into a bpicounty IRI. A choice of law
+    is not a jurisdiction port and the library reserves cc:jurisdiction with a country for
+    ports.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Two clauses have no vocabulary term. Automatic termination on breach with a cure period is
+    a policy quality with no property to hang it on; proposed term dalicc:terminatesOnBreach
+    as a property over the existing dalicc:terminationOnBreach concept. The survival of
+    validly granted end user licences after termination has no term either; proposed term
+    dalicc:sublicenseSurvival. Both clauses are quoted in dalicc:additionalClauses.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the dependency graph dg_default
+    returned an empty conflict list. cc:ShareAlike is required and dalicc:ChangeLicense is
+    prohibited, which is the combination the check expects; asserting both cc:ShareAlike and a
+    dalicc:ChangeLicense permission would have been reported as a direct conflict.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Follows licensedata/licenses/CommonDevelopmentAndDistributionLicense10.ttl for the
+    placement of the reciprocity duties and MozillaPublicLicenseVersion20 for the rest. It
+    differs from the 2.0 record by carrying dalicc:patentGrant and dalicc:sublicense, which
+    the 2.0 record omits although the 2.0 text grants patents as well.
+  action: none
+family: Mozilla and CDDL
+port_of: null
+variant_kind: version
+notes: >-
+  Modelled from the SPDX plain text. The typewriter quotation marks of the source (``AS IS'')
+  are reproduced verbatim in the warranty clause.

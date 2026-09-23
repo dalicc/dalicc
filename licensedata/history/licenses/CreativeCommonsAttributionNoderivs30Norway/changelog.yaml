@@ -1,0 +1,79 @@
+id: CreativeCommonsAttributionNoderivs30Norway
+title: Creative Commons Attribution-NoDerivatives 3.0 Norway
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, removed
+    2 permissions, changed 1 asset target, recorded the relation to the record this one was adapted
+    from and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-ND-4.0
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:licenseVersion "3.0"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "jurisdiction-port"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dct:source <https://creativecommons.org/licenses/by-nd/3.0/no/>
+    reason: The record carried cc:legalcode but no dct:source. The legal code page of this port states
+      the canonical URL of the licence, https://creativecommons.org/licenses/by-nd/3.0/no/, and the
+      six 4.0 International parents carry exactly that pair, legal code plus deed. Added.
+    source: review-finding 1/dct:source
+  - action: removed
+    statement: permission dalicc:ModifiedWorks
+    reason: 'Review decision 2: a NoDerivatives license grants no right to modify, so the modification
+      permissions and the duties hanging off them were removed and the prohibition on derivatives
+      made explicit.'
+    source: consolidation-decision 2
+  - action: removed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    reason: 'Review decision 2: a NoDerivatives license grants no right to modify, so the modification
+      permissions and the duties hanging off them were removed and the prohibition on derivatives
+      made explicit.'
+    source: consolidation-decision 2
+  - action: added
+    statement: prohibition dalicc:sublicense
+    reason: 'Review decision 1: every Creative Commons record except the CC0 dedication, plus the
+      Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
+      as many words.'
+    source: consolidation-decision 1
+  - action: changed
+    statement: target asset types [dalicc:CreativeWork, dcmitype:Dataset]
+    previous: target asset types [dalicc:CreativeWork]
+    reason: The record targeted dalicc:CreativeWork only, while the 4.0 International parent CC-BY-ND-4.0
+      targets dalicc:CreativeWork and dcmitype:Dataset. This port settles the sui generis database
+      right expressly. Section 1 defines "Frembringelse" to reach beyond works under section 1 of
+      the Norwegian Copyright Act to subject matter protected under "aandsverksloven kapittel 5",
+      the chapter on neighbouring rights that contains the database and catalogue right of section
+      43. Section 3 closes with "Dersom lisensgiver innehar databaserettigheter eller lignende i henhold
+      til aandsverklovens section 43 og EUs databasedirektiv, fraskriver lisensgiver seg disse rettigheter"
+      (if the licensor holds database rights or the like under section 43 of the Copyright Act and
+      the EU database directive, the licensor waives them). Section 4(e) adds that the restrictions
+      do not apply to the parts that fall inside the definition only because they meet those criteria.
+      Because the legal text names databases as licensed subject matter and disposes of the database
+      maker's right in the grant itself, dcmitype:Dataset was added here rather than left as a proposal,
+      which is how the same question was decided for the Portuguese, Czech and Azerbaijani ports.
+      The ports in this batch whose text has no database clause at all, Ecuador and Brazil, keep the
+      proposal.
+    source: review-finding 2/odrl:target

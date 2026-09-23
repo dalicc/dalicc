@@ -1,0 +1,94 @@
+id: AFL-3.0
+title: Academic Free License 3.0
+current_version: 3
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 permission and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: Clause 1(c) grants the right "to distribute or communicate copies of the Original Work
+      and Derivative Works to the public, under any license of your choice that does not contradict
+      the terms and conditions ... in this Academic Free License". That is exactly dalicc:ChangeLicense
+      with a dalicc:compliantLicense duty, the pattern Apache-2.0 and the Common Development and Distribution
+      License use. Added.
+    source: review-finding 3/odrl:permission
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 4 finding 6.3, 6.4 and 6.5 and consolidation decision 4: the record prohibited cc:ShareAlike
+    and dalicc:addStatement without support, permitted dalicc:noWarrantyNotice although no clause
+    of the AFL grants such a right, kept the limitation of liability inside dalicc:WarrantyDisclaimer
+    while section 7, the disclaimer of warranty, was absent, made no patent statement although section
+    2 grants one and section 10 ends it on patent litigation, and carried the placeholder ''- not
+    specified - ''.'
+  changes:
+  - action: removed
+    statement: cc:attributionName "- not specified - "
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: dalicc:LiabilityLimitation "Under no circumstances and under no legal theory, whether
+      in tort (including negligence), contract, or otherwise, shall the Licensor be liable to anyone
+      for any indirect, special, incidental, or consequential damages of any character arising as
+      a result of this License or the use of the Original Work including, without limitation, damages
+      for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial
+      damages or losses. This limitation of liability shall not apply to the extent applicable law
+      prohibits such limitation."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: dalicc:WarrantyDisclaimer "Licensor warrants that the copyright in and to the Original
+      Work and the patent rights granted herein by Licensor are owned by the Licensor or are sublicensed
+      to You under the terms of this License with the permission of the contributor(s) of those copyrights
+      and patent rights. Except as expressly stated in the immediately preceding sentence, the Original
+      Work is provided under this License on an \"AS IS\" BASIS and WITHOUT WARRANTY, either express
+      or implied, including, without limitation, the warranties of non-infringement, merchantability
+      or fitness for a particular purpose. THE ENTIRE RISK AS TO THE QUALITY OF THE ORIGINAL WORK
+      IS WITH YOU. This DISCLAIMER OF WARRANTY constitutes an essential part of this License. No license
+      to the Original Work is granted by this License except under this disclaimer."
+    previous: dalicc:WarrantyDisclaimer "Under no circumstances and under no legal theory, whether
+      in tort (including negligence), contract, or otherwise, shall the Licensor be liable to anyone
+      for any indirect, special, incidental, or consequential damages of any character arising as
+      a result of this License or the use of the Original Work including, without limitation, damages
+      for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial
+      damages or losses. This limitation of liability shall not apply to the extent applicable law
+      prohibits such limitation."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: dct:publisher "- not specified - "
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: permission dalicc:noWarrantyNotice
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: permission dalicc:patentGrant
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition cc:ShareAlike
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:addStatement
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: prohibition dalicc:patentRetaliationTermination
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

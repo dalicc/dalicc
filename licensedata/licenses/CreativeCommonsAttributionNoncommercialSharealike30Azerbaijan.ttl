@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Azerbaijan "@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Azerbaijan "@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialSharealike30Azerbaijan
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Azerbaijan a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -22,12 +23,18 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Azerbaijan a odrl:S
     cc:legalcode <https://creativecommons.org/licenses/by-nc-sa/3.0/az/legalcode> ;
     dalicc:LiabilityLimitation """TƏTBİQEDİLƏN QANUNVERİCİLİKDƏ TƏLƏB OLUNDUĞU HALLAR İSİSNA OLMAQLA, HEÇ BİR HALDA LİSENZİYA VERƏN SİZİN QARŞINIZDA BU LİSENZİYADAN VƏ YA ƏSƏRİN İSTİFADƏSİNDƏN İRƏLİ GƏLƏN HÜQUQİ NƏZƏRİ CƏHƏTDƏN HEÇ BİR XÜSUSİ, TƏSADÜFİ, VƏ YA HƏR HANSI SƏBƏBDƏN YARANAN NÜMUNƏVİ VƏ YA CƏZALANDIRICI ZƏRƏRƏ (QƏSDƏN ZIYAN VURMA ISTISNA OLMAQLA) GÖRƏ MƏSULİYYƏT DAŞIMAYACAQ, HƏTTA LİSENZİYA VERƏNƏ BU CÜR ZƏRƏRİN EHTİMAL EDİLDİYİ BARƏDƏ MƏSLƏHƏT VERİLDİKDƏ BELƏ.
 """ ;
-    dalicc:WarrantyDisclaimer """Lisenziya verən təmsilçilik edir və zəmanət verir ki:
+    dalicc:additionalClauses """Lisenziya verən təmsilçilik edir və zəmanət verir ki:
  
   Bu Müqavilənin (Lisenziyanın) həyata keçirilməsi Lisenziya verənin iqtidarındadır və heç bir qanunvericlik aktı ilə ziddiyət təşkil etmir
  Lisenziya verən əsər üzərində müqavilə ilə verilən bütün hüquqlara sahiblik hüququ vardır və bu hüquqları həyata keçirmək üçün heç bir hüquqi əngəl yoxdur.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-SA-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "3.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialSharealike30Azerbaijan/versions> ;
     dct:alternative "Attribution NonCommercial ShareAlike 3.0 Azerbaijan",
         "Attribution-NonCommercial-ShareAlike 3.0",
         "Attribution-NonCommercial-ShareAlike 3.0 Azerbaijan",
@@ -39,8 +46,11 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Azerbaijan a odrl:S
         "CC-BY-NC-SA 3.0 AZ",
         "Creative Commons BY-NC-SA 3.0",
         "Creative Commons BY-NC-SA 3.0 AZ" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
-    dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Azerbaijan "@en ;
+    dct:source <https://creativecommons.org/licenses/by-nc-sa/3.0/az/> ;
+    dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Azerbaijan"@en ;
     odrl:duty [ a odrl:Duty ;
             odrl:action cc:ShareAlike ] ;
     odrl:permission [ a odrl:Permission ;
@@ -82,8 +92,11 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Azerbaijan a odrl:S
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
-            dct:type dalicc:CreativeWork ] ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset ] ;
     foaf:img <https://creativecommons.org/images/international/az.png> ;
     foaf:logo <https://licensebuttons.net/l/by-nc-sa/3.0/az/88x31.png> .

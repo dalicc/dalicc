@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 2.0 Croatia"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 2.0 Croatia"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike20Croatia
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttributionSharealike20Croatia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -25,18 +26,27 @@ dalicclib:CreativeCommonsAttributionSharealike20Croatia a odrl:Set ;
     dalicc:WarrantyDisclaimer """OSIM AKO STRANKE NISU DRUGAČIJE NAPISMENO UGOVORILE ILI JE ODREĐENO MJERODAVNIM PRAVOM, DAVATELJ LICENCE NUDI DJELO "KAKVO JEST", BEZ JAMSTAVA BILO KOJE VRSTE VEZANIH UZ DJELO.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "2.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike20Croatia/versions> ;
     dct:alternative "Attribution ShareAlike 2.0 Croatia",
         "Attribution-ShareAlike 2.0",
         "Attribution-ShareAlike 2.0 Croatia",
         "CC BY SA 2.0",
-        "CC BY SA 2.0 hr",
+        "CC BY SA 2.0 HR",
         "CC BY-SA 2.0",
-        "CC BY-SA 2.0 hr",
+        "CC BY-SA 2.0 HR",
         "CC-BY-SA 2.0",
-        "CC-BY-SA 2.0 hr",
+        "CC-BY-SA 2.0 HR",
         "Creative Commons BY-SA 2.0",
-        "Creative Commons BY-SA 2.0 hr" ;
+        "Creative Commons BY-SA 2.0 HR" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/licenses/by-sa/2.0/hr/> ;
     dct:title "Creative Commons Attribution-ShareAlike 2.0 Croatia"@en ;
     odrl:duty [ a odrl:Duty ;
             odrl:action cc:ShareAlike ] ;
@@ -79,7 +89,9 @@ dalicclib:CreativeCommonsAttributionSharealike20Croatia a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/hr.png> ;

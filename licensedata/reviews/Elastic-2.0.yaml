@@ -1,0 +1,103 @@
+id: Elastic-2.0
+title: Elastic License 2.0
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Elastic-2.0.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models the Elastic License 2.0, a short source-available licence. It grants use, copying, distribution,
+  making available and derivative works, and then takes back three things: you may not offer the software to others as a
+  hosted or managed service, you may not defeat the licence key, and you may not remove the licensor''s notices. It is not
+  an open source licence, because the first of those limitations restricts a field of use.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name agree. cc:legalcode is the URL the licence
+    text gives for itself and dct:source the SPDX entry.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only. The text speaks of 'the software' throughout and of a licence key inside it.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: '''The licensor grants you a non-exclusive, royalty-free, worldwide, non-sublicensable, non-transferable
+    license to use, copy, distribute, make available, and prepare derivative works of the software.'' That gives odrl:reproduce,
+    odrl:distribute, odrl:modify, odrl:derive, cc:DerivativeWorks and dalicc:ModifiedWorks. dalicc:patentGrant for the patent
+    paragraph. cc:CommercialUse is permitted because the licence restricts one act, offering the software as a service,
+    and not income-generating use as such; no display or performance permission, because the grant lists neither.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:sublicense for 'non-sublicensable'. dalicc:ChangeLicense for 'These terms do not imply any licenses
+    other than those expressly granted in these terms' read with 'You must ensure that anyone who gets a copy of any part
+    of the software from you also gets a copy of these terms'. dalicc:promote because the licence grants no trademark rights
+    and says only that 'Any use of the licensor's trademarks is subject to applicable law'. dalicc:patentRetaliationTermination
+    for 'If you or your company make any written claim that the software infringes or contributes to infringement of any
+    patent, your patent license for the software granted under these terms ends immediately.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Notice for the sentence that the terms travel with every copy and for the bar on removing notices, cc:ShareAlike
+    for the same sentence read as a condition on what the recipient gets, and dalicc:modificationNotice on odrl:modify and
+    odrl:derive for 'If you modify the software, you must include in any modified copies of the software prominent notices
+    stating that you have modified the software.' The duties hang on the acts that trigger them, not on the licence as a
+    whole.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: The licence disclaims warranty and limits liability in one sentence, so the whole sentence is quoted into
+    dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation is left out rather than repeating the same words. CAL-1.0 does
+    the same with the same wording. Ten further clauses are quoted in dalicc:additionalClauses.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'dalicc:terminatesOnBreach is true and dalicc:curePeriod is ''30 days'': ''If the licensor provides you with
+    a notice of your violation, and you cease all violation of this license no later than 30 days after you receive that
+    notice, your licenses will be reinstated retroactively.'' cc:jurisdiction is dalicc:worldwide because the grant says
+    ''worldwide''; the text names no governing law, so dalicc:governingLaw is absent.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:fieldOfUseRestriction
+  description: 'The managed-service bar has no term. dalicc:fieldOfUseRestriction is the nearest literal and names it; the
+    clause itself is quoted: ''You may not provide the software to third parties as a hosted or managed service, where the
+    service provides users with access to any substantial set of the features or functionality of the software.'' Proposed
+    term: dalicc:competingServiceRestriction, a rule action for offering the licensed work to third parties as a service.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The licence-key clause has no term. dalicc:applyTechnicalProtectionMeasures is the mirror image of it, because
+    it is about applying a measure, and this clause is about defeating one, so it is not used. The clause is quoted. Proposed
+    term: dalicc:circumventTechnicalProtectionMeasures, a rule action a licence can prohibit.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run against licensedata/dependencygraph/dg_default.ttl, returned
+    no conflicts.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: Its nearest siblings are RSALv2 and the Sustainable Use License, both written on the same skeleton of acceptance,
+    copyright licence, limitations, patents, notices, no other rights, termination, no liability and definitions. This record
+    differs from RSALv2 in the licence-key clause, which only this licence has, and in carrying no dalicc:governingLaw,
+    which RSALv2 does. It differs from the Sustainable Use License in permitting cc:CommercialUse and in leaving the fee
+    terms unstated rather than prohibiting them.
+  action: none
+family: Source-available licences and riders
+port_of: null
+variant_kind: null
+variant_of: null
+notes: The text quoted is the SPDX copy, which is identical to the copy the publisher ships with its own software. The record
+  says nothing about what counts as 'a substantial set of the features or functionality', which is the question a reader
+  of this licence usually has.

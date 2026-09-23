@@ -1,0 +1,87 @@
+id: PhpLicense30
+title: PHP License 3.0
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/PHP-3.0.txt
+text_retrieved: true
+verdict: corrected
+summary: The PHP license is a BSD-style permissive license with two name restrictions and a required acknowledgement.
+  The record had the permissions and the trademark prohibition right but recorded neither the naming clause
+  nor the acknowledgement, and had no SPDX id. All three were added. The share-alike prohibition has no
+  support in the text.
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: 'Added PHP-3.0. Verified rather than assumed: cc:legalcode already points at the Open Source
+    Initiative page that the SPDX entry lists under seeAlso, dct:alternative is "PHP-3.0", and the fetched
+    text is version 3.0.'
+  action: applied
+  change: 'spdx:licenseId "PHP-3.0" ;
+
+    '
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: Clause 4, the naming restriction, was not recorded. Added, quoted.
+  action: applied
+  change: 'dalicc:additionalClauses "4. Products derived from this software may not be called \"PHP\",
+    nor may \"PHP\" appear in their name, without prior written permission from group@php.net. ..." ;
+
+    '
+- rubric: 6
+  severity: minor
+  field: dalicc:PromotionSpecification
+  description: Clause 6 requires a fixed acknowledgement in every redistribution. The Apache-1.1 record
+    uses dalicc:PromotionSpecification for the same kind of clause; added here for consistency, quoted.
+  action: applied
+  change: 'dalicc:PromotionSpecification "6. Redistributions of any form whatsoever must retain the following
+    acknowledgment: \"This product includes PHP, freely available from <http://www.php.net/>\"." ;
+
+    '
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'Clause 4 also makes a rename duty: a derived product may not carry the PHP name. The Apache-1.1
+    record models the equivalent clause with dalicc:rename on odrl:modify. Proposed rather than applied
+    because clause 4 is drafted as a prohibition on a name, not as an obligation to rename.'
+  action: proposed
+  change: "# add to the odrl:modify and odrl:derive duties\nodrl:duty [ a odrl:Duty ;\n        odrl:action\
+    \ dalicc:rename ] ;\n"
+- rubric: 5
+  severity: major
+  field: odrl:prohibition
+  description: cc:ShareAlike is prohibited although the six conditions say nothing about the terms a redistributor
+    may choose. dalicc:addStatement is prohibited on the same empty basis. Both are template defaults.
+  action: proposed
+  change: '# remove both prohibitions
+
+    '
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:promote is prohibited and clause 3 supports it: "The name \"PHP\" must not be used
+    to endorse or promote products derived from this software without prior written permission."'
+  action: none
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'Clause 5 is a version-choice clause: covered code may always be used under the version
+    it was published under or under any later version published by the PHP Group. That is the same "or
+    later" mechanic as in the GNU family and no term expresses it. Proposed term: dalicc:orLaterVersionOption.'
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 3 finding 5 and consolidation decision 7: the record prohibited
+    dalicc:addStatement although clause 6 requires a statement to be retained, and prohibited cc:ShareAlike
+    without support. Clause 6 reads ''Redistributions of any form whatsoever must retain the following
+    acknowledgment: \"This product includes PHP software, freely available from <http://www.php.net/software/>\"'',
+    which is the dalicc:advertisingAcknowledgement duty, and clause 5 lets the licensee move to any later
+    version the PHP Group publishes.'
+  action: applied
+family: Other OSI approved licenses (corporate, academic, weak copyleft)
+port_of: null
+variant_kind: null
+notes: Uses the same composer template as the other OSI corporate records.

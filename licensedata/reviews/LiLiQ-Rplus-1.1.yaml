@@ -1,0 +1,155 @@
+id: LiLiQ-Rplus-1.1
+title: Licence Libre du Québec - Réciprocité forte version 1.1
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://spdx.org/licenses/LiLiQ-Rplus-1.1.html'
+text_retrieved: true
+verdict: created
+summary: >-
+  The strong reciprocity licence of the Quebec family. Its article 4.1 reaches derived
+  software as well as modified software, so the record carries cc:ShareAlike as a licence-wide
+  duty rather than on single acts, the shape the library uses for the GNU licences. Everything
+  else, including the compatibility offer of article 4.2, is as in the LiLiQ-R-1.1 record,
+  with a shorter list of compatible licences.
+findings:
+- rubric: 1
+  severity: minor
+  field: 'spdx:licenseId'
+  description: >-
+    The record carries the SPDX id LiLiQ-Rplus-1.1. dct:title is the SPDX name with its long
+    dash replaced by a plain hyphen, as the batch conventions require, and dct:alternative
+    holds the short forms. The library holds no other Quebec licence, so dalicc:variantKind is
+    left out.
+  action: applied
+- rubric: 2
+  severity: minor
+  field: 'odrl:target'
+  description: >-
+    Two asset types, dcmitype:Software and dalicc:CreativeWork, because article 2 defines the
+    licensed object as "une œuvre protégée par le droit d'auteur, telle qu'un programme
+    d'ordinateur et sa documentation": the documentation is licensed with the program. The
+    other software records of this batch carry dcmitype:Software alone.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Article 3 grants "une licence non exclusive et libre de redevances lui permettant
+    d’exercer les droits suivants sur le logiciel": produce or reproduce the whole or a
+    substantial part, perform or represent it in public, publish it. The record permits
+    reproduce, distribute, display, present, modify, derive, commercial use, derivative works,
+    modified works and the distribution fee; article 4 confirms modification and derivation by
+    allowing copies of "un logiciel modifie ou derive" to be distributed. The fourth right of
+    the permissive licence, sublicensing under another free licence, is absent from this text,
+    so neither dalicc:sublicense nor dalicc:ChangeLicense is written.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: 'odrl:prohibition'
+  description: >-
+    One prohibition, dalicc:promote, from article 6: "La licence n'accorde aucune permission
+    particulière qui permettrait d'utiliser les marques de commerce du concédant, autre que
+    celle requise permettant d'identifier la provenance du logiciel."
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    cc:ShareAlike hangs off the odrl:Set, not off single acts, because article 4.1 of this
+    text reaches the derived software as well: "Le licencié doit offrir une concession selon
+    les termes de la présente licence pour tout logiciel modifié ou dérivé qu'il distribue",
+    and the source code obligation of the next paragraph covers "le logiciel, un logiciel
+    modifié, ou un logiciel dérivé". That is the whole-work reciprocity the library models
+    with a licence-wide duty, as on the GNU records. The three conditions of article 4 and
+    cc:SourceCode stay on the acts they name.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    Article 7 is quoted in dalicc:WarrantyDisclaimer, article 8 in dalicc:LiabilityLimitation
+    and the second paragraph of article 7 in dalicc:WarrantyOrLiabilityAcceptance, since it
+    lets a licensee offer or exclude warranties or support without binding the licensor.
+    dalicc:additionalClauses carries the source code paragraph of article 3, the conditions of
+    article 4, article 5 on contributions, the trademark article, the termination article with
+    its thirty day cure, the version article and the miscellaneous article. The compatibility
+    offer of article 4.2 and its list of compatible licences are quoted there as well.
+  action: applied
+- rubric: 7
+  severity: major
+  field: 'cc:jurisdiction'
+  description: >-
+    cc:jurisdiction stays dalicc:worldwide, and this is one of the few records where the text
+    settles it: article 3 states "Cette licence est accordée sans limite territoriale et sans
+    limite de temps", and the Quebec law clause of article 11 applies only where the licensor
+    is a Quebec ministry, public body or legal person governed by public law. That clause is
+    quoted in dalicc:additionalClauses. dalicc:validityType is dalicc:perpetual, from the same
+    sentence of article 3.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Article 9 terminates the licence by operation of law as soon as the rights are exercised
+    outside its terms, reinstates it once if the breach is cured within thirty days, and
+    requires the licensor's express consent after any later breach. Quoted; proposed term
+    dalicc:terminatesOnBreach, with the cure period and the reinstatement as its qualifiers.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The language of the quoted clauses is French, the language of the legal code the record
+    cites. The record cannot say so: dct:language is not in the prefix block and not in the
+    predicate order. Proposed, as in batch 2: allow dct:language on a record and write "fr"
+    here.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Article 4.2 offers the licensee a grant under a compatible licence and defines a
+    compatible licence as any free licence approved or certified by the Free Software
+    Foundation or the Open Source Initiative whose level of reciprocity is comparable to that
+    of this licence, followed by a list. Neither the test nor the list can be modelled; both
+    are quoted. Proposed term dalicc:compatibleLicenseTest.
+  action: none
+- rubric: 8
+  severity: info
+  field: 'dalicc:orLaterVersionOption'
+  description: >-
+    Article 10 lets the licensor grant the licence under the current version or any later one,
+    in which case the licensee chooses. The property is used on the GNU family alone today, so
+    it was not written; the triple would be dalicclib:LiLiQ-Rplus-1.1
+    dalicc:orLaterVersionOption true.
+  action: proposed
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Family: the three LiLiQ records share every clause outside article 3.4 and article 4.1,
+    and the difference between them is exactly the share-alike scope: none in LiLiQ-P-1.1, on
+    distribution and modification in LiLiQ-R-1.1, licence-wide in LiLiQ-Rplus-1.1. Their
+    compatible licence lists differ as well, twelve licences in LiLiQ-R-1.1 and six in
+    LiLiQ-Rplus-1.1, both quoted. Against the other records of this batch: the EUPL 1.2
+    appendix names the two reciprocity licences of this family as compatible, and LiLiQ-R-1.1
+    names EUPL 1.1, CeCILL 2.1 and CeCILL-C in return.
+  action: none
+family: Licence Libre du Québec
+port_of: null
+variant_kind: null
+notes: >-
+  Modelled from the SPDX plain text, which is the French original; the official English
+  translation on the forge.gouv.qc.ca site was used to check the reading but is not what the
+  record quotes, so every quoted clause is in French. The name of the licence carries a long
+  dash in the source text and in the SPDX name; it is written with a plain hyphen in
+  dct:title, in dct:alternative and in the quoted clauses, as the library requires.
+  cc:legalcode points at the licence page of the Quebec forge, dct:source at the SPDX page the
+  text was taken from.

@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "The Universal Permissive License (UPL), Version 1.0" in the DALICC license library
+# Title: The machine-readable representation of "The Universal Permissive License (UPL), Version 1.0" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/TheUniversalPermissiveLicenseUplVersion10
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,18 +15,24 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:TheUniversalPermissiveLicenseUplVersion10 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
-    cc:attributionName "- not specified -" ;
+    spdx:licenseId "UPL-1.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:UPL ;
-    dalicc:WarrantyDisclaimer "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE." ;
+    dalicc:LiabilityLimitation "IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE." ;
+    dalicc:WarrantyDisclaimer "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT." ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/TheUniversalPermissiveLicenseUplVersion10/versions> ;
     dct:alternative "UPL",
         "UPL-1.0",
         "Universal Permissive License 1.0 (UPL-1.0)" ;
-    dct:publisher "- not specified -" ;
+    dct:hasVersion "4" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:source osl:UPL ;
     dct:title "The Universal Permissive License (UPL), Version 1.0" ;
     odrl:permission [ a odrl:Permission ;
@@ -56,10 +62,12 @@ dalicclib:TheUniversalPermissiveLicenseUplVersion10 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeLicenseFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:noWarrantyNotice ] ;
+            odrl:action dalicc:noWarrantyNotice ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ChangeLicense ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action dalicc:compliantLicense ] ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action cc:ShareAlike ],
-        [ a odrl:Prohibition ;
             odrl:action dalicc:addStatement ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:promote ] ;

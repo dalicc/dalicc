@@ -1,0 +1,169 @@
+id: CC-BY-SA-4.0
+title: Creative Commons Attribution-ShareAlike 4.0 International
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/CC-BY-SA-4.0.txt
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the CC-BY-SA-4.0 element set of the Creative Commons 4.0 International suite and,
+  after the corrections, it matches the legal text: the grant, the attribution and notice conditions, the ShareAlike
+  condition are all in the right place and the two clause texts are verbatim. Applied: spdx:licenseId, dalicc:chargeDistributionFee.
+  What is left is either interpretive or beyond the vocabulary: the sui generis database rights clause of Section
+  4, the no-additional-restrictions and no-DRM clause of Section 2(a)(5)(B), and termination with its cure
+  period.'
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: The record carried no SPDX identifier although its own DALICC identifier is the SPDX list identifier
+    CC-BY-SA-4.0, whose SPDX seeAlso URL is the cc:legalcode of this record. Added.
+  action: applied
+  change: spdx:licenseId "CC-BY-SA-4.0" ;
+- rubric: 1
+  severity: info
+  field: cc:legalcode
+  description: cc:legalcode points at https://creativecommons.org/licenses/by-sa/4.0/legalcode and dct:source
+    at the deed https://creativecommons.org/licenses/by-sa/4.0/. Both resolve and both name version 4.0 of
+    this element set. The pair legal code plus deed is the convention of the six 4.0 records and is not a mismatch.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'The asset collection is dalicc:CreativeWork plus dcmitype:Dataset, which fits a licence that
+    is media neutral by design and, through Section 4, covers databases as well. dcmitype:Software is absent
+    from all six 4.0 records, which is correct: Creative Commons does not recommend these licences for software.'
+  action: none
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'Every modelled permission follows from the grant. Section 2(a)(1): "the Licensor hereby grants
+    You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed
+    Rights in the Licensed Material to: A. reproduce and Share the Licensed Material, in whole or in part;
+    and B. produce, reproduce, and Share Adapted Material."'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'dalicc:chargeDistributionFee was missing, although the other four 4.0 records and all 287 Creative
+    Commons ports of the library carry it, and nothing in this licence limits what the licensee may charge:
+    Section 2(a)(1) grants the rights royalty-free and commercial use is expressly permitted. Section 4 of
+    the legal code, the sui generis database rights section, says nothing about fees either. Added, so that
+    the six records of the 4.0 set model the fee question identically. This was flagged before the review in
+    review_duplicates.md section 6.'
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:chargeDistributionFee ] ;"
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: dalicc:promote is prohibited, which rests on Section 2(b)(2), patent and trademark rights are
+    not licensed, and on Section 2(a)(6), the no-endorsement clause. dalicc:ChangeLicense is prohibited, which
+    rests on Section 2(a)(5)(B) and, for this element set, on the ShareAlike condition of Section 3(b)(1).
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'Section 2(a)(5)(B) is not modelled: "You may not offer or impose any additional or different
+    terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing
+    so restricts exercise of the Licensed Rights by any recipient of the Licensed Material." The first half
+    is expressible today with dalicc:addLimitation, which the vocabulary defines as adding further limitations
+    when redistributing and which three licences of the library already use. Not applied: the same clause stands
+    in every Creative Commons record of the library, 2.0 and 3.0 ports included, so adding it to six records
+    alone would split the compatibility behaviour of the family. The second half, the technological measures,
+    has no term at all, see the vocabulary gaps below.'
+  action: proposed
+  change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:addLimitation ] ;"
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: Sublicensing is not modelled. Section 2(a)(1) grants a "non-sublicensable" licence and Section
+    2(a)(5)(A) replaces sublicensing with an automatic offer from the licensor to every downstream recipient,
+    so a licensee may not put the material under a licence of their own. The vocabulary has dalicc:sublicense,
+    defined and used by no record. The owner has decided provisionally that the sublicensing prohibition should
+    be modelled on every Creative Commons record, so it is recorded here with the exact triple and applied
+    in one library-wide sweep rather than in six records.
+  action: proposed
+  change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The duties are cc:Attribution and cc:Notice on odrl:distribute, and cc:Attribution, cc:Notice
+    and dalicc:modificationNotice on odrl:modify and odrl:derive, which matches Section 3(a)(1): the conditions
+    bite when You Share the material, and Section 3(a)(1)(B) adds the obligation to "indicate if You modified
+    the Licensed Material and retain an indication of any previous modifications." No duty is duplicated and
+    none sits at the wrong level.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'cc:ShareAlike is a licence-wide odrl:duty on the odrl:Set, which matches Section 3(b): the
+    condition applies whenever "You Share Adapted Material You produce", and the Adapter''s License "must be
+    a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible
+    License." The compatible-licence route and the version ratchet are not expressible.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: 'dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation are verbatim Sections 5(a) and 5(b)
+    of the 4.0 legal code, checked word for word against the text; the record uses the sentence-case rendering
+    of the SPDX text rather than the upper-case rendering of the HTML legal code. Section 5(c), the interpretation
+    rule, and Section 7, other terms and conditions, are not carried anywhere in the record: dalicc:additionalClauses
+    is absent from all six 4.0 records.'
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is dalicc:worldwide and dalicc:validityType is dalicc:perpetual, both supported:
+    Section 2(a)(1) grants a worldwide licence and Section 6(a) runs the term for the term of the copyright
+    and similar rights licensed. The 4.0 licences are international and unported, so no country belongs in
+    this field.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:permission
+  description: 'Section 4, Sui Generis Database Rights, is the substantive addition of version 4.0 over 3.0
+    and the record does not carry it: "for the avoidance of doubt, Section 2(a)(1) grants You the right to
+    extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database". ODRL
+    already has odrl:extract, which no record of the library uses; the reuse half and the rule that a database
+    built from a substantial portion counts as Adapted Material would need a term of their own. Proposed terms:
+    odrl:extract as a permission plus dalicc:suiGenerisDatabaseRights for the clause. Not modelled, because
+    a partial model would claim more than the vocabulary can say.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The prohibition on applying Effective Technological Measures, Section 2(a)(5)(B) and Section
+    3(b)(3) for Adapted Material, has no vocabulary term. Proposed term: dalicc:applyTechnicalProtectionMeasures,
+    an odrl:Action to be used as an odrl:Prohibition. The mirror image in Section 2(a)(4), the authorisation
+    to circumvent technological measures in order to exercise the licensed rights, has none either.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Three more clauses have no term. Section 6(a), automatic termination on breach, with the 30
+    day cure period of Section 6(b)(1) that is new in 4.0; Section 2(a)(5)(A), the automatic offer from the
+    licensor to every downstream recipient; and Section 2(b), the reservation of moral, publicity, privacy,
+    patent and trademark rights together with the waiver of royalty collection through a collecting society.
+    Proposed terms: dalicc:terminationOnBreach, dalicc:cureperiod, dalicc:downstreamOffer, dalicc:moralRightsReserved,
+    dalicc:royaltyCollectionWaiver.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the 41 axioms of licensedata/dependencygraph/dg_default.ttl reports
+    no conflict, before and after the corrections, and the pre-review baseline listed none either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The six 4.0 records now differ from CC-BY-4.0 exactly where the element set differs and nowhere
+    else: the cc:ShareAlike licence-wide duty is added. Before this review the two ShareAlike records also
+    lacked dalicc:chargeDistributionFee and CC-BY-NC-SA-4.0 had an empty target, so the set was not uniform.
+    The deontic model still cannot tell a 4.0 record from a 2.0 or 3.0 port of the same element set, which
+    review_duplicates.md section 5 sets out in full.'
+  action: none
+family: Creative Commons 4.0 International
+port_of: null
+variant_kind: null
+notes: The 4.0 International records are unported, so port_of and variant_kind are empty. This record is the
+  reference model that the reviews of the 2.0 and 3.0 ports of the same element set compare their ports against.
+  Nothing in this review is legal advice.

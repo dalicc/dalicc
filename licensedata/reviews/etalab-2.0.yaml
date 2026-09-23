@@ -1,0 +1,137 @@
+id: etalab-2.0
+title: Etalab Open License 2.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://spdx.org/licenses/etalab-2.0.html'
+text_retrieved: true
+verdict: created
+summary: >-
+  The Licence Ouverte 2.0, the French open licence for public sector information: a free,
+  worldwide, unlimited right of reuse, commercial or not, against one condition, the mention
+  of the source and of the date of the last update. The record follows the Open Government
+  Licence records of this batch and the Open Data Commons attribution record for its shape,
+  and quotes its clauses in French, the language of the legal code it cites.
+findings:
+- rubric: 1
+  severity: minor
+  field: 'spdx:licenseId'
+  description: >-
+    The record carries the SPDX id etalab-2.0, in the lower case spelling the SPDX list uses,
+    as its file name, its IRI and its spdx:licenseId. dct:title is the SPDX name;
+    dct:alternative holds the French name of the licence, Licence Ouverte 2.0, and its English
+    name.
+  action: applied
+- rubric: 2
+  severity: major
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Dataset and dalicc:CreativeWork. Information is defined as "toute information
+    publique figurant dans des documents communiques ou publies par une administration», which
+    is content as much as data. No software is named, so dcmitype:Software was left out.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    The grant is "« Réutilisateur » un droit non exclusif et gratuit de libre « Réutilisation
+    » de l’« Information » objet de la présente licence, à des fins commerciales ou non, dans
+    le monde entier et pour une durée illimitée, dans les conditions exprimées ci-dessous",
+    and the list that follows names reproducing, copying, adapting, modifying, extracting,
+    transforming, communicating, distributing, redistributing, publishing, transmitting and
+    commercial exploitation. The record permits reproduce, distribute, display, present,
+    modify, derive, commercial use, derivative works, modified works and the distribution fee.
+    dalicc:suiGenerisDatabaseRights is permitted because the definition of intellectual
+    property rights names "le droit sui generis des producteurs de bases de donnees" and the
+    licensor assigns the rights it holds. dalicc:ChangeLicense with a dalicc:compliantLicense
+    duty carries the compatibility section, which makes the licence compatible with any free
+    licence that requires at least attribution.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: 'odrl:prohibition'
+  description: >-
+    One prohibition, dalicc:promote, from the sentence that follows the attribution condition:
+    "Cette mention de paternité ne confère aucun caractère officiel à la « Réutilisation » de
+    l’« Information », et ne doit pas suggérer une quelconque reconnaissance ou caution par le
+    « Concédant », ou par toute autre entité publique, du « Réutilisateur » ou de sa «
+    Réutilisation »." The personal data section is not a dalicc:exemptedMaterial prohibition,
+    unlike the Norwegian and British licences: it keeps personal data inside the licence and
+    makes its reuse conditional on data protection law. That sentence is quoted instead.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    One condition, and it is owed for every act: cc:Attribution, cc:Notice and
+    dalicc:addStatement hang off odrl:distribute, odrl:modify and odrl:derive. The condition
+    is to mentionner la paternité de l’« Information » : sa source (au moins le nom du «
+    Concédant ») et la date de dernière mise à jour de l’« Information » réutilisée, and
+    dalicc:addStatement carries the wording the licence gives as an example: "« Ministère de
+    xxx - Données originales téléchargées sur http://www.data.gouv.fr/fr/datasets/xxx/, mise à
+    jour du 14 février 2017 »." No dalicc:modificationNotice is written: the licence asks for
+    the date of the last update of the information reused, not for a mark on the changes made.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    The first paragraph of the RESPONSABILITE section goes into dalicc:WarrantyDisclaimer,
+    because it carries both the as-is wording and the exclusion of liability in one breath,
+    and the second paragraph, which puts the responsibility for the reuse on the reuser, into
+    dalicc:LiabilityLimitation. dalicc:additionalClauses carries the grant, the freedoms, the
+    attribution condition with its example, the non-endorsement sentence, the personal data
+    section, the intellectual property section, the misleading reuse sentence, the applicable
+    law section, the compatibility section, the definition of the intellectual property rights
+    and the new versions paragraph.
+  action: applied
+- rubric: 7
+  severity: major
+  field: 'cc:jurisdiction'
+  description: >-
+    cc:jurisdiction stays dalicc:worldwide, which the grant says in as many words ("dans le
+    monde entier et pour une durée illimitée"), although the applicable law section is one
+    sentence long and unambiguous: "La présente licence est régie par le droit français." It
+    is quoted in dalicc:additionalClauses. dalicc:validityType is dalicc:perpetual, from the
+    same sentence of the grant.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The compatibility section names three licence families rather than versions and defines
+    compatibility by a test ("toute licence libre qui exige au moins la mention de
+    paternité"). No term carries either; quoted, with dalicc:compatibleLicenseTest proposed.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The quoted clauses are in French, the language of the legal code the record cites, and the
+    record has no way to say so. Proposed, as in batch 2: allow dct:language on a record and
+    write "fr" here.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Family: the record sits between the Open Government Licence records, whose attribution
+    duty it shares, and the Open Data Commons attribution licence the library already holds.
+    Unlike the British and Norwegian licences it carries no exempted material prohibition and
+    no termination clause at all; unlike the German DL-DE records it has a full warranty and
+    liability section.
+  action: none
+family: National open government data licences
+port_of: null
+variant_kind: null
+notes: >-
+  Modelled from the SPDX plain text, which is the French original; the English version
+  published by Etalab was used to check the reading, but every quoted clause is in French.
+  cc:legalcode points at the licence file named first in the SPDX seeAlso list, dct:source at
+  the SPDX page the text was taken from. No long dash appears in the source text.

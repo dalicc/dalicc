@@ -1,0 +1,82 @@
+id: MirOS
+title: The MirOS Licence
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/MirOS.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models the MirOS licence, an MIT-form grant that puts the condition first: the terms, the disclaimer
+  and all copyright notices must be retained or reproduced in an accompanying document, and then the work may be
+  dealt in without restriction. Sublicensing is named in the grant, so dalicc:sublicense is permitted.'
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads: "permission is granted to deal in this work without restriction, including unlimited
+    rights to use, publicly perform, distribute, sell, modify, merge, give away, or sublicence." The record permits
+    reproduce, distribute, modify, derive, display, present, sublicense, commercial use, derivative works and modified
+    works; publicly perform supports odrl:present and odrl:display, and sell supports dalicc:chargeDistributionFee.
+    The text does not carry the MIT clause about persons to whom the work is furnished, so there is no odrl:grantUse.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The condition reads: "Provided that these terms and disclaimer and all copyright notices are retained
+    or reproduced in an accompanying document". cc:Attribution and cc:Notice on distribute, modify and derive.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited because the text requires the license itself to travel with every
+    copy, which is the reading IscLicense and BSD-3-Clause take of the same clause. The MIT record does not carry
+    the prohibition although its text has the same requirement, so the library is not uniform here. (Corrected on
+    2026-09-15 by the verification pass: see the rubric 3 finding on relicensing below.)'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The disclaimer paragraph is split at the liability sentence. The liability clause is unusual in that
+    it keeps the licensor liable for immediate fault when the work is used as intended, which is quoted and not
+    paraphrased.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following MIT. The text says work throughout
+    but is an operating system license.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The batch notes expected a condition on distributing modified versions. The fetched text has none:
+    the only condition is the retention of the terms, the disclaimer and the copyright notices, which applies to
+    every copy. The record follows the text.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Provided that these terms and disclaimer and all copyright
+    notices are retained or reproduced in an accompanying document, permission is granted to deal in this work without
+    restriction, including unlimited rights to use, publicly perform, distribute, sell, modify, merge, give away,
+    or sublicence." The permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice
+    has to survive the relicensing.'
+  action: applied
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. The title keeps the British spelling Licence that SPDX and the licensor
+  use.

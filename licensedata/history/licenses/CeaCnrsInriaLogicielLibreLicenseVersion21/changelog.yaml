@@ -1,0 +1,98 @@
+id: CeaCnrsInriaLogicielLibreLicenseVersion21
+title: Cea Cnrs Inria Logiciel Libre License, version 2.1
+current_version: 3
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail, removed 1 prohibition and
+    recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: removed
+    statement: prohibition cc:ShareAlike
+    reason: 'Article 5.3.2 states: "les conditions de distribution du Logiciel Modifie en resultant
+      sont alors soumises a l''integralite des dispositions du Contrat" (the modified software must
+      be distributed under the whole of this agreement). The record prohibited cc:ShareAlike. Removed.'
+    source: review-finding 5/odrl:prohibition
+  - action: added
+    statement: spdx:licenseId "CECILL-2.1"
+    reason: Added CECILL-2.1. The record already carried "CECILL-2.1" as dct:alternative and the Open
+      Source Initiative page for that id as dct:source.
+    source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 5 finding 7: dalicc:WarrantyDisclaimer held Article 8, the liability article, and
+    Article 9, the warranty article, was absent; the record prohibited dalicc:promote although CeCILL
+    2.1 has no trademark clause and prohibited dalicc:addStatement although Article 5.3.4 requires
+    a statement; and cc:attributionName and dct:publisher both began with a space. Article 9.3 is
+    quoted from the French legal code the record cites, which is the version that was retrieved.'
+  changes:
+  - action: changed
+    statement: cc:attributionName "CEA, CNRS, INRIA"
+    previous: cc:attributionName " CEA, CNRS, INRIA"
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: 'dalicc:LiabilityLimitation "8.1 Subject to the provisions of Article 8.2, the Licensee
+      shall be entitled to claim compensation for any direct loss it may have suffered from the Software
+      as a result of a fault on the part of the relevant Licensor, subject to providing evidence thereof.
+
+
+      8.2 The Licensor''s liability is limited to the commitments made under this Agreement and shall
+      not be incurred as a result of in particular: (i) loss due the Licensee''s total or partial
+      failure to fulfill its obligations, (ii) direct or consequential loss that is suffered by the
+      Licensee due to the use or performance of the Software, and (iii) more generally, any consequential
+      loss. In particular the Parties expressly agree that any or all pecuniary or business loss (i.e.
+      loss of data, loss of profits, operating loss, loss of customers or orders, opportunity cost,
+      any disturbance to business activities) or any or all legal proceedings instituted against the
+      Licensee by a third party, shall constitute consequential loss and shall not provide entitlement
+      to any or all compensation from the Licensor."'
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: dalicc:WarrantyDisclaimer "9.3 Le Licencié reconnaît que le Logiciel est fourni \"en
+      l'état\" par le Concédant sans autre garantie, expresse ou tacite, que celle prévue à l'article
+      9.2 et notamment sans aucune garantie sur sa valeur commerciale, son caractère sécurisé, innovant
+      ou pertinent. En particulier, le Concédant ne garantit pas que le Logiciel est exempt d'erreur,
+      qu'il fonctionnera sans interruption, qu'il sera compatible avec l'équipement du Licencié et
+      sa configuration logicielle ni qu'il remplira les besoins du Licencié."
+    previous: 'dalicc:WarrantyDisclaimer "8.1 Subject to the provisions of Article 8.2, the Licensee
+      shall be entitled to claim compensation for any direct loss it may have suffered from the Software
+      as a result of a fault on the part of the relevant Licensor, subject to providing evidence thereof.
+
+
+      8.2 The Licensor''s liability is limited to the commitments made under this Agreement and shall
+      not be incurred as a result of in particular: (i) loss due the Licensee''s total or partial
+      failure to fulfill its obligations, (ii) direct or consequential loss that is suffered by the
+      Licensee due to the use or performance of the Software, and (iii) more generally, any consequential
+      loss. In particular the Parties expressly agree that any or all pecuniary or business loss (i.e.
+      loss of data, loss of profits, operating loss, loss of customers or orders, opportunity cost,
+      any disturbance to business activities) or any or all legal proceedings instituted against the
+      Licensee by a third party, shall constitute consequential loss and shall not provide entitlement
+      to any or all compensation from the Licensor."'
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: dct:publisher "CEA, CNRS, INRIA"
+    previous: dct:publisher " CEA, CNRS, INRIA"
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:addStatement
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:promote
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

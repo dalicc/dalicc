@@ -1,0 +1,156 @@
+id: GPL-3.0-or-later
+title: GNU General Public License v3.0 or later
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/GPL-3.0-or-later.txt
+text_retrieved: true
+verdict: created
+summary: >-
+  The record models the "or later" form of GPL version 3. Its legal text is the same document
+  that GPL-3.0-only models, so the deontic model is that record statement for statement. The
+  identifier adds one thing: the option section 14 gives the licensee to follow this version or
+  any later version the Free Software Foundation publishes. Read the record as GPL-3.0-only
+  with that option turned on.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: >-
+    File name, record id, SPDX identifier and the local name of the IRI are all
+    GPL-3.0-or-later. The deprecated short form GPL-3.0+ is carried as a dct:alternative so that
+    a search for it reaches this record.
+  action: applied
+- rubric: 10
+  severity: major
+  field: dalicc:variantOf
+  description: >-
+    The record copies GPL-3.0-only statement for statement. What differs: the identifier,
+    dct:title, dct:alternative, dalicc:orLaterVersionOption (true here, false there) and the
+    pair dalicc:variantKind "version-option" with dalicc:variantOf dalicclib:GPL-3.0-only. The
+    foaf:logo of the base record is kept, because it is the logo of the same licence text.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:orLaterVersionOption
+  description: >-
+    Section 14 is the clause the flag stands for. It says that where the Program specifies that
+    a certain numbered version of the GNU General Public License "or any later version" applies
+    to it, "you have the option of following the terms and conditions either of that numbered
+    version or of any later version published by the Free Software Foundation". The same section
+    lets a proxy decide which future versions may be used. cc:jurisdiction stays
+    dalicc:worldwide and dalicc:validityType stays dalicc:perpetual: the text limits neither.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:orLaterVersionOption
+  description: >-
+    The licence text sets the phrase "or any later version" in curly quotation marks. The
+    quotation in the finding above uses straight ones. Nothing else in the sentence was changed,
+    and no clause literal of the record was touched by this.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: >-
+    Section 4 grants conveying verbatim copies of the source, section 5 conveying modified
+    source versions, section 6 conveying the work in object code, and section 4 adds: "You may
+    charge any price or no price for each copy that you convey, and you may offer support or
+    warranty protection for a fee." The ten permissions of the base record follow from those
+    sentences: odrl:reproduce, odrl:distribute, odrl:modify, odrl:derive, cc:DerivativeWorks,
+    dalicc:ModifiedWorks, odrl:display, odrl:present, cc:CommercialUse and
+    dalicc:chargeDistributionFee.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: >-
+    Section 5(c) requires that "You must license the entire work, as a whole, under this License
+    to anyone who comes into possession of a copy", so the share-alike condition reaches the
+    whole work and cc:ShareAlike is a duty of the licence itself. Attribution, notice and
+    source-code duties hang on distribute, modify and derive; dalicc:modificationNotice hangs on
+    modify and derive, from section 5(a): "The work must carry prominent notices stating that
+    you modified it, and giving a relevant date."
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: >-
+    dalicc:ChangeLicense is prohibited, which is the whole-work copyleft shape and follows
+    section 5(c). dalicc:promote is prohibited as well, although GPL version 3 has no trademark
+    or endorsement clause of its own; the statement comes from the base record and is the
+    library-wide default.
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: >-
+    The warranty disclaimer of section 15 and the limitation of liability of section 16 are kept
+    as two literals, and the fee sentence of section 4 is dalicc:WarrantyOrLiabilityAcceptance.
+    All three are byte for byte the literals of GPL-3.0-only, because the text is the same
+    document.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: >-
+    The asset collection carries dcmitype:Software, as in the base record. GPL version 3 governs
+    programs: section 0 defines "The Program" as "any copyrightable work licensed under this
+    License".
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer, run with
+    licensedata/dependencygraph/dg_default.ttl, reports 0 conflicts for this record.
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: >-
+    Section 3 has no term: "No covered work shall be deemed part of an effective technological
+    measure under any applicable law fulfilling obligations under article 11 of the WIPO
+    copyright treaty adopted on 20 December 1996, or similar laws prohibiting or restricting
+    circumvention of such measures." It is a waiver of the licensor's power to forbid
+    circumvention, not a bar on the licensee applying a measure, so
+    dalicc:applyTechnicalProtectionMeasures does not fit. Section 6 adds the Installation
+    Information duty for a User Product, which has no term either. Proposed terms:
+    dalicc:antiCircumventionWaiver and dalicc:installationInformation. The base record quotes
+    neither clause, and quoting them here alone would break the rule that this record equals its
+    base, so they stay proposals for the pair.
+  action: none
+- rubric: 3
+  severity: minor
+  field: record
+  description: >-
+    Three clauses could be modelled with terms that already exist, in both records of the pair
+    at once. Section 11: "Each contributor grants you a non-exclusive, worldwide, royalty-free
+    patent license under the contributor's essential patent claims, to make, use, sell, offer
+    for sale, import and otherwise run, modify and propagate the contents of its contributor
+    version." Section 10: "you may not initiate litigation (including a cross-claim or
+    counterclaim in a lawsuit) alleging that any patent claim is infringed by making, using,
+    selling, offering for sale, or importing the Program or any portion of it." Section 8 ends
+    the licence on breach and reinstates it permanently if you "cure the violation prior to 30
+    days after your receipt of the notice", and adds that termination "does not terminate the
+    licenses of parties who have received copies or rights from you under this License". Adding
+    the statements below here alone would break the rule that this record equals GPL-3.0-only,
+    so they are proposed for both records together.
+  action: proposed
+  change: |
+    dalicc:terminatesOnBreach true ;
+    dalicc:curePeriod "30 days" ;
+    dalicc:sublicenseSurvival true ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action dalicc:patentGrant ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:addLimitation ] ,
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:patentRetaliationTermination ] ;
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: version-option
+variant_of: GPL-3.0-only
+notes: >-
+  This is the identifier behind the licence notice the Free Software Foundation recommends,
+  "either version 3 of the License, or (at your option) any later version", and the one GitHub
+  and the package managers report as GPL-3.0+.

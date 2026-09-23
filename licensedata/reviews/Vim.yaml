@@ -1,0 +1,95 @@
+id: Vim
+title: Vim License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Vim.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models the Vim license. Distributing unmodified copies is unrestricted as long as the license
+  text travels with them. Distributing a modified version is allowed under four conditions: the license text unmodified,
+  one of five ways of making the changes available (all of which end in the maintainer being able to get the source),
+  a message telling the user that the version was modified, and intact contact information. Those four conditions
+  are modelled as cc:Notice, cc:SourceCode and dalicc:modificationNotice duties on modify and derive, and quoted
+  in full because the five alternatives cannot be expressed otherwise.'
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Clause I reads: "There are no restrictions on distributing unmodified copies of Vim except that
+    they must include this license text." Clause II allows distributing a modified or extended version under four
+    conditions. The record permits reproduce, distribute, modify, derive, display, present, commercial use, derivative
+    works, modified works and the distribution fee.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:Notice on distribute, modify and derive, from condition 1. cc:SourceCode on modify and derive:
+    every one of the five ways of distributing a modified Vim under condition 2 ends in the changes, including source
+    code, being made available, either to the maintainer or with every copy. dalicc:modificationNotice on modify
+    and derive, from condition 3, which requires "A message must be added, at least in the output of the ":version"
+    command and in the intro screen, such that the user of the modified Vim is able to see that it was modified."'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'Clause IV reads: "It is not allowed to remove this license from the distribution of the Vim sources,
+    parts of it or from a modified version." dalicc:ChangeLicense is therefore prohibited. Option 2e, which allows
+    a modified Vim to be distributed under the GNU GPL version 2 or later when the GPL applies to the changes, is
+    a narrow exception to that prohibition and is quoted in dalicc:additionalClauses rather than modelled, because
+    the model cannot express a conditional permission to relicense.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The Vim license carries no warranty disclaimer and no liability clause, so neither field is written.
+    The Vim distribution puts its disclaimer elsewhere in the uganda.txt help file, outside the license proper.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: Two clauses have no term. The maintainer clause (the maintainer may ask for the changes and may include
+    them in the official version, and the license of those changes is negotiable) is a grant-back like the one in
+    EUDatagrid; the same proposed term dalicc:contributionGrantBack would carry it. The three-year retention duty
+    under option 2d has no term either; it is quoted.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following MIT. The text licenses a program
+    and its source code.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'This is the only record of the batch that is not OSI approved; it comes from the choosealicense.com
+    list. Its duty shape is closer to the GNU records than to the permissive ones, but there is no license-wide
+    cc:ShareAlike duty: condition 2c lets the author of a change choose the license for the new code.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Vim may also be distributed under the GNU General Public
+    License, version 2 or any later version. ... It is allowed to distribute a modified (or extended) version of
+    Vim ... when the following four conditions are met: 1) This license text must be included unmodified." The permission
+    carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the relicensing.'
+  action: applied
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. dalicc:additionalClauses quotes clause II with its four conditions and
+  its five alternatives, and clause IV, because the alternatives are the license and no duty can stand for them.
+  The e-mail address of the maintainer is part of the quoted text.

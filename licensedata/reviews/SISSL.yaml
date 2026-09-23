@@ -1,0 +1,97 @@
+id: SISSL
+title: Sun Industry Standards Source License v1.1
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'http://www.openoffice.org/licenses/sissl_license.html'
+text_retrieved: true
+verdict: created
+summary: >-
+  Models the Sun Industry Standards Source License, an MPL 1.1 derivative whose reciprocity is
+  triggered not by modification as such but by a modification that departs from a named
+  standard. The record carries the MPL 1.1 shape and quotes the standards clause verbatim.
+  Nothing here is legal advice.
+findings:
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 2.1(a) grants rights "under intellectual property rights (other than patent or
+    trademark) Licensable by Initial Developer to use, reproduce, modify, display, perform,
+    sublicense and distribute the Original Code", so dalicc:sublicense is a permission, and
+    2.1(b) grants a patent licence, so dalicc:patentGrant is a permission.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    The grant excludes trademark rights in as many words, so dalicc:promote is a prohibition.
+    Section 8 has no patent retaliation limb, unlike MPL-1.1, so
+    dalicc:patentRetaliationTermination is absent. dalicc:ChangeLicense is prohibited for the
+    source code version.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Section 3.1 requires that "The Source Code version of Original Code may be distributed
+    only under the terms of this License" and, where the modifications leave the standard,
+    that the licensee publish the deviation and a reference implementation or the
+    modifications in source form "to all third parties under the same terms as this license on
+    a royalty free basis". cc:ShareAlike, cc:SourceCode, cc:Notice and cc:Attribution
+    therefore hang off odrl:distribute, odrl:modify and odrl:derive. Unlike every other member
+    of this family SISSL has no description-of-modifications clause, so no
+    dalicc:modificationNotice duty is written.
+  action: applied
+- rubric: 6
+  severity: major
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Section 3.1 is quoted in full because the trigger of the reciprocity, a departure from
+    "all requirements set out by the Standards body in effect one hundred twenty (120) days
+    before You ship the Contributor Version", cannot be expressed by cc:ShareAlike alone.
+    Section 3.3, the termination clause and the applicable-law clause are quoted as well.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    The grant itself is world-wide ("a world-wide, royalty-free, non-exclusive license"), so
+    cc:jurisdiction stays dalicc:worldwide and the applicable-law and venue clause is quoted
+    in dalicc:additionalClauses instead of being turned into a bpicounty IRI. A choice of law
+    is not a jurisdiction port and the library reserves cc:jurisdiction with a country for
+    ports.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    There is no term for a duty conditioned on conformance to an external technical standard.
+    Proposed term: dalicc:standardsConformance, an action that a licence may require of a
+    modified version. Termination on breach has no property either (proposed
+    dalicc:terminatesOnBreach). Both clauses are quoted.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the dependency graph dg_default
+    returned an empty conflict list. cc:ShareAlike is required and dalicc:ChangeLicense is
+    prohibited, which is the combination the check expects; asserting both cc:ShareAlike and a
+    dalicc:ChangeLicense permission would have been reported as a direct conflict.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Diffed against MPL-1.1. Also compared with
+    licensedata/licenses/SunPublicLicenseVersion10.ttl, the other Sun licence in the library;
+    that record uses a different and older shape (duties on cc:DerivativeWorks rather than on
+    odrl:derive) which this record does not copy.
+  action: none
+family: Mozilla and CDDL
+port_of: null
+variant_kind: null
+notes: >-
+  Exhibit B of the licence names the OpenOffice.org XML file format and API specifications as
+  the Standard; it is not quoted in the record because it is project specific rather than part
+  of the terms.

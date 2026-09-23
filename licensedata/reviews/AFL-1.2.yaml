@@ -1,0 +1,97 @@
+id: AFL-1.2
+title: Academic Free License v1.2
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'http://opensource.linux-mirror.org/licenses/afl-1.2.txt'
+text_retrieved: true
+verdict: created
+summary: >-
+  Version 1.2 of the Academic Free License keeps the grant and the patent licence of version
+  1.1 and replaces the Right of Attribution with the Attribution Rights clause that every
+  later version carries, which is why this record adds a modification notice to odrl:modify
+  and odrl:derive. It also adds the Right to Use clause. Nothing here is legal advice.
+findings:
+- rubric: 2
+  severity: info
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Software alone, the type 32 of the library's software records carry, among them
+    MIT, BSD-3-Clause, GPL-3.0-only and the sibling OSL-3.0. These texts license an "original
+    work of authorship", which would also fit dalicc:CreativeWork, the type the AFL-3.0 record
+    carries beside Software and Dataset; the batch keeps the narrower reading its batch entry
+    prescribes, so that all nine records of the family answer alike and the owner can widen
+    them in one pass.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    The grant is that of version 1.1, word for word: a "non-sublicenseable license (1) to use,
+    copy, modify, merge, publish, perform, distribute and/or sell copies of the Original Work
+    and derivative works thereof", with the patent licence in paragraph (2). Permissions are
+    therefore identical to AFL-1.1.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    As in version 1.1: dalicc:sublicense because the grant is "non-sublicenseable",
+    dalicc:promote from the Exclusions from License Grant clause and
+    dalicc:patentRetaliationTermination from the Mutual Termination for Patent Action clause.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Attribution Rights says: "You must cause the Source Code for any Derivative Works that You
+    create to carry a prominent Attribution Notice reasonably calculated to inform recipients
+    that You have modified the Original Work." That is dalicc:modificationNotice on
+    odrl:modify and odrl:derive, alongside cc:Attribution and cc:Notice for the notices the
+    same clause requires to be retained. cc:SourceCode stays on odrl:distribute, as in
+    AFL-1.1.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Warranty and liability are quoted into their own fields. dalicc:additionalClauses carries
+    the License to Source Code clause, the Mutual Termination for Patent Action clause, the
+    Right to Use clause that version 1.2 adds and the notice that the licence text may not be
+    modified.
+  action: applied
+- rubric: 7
+  severity: info
+  field: 'cc:jurisdiction'
+  description: >-
+    Version 1.2 still names no forum and no governing law, so cc:jurisdiction stays
+    dalicc:worldwide and the grant is perpetual on its own words.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    As in AFL-1.1, the automatic termination of the licence has no property to carry it.
+    Proposed term dalicc:terminatesOnBreach; the clause is quoted instead.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty list for this record.
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: >-
+    AFL-1.2 differs from AFL-1.1 in one operative place, the Attribution Rights clause, and in
+    the added Right to Use clause. The two records differ exactly there: the modification
+    notice on odrl:modify and odrl:derive.
+  action: none
+family: Academic Free and Open Software
+port_of: null
+variant_kind: version
+notes: >-
+  Modelled from the SPDX plain text of AFL-1.2 and checked against the licensor URL in
+  cc:legalcode. Version 1.2 prints the warranty and liability sections in mixed case where
+  version 1.1 prints them in upper case; both are quoted as they stand.

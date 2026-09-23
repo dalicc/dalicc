@@ -1,0 +1,71 @@
+id: GPL-2.0-only
+title: GNU General Public License, Version 2
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/GPL-2.0-only.txt
+text_retrieved: true
+verdict: corrected
+summary: 'The record models GPL version 2 as a copyleft software license: all six core permissions, a
+  license-wide share-alike duty, source-code, attribution and notice duties on distribute, modify and
+  derive, and a prohibition on changing the license. That matches the legal text. The SPDX identifier
+  was missing and the right to charge for distribution was not modelled; both were added.'
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: The record carried no SPDX identifier although its own id is the SPDX list id. Added the
+    non deprecated id GPL-2.0-only.
+  action: applied
+  change: 'spdx:licenseId "GPL-2.0-only" ;
+
+    '
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 1 states: "You may charge a fee for the physical act of transferring a copy, and
+    you may at your option offer warranty protection in exchange for a fee." The record did not permit
+    dalicc:chargeDistributionFee, so a compatibility check would treat paid redistribution as unlicensed.
+    Added.'
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:chargeDistributionFee ] ;\n"
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: The license-wide cc:ShareAlike duty and the cc:SourceCode duties on distribute, modify
+    and derive are supported by sections 2(b) and 3 and are modelled identically in GPL-3.0-only, LGPL-3.0-only
+    and AGPL-3.0.
+  action: none
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:promote is prohibited although GPL version 2 has no trademark or endorsement clause.
+    This is the library-wide default (332 of 343 records) and was left untouched, but it is not text-supported
+    here.
+  action: proposed
+  change: "# remove\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:promote ] ;\n"
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'Section 7 (the "liberty or death" clause) and section 4 (automatic termination on breach)
+    cannot be expressed. Proposed terms: dalicc:terminationOnBreach, dalicc:patentFreedomCondition.'
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: GPL-2.0-only, GPL-3.0-only and LGPL-3.0-only are the "-only" halves of SPDX pairs. Whether
+    the library should also carry the "-or-later" variants is one decision for the whole family, recorded
+    once in the batch report.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 2 finding 6.6 and batch 1 finding 5.2: both clause literals
+    began and ended with a space, and the record did not carry section 1 of the text, ''You may charge
+    a fee for the physical act of transferring a copy, and you may at your option offer warranty protection
+    in exchange for a fee'', which the two new LGPL 2.x records carry as dalicc:WarrantyOrLiabilityAcceptance.'
+  action: applied
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: version
+notes: Version variant inside the GNU family. No jurisdiction port.

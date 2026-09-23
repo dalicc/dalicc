@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Open Supreme Court Licence" in the DALICC license library
+# Title: The machine-readable representation of "Open Supreme Court Licence" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/OpenSupremeCourtLicence
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,19 +15,28 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:OpenSupremeCourtLicence a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:attributionName "UK Supreme Court" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://www.nationalarchives.gov.uk/doc/open-supreme-court-licence/version/1/open-supreme-court-licence-version-1.0.pdf> ;
+    dalicc:additionalClauses """You must (where you copy, publish, distribute, transmit, adapt or exploit the Information): ensure that you do not use the Information in a way that suggests any official status or that the Licensor endorses you or your use of the Information; ensure that you (i) do not mislead others or misrepresent the Information or its source; (ii) do not present the Information in a way that does not have regard to the dignity of the Court and to its function as a working body; and (iii) do not use it in any way that jeopardises the proper administration of justice; ensure that your use of the Information does not breach the Data Protection Act 1998 or the Privacy and Electronic Communications (EC Directive) Regulations 2003 or is otherwise unlawful.""" ;
     dalicc:WarrantyDisclaimer """The Information is licensed ‘as is’ and the Licensor excludes all representations, warranties, obligations and liabilities in relation to the Information to the maximum extent permitted by law.
 The Licensor is not liable for any errors or omissions in the Information and shall not be liable for any loss, injury or damage of any kind caused by its use. The Licensor does not guarantee the continued supply of the Information.""" ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:UkOpenGovernmentLicenseForPublicSectorInformation ;
+    dalicc:variantKind "edition" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/OpenSupremeCourtLicence/versions> ;
     dct:alternative "Open Supreme Court Licence v1.0",
         "Open Supreme Court Licence version 1.0",
         "UK Open Supreme Court Licence v1.0",
         "UK Open Supreme Court Licence version 1.0" ;
+    dct:hasVersion "4" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "The National Archives UK" ;
     dct:source <http://www.nationalarchives.gov.uk/doc/open-supreme-court-licence/version/1/open-supreme-court-licence-version-1.0.pdf> ;
     dct:title "Open Supreme Court Licence" ;
@@ -36,11 +45,15 @@ The Licensor is not liable for any errors or omissions in the Information and sh
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ] ],
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ] ],
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -58,12 +71,16 @@ The Licensor is not liable for any errors or omissions in the Information and sh
         [ a odrl:Permission ;
             odrl:action dalicc:chargeLicenseFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:noWarrantyNotice ] ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:noWarrantyNotice ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:suiGenerisDatabaseRights ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ChangeLicense ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action dalicc:compliantLicense ] ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action cc:ShareAlike ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:addStatement ],
-        [ a odrl:Prohibition ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,

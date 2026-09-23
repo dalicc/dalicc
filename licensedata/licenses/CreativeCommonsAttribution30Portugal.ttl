@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution 3.0 Portugal"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution 3.0 Portugal"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttribution30Portugal
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttribution30Portugal a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -25,6 +26,12 @@ dalicclib:CreativeCommonsAttribution30Portugal a odrl:Set ;
     dalicc:WarrantyDisclaimer """EXCETO QUANDO EXPRESSAMENTE ACORDADO PELAS PARTES POR ESCRITO EM SENTIDO CONTRÁRIO E NA MEDIDA PERMITIDA PELA LEGISLAÇÃO APLICÁVEL, O LICENCIANTE DISPONIBILIZA O TRABALHO “NO ESTADO EM QUE SE ENCONTRA” (“AS-IS BASIS”), E NÃO FAZ QUAISQUER DECLARAÇÕES OU PRESTA GARANTIAS DE QUALQUER TIPO EM RELAÇÃO AO TRABALHO, SEJAM EXPRESSAS OU IMPLÍCITAS, LEGAIS OU OUTRAS, INCLUINDO, SEM LIMITAÇÃO, QUAISQUER GARANTIAS SOBRE A TITULARIDADE DO TRABALHO, POTENCIALIDADE COMERCIAL, ADEQUAÇÃO A UM FIM ESPECÍFICO, LEGALIDADE, AUSÊNCIA DE DEFEITOS LATENTES OU OUTROS, EXATIDÃO, EXISTÊNCIA OU AUSÊNCIA DE ERROS, SEJAM ELES APARENTES OU OCULTOS. ALGUMAS JURISDIÇÕES NÃO ADMITEM A EXCLUSÃO DE GARANTIAS IMPLÍCITAS, PELO QUE TAL EXCLUSÃO PODERÁ NÃO SER APLICÁVEL AO UTILIZADOR.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "3.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttribution30Portugal/versions> ;
     dct:alternative "Attribution 3.0",
         "Attribution 3.0 Portugal",
         "CC BY 3.0",
@@ -34,7 +41,10 @@ dalicclib:CreativeCommonsAttribution30Portugal a odrl:Set ;
         "CC-BY-3.0 PT",
         "Creative Commons BY 3.0",
         "Creative Commons BY 3.0 PT" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/licenses/by/3.0/pt/> ;
     dct:title "Creative Commons Attribution 3.0 Portugal"@en ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:display ],
@@ -75,8 +85,11 @@ dalicclib:CreativeCommonsAttribution30Portugal a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
-            dct:type dalicc:CreativeWork ] ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset ] ;
     foaf:img <https://creativecommons.org/images/international/pt.png> ;
     foaf:logo <https://licensebuttons.net/l/by/3.0/pt/88x31.png> .

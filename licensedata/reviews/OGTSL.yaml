@@ -1,0 +1,86 @@
+id: OGTSL
+title: Open Group Test Suite License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/OGTSL.txt
+text_retrieved: true
+verdict: created
+summary: The record models the Open Group Test Suite License, an Artistic-style license written to keep the
+  standard test modes of a conformance test suite intact. Verbatim copies may be given away freely; a modified
+  copy must say in each changed file how and when it changed, must rename its non-standard executables and
+  test cases, and must ship the Standard Version alongside them with instructions on where to get it. A reasonable
+  copying fee is allowed, a fee for the package itself is not.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Clause 1 reads: "You may make and give away verbatim copies of the source form of the Standard
+    Version of this Package without restriction, provided that you duplicate all of the original copyright
+    notices and associated disclaimers." Clauses 3 and 4 allow modification and distribution in object or executable
+    form. Clause 5 allows a reasonable copying fee and aggregation with commercial programs, which supports
+    cc:CommercialUse and dalicc:chargeDistributionFee.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'Clause 5 reads: "You may not charge a fee for this Package itself." dalicc:chargeLicenseFee
+    is therefore prohibited while dalicc:chargeDistributionFee is permitted, which is the distinction the two
+    terms exist for. Clause 8 bars endorsement use of the Copyright Holder''s name, so dalicc:promote is prohibited.
+    dalicc:ChangeLicense is prohibited because the text requires the license itself to travel with every copy,
+    which is the reading IscLicense and BSD-3-Clause take of the same clause. The MIT record does not carry
+    the prohibition although its text has the same requirement, so the library is not uniform here.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: Clause 3 requires "a prominent notice in each changed file stating how and when you changed
+    that file" (dalicc:modificationNotice) and requires you to "rename any non-standard executables and testcases
+    so the names do not conflict with standard executables and testcases, which must also be provided" (dalicc:rename).
+    Clause 4 requires a binary distribution to accompany non-standard executables and test cases with their
+    Standard Version counterparts and with instructions on where to get the Standard Version, which the record
+    carries as cc:SourceCode, the library's closest term for an obligation to make the original available.
+    All three hang off modify and derive; cc:Attribution and cc:Notice hang off distribute as well.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: 'Clauses 5, 6 and 7 are quoted: the fee rules, the statement that the scripts and library files
+    supplied to or produced by the package do not fall under its copyright, and the statement that subroutines
+    linked into the package are not part of it. Those three carve-outs decide what the license reaches, and
+    no deontic term expresses them.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: Clause 9 is the disclaimer, quoted without its number. There is no liability clause.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following MIT. The text licenses a package
+    of test programs and scripts.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: 'The consistency check with the axioms of dg_default returned no conflicts. Prohibiting dalicc:chargeLicenseFee
+    while permitting cc:CommercialUse and dalicc:chargeDistributionFee raises no conflict: the axioms relate
+    dalicc:chargeLicenseFee to odrl:commercialize and odrl:sell, neither of which this record permits.'
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: The text is the Artistic License with test-suite wording, so the nearest sibling in the library
+    is Artistic-2.0 rather than MIT. The rename and modification-notice duties are what the two have in common.
+  action: none
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. The preamble and the definitions are not modelled; the operative
+  clauses are 1 to 9.

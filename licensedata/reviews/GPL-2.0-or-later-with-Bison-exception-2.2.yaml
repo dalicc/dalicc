@@ -1,0 +1,135 @@
+id: GPL-2.0-or-later-with-Bison-exception-2.2
+title: GNU General Public License v2.0 or later with Bison exception 2.2
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/GPL-2.0-or-later.txt
+text_retrieved: true
+verdict: created
+summary: The record models GPL version 2 or later with the Bison exception 2.2, the combination the parser
+  skeletons of GNU Bison carry. It keeps every statement of the GPL-2.0-or-later record and adds one permission
+  for a larger work that contains the skeleton, which you may distribute under terms of your choice. The
+  exception may be removed by whoever redistributes the skeleton, which the record quotes because no term
+  holds it.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, record identifier, IRI local name and title agree. spdx:licenseId carries the
+    SPDX expression "GPL-2.0-or-later WITH Bison-exception-2.2": the base identifier, one space, WITH
+    in capitals, one space, the exception identifier. No record in the library carried an expression before,
+    so the SPDX mapping and the spdx route have to accept the space and the keyword.'
+  action: applied
+- rubric: 1
+  severity: info
+  field: cc:legalcode
+  description: cc:legalcode points at the text of the base licence, https://www.gnu.org/licenses/old-licenses/gpl-2.0.html,
+    because that is the licence the record models. dct:source points at the SPDX page of the exception,
+    https://spdx.org/licenses/Bison-exception-2.2.html, because that is where the additional permission
+    is published.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'odrl:target is the one the base record carries: an odrl:AssetCollection of dct:type dcmitype:Software.
+    The exception is about program files, so nothing changes.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The exception reads: "As a special exception, you may create a larger work that contains
+    part or all of the Bison parser skeleton and distribute that work under terms of your choice, so long
+    as that work isn''t itself a parser generator using the skeleton or a modified version thereof as
+    a parser skeleton." The larger work is material the licence conditions no longer reach, which is the
+    permission dalicc:exceptedCombination.'
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:exceptedCombination ] ;\n"
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: Every permission of GPL-2.0-or-later is kept, in the same place and with the same duties.
+    An exception adds an additional permission to a licence; it never takes a granted right away.
+  action: applied
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'The exception lets the combined result travel under other terms, and the vocabulary cannot
+    say that of a part of a work. The exception says of the larger work: "you may create a larger work
+    that contains part or all of the Bison parser skeleton and distribute that work under terms of your
+    choice". A dalicc:ChangeLicense permission would say the licence of the covered work itself may be
+    replaced, which is false and would contradict the whole-work share-alike duty. The record therefore
+    keeps the prohibition, states the narrowed reach in dalicc:reciprocityScope and quotes the clause.
+    Proposed term: dalicc:combinedWorkRelicensing, a permission for putting a larger work that contains
+    the covered material under other terms.'
+  action: applied
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: The licence-wide cc:ShareAlike duty stays on the odrl:Set. The exception narrows the work
+    the duty reaches, not the duty itself, and dalicc:reciprocityScope records the narrowed reach.
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: The exception text is quoted verbatim as one literal, taken from https://raw.githubusercontent.com/spdx/license-list-data/main/text/Bison-exception-2.2.txt.
+    Line breaks and the indentation of the source file are collapsed to single spaces, which is how every
+    clause literal in the library is written; the wording is untouched. The warranty disclaimer and the
+    liability limitation are the ones the base record quotes from the base licence.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction stays dalicc:worldwide and dalicc:validityType stays dalicc:perpetual:
+    the exception names no territory and no term. The termination clause of the base licence still applies,
+    and the record says no more about it than the base record does.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:exceptedCombination
+  description: 'The exception carves the combination out of the condition of the licence, not out
+    of its grant. dalicc:exemptedMaterial says the opposite and is prohibited on OGL-UK-1.0, OGL-UK-2.0 and
+    NLOD-2.0, where it means material the licence never granted. The vocabulary defines
+    dalicc:exceptedCombination for this side of it since 2026-09-23, and the record carries it as
+    a permission.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The exception can be taken away again: "Alternatively, if you modify or redistribute the
+    parser skeleton itself, you may (at your option) remove this special exception, which will cause the
+    skeleton and the resulting Bison output files to be licensed under the GNU General Public License
+    without this special exception." A record states what a licence is, not that a downstream licensee
+    may drop part of it. Proposed term: dalicc:exceptionRemovable, a boolean saying that the additional
+    permission may be dropped on redistribution.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: app.services.composer.consistency_check with the default dependency graph reports 0 conflicts
+    for this record. dalicc:exceptedCombination takes part in no dependency relation, so it neither creates
+    nor hides one.
+  action: applied
+- rubric: 10
+  severity: major
+  field: dalicc:variantOf
+  description: 'The base record of this variant is GPL-2.0-or-later, which this same addition creates.
+    The model is copied from it statement for statement, so dalicc:orLaterVersionOption stays true for
+    the clause GPL version 2 section 9 states: "If the Program specifies a version number of this License
+    which applies to it and "any later version", you have the option of following the terms and conditions
+    either of that version or of any later version published by the Free Software Foundation." dalicc:variantOf
+    points at GPL-2.0-or-later and not at GPL-2.0-only, although the two carry the same deontic model.
+    Both records are new, so a second reader should read them together.'
+  action: applied
+- rubric: 10
+  severity: info
+  field: record
+  description: The nearest siblings are GPL-2.0-or-later, which this record copies, and GPL-3.0-or-later-with-Bison-exception-2.2,
+    which carries the same exception text on GPL version 3. The two records differ only in the base licence,
+    so their dalicc:reciprocityScope literals are identical on purpose.
+  action: applied
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: exception
+variant_of: GPL-2.0-or-later
+notes: Bison has carried this exception since version 2.2 of the program, which the text itself states.
+  The condition that the larger work must not be a parser generator is part of the quoted clause and of
+  dalicc:reciprocityScope.

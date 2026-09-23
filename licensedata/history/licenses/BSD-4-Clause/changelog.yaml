@@ -1,0 +1,133 @@
+id: BSD-4-Clause
+title: The 4-Clause BSD License
+current_version: 4
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 clause text and 1 identification detail, changed
+    1 clause text and 2 identification details, recorded the relation to the record this one was adapted
+    from and recorded the review state.
+  changes:
+  - action: added
+    statement: cc:legalcode <https://spdx.org/licenses/BSD-4-Clause.html>
+    reason: dct:source pointed at https://spdx.org/licenses/BSD-4-Clause-UC.html, the University of
+      California specific license, while spdx:licenseId says BSD-4-Clause, which is the generic one.
+      Repointed dct:source at the generic SPDX page and added the same URL as cc:legalcode, which
+      was missing entirely.
+    source: review-finding 1/dct:source
+  - action: added
+    statement: dalicc:WarrantyDisclaimer "THIS SOFTWARE IS PROVIDED BY <COPYRIGHT HOLDER> \"AS IS\"
+      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+      OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT
+      HOLDER> BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+      USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+      WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+      ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    reason: 'Review decision 11: the record models the generic four-clause text, not the Berkeley
+      variant, so the advertising clause, the disclaimer and the publisher were set to the generic
+      wording.'
+    source: consolidation-decision 11
+  - action: changed
+    statement: 'dalicc:additionalClauses "All advertising materials mentioning features or use of
+      this software must display the following acknowledgement: This product includes software developed
+      by the <organization>."'
+    previous: 'dalicc:additionalClauses "All advertising materials mentioning features or use of this
+      software must display the following acknowledgement: This product includes software developed
+      by the University of California, Berkeley and its contributors."'
+    reason: 'Review decision 11: the record models the generic four-clause text, not the Berkeley
+      variant, so the advertising clause, the disclaimer and the publisher were set to the generic
+      wording.'
+    source: consolidation-decision 11
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "version"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: changed
+    statement: dct:publisher "N.N."
+    previous: dct:publisher "University of California-Specific"
+    reason: 'Review decision 11: the record models the generic four-clause text, not the Berkeley
+      variant, so the advertising clause, the disclaimer and the publisher were set to the generic
+      wording.'
+    source: consolidation-decision 11
+  - action: changed
+    statement: dct:source <https://spdx.org/licenses/BSD-4-Clause.html>
+    previous: dct:source <https://spdx.org/licenses/BSD-4-Clause-UC.html>
+    reason: dct:source pointed at https://spdx.org/licenses/BSD-4-Clause-UC.html, the University of
+      California specific license, while spdx:licenseId says BSD-4-Clause, which is the generic one.
+      Repointed dct:source at the generic SPDX page and added the same URL as cc:legalcode, which
+      was missing entirely.
+    source: review-finding 1/dct:source
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 3 finding 5 and batch 4 section 4: the disclaimer paragraph held both sentences
+    and the advertising clause had no duty. The text says ''All advertising materials mentioning features
+    or use of this software must display the following acknowledgement'', which is the new dalicc:advertisingAcknowledgement
+    duty on distribution; dct:publisher was the placeholder ''N.N.''.'
+  changes:
+  - action: added
+    statement: dalicc:LiabilityLimitation "IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
+      DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+      LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+      INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+      OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+      EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: dalicc:WarrantyDisclaimer "THIS SOFTWARE IS PROVIDED BY <COPYRIGHT HOLDER> \"AS IS\"
+      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+      OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED."
+    previous: dalicc:WarrantyDisclaimer "THIS SOFTWARE IS PROVIDED BY <COPYRIGHT HOLDER> \"AS IS\"
+      AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+      OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT
+      HOLDER> BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+      DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+      USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+      WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+      ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: dct:publisher "N.N."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, dalicc:advertisingAcknowledgement]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+- version: 4
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Permit relicensing on permissive licences; the notice clause is a duty, not a bar. Family
+    rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no source
+    code asks only that the notice travels with the copy, which is a duty on the acts it governs and
+    not a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission
+    here, and the prohibition the earlier pass wrote is removed. The text reads: "Redistribution and
+    use in source and binary forms, with or without modification, are permitted provided that the
+    following conditions are met: 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer." The permission carries the dalicc:compliantLicense
+    duty, as Apache-2.0 does, because the notice has to survive the relicensing.'
+  changes:
+  - action: added
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:ChangeLicense
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

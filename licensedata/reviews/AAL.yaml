@@ -1,0 +1,71 @@
+id: AAL
+title: Attribution Assurance License
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/AAL.txt
+text_retrieved: true
+verdict: corrected
+summary: 'The Attribution Assurance License is a BSD-style permissive license with an unusually heavy
+  attribution condition: the signed text must be displayed in source redistributions and the author''s
+  name, professional identification and URL must be shown each time the program is launched. The record
+  has the right permissions and the right trademark prohibition; the share-alike prohibition and the added-statement
+  prohibition have no basis in the text.'
+findings:
+- rubric: 5
+  severity: major
+  field: odrl:prohibition
+  description: cc:ShareAlike is prohibited. The text has four numbered conditions and none of them concerns
+    the terms a redistributor may choose; it is adapted from the BSD license, which is silent on reciprocity.
+    A silent license must carry no share-alike statement rather than a prohibition, because the prohibition
+    changes the compatibility outcome.
+  action: proposed
+  change: "# remove\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action cc:ShareAlike ] ;\n"
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: 'dalicc:addStatement is prohibited without support: nothing in the four conditions stops
+    a redistributor from adding its own notices.'
+  action: proposed
+  change: "# remove\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:addStatement\
+    \ ] ;\n"
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:promote is prohibited and condition 3 supports it: "Neither the name nor any trademark
+    of the Author may be used to endorse or promote products derived from this software without specific
+    prior written permission."'
+  action: none
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: The attribution and notice duties sit on cc:DerivativeWorks and odrl:distribute, while
+    odrl:modify and odrl:derive are bare. Condition 1 applies to redistributions "in whole or part and
+    with or without modification", so the duties belong on modify and derive too.
+  action: proposed
+  change: "# add to the odrl:modify and odrl:derive permissions\nodrl:duty [ a odrl:Duty ;\n        odrl:action\
+    \ cc:Attribution ],\n    [ a odrl:Duty ;\n        odrl:action cc:Notice ] ;\n"
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'Condition 2 requires a runtime attribution display: "each time the resulting executable
+    program or a program dependent thereon is launched, a prominent display (e.g., splash screen or banner
+    text) of the Author''s attribution information". cc:Attribution cannot say where or when. Proposed
+    term: dalicc:runtimeAttributionDisplay. Condition 1 also requires the text to be GPG-signed and verifiable,
+    which has no term either.'
+  action: none
+- rubric: 10
+  severity: minor
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9 and 10: the record was corrected against
+    its new siblings and versioned. Family rule 10 of scripts/review/family_rules.py: the disclaimer paragraph
+    held both the warranty sentence and the liability sentence, which begins ''IN NO EVENT SHALL THE AUTHOR
+    OR ANY CONTRIBUTOR BE LIABLE''. It is split, as the 116 records of the standard-license addition split
+    it.'
+  action: applied
+family: Other OSI approved licenses (corporate, academic, weak copyleft)
+port_of: null
+variant_kind: null
+notes: 'Nothing applied. This record uses the composer template shared by AAL, AFL-3.0, APL-1.0, APSL-2.0,
+  CATOSL-1.1, CECILL-2.1, EPL-1.0 and PHP-3.0: bare odrl:derive and odrl:modify permissions with the real
+  duties hung on cc:DerivativeWorks, plus a fixed block of three prohibitions (cc:ShareAlike, dalicc:addStatement,
+  dalicc:promote). The template fits a permissive license and misdescribes every reciprocal one.'

@@ -1,0 +1,120 @@
+id: O-UDA-1.0
+title: Open Use of Data Agreement v1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://spdx.org/licenses/O-UDA-1.0.html'
+text_retrieved: true
+verdict: created
+summary: >-
+  The Open Use of Data Agreement: use, modify and distribute the data under terms of your
+  choice, carrying the credit forward and passing on a warranty disclaimer at least as broad
+  as the one you received. The record follows the Community Data License Agreement records of
+  this batch and is the permissive member of the pair with C-UDA-1.0.
+findings:
+- rubric: 1
+  severity: minor
+  field: 'spdx:licenseId'
+  description: >-
+    The record carries the SPDX id O-UDA-1.0 and the SPDX name as dct:title. The library holds
+    no other data use agreement, so dalicc:variantKind is left out; the two agreements of this
+    batch are siblings, not versions of one another.
+  action: applied
+- rubric: 2
+  severity: major
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Dataset and dalicc:CreativeWork. Data is "the material you receive under the
+    O-UDA in modified or unmodified form, but not including Results": material, not only data,
+    and the agreement is used for text and image collections as much as for tables. No
+    software is named.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 1.1 reads "You may use, modify, and distribute the Data made available to you by
+    the Data Provider under this O-UDA if you follow the O-UDA's terms." The record permits
+    reproduce, distribute, display, present, modify, derive, commercial use, derivative works,
+    modified works and the distribution fee. dalicc:sublicense carries the redistribution
+    right of section 3.1, which lets you redistribute the Data under terms of your choice.
+    dalicc:useForModelTraining is permitted because the agreement addresses it expressly: a
+    model trained on the Data is a Result, and the agreement "does not impose any restriction
+    with respect to the use, modification, or distribution of Results".
+  action: applied
+- rubric: 4
+  severity: info
+  field: 'odrl:prohibition'
+  description: >-
+    No prohibition. The agreement restricts nothing: section 2.1 says so in its own heading,
+    "No Restrictions on Use or Results". dalicc:ChangeLicense is permitted rather than
+    prohibited, because section 3.1 lets the licensee redistribute "under terms of your
+    choice" so long as the credit travels and the new terms carry a warranty disclaimer and a
+    limitation of liability at least as broad as those of sections 4.2 and 4.3.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Two duties on each of odrl:distribute, odrl:modify and odrl:derive, and the same two as
+    duties of the dalicc:ChangeLicense permission: cc:Attribution from section 3.1.1 and
+    dalicc:noWarrantyNotice from 3.1.2, "Your terms include a warranty disclaimer and
+    limitation of liability for Upstream Data Providers at least as broad as those contained
+    in Section 4.2 and 4.3 of the O-UDA". No cc:ShareAlike: the terms of the redistribution
+    are the licensee's own.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    Section 4.2 goes into dalicc:WarrantyDisclaimer and 4.3 into dalicc:LiabilityLimitation.
+    dalicc:additionalClauses carries the grant, the covenant not to sue, the public domain
+    carve out, the restrictions section, the redistribution conditions, the representation of
+    section 4.1 and the definitions of Data and Result.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    cc:jurisdiction stays dalicc:worldwide and dalicc:validityType dalicc:perpetual: the
+    agreement names no governing law, no territory and no term, and no termination clause
+    either.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Section 1.2 is a covenant not to sue rather than a licence: "Data Provider will not sue
+    you or any Downstream Recipient for any claim arising out of the use, modification, or
+    distribution of the Data provided you meet the terms of the O-UDA." It is wider than
+    dalicc:patentGrant, which is why that permission was not written, and no term covers a
+    general covenant not to sue. Quoted; proposed term dalicc:covenantNotToSue.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Family: the two data use agreements share every section number and most of their wording.
+    The whole difference is that the C-UDA limits use to Computational Use and binds every
+    recipient to its own terms, while the O-UDA restricts nothing and lets the licensee
+    redistribute under terms of its choice. In the model that is a cc:ShareAlike duty and a
+    dalicc:ChangeLicense prohibition on one side against a dalicc:ChangeLicense permission and
+    a no-warranty notice duty on the other. Both sit beside the Community Data License
+    Agreement records of this batch, which use the same vocabulary of Data, Results and
+    Downstream Recipients.
+  action: none
+family: Use of data agreements
+port_of: null
+variant_kind: null
+notes: >-
+  Modelled from the SPDX plain text. cc:legalcode points at the agreement on the site of the
+  Community Data License Agreement project, which publishes both agreements, rather than at
+  the source repository named first in the SPDX seeAlso list; dct:source points at the SPDX
+  page the text was taken from. dct:publisher is left out: the text names no steward. No long
+  dash appears in the source text.

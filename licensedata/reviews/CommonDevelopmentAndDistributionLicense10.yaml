@@ -1,0 +1,81 @@
+id: CommonDevelopmentAndDistributionLicense10
+title: Common Development and Distribution License 1.0
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/CDDL-1.0.txt
+text_retrieved: true
+verdict: corrected
+summary: The record models the Common Development and Distribution License as a permissive license with
+  source-code and notice duties and a permission to distribute executables under a different license.
+  The file-level reciprocity of sections 3.1 and 3.2 is not modelled, which is the one substantive gap.
+  The SPDX id and both liability clauses were missing and were added.
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: Added CDDL-1.0; the title matches the SPDX name exactly.
+  action: applied
+  change: 'spdx:licenseId "CDDL-1.0" ;
+
+    '
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: Sections 6 and 7 were not recorded. Added both, quoted from the text.
+  action: applied
+  change: 'dalicc:WarrantyDisclaimer "COVERED SOFTWARE IS PROVIDED UNDER THIS LICENSE ON AN \u201cAS IS\u201d
+    BASIS ..." ;
+
+    dalicc:LiabilityLimitation "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY ..." ;
+
+    '
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'Section 3.1 states: "Any Covered Software that You distribute or otherwise make available
+    in Executable form must also be made available in Source Code form and that Source Code form must
+    be distributed only under the terms of this License", and section 3.2 adds that "The Modifications
+    that You create ... are governed by the terms of this License". That is file-level reciprocity and
+    it is not in the model. The Mozilla Public License 2.0 record, whose text is the direct descendant
+    of this one, carries a license-wide cc:ShareAlike duty and prohibits dalicc:ChangeLicense; this record
+    permits dalicc:ChangeLicense instead. Changing it inverts a permission, so it is left to the owner.'
+  action: proposed
+  change: "# add\nodrl:duty [ a odrl:Duty ;\n        odrl:action cc:ShareAlike ] ;\n# and remove\nodrl:permission\
+    \ [ a odrl:Permission ;\n        odrl:action dalicc:ChangeLicense ;\n        odrl:duty [ a odrl:Duty\
+    \ ;\n                odrl:action dalicc:compliantLicense ] ] ;\n"
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: The record has no prohibition at all (one of the six such records named in family_rules_baseline.md
+    rule 7). Section 3.4 forbids offering terms that alter the license for Source Code form, which is
+    dalicc:addStatement.
+  action: proposed
+  change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:addStatement ] ;\n"
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'Sections 2.1(b) and 2.2(b) grant patent licenses and section 6.2 terminates them on patent
+    action. Proposed: dalicc:patentGrant, dalicc:patentRetaliationTermination.'
+  action: none
+- rubric: 1
+  severity: minor
+  field: dct:publisher
+  description: dct:publisher is the placeholder "N.N." while cc:attributionName says "SUN Microsystems".
+  action: proposed
+  change: 'dct:publisher "Sun Microsystems, Inc." ;
+
+    '
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 3 finding 5 and consolidation decision 4: the share-alike duty
+    hung off odrl:distribute and odrl:modify but not off odrl:derive, the record made no patent statement
+    although section 2.1(b) grants one, relicensing was prohibited although section 3.6 lets an Executable
+    go out ''under the terms of a license of Your choice'', and dct:publisher was the placeholder ''N.N.''.'
+  action: applied
+family: Other OSI approved licenses (corporate, academic, weak copyleft)
+port_of: null
+variant_kind: null
+notes: The direct ancestor of the Mozilla Public License 2.0 record; the two should model reciprocity
+  the same way and currently do not.

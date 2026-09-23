@@ -1,0 +1,60 @@
+id: BSD-2-Clause
+title: The 2-Clause BSD License
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/BSD-2-Clause.txt
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the two-clause BSD license correctly in substance: the retention of the copyright
+  notice, the list of conditions and the disclaimer appears as cc:Attribution and cc:Notice duties on
+  distribute, modify and derive. Two statements are not supported by the text, a prohibition on changing
+  the license and a permission to use the licensor''s trademark for promotion, and both are family-level
+  decisions rather than isolated slips.'
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:prohibition
+  description: 'The record prohibits dalicc:ChangeLicense. The two-clause BSD license is permissive: it
+    requires only that the notice and disclaimer be retained, and says nothing that stops a licensee from
+    redistributing under other terms. The same prohibition sits in BSD-3-Clause, BSD-4-Clause and IscLicense
+    but not in MIT, 0BSD or the zlib record, so the family is internally inconsistent. One decision for
+    the whole family, left to the owner.'
+  action: proposed
+  change: "# remove\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:ChangeLicense\
+    \ ] ;\n"
+- rubric: 4
+  severity: minor
+  field: odrl:permission
+  description: dalicc:promote is permitted, which reads as "the licensor allows you to use its trademark
+    for advertising". The two-clause text neither grants nor withholds trademark rights; it simply has
+    no endorsement clause (that clause is what makes the three-clause variant). Silence is better modelled
+    by omitting the statement than by permitting it.
+  action: proposed
+  change: "# remove\nodrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:promote ] ;\n"
+- rubric: 1
+  severity: minor
+  field: dct:publisher
+  description: No dct:publisher. The two-clause text has no single steward, so "- not specified -" as
+    used by 0BSD would at least make the gap explicit.
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: 'Checked against the sibling records: 0BSD has no duties, BSD-2-Clause adds the notice
+    and attribution duties, BSD-3-Clause adds the endorsement prohibition (dalicc:promote), BSD-4-Clause
+    adds the advertising acknowledgement in dalicc:additionalClauses. The four records do differ by exactly
+    one step each, which is the expected shape.'
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 3 finding 5: the record permitted dalicc:promote although the
+    two-clause text says nothing about trademarks or endorsement, and it kept the liability sentence inside
+    dalicc:WarrantyDisclaimer. The paragraph is split at ''IN NO EVENT SHALL'', as the six new BSD records
+    split it.'
+  action: applied
+family: BSD family (0BSD, 2, 3 and 4 clause)
+port_of: null
+variant_kind: version
+notes: Nothing was changed. Both findings are family-level modelling decisions.

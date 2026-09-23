@@ -1,0 +1,134 @@
+id: LGPL-3.0-or-later
+title: GNU Lesser General Public License v3.0 or later
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/LGPL-3.0-or-later.txt
+text_retrieved: true
+verdict: created
+summary: >-
+  The record models the "or later" form of the Lesser GPL version 3. Its legal text is the same
+  document that LGPL-3.0-only models, so the deontic model is that record statement for
+  statement. What the identifier adds is the option section 6 gives the licensee to follow this
+  version or any later version the Free Software Foundation publishes. The Lesser GPL is a set
+  of additional permissions on top of GPL version 3, and the conditions for a Combined Work are
+  quoted in dalicc:additionalClauses, as in the base record.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: >-
+    File name, record id, SPDX identifier and the local name of the IRI are all
+    LGPL-3.0-or-later. The deprecated short form LGPL-3.0+ is carried as a dct:alternative so
+    that a search for it reaches this record.
+  action: applied
+- rubric: 10
+  severity: major
+  field: dalicc:variantOf
+  description: >-
+    The record copies LGPL-3.0-only statement for statement. What differs: the identifier,
+    dct:title, dct:alternative, dalicc:orLaterVersionOption (true here, false there) and the
+    pair dalicc:variantKind "version-option" with dalicc:variantOf dalicclib:LGPL-3.0-only. The
+    foaf:logo of the base record is kept, because it is the logo of the same licence text.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:orLaterVersionOption
+  description: >-
+    Section 6 is the clause the flag stands for: "If the Library as you received it specifies
+    that a certain numbered version of the GNU Lesser General Public License "or any later
+    version" applies to it, you have the option of following the terms and conditions either of
+    that published version or of any later version published by the Free Software Foundation."
+    cc:jurisdiction stays dalicc:worldwide and dalicc:validityType stays dalicc:perpetual,
+    because the text limits neither.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: >-
+    The head of the text says that "This version of the GNU Lesser General Public License
+    incorporates the terms and conditions of version 3 of the GNU General Public License,
+    supplemented by the additional permissions listed below", so the grant is the GPL version 3
+    grant: conveying verbatim copies (GPL section 4), conveying modified source versions (GPL
+    section 5), conveying object code (GPL section 6) and charging for a copy (GPL section 4).
+    The ten permissions of the base record follow from those sentences and are carried over
+    unchanged.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: >-
+    cc:ShareAlike is a duty of the licence itself, as in the base record, because the Lesser GPL
+    keeps the GPL condition for the Library itself and only adds permissions for an Application
+    that uses it. Attribution, notice and source-code duties hang on distribute, modify and
+    derive, and dalicc:modificationNotice on modify and derive.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: >-
+    dalicc:ChangeLicense is prohibited and dalicc:promote is prohibited, both taken from
+    LGPL-3.0-only. Section 2(b) does let a licensee convey a modified copy "under the GNU GPL,
+    with none of the additional permissions of this License applicable to that copy", which is a
+    limited relicensing right the prohibition does not show. The library cannot yet express weak
+    against strong copyleft, which is recorded in docs/LICENSE_REVIEW.md, and this record is not
+    the place to change it.
+  action: applied
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: >-
+    The warranty disclaimer and the limitation of liability are the two clauses of GPL version 3
+    that the Lesser GPL incorporates, kept as separate literals; the fee sentence is
+    dalicc:WarrantyOrLiabilityAcceptance; the conditions of section 4 (Combined Works) and
+    section 5 (Combined Libraries) are quoted in dalicc:additionalClauses. All of them are byte
+    for byte the literals of LGPL-3.0-only, because the text is the same document.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: >-
+    The asset collection carries dcmitype:Software, as in the base record. Section 0 defines
+    "The Library" as a covered work governed by this License, other than an Application or a
+    Combined Work.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer, run with
+    licensedata/dependencygraph/dg_default.ttl, reports 0 conflicts for this record.
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:reciprocityScope
+  description: >-
+    The distinguishing feature of this licence is how far the share-alike condition reaches, and
+    the record does not say it. Section 4 lets a licensee "convey a Combined Work under terms of
+    your choice that, taken together, effectively do not restrict modification of the portions
+    of the Library contained in the Combined Work and reverse engineering for debugging such
+    modifications", subject to the conditions the base record quotes. dalicc:reciprocityScope
+    exists and could carry it as a short literal, for example "the library, not an application
+    that links to it". Adding it here alone would break the rule that this record equals its
+    base, so it is proposed for both records of the pair together.
+  action: proposed
+  change: |
+    dalicc:reciprocityScope "the library, not an application that links to it" ;
+- rubric: 5
+  severity: minor
+  field: record
+  description: >-
+    The termination clause and the no-further-restrictions clause of GPL version 3, which this
+    licence incorporates, could be modelled with terms that already exist:
+    dalicc:terminatesOnBreach true, dalicc:curePeriod "30 days", dalicc:sublicenseSurvival true
+    and a dalicc:addLimitation prohibition. They are proposed for the GPL version 3 records in
+    the same way and belong to both records of this pair at once, not to this one alone.
+  action: none
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: version-option
+variant_of: LGPL-3.0-only
+notes: >-
+  The Lesser GPL is the licence most often declared as LGPL-3.0+ by package managers. The
+  record does not try to model the difference between weak and strong copyleft, which the
+  library cannot express yet; it is the same model as its base, with the version option turned
+  on.

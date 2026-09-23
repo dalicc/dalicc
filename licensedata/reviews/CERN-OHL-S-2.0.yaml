@@ -1,0 +1,86 @@
+id: CERN-OHL-S-2.0
+title: CERN Open Hardware Licence Version 2 - Strongly Reciprocal
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://www.ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2
+text_retrieved: true
+verdict: created
+summary: Models the strongly reciprocal variant of version 2 of the CERN Open Hardware Licence.
+  Everything made from the Covered Source, the Complete Source of any Product included, stays
+  under the licence, so the record carries cc:ShareAlike as a license-wide duty the way GPL-2.0-only
+  and OSL-3.0 do.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, license id, SPDX id and IRI agree; the SPDX name already uses plain
+    hyphens.
+  action: none
+- rubric: 2
+  severity: major
+  field: odrl:target
+  description: dalicc:CreativeWork next to dcmitype:Software, as in the P and W records.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Sections 3.1 to 3.3 and section 4 grant copying, conveying, modification and the
+    making and conveying of Products; dalicc:patentGrant models 7.1. No dalicc:ChangeLicense permission:
+    the licence has no equivalent of the P variant''s 3.4.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote (8.2), dalicc:addLimitation (2.3), dalicc:patentRetaliationTermination
+    (7.2) and dalicc:ChangeLicense (3.3(d)).
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:ShareAlike is license-wide because the reciprocity reaches the whole Product
+    and not only the modified files: section 4 requires that You ''either provide each recipient
+    with a copy of the Complete Source or ensure that each recipient is notified of the Source
+    Location of the Complete Source. That Complete Source is Covered Source''. cc:SourceCode hangs
+    off distribute, modify and derive; cc:Attribution, cc:Notice and dalicc:modificationNotice
+    keep the P record''s placement.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: Sections 6.1 and 6.2 are quoted into dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation.
+    Eight clauses are quoted in dalicc:additionalClauses, among them 3.2, 3.3(d), section 4, section
+    5 and the termination and reinstatement pair 8.4 and 8.5.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: Section 2.2 gives worldwide effect without limitation in time.
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Automatic termination on breach has no property that a record can carry: dalicc:terminationOnBreach
+    is a policy quality with no predicate. The clause is quoted in dalicc:additionalClauses. Proposed
+    term: dalicc:terminatesOnBreach as a boolean property on odrl:Set, with the cure period as
+    a literal. Text: ''This Licence shall terminate with immediate effect if You fail to comply
+    with any of its terms and conditions'' (8.4), with reinstatement in 8.5.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run with the 39 axioms of licensedata/dependencygraph/dg_default.ttl,
+    returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: The three CERN records share every clause text except the reciprocity sections.
+    S is the default variant when a licensor names none, which 7.3 says and the P record's gap
+    finding records.
+  action: none
+family: Educational, hardware and logistics
+port_of: null
+variant_kind: null
+notes: 'Modelled from the SPDX plain text. Section 5, which lets development and testing be handed
+  to a contractor without triggering the source duty, is quoted rather than modelled: it is a
+  carve-out from the trigger, not a permission of its own.'

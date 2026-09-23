@@ -1,0 +1,201 @@
+id: CreativeCommonsAttributionNoderivs20France
+title: Creative Commons Attribution-NoDerivatives 2.0 France
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by-nd/2.0/fr/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the BY-ND element set of the Creative Commons 2.0 port for France and it does
+  so correctly: the NoDerivatives element prohibits odrl:derive, the attribution and notice duties hang
+  on the acts that make the work public, and the permissions, prohibitions and duties all follow from
+  the grant and the restrictions sections of the port. The legal text was read in French. Corrections
+  applied: dct:source, odrl:target dcmitype:Dataset. What remains are proposals that touch the whole Creative
+  Commons family rather than this record, chiefly the express prohibition of sublicensing.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source. The legal code page states the canonical
+    URL of the licence, https://creativecommons.org/licenses/by-nd/2.0/fr/, and the six 4.0 International
+    parents carry exactly that pair, legal code plus deed. Added.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by-nd/2.0/fr/> ;
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: 'The record targeted dalicc:CreativeWork only, while the 4.0 International parent CC-BY-ND-4.0
+    targets dalicc:CreativeWork and dcmitype:Dataset. This port licenses database rights in its own words,
+    so the asset type is text supported rather than merely plausible. Article 3(e) grants a database right
+    outright: "lorsque l''Oeuvre est une base de donnees, extraire et reutiliser des parties substantielles
+    de l''Oeuvre". The preamble also names the "droits des producteurs de bases de donnees" among the
+    rights protecting the work. Added dcmitype:Dataset.'
+  action: applied
+  change: |-
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset ] ;
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'Every modelled permission is supported by the grant. Article 3 grants, for the whole term
+    of protection, "l''autorisation mondiale d''exercer a titre gratuit et non exclusif les droits suivants",
+    a worldwide free and non exclusive authorisation. It covers reproduction, incorporation into collective
+    works, distribution of copies or recordings, and presentation, representation or communication of
+    the work to the public by any technical process. The record models this as odrl:reproduce, odrl:distribute,
+    odrl:display, odrl:present, plus odrl:modify and dalicc:ModifiedWorks, which rest on the technical
+    modification sentence of the grant: Article 3: "Les droits ci-dessus incluent le droit d''effectuer
+    les modifications necessaires techniquement a l''exercice des droits dans d''autres formats et procedes
+    techniques." In this NoDerivatives set the grant list stops short of any right to adapt, which is
+    why the record prohibits odrl:derive while still permitting odrl:modify: the only modification allowed
+    is the one the grant calls technically necessary. The 4.0 International parent CC-BY-ND-4.0 models
+    it in exactly the same way. cc:CommercialUse is permitted, which follows from a grant that puts no
+    purpose limit on the rights.'
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The licence forbids sublicensing and the record does not say so. Article 4(a): "L''Acceptant
+    ne peut pas ceder de droits sur l''Oeuvre." The French port renders the no sublicensing sentence of
+    the unported text as a prohibition on transferring rights in the work. The vocabulary already has
+    dalicc:sublicense, but no record in the library uses it and its skos:note says so, and the same sentence
+    stands in every Creative Commons 2.0 and 3.0 record, so adding it to this batch alone would split
+    the compatibility behaviour of one family. Proposed as one library wide correction, together with
+    an update of the vocabulary note.'
+  action: proposed
+  change: |-
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: Article 4(a): "L''Acceptant
+    ne peut pas offrir ou imposer de conditions d''utilisation de l''Oeuvre qui alterent ou restreignent
+    les termes du present Contrat ou l''exercice des droits qui y sont accordes au beneficiaire." dalicc:promote
+    is prohibited, which rests on the reservation of all rights not expressly authorised in article 3
+    and the Creative Commons trademark paragraph of the notice around the licence body, not a clause of
+    the licence itself odrl:derive is prohibited, which follows from a grant that never lists a right
+    to adapt the work; the NoDerivatives element is expressed by the absence of the derivative right rather
+    than by a separate prohibition in the text.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: The attribution and notice duties are present and supported. Article 4(a) requires a copy
+    or the internet address of the contract with every reproduction or recording distributed, represented
+    or communicated to the public, and that all information referring to the contract and to the exoneration
+    of liability be kept intact. Credit is owed to the "Auteur Original" by name or pseudonym, with the
+    title of the original work and, where possible, the URI the offeror associates with the work; a derivative
+    must identify the use made of the work, for example "Traduction anglaise de l'Oeuvre par l'Auteur
+    Original". The parties are named "Offrant" and "Acceptant" rather than licensor and licensee.. The
+    duties hang on odrl:distribute and odrl:modify, which matches the licence, since they are triggered
+    by making the work public rather than by private use; odrl:derive is prohibited in this NoDerivatives
+    set, so the duties reach only distribution and the technically necessary modification.
+  action: none
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: 'The record hangs dalicc:modificationNotice on odrl:modify, and this NoDerivatives text
+    has no clause to support it: because the grant never reaches an adaptation, the port carries no requirement
+    to mark changes and no derivative credit sentence at all, unlike the other five element sets of the
+    same port. The only modification the licence allows is the technically necessary one, which needs
+    no notice. The 4.0 International parent CC-BY-ND-4.0 carries exactly the same statement, so this is
+    a family wide modelling choice rather than a defect of this port, and removing it would split the
+    NoDerivatives family. It does not change the compatibility outcome, since the duty is attached to
+    a permission the licence grants only for format shifting.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: 'dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation are quoted from the French text
+    of this port and not from the English unported version, and each field holds its own clause. Article
+    5 (Garantie et exoneration de responsabilite) and article 6 (Limitation de responsabilite) are separate
+    articles and the record keeps them apart: dalicc:WarrantyDisclaimer holds the whole of article 5 and
+    dalicc:LiabilityLimitation holds article 6, both quoted verbatim in French. Article 5 of the French
+    port is longer than the disclaimer of the other 2.0 ports because it carries a good faith representation
+    by the offeror (5(a)) before the as is disclaimer (5(b)), like the South African port and unlike Austria,
+    the Netherlands or Chile.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: 'The record has no dalicc:additionalClauses, so the clauses the ODRL policy cannot carry
+    stay invisible: the reservation of unnamed rights, the downstream offer to recipients, the severability,
+    waiver and entire agreement paragraphs and the termination rule. Article 7 ends the contract automatically
+    on any breach by the acceptor, keeps the licences of downstream recipients alive and lets articles
+    1, 2, 5, 6 and 7 survive; article 8 makes the offeror propose a licence on identical terms to every
+    recipient. The whole Creative Commons family is modelled this way.'
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:France, which matches the country of the legal code URL https://creativecommons.org/licenses/by-nd/2.0/fr/legalcode,
+    and dalicc:validityType is dalicc:perpetual, which matches a grant made for the duration of copyright.
+    Article 8(f): "Le droit applicable est le droit francais." cc:jurisdiction bpicounty:France records
+    the legal home of the port; the grant itself is worldwide ("l''autorisation mondiale").'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The licence forbids technological protection measures and the vocabulary has no term for
+    it. Article 4(a): "L''Acceptant ne peut pas reproduire, distribuer, representer ou communiquer au
+    public l''Oeuvre, y compris par voie numerique, en utilisant une mesure technique de controle d''acces
+    ou de controle d''utilisation qui serait contradictoire avec les termes de cet Accord contractuel."
+    Proposed term: dalicc:applyTechnicalProtectionMeasures, an odrl:Action to be used as an odrl:Prohibition.
+    Not modelled, because bending an existing term would be worse than the gap.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The automatic termination of the licence on breach, the survival of the named sections
+    and the licence the licensor offers to every downstream recipient have no vocabulary terms. Article
+    7 ends the contract automatically on any breach by the acceptor, keeps the licences of downstream
+    recipients alive and lets articles 1, 2, 5, 6 and 7 survive; article 8 makes the offeror propose a
+    licence on identical terms to every recipient. Proposed terms: dalicc:terminationOnBreach and dalicc:downstreamOffer.'
+  action: none
+- rubric: 8
+  severity: info
+  field: record
+  description: 'The French 2.0 port has no moral rights clause: the droit moral of the Code de la propriete
+    intellectuelle is inalienable and the text leaves it to the statute rather than restricting the licensee
+    or binding the offeror. Article 6 mentions "prejudice ... moral" only as a head of damage. Nothing
+    is missing from the record here, but the silence is worth recording next to the ports that do speak.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Article 4(e) reserves the compulsory collective management royalties in all six element
+    sets, including the plain Paternite licence: "Dans le cas ou une utilisation de l''Oeuvre serait soumise
+    a un regime legal de gestion collective obligatoire, l''Offrant se reserve le droit exclusif de collecter
+    ces redevances par l''intermediaire de la societe de perception et de repartition des droits competente."
+    The text names broadcasting and communication in a public place of commercial phonograms, some cases
+    of cable and satellite retransmission, private copying of phonograms and videograms, and reprography.
+    Article 3 and article 5(a)(i) both point back at it. The vocabulary has no term for a reserved royalty
+    collection right. Proposed term: dalicc:royaltyCollectionReserved, with a companion for the waiver.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the forty one axioms of licensedata/dependencygraph/dg_default.ttl
+    reports no conflict, before and after the corrections, and the pre review baseline listed none for
+    this record either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of Creative Commons Attribution-NoDerivatives 4.0 International. The deontic model
+    of this record is identical to the parent, statement for statement: the same permissions with the
+    same duties, the same prohibitions and the same set level duties, and after the correction above the
+    same odrl:target as well. What differs is the jurisdiction, the language of the legal text, the clause
+    texts, and the version specific clauses of 2.0 that the model does not carry, chiefly the express
+    prohibition of sublicensing, the technological measures clause and the royalty collection arrangements.
+    The compatibility checker cannot tell this record from any other record of the BY-ND element set,
+    across all three versions and every jurisdiction the library holds.'
+  action: none
+family: 'Creative Commons 2.0 port: France (FR)'
+port_of: CC-BY-ND-4.0
+variant_kind: jurisdiction-port
+notes: The parent is the 4.0 International record of the same element set, since the library holds no
+  unported and no International 2.0 record; the version difference, 2.0 against 4.0, is therefore part
+  of the port relation and not only the jurisdiction. The SPDX licence list defines no identifier for
+  this port, so the record carries no spdx:licenseId and none was invented. Nothing in this review is
+  legal advice.

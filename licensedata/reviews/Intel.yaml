@@ -1,0 +1,87 @@
+id: Intel
+title: Intel Open Source License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Intel.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models the Intel Open Source License, which is BSD-3-Clause word for word with one paragraph
+  added about export law. The deontic model is therefore the BSD-3-Clause model: the three conditions as attribution
+  and notice duties, and the endorsement clause as a dalicc:promote prohibition. The export paragraph is quoted
+  in dalicc:additionalClauses.'
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads: "Redistribution and use in source and binary forms, with or without modification,
+    are permitted provided that the following conditions are met". The record permits reproduce, distribute, modify,
+    derive, display, present, commercial use, derivative works, modified works and the distribution fee, exactly
+    as BSD-3-Clause does.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The conditions are the three BSD conditions: the copyright notice, the list of conditions and the
+    disclaimer must be retained in source redistributions and reproduced in binary redistributions, so cc:Attribution
+    and cc:Notice are duties on distribute, modify and derive.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The third condition reads: "Neither the name of the Intel Corporation nor the names of its contributors
+    may be used to endorse or promote products derived from this software without specific prior written permission."
+    That is dalicc:promote as a prohibition. dalicc:ChangeLicense is prohibited because the text requires the license
+    itself to travel with every copy, which is the reading IscLicense and BSD-3-Clause take of the same clause.
+    The MIT record does not carry the prohibition although its text has the same requirement, so the library is
+    not uniform here. (Corrected on 2026-09-15 by the verification pass: see the rubric 3 finding on relicensing
+    below.)'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: The export paragraph is quoted verbatim. It states that the license adds no restriction of its own
+    and leaves compliance to the licensee, which is a fact about the license that no deontic term carries.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The export paragraph describes United States export regulations as they stood in May 2000 but does
+    not choose a legal system for the grant, so cc:jurisdiction stays dalicc:worldwide and the paragraph is quoted
+    instead.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following BSD-3-Clause. The text licenses
+    software in source and binary form.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Intel, NCSA, Sleepycat, VSL-1.0 and OLDAP-2.8 are the BSD-form records of this batch and share the
+    duty and prohibition shape of BSD-3-Clause. What separates them is what each adds: export law here, the MIT
+    grant in NCSA, a source-code duty in Sleepycat, a naming condition in VSL-1.0 and a revision clause in OLDAP-2.8.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
+    or without modification, are permitted provided that the following conditions are met: • Redistributions of
+    source code must retain the above copyright notice, this list of conditions and the following disclaimer." The
+    permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the
+    relicensing.'
+  action: applied
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. The three conditions are a bullet list in the source; the quoted clauses
+  are the disclaimer and export paragraphs, which are plain prose. dct:publisher names Intel Corporation, the licensor
+  in the copyright line.

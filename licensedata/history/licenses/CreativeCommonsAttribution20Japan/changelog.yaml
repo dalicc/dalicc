@@ -1,0 +1,73 @@
+id: CreativeCommonsAttribution20Japan
+title: Creative Commons Attribution 2.0 Japan
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 clause text, 1 identification detail and 1 prohibition,
+    changed 1 clause text, recorded the relation to the record this one was adapted from and recorded
+    the review state.
+  changes:
+  - action: changed
+    statement: 'dalicc:LiabilityLimitation "この利用許諾又はこの利用許諾に基づく本作品の利用から発生する、いかなる損害（許諾者が、本作品にかかる著作権、著作隣接権、著作者人格権、実演家人格権、商標権、パブリシティ権、不正競争防止法その他関連法規上保護される利益を有する者からの許諾を得ることなく本作品の利用許諾を行ったことにより発生する損害、プライバシー侵害又は名誉毀損から発生する損害等の通常損害、及び特別損害を含むが、これに限らない。）についても、許諾者に故意又は重大な過失がある場合を除き、許諾者がそのような損害発生の可能性を知らされたか否かを問わず、許諾者は、あなたに対し、これを賠償する責任を負わない。
+
+      "'
+    previous: "dalicc:LiabilityLimitation \"この利用許諾の両当事者が書面にて別途合意しない限り、許諾者は本作品を現状のまま提供するものとし、明示・黙示を問わず、本作品に関していかなる保証（特定の利用目的への適合性、第三者の権利の非侵害、欠陥の不存在を含むが、これに限られない。）もしない。\n\
+      \ この利用許諾又はこの利用許諾に基づく本作品の利用から発生する、いかなる損害（許諾者が、本作品にかかる著作権、著作隣接権、著作者人格権、実演家人格権、商標権、パブリシティ権、不正競争防止法その他関連法規上保護される利益を有する者からの許諾を得ることなく本作品の利用許諾を行ったことにより発生する損害、プライバシー侵害又は名誉毀損から発生する損害等の通常損害、及び特別損害を含むが、これに限らない。）についても、許諾者に故意又は重大な過失がある場合を除き、許諾者がそのような損害発生の可能性を知らされたか否かを問わず、許諾者は、あなたに対し、これを賠償する責任を負わない。\n\
+      \""
+    reason: 'The Japanese port has no separate disclaimer section: Article 6 is headed as the limitation
+      of liability and its first paragraph is the warranty disclaimer, its second the limitation of
+      liability. The record carried both paragraphs in dalicc:LiabilityLimitation and had no dalicc:WarrantyDisclaimer
+      at all, the only records of the batch without one. The first paragraph was moved into dalicc:WarrantyDisclaimer
+      and the liability field now holds the second paragraph, both quoted verbatim from the Japanese
+      text.'
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: added
+    statement: 'dalicc:WarrantyDisclaimer "この利用許諾の両当事者が書面にて別途合意しない限り、許諾者は本作品を現状のまま提供するものとし、明示・黙示を問わず、本作品に関していかなる保証（特定の利用目的への適合性、第三者の権利の非侵害、欠陥の不存在を含むが、これに限られない。）もしない。
+
+      "'
+    reason: 'The Japanese port has no separate disclaimer section: Article 6 is headed as the limitation
+      of liability and its first paragraph is the warranty disclaimer, its second the limitation of
+      liability. The record carried both paragraphs in dalicc:LiabilityLimitation and had no dalicc:WarrantyDisclaimer
+      at all, the only records of the batch without one. The first paragraph was moved into dalicc:WarrantyDisclaimer
+      and the liability field now holds the second paragraph, both quoted verbatim from the Japanese
+      text.'
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: added
+    statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-4.0
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:licenseVersion "2.0"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "jurisdiction-port"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dct:source <https://creativecommons.org/licenses/by/2.0/jp/>
+    reason: The record carried cc:legalcode but no dct:source. The legal-code page states the canonical
+      URL of the licence, https://creativecommons.org/licenses/by/2.0/jp/, and the six 4.0 International
+      parents carry exactly that pair (legal code plus deed). Added.
+    source: review-finding 1/dct:source
+  - action: added
+    statement: prohibition dalicc:sublicense
+    reason: 'Review decision 1: every Creative Commons record except the CC0 dedication, plus the
+      Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
+      as many words.'
+    source: consolidation-decision 1

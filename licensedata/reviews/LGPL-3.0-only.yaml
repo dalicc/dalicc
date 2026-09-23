@@ -1,0 +1,71 @@
+id: LGPL-3.0-only
+title: GNU Lesser General Public License version 3.0
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/LGPL-3.0-only.txt
+text_retrieved: true
+verdict: corrected
+summary: 'The record is a byte-for-byte copy of the GPL-3.0-only model: the same permissions, the same
+  license-wide share-alike duty, the same prohibition on changing the license. The one thing that distinguishes
+  the Lesser GPL from the GPL, the right to convey a Combined Work under terms of your choice, only appears
+  as prose in dalicc:additionalClauses and not as a modelled permission. That is the main open issue.'
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: Added the SPDX list id LGPL-3.0-only.
+  action: applied
+  change: 'spdx:licenseId "LGPL-3.0-only" ;
+
+    '
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 4 of the GPL, which the Lesser GPL incorporates, states: "You may charge any price
+    or no price for each copy that you convey." Added the missing dalicc:chargeDistributionFee permission.'
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:chargeDistributionFee ] ;\n"
+- rubric: 10
+  severity: major
+  field: odrl:prohibition
+  description: 'Section 4 states: "You may convey a Combined Work under terms of your choice that, taken
+    together, effectively do not restrict modification of the portions of the Library contained in the
+    Combined Work." The record prohibits dalicc:ChangeLicense exactly as GPL-3.0-only does, so the weak
+    copyleft of the Lesser GPL is not distinguishable from the strong copyleft of the GPL in any compatibility
+    result. The text of section 4 is already quoted in dalicc:additionalClauses. Interpretive, so left
+    to the owner.'
+  action: proposed
+  change: "# remove\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:ChangeLicense\
+    \ ] ;\n# add\nodrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:ChangeLicense ;\n\
+    \        odrl:duty [ a odrl:Duty ;\n                odrl:action dalicc:compliantLicense ] ] ;\n"
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: 'The record carries no warranty disclaimer and no liability limitation. The Lesser GPL
+    has none of its own: sections 15 and 16 of the GPL apply through section 4 of the Lesser GPL. Copying
+    the GPL text into this record would quote a different document, so it is proposed rather than applied.'
+  action: proposed
+  change: 'dalicc:WarrantyDisclaimer "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
+    APPLICABLE LAW. ..." ;
+
+    '
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'Section 4(d)(0) and 4(e), the "suitable shared library mechanism" and installation information
+    duties that make relinking possible, have no vocabulary term. Proposed term: dalicc:relinkingInformation.
+    Patent grant and patent retaliation inherited from the GPL are gaps too.'
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 1 finding 7.3: the record carried neither a warranty disclaimer
+    nor a liability limitation although ''This version of the GNU Lesser General Public License incorporates
+    the terms and conditions of version 3 of the GNU General Public License'', whose sections 15 and 16
+    are the two clauses, and it did not carry section 4 of that text either.'
+  action: applied
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: version
+notes: Version variant inside the GNU family. Weak copyleft, currently modelled as strong copyleft.

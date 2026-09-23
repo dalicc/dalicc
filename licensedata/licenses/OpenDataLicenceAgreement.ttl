@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Open Data Licence Agreement" in the DALICC license library
+# Title: The machine-readable representation of "Open Data Licence Agreement" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/OpenDataLicenceAgreement
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:OpenDataLicenceAgreement a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -25,8 +26,15 @@ dalicclib:OpenDataLicenceAgreement a odrl:Set ;
 
 The Information Provider is not liable for any errors or omissions in the Information, and will not under any circumstances be liable for any direct, indirect, special, incidental, consequential, or other loss, injury or damage caused by its use or otherwise arising in connection with this licence or the Information, even if specifically advised of the possibility of such loss, injury or damage.""" ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:OpenGovernmentLicenceCanada ;
+    dalicc:variantKind "edition" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/OpenDataLicenceAgreement/versions> ;
     dct:alternative "Canada Open Data Licence Agreement",
         "Canadian Open Data Licence Agreement" ;
+    dct:hasVersion "3" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Office of the Commissioner of Lobbying" ;
     dct:source <https://lobbycanada.gc.ca/eic/site/012.nsf/eng/00873.html> ;
     dct:title "Open Data Licence Agreement" ;
@@ -61,7 +69,11 @@ The Information Provider is not liable for any errors or omissions in the Inform
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
-            odrl:action dalicc:chargeDistributionFee ] ;
+            odrl:action dalicc:chargeDistributionFee ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ChangeLicense ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action dalicc:compliantLicense ] ] ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;

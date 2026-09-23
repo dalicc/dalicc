@@ -1,0 +1,75 @@
+id: MicrosoftPublicLicense
+title: Microsoft Public License
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/MS-PL.txt
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the Microsoft Public License correctly in substance: attribution and notice
+  duties from condition 3(C), a trademark prohibition from 3(A), and the licensing condition of 3(D) quoted
+  in dalicc:additionalClauses and modelled as dalicc:ChangeLicense with a compliance duty. The SPDX id
+  and the warranty disclaimer were missing. The patent grant and the patent retaliation have no vocabulary
+  term.'
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: Added MS-PL; the title matches the SPDX name exactly.
+  action: applied
+  change: 'spdx:licenseId "MS-PL" ;
+
+    '
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: Condition 3(E) is a warranty disclaimer and was not recorded. Added, quoted.
+  action: applied
+  change: 'dalicc:WarrantyDisclaimer "(E) The software is licensed \"as-is.\" You bear the risk of using
+    it. ..." ;
+
+    '
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'Section 2(B) grants a patent license ("each contributor grants you a non-exclusive, worldwide,
+    royalty-free license under its licensed patents to make, have made, use, sell, offer for sale, import,
+    and/or otherwise dispose of its contribution") and condition 3(B) terminates it if the licensee brings
+    a patent claim. Neither can be expressed. Proposed: dalicc:patentGrant, dalicc:patentRetaliationTermination.'
+  action: none
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: 'Condition 3(D) is a source-form reciprocity clause: "If you distribute any portion of
+    the software in source code form, you may do so only under this license by including a complete copy
+    of this license with your distribution." The record expresses it only through the compliance duty
+    on dalicc:ChangeLicense. A cc:ShareAlike duty restricted to source form would be closer, but the vocabulary
+    cannot restrict a duty to one distribution form.'
+  action: proposed
+  change: "odrl:duty [ a odrl:Duty ;\n        odrl:action cc:ShareAlike ] ;\n"
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:promote is prohibited and condition 3(A) supports it: "No Trademark License- This
+    license does not grant you rights to use any contributors'' name, logo, or trademarks."'
+  action: none
+- rubric: 1
+  severity: minor
+  field: dct:publisher
+  description: dct:publisher is the placeholder "N.N." while cc:attributionName says "Microsoft".
+  action: proposed
+  change: 'dct:publisher "Microsoft Corporation" ;
+
+    '
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 2 finding 6.1 and 6.2: dct:publisher was the placeholder ''N.N.''
+    and the record made no patent statement although section 2(B) grants ''a non-exclusive, worldwide,
+    royalty-free license under its licensed patents'' and section 3(B) ends that grant on a patent claim,
+    exactly as the new MS-RL record models them.'
+  action: applied
+family: Other OSI approved licenses (corporate, academic, weak copyleft)
+port_of: null
+variant_kind: null
+notes: A short reciprocal-for-source license. The model is faithful apart from the patent gaps.

@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial 3.0 Guatemala"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial 3.0 Guatemala"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/AttributionNoncommercial30Guatemala
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:AttributionNoncommercial30Guatemala a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -25,6 +26,12 @@ dalicclib:AttributionNoncommercial30Guatemala a odrl:Set ;
     dalicc:WarrantyDisclaimer """SALVO PACTO EN CONTRARIO DE AMBAS PARTES, QUE CONSTE POR ESCRITO, Y EN LA MAYOR AMPLITUD DE LO PERMITIDO POR LAS LEYES VIGENTES, EL LICENCIANTE OFRECE LA OBRA EN SUS CONDICIONES ACTUALES. EL AUTOR GARANTIZA LA AUTORÍA Y ORIGINALIDAD DE LA OBRA, PERO NO CONFIERE NINGUNA GARANTÍA SOBRE LA CALIDAD COMERCIAL DE LA MISMA O SU ADECUACIÓN PARA UN PROPÓSITO EN PARTICULAR.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "3.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/AttributionNoncommercial30Guatemala/versions> ;
     dct:alternative "Attribution NonCommercial 3.0 Guatemala",
         "Attribution-NonCommercial 3.0",
         "Attribution-NonCommercial 3.0 Guatemala",
@@ -36,7 +43,10 @@ dalicclib:AttributionNoncommercial30Guatemala a odrl:Set ;
         "CC-BY-NC 3.0 GT",
         "Creative Commons BY-NC 3.0",
         "Creative Commons BY-NC 3.0 GT" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/licenses/by-nc/3.0/gt/> ;
     dct:title "Creative Commons Attribution-NonCommercial 3.0 Guatemala"@en ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:display ],
@@ -77,7 +87,9 @@ dalicclib:AttributionNoncommercial30Guatemala a odrl:Set ;
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/gt.png> ;

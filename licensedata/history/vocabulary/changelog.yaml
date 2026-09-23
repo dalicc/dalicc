@@ -1,0 +1,397 @@
+id: dalicc-ns
+title: DALICC vocabulary
+current_version: 6
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 defined the terms the license texts need and the review itself
+    writes, restated the definitions it had taken from the 2022 documentation and kept the misspelled
+    royalty term as a deprecated alias, and the model history added the two terms a versioned model needs.
+  changes:
+  - action: changed
+    statement: owl:versionInfo "2.0"
+    previous: owl:versionInfo "1.2.0"
+    reason: 'The vocabulary is versioned like every other curated model: version 1 is archived next to
+      this change log and owl:priorVersion names it.'
+    source: model-history
+  - action: added
+    statement: term dalicc:Approved
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:Audited
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:Created
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:RecordStatus
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:ReviewStatus
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:Reviewed
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:applyTechnicalProtectionMeasures
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:databaseRightWaiver
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:derivativeDatabaseAccess
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:downstreamOffer
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:exemptedMaterial
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:includeNoticeFile
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:jurisdictionPortOf
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:licenseVersion
+    reason: Defined so that a curated model can name the list of its versions and so that the version
+      of a license text stays readable next to the version of the model of that text.
+    source: model-history
+  - action: added
+    statement: term dalicc:moralRightsNonAssertion
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:moralRightsRestriction
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:orLaterVersionOption
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:patentGrant
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:patentRetaliationTermination
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:recordStatus
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:reviewStatus
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:reviewedOn
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:royaltyCollectionReserved
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:shareAlikeVersionQualifier
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:suiGenerisDatabaseRights
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:terminationOnBreach
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:testFixture
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:translationOf
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:useForModelTraining
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:variantKind
+    reason: Defined by the 2026-09-15 content review, which recorded the clause the license texts state
+      and the model could not express.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:versionHistory
+    reason: Defined so that a curated model can name the list of its versions and so that the version
+      of a license text stays readable next to the version of the model of that text.
+    source: model-history
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The standard-license addition of 2026-09-15 defined the 26 terms the 116 new records needed,
+    classified every action as a rule action, a duty action or both so that app/services/vocab.py can
+    read the term table from this file, and refreshed the usage notes.
+  changes:
+  - action: changed
+    statement: owl:versionInfo "3.0"
+    previous: owl:versionInfo "2.0"
+    reason: Version 2 is archived next to this change log and owl:priorVersion names it.
+    source: model-history
+  - action: added
+    statement: term dalicc:AssetType
+    reason: The class the asset types of the library belong to, so that app/services/vocab.py can read
+      them from the file instead of holding a second copy of the list.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:DutyAction
+    reason: The class of actions that may be the odrl:action of an odrl:Duty. The vocabulary file is now
+      the source of truth for the classification, which app/services/vocab.py reads at import.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:RuleAction
+    reason: The class of actions that may be the odrl:action of an odrl:Permission or an odrl:Prohibition,
+      read the same way.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:Hardware
+    reason: The three CERN Open Hardware Licence records govern design material and the physical product
+      made from it, and no asset type said so.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:advertisingAcknowledgement
+    reason: The BSD advertising clause of RSCPL and BSD-4-Clause had no duty.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:alternativeConditionSet
+    reason: Clauses 3 and 4 of the Artistic License 1.0 each let the licensee satisfy any one of four
+      alternatives, which the deontic model cannot say.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:compatibleLicenseTest
+    reason: Ten records name a list of compatible licences or a test for one, and neither could be recorded.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:composedOf
+    reason: Python-2.0.1 is a stack of four agreements published as one licence.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:computationalUseOnly
+    reason: C-UDA-1.0 binds the licensee to use the data solely for Computational Use.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:conditionalAddLimitation
+    reason: OSET-PL-2.1 allows a further condition only where statute, judicial order, regulation, national
+      security or the public interest requires it.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:contributionGrantBack
+    reason: EUDatagrid, OCLC-2.0 and Vim ask for the licensee's changes back.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:covenantNotToSue
+    reason: The two use of data agreements promise not to sue rather than grant a patent licence.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:curePeriod
+    reason: Nineteen records give the licensee a stated number of days to put a breach right.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:exportControlNotice
+    reason: NASA-1.3, RPL-1.1 and RPL-1.5 carry an export control notice.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:fieldOfUseRestriction
+    reason: C-UDA-1.0 confines the licensee to one field of activity.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:governingLaw
+    reason: Six records choose a national or state law while their grant stays worldwide, which cc:jurisdiction
+      cannot say.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:governmentRightsLimitation
+    reason: Watcom-1.0 limits what a United States government end user acquires.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:networkUseTrigger
+    reason: Sixteen records make deployment or communication to the public, and not distribution, the
+      trigger of the source duty.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:originalVersionOffer
+    reason: IPA requires a way back to the original font to travel with a derived one.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:patentFreedomCondition
+    reason: The liberty-or-death clause of the two LGPL 2.x texts and of OCLC-2.0 had no term.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:provideUserData
+    reason: The Cryptographic Autonomy License requires a recipient's own data to be handed back.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:publicationNonObstruction
+    reason: CDLA-Sharing-1.0 forbids restricting or deterring publication by a recipient.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:recipientAssent
+    reason: The Academic Free and Open Software licences from version 2.0 on ask for the express assent
+      of recipients.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:recipientRegistrationRequest
+    reason: NASA-1.3 asks recipients to register and to report modifications.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:reciprocityScope
+    reason: CERN-OHL-W-2.0 scopes its reciprocity to the Covered Source and exempts the Product.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:sourcePublicationPeriod
+    reason: Seven records set a deadline for publishing source and a minimum period it must stay up.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:standardsConformance
+    reason: SISSL triggers its reciprocity on a departure from a named external standard.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:sublicenseSurvival
+    reason: Eleven records say that sublicences validly granted survive termination.
+    source: consolidation-decision 8
+  - action: added
+    statement: term dalicc:terminatesOnBreach
+    reason: Sixty records end automatically on a breach and the vocabulary had only the concept dalicc:terminationOnBreach,
+      with no predicate a record could carry.
+    source: consolidation-decision 8
+  - action: changed
+    statement: rdf:type dalicc:RuleAction, dalicc:DutyAction on 48 actions
+    reason: Decision 2 made the vocabulary file the single source of truth for the term table app/services/vocab.py
+      serves, which needs the classification to be in the file rather than in the code.
+    source: consolidation-decision 2
+  - action: changed
+    statement: skos:note "... not used by any license in the current library"
+    reason: 'The notes were refreshed from the real usage counts: nine terms the content review had defined
+      and applied nowhere are now in use, and the notes of the terms that are still unused say so.'
+    source: consolidation-decision 2
+- version: 4
+  date: '2026-09-22'
+  reviewer: Giray Havur
+  summary: The definition of dalicc:ChangeLicense opened with the label of another term and still stated
+    the contradiction the dependency graph dropped on 2026-09-15, so it now names its own subject and
+    says what family rule 13 holds.
+  changes:
+  - action: changed
+    statement: owl:versionInfo "4.0"
+    previous: owl:versionInfo "3.0"
+    reason: Version 3 is archived next to this change log and owl:priorVersion names it.
+    source: model-history
+  - action: changed
+    statement: dct:modified "2026-09-22"
+    previous: dct:modified "2026-09-15"
+    reason: The day this version was written.
+    source: model-history
+  - action: changed
+    statement: dalicc:ChangeLicense rdfs:comment "The licensee may change, extend or modify the license
+      terms and replace the original license with a new one. Where the license carries a share-alike
+      duty for the whole work, this permission must carry the dalicc:compliantLicense duty."
+    previous: dalicc:ChangeLicense rdfs:comment "The licensee may change, extend or modify the license
+      terms and replace the original license with a new one. The grant-use clause contradicts the share-alike
+      clause."
+    reason: 'The closing sentence stated cc:ShareAlike dalicc:contradicts odrl:grantUse, which version
+      2 of the dependency graph removed. What holds today is family rule 13: a license-wide share-alike
+      duty beside a permitted dalicc:ChangeLicense that carries no dalicc:compliantLicense duty is inconsistent.'
+    source: consolidation-decision 5
+- version: 5
+  date: '2026-09-22'
+  reviewer: Giray Havur
+  summary: A composed licence can now carry the licence text itself, so the vocabulary gained the property
+    that holds it.
+  changes:
+  - action: changed
+    statement: owl:versionInfo "5.0"
+    previous: owl:versionInfo "4.0"
+    reason: Version 4 is archived next to this change log and owl:priorVersion names it.
+    source: model-history
+  - action: added
+    statement: term dalicc:licenseText
+    reason: 'The License Composer writes the licence text into the form and keeps it with the licence,
+      and that text needed a property of its own: cc:legalcode is an address rather than a text, and
+      the three clause properties quote single clauses rather than the whole licence.'
+    source: manual
+- version: 6
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: 'The records for the licences GitHub projects use brought two relations the vocabulary
+    could not express: what a variant is a variant of, and what an SPDX exception permits.'
+  changes:
+  - action: changed
+    statement: owl:versionInfo "6.0"
+    previous: owl:versionInfo "5.0"
+    reason: Version 5 is archived next to this change log and owl:priorVersion names it.
+    source: model-history
+  - action: added
+    statement: term dalicc:variantOf
+    reason: 'An or-later identifier, a licence with an SPDX exception and a licence with a rider
+      are variants of a record the library already holds, and dalicc:jurisdictionPortOf is for
+      jurisdiction ports only. The new property names the base record, so the licence page can
+      list the variants of a licence next to its ports.'
+    source: manual
+  - action: added
+    statement: term dalicc:exceptedCombination
+    reason: 'A linking or classpath exception carves material out of the condition of the licence,
+      not out of its grant. dalicc:exemptedMaterial says the opposite, that the grant does not
+      reach the material at all, and it is prohibited on the records that use it. The new action
+      is permitted on the 18 records that model a licence with an SPDX exception.'
+    source: manual
+  - action: changed
+    statement: dalicc:variantKind rdfs:comment
+    previous: 'How a record relates to the record it descends from: jurisdiction-port, translation,
+      version or edition.'
+    reason: The comment lists the values the property takes, and the addition brought three more,
+      version-option, exception and rider, each of which carries dalicc:variantOf.
+    source: manual

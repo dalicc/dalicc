@@ -1,0 +1,102 @@
+id: MulanPSL-1.0
+title: Mulan Permissive Software License, Version 1
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/MulanPSL-1.0.txt
+text_retrieved: true
+verdict: created
+summary: Models the first version of the Mulan permissive licence, published in August 2019 in Chinese and in English.
+  It grants copyright and patent licences, asks that a copy of the licence and the copyright, patent, trademark and
+  disclaimer statements travel with every distribution, grants no trademark licence and ends the patent licence on
+  patent litigation. The record follows MulanPSL-2.0.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all MulanPSL-1.0. The library
+    already holds MulanPSL-2.0, the next version of the same text.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following MulanPSL-2.0. The text defines the
+    Software as the program and related documents.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Section 1 reads "each Contributor hereby grants to you a perpetual, worldwide, royalty-free, non-exclusive,
+    irrevocable copyright license to reproduce, use, modify, or distribute its Contribution, with modification or
+    not". The record permits reproduce, distribute, modify, derive, display, present, commercial use, derivative works,
+    modified works and the distribution fee, the set MulanPSL-2.0 carries; display and present rest on the word "use"
+    in the grant.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: dalicc:patentGrant is permitted for section 2 and dalicc:ChangeLicense is permitted with the dalicc:compliantLicense
+    duty, because section 4 keeps conditions that must survive a relicensing and nothing bars one.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote is prohibited for section 3, "No trademark license is granted to use the trade names,
+    trademarks, service marks, or product names of Contributor". dalicc:patentRetaliationTermination is prohibited
+    for the sentence in section 2 that ends the patent licence on the date patent litigation is filed.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Attribution and cc:Notice hang off odrl:distribute, odrl:modify and odrl:derive for section 4, "provided
+    that you provide recipients with a copy of this License and retain copyright, patent, trademark and disclaimer
+    statements in the Software". The duty reaches source and executable form, because the sentence says "in any medium
+    ... whether in source or executable forms".
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: Section 5 runs the warranty and the liability together under one heading. They are split into dalicc:WarrantyDisclaimer
+    and dalicc:LiabilityLimitation, as on MulanPSL-2.0.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: The text uses typographic apostrophes (others' modification, how it's caused) and one full-width closing
+    parenthesis after the word "assignee". All three are quoted as the publisher wrote them. No long dash appears
+    in the text, so none had to be replaced.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The licence is published in China and its canonical copy is served there, but the grant is "perpetual,
+    worldwide" and the text names no governing law, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: info
+  field: dct:language
+  description: No dct:language. The licence is published in Chinese and in English in one document, and every clause
+    this record quotes is quoted from the English half, so the record is not a record of a text in another language.
+    MulanPSL-2.0 makes the same choice.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Read against licensedata/licenses/MulanPSL-2.0.ttl the statements are the same. The version 1 text
+    has no sentence saying that the Chinese version prevails over the English one, so that clause is absent here;
+    the version 2 record quotes it. The clause texts are also split into separate literals here, where the version
+    2 record keeps them in one.
+  action: none
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: 'cc:legalcode points at the address the licence text itself names, http://license.coscl.org.cn/MulanPSL, and
+  dct:source at the SPDX page. dct:publisher is left out, as on MulanPSL-2.0: the text names no publishing body, only
+  the address at which it is served.'

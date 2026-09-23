@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Microsoft Public License" in the DALICC license library
+# Title: The machine-readable representation of "Microsoft Public License" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/MicrosoftPublicLicense
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,18 +15,26 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:MicrosoftPublicLicense a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "MS-PL" ;
     cc:attributionName "Microsoft" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:MS-PL ;
     dalicc:additionalClauses "(D) If you distribute any portion of the software in source code form, you may do so only under this license by including a complete copy of this license with your distribution. If you distribute any portion of the software in compiled or object code form, you may only do so under a license that complies with this license." ;
+    dalicc:WarrantyDisclaimer "(E) The software is licensed \"as-is.\" You bear the risk of using it. The contributors give no express warranties, guarantees, or conditions. You may have additional consumer rights under your local laws which this license cannot change. To the extent permitted under your local laws, the contributors exclude the implied warranties of merchantability, fitness for a particular purpose and non-infringement." ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/MicrosoftPublicLicense/versions> ;
     dct:alternative "MS Public License",
         "MS-PL",
         "MSPL" ;
-    dct:publisher "N.N." ;
+    dct:hasVersion "3" ;
+    dct:modified "2026-09-15"^^xsd:date ;
+    dct:publisher "Microsoft" ;
     dct:source osl:MS-PL ;
     dct:title "Microsoft Public License" ;
     odrl:permission [ a odrl:Permission ;
@@ -64,8 +72,12 @@ dalicclib:MicrosoftPublicLicense a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
-            odrl:action dalicc:chargeDistributionFee ] ;
+            odrl:action dalicc:chargeDistributionFee ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:patentGrant ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:patentRetaliationTermination ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

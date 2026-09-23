@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Open Government Licence - Canada" in the DALICC license library
+# Title: The machine-readable representation of "Open Government Licence - Canada" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/OpenGovernmentLicenceCanada
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,15 +15,24 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:OpenGovernmentLicenceCanada a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "OGL-Canada-2.0" ;
     cc:attributionName "Her Majesty the Queen in right of Canada" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://open.canada.ca/en/open-government-licence-canada> ;
     dalicc:WarrantyDisclaimer """The Information is licensed “as is”, and the Information Provider excludes all representations, warranties, obligations, and liabilities, whether express or implied, to the maximum extent permitted by law.
 The Information Provider is not liable for any errors or omissions in the Information, and will not under any circumstances be liable for any direct, indirect, special, incidental, consequential, or other loss, injury or damage caused by its use or otherwise arising in connection with this licence or the Information, even if specifically advised of the possibility of such loss, injury or damage.""" ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/OpenGovernmentLicenceCanada/versions> ;
+    dct:alternative "OGL-Canada-2.0",
+        "Open Government Licence - Canada 2.0" ;
+    dct:hasVersion "4" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Her Majesty the Queen in right of Canada" ;
     dct:source <https://open.canada.ca/en/open-government-licence-canada> ;
     dct:title "Open Government Licence - Canada" ;
@@ -32,11 +41,15 @@ The Information Provider is not liable for any errors or omissions in the Inform
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ] ],
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ] ],
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -54,12 +67,14 @@ The Information Provider is not liable for any errors or omissions in the Inform
         [ a odrl:Permission ;
             odrl:action dalicc:chargeLicenseFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:noWarrantyNotice ] ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:noWarrantyNotice ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ChangeLicense ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action dalicc:compliantLicense ] ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action cc:ShareAlike ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:addStatement ],
-        [ a odrl:Prohibition ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,

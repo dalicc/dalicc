@@ -1,0 +1,65 @@
+id: CommonPublicAttributionLicenseVersion10
+title: Common Public Attribution License Version 1.0
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 2 identification details and 2 permissions, removed
+    3 prohibitions and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dct:source osl:CPAL-1.0
+    reason: Added CPAL-1.0 and the missing dct:source.
+    source: review-finding 1/spdx:licenseId
+  - action: added
+    statement: permission cc:DerivativeWorks
+    reason: Sections 2.1(b) and 2.2(b) grant the right "to use, reproduce, modify, display, perform,
+      sublicense and distribute the Original Code (or portions thereof) with or without Modifications".
+      The record prohibited both odrl:derive and cc:DerivativeWorks, so the compatibility checker
+      treated every adaptation as forbidden. Removed both prohibitions and added the permissions with
+      the duties the license does impose.
+    source: review-finding 3/odrl:prohibition
+  - action: added
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
+    reason: Sections 2.1(b) and 2.2(b) grant the right "to use, reproduce, modify, display, perform,
+      sublicense and distribute the Original Code (or portions thereof) with or without Modifications".
+      The record prohibited both odrl:derive and cc:DerivativeWorks, so the compatibility checker
+      treated every adaptation as forbidden. Removed both prohibitions and added the permissions with
+      the duties the license does impose.
+    source: review-finding 3/odrl:prohibition
+  - action: removed
+    statement: prohibition cc:DerivativeWorks
+    reason: Sections 2.1(b) and 2.2(b) grant the right "to use, reproduce, modify, display, perform,
+      sublicense and distribute the Original Code (or portions thereof) with or without Modifications".
+      The record prohibited both odrl:derive and cc:DerivativeWorks, so the compatibility checker
+      treated every adaptation as forbidden. Removed both prohibitions and added the permissions with
+      the duties the license does impose.
+    source: review-finding 3/odrl:prohibition
+  - action: removed
+    statement: prohibition cc:ShareAlike
+    reason: Section 3.1 requires Covered Code to be distributed "only under the terms of this License".
+      The record prohibited cc:ShareAlike, the reverse. Removed.
+    source: review-finding 5/odrl:prohibition
+  - action: removed
+    statement: prohibition odrl:derive
+    reason: Sections 2.1(b) and 2.2(b) grant the right "to use, reproduce, modify, display, perform,
+      sublicense and distribute the Original Code (or portions thereof) with or without Modifications".
+      The record prohibited both odrl:derive and cc:DerivativeWorks, so the compatibility checker
+      treated every adaptation as forbidden. Removed both prohibitions and added the permissions with
+      the duties the license does impose.
+    source: review-finding 3/odrl:prohibition
+  - action: added
+    statement: spdx:licenseId "CPAL-1.0"
+    reason: Added CPAL-1.0 and the missing dct:source.
+    source: review-finding 1/spdx:licenseId

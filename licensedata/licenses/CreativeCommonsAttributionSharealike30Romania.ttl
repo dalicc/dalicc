@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 3.0 Romania"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-ShareAlike 3.0 Romania"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike30Romania
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttributionSharealike30Romania a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -34,18 +35,27 @@ dalicclib:CreativeCommonsAttributionSharealike30Romania a odrl:Set ;
  
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "3.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttributionSharealike30Romania/versions> ;
     dct:alternative "Attribution ShareAlike 3.0 Romania",
         "Attribution-ShareAlike 3.0",
         "Attribution-ShareAlike 3.0 Romania",
         "CC BY SA 3.0",
-        "CC BY SA 3.0 ro",
+        "CC BY SA 3.0 RO",
         "CC BY-SA 3.0",
-        "CC BY-SA 3.0 ro",
+        "CC BY-SA 3.0 RO",
         "CC-BY-SA 3.0",
-        "CC-BY-SA 3.0 ro",
+        "CC-BY-SA 3.0 RO",
         "Creative Commons BY-SA 3.0",
-        "Creative Commons BY-SA 3.0 ro" ;
+        "Creative Commons BY-SA 3.0 RO" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/licenses/by-sa/3.0/ro/> ;
     dct:title "Creative Commons Attribution-ShareAlike 3.0 Romania"@en ;
     odrl:duty [ a odrl:Duty ;
             odrl:action cc:ShareAlike ] ;
@@ -88,8 +98,11 @@ dalicclib:CreativeCommonsAttributionSharealike30Romania a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
-            dct:type dalicc:CreativeWork ] ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset ] ;
     foaf:img <https://creativecommons.org/images/international/ro.png> ;
     foaf:logo <https://licensebuttons.net/l/by-sa/3.0/ro/88x31.png> .

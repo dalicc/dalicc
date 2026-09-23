@@ -1,0 +1,86 @@
+id: ICU
+title: ICU License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/ICU.txt
+text_retrieved: true
+verdict: created
+summary: The record models the ICU license, the MIT grant without the word sublicense and with the notice condition
+  written into the grant sentence. It adds the advertising bar that MIT does not have, so dalicc:promote is prohibited
+  and the clause is also quoted in dalicc:additionalClauses.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads: "to deal in the Software without restriction, including without limitation the
+    rights to use, copy, modify, merge, publish, distribute, and/or sell copies of the Software, and to permit persons
+    to whom the Software is furnished to do so". The list omits sublicense, which MIT has, so the record carries
+    odrl:grantUse for the clause about persons to whom the software is furnished but no dalicc:sublicense. Selling
+    copies supports dalicc:chargeDistributionFee.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The condition is that the copyright notices and the permission notice appear in all copies and in
+    supporting documentation: cc:Attribution and cc:Notice on distribute, modify and derive.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The text reads: "Except as contained in this notice, the name of a copyright holder shall not be
+    used in advertising or otherwise to promote the sale, use or other dealings in this Software without prior written
+    authorization of the copyright holder." That is dalicc:promote as a prohibition. dalicc:ChangeLicense is prohibited
+    because the text requires the license itself to travel with every copy, which is the reading IscLicense and
+    BSD-3-Clause take of the same clause. The MIT record does not carry the prohibition although its text has the
+    same requirement, so the library is not uniform here. (Corrected on 2026-09-15 by the verification pass:
+    see the rubric 3 finding on relicensing below.)'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: The advertising paragraph is quoted in dalicc:additionalClauses as well as modelled as a prohibition,
+    because it also limits what the notice itself allows, which the prohibition alone does not say.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following MIT. The text licenses software
+    and its documentation.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: ICU, Xnet and NCSA are the three MIT-form records of this batch. Xnet is MIT word for word plus a
+    governing-law sentence; NCSA is the MIT grant with the three BSD conditions; ICU drops sublicensing and adds
+    the advertising bar.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Permission is hereby granted, free of charge, to any person
+    obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software
+    without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute,
+    and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, provided
+    that the above copyright notice(s) and this permission notice appear in all copies of the Software and that
+    both the above copyright notice(s) and this permission notice appear in supporting documentation." The permission
+    carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the relicensing.'
+  action: applied
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. cc:legalcode is the ICU project URL SPDX lists; the text has no steward
+  named in it, so there is no dct:publisher.

@@ -1,0 +1,106 @@
+id: FSL-1.1-MIT
+title: Functional Source License, Version 1.1, MIT Future License
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/FSL-1.1-MIT.txt
+text_retrieved: true
+verdict: created
+summary: The record models the Functional Source License 1.1 with the MIT license as its future licence. The grant is wide,
+  it covers use, copying, modification, derivative works, public performance, public display and redistribution, but only
+  for a Permitted Purpose, which the text defines as any purpose other than a Competing Use. It is not an open source licence
+  while that restriction is in force. Two years after a version is made available, the same version is also available under
+  the MIT license.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, record identifier, SPDX identifier and IRI local name agree. cc:legalcode points at the template
+    the publisher hosts and dct:source at the SPDX entry. dct:publisher is left out: the text names no steward, only ''we''
+    and ''us''. The record is not modelled as a variant of MIT: the Functional Source License is a licence of its own that
+    grants a second licence later, not a flavour of the later one.'
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only. The text defines 'the Software' as each version of the software made available under
+    the terms.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: '''We hereby grant you the right to use, copy, modify, create derivative works, publicly perform, publicly
+    display and redistribute the Software for any Permitted Purpose identified below.'' That gives odrl:reproduce, odrl:modify,
+    odrl:derive, cc:DerivativeWorks, dalicc:ModifiedWorks, odrl:present, odrl:display and odrl:distribute. dalicc:patentGrant
+    for ''To the extent your use for a Permitted Purpose would necessarily infringe our patents, the license grant above
+    includes a license under our patents.'' cc:CommercialUse is permitted, because the text lists internal use, non-commercial
+    education and non-commercial research as examples of Permitted Purposes and bars only a Competing Use, which is itself
+    defined as a commercial product or service that substitutes for the Software.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:ChangeLicense for 'The Terms and Conditions apply to all copies, modifications and derivatives of
+    the Software.' dalicc:promote for 'Except for displaying the License Details and identifying us as the origin of the
+    Software, you have no right under these Terms and Conditions to use our trademarks, trade names, service marks or product
+    names.' dalicc:patentRetaliationTermination for 'If you make a claim against any party that the Software infringes or
+    contributes to the infringement of any patent, then your patent license to the Software ends immediately.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:Notice for ''you must include a copy of or a link to these Terms and Conditions and not remove any copyright
+    notices provided in or with the Software'' and cc:ShareAlike for ''The Terms and Conditions apply to all copies, modifications
+    and derivatives of the Software.'' Both hang on odrl:distribute, odrl:modify and odrl:derive, which is the reach the
+    Redistribution clause gives them. dalicc:reciprocityScope says the same in words. No cc:Attribution: the text asks for
+    copyright notices to be left in place, which is cc:Notice, and gives credit only as a permission under Trademarks.'
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: The Disclaimer section is two paragraphs, one disclaiming warranty and one limiting liability, so each goes
+    into the property that names it. Nine further clauses are quoted in dalicc:additionalClauses, including the whole definition
+    of a Permitted Purpose and the future-licence grant.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:validityType
+  description: 'dalicc:validityType stays dalicc:perpetual: the grant itself has no end date, and the future licence adds
+    a second licence rather than ending this one. ''We hereby irrevocably grant you an additional license to use the Software
+    under the MIT license that is effective on the second anniversary of the date we make the Software available.'' dalicc:terminatesOnBreach
+    is left out because the text carries no termination clause; compliance is written as a condition of the grant instead.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The future licence has no term. The clause is quoted. Proposed terms: dalicc:changeDate for the date on
+    which the further licence takes effect and dalicc:changeLicense pointing at dalicclib:MIT. The date is relative to each
+    version, so a term would have to hold a period rather than a date.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:fieldOfUseRestriction
+  description: 'The Competing Use bar has no term. dalicc:fieldOfUseRestriction is the nearest literal and names it; the
+    definition is quoted in full. Proposed term: dalicc:competingUseRestriction, a rule action for making the licensed work
+    available to others in a product or service that substitutes for it.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run against licensedata/dependencygraph/dg_default.ttl, returned
+    no conflicts.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: FSL-1.1-MIT and FSL-1.1-ALv2 share one text and differ in one paragraph, the future licence, which is the
+    MIT license here. The two records are therefore identical statement for statement and differ only in the identifier,
+    the title, the alternatives and the quoted future-licence clause. Neither is modelled as a variant of the other, because
+    SPDX lists them as two licences and neither is a flavour of the other.
+  action: none
+family: Source-available licences and riders
+port_of: null
+variant_kind: null
+variant_of: null
+notes: 'The licence is a template: the notice block carries a year and a licensor name that each project fills in, so the
+  record models the terms and not any one project''s copy. The second-anniversary grant means a reader checking an old version
+  may find it available under the MIT license as well as under these terms.'

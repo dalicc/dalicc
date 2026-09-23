@@ -1,0 +1,92 @@
+id: EPL-2.0
+title: Eclipse Public License 2.0
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/EPL-2.0.txt
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the Eclipse Public License 2.0 with attribution, notice and modification-notice
+  duties and a permission to distribute under a different license with a compliance duty, which matches
+  section 3.1(b). Four things the text states plainly were missing: commercial use, the source-code duty,
+  sublicensing, and both liability clauses. All were added.'
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: The record id is the SPDX list id but the field was absent.
+  action: applied
+  change: 'spdx:licenseId "EPL-2.0" ;
+
+    '
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Section 4 is headed COMMERCIAL DISTRIBUTION and opens "Commercial distributors of software
+    may accept certain responsibilities with respect to end users, business partners and the like", and
+    the section 2 grant is royalty-free with no field-of-use limit. The record did not permit cc:CommercialUse,
+    so the license read as non-commercial. Added.
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action cc:CommercialUse ] ;\n"
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'Section 3.1(a) states: "the Program must also be made available as Source Code, in accordance
+    with section 3.2, and the Contributor must accompany the Program with a statement that the Source
+    Code for the Program is available under this Agreement". No cc:SourceCode duty was recorded. Added
+    to distribute, modify and derive.'
+  action: applied
+  change: "odrl:duty [ a odrl:Duty ;\n        odrl:action cc:SourceCode ] ;\n"
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Section 2(a) grants the right to "reproduce, prepare Derivative Works of, publicly display,
+    publicly perform, Distribute and sublicense the Contribution". Added odrl:grantUse.
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action odrl:grantUse ] ;\n"
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: Sections 5 and 6 were not recorded. Added both, quoted.
+  action: applied
+  change: 'dalicc:WarrantyDisclaimer "EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT
+    PERMITTED BY APPLICABLE LAW, THE PROGRAM IS PROVIDED ON AN \u201cAS IS\u201d BASIS ..." ;
+
+    dalicc:LiabilityLimitation "EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT ... NEITHER RECIPIENT
+    NOR ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY ..." ;
+
+    '
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'Section 2(b) grants a patent license and section 7 terminates it on patent litigation.
+    Proposed: dalicc:patentGrant, dalicc:patentRetaliationTermination.'
+  action: none
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: The record still has no prohibition. Section 3.3 forbids removing or altering any copyright,
+    patent, trademark or attribution notice, which is closer to a notice duty than to a prohibition, so
+    nothing was added.
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: The Secondary License mechanism, which is what makes this version GPL compatible, is quoted
+    in dalicc:additionalClauses. It is prose only and therefore invisible to the compatibility checker.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 4 finding 6.2 and consolidation decision 4: the record carried
+    no prohibition although section 7 says ''If Recipient institutes patent litigation against any entity
+    ... alleging that the Program itself ... infringes such Recipient''s patent(s), then such Recipient''s
+    rights granted under Section 2(b) shall terminate'', it modelled no reciprocity although section 3.1
+    requires the Program in source form to be ''made available under this Agreement'', its dalicc:additionalClauses
+    began with the paraphrase ''Compliant License according to 1. DEFINITIONS:'' instead of the quotation,
+    and dct:publisher was ''N.N.''.'
+  action: applied
+family: Other OSI approved licenses (corporate, academic, weak copyleft)
+port_of: null
+variant_kind: version
+notes: Version variant inside the Eclipse family.

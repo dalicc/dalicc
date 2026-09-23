@@ -1,0 +1,160 @@
+id: OdcOpenDatabaseLicense
+title: ODC Open Database License (ODbL)
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://opendatacommons.org/licenses/odbl/1-0/
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the share-alike database licence of Open Data Commons. The share-alike duty,
+  the attribution and notice duties and the derivative-database permissions are all supported by the text.
+  Two corrections were applied: commercial use, which Section 3.1 grants in as many words and which the
+  record did not model at all, and the trademark prohibition of Section 2.3(c). The database-specific
+  duties of Sections 4.6 and 4.7, access to the derivative database and parallel distribution, are beyond
+  the vocabulary and are recorded as gaps.'
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: The record carried no SPDX identifier. Its cc:legalcode, https://opendatacommons.org/licenses/odbl/1.0/,
+    is the seeAlso URL of the SPDX entry ODbL-1.0, and the fetched text is headed "Open Data Commons Open
+    Database License (ODbL) v1.0". The proposal file rated this medium; the version in the document confirms
+    it. Added.
+  action: applied
+  change: spdx:licenseId "ODbL-1.0" ;
+- rubric: 1
+  severity: minor
+  field: dct:title
+  description: The title literal ended with a trailing blank, "ODC Open Database License (ODbL) ". Removed.
+  action: applied
+  change: dct:title "ODC Open Database License (ODbL)" ;
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record has cc:legalcode but no dct:source, so there is no second provenance link. The
+    sibling records OdcPublicDomainDedicationAndLicence and OpenDataCommonsAttributionLicenseV10 both
+    point dct:source at the corresponding opendefinition.org page. Proposed for symmetry rather than applied,
+    because the opendefinition entry is a third-party description and not the licence.
+  action: proposed
+  change: dct:source <https://opendefinition.org/licenses/odc-odbl/> ;
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'The asset collection is dcmitype:Dataset only, which is right: the licence governs a database
+    and Section 2.4 says expressly that it does not cover the individual contents.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'cc:CommercialUse was missing. Section 3.1: "These rights explicitly include commercial
+    use, and do not exclude any field of endeavour." Without it the record read as if the licence were
+    silent on commercial use, and the compatibility outcome against any NonCommercial licence was wrong.
+    Added.'
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action cc:CommercialUse ] ;"
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: The other permissions follow Section 3.1, which lists extraction and re-utilisation of
+    a substantial part of the contents, creation of derivative and collective databases, reproduction
+    and distribution, communication, display, lending, making available and performance to the public.
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'dalicc:promote was missing although Section 2.3(c) states: "This License does not cover
+    any trademarks associated with the Database." The two sibling records of the family, ODC-By and PDDL,
+    both carry the prohibition on the identical clause. Added.'
+  action: applied
+  change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:promote ] ;"
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: 'dalicc:chargeDistributionFee is prohibited. The text supports a narrower rule than the
+    record says: Section 4.6 requires the derivative database or the alteration file to be "available
+    at no more than a reasonable production cost for physical distributions and free of charge if distributed
+    over the internet", and Section 4.7(b)(i) requires the unrestricted parallel copy to be "available
+    without additional fee". Section 3.1 at the same time allows commercial use. So the fee ban applies
+    to the copy the licensee must hand over, not to every distribution. Left in place, because removing
+    it would lose the only trace of Section 4.6 in the record, and flagged for the owner.'
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: Section 4.8 states "You may not sublicense the Database" and the record does not say so.
+    The vocabulary has dalicc:sublicense, defined but used by no record in the library. Proposed rather
+    than applied, because the same sentence stands in ODC-By and in every Creative Commons 2.0 and 3.0
+    record, so it is one library-wide correction.
+  action: proposed
+  change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'cc:ShareAlike is a licence-wide duty, which matches Section 4.4: a derivative database
+    that is publicly used must be offered "only under the terms of this License" or a later version or
+    a compatible licence. cc:Attribution and cc:Notice hang on distribute, modify and derive, which matches
+    Section 4.2, notices, and Section 4.3, the notice for a produced work.'
+  action: none
+- rubric: 5
+  severity: gap
+  field: odrl:duty
+  description: 'Section 4.6, access to derivative databases, has no term: the licensee must offer recipients
+    either the entire derivative database or a file of all alterations, in machine readable form. It is
+    the database equivalent of the source-code duty, but cc:SourceCode is defined for software and bending
+    it would misstate the obligation. Proposed term: dalicc:derivativeDatabaseAccess.'
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: dalicc:WarrantyDisclaimer is Section 7.1 and dalicc:LiabilityLimitation is Sections 8.1
+    and 8.2, both quoted verbatim. Section 5, moral rights, Section 6, fair dealing and database exceptions,
+    Section 9, termination and reinstatement, and Section 10.4, choice of law, are not carried in the
+    record.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: dalicc:worldwide matches Section 3.1, which grants a worldwide licence. dalicc:perpetual
+    matches Section 9.3, "Unless terminated under Section 9.1, this License is granted to You for the
+    duration of applicable rights in the Database." Section 10.4 leaves the governing law to the jurisdiction
+    where the terms are enforced, so no country belongs in cc:jurisdiction.
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'Section 4.7(a) forbids imposing technological measures that restrict the rights granted,
+    and Section 4.7(b) allows them only against parallel distribution of an unrestricted copy. Neither
+    half has a term. Proposed terms: dalicc:applyTechnicalProtectionMeasures and dalicc:parallelDistribution.
+    Section 9, automatic termination on breach with reinstatement, and Section 4.8, the automatic downstream
+    offer, need dalicc:terminationOnBreach and dalicc:downstreamOffer.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check reports no conflict, before and after the corrections. Adding cc:CommercialUse
+    next to the dalicc:chargeDistributionFee prohibition raised no conflict either, because the dependency
+    graph relates the fee actions to odrl:sell and odrl:commercialize but not to cc:CommercialUse.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The three Open Data Commons records now differ from each other the way the documents do:
+    PDDL dedicates, ODC-By requires attribution and notices, ODbL adds share-alike and the database-specific
+    duties. Before the review ODbL was missing commercial use, which is the one thing all three grant
+    in identical words in their Section 3.1.'
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 5 finding 7: the record prohibited dalicc:chargeDistributionFee
+    although the ODbL nowhere forbids charging for a copy. What it does is cap the price of the copy that
+    has to accompany a Restricted Database and of the derivative database file, and those two sentences
+    are now quoted instead; dct:source was missing.'
+  action: applied
+family: Open Data Commons (ODbL, PDDL, ODC-By)
+port_of: null
+variant_kind: null
+notes: The licence is drafted for databases and uses its own vocabulary, Database, Derivative Database,
+  Collective Database, Produced Work, which the DALICC action set flattens onto the work-oriented terms
+  derive, modify and distribute. That flattening is the reason why Section 4.5, the limits of share alike
+  for a produced work, is invisible in the model. Nothing in this review is legal advice.

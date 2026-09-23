@@ -1,0 +1,111 @@
+id: Frameworx-1.0
+title: Frameworx Open License 1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://opensource.org/license/Frameworx-1.0'
+text_retrieved: true
+verdict: created
+summary: >-
+  The Frameworx Open License is a reciprocal licence written as an agreement: every downstream
+  distribution must carry the complete source code on terms no more restrictive than these,
+  must bind its own distributees to the same restrictions, and must carry five prescribed
+  legends and files. The record carries a licence-wide share-alike duty and a prohibition on
+  charging for the licence itself. Nothing here is legal advice.
+findings:
+- rubric: 2
+  severity: info
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Software alone, following EclipsePublicLicense10 and EPL-2.0, the two records of
+    this family already in the library. The text licenses a Program, that is software in
+    source code and object code form, so neither dalicc:CreativeWork nor dcmitype:Dataset is
+    written.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 2 grants a licence "to: (a) use the Frameworx Code Base, in either Source Code or
+    machine-readable form; (b) make modifications, additions and deletions to the content or
+    structure of the Frameworx Code Base; or (c) create larger works or derivative works ...;
+    and (d) release, distribute or make available ... any of the foregoing in Source Code or
+    binary form", which is the permissive base set. Section 4 adds: "The Frameworx Company
+    hereby grants to you all rights to sub-license your rights hereunder", so
+    dalicc:sublicense is a permission.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    Section 2 grants the licence "for no fee other than a nominal charge reflecting the costs
+    of physical distribution", so dalicc:chargeDistributionFee is permitted and
+    dalicc:chargeLicenseFee is prohibited. dalicc:ChangeLicense is prohibited because section
+    3(a) admits only terms "no more restrictive, and no less favorable for any user" and
+    section 4 binds every distributee to the same restrictions. The text has no trademark
+    clause, so dalicc:promote is not written, and no patent clause, so nothing patent-related
+    is written.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Section 3(a) requires the complete source code of a downstream distribution to be made
+    freely available, which is cc:SourceCode, and section 4 requires each distributee to be
+    "subject to the same restrictions on re-distribution and use as are binding on You
+    hereunder", which is the licence-wide cc:ShareAlike duty. Section 3(c) requires the
+    identifying legend in each file, the copyright notices and authorship credits, the
+    warranty disclaimers, the community invitation file, the licence text file and a prominent
+    legend: cc:Attribution, cc:Notice and dalicc:addStatement on the three acts, with
+    dalicc:noWarrantyNotice on odrl:distribute for the requirement to carry the disclaimer of
+    section 6.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Section 6 holds the warranty disclaimer and the limitation of liability in one paragraph;
+    it is split at "IN NO EVENT SHALL" into the two fields. dalicc:additionalClauses carries
+    the grant of section 2, the three license conditions of section 3, the downstream
+    licensing requirement of section 4, the intellectual property clause of section 5 and the
+    termination clause of section 7.
+  action: applied
+- rubric: 7
+  severity: info
+  field: 'cc:jurisdiction'
+  description: >-
+    The agreement names no governing law and no forum, so cc:jurisdiction stays
+    dalicc:worldwide and dalicc:validityType stays dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Two clauses have no term. Section 3(b) requires any value-added service related to a
+    downstream distribution to be offered "on commercial terms that are reasonably
+    commensurate to the fair market value of such Value-Added Services"; proposed
+    dalicc:fairMarketValueServices. Section 7 voids the licence on a violating distribution;
+    proposed dalicc:terminatesOnBreach. Both are quoted.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty list for this record.
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: >-
+    Frameworx has no parent in this batch: it is neither a Common Public License nor an Apache
+    1.1 derivative, and its nearest relative in the library is the group of whole-work
+    reciprocal records such as CERN-OHL-S-2.0 and SimPL-2.0, which also carry a licence-wide
+    cc:ShareAlike duty.
+  action: none
+family: 'Eclipse, Common Public and Lucent'
+port_of: null
+variant_kind: null
+notes: >-
+  Modelled from the SPDX plain text of Frameworx-1.0 and checked against the URL in
+  cc:legalcode. The disclaimer uses the double-backtick quotation marks of the original BSD
+  text and the quoted clause keeps them.

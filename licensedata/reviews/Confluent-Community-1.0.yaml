@@ -1,0 +1,113 @@
+id: Confluent-Community-1.0
+title: Confluent Community License Agreement Version 1.0
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://www.confluent.io/confluent-community-license/
+text_retrieved: true
+verdict: created
+summary: 'The record models the Confluent Community License Agreement, version 1.0. The grant covers use, modification,
+  derivative works, distribution and reproduction, and is then cut by one defined term: the licensee may not exercise it
+  for an Excluded Purpose, which is an online service competing with the licensor''s own. It is not an open source licence.
+  Unlike the other source-available texts in this set, it lets a licensee put its own modifications under terms of its choosing.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, record identifier and IRI local name agree. The triple is left out: the SPDX list does not carry
+    this licence and no identifier is invented. cc:legalcode and dct:source are the publisher''s page, which the licence
+    text names as the place the agreement lives. dct:publisher is Confluent, Inc., which the first sentence names.'
+  action: applied
+- rubric: 1
+  severity: minor
+  field: dalicc:additionalClauses
+  description: The text was taken from a web page, and the conversion to plain text dropped the space after a full stop
+    in three places where one sentence runs into the next. Every literal in this record is a complete sentence or a run
+    of complete sentences that does not cross one of those joins, so no quotation carries the artefact.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only. The agreement covers software the publisher makes available under it.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 1.1 grants a licence ''to: (a) use the Software; (b) prepare modifications and derivative works
+    of the Software; (c) distribute the Software (including without limitation in source code or object code form); and
+    (d) reproduce copies of the Software''. That gives odrl:modify, odrl:derive, cc:DerivativeWorks, dalicc:ModifiedWorks,
+    odrl:distribute and odrl:reproduce. cc:CommercialUse is permitted: only the Excluded Purpose is carved out, and it is
+    one kind of commercial activity rather than commercial activity as such. dalicc:ChangeLicense is permitted with no duty,
+    for section 1.3, ''Licensee may add its own copyright notices to modifications made by Licensee and may provide additional
+    or different license terms and conditions for use, reproduction, or distribution of Licensee''s modifications.'' That
+    is the weak copyleft shape, the same as EPL-2.0 and CDDL-1.1. No dalicc:patentGrant: the text grants no patent licence
+    and reserves all rights not expressly granted.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:sublicense for 'The License does not include the right to sublicense the Software'. dalicc:promote
+    for 'Confluent hereby reserves all rights in its trademarks and service marks, and no licenses therein are granted in
+    this Agreement.' dalicc:ChangeLicense is not prohibited here, unlike in every other record of this set, because section
+    1.3 allows it for the licensee's own modifications.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:grantUse
+  description: 'Section 1.4 says ''each recipient to which Licensee provides the Software may exercise the Licenses so long
+    as such recipient agrees to the terms and conditions of this Agreement'', which would ordinarily give odrl:grantUse.
+    It is left out for the same reason as in SSPL-1.0 and CAL-1.0: the dependency graph holds dalicc:sublicense owl:sameAs
+    odrl:grantUse, and sublicensing is forbidden in the same sentence. The clause is quoted.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Notice for section 1.2(b), 'Licensee shall reproduce and not remove or alter all Confluent or third party
+    copyright or other proprietary notices contained in the Software'; dalicc:addStatement for the same section's requirement
+    to add a specific notice, whose wording is quoted in dalicc:additionalClauses; cc:ShareAlike on odrl:distribute only,
+    because the Software itself stays under the agreement while modifications need not; dalicc:modificationNotice on odrl:modify
+    and odrl:derive for section 1.2(a). dalicc:reciprocityScope says in words how far that reaches.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: The disclaimer and the limitation of liability are separate sections, so each goes into the property that
+    names it, and the offer sentence of section 1.3 is dalicc:WarrantyOrLiabilityAcceptance, as on Apache-2.0. Ten further
+    clauses are quoted in dalicc:additionalClauses, including the notice a licensee must ship.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:governingLaw
+  description: 'dalicc:governingLaw is ''the law of the State of California, United States'' for section 6.1, which also
+    sends a licensee outside the United States to arbitration under named rules. cc:jurisdiction stays dalicc:worldwide
+    because the grant says worldwide. dalicc:terminatesOnBreach is true and no cure period is offered: ''If Licensee breaches
+    any of its conditions or obligations under this Agreement, this Agreement will terminate automatically and the License
+    will terminate automatically and permanently.'''
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:fieldOfUseRestriction
+  description: 'The Excluded Purpose has no term. dalicc:fieldOfUseRestriction is the nearest literal and the definition
+    is quoted. Proposed term: dalicc:competingServiceRestriction, the same term Elastic-2.0, RSALv2 and the Timescale License
+    need, which is the strongest case in this set for adding it.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run against licensedata/dependencygraph/dg_default.ttl, returned
+    no conflicts. cc:ShareAlike hangs on odrl:distribute rather than on the licence as a whole, so permitting dalicc:ChangeLicense
+    beside it is not the whole-work conflict the check looks for; it is the weak copyleft shape the text describes.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: Against the other source-available records in this set it is the only one that permits dalicc:ChangeLicense,
+    and against EPL-2.0 and CDDL-1.1, which share that shape, it differs in barring a field of use. It carries no patent
+    grant, which Elastic-2.0, RSALv2 and the Sustainable Use License all have.
+  action: none
+family: Source-available licences and riders
+port_of: null
+variant_kind: null
+variant_of: null
+notes: The licence is published as a web page rather than as a plain-text file, so the record quotes complete sentences
+  from the converted text and names the page in cc:legalcode. Section 6.1 sends a licensee outside the United States to
+  arbitration under named international rules, which no property can hold; the sentence is quoted.

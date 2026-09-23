@@ -1,0 +1,102 @@
+id: MulanPSL-2.0
+title: Mulan Permissive Software License, Version 2
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/MulanPSL-2.0.txt
+text_retrieved: true
+verdict: created
+summary: The record models version 2 of the Mulan Permissive Software License, published in Chinese and English
+  with the Chinese version prevailing. It grants a perpetual, worldwide, royalty-free, non-exclusive, irrevocable
+  copyright license and a matching patent license, grants no trademark license, and requires every redistribution
+  to carry a copy of the license and to retain the copyright, patent, trademark and disclaimer statements. A patent
+  action against the software ends the patent license.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The copyright grant reads: "each Contributor hereby grants to you a perpetual, worldwide, royalty-free,
+    non-exclusive, irrevocable copyright license to reproduce, use, modify, or distribute its Contribution, with
+    modification or not." The record permits reproduce, distribute, modify, derive, display, present, commercial
+    use, derivative works, modified works and the distribution fee. The patent section grants a patent license expressly,
+    so dalicc:patentGrant is a permission.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The distribution restriction reads: "You may distribute the Software in any medium with or without
+    modification, whether in source or executable forms, provided that you provide recipients with a copy of this
+    License and retain copyright, patent, trademark and disclaimer statements in the Software." cc:Attribution and
+    cc:Notice on distribute, modify and derive.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The patent section continues: "If you or your Affiliates directly or indirectly institute patent
+    litigation (including a cross claim or counterclaim in a litigation) or other patent enforcement activities
+    against any individual or entity by alleging that the Software or any Contribution in it infringes patents,
+    then any patent license granted to you under this License for the Software shall terminate as of the date such
+    litigation or activity is filed or taken." dalicc:patentRetaliationTermination is modelled as a prohibition,
+    the reading the review gave the term: the licensee may not sue and keep the grant. The clause is quoted in dalicc:additionalClauses
+    so the mechanism stays readable.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The trademark section reads: "No trademark license is granted to use the trade names, trademarks,
+    service marks, or product names of Contributor, except as required to fulfill notice requirements in section
+    4." That is dalicc:promote as a prohibition, the way the library expresses a no-trademark clause. dalicc:ChangeLicense
+    is prohibited because the text requires the license itself to travel with every copy, which is the reading IscLicense
+    and BSD-3-Clause take of the same clause. The MIT record does not carry the prohibition although its text has
+    the same requirement, so the library is not uniform here. (Corrected on 2026-09-15 by the verification of this
+    batch: see the rubric 3 finding on relicensing below.)'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: Section 5 carries the warranty disclaimer and the liability limitation in one paragraph; each sentence
+    is quoted into its own field. The typographic apostrophe in the liability sentence is the one in the published
+    text.
+  action: applied
+- rubric: 7
+  severity: major
+  field: cc:jurisdiction
+  description: The license is published in Chinese and English, and section 6 says that in case of divergence the
+    Chinese version prevails. cc:jurisdiction stays dalicc:worldwide, because the grant itself is expressly worldwide
+    and no legal system is chosen for it, and the language clause is quoted in dalicc:additionalClauses. The record
+    quotes the English text, which the license declares to have the same legal effect.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following MIT. The text licenses a program
+    and its related documents.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The closest existing record is Apache-2.0, which has the same three elements: a copyright grant,
+    an express patent grant with retaliation, and a no-trademark clause. Mulan PSL v2 is much shorter and has no
+    notice file and no state-changes duty.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Subject to the terms and conditions of this License, each
+    Contributor hereby grants to you a perpetual, worldwide, royalty-free, non-exclusive, irrevocable copyright
+    license to reproduce, use, modify, or distribute its Contribution, with modification or not." The permission
+    carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the relicensing.'
+  action: applied
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: Modelled from the English text published by the licensor at license.coscl.org.cn, which the SPDX plain text
+  carries alongside the Chinese original. Section 6 makes the Chinese version the one that prevails, so the quoted
+  English clauses are a translation of the operative text and should be read with that in mind.

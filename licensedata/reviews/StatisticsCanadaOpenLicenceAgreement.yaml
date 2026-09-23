@@ -1,0 +1,147 @@
+id: StatisticsCanadaOpenLicenceAgreement
+title: Statistics Canada Open Licence Agreement
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://www.statcan.gc.ca/en/terms-conditions/open-licence
+text_retrieved: true
+verdict: corrected
+summary: 'The record was wrong in the way that matters most: it prohibited adapting and modifying the information,
+  while the licence grants the right to produce, publish, distribute and sell Value-added Products, which it
+  defines as products made by adapting or incorporating the information. The prohibitions were replaced by
+  permissions with the attribution and adaptation-notice duties the licence requires. The two clause fields
+  were missing and were added from the No Warranty and no Liability section, and the link was updated to the
+  current Statistics Canada address.'
+findings:
+- rubric: 1
+  severity: minor
+  field: cc:legalcode
+  description: cc:legalcode and dct:source pointed at https://www.statcan.gc.ca/eng/reference/licence, which
+    still redirects but is no longer the published address. Both now point at https://www.statcan.gc.ca/en/terms-conditions/open-licence,
+    the page the redirect ends at and the one this review was read from.
+  action: applied
+  change: 'cc:legalcode <https://www.statcan.gc.ca/en/terms-conditions/open-licence> ;
+
+    dct:source <https://www.statcan.gc.ca/en/terms-conditions/open-licence> ;'
+- rubric: 1
+  severity: minor
+  field: dct:alternative
+  description: The record has no dct:alternative and no SPDX entry exists for this licence. Proposed.
+  action: proposed
+  change: "dct:alternative \"StatCan Open Licence\",\n        \"Statistics Canada Open Licence\" ;"
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'dalicc:CreativeWork plus dcmitype:Dataset, which matches the definition of Information: "the
+    compilation of non-confidential results from any Statistics Canada activities, including data files, databases,
+    public use microdata files, publications, tables, graphs, maps, reports and text".'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'odrl:derive and odrl:modify were modelled as prohibitions, which contradicts the grant. The
+    Licence Grant section reads: "Statistics Canada grants you a worldwide, royalty-free, non-exclusive licence
+    to: use, reproduce, publish, freely distribute, or sell the Information; use, reproduce, publish, freely
+    distribute, or sell Value-added Products; and, sublicence any or all such rights, under terms consistent
+    with this licence", and Value-added Products are defined as "any products you have produced by adapting
+    or incorporating the Information, in whole or in part, in accordance with this licence". The two prohibitions
+    were removed and the corresponding permissions added, together with cc:DerivativeWorks and dalicc:ModifiedWorks,
+    since publishing, distributing and selling Value-added Products is expressly granted.'
+  action: applied
+  change: "remove:\n    odrl:prohibition [ a odrl:Prohibition ; odrl:action odrl:derive ] ,\n        [ a odrl:Prohibition\
+    \ ; odrl:action odrl:modify ]\nadd:\n    odrl:permission [ a odrl:Permission ;\n            odrl:action\
+    \ odrl:modify ;\n            odrl:duty [ a odrl:Duty ;\n                    odrl:action cc:Attribution\
+    \ ],\n                [ a odrl:Duty ;\n                    odrl:action dalicc:modificationNotice ] ],\n\
+    \        [ a odrl:Permission ;\n            odrl:action odrl:derive ;\n            odrl:duty [ a odrl:Duty\
+    \ ;\n                    odrl:action cc:Attribution ],\n                [ a odrl:Duty ;\n             \
+    \       odrl:action dalicc:modificationNotice ] ],\n        [ a odrl:Permission ;\n            odrl:action\
+    \ cc:DerivativeWorks ],\n        [ a odrl:Permission ;\n            odrl:action dalicc:ModifiedWorks ]\
+    \ ;"
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Sublicensing is granted and the record does not say so: "sublicence any or all such rights,
+    under terms consistent with this licence". That is the pattern the vocabulary models as a dalicc:ChangeLicense
+    permission carrying a dalicc:compliantLicense duty, next to an odrl:grantUse permission. The record instead
+    prohibits dalicc:ChangeLicense. Proposed rather than applied, because turning a prohibition into a permission
+    on the strength of the phrase "under terms consistent with this licence" is a reading, not a transcription.'
+  action: proposed
+  change: "remove:\n    odrl:prohibition [ a odrl:Prohibition ;\n            odrl:action dalicc:ChangeLicense\
+    \ ]\nadd:\n    odrl:permission [ a odrl:Permission ;\n            odrl:action odrl:grantUse ],\n      \
+    \  [ a odrl:Permission ;\n            odrl:action dalicc:ChangeLicense ;\n            odrl:duty [ a odrl:Duty\
+    \ ;\n                    odrl:action dalicc:compliantLicense ] ] ;"
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: cc:CommercialUse and dalicc:chargeDistributionFee are supported by the right to sell the Information
+    and the Value-added Products. reproduce, distribute, display and present follow from use, reproduce, publish
+    and freely distribute.
+  action: none
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: dalicc:promote is supported by the Advertising and Publicity section, which forbids using the
+    name, crest, logos, insignia or domain names of Statistics Canada or the official symbols of the Government
+    of Canada without written authorisation, and by the obligation "not use the Information in a way that suggests
+    that Statistics Canada endorses you or your use of the Information".
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'cc:Attribution hangs on odrl:distribute and now also on modify and derive, which matches the
+    Acknowledgment of Source section: the notice "Source: Statistics Canada, name of product, reference date.
+    Reproduced and distributed on an ''as is'' basis with the permission of Statistics Canada" for the information,
+    and "Adapted from Statistics Canada, name of product, reference date. This does not constitute an endorsement
+    by Statistics Canada of this product" for a Value-added Product. The second sentence is why dalicc:modificationNotice
+    was attached to the two new permissions.'
+  action: none
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: The record carried no clause text at all, although the licence has a section headed No Warranty
+    and no Liability with one paragraph of each. Both were added, quoted verbatim.
+  action: applied
+  change: 'dalicc:WarrantyDisclaimer """The Information is licensed ''as is'', and Statistics Canada makes
+    no representations or warranties whatsoever ...""" ;
+
+    dalicc:LiabilityLimitation """Statistics Canada or any of its Ministers, officials, servants, employees,
+    agents, successors and assigns shall not be liable ...""" ;'
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: dalicc:worldwide matches the grant. dalicc:perpetual is a fair reading of a licence that is
+    "effective as of the date and time you access the Information" and ends only on breach, with the survival
+    clause keeping the Acknowledgment of Source and the No warranty sections alive afterwards. The governing
+    law is Ontario and the applicable laws of Canada, for which the model has no field.
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'This licence carries conditions that no open licence vocabulary covers: the data-protection
+    obligations not to merge or link the Information with other databases in order to identify a person, business
+    or organisation, and not to present it so as to suggest access to confidential Statistics Canada holdings;
+    the duty to reproduce the Information accurately and not misrepresent it or its source; the ban on disassembling,
+    decompiling or reverse engineering any software supplied with the Information; and the duty to keep distributing
+    Value-added Products only to complete orders placed before termination. Proposed terms: dalicc:noReidentification,
+    dalicc:reproduceAccurately, dalicc:noMisrepresentation, dalicc:noReverseEngineering, dalicc:terminationOnBreach.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check reports no conflict, before and after the corrections. Turning the derive
+    and modify prohibitions into permissions removed a latent contradiction with the sale of Value-added Products
+    rather than creating one.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The record is not an edition of the Canadian Open Government Licence: it is an older, longer
+    and more restrictive agreement with its own structure, and it should not be modelled like the other two
+    Canadian records. What it shares with them after this pass is the attribution duty and the non-endorsement
+    prohibition. It is the only record of the batch that grants sublicensing expressly.'
+  action: none
+family: Government licenses (United Kingdom, Canada)
+port_of: null
+variant_kind: null
+notes: The page fetched is the current one, dated 2025-07-10, which speaks of His Majesty the King while the
+  record's cc:attributionName still says Her Majesty the Queen in Right of Canada. The substance of the licence
+  is unchanged. Nothing in this review is legal advice.

@@ -1,0 +1,87 @@
+id: MIT-Wu
+title: MIT Tom Wu Variant
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/MIT-Wu.txt
+text_retrieved: true
+verdict: created
+summary: 'Models the MIT text as Tom Wu published it, with one sentence added at the end: every redistribution must
+  retain an intact copy of the copyright notice and the disclaimer. The grant and the notice duty are the MIT ones,
+  and the added sentence sharpens the same condition rather than adding a new one.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all MIT-Wu.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following MIT.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant is the MIT grant, "to deal in the Software without restriction, including without limitation
+    the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and
+    to permit persons to whom the Software is furnished to do so". The record permits reproduce, distribute, modify,
+    derive, display, present, grantUse, sublicense, commercial use, derivative works, modified works and the distribution
+    fee.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'dalicc:ChangeLicense is permitted with the dalicc:compliantLicense duty, as on MIT: the notice has
+    to survive the relicensing.'
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: No prohibitions. The text has no trademark, endorsement or advertising clause, so dalicc:promote is
+    not prohibited even though most permissive records carry it.
+  action: none
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Attribution and cc:Notice hang off odrl:distribute, odrl:modify and odrl:derive for "The above copyright
+    notice and this permission notice shall be included in all copies or substantial portions of the Software", read
+    with the added sentence "All redistributions must retain an intact copy of this copyright notice and disclaimer".
+    The added sentence widens what has to travel to the disclaimer as well, which the duties already carry, so it
+    adds no further statement.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: This text sets the warranty and the liability in two separate paragraphs, so the split into dalicc:WarrantyDisclaimer
+    and dalicc:LiabilityLimitation follows the text rather than a sentence boundary the reviewer chose.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: info
+  field: dalicc:additionalClauses
+  description: No clause of this text needs a term the vocabulary does not have.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Read against licensedata/licenses/MIT.ttl the deontic model is the same. The differences are the added
+    condition in dalicc:additionalClauses, the separate liability paragraph, and "AS-IS" with a hyphen where MIT writes
+    "AS IS".
+  action: none
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: cc:legalcode and dct:source both point at the SPDX page. The liability clause names Tom Wu, the author, because
+  the text does.

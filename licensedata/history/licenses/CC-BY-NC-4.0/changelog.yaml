@@ -1,0 +1,31 @@
+id: CC-BY-NC-4.0
+title: Creative Commons Attribution-NonCommercial 4.0 International
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition and recorded
+    the review state.
+  changes:
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: prohibition dalicc:sublicense
+    reason: 'Review decision 1: every Creative Commons record except the CC0 dedication, plus the
+      Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
+      as many words.'
+    source: consolidation-decision 1
+  - action: added
+    statement: spdx:licenseId "CC-BY-NC-4.0"
+    reason: The record carried no SPDX identifier although its own DALICC identifier is the SPDX list
+      identifier CC-BY-NC-4.0, whose SPDX seeAlso URL is the cc:legalcode of this record. Added.
+    source: review-finding 1/spdx:licenseId

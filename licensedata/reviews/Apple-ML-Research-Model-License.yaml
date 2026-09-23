@@ -1,0 +1,156 @@
+id: Apple-ML-Research-Model-License
+title: Apple Machine Learning Research Model License Agreement
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://huggingface.co/apple/DepthPro/raw/main/LICENSE
+text_retrieved: true
+verdict: created
+summary: >-
+  A research-only licence for a released model and for the model derivatives made from it. You
+  may use, copy, modify, distribute and create model derivatives, but only for research
+  purposes, and every copy you pass on must carry a copy of the agreement and the prescribed
+  attribution line. The record models the research limit as a cc:CommercialUse prohibition
+  with the field named in dalicc:fieldOfUseRestriction, because no vocabulary term carries a
+  research-only field of use.
+findings:
+- rubric: 1
+  severity: info
+  field: 'dct:title'
+  description: >-
+    File name, record identifier and IRI local name agree. The licence has no SPDX identifier,
+    so no spdx:licenseId triple is written. dct:title is the name the agreement gives itself
+    in its own attribution line, "Apple Machine Learning Research Model License Agreement";
+    the shorter form and the model-hub tag are in dct:alternative.
+  action: applied
+- rubric: 2
+  severity: major
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Dataset and dcmitype:Software. The agreement defines the licensed material as
+    "the model, including but not limited to algorithms, formulas, trained model weights,
+    parameters, configurations, checkpoints, and any related materials (including
+    documentation)": weights and parameters are data, algorithms and configurations are
+    software, and the record carries both types.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    The grant reads "Apple hereby grants you a personal, non-exclusive, worldwide,
+    non-transferable, royalty-free, revocable, and limited license, to use, copy, modify,
+    distribute, and create Model Derivatives (defined below) of the Apple Machine Learning
+    Research Model exclusively for Research Purposes." That gives odrl:reproduce,
+    odrl:distribute, odrl:modify, odrl:derive, cc:DerivativeWorks and dalicc:ModifiedWorks.
+    dalicc:useForModelTraining is permitted because the definition of Model Derivatives covers
+    artifacts created "by any retraining, fine-tuning of the Apple Machine Learning Research
+    Model", which the grant licenses. odrl:display and odrl:present are not written: the grant
+    does not name them.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    Three prohibitions. cc:CommercialUse from "'Research Purposes' does not include any
+    commercial exploitation, product development or use in any commercial product or service."
+    dalicc:promote from "The name, trademarks, service marks or logos of Apple may not be used
+    to endorse or promote Model Derivatives or the relationship between You and Apple."
+    dalicc:ChangeLicense because redistribution must carry the agreement itself: "you must
+    provide a copy of this Agreement to such third party".
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Four duties on odrl:distribute, all from the distribution clause: cc:Notice for the copy
+    of the agreement, cc:Attribution and dalicc:addStatement for the prescribed line "Apple
+    Machine Learning Research Model is licensed under the Apple Machine Learning Research
+    Model License Agreement.", and dalicc:modificationNotice for "all Model Derivatives must
+    clearly be identified as such, including disclosure of modifications and changes made".
+    The same modification notice hangs on odrl:modify and odrl:derive, because it is the act
+    of making a derivative that triggers it.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    The single clause headed "Disclaimer and Limitation of Liability" is split at the sentence
+    each property names: the "AS IS" sentence and the warranty sentences go to
+    dalicc:WarrantyDisclaimer, and the sentence beginning "IN NO EVENT SHALL APPLE BE LIABLE"
+    goes to dalicc:LiabilityLimitation. dalicc:additionalClauses carries the opening
+    disclaimer and definition, the acceptance paragraph, the licence scope, the distribution
+    clause, the no-other-licence clause, the compliance clause, the termination clause and the
+    governing-law clause. Curly quotation marks in the source are kept; no long dash appears
+    in the text.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    cc:jurisdiction stays dalicc:worldwide because the grant is worldwide. dalicc:governingLaw
+    names California, from "This Agreement will be governed by and construed under the laws of
+    the State of California without regard to its choice of law principles."
+    dalicc:validityType is dalicc:perpetual: the term runs from acceptance until terminated,
+    which is an indefinite period rather than a fixed one. dalicc:terminatesOnBreach is true,
+    from "Apple may terminate this Agreement at any time if You are in breach of any term or
+    condition of this Agreement." No cure period is given, so dalicc:curePeriod is left out.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:fieldOfUseRestriction'
+  description: >-
+    "Research Purposes" is defined as "non-commercial scientific research and academic
+    development activities, such as experimentation, analysis, testing conducted by You with
+    the sole intent to advance scientific knowledge and research". No duty action says
+    "research use only"; dalicc:computationalUseOnly is a different idea and was not stretched
+    to cover this. The field is named in dalicc:fieldOfUseRestriction, the definition is
+    quoted, and the proposed term is dalicc:researchUseOnly, a duty action beside
+    dalicc:computationalUseOnly.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The grant is revocable: "a personal, non-exclusive, worldwide, non-transferable,
+    royalty-free, revocable, and limited license". dalicc:validityType has no value for a
+    grant the licensor may withdraw at will, and dalicc:terminatesOnBreach says only what
+    happens on breach. The clause is quoted; the proposed term is dalicc:revocableGrant, a
+    boolean beside dalicc:terminatesOnBreach.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The agreement disclaims warranties for "any outputs generated by the Apple Machine
+    Learning Research Model" but says nothing about who owns them. Several records of this
+    family have an express clause about output rights and there is no term for it. Quoted; the
+    proposed term is dalicc:outputRightsStatement, an annotation naming what the licensor
+    claims in the output.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer against dg_default returned an empty
+    conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Family: this is one of the three research-only records of the model family, beside the
+    Intel and DeepFloyd texts. All three prohibit cc:CommercialUse and name the field in
+    dalicc:fieldOfUseRestriction. This one differs from the other two in granting modification
+    and derivative works, which the Intel text withholds, and in having no export-control
+    clause, which the DeepFloyd text has.
+  action: none
+family: Model licences
+port_of: null
+variant_kind: null
+variant_of: null
+notes: >-
+  Modelled from the copy of the agreement published in the model repository the evidence
+  names. cc:legalcode points at that raw text and dct:source at the same file in its
+  repository. dct:publisher is Apple Inc., from the copyright line "Copyright (C) 2025 Apple
+  Inc. All Rights Reserved." dalicc:sublicense is left out in either position: the grant is
+  "non-transferable" but says nothing about sublicensing, and redistribution with a copy of
+  the agreement is not the same act.

@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Philippines"@en in the DALICC license library
+# Title: The machine-readable representation of "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Philippines"@en in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialNoderivs30Philippines
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,6 +15,7 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Philippines a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
@@ -25,6 +26,12 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Philippines a odrl:Se
     dalicc:WarrantyDisclaimer """UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, LICENSOR OFFERS THE WORK AS-IS AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING, WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTIBILITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, OR THE ABSENCE OF LATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS, WHETHER OR NOT DISCOVERABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO SUCH EXCLUSION MAY NOT APPLY TO YOU.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-ND-4.0 ;
+    dalicc:variantKind "jurisdiction-port" ;
+    dalicc:licenseVersion "3.0" ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CreativeCommonsAttributionNoncommercialNoderivs30Philippines/versions> ;
     dct:alternative "Attribution NonCommercial NoDerivatives 3.0 Philippines",
         "Attribution-NonCommercial-NoDerivatives 3.0 Philippines",
         "Attribution-NonCommercial-NoDerivatives 4.0",
@@ -37,7 +44,10 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Philippines a odrl:Se
         "Creative Commons Attribution NonCommercial NoDerivatives 3.0 Philippines",
         "Creative Commons BY-NC-ND 3.0",
         "Creative Commons BY-NC-ND 3.0 PH" ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Creative Commons" ;
+    dct:source <https://creativecommons.org/licenses/by-nc-nd/3.0/ph/> ;
     dct:title "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Philippines"@en ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:display ],
@@ -48,19 +58,9 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Philippines a odrl:Se
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ] ],
         [ a odrl:Permission ;
-            odrl:action odrl:modify ;
-            odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
-                [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
-                [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
-        [ a odrl:Permission ;
             odrl:action odrl:present ],
         [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
-        [ a odrl:Permission ;
-            odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:prohibition [ a odrl:Prohibition ;
@@ -70,7 +70,9 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Philippines a odrl:Se
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ph.png> ;

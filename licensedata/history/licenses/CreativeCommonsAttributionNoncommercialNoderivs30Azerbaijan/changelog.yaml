@@ -1,0 +1,105 @@
+id: CreativeCommonsAttributionNoncommercialNoderivs30Azerbaijan
+title: Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Azerbaijan
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 clause text, 1 identification detail and 1 prohibition,
+    removed 1 clause text and 2 permissions, changed 1 asset target, recorded the relation to the
+    record this one was adapted from and recorded the review state.
+  changes:
+  - action: removed
+    statement: "dalicc:WarrantyDisclaimer \"Lisenziya verən təmsilçilik edir və zəmanət verir ki:\n\
+      \ \n  Bu Müqavilənin (Lisenziyanın) həyata keçirilməsi Lisenziya verənin iqtidarındadır və heç\
+      \ bir qanunvericlik aktı ilə ziddiyət təşkil etmir\n Lisenziya verən əsər üzərində müqavilə\
+      \ ilə verilən bütün hüquqlara sahiblik hüququ vardır və bu hüquqları həyata keçirmək üçün heç\
+      \ bir hüquqi əngəl yoxdur.\n\""
+    reason: 'The record held the text of Section 5 in dalicc:WarrantyDisclaimer, but Section 5 of
+      this port is not a disclaimer: it is an affirmative warranty. It is headed "Numayendelik ve
+      zemanet" (representation and warranty) and reads "Lisenziya veren temsilcilik edir ve zemanet
+      verir ki" (the Licensor represents and warrants that) the grant is within the Licensor''s power,
+      conflicts with no statute, and that the Licensor owns the rights granted with no legal obstacle
+      to exercising them. The Azerbaijani port carries no warranty disclaimer anywhere in the licence
+      body, so the field asserted the opposite of what the text says. The text was moved verbatim
+      to dalicc:additionalClauses and dalicc:WarrantyDisclaimer was removed.'
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: added
+    statement: "dalicc:additionalClauses \"Lisenziya verən təmsilçilik edir və zəmanət verir ki:\n\
+      \ \n  Bu Müqavilənin (Lisenziyanın) həyata keçirilməsi Lisenziya verənin iqtidarındadır və heç\
+      \ bir qanunvericlik aktı ilə ziddiyət təşkil etmir\n Lisenziya verən əsər üzərində müqavilə\
+      \ ilə verilən bütün hüquqlara sahiblik hüququ vardır və bu hüquqları həyata keçirmək üçün heç\
+      \ bir hüquqi əngəl yoxdur.\n\""
+    reason: 'The record held the text of Section 5 in dalicc:WarrantyDisclaimer, but Section 5 of
+      this port is not a disclaimer: it is an affirmative warranty. It is headed "Numayendelik ve
+      zemanet" (representation and warranty) and reads "Lisenziya veren temsilcilik edir ve zemanet
+      verir ki" (the Licensor represents and warrants that) the grant is within the Licensor''s power,
+      conflicts with no statute, and that the Licensor owns the rights granted with no legal obstacle
+      to exercising them. The Azerbaijani port carries no warranty disclaimer anywhere in the licence
+      body, so the field asserted the opposite of what the text says. The text was moved verbatim
+      to dalicc:additionalClauses and dalicc:WarrantyDisclaimer was removed.'
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: added
+    statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-ND-4.0
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:licenseVersion "3.0"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "jurisdiction-port"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: added
+    statement: dct:source <https://creativecommons.org/licenses/by-nc-nd/3.0/az/>
+    reason: The record carried cc:legalcode but no dct:source. The legal code page states the canonical
+      URL of the licence, https://creativecommons.org/licenses/by-nc-nd/3.0/az/, and the six 4.0 International
+      parents carry exactly that pair (legal code plus deed). Added.
+    source: review-finding 1/dct:source
+  - action: removed
+    statement: permission dalicc:ModifiedWorks
+    reason: 'Review decision 2: a NoDerivatives license grants no right to modify, so the modification
+      permissions and the duties hanging off them were removed and the prohibition on derivatives
+      made explicit.'
+    source: consolidation-decision 2
+  - action: removed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    reason: 'Review decision 2: a NoDerivatives license grants no right to modify, so the modification
+      permissions and the duties hanging off them were removed and the prohibition on derivatives
+      made explicit.'
+    source: consolidation-decision 2
+  - action: added
+    statement: prohibition dalicc:sublicense
+    reason: 'Review decision 1: every Creative Commons record except the CC0 dedication, plus the
+      Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
+      as many words.'
+    source: consolidation-decision 1
+  - action: changed
+    statement: target asset types [dalicc:CreativeWork, dcmitype:Dataset]
+    previous: target asset types [dalicc:CreativeWork]
+    reason: 'The record targeted dalicc:CreativeWork only, while the 4.0 International parent CC-BY-NC-ND-4.0
+      targets dalicc:CreativeWork and dcmitype:Dataset. This port settles database rights expressly:
+      the last paragraph of Section 3 waives the database maker''s right wherever national law gives
+      it to the Licensor, and Section 4 adds that the restrictions do not apply to the parts of the
+      Work that qualify only under that exclusive database right. Beyond that, the definition of "Eser"
+      in Section 1 names "melumat bazalari" (databases) alongside performances, phonograms, first
+      fixations of film and broadcasting organisation programmes, and a separate definition of Database
+      follows it. Because the legal text names databases as licensed subject matter and disposes of
+      the database maker''s right in the grant itself, dcmitype:Dataset was added here rather than
+      left as a proposal. The ports in this batch whose text has no database clause at all keep the
+      proposal.'
+    source: review-finding 2/odrl:target

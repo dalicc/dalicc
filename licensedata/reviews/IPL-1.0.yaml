@@ -1,0 +1,86 @@
+id: IPL-1.0
+title: IBM Public License v1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://opensource.org/license/IPL-1.0
+text_retrieved: true
+verdict: created
+summary: 'The IBM Public License is the Common Public License with IBM named as the initial contributor and the
+  sole steward, and with one requirement added: every contributor must carry the IBM copyright legend in a conspicuous
+  location. The record is CPL-1.0 plus a dalicc:addStatement duty on distribution. Nothing here is legal advice.'
+findings:
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software alone, following EclipsePublicLicense10 and EPL-2.0, the two records of this family
+    already in the library. The text licenses a Program, that is software in source code and object code form, so
+    neither dalicc:CreativeWork nor dcmitype:Dataset is written.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Section 2(a) grants the right "to reproduce, prepare derivative works of, publicly display, publicly
+    perform, distribute and sublicense the Contribution", so dalicc:sublicense is a permission, and 2(b) grants
+    a patent licence, so dalicc:patentGrant is one. The permissions are those of CPL-1.0.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'As in CPL-1.0: dalicc:ChangeLicense, because source form must be made available under this Agreement,
+    and dalicc:patentRetaliationTermination from section 7. The text has no trademark clause, so dalicc:promote
+    is not written.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The one difference from CPL-1.0 is this sentence: "Each Contributor must include the following in
+    a conspicuous location in the Program: Copyright (C) 1996, 1999 International Business Machines Corporation
+    and others. All Rights Reserved." That is a dalicc:addStatement duty on odrl:distribute, on top of the share-alike,
+    notice, attribution, source-code and modification-notice duties of CPL-1.0.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: Sections 5 and 6 are quoted into their own fields; they are word for word those of CPL-1.0. dalicc:additionalClauses
+    carries section 3 including the legend, the commercial distribution indemnity, the patent litigation clause,
+    the termination clause, the steward clause naming IBM and the governing-law clause.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: New York law and the intellectual property laws of the United States, as in CPL-1.0. cc:jurisdiction
+    stays dalicc:worldwide and the clause is quoted.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The same two gaps as CPL-1.0: the commercial distributor indemnity (proposed dalicc:commercialDistributorIndemnity)
+    and the automatic termination (proposed dalicc:terminatesOnBreach).'
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: IPL-1.0 differs from CPL-1.0 in the definitions, which name IBM and the Original Program, in the
+    steward clause and in the required legend. The records differ in exactly one triple, the dalicc:addStatement
+    duty.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer with the axioms of dg_default returned an empty list
+    for this record.
+  action: none
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'Weak-copyleft family alignment of 2026-09-15: section 3 requires a distributor who distributes the
+    Program in object code form to state that the source code is available and how to obtain it. The duty was on
+    odrl:distribute alone; it is now also on odrl:modify and odrl:derive, which is where the other twenty-four records
+    of the weak-copyleft family carry it, so a comparison of two of them shows a difference between the licences
+    and not between two reviewers.'
+  action: applied
+family: Eclipse, Common Public and Lucent
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text of IPL-1.0 and checked against the URL in cc:legalcode. The prescribed
+  legend is quoted inside the section 3 block of dalicc:additionalClauses.

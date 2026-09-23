@@ -1,0 +1,104 @@
+id: Apache-2.0-with-Commons-Clause
+title: Apache License 2.0 with the Commons Clause
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://commonsclause.com/
+text_retrieved: true
+verdict: created
+summary: 'The record models the Apache License 2.0 with the Commons Clause condition applied on top of it. It copies the
+  Apache-2.0 record statement for statement and adds one prohibition, dalicc:sellCopy, because the condition says the grant
+  ''will not include, and the License does not grant to you, the right to Sell the Software''. The combination is not an
+  open source licence: the publisher of the condition says so in its own words on the page the text comes from.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, record identifier and IRI local name agree. The triple is left out: the combination of Apache-2.0
+    and the Commons Clause has no SPDX identifier, and none is invented. dalicc:variantKind is ''rider'' and dalicc:variantOf
+    points at dalicclib:Apache-2.0.'
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: The target is copied from Apache-2.0 unchanged, which carries dalicc:CreativeWork, dcmitype:Dataset and dcmitype:Software.
+    The rider text changes nothing about what the licence covers, and a rider record differs from its base only where the
+    rider text says.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Every permission of Apache-2.0 is kept, including cc:CommercialUse and dalicc:chargeDistributionFee. The
+    condition bars one act only, selling the Software itself: ''Commons Clause only forbids you from "selling" the Commons
+    Clause software itself. You may develop on top of Commons Clause licensed software (adding applications, tools, utilities
+    or plug-ins) and you may embed and redistribute Commons Clause software in a larger product, and you may distribute
+    and even "sell" (which includes offering as a commercial SaaS service) your product.'' Apache-2.0 carries no dalicc:chargeLicenseFee,
+    so nothing had to be removed for the fee terms.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:sellCopy is added for 'the grant of rights under the License will not include, and the License does
+    not grant to you, the right to Sell the Software'. dalicc:promote and dalicc:patentRetaliationTermination are kept from
+    Apache-2.0.
+  action: applied
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: The duties of Apache-2.0 stay where they are, on odrl:distribute, odrl:modify, odrl:derive and dalicc:ChangeLicense.
+    The condition adds one sentence to the notice duty, 'Any license notice or attribution required by the License must
+    also include this Commons Clause License Condition notice', which is quoted rather than modelled, because cc:Notice
+    already carries the duty and the extra sentence only names what the notice must say.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:additionalClauses
+  description: The three operative sentences of the condition are quoted verbatim, including the definition of 'Sell'. The
+    warranty disclaimer, the limitation of liability and the warranty acceptance clause are the Apache-2.0 ones, copied
+    unchanged, because the rider does not touch them. The frequently asked questions on the same page are not licence text
+    and are not quoted.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: cc:jurisdiction stays dalicc:worldwide and dalicc:validityType stays dalicc:perpetual, as in Apache-2.0.
+    The condition names no jurisdiction, no term and no governing law.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The condition defines ''Sell'' as providing ''a product or service whose value derives, entirely or substantially,
+    from the functionality of the Software''. The vocabulary has dalicc:sellCopy for selling copies but nothing for a value-derived
+    test, so the definition is quoted. Proposed term: dalicc:valueDerivationTest, an annotation holding the test a licence
+    uses to decide whether a product is in substance the licensed work.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:WarrantyOrLiabilityAcceptance
+  description: 'Apache-2.0 lets a redistributor ''offer, and charge a fee for, acceptance of support, warranty, indemnity,
+    or other liability obligations'', while the condition counts ''fees for hosting or consulting/ support services related
+    to the Software'' as consideration for a Sell. The two clauses are both quoted and left unresolved, because only a product
+    or service ''whose value derives, entirely or substantially, from the functionality of the Software'' is barred, and
+    neither text says which support arrangements pass that test. Proposed term: dalicc:clauseTension, an annotation naming
+    two clauses of one record that a reader has to weigh together.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run against licensedata/dependencygraph/dg_default.ttl, returned
+    no conflicts. dalicc:sellCopy is not in the dependency graph, so it neither derives from nor contradicts the permissions
+    Apache-2.0 carries.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Against its base record the rider differs in exactly five places: no spdx:licenseId, the title, the alternatives,
+    three additional clause literals and the dalicc:sellCopy prohibition, plus dalicc:variantKind ''rider'' and dalicc:variantOf.
+    Everything else is byte for byte the Apache-2.0 model.'
+  action: none
+family: Source-available licences and riders
+port_of: null
+variant_kind: rider
+variant_of: Apache-2.0
+notes: 'The condition text is quoted from the page that publishes it. cc:legalcode points at the Apache License 2.0 text,
+  which is the licence the condition sits on top of, and dct:source at the page that publishes the condition. dct:publisher
+  stays the publisher of the base licence: the condition text names no publisher of its own.'

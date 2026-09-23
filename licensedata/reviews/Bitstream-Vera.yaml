@@ -1,0 +1,97 @@
+id: Bitstream-Vera
+title: Bitstream Vera Font License
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Bitstream-Vera.txt
+text_retrieved: true
+verdict: created
+summary: 'Models the font licence Bitstream wrote for the Vera typefaces. It is an MIT-shaped grant over a font with
+  three additions: the notices have to travel with every copy, a modified font has to be renamed away from the Bitstream
+  and Vera names, and no typeface may be sold on its own. The record follows OFL-1.1 for the font shape and for the
+  sale prohibition.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all Bitstream-Vera.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'One odrl:AssetCollection of dct:type dalicc:CreativeWork and dcmitype:Software, the pair OFL-1.1 uses:
+    a font is a typeface design and a program file at the same time.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant reads "Permission is hereby granted, free of charge, to any person obtaining a copy of the
+    fonts accompanying this license ("Fonts") and associated documentation files (the "Font Software"), to reproduce
+    and distribute the Font Software, including without limitation the rights to use, copy, merge, publish, distribute,
+    and/or sell copies of the Font Software, and to permit persons to whom the Font Software is furnished to do so".
+    The record permits reproduce, distribute, modify, derive, display, present, grantUse, commercial use, derivative
+    works, modified works and the distribution fee.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: dalicc:ChangeLicense is permitted with the dalicc:compliantLicense duty. This is where the record parts
+    from OFL-1.1, which prohibits relicensing because its text says the font must be distributed entirely under that
+    licence. The Bitstream text has no such sentence.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:sellCopy is prohibited for "no copy of one or more of the Font Software typefaces may be sold
+    by itself", and dalicc:promote for "the names of Gnome, the Gnome Foundation, and Bitstream Inc., shall not be
+    used in advertising or otherwise to promote the sale, use or other dealings in this Font Software". cc:CommercialUse
+    stays permitted because the same sentence allows the font to be sold as part of a larger package, which is the
+    arrangement OFL-1.1 also records.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Attribution and cc:Notice hang off odrl:distribute, odrl:modify and odrl:derive for "The above copyright
+    and trademark notices and this permission notice shall be included in all copies". dalicc:rename hangs off odrl:modify
+    and odrl:derive for the sentence that allows modification "only if the fonts are renamed to names not containing
+    either the words "Bitstream" or the word "Vera"".
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The disclaimer paragraph carries the warranty sentence and the liability sentence. They are split into
+    dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation, as on OFL-1.1.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: dalicc:terminatesOnBreach is true for "This License becomes null and void to the extent applicable
+    to Fonts or Font Software that has been modified and is distributed under the "Bitstream Vera" names". No cure
+    period is given, so dalicc:curePeriod is absent. The text names no legal system and sets no term, so cc:jurisdiction
+    is dalicc:worldwide and dalicc:validityType is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: info
+  field: dalicc:additionalClauses
+  description: No clause of this text needs a term the vocabulary does not have. The conditional nullity is carried
+    by dalicc:terminatesOnBreach and quoted in full.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Read against licensedata/licenses/OFL-1.1.ttl: the same font target, the same dalicc:rename duty,
+    the same dalicc:sellCopy prohibition and the same termination flag. The differences are that this text has no
+    share-alike sentence, so no cc:ShareAlike duty is made, and that relicensing is permitted rather than prohibited.'
+  action: none
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: cc:attributionName and dct:publisher name Bitstream, Inc., the copyright holder named in the text; the Gnome
+  Foundation appears in the text as the second party whose name may not be used. cc:legalcode and dct:source both
+  point at the SPDX page, because the original publisher page is no longer served.

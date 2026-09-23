@@ -1,0 +1,96 @@
+id: OSL-3.0
+title: Open Software License 3.0
+current_version: 3
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 clause text, 1 identification detail and 1 license-wide
+    duty, removed 1 permission and 1 prohibition, changed 1 identification detail and recorded the
+    review state.
+  changes:
+  - action: added
+    statement: dalicc:LiabilityLimitation "Under no circumstances and under no legal theory, whether
+      in tort (including negligence), contract, or otherwise, shall the Licensor be liable to anyone
+      for any indirect, special, incidental, or consequential damages of any character arising as
+      a result of this License or the use of the Original Work including, without limitation, damages
+      for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial
+      damages or losses. This limitation of liability shall not apply to the extent applicable law
+      prohibits such limitation."
+    reason: Clause 8 was not recorded. Added, quoted. dalicc:WarrantyDisclaimer already held clause
+      7 correctly.
+    source: review-finding 6/dalicc:LiabilityLimitation
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: changed
+    statement: dct:source osl:OSL-3.0
+    previous: dct:source <http://rosenlaw.com/OSL3.0-explained.htm>
+    reason: Added OSL-3.0 and repointed dct:source, which named rosenlaw.com/OSL3.0-explained.htm,
+      an explanatory commentary, rather than the license text.
+    source: review-finding 1/spdx:licenseId
+  - action: added
+    statement: duty cc:ShareAlike
+    reason: Clause 1(c) grants the right "to distribute or communicate copies of the Original Work
+      and Derivative Works to the public, with the proviso that copies of Original Work or Derivative
+      Works that You distribute or communicate shall be licensed under this Open Software License".
+      That is a duty, not a permission. Removed the cc:ShareAlike permission and added a license-wide
+      cc:ShareAlike duty, the form the GNU and Mozilla records use.
+    source: review-finding 5/odrl:permission
+  - action: removed
+    statement: permission cc:ShareAlike with duties [cc:Notice, cc:SourceCode]
+    reason: Clause 1(c) grants the right "to distribute or communicate copies of the Original Work
+      and Derivative Works to the public, with the proviso that copies of Original Work or Derivative
+      Works that You distribute or communicate shall be licensed under this Open Software License".
+      That is a duty, not a permission. Removed the cc:ShareAlike permission and added a license-wide
+      cc:ShareAlike duty, the form the GNU and Mozilla records use.
+    source: review-finding 5/odrl:permission
+  - action: removed
+    statement: prohibition odrl:grantUse
+    reason: 'Clause 1 grants a "worldwide, royalty-free, non-exclusive, sublicensable license". The
+      record prohibited odrl:grantUse, which the text contradicts. Removed the prohibition. The matching
+      permission was deliberately not added: the dependency graph axiom "cc:ShareAlike dalicc:contradicts
+      odrl:grantUse" would then report a direct conflict, and this license proves the axiom is too
+      strong, since a sublicense under the same terms is exactly what clause 1(c) requires.'
+    source: review-finding 3/odrl:prohibition
+  - action: added
+    statement: spdx:licenseId "OSL-3.0"
+    reason: Added OSL-3.0 and repointed dct:source, which named rosenlaw.com/OSL3.0-explained.htm,
+      an explanatory commentary, rather than the license text.
+    source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 4 finding 6.4 and consolidation decision 4: the record permitted dalicc:noWarrantyNotice
+    and prohibited dalicc:addStatement without support, made no patent statement although section
+    2 grants one and section 10 ends it on patent litigation, and said nothing about relicensing although
+    clause 1(c) requires every copy to be ''licensed under this License'', which the four new Open
+    Software License records model as a dalicc:ChangeLicense prohibition.'
+  changes:
+  - action: removed
+    statement: permission dalicc:noWarrantyNotice
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: permission dalicc:patentGrant
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: prohibition dalicc:ChangeLicense
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:addStatement
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: prohibition dalicc:patentRetaliationTermination
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

@@ -1,0 +1,195 @@
+id: NVIDIA-Open-Model-License
+title: NVIDIA Open Model License Agreement
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/
+text_retrieved: true
+verdict: created
+summary: >-
+  The most permissive agreement of this family, last modified on October 24, 2025. It says in
+  its own opening that the models are commercially usable, that derivative models may be made
+  and distributed, and that the licensor claims no ownership in outputs; the conditions are a
+  notice file, a built-on line for one class of model, compliance with a separate set of
+  ethics terms, and a bar on removing the safety guardrails. The record permits
+  dalicc:patentGrant and dalicc:sellCopy, which no other record of this family does, and
+  records the guardrail clause as a gap.
+findings:
+- rubric: 1
+  severity: info
+  field: 'dct:title'
+  description: >-
+    File name, record identifier and IRI local name agree. The agreement has no SPDX
+    identifier, so no spdx:licenseId triple is written. dct:title is the heading of the
+    document; the short form and the identifier are in dct:alternative.
+  action: applied
+- rubric: 2
+  severity: major
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Dataset and dcmitype:Software. The Model is defined as "the machine learning
+    model, software, checkpoints, learnt weights, algorithms, parameters, configuration files
+    and documentation shared under this Agreement": checkpoints and weights are data, the
+    model and the software are software, and the documentation travels with both.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    The grant reads "NVIDIA hereby grants to You a perpetual, worldwide, non-exclusive,
+    no-charge, royalty-free, revocable (as stated in Section 2.1) license to publicly perform,
+    publicly display, reproduce, use, create derivative works of, make, have made, sell, offer
+    for sale, distribute (through multiple tiers of distribution) and import the Model." That
+    gives odrl:present, odrl:display, odrl:reproduce, odrl:derive, odrl:modify,
+    cc:DerivativeWorks, dalicc:ModifiedWorks and odrl:distribute, and dalicc:sellCopy from
+    "sell, offer for sale". dalicc:patentGrant is written because the grant uses the patent
+    verbs, "make, have made, sell, offer for sale, distribute and import", beside the
+    copyright ones. cc:CommercialUse is permitted because the agreement opens with "Models are
+    commercially usable." dalicc:useForModelTraining is permitted and carries a
+    dalicc:addStatement duty, because the redistribution clause contemplates that you "use a
+    NVIDIA Cosmos Model or its outputs to create, train, fine tune, or otherwise improve an AI
+    model" and asks for the built-on line when you do. dalicc:ChangeLicense is permitted and
+    carries dalicc:compliantLicense, from "You may add Your own copyright statement to Your
+    modifications and may provide additional or different license terms and conditions ...
+    provided Your use, reproduction, and distribution of the Model otherwise complies with the
+    conditions stated in this Agreement."
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    Three prohibitions. dalicc:promote from "This Agreement does not grant permission to use
+    the trade names, trademarks, service marks, or product names of NVIDIA, except as required
+    for reasonable and customary use in describing the origin of the Model and reproducing the
+    content of the "Notice" text file." dalicc:patentRetaliationTermination from "If You
+    institute copyright or patent litigation against any entity (including a cross-claim or
+    counterclaim in a lawsuit) alleging that the Model or a Derivative Model constitutes
+    direct or contributory copyright or patent infringement, then any licenses granted to You
+    under this Agreement for that Model or Derivative Model will terminate as of the date such
+    litigation is filed." dalicc:exemptedMaterial from the separate components clause, under
+    which bundled components "are subject to the applicable other licenses".
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Three duties on odrl:distribute, one on dalicc:useForModelTraining and one licence-wide.
+    cc:Notice, dalicc:includeNoticeFile and dalicc:addStatement all come from the first
+    redistribution condition: "If you distribute the Model, You must give any other recipients
+    of the Model a copy of this Agreement and include the following attribution notice within
+    a "Notice" text file with such copies: "Licensed by NVIDIA Corporation under the NVIDIA
+    Open Model License"". dalicc:addStatement also carries the second condition, the built-on
+    line for one class of model. The licence-wide duty is dalicc:exportControlNotice, from
+    "You agree to comply with all applicable export, import, trade and economic sanctions laws
+    and regulations", which is written as a general obligation rather than a condition of
+    distribution. cc:Attribution is not written: the agreement asks for the notice file and
+    the built-on line, not for the retention of existing credit.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    The disclaimer clause goes to dalicc:WarrantyDisclaimer and the limitation clause to
+    dalicc:LiabilityLimitation, each whole and verbatim. dalicc:additionalClauses carries the
+    opening notice, the parties and confirmations, the definitions, the conditions for use,
+    the licence grant, the ownership clause, the redistribution clause, the separate
+    components clause, the trademark clause, the indemnity and feedback clauses, the governing
+    law and trade compliance clauses, and one literal that quotes the ethics clause and gives
+    the address of the terms it incorporates.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The opening notice of the document reads "IMPORTANT NOTICE - PLEASE READ AND AGREE BEFORE
+    USING THE NVIDIA MODELS." The published text has a long dash where this record has a plain
+    hyphen; the change is recorded here and nothing else in the text was altered.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    cc:jurisdiction is dalicc:worldwide, from the worldwide grant, and dalicc:validityType is
+    dalicc:perpetual, from "a perpetual, worldwide, non-exclusive, no-charge, royalty-free,
+    revocable (as stated in Section 2.1) license". dalicc:governingLaw carries both laws the
+    agreement names: "This Agreement will be governed in all respects by the laws of the
+    United States and the laws of the State of Delaware". dalicc:terminatesOnBreach is true
+    because "The rights granted herein are explicitly conditioned on Your full compliance with
+    the terms of this Agreement" and the guardrail clause ends the rights automatically. No
+    cure period is given.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The guardrail clause has no term: "If You bypass, disable, reduce the efficacy of, or
+    circumvent any technical limitation, safety guardrail or associated safety guardrail
+    hyperparameter, encryption, security, digital rights management, or authentication
+    mechanism (collectively "Guardrail") contained in the Model without a substantially
+    similar Guardrail appropriate for your use case, your rights under this Agreement will
+    automatically terminate." dalicc:applyTechnicalProtectionMeasures is the opposite idea and
+    was not stretched to cover it. Quoted; the proposed term is
+    dalicc:safetyGuardrailPreservation, a duty action, or a rule action named
+    dalicc:circumventTechnicalProtectionMeasures if the consolidation prefers to state it as a
+    prohibition, which would also serve one other record of this family.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The agreement may be changed unilaterally: "NVIDIA may update this Agreement to comply
+    with legal and regulatory requirements at any time and You agree to either comply with any
+    updated license or cease Your copying, use, and distribution of the Model and any
+    Derivative Model." dalicc:orLaterVersionOption is the opposite case, where the licensee
+    chooses a later version, and is not written. Quoted; the proposed term is
+    dalicc:unilateralLicenseUpdate, a boolean.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:fieldOfUseRestriction'
+  description: >-
+    The ethics terms are a separate document incorporated by reference: "AI Ethics. Use of the
+    Models under the Agreement must be consistent with NVIDIA's Trustworthy AI terms found at
+    https://www.nvidia.com/en-us/agreements/trustworthy-ai/terms/."
+    dalicc:fieldOfUseRestriction names the field in a short literal, but there is no term for
+    a policy the licence pulls in by reference. The clause and the address are quoted in one
+    literal; the proposed term is dalicc:incorporatedUsePolicy.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The output clause has no term: "NVIDIA claims no ownership rights in outputs. You are
+    responsible for outputs and their subsequent uses." Quoted; the proposed term is
+    dalicc:outputRightsStatement, an annotation.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer against dg_default returned an empty
+    conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Family: the permissive end of this family. It is the only one of the seventeen records
+    that permits dalicc:sellCopy, and one of six that permit dalicc:patentGrant. Like the
+    responsible-use group it lets the licensee relicense its own modifications with a
+    compliant-licence duty; unlike that group its conditions of use are an incorporated ethics
+    document and a guardrail clause rather than a printed list, and it terminates on breach.
+    Its redistribution conditions read like the permissive software licence this library holds
+    under a well-known identifier, with a notice file and a trademark carve-out.
+  action: none
+family: Model licences
+port_of: null
+variant_kind: null
+variant_of: null
+notes: >-
+  Modelled from the page the publisher serves the agreement on; the retrieved copy carries the
+  whole agreement inside the site navigation, and only the agreement was quoted. cc:legalcode
+  and dct:source both point at that page. The clauses of this agreement carry headings but no
+  numbers on that page, so the findings name them by heading. The Cosmos clause applies to one
+  class of model the agreement defines rather than to every model released under it; the
+  built-on duty is written once, on distribution, and the clause is quoted so that a reader
+  can see which models it reaches.

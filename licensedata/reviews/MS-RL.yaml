@@ -1,0 +1,96 @@
+id: MS-RL
+title: Microsoft Reciprocal License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://opensource.org/license/MS-RL
+text_retrieved: true
+verdict: created
+summary: 'Models the Microsoft Reciprocal License, which is the Microsoft Public License plus
+  file-level reciprocity. The record copies MicrosoftPublicLicense and adds cc:SourceCode, cc:ShareAlike,
+  dalicc:patentGrant and dalicc:patentRetaliationTermination. A reader should know that the reciprocity
+  is per file, not per work: files that are entirely your own work stay yours.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, license id, SPDX id and IRI agree. dct:publisher is 'Microsoft'; the
+    sibling record MicrosoftPublicLicense carries dct:publisher "N.N.", which looks like a placeholder
+    and is reported rather than changed.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'dcmitype:Software only, following MicrosoftPublicLicense: the text speaks of ''the
+    accompanying software'' throughout.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Section 2(A) grants 'a non-exclusive, worldwide, royalty-free copyright license
+    to reproduce its contribution, prepare derivative works of its contribution, and distribute
+    its contribution or any derivative works that you create', and 2(B) grants a patent licence.
+    The record therefore adds dalicc:patentGrant to the permission set of MicrosoftPublicLicense
+    and keeps reproduce, distribute, modify, derive, display, present, commercial use, derivative
+    works, modified works and the distribution fee.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'dalicc:promote for 3(B) (''This license does not grant you rights to use any contributors''
+    name, logo, or trademarks''), dalicc:patentRetaliationTermination for 3(C), and dalicc:ChangeLicense,
+    which the sibling record permits: 3(E) allows a compiled form under ''a license that complies
+    with this license'' but source form only under this licence, and the model cannot hold a share-alike
+    duty and a relicensing permission at once.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:ShareAlike is a duty on odrl:modify and odrl:derive, the file-level attachment
+    the conventions prescribe, on the strength of 3(A): ''For any file you distribute that contains
+    code from the software (in source code or binary format), you must provide recipients the
+    source code to that file along with a copy of this license, which license will govern that
+    file. You may license other files that are entirely your own work and do not contain code
+    from the software under any terms you choose.'' cc:SourceCode hangs off distribute, modify
+    and derive; cc:Attribution and cc:Notice keep the sibling''s placement for 3(D).'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: Clause (F) is quoted verbatim into dalicc:WarrantyDisclaimer. The licence has no
+    separate liability section, so dalicc:LiabilityLimitation is absent, as in the sibling record.
+    The patent grant 2(B) and clauses (A), (B), (C) and (E) are quoted in dalicc:additionalClauses.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'The text names no legal system and no term: dalicc:worldwide, dalicc:perpetual.
+    Clause (F) mentions ''your local laws'' only as a saving provision.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: '3(E) allows the compiled form under any license ''that complies with this license''.
+    That is a compatibility test, not a free relicensing, and the vocabulary has no term for a
+    compatibility list. Quoted; proposed term: dalicc:compatibleLicenseTest, or the existing dalicc:shareAlikeVersionQualifier
+    used as a literal.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run with the 39 axioms of licensedata/dependencygraph/dg_default.ttl,
+    returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Against MicrosoftPublicLicense the record adds dalicc:patentGrant, cc:SourceCode,
+    cc:ShareAlike, dalicc:patentRetaliationTermination and the ChangeLicense prohibition, and
+    drops the ChangeLicense permission. The warranty text is identical in the two licences, and
+    the two records quote it identically.
+  action: none
+family: Reciprocal and source-available
+port_of: null
+variant_kind: null
+notes: 'Modelled from the SPDX plain text. cc:legalcode uses the licensor''s own URL named as
+  the first seeAlso of the SPDX entry, while the sibling record MicrosoftPublicLicense uses the
+  osl: IRI; dct:source uses the OSI page, which is where the text was read.'

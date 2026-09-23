@@ -1,0 +1,186 @@
+id: Llama-3.3-Community-License
+title: Llama 3.3 Community License Agreement
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/meta-llama/llama-models/main/models/llama3_3/LICENSE
+text_retrieved: true
+verdict: created
+summary: >-
+  The fifth edition of the community licence, dated December 6, 2024. It grants use,
+  reproduction, distribution, derivative works and modification of the released model and its
+  documentation, on the conditions that a copy of the agreement travels with every copy, that
+  a built-with line is displayed, that a named notice file carries the attribution line, and
+  that use follows the acceptable use policy. Against the fourth edition the retrieved copy
+  differs only in the version name, the release date and the addresses; every statement of the
+  record is the same.
+findings:
+- rubric: 1
+  severity: info
+  field: 'dct:title'
+  description: >-
+    File name, record identifier and IRI local name agree. The agreement has no SPDX
+    identifier, so no spdx:licenseId triple is written. dct:title is the heading of the
+    document; the short form, the full form and the model-hub tag are in dct:alternative.
+  action: applied
+- rubric: 2
+  severity: major
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Dataset and dcmitype:Software. The licensed material is defined as "collectively,
+    Meta's proprietary Llama 3.3 and Documentation (and any portion thereof) made available
+    under this Agreement", and Llama 3.3 is defined as "the foundational large language models
+    and software and algorithms, including machine-learning model code, trained model weights,
+    inference-enabling code, training-enabling code, fine-tuning enabling code and other
+    elements of the foregoing": trained weights are data, the code is software, and the
+    documentation travels with both.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Clause 1.a grants "a non-exclusive, worldwide, non-transferable and royalty-free limited
+    license under Meta's intellectual property or other rights owned by Meta embodied in the
+    Llama Materials to use, reproduce, distribute, copy, create derivative works of, and make
+    modifications to the Llama Materials." That gives odrl:reproduce, odrl:distribute,
+    odrl:modify, odrl:derive, cc:DerivativeWorks and dalicc:ModifiedWorks. cc:CommercialUse is
+    permitted because the agreement names no limit of purpose and instead writes its
+    commercial limit as a user threshold in clause 2, which is quoted and reported as a gap.
+    dalicc:useForModelTraining is permitted and carries a dalicc:addStatement duty, because
+    clause 1.b.i says in terms that you may use the material "or any outputs or results of the
+    Llama Materials to create, train, fine tune, or otherwise improve an AI model" provided
+    the new model's name begins with the mark. dalicc:networkUseTrigger carries the same
+    clause, which reaches "a product or service (including another AI model) that contains any
+    of them", with the same duties as distribution. dalicc:sublicense is left out in either
+    position: the grant is "non-transferable" but the agreement says nothing about
+    sublicensing.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    Three prohibitions. dalicc:ChangeLicense because the agreement must travel with the
+    material and with any derivative works thereof, and the text gives no leave to put it
+    under other terms. dalicc:promote from clause 5.a, "No trademark licenses are granted
+    under this Agreement, and in connection with the Llama Materials, neither Meta nor
+    Licensee may use any name or mark owned by or associated with the other", with the narrow
+    licence of the mark for the display duty noted in the quoted clause.
+    dalicc:patentRetaliationTermination from clause 5.c, under which litigation alleging that
+    the material or its outputs infringe your rights ends every licence granted by the
+    agreement; the clause is wider than patents and ends the whole agreement, which is what
+    the term allows for.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Five duties on odrl:distribute, the same five on dalicc:networkUseTrigger, and one
+    licence-wide duty. cc:Notice comes from clause 1.b.i(A), the duty to "provide a copy of
+    this Agreement with any such Llama Materials". dalicc:addStatement comes from clause
+    1.b.i(B), the duty to "prominently display “Built with Llama” on a related website, user
+    interface, blogpost, about page, or product documentation". cc:Attribution and
+    dalicc:includeNoticeFile come from clause 1.b.iii, the attribution notice "within a
+    “Notice” text file distributed as a part of such copies". cc:ShareAlike carries the fact
+    that the agreement travels with the material and with any derivative works thereof. The
+    licence-wide duty is dalicc:exportControlNotice, from clause 1.b.iv. The duties hang on
+    dalicc:networkUseTrigger as well because clause 1.b.i reaches "a product or service
+    (including another AI model) that contains any of them".
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    Clause 3 goes to dalicc:WarrantyDisclaimer and clause 4 to dalicc:LiabilityLimitation,
+    each whole and verbatim. dalicc:additionalClauses carries the definitions, the acceptance
+    sentence, the grant and the redistribution conditions, the additional commercial terms,
+    the intellectual property clause, the term and termination clause, the governing law
+    clause and one literal that quotes the incorporation clause of the acceptable use policy
+    and gives its address. Curly quotation marks in the source are kept. The retrieved copy is
+    a Markdown rendering, so the emphasis markers, the escaped full stops and the link syntax
+    were removed from the quotations and the addresses kept as plain text.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    cc:jurisdiction is dalicc:worldwide, from the worldwide grant, while dalicc:governingLaw
+    names California: "This Agreement will be governed and construed under the laws of the
+    State of California without regard to choice of law principles". The two are different
+    things and both are stated. dalicc:validityType is dalicc:perpetual, because the term runs
+    from acceptance until terminated rather than for a fixed period, and
+    dalicc:terminatesOnBreach is true from "Meta may terminate this Agreement if you are in
+    breach of any term or condition of this Agreement." No cure period is given.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The commercial limit is a user threshold, and no term can hold it: "If, on the Llama 3.3
+    version release date, the monthly active users of the products or services made available
+    by or for Licensee, or Licensee's affiliates, is greater than 700 million monthly active
+    users in the preceding calendar month, you must request a license from Meta, which Meta
+    may grant to you in its sole discretion, and you are not authorized to exercise any of the
+    rights under this Agreement unless or until Meta otherwise expressly grants you such
+    rights." Neither cc:CommercialUse nor dalicc:fieldOfUseRestriction says "above this size
+    the grant stops". Quoted; the proposed term is dalicc:scaleThresholdCondition, an
+    annotation carrying the measure and the number.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:fieldOfUseRestriction'
+  description: >-
+    The acceptable use policy is a separate document incorporated by reference: "Your use of
+    the Llama Materials must comply with applicable laws and regulations (including trade
+    compliance laws and regulations) and adhere to the Acceptable Use Policy for the Llama
+    Materials (available at https://www.llama.com/llama3_3/use-policy), which is hereby
+    incorporated by reference into this Agreement." dalicc:fieldOfUseRestriction names the
+    field in a short literal, but there is no term for a policy the licence pulls in by
+    reference and whose content is not in the text. The incorporation clause and the address
+    are quoted in one literal of dalicc:additionalClauses; the proposed term is
+    dalicc:incorporatedUsePolicy, an annotation carrying the address.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Clause 1.b.i ends with a naming rule that no duty action carries: "If you use the Llama
+    Materials or any outputs or results of the Llama Materials to create, train, fine tune, or
+    otherwise improve an AI model, which is distributed or made available, you shall also
+    include "Llama" at the beginning of any such AI model name." dalicc:rename asks for a name
+    that distinguishes the changed work from the original; this asks for the opposite, a name
+    that ties it to the original. dalicc:addStatement carries the "Built with Llama" line but
+    not the prefix. Quoted; the proposed term is dalicc:derivativeNamingRequirement, a duty
+    action.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer against dg_default returned an empty
+    conflict list. The cc:ShareAlike duty sits on the acts rather than on the odrl:Set, so it
+    does not meet the dalicc:ChangeLicense prohibition in the rule about whole-work
+    reciprocity.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Family: the fifth of the six. From the third edition on the six texts are the same
+    agreement with a different version name: clause 1.b.v, the bar on improving another model,
+    is gone, the built-with line loses the version number, the naming rule reaches a model
+    trained on the outputs, and everything else stands. The four records from the third
+    edition on carry identical statements; they differ only in the identifiers, the titles,
+    the addresses and the quoted version names.
+  action: none
+family: Model licences
+port_of: null
+variant_kind: null
+variant_of: null
+notes: >-
+  Modelled from the licence file in the publisher's source repository. cc:legalcode points at
+  the raw file and dct:source at the same file in its repository. The retrieved copy does not
+  carry the acceptable use policy, which is a separate document, so one literal of
+  dalicc:additionalClauses quotes the incorporation clause and gives the address. Other
+  published copies of this edition carry a clause withholding the rights in some models from
+  licensees domiciled in the European Union; the copy in the publisher's own repository, which
+  is the text this record models, does not, and a second reader should check that before
+  relying on the record.

@@ -1,0 +1,105 @@
+id: Parity-7.0.0
+title: The Parity Public License 7.0.0
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Parity-7.0.0.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models the Parity Public License 7.0.0, the successor to 6.0.0. The grant and the copyleft are the
+  same in substance: you may do everything the contributor''s copyright and patents would otherwise forbid, and you have
+  to publish the source of software you develop, operate or analyze with it. Version 7 adds two carve-outs from that duty,
+  one for prototypes and one for reverse engineering, names the licences a contribution may carry, and says in so many words
+  that you may not change the licence terms for this software.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, record identifier, SPDX identifier and IRI local name agree. cc:legalcode points at the publisher''s
+    page for version 7.0.0 and dct:source at the SPDX entry. dct:publisher is left out for the same reason as in Parity-6.0.0:
+    the Contributor and Source Code lines are per-project fill-ins.'
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only, the same as Parity-6.0.0.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Two sentences carry the grant: ''The contributor licenses you to do everything with this software that would
+    otherwise infringe their copyright in it'' and ''The contributor licenses you to do everything with this software that
+    would otherwise infringe any patents they can license or become able to license.'' They give the same permission set
+    as Parity-6.0.0, including dalicc:patentGrant and cc:CommercialUse.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense for the sentence in the Contribute section, ''Note that this license does not allow
+    you to change the license terms for this software.'' dalicc:patentRetaliationTermination for the Defense section. dalicc:promote
+    is absent: the text has no trademark or endorsement clause.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:ShareAlike and cc:SourceCode are licence-wide, for 'Contribute software you develop, operate, or analyze
+    with this software, including changes or additions to this software', read with the Contribute section's 'Publish all
+    source code for the software in the preferred form for making changes'. cc:Notice and cc:Attribution hang on odrl:distribute,
+    odrl:modify and odrl:derive for the Notices section.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: The No Liability section is one sentence covering warranty and liability, so it is quoted whole into dalicc:WarrantyDisclaimer,
+    as in Parity-6.0.0 and CAL-1.0. Twelve further clauses are quoted in dalicc:additionalClauses. The markdown link syntax
+    the document uses for its own cross references is kept in the quotations, the way BlueOak-1.0.0 keeps it.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: The published text wraps the No Liability sentence in asterisks and one word of the Contribute section in
+    underscores, which are the markup the document uses for emphasis. Those markers are dropped from the quoted literals;
+    nothing else is changed.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: dalicc:terminatesOnBreach is true, because the rules are 'both obligations under that agreement and conditions
+    to your license', and dalicc:curePeriod is '30 days' for the Excuse section, which the text spells 'thirty days'. dalicc:validityType
+    stays dalicc:perpetual, with the Reliability section, 'The contributor can't revoke this license', quoted in support.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The Prototypes and Reverse Engineering sections carve work out of the copyleft duty rather than out of the
+    grant. dalicc:exemptedMaterial is a term for material outside the grant and is not used here. Both sections are quoted.
+    Proposed term: dalicc:exemptedFromCondition, a rule action for material a licence releases from one of its conditions
+    while keeping it inside the grant.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:compatibleLicenseTest
+  description: 'As in Parity-6.0.0, the annotation carries the test the licence states for the other software you must publish,
+    ''another license that allows everything this license does'', while dalicc:ChangeLicense stays prohibited for this software.
+    The four licences the text names as examples are quoted. Proposed term: dalicc:outboundLicenseTest.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run against licensedata/dependencygraph/dg_default.ttl, returned
+    no conflicts.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Against Parity-6.0.0 this record differs in four places: the reciprocity scope says ''develop, operate or
+    analyze'' where 6.0.0 says ''develop, deploy, monitor, or run'' and adds the combination rule separately, the compatible-licence
+    test is spelled out with examples, the Prototypes and Reverse Engineering carve-outs are new, and the bar on changing
+    the licence terms is stated in the text rather than inferred from the notice rule. The statement sets are otherwise
+    identical.'
+  action: none
+family: Source-available licences and riders
+port_of: null
+variant_kind: null
+variant_of: null
+notes: The record models the template. The two carve-outs from the copyleft duty are quoted but not modelled, so a reader
+  who needs to know whether a prototype is caught has to read the quoted clause.

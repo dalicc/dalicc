@@ -1,0 +1,134 @@
+id: RPL-1.1
+title: Reciprocal Public License 1.1
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://opensource.org/license/RPL-1.1
+text_retrieved: true
+verdict: created
+summary: Models the Reciprocal Public License, whose point is that deployment, not only distribution,
+  triggers the duty to publish source. The record follows OSL-3.0 and GPL-2.0-only for whole-work
+  reciprocity and quotes the Deploy and Serve definitions, because the library has no term for
+  a network-use trigger. A reader should treat the quoted definitions as the operative part of
+  this licence.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, license id, SPDX id and IRI agree. dct:publisher is 'Technical Pursuit
+    Inc.', named in the copyright line of the text.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only, following OSL-3.0 and MozillaPublicLicenseVersion20.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 3.1 grants the right to ''Use, reproduce, modify, display, perform, sublicense
+    and distribute Licensed Software and Your Extensions in both Source Code form or as an executable
+    program'' and 3.3 grants a patent licence. The record carries reproduce, distribute, modify,
+    derive, display, present, derivative works, modified works, commercial use and dalicc:patentGrant.
+    odrl:grantUse is deliberately not written although the text says ''sublicense'': the composer
+    treats a share-alike duty and a grant-use permission as a direct conflict, and the share-alike
+    duty is the statement that carries the compatibility answer.'
+  action: applied
+- rubric: 3
+  severity: minor
+  field: dalicc:chargeDistributionFee
+  description: 'No distribution-fee permission. Section 6.1 caps what may be charged: ''You may
+    not charge a fee for any copy of the Source Code distributed under this Section in excess
+    of Your actual cost of duplication and distribution of said copy.'' The clause is quoted instead.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote for section 5.0 ('No right is granted to the trademarks of Licensor
+    or any Contributor even if such marks are included in the Licensed Software'), dalicc:addLimitation
+    for the last sentence of section 6.0, dalicc:patentRetaliationTermination for section 12.2
+    and dalicc:ChangeLicense for the reciprocity of section 6.0.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:ShareAlike is license-wide: ''any Modifications, Derivative Works, or Required
+    Components (collectively Extensions) that You create or to which You contribute are governed
+    by the terms of this License''. cc:SourceCode, cc:Attribution, cc:Notice and dalicc:includeNoticeFile
+    (section 6.3, the human-readable file that must accompany a distribution) hang off distribute,
+    modify and derive; dalicc:modificationNotice and dalicc:rename (''Any Extensions You make
+    and Deploy must have a distinct title'') are added to modify and derive.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyOrLiabilityAcceptance
+  description: Sections 8.0 and 9.0 are quoted verbatim into dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation
+    and section 6.5 into dalicc:WarrantyOrLiabilityAcceptance, each with its section number stripped
+    and nothing else changed.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The licence is triggered by deployment or by serving the work over a network,
+    not only by distribution. The vocabulary has no term for that trigger, so the definition is
+    quoted in dalicc:additionalClauses and the source-code duty is attached to distribute, modify
+    and derive. Proposed term: dalicc:networkUseTrigger. Text: ''"Deploy" means to use, Serve,
+    sublicense or distribute Licensed Software other than for Your internal Research and/or Personal
+    Use'' and ''"Serve" means to deliver Licensed Software and/or Your Extensions by means of
+    a computer network to one or more computers for purposes of execution''.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The source-code duty carries a deadline and a minimum availability period. cc:SourceCode
+    cannot hold a period, so the clause is quoted in dalicc:additionalClauses. Proposed term:
+    dalicc:sourcePublicationPeriod as a literal qualifier on a cc:SourceCode duty. Text: section
+    6.1, which sets a one-month publication deadline and a twelve-month minimum availability period.'
+  action: none
+- rubric: 7
+  severity: gap
+  field: cc:jurisdiction
+  description: 'The grant itself is worldwide, so cc:jurisdiction stays dalicc:worldwide; only
+    the governing law is national. The vocabulary has no property for a governing law that is
+    separate from the territory of the grant, so the clause is quoted in dalicc:additionalClauses.
+    Proposed term: dalicc:governingLaw. Text: ''This License shall be governed by Colorado law
+    provisions (except to the extent applicable law, if any, provides otherwise), excluding its
+    conflict-of-law provisions.'' (section 13.8)'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Automatic termination on breach has no property that a record can carry: dalicc:terminationOnBreach
+    is a policy quality with no predicate. The clause is quoted in dalicc:additionalClauses. Proposed
+    term: dalicc:terminatesOnBreach as a boolean property on odrl:Set, with the cure period as
+    a literal. Text: ''This License and the rights granted hereunder will terminate automatically
+    if You fail to comply with the terms herein and fail to cure such breach within thirty (30)
+    days of becoming aware of the breach.'' (section 12.1)'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Section 13.7 puts the licensee on notice of United States export control. There
+    is no term for an export-control notice; the clause is quoted. Proposed term: dalicc:exportControlNotice.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run with the 39 axioms of licensedata/dependencygraph/dg_default.ttl,
+    returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'RPL-1.1 and RPL-1.5 are a version chain and both carry dalicc:variantKind "version".
+    Against 1.5 this record lacks the per-file License Notice of Exhibit A, the User-Visible Attribution
+    Notice of Exhibit B and the duty to notify the software community rather than the licensor;
+    its duty set therefore has no dalicc:addStatement. Two records are justified: the notice duties
+    differ and they bind a distributor differently.'
+  action: none
+family: Reciprocal and source-available
+port_of: null
+variant_kind: version
+notes: Modelled from the SPDX plain text. The preamble is expressly not part of the licence and
+  was not used for the model. Section 7 lets a licensee move to a later version of the licence,
+  which is quoted in the RPL-1.5 record rather than modelled as an or-later option, because dalicc:orLaterVersionOption
+  is reserved for the four GNU records by the review decisions.

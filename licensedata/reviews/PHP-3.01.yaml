@@ -1,0 +1,88 @@
+id: PHP-3.01
+title: PHP License v3.01
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: http://www.php.net/license/3_01.txt
+text_retrieved: true
+verdict: created
+summary: Models version 3.01 of the PHP licence, the successor of the PhpLicense30 record. It is a BSD style licence
+  with two name clauses and a mandatory acknowledgement in redistributions. Nothing here is legal advice.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads "Redistribution and use in source and binary forms, with or without modification,
+    is permitted provided that the following conditions are met", so the record carries the BSD permission set:
+    reproduce, distribute, modify, derive, display, present, commercial use, derivative works, modified works and
+    the distribution fee.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: Clause 3 states 'The name "PHP" must not be used to endorse or promote products derived from this
+    software without prior written permission' and clause 4 bars the word from product names, so dalicc:promote
+    is a prohibition. Clause 5 ends "No one other than the PHP Group has the right to modify the terms applicable
+    to covered code created under this License", which is modelled as a dalicc:ChangeLicense prohibition.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: Clauses 1 and 2 give cc:Attribution and cc:Notice on odrl:distribute, odrl:modify and odrl:derive.
+    Clause 6 requires that "Redistributions of any form whatsoever must retain the following acknowledgment", which
+    is modelled as a dalicc:addStatement duty on odrl:distribute. The existing PhpLicense30 record instead prohibits
+    dalicc:addStatement, which reads the same term in the opposite sense; asserting both would have been reported
+    by the consistency check as a duty that can never be discharged.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:PromotionSpecification
+  description: 'The exact acknowledgement of clause 6 is kept in dalicc:PromotionSpecification, as on the PhpLicense30
+    record, and this is the wording that changed between 3.0 and 3.01: "This product includes PHP software, freely
+    available from <http://www.php.net/software/>". Clauses 4 and 5 are quoted in dalicc:additionalClauses, and
+    the warranty and liability sentences are split into their own predicates.'
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Clause 5 lets the licensee keep using the version received or move to any later version published
+    by the PHP Group. That is the same shape as the GNU or-later option, for which the review added dalicc:orLaterVersionOption
+    as a property of the record; it is not applied here because the library uses it only on the four GNU records
+    so far. Proposed action for the owner: apply dalicc:orLaterVersionOption "true" to this record and to PhpLicense30.'
+  action: proposed
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer with the dependency graph dg_default returned an empty
+    conflict list.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Diffed against licensedata/licenses/PhpLicense30.ttl rather than read in full. The textual difference
+    is confined to the acknowledgement wording of clause 6 and the name clause of clause 4. The modelled differences
+    are deliberate: this record turns dalicc:addStatement from a prohibition into a duty, drops the unsupported
+    cc:ShareAlike prohibition, drops the odrl:grantUse and dalicc:chargeLicenseFee permissions the text does not
+    grant, and adds dalicc:ModifiedWorks. The existing record was not edited.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
+    or without modification, is permitted provided that the following conditions are met: 1. Redistributions of
+    source code must retain the above copyright notice, this list of conditions and the following disclaimer." The
+    permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the
+    relicensing.'
+  action: applied
+family: Python, PHP, Unicode and W3C
+port_of: null
+variant_kind: version
+notes: The disclaimer uses the typewriter quotation marks of the original (``AS IS''), which are reproduced verbatim.

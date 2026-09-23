@@ -1,0 +1,111 @@
+id: Timescale-License
+title: Timescale License
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/timescale/timescaledb/main/tsl/LICENSE-TIMESCALE
+text_retrieved: true
+verdict: created
+summary: The record models the Timescale License, which governs the part of a time-series database that is not under the
+  Apache License 2.0. The grant is drawn as four narrow licences, internal use, value added products or services, distribution
+  of unmodified standalone copies, and derivative works, and section 2.2 then forbids offering the software as a database-as-a-service
+  or selling it. It is not an open source licence.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: 'File name, record identifier and IRI local name agree. The triple is left out: the SPDX list does not carry
+    this licence and no identifier is invented. cc:legalcode points at the file the publisher ships and dct:source at the
+    same file''s page. dct:publisher is Timescale, Inc., which the text names as a party. dalicc:licenseVersion is left
+    out: the text carries a posted date rather than a version number.'
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only. The text covers database software and the documentation that goes with it, and the
+    documentation is named only in the government rights clause.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 2.1 grants ''limited, non-exclusive, non-transferable, fully paid up, worldwide licenses'' in four
+    parts: copying, compiling, installing and using for internal business purposes; using and distributing as part of Your
+    Value Added Products or Services; copying and distributing unmodified standalone copies; and preparing Derivative Works.
+    That gives odrl:reproduce, odrl:distribute, odrl:modify, odrl:derive, cc:DerivativeWorks and dalicc:ModifiedWorks. cc:CommercialUse
+    is permitted, because a Value Added Product or Service is expressly a product a licensee sells. No dalicc:patentGrant:
+    the text grants no patent licence and reserves every right not expressly granted.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'dalicc:sellCopy and dalicc:sublicense for section 2.2, ''You agree not to ... transfer, sell, rent, lease,
+    sublicense, loan, or otherwise transfer or make available any TSL Licensed Software, whether in source code or binary
+    executable form.'' dalicc:ChangeLicense because every permitted copy travels ''subject to the terms and conditions of
+    the most current version of this TSL Agreement'' and section 2.4 grants nothing by implication. dalicc:promote is absent:
+    the text has no trademark or endorsement clause, which is unusual for a licence of this kind.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Notice and cc:ShareAlike hang on odrl:distribute, odrl:modify and odrl:derive for section 2.1(b)(1), 'You
+    notify Your customers that use of such Timescale Software or Derivative Works is subject to this TSL Agreement and You
+    provide to each such customer a copy of the most current version of this TSL Agreement or a URL from which the most
+    current version of this TSL Agreement may be obtained'.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: Sections 5 and 6 are separate, so each goes into the property that names it. Twelve further clauses are quoted
+    in dalicc:additionalClauses, including all four parts of the grant, the prohibitions and the definition of a Value Added
+    Product or Service.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:governingLaw
+  description: dalicc:governingLaw is 'the law of the State of New York, United States' for section 7.3, and dalicc:governmentRightsLimitation
+    carries section 7.8, the same use of that property as on Watcom-1.0. cc:jurisdiction stays dalicc:worldwide because
+    the grant says worldwide. dalicc:terminatesOnBreach is true for section 4, which gives no cure period at all.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: odrl:duty
+  description: 'Section 2.1(b)(2) obliges the licensee to bind its own customers: ''the customer is prohibited, either contractually
+    or technically, from defining, redefining, or modifying the database schema or other structural aspects of database
+    objects''. That is a duty to impose a restriction downstream. dalicc:addLimitation is a rule action a licence permits
+    or prohibits, not a duty, so it is not used here. Quoted. Proposed term: dalicc:imposeDownstreamRestriction, a duty
+    action.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:fieldOfUseRestriction
+  description: 'The database-as-a-service bar has no term. dalicc:fieldOfUseRestriction is the nearest literal and section
+    2.2 is quoted in full. Proposed term: dalicc:competingServiceRestriction, the same term Elastic-2.0 and RSALv2 need.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Section 7.2 lets the licensor change the agreement unilaterally, and the changed agreement then governs
+    every version released after its posted date. No term can say that a licence''s terms are settled by the publisher after
+    the fact. Quoted. Proposed term: dalicc:unilateralAmendment, a boolean annotation.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run against licensedata/dependencygraph/dg_default.ttl, returned
+    no conflicts. Permitting odrl:distribute while prohibiting dalicc:sellCopy raises nothing, because dalicc:sellCopy is
+    not in the dependency graph, and the text does treat the two as different acts.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Its nearest sibling is Confluent-Community-1.0, the other record in this set that is drafted as a signed
+    agreement rather than as a short set of terms: both carry dalicc:governingLaw, both prohibit sublicensing, both bar
+    a competing service and neither grants a patent licence. This record differs in carrying dalicc:governmentRightsLimitation
+    and dalicc:sellCopy, in having no cure period, and in prohibiting rather than permitting dalicc:ChangeLicense, which
+    the Confluent text expressly allows for a licensee''s own modifications.'
+  action: none
+family: Source-available licences and riders
+port_of: null
+variant_kind: null
+variant_of: null
+notes: The licence covers only part of the project that publishes it; the rest is under the Apache License 2.0, and the
+  text says which files are which. A reader checking a repository has to look at the file, not only at the project.

@@ -1,0 +1,108 @@
+id: MPL-2.0-no-copyleft-exception
+title: Mozilla Public License 2.0 (no copyleft exception)
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://www.mozilla.org/MPL/2.0/'
+text_retrieved: true
+verdict: created
+summary: >-
+  Models code released under the Mozilla Public License 2.0 that carries the Exhibit B notice,
+  so that the option of also distributing it under a Secondary License (GPL, LGPL or AGPL) is
+  switched off. The licence text is the same as MPL-2.0, so the record mirrors
+  MozillaPublicLicenseVersion20 and records the difference as quoted clause text. Nothing here
+  is legal advice.
+findings:
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 2.1 grants rights "under intellectual property rights (other than patent or
+    trademark) ... to use, reproduce, make available, modify, display, perform, distribute,
+    and otherwise exploit its Contributions" and, in 2.1(b), "under Patent Claims of such
+    Contributor to make, use, sell, offer for sale, have made, import, and otherwise
+    transfer". dalicc:patentGrant is therefore a permission, and section 3.2(b), which lets
+    the licensee "sublicense it under different terms", supports dalicc:sublicense. The
+    existing MozillaPublicLicenseVersion20 record carries neither statement; it was not
+    edited.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    The grant excludes trademark rights, so dalicc:promote is a prohibition. Section 5.2
+    terminates the grant where the licensee asserts a patent claim, modelled as a
+    dalicc:patentRetaliationTermination prohibition and quoted in full. dalicc:ChangeLicense
+    is prohibited, as on the MPL-2.0 record.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    cc:ShareAlike hangs off the odrl:Set, not off the individual acts. This mirrors the
+    existing MozillaPublicLicenseVersion20 record exactly, because the two records model the
+    same text and must give the same compatibility answers. Note that the CDDL and MPL 1.x
+    records in this batch attach the same file-level reciprocity to odrl:distribute,
+    odrl:modify and odrl:derive instead, following their own parent record; the library
+    therefore carries two shapes for one concept, which is reported for the consolidation
+    pass.
+  action: applied
+- rubric: 6
+  severity: major
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The whole point of the identifier is quoted: the definition of "Incompatible With
+    Secondary Licenses" in section 1.5, the Larger Work clause in section 3.3 whose Secondary
+    License option this variant withholds, section 10.4 and the Exhibit B notice itself, plus
+    the patent retaliation clause. The warranty and liability sections are those of MPL-2.0
+    and are quoted word for word.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    The grant itself is world-wide ("a world-wide, royalty-free, non-exclusive license"), so
+    cc:jurisdiction stays dalicc:worldwide and the applicable-law and venue clause is quoted
+    in dalicc:additionalClauses instead of being turned into a bpicounty IRI. A choice of law
+    is not a jurisdiction port and the library reserves cc:jurisdiction with a country for
+    ports.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Two clauses have no vocabulary term. Automatic termination on breach with a cure period is
+    a policy quality with no property to hang it on; proposed term dalicc:terminatesOnBreach
+    as a property over the existing dalicc:terminationOnBreach concept. The survival of
+    validly granted end user licences after termination has no term either; proposed term
+    dalicc:sublicenseSurvival. Both clauses are quoted in dalicc:additionalClauses.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the dependency graph dg_default
+    returned an empty conflict list. cc:ShareAlike is required and dalicc:ChangeLicense is
+    prohibited, which is the combination the check expects; asserting both cc:ShareAlike and a
+    dalicc:ChangeLicense permission would have been reported as a direct conflict.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: >-
+    The licence text of MPL-2.0-no-copyleft-exception is byte for byte the Mozilla Public
+    License 2.0; the identifier marks covered software whose Exhibit B notice is present. A
+    separate record is justified because the compatibility answer differs (this code may not
+    be combined into a GPL work under the Secondary License option), but the two records must
+    stay aligned. Differences from MozillaPublicLicenseVersion20 today: this record adds
+    dalicc:patentGrant, dalicc:sublicense, dalicc:patentRetaliationTermination,
+    cc:DerivativeWorks and dalicc:chargeDistributionFee. The first three follow the review
+    decisions; the last two follow the library convention carried by more than 320 records.
+    The existing record was not edited.
+  action: applied
+family: Mozilla and CDDL
+port_of: null
+variant_kind: edition
+notes: >-
+  dalicc:variantKind is "edition" rather than "version": this is not a later version of the
+  MPL but the same version with the Secondary License option switched off by the Exhibit B
+  notice.

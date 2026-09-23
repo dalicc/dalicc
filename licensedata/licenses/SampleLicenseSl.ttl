@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "Sample License (SL)" in the DALICC license library
+# Title: The machine-readable representation of "Sample License (SL)" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/SampleLicenseSl
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,14 +15,21 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:SampleLicenseSl a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
-    cc:License dalicclib:MIT ;
+    cc:license dalicclib:MIT ;
     cc:attributionName "Sample Creator" ;
     cc:jurisdiction dalicc:worldwide ;
     dalicc:WarrantyDisclaimer "This is a disclaimer. No programmer were harmed during the creation of this license :). " ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:recordStatus dalicc:testFixture ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/SampleLicenseSl/versions> ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:publisher "Sample Licensor" ;
     dct:title "Sample License (SL)" ;
     odrl:assignee "Sample Licensee" ;

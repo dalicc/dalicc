@@ -1,0 +1,169 @@
+id: EUPL-1.2
+title: European Union Public License 1.2
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://spdx.org/licenses/EUPL-1.2.html'
+text_retrieved: true
+verdict: created
+summary: >-
+  Version 1.2 of the European Union Public Licence, the version in current use. Every modelled
+  statement is the same as on the EUPL-1.1 record; the text differs in its definitions, in a
+  longer appendix of compatible licences, and in Articles 14 and 15, which now name the Court
+  of Justice of the European Union and the law of the Member State where the Licensor has his
+  seat. Read the EUPL-1.1 record together with this one: the compatibility clause is quoted
+  rather than modelled, for the reason given in the rubric 3 finding.
+findings:
+- rubric: 1
+  severity: minor
+  field: 'spdx:licenseId'
+  description: >-
+    The record carries the SPDX id EUPL-1.2 as its file name, its IRI and its spdx:licenseId.
+    dct:title is the SPDX name with its long dash removed, and dct:alternative holds the short
+    forms and the licensor's own spelling (Licence, not License).
+  action: applied
+- rubric: 2
+  severity: major
+  field: 'odrl:target'
+  description: >-
+    Three asset types: dcmitype:Software, dcmitype:Dataset and dalicc:CreativeWork. The object
+    of the EUPL is the Work, defined as "the Original Work or its Derivative Works", and the
+    Original Work is "the work or software distributed or communicated by the Licensor":
+    software is one case of it, not the whole of it, and the appendix of version 1.2 lists a
+    Creative Commons licence "for works other than software". The existing
+    UkOpenGovernmentLicenseForPublicSectorInformation record carries the same three types for
+    the same reason.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Article 2 grants "a worldwide, royalty-free, non-exclusive, sublicensable licence" to use,
+    reproduce, modify and make Derivative Works, communicate to the public, distribute, lend
+    and rent, and to "sublicense rights in the Work or copies thereof". The record therefore
+    permits reproduce, distribute, modify, derive, display, present, commercial use,
+    derivative works, modified works, the distribution fee and dalicc:sublicense.
+    dalicc:patentGrant comes from the last paragraph of Article 2 and
+    dalicc:moralRightsNonAssertion from the paragraph before it, where the Licensor "waives
+    his right to exercise his moral right to the extent allowed by law". dalicc:ChangeLicense
+    is deliberately not written: the compatibility clause would justify it as a permission
+    with a dalicc:compliantLicense duty, but consistency_check reports a required
+    cc:ShareAlike together with a permitted dalicc:ChangeLicense as a direct conflict, so the
+    clause and its appendix are quoted in dalicc:additionalClauses instead.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: 'odrl:prohibition'
+  description: >-
+    One prohibition, dalicc:promote, from the Legal Protection paragraph of Article 5: "This
+    Licence does not grant permission to use the trade names, trademarks, service marks, or
+    names of the Licensor, except as required for reasonable and customary use in describing
+    the origin of the Work and reproducing the content of the copyright notice". The text
+    states no other prohibition; in particular it does not forbid charging for a copy, and
+    Distribution is defined to include selling.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    cc:ShareAlike hangs off the odrl:Set, not off an act, because the copyleft clause reaches
+    the whole of what is distributed or communicated: "this Distribution or Communication will
+    be done under the terms of this Licence or of a later version of this Licence". The
+    attribution right of Article 5 gives cc:Attribution and cc:Notice on odrl:distribute,
+    odrl:modify and odrl:derive, and dalicc:modificationNotice on the last two, from "The
+    Licensee must cause any Derivative Work to carry prominent notices stating that the Work
+    has been modified and the date of modification". cc:SourceCode sits on odrl:distribute
+    alone, because the Provision of Source Code paragraph is triggered by distributing or
+    communicating; the licence-wide share-alike duty carries it to the rest through the
+    dg_default axiom cc:ShareAlike odrl:implies cc:SourceCode.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    Article 7 is quoted verbatim in dalicc:WarrantyDisclaimer, Article 8 in
+    dalicc:LiabilityLimitation and Article 9 in dalicc:WarrantyOrLiabilityAcceptance, which is
+    what that predicate is for: the licensee may conclude an additional agreement offering
+    warranty or support on its own behalf. dalicc:additionalClauses carries the moral rights
+    and patent paragraphs of Article 2, Articles 3, 4, 6 and 10 to 15, the compatibility
+    clause and the appendix of compatible licences.
+  action: applied
+- rubric: 7
+  severity: major
+  field: 'cc:jurisdiction'
+  description: >-
+    cc:jurisdiction stays dalicc:worldwide. The grant of Article 2 is worldwide in so many
+    words; Articles 14 and 15 name a court and a governing law, not a territory for the grant.
+    Article 15 reads: "15.Applicable Law Without prejudice to specific agreement between
+    parties, - this Licence shall be governed by the law of the European Union Member State
+    where the Licensor has his seat, resides or has his registered office, - this licence
+    shall be governed by Belgian law if the Licensor has no seat, residence or registered
+    office inside a European Union Member State." Both articles are quoted in
+    dalicc:additionalClauses, and a reader who needs the governing law as data has to read
+    them. dalicc:validityType is dalicc:perpetual, since the licence runs "for the duration of
+    copyright vested in the Original Work".
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The compatibility appendix has no vocabulary term. A licence that lets a derivative go out
+    under one of a closed list of other licences needs both a permission and the list itself;
+    the library can express neither. Proposed term dalicc:compatibleLicenseTest, as proposed
+    in batch 2 for MS-RL and RPSL-1.0, taking the list of licence ids as its value.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The EUPL is triggered by Communication as well as by Distribution: "any act of selling,
+    giving, lending, renting, distributing, communicating, transmitting, or otherwise making
+    available, online or offline, copies of the Work or providing access to its essential
+    functionalities". Providing access to the essential functionalities over a network is the
+    trigger no action term covers. Quoted; proposed term dalicc:networkUseTrigger.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Article 12 terminates the licence automatically on any breach, with the sublicences of
+    compliant recipients surviving. Quoted; proposed terms dalicc:terminatesOnBreach and
+    dalicc:sublicenseSurvival, both already proposed by earlier batches of this addition.
+  action: none
+- rubric: 8
+  severity: info
+  field: 'dalicc:orLaterVersionOption'
+  description: >-
+    The copyleft clause lets the licensee distribute "under the terms of this Licence or of a
+    later version of this Licence unless the Original Work is expressly distributed only under
+    this version", which is what dalicc:orLaterVersionOption says on the GNU records. The
+    property is used on the GNU family alone today, so it was not written; the triple would be
+    dalicclib:EUPL-1.2 dalicc:orLaterVersionOption true.
+  action: proposed
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Family: identical in every modelled statement to the EUPL-1.1 record, which is why
+    dalicc:variantKind is "version". The differences are in the quoted clauses: the appendix
+    now lists AGPL 3, LGPL, MPL 2, CC BY-SA 3.0 for works other than software, the EUPL itself
+    and the two LiLiQ reciprocity licences, and the European Commission may update the
+    appendix without a new version of the licence. Two of the licences this batch adds,
+    LiLiQ-R-1.1 and LiLiQ-Rplus-1.1, name EUPL 1.1 as compatible in their turn.
+  action: none
+family: European Union Public Licence
+port_of: null
+variant_kind: version
+notes: >-
+  Modelled from the SPDX plain text, which is the English language version of the licence; all
+  linguistic versions approved by the European Commission have identical value, as Article 13
+  states. The source text of version 1.2 uses a long dash to introduce each item of its lists
+  and one long dash inside the copyleft clause; every long dash was replaced with a plain
+  hyphen in the quoted clauses, as the library requires. cc:legalcode points at the licence
+  page of the European Commission, dct:source at the SPDX page the text was taken from.

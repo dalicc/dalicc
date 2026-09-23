@@ -1,4 +1,4 @@
-﻿# Title: The machine-readable representation of "WTFPL" in the DALICC license library
+# Title: The machine-readable representation of "WTFPL" in the DALICC license library
 # Author: DALICC
 # Source: https://dalicc.net/licenselibrary/WTFPL
 # Licensed under: Attribution 4.0 International (CC BY 4.0) 
@@ -15,18 +15,26 @@
 @prefix scho: <http://schema.org/> .
 @prefix spdx: <http://spdx.org/rdf/terms#>  .
 @prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dalicclib:WTFPL a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "WTFPL" ;
     cc:attributionName "Sam Hocevar" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://www.wtfpl.net/about/> ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Reviewed ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/WTFPL/versions> ;
     dct:alternative "Do What the Fuck You Want to Public License" ;
-    dct:publisher "N.N." ;
+    dct:hasVersion "3" ;
+    dct:modified "2026-09-15"^^xsd:date ;
     dct:source <http://www.wtfpl.net/> ;
     dct:title "WTFPL" ;
     odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:grantUse ],
+        [ a odrl:Permission ;
             odrl:action odrl:derive ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],

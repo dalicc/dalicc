@@ -1,0 +1,187 @@
+id: CreativeCommonsAttributionSharealike20Japan
+title: Creative Commons Attribution-ShareAlike 2.0 Japan
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by-sa/2.0/jp/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the BY-SA element set of the Creative Commons 2.0 port for Japan and it does
+  so correctly: the ShareAlike element carries a cc:ShareAlike duty, the attribution and notice duties
+  hang on the acts that make the work public. The legal text was read in Japanese and the permissions,
+  prohibitions and duties all follow from the grant and restriction sections of the port. Corrections
+  applied: dct:source, and the split of the warranty disclaimer from the limitation of liability. What
+  remains are proposals that touch the whole Creative Commons family rather than this record: the express
+  prohibition of sublicensing, and the asset types.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source. The legal-code page states the canonical
+    URL of the licence, https://creativecommons.org/licenses/by-sa/2.0/jp/, and the six 4.0 International
+    parents carry exactly that pair (legal code plus deed). Added.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by-sa/2.0/jp/> ;
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: SPDX has no identifier for this port. The legal-code URL implies CC-BY-SA-2.0-JP, which
+    the SPDX licence list does not define, so no identifier was invented. Of the thirty six records in
+    this batch only the German NonCommercial-ShareAlike port has an SPDX identifier.
+  action: none
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: The record targets dalicc:CreativeWork only, while the 4.0 International parent CC-BY-SA-4.0
+    targets dalicc:CreativeWork and dcmitype:Dataset. Creative Commons licences are media neutral, and
+    this port grants the rights in all media and formats now known or later devised. Aligning the ports
+    with the parents is a single library wide decision covering every Creative Commons port, so it is
+    left as a proposal rather than applied in thirty six records alone.
+  action: proposed
+  change: |-
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork ,
+                dcmitype:Dataset ] ;
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: Every modelled permission is supported by the grant. Article 3 grants a licence in all
+    countries, royalty free, non-exclusive and continuing for the term of Article 7(b), and it enumerates
+    the neighbouring rights in performances, phonograms, broadcasts and cable broadcasts as covered subject
+    matter. The Japanese port also moves the downstream offer to recipients into its own Article 4, where
+    the other ports keep it in the miscellaneous section. The grant covers reproduction, incorporation
+    into collections, distribution, public display, public performance and communication to the public,
+    and the creation and reproduction of derivative works, which the record models as odrl:reproduce,
+    odrl:distribute, odrl:display, odrl:present, odrl:derive and cc:DerivativeWorks.
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The licence forbids sublicensing and the record does not say so. Article 5: the licensee
+    may not grant a further licence in the work. The vocabulary already has dalicc:sublicense, but it
+    is used by no record in the library and its skos:note says so, and the same sentence stands in every
+    Creative Commons 2.0 and 3.0 record, so adding it to thirty six ports alone would split the compatibility
+    behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
+    note.'
+  action: proposed
+  change: |-
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ] ;
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: the licensee may offer
+    the work only under the terms of this licence and may not offer or impose terms that alter or restrict
+    it. dalicc:promote is prohibited, which rests on the reservation of all rights not expressly granted
+    and on the trademark paragraph of the Creative Commons notice, not on a clause of the licence body.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The attribution and notice duties are present and supported: the licence requires a copy
+    of, or the URI for, the licence with every copy, that all notices referring to the licence and the
+    warranty disclaimer be kept intact, and that credit be given to the author. Article 5 owes credit
+    to the original author and to the performers, with the title, the licensor URI and, for a derivative
+    work, a credit identifying the use made of the work. The duties hang on odrl:distribute, odrl:modify
+    and odrl:derive, which matches the licence, since the duties are triggered by making the work public
+    rather than by private use. The cc:ShareAlike duty is carried at the level of the odrl:Set, as in
+    the parent CC-BY-SA-4.0.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The share-alike clause of the 2.0 ports is wider than a flat prohibition of relicensing.
+    Article 5: a derivative work may be used only under this licence or another Creative Commons licence
+    containing the same licence elements, for example a newer version of this licence or the licence of
+    another country with the same elements. The record expresses it as a cc:ShareAlike duty plus a dalicc:ChangeLicense
+    prohibition, which cannot say that a later version of the same licence or another port with the same
+    elements is an acceptable outgoing licence. The 4.0 International parent has the same limitation,
+    and the consistency check would report a conflict if dalicc:ChangeLicense were permitted next to cc:ShareAlike,
+    so the present modelling is the only one the checker allows.'
+  action: none
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: 'The Japanese port has no separate disclaimer section: Article 6 is headed as the limitation
+    of liability and its first paragraph is the warranty disclaimer, its second the limitation of liability.
+    The record carried both paragraphs in dalicc:LiabilityLimitation and had no dalicc:WarrantyDisclaimer
+    at all, the only records of the batch without one. The first paragraph was moved into dalicc:WarrantyDisclaimer
+    and the liability field now holds the second paragraph, both quoted verbatim from the Japanese text.'
+  action: applied
+  change: |-
+    dalicc:LiabilityLimitation now holds the second paragraph of Article 6 only;
+    dalicc:WarrantyDisclaimer added with the first paragraph of Article 6.
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: The record has no dalicc:additionalClauses, so the clauses the ODRL policy cannot carry,
+    the reservation of unnamed rights, the downstream offer to recipients, the severability and entire
+    agreement paragraphs and the termination rule, are not visible in the record at all. The whole Creative
+    Commons family is modelled this way.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:Japan, which matches the country of the legal-code URL, and
+    dalicc:validityType is dalicc:perpetual, which matches the grant for the duration of copyright. Article
+    9 (governing law) provides that the licence is construed under Japanese law. Note that the jurisdiction
+    field records the legal home of the port, not a territorial limit on the grant: the grant itself is
+    worldwide.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The licence forbids technological protection measures and the vocabulary has no term for
+    it. Article 5: the licensee may not use the work or a derivative work with technological protection
+    measures that control access to or use of the work in a way that conflicts with the licence. Proposed
+    term: dalicc:applyTechnicalProtectionMeasures, an odrl:Action to be used as an odrl:Prohibition. Not
+    modelled, because bending an existing term would be worse than the gap.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The automatic termination of the licence on breach, and the survival of the definitions,
+    the disclaimer, the limitation of liability and the miscellaneous sections, have no vocabulary term.
+    Proposed term: dalicc:terminationOnBreach. The downstream offer to every recipient of the work has
+    none either. Proposed term: dalicc:downstreamOffer.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Article 3 closes with a moral-rights non-assertion: the licensor undertakes not to exercise
+    the author personal rights and the performer personal rights over uses made under the licence. Like
+    the Korean port and unlike the Australian, South African and German ports, the Japanese port binds
+    the licensor rather than the licensee, and this is not expressible with the present vocabulary.'
+  action: none
+- rubric: 8
+  severity: info
+  field: record
+  description: The Japanese 2.0 port carries no collecting-society or royalty-collection clause.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the forty one axioms of licensedata/dependencygraph/dg_default.ttl
+    reports no conflict, before and after the corrections, and the pre-review baseline listed none for
+    this record either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of Creative Commons Attribution-ShareAlike 4.0 International. After the 4.0 parents
+    were themselves corrected, the deontic model of this record is identical to the parent, statement
+    for statement, apart from odrl:target: the same permissions with the same duties, the same prohibitions
+    and the same set level duties. What differs is the jurisdiction, the language of the legal text and
+    the clause texts, and the version specific clauses of 2.0 that the model does not carry, chiefly the
+    express prohibition of sublicensing, the technological measures clause and the royalty collection
+    arrangements. The compatibility checker cannot tell this record from the other records of the BY-SA
+    element set, across all three versions and every jurisdiction the library holds.'
+  action: none
+family: 'Creative Commons 2.0 port: Japan (JP)'
+port_of: CC-BY-SA-4.0
+variant_kind: jurisdiction-port
+notes: 'The parent is the 4.0 International record of the same element set, since the library holds no
+  unported or International 2.0 record; the version difference, 2.0 against 4.0, is therefore part of
+  the port relation and not only the jurisdiction. The 2.0 text differs from 4.0 in substance as well:
+  it prohibits sublicensing expressly, it has no thirty day cure period for a breach, it has no sui generis
+  database rights clause, and it settles the royalty collection question per jurisdiction. None of that
+  is visible in the model. Nothing in this review is legal advice.'

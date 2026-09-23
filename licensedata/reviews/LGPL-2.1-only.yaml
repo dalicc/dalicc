@@ -1,0 +1,125 @@
+id: LGPL-2.1-only
+title: GNU Lesser General Public License v2.1 only
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/LGPL-2.1-only.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models version 2.1 of the GNU Lesser General Public License as the -only reading. Its
+  operative terms are those of version 2 of the Library GPL: the same numbered sections, the same whole-work
+  reciprocity as a license-wide cc:ShareAlike duty, the same duties on distribute, modify and derive, and the
+  same warranty and liability clauses. The one substantive difference is in the linking exception, where section
+  6 of version 2.1 adds the shared-library mechanism as an alternative way of meeting the condition.'
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Section 1 grants the verbatim-copy right ("You may copy and distribute verbatim copies of the
+    Library's complete source code as you receive it, in any medium") and section 2 the right to modify and
+    to distribute the modified work, so the record permits reproduce, distribute, modify, derive, display,
+    present, commercial use, derivative works and modified works. Section 1 also allows a fee for the physical
+    act of transferring a copy, so dalicc:chargeDistributionFee is permitted.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'Section 8 reads: "You may not copy, modify, sublicense, link with, or distribute the Library
+    except as expressly provided under this License." dalicc:sublicense is therefore prohibited, and so is
+    dalicc:ChangeLicense, because sections 1, 2c and 6 require the work and every work based on it to stay
+    under this License. The sibling records GPL-2.0-only, GPL-3.0-only and LGPL-3.0-only prohibit dalicc:ChangeLicense
+    but carry no sublicensing statement, so this record states one more prohibition than its siblings.'
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:promote is prohibited to stay with the four existing GNU records, which all carry it.
+    The text of this license has no trademark or endorsement clause, so the prohibition is a library convention
+    here and not text-supported. The review of GPL-2.0-only proposed removing it library-wide; the same question
+    applies to this record.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: Section 2c requires that "You must cause the whole of the work to be licensed at no charge to
+    all third parties under the terms of this License", which is whole-work reciprocity and not file-level
+    reciprocity, so cc:ShareAlike hangs off the odrl:Set itself, exactly as on GPL-2.0-only and LGPL-3.0-only.
+    cc:Attribution, cc:Notice and cc:SourceCode are duties on distribute, modify and derive (sections 1, 2
+    and 4), and dalicc:modificationNotice on modify and derive (section 2b, "cause the files modified to carry
+    prominent notices stating that you changed the files and the date of any change").
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyOrLiabilityAcceptance
+  description: 'Section 1 lets a redistributor sell its own warranty: "You may charge a fee for the physical
+    act of transferring a copy, and you may at your option offer warranty protection in exchange for a fee."
+    That is the clause dalicc:WarrantyOrLiabilityAcceptance is for. The existing GNU records leave it out although
+    their texts carry the same sentence, so the family is not uniform on this field.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: 'Section 6 (the linking exception: a work that uses the Library may be distributed under terms
+    of your choice if the conditions of that section are met) and section 7 (combined libraries) carry the
+    whole difference between this license and the GPL, and no deontic term can hold them. Both are quoted verbatim
+    in dalicc:additionalClauses, the way LGPL-3.0-only quotes the equivalent sections 4 and 5 of version 3.'
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system for the grant, so cc:jurisdiction stays dalicc:worldwide and
+    dalicc:validityType stays dalicc:perpetual. Section 12 allows the copyright holder to add a geographical
+    distribution limitation, but that is an option the licensor may take, not a limit this license imposes.
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Three clauses have no vocabulary term. Section 8 terminates the license automatically on breach
+    (proposed term: dalicc:terminatesOnBreach, a property over the existing dalicc:terminationOnBreach concept).
+    Section 11 forbids distribution where a patent claim would make royalty-free redistribution impossible
+    (proposed term: dalicc:patentFreedomCondition). Section 10 forbids imposing further restrictions on the
+    recipients (dalicc:addLimitation exists and could carry it, but no record uses it as a prohibition yet,
+    so it is left for the owner).'
+  action: none
+- rubric: 8
+  severity: info
+  field: dalicc:orLaterVersionOption
+  description: dalicc:orLaterVersionOption false records that this is the 2.1-only reading. Section 13 gives
+    the option of a later version only where the Library itself says "any later version", which is what the
+    -or-later SPDX id expresses; the library models that with this flag instead of a second record.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts. Share-alike is required
+    while dalicc:ChangeLicense is prohibited and odrl:grantUse is not permitted, so the share-alike rule of
+    the checker is not triggered.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following GPL-2.0-only and LGPL-3.0-only.
+    The license speaks of a software library throughout.
+  action: applied
+- rubric: 10
+  severity: info
+  field: record
+  description: The record follows GPL-2.0-only statement for statement, plus the linking exception in dalicc:additionalClauses
+    that LGPL-3.0-only carries for version 3. The two differences from the siblings are deliberate and are
+    described in the rubric 4 and rubric 6 findings.
+  action: none
+- rubric: 10
+  severity: info
+  field: dalicc:additionalClauses
+  description: 'Against LGPL-2.0-only the operative difference is section 6, which in version 2.1 offers five
+    ways of meeting the condition instead of four: option b, "Use a suitable shared library mechanism for linking
+    with the Library", is new, and the later options are renumbered. The preamble was rewritten and the license
+    renamed from Library to Lesser, which changes no obligation. Both differences are inside the quoted clause,
+    so the deontic models of the two records are identical.'
+  action: none
+family: GNU family
+port_of: null
+variant_kind: version
+notes: 'Modelled from the standalone text published by the Free Software Foundation. The warranty and liability
+  clauses are sections 15 and 16 quoted verbatim, with the section numbers dropped, as on GPL-2.0-only. The
+  deontic model is identical to LGPL-2.0-only by design: the two texts differ in the preamble, in the name
+  and inside the quoted linking exception.'

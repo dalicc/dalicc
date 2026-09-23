@@ -1,0 +1,126 @@
+id: NCGL-UK-2.0
+title: Non-Commercial Government Licence
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/NCGL-UK-2.0.txt
+text_retrieved: true
+verdict: corrected
+summary: 'The record models version 2.0 of the UK Non-Commercial Government Licence and models it well:
+  the non-commercial restriction, the attribution and notice duties and the onward-licensing rule are
+  all in place. Applied: the SPDX identifier, the trailing blank in the title and the non-endorsement
+  prohibition, which the three sibling government records carry and this one did not.'
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: The record carried no SPDX identifier although its own DALICC identifier is the SPDX list
+    identifier NCGL-UK-2.0 and its cc:legalcode is the SPDX seeAlso URL. Added.
+  action: applied
+  change: spdx:licenseId "NCGL-UK-2.0" ;
+- rubric: 1
+  severity: minor
+  field: dct:title
+  description: The title literal ended with a trailing blank, "Non-Commercial Government Licence ". Removed.
+  action: applied
+  change: dct:title "Non-Commercial Government Licence" ;
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'dalicc:CreativeWork, dcmitype:Dataset and dcmitype:Software. The software type is supported
+    by the definition: "Information means information protected by copyright or by database right (for
+    example, literary and artistic works, content, data and source code)".'
+  action: none
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: The permissions follow the freedoms list, copy, publish, distribute and transmit the Information,
+    adapt the Information, and exploit it for Non-Commercial purposes. dalicc:ModifiedWorks and cc:DerivativeWorks
+    are both present, which is what this licence grants and what the OGL 3.0 record lacked before this
+    pass.
+  action: none
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'cc:CommercialUse is prohibited, which the licence states twice: the grant is "for Non-Commercial
+    purposes only" and the not-permitted list adds "exercise any of the rights granted to you by this
+    licence in any manner that is primarily intended for or directed toward commercial advantage or private
+    monetary compensation." The definition of Non-Commercial purposes excludes a file-sharing exchange
+    without monetary compensation, which the model cannot express.'
+  action: none
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'The non-endorsement clause was not modelled: "This licence does not grant you any right
+    to use the Information in a way that suggests any official status or that the Information Provider
+    and/or Licensor endorse you or your use of the Information", and the exemptions list excludes logos,
+    crests, military insignia, the Royal Arms and trade marks. The library expresses this by prohibiting
+    dalicc:promote, which the other three government records of this batch already did. Added.'
+  action: applied
+  change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:promote ] ;"
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: dalicc:ChangeLicense is prohibited, which rests on the condition "ensure that any onward
+    licensing of the Information, for example when combined with other information, is for Non-Commercial
+    purposes only". The text restricts the terms of an onward licence rather than forbidding relicensing
+    outright, so the statement is an approximation, but it is the closest the vocabulary comes and it
+    errs on the safe side.
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: cc:Attribution and cc:Notice hang on odrl:distribute, odrl:modify and odrl:derive, which
+    matches the condition "acknowledge the source of the Information by including any attribution statement
+    specified by the Information Provider(s) and, where possible, provide a link to this licence", with
+    the default statement "Contains information licensed under the Non-Commercial Government Licence v2.0."
+    No duty is duplicated and none sits at the wrong level.
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: dalicc:WarrantyDisclaimer holds both paragraphs of the No warranty section, quoted verbatim.
+    As in the sibling records there is no separate dalicc:LiabilityLimitation and the exemptions list
+    is not carried.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: dalicc:worldwide and dalicc:perpetual match the grant, "a worldwide, royalty-free, perpetual,
+    non-exclusive licence". The governing law is the jurisdiction of the Information Provider's principal
+    place of business, for which the model has no field.
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The exemptions list and the automatic end of the rights on breach or on non-commercial
+    use have no terms. Proposed terms: dalicc:exemptedMaterial and dalicc:terminationOnBreach.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check reports no conflict, before and after the corrections.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The record is the non-commercial edition of the Open Government Licence, drafted from
+    the same template. Against OGL 3.0 it differs exactly where the documents differ: commercial exploitation
+    moves to the prohibitions, the onward-licensing condition appears, and the fee permissions and odrl:grantUse
+    are absent. It was also the only one of the four government records that already modelled the notice
+    duty, which is why it was used as the model for correcting the other three.'
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 5 finding 7 and consolidation decision 9: the record called
+    itself a dalicc:jurisdictionPortOf the Open Government Licence while its dalicc:variantKind said ''edition''.
+    The Non-Commercial Government Licence is an edition of the same licence for the same jurisdiction,
+    not a port of it, so the port relation is replaced by the general dct:isVersionOf and the variant
+    kind stays.'
+  action: applied
+family: Government licenses (United Kingdom, Canada)
+port_of: null
+variant_kind: edition
+notes: Version 2.0 of the NCGL is the current one and the record matches it. Nothing in this review is
+  legal advice.

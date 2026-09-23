@@ -1,0 +1,215 @@
+id: CreativeCommonsAttributionNoncommercialNoderivs30Brazil
+title: Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Brazil
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://creativecommons.org/licenses/by-nc-nd/3.0/br/legalcode
+text_retrieved: true
+verdict: corrected
+summary: 'The record models the BY-NC-ND element set of the Creative Commons 3.0 port for Brazil and the
+  grant and restriction sections support it: the attribution and notice duties hang on the acts that share
+  the work with the public, and the prohibitions follow the restrictions clause. The legal text was read
+  in Portuguese. Corrections applied: dct:source. What remains are proposals that touch the whole Creative
+  Commons family rather than this record, chiefly the express prohibition of sublicensing.'
+findings:
+- rubric: 1
+  severity: minor
+  field: dct:source
+  description: The record carried cc:legalcode but no dct:source. The legal code page of this port states
+    the canonical URL of the licence, https://creativecommons.org/licenses/by-nc-nd/3.0/br/, and the six
+    4.0 International parents carry exactly that pair, legal code plus deed. Added.
+  action: applied
+  change: dct:source <https://creativecommons.org/licenses/by-nc-nd/3.0/br/> ;
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: SPDX has no identifier for this port. The legal code URL implies CC-BY-NC-ND-3.0-BR, which
+    the SPDX licence list does not define, so none was invented. Of the thirty five records in this batch
+    only the six German ones take an SPDX identifier.
+  action: none
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: 'The record targets dalicc:CreativeWork, while the 4.0 International parent CC-BY-NC-ND-4.0
+    targets dalicc:CreativeWork and dcmitype:Dataset. This port has no database clause at all: it neither
+    licenses nor waives a sui generis database right, and its definition of the licensed subject matter
+    does not name databases, so the evidence that justified adding the type to the European ports of this
+    batch is missing here. Creative Commons licences are media neutral and the grant runs to all media
+    and formats now known or later devised, so the type is defensible on general grounds. Proposed, as
+    one decision over every Creative Commons port without a database clause.'
+  action: proposed
+  change: "odrl:target [ a odrl:AssetCollection ;\n        dct:type dalicc:CreativeWork,\n           \
+    \ dcmitype:Dataset ] ;"
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: The modelled permissions follow the grant. Section 3 (Concessao da licenca) grants "uma
+    licenca de abrangencia mundial, sem royalties, nao-exclusiva, perpetua (pela duracao do direito autoral
+    aplicavel)" covering reproduction, incorporation into Obras Coletivas and distribution and public
+    performance, and then forbids the making of derivative works outright. The record models this as odrl:reproduce,
+    odrl:distribute, odrl:display, odrl:present and dalicc:ModifiedWorks, with odrl:derive and cc:DerivativeWorks
+    moved to odrl:prohibition, which is the NoDerivatives pattern of the 4.0 parent CC-BY-NC-ND-4.0. cc:CommercialUse
+    is prohibited rather than permitted, which is the NonCommercial element.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'A NoDerivatives record that permits modification. The record permits odrl:modify with
+    an attribution, notice and modification notice duty, and permits dalicc:ModifiedWorks, while the licence
+    allows only the technically necessary format changes: Section 3 of the by-nd and by-nc-nd legal code:
+    "Os direitos acima incluem o direito de fazer as modificacoes que forem tecnicamente necessarias para
+    exercer os direitos em outras midias, meios e formatos, vedado contudo, o direito de fazer Obras Derivadas"
+    (the right to make derivative works is forbidden). The 4.0 International parent CC-BY-NC-ND-4.0 is
+    modelled the same way and its own review record carries the same finding, so this belongs in one sweep
+    over every NoDerivatives record of the library rather than in a change to this file. Recorded as major
+    because the text of this port is explicit. Not applied, pending the owner''s decision.'
+  action: proposed
+  change: "remove:\n  odrl:permission [ a odrl:Permission ;\n        odrl:action odrl:modify ;\n     \
+    \   odrl:duty [ a odrl:Duty ; odrl:action cc:Attribution ],\n            [ a odrl:Duty ; odrl:action\
+    \ cc:Notice ],\n            [ a odrl:Duty ; odrl:action dalicc:modificationNotice ] ] ;\n  odrl:permission\
+    \ [ a odrl:Permission ;\n        odrl:action dalicc:ModifiedWorks ] ;"
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: The licence forbids sublicensing and the record does not say so. "Voce nao pode sublicenciar
+    a Obra." Section 4(a). The vocabulary already has dalicc:sublicense, but no record in the library
+    uses it and its skos:note says so, and the same sentence stands in every Creative Commons 2.0 and
+    3.0 record, so adding it to the thirty five ports of this batch alone would split the compatibility
+    behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
+    note. Batches 3 and 6 made the same recommendation.
+  action: proposed
+  change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: the work may be shared
+    only under the terms of this licence and the licensee may not offer or impose terms that alter or
+    restrict it or the rights of downstream recipients. dalicc:promote is prohibited, which the 3.0 text
+    supports better than the 2.0 text did, because the no endorsement rule sits in the licence body rather
+    than in the Creative Commons notice printed around it. Section 4(d): "Voce nao podera implicita ou
+    explicitamente afirmar ou sugerir qualquer vinculo, patrocinio ou apoio do Autor Original, Titular
+    de Direitos Conexos, Licenciante e/ou Partes de Atribuicao". cc:CommercialUse is prohibited. Section
+    4(c): the rights granted may not be exercised in a way "intencionada ou direcionada a obtencao de
+    vantagem comercial ou compensacao monetaria privada", with the file sharing carve out where no payment
+    changes hands. odrl:derive and cc:DerivativeWorks are prohibited, which matches the NoDerivatives
+    grant.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The attribution and notice duties are present and supported: the licence requires a copy
+    of the licence or its URI with every copy shared, that the notices referring to the licence and to
+    the warranty clause be kept intact, and that credit be given, and in this port credit is owed to the
+    "Autor Original", the "Titular de Direitos Conexos", the "Licenciante" and the "Partes de Atribuicao",
+    and a derivative must be labelled, for example "A Obra original foi traduzida do Ingles para o Portugues".
+    The duties hang on odrl:distribute, which matches the licence, since they are triggered by distributing
+    or communicating the work to the public rather than by private use. In this element set the record
+    still hangs a dalicc:modificationNotice duty on odrl:modify, which is the modelling defect recorded
+    above.'
+  action: none
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: dalicc:chargeDistributionFee is permitted while cc:CommercialUse is prohibited. Under the
+    test of this port, the rights granted may not be exercised in a way "intencionada ou direcionada a
+    obtencao de vantagem comercial ou compensacao monetaria privada", with the file sharing carve out
+    where no payment changes hands, a pure cost recovery fee is arguable rather than plainly allowed.
+    The statement also sits in the 4.0 International parent CC-BY-NC-ND-4.0 and in every NonCommercial
+    record of the library, so this is one decision about the whole NonCommercial family rather than about
+    this record. Not applied.
+  action: proposed
+  change: "remove:\n  odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:chargeDistributionFee\
+    \ ] ;"
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation are quoted from the Portuguese
+    text of this port and not from the English unported version, each holds its own clause and nothing
+    of the other, and both were checked sentence by sentence against the legal code. Section 5 (Declaracoes,
+    garantias e exoneracao) is a disclaimer in capitals, "O LICENCIANTE OFERECE A OBRA NO ESTADO EM QUE
+    SE ENCONTRA (AS IS) E NAO PRESTA QUAISQUER GARANTIAS OU DECLARACOES DE QUALQUER ESPECIE RELATIVAS
+    A OBRA", and Section 6 (Limitacao de responsabilidade) is the liability clause. Each sits in its own
+    field.
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:additionalClauses
+  description: 'The clauses the ODRL policy cannot carry are not visible in the record: the reservation
+    of unnamed rights, the direct licence that every recipient receives from the licensor, the automatic
+    termination on breach with the survival list, the severability, waiver and entire agreement paragraphs,
+    and the royalty collection arrangements. The whole Creative Commons family is modelled this way, so
+    this is a family observation rather than a defect of this record.'
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'cc:jurisdiction is bpicounty:Brazil, which matches the country of the legal code URL https://creativecommons.org/licenses/by-nc-nd/3.0/br/legalcode,
+    and dalicc:validityType is dalicc:perpetual, which matches a grant for the duration of the applicable
+    copyright. Note that the jurisdiction field records the legal home of the port, not a territorial
+    limit: the grant itself is worldwide. The port names no governing law.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:prohibition
+  description: 'The licence forbids technological protection measures and the vocabulary has no term for
+    it. Section 4(a): the Licensee may not "impor qualquer medida tecnologica eficaz a Obra que restrinja
+    a possibilidade do destinatario exercer os direitos concedidos a ele sob os termos desta Licenca".
+    Proposed term: dalicc:applyTechnicalProtectionMeasures, an odrl:Action to be used as an odrl:Prohibition.
+    Not modelled, because bending an existing term would be worse than the gap.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Two clauses of the licence body have no vocabulary term. Section 7 (Terminacao): automatic
+    termination on breach, downstream licences survive, the named sections survive. Proposed term: dalicc:terminationOnBreach.
+    Section 8 (Outras disposicoes): every distribution or public performance carries an offer of a licence
+    from the Licensor to the recipient on the same terms. Proposed term: dalicc:downstreamOffer.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Moral rights have no vocabulary term, in either direction. Section 4: "Na extensao em
+    que reconhecidos e considerados indisponiveis pela legislacao aplicavel, direitos morais nao sao afetados
+    por esta Licenca", the deferring formula, which in Brazilian law reaches a long and non waivable list.
+    Proposed terms: dalicc:moralRightsRestriction for a clause that binds the licensee and dalicc:moralRightsNonAssertion
+    for one in which the licensor undertakes not to assert them.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The royalty collection arrangement has no vocabulary term. Section 4 has a single royalty
+    paragraph, and it is the only clause in this batch that names collecting societies: the Licensor reserves
+    the right to collect royalties individually or, where it is a member of a collective management society,
+    "por exemplo, ECAD, ASCAP, BMI, SESAC", through that society, for any exercise of the rights that
+    is for a commercial purpose or use as defined in the NonCommercial clause. Proposed term: dalicc:royaltyCollectionReserved,
+    with a counterpart for the waiver. It is one of the few places where the ports of one version really
+    differ from each other.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the forty one axioms of licensedata/dependencygraph/dg_default.ttl
+    reports no conflict, before and after the corrections, and the pre review baseline listed none for
+    this record either.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Port of CC-BY-NC-ND-4.0, the 4.0 International record of the same element set. The deontic
+    model of this record is identical to the parent, statement for statement: the same permissions with
+    the same duties, the same prohibitions and the same set level duties, while odrl:target still differs
+    by dcmitype:Dataset. What differs is the jurisdiction, the language of the legal text, the clause
+    texts and the version specific clauses of 3.0 that the model does not carry, chiefly the express prohibition
+    of sublicensing, the technological measures clause, the royalty collection arrangement and the moral
+    rights clause. The compatibility checker cannot tell this record from the other records of the BY-NC-ND
+    element set, across all three versions and every jurisdiction the library holds.'
+  action: none
+family: 'Creative Commons 3.0 port: Brazil (BR)'
+port_of: CC-BY-NC-ND-4.0
+variant_kind: jurisdiction-port
+notes: 'The parent is the 4.0 International record of the same element set, since the library holds no
+  unported and no International 3.0 record; the version difference, 3.0 against 4.0, is therefore part
+  of the port relation and not only the jurisdiction. The 3.0 text differs from 4.0 in substance as well:
+  it prohibits sublicensing expressly, it forbids technological protection measures, it has no thirty
+  day cure period for a breach, and it settles the royalty collection question and the moral rights question
+  per jurisdiction. None of that is visible in the model. This port is a translation as well as a jurisdiction
+  port, so dalicc:translationOf would fit it when the term exists. Nothing in this review is legal advice.'

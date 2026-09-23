@@ -1,0 +1,132 @@
+id: DeveloperLicense
+title: Developer License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: http://www.nationalarchives.gov.uk/documents/information-management/developer-licence.pdf
+text_retrieved: true
+verdict: corrected
+summary: 'The legal text was listed as unavailable before the review; the PDF was fetched and converted, so
+  the record could be checked. The document is the National Archives Developer Licence 2.0, a template for
+  a free, time-limited, revocable evaluation licence based on the Data Exploration Licence for the Geospatial
+  Commission Partner Bodies. Applied: the validity type, which said perpetual for a licence that runs twelve
+  months. The distribution permission contradicts the restrictions and is proposed for removal.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: SPDX has no entry for this licence. cc:legalcode and dct:source point at the PDF at the National
+    Archives, which resolves and is what was read.
+  action: none
+- rubric: 1
+  severity: minor
+  field: dct:alternative
+  description: The record has no dct:alternative, so keyword search finds it only by its exact title, and the
+    title in the document is "Developer Licence 2.0" with the British spelling while the record says "Developer
+    License". Proposed rather than applied, because the record identifier and the title are published values.
+  action: proposed
+  change: "dct:alternative \"Developer Licence\",\n        \"Developer Licence 2.0\",\n        \"UK Developer\
+    \ Licence\" ;"
+- rubric: 2
+  severity: minor
+  field: odrl:target
+  description: The asset collection included dcmitype:Software. The subject of this licence is Exploration
+    Data, defined as data made available for research and development; unlike the other National Archives records,
+    whose definition of Information names source code expressly, this document never mentions software. Removed,
+    under the owner's decision that asset types follow the legal text.
+  action: applied
+  change: "odrl:target [ a odrl:AssetCollection ;\n        dct:type dalicc:CreativeWork,\n            dcmitype:Dataset\
+    \ ] ;"
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'odrl:distribute is permitted, which the licence forbids: "Unless we expressly permit you to
+    do so above, you will not make any Exploration Data available to third parties or create any products or
+    services which have benefitted from, relied on or made any use of Exploration Data". The only exception
+    is providing prototypes to potential customers or investors, with prior agreement and on equivalent terms,
+    which is a narrow permission and not general distribution. Proposed for removal rather than applied, because
+    the prototype exception means the answer is not simply no and the owner should decide how to model a permission
+    that needs the licensor''s consent.'
+  action: proposed
+  change: "remove:\n    odrl:permission [ a odrl:Permission ;\n            odrl:action odrl:distribute ;\n\
+    \            odrl:duty [ a odrl:Duty ;\n                    odrl:action cc:Attribution ] ]"
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'The other permissions are supported by the permitted actions: evaluating the data, using it
+    to research and develop ideas, displaying it or creating working prototypes on the licensee''s own equipment,
+    using it in live trials inside the organisation for up to three months, and using small extracts at hackathons
+    and in articles.'
+  action: none
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'cc:CommercialUse, dalicc:chargeDistributionFee and dalicc:chargeLicenseFee are prohibited,
+    which the licence supports: it is free of charge and any use beyond evaluation needs a separate commercial
+    licensing arrangement. cc:DerivativeWorks and dalicc:ModifiedWorks are prohibited, which matches the ban
+    on creating products or services that have made use of the data. dalicc:promote rests on "this doesn''t
+    mean you can use [Licensor] branding or trademarks or anything that can be confused with them".'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: cc:Attribution, cc:Notice and dalicc:modificationNotice are attached to the acts the record
+    permits, which matches the requirement to "Acknowledge that you're using Exploration Data and that you're
+    doing so in the right way by using [insert details of any acknowledgement statement]".
+  action: none
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: 'dalicc:WarrantyDisclaimer is clause 5, No Warranty, quoted verbatim including the [Licensor]
+    placeholders of the template. Clause 6, Liabilities, is not carried, and neither are the requirements in
+    the Main Terms: registering with the licensor, returning or destroying prototypes within seven days, keeping
+    the data secure and keeping records open to inspection.'
+  action: none
+- rubric: 7
+  severity: major
+  field: dalicc:validityType
+  description: 'dalicc:validityType said dalicc:perpetual. The licence is not perpetual: it "lets you use [Licensor]
+    Data for 12 months", renews automatically unless either party ends it, ends automatically 24 months after
+    the last request for updates, grants a "revocable licence" and can be terminated by either party with immediate
+    effect. Changed to dalicc:specifyPeriod, the vocabulary term the composer already writes for a licence
+    granted for a period.'
+  action: applied
+  change: dalicc:validityType dalicc:specifyPeriod ;
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Most of this licence is outside the deontic vocabulary: the obligation to register before access,
+    the duty to return or destroy the data and any prototypes at the end, the security and record keeping duties,
+    the audit right, the feedback duty and the ban on retaining the output of a live trial. Proposed terms:
+    dalicc:registerBeforeUse, dalicc:destroyOnTermination, dalicc:keepSecure, dalicc:keepRecords, dalicc:auditRight,
+    dalicc:provideFeedback.'
+  action: none
+- rubric: 9
+  severity: minor
+  field: record
+  description: 'The consistency check reports one conflict, the same one the pre-review baseline listed: odrl:derive
+    is permitted while cc:DerivativeWorks is prohibited, and the dependency graph derives that odrl:derive
+    implies cc:DerivativeWorks. Checked against the text: the licence does allow the licensee to build prototypes
+    from the data and does forbid supplying any product or service that has made use of it, so the two statements
+    together are a fair reading of the document and the conflict is an artefact of a dependency graph that
+    cannot separate making a derivative from publishing one. Two ways out: drop the odrl:derive permission,
+    which loses information, or split the axiom so that odrl:derive implies cc:DerivativeWorks only where distribution
+    is permitted. Left to the owner; nothing was changed.'
+  action: proposed
+  change: "option A, remove:\n    odrl:permission [ a odrl:Permission ;\n            odrl:action odrl:derive\
+    \ ; ... ]\noption B, weaken the axiom derive implies DerivativeWorks in licensedata/dependencygraph/dg_default.ttl"
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The document says of itself: "This United Kingdom Government Licensing Framework (UKGLF) licence
+    is based on the Data Exploration Licence for the Geospatial Commission Partner Bodies (V2)", which is the
+    other Ordnance Survey record in this batch. The two records are modelled differently, mostly because DataExplorationLicence
+    carried every statement twice and prohibited display and present while this one permits them. Both now
+    need the same decision on the derive conflict.'
+  action: none
+family: Government licenses (United Kingdom, Canada)
+port_of: DataExplorationLicence
+variant_kind: edition
+notes: 'The batch input listed this record as text-unavailable, no source retrieved. The PDF at the cc:legalcode
+  URL was retrieved and read for this review. The document is a template with [Licensor] placeholders rather
+  than a licence granted by a named body, which is worth saying on the site: a user cannot receive data under
+  this record as it stands. Nothing in this review is legal advice.'

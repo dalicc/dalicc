@@ -1,0 +1,94 @@
+id: Beerware
+title: Beerware License
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://fedoraproject.org/wiki/Licensing/Beerware
+text_retrieved: true
+verdict: created
+summary: Models the two-sentence Beerware licence. Everything is permitted as long as the notice stays with the file,
+  so the record carries one duty, cc:Notice, on the acts that hand the work on. The beer sentence is a request and
+  not a condition, so it is quoted and not modelled. The text has no warranty and no liability clause at all.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all Beerware.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software. The licence is written as a comment header
+    of a source file.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant reads "As long as you retain this notice you can do whatever you want with this stuff". The
+    record therefore permits reproduce, distribute, modify, derive, display, present, sublicense, commercial use,
+    derivative works, modified works, the distribution fee and the licence fee. Nothing is carved out of "whatever
+    you want".
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: dalicc:ChangeLicense is permitted and carries the dalicc:compliantLicense duty, because the one condition,
+    the notice, has to survive the relicensing.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: No prohibitions. The text has no trademark, endorsement or advertising clause, so dalicc:promote is
+    not prohibited although most permissive records carry it. MIT-0 records the same silence.
+  action: none
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:Notice hangs off odrl:distribute, odrl:modify and odrl:derive, and is the whole of the licence:
+    "As long as you retain this notice". There is no separate attribution clause, so cc:Attribution is not used.'
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: The beer sentence, "If we meet some day, and you think this stuff is worth it, you can buy me a beer
+    in return", is not a duty. It is optional on its face, and the Fedora note on the text says that a mandatory version
+    would make the licence non-free. It is quoted in dalicc:additionalClauses.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: No dalicc:WarrantyDisclaimer and no dalicc:LiabilityLimitation. The text has neither clause. The absence
+    of the property says the text is silent, not that the author gave a warranty.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: info
+  field: dalicc:additionalClauses
+  description: 'The beer request is quoted rather than modelled. It is not a vocabulary gap: a request that binds
+    nobody has no deontic statement to make.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: The nearest sibling is MIT-0, which also has no prohibition. The difference is that MIT-0 has no duty
+    either, while Beerware keeps the notice, so this record carries cc:Notice and permits dalicc:ChangeLicense with
+    the dalicc:compliantLicense duty rather than with none.
+  action: none
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: The text was taken from the Fedora licensing page, which reproduces the original file header and carries the
+  note about the optional beer clause. cc:legalcode points at that page and dct:source at the SPDX page. The name
+  Poul-Henning Kamp appears inside the quoted licence text, where the original runs the signature on from the last
+  sentence.

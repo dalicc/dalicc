@@ -1,0 +1,56 @@
+id: OdcPublicDomainDedicationAndLicence
+title: ODC Public Domain Dedication and Licence (PDDL)
+current_version: 3
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 clause text and 1 identification detail and recorded
+    the review state.
+  changes:
+  - action: added
+    statement: 'dalicc:additionalClauses "Licence of Copyright and Database Rights when Sections 3.1
+      and 3.2 inapplicable. If the dedication and waiver in Sections 3.1 and 3.2 does not apply in
+      the relevant jurisdiction under Section 6.4, the Rightsholder and You agree as follows: The
+      Licensor grants to You a worldwide, royalty-free, non-exclusive, licence to Use the Work for
+      the duration of any applicable Copyright and Database Rights. These rights explicitly include
+      commercial use, and do not exclude any field of endeavour."'
+    reason: Section 3.3, the licence that applies where the dedication and the waiver are ineffective,
+      was missing. It is the operative clause in those jurisdictions and it repeats that the rights
+      "explicitly include commercial use, and do not exclude any field of endeavour". Quoted verbatim
+      into dalicc:additionalClauses, in the same way as the fallback clause of CC0.
+    source: review-finding 6/dalicc:additionalClauses
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: spdx:licenseId "PDDL-1.0"
+    reason: The record carried no SPDX identifier. Its cc:legalcode, https://opendatacommons.org/licenses/pddl/1.0/,
+      is the seeAlso URL of the SPDX entry PDDL-1.0, and the fetched document is headed "Open Data
+      Commons Public Domain Dedication and License (PDDL) v1.0". The proposal file rated this medium;
+      the version in the document confirms it. Added.
+    source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Family rule 14 of scripts/review/family_rules.py: the warranty literal carried a padding
+    space inside its quotation marks.'
+  changes:
+  - action: changed
+    statement: dalicc:WarrantyDisclaimer "The Work is provided by the Rightsholder “as is” and without
+      any warranty of any kind, either express or implied, whether of title, of accuracy or completeness,
+      of the presence of absence of errors, of fitness for purpose, or otherwise. Some jurisdictions
+      do not allow the exclusion of implied warranties, so this exclusion may not apply to You."
+    previous: dalicc:WarrantyDisclaimer " The Work is provided by the Rightsholder “as is” and without
+      any warranty of any kind, either express or implied, whether of title, of accuracy or completeness,
+      of the presence of absence of errors, of fitness for purpose, or otherwise. Some jurisdictions
+      do not allow the exclusion of implied warranties, so this exclusion may not apply to You."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

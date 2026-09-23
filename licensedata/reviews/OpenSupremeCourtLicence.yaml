@@ -1,0 +1,146 @@
+id: OpenSupremeCourtLicence
+title: Open Supreme Court Licence
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: http://www.nationalarchives.gov.uk/doc/open-supreme-court-licence/version/1/open-supreme-court-licence-version-1.0.pdf
+text_retrieved: true
+verdict: corrected
+summary: 'The legal text was listed as unavailable before the review because it is published only as a
+  PDF. It was fetched and converted for this review, so the record could be checked against the text after
+  all. The licence is the Open Government Licence pattern with four extra conditions specific to court
+  information. Applied: the licence-notice duty, the modified-works permission and the extra conditions
+  as clause text.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: SPDX has no entry for this licence, so no identifier was invented. cc:legalcode and dct:source
+    point at the PDF of version 1.0 at the National Archives and both resolve; the PDF is what was read
+    for this review.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'The asset collection is dalicc:CreativeWork, dcmitype:Dataset and dcmitype:Software. The
+    family-rule baseline flags the software type on the National Archives records as suspect; the text
+    settles it in favour of keeping it: the licence defines "Information" as "information protected by
+    copyright or by database right (for example, literary and artistic works, content, data and source
+    code)", the same definition as OGL 3.0, so source code is expressly in scope.'
+  action: none
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'The permissions follow the freedoms list: copy, publish, distribute and transmit the Information;
+    adapt the Information; and exploit it commercially and non-commercially. odrl:grantUse, dalicc:chargeDistributionFee
+    and dalicc:chargeLicenseFee all rest on the commercial exploitation freedom and on the absence of
+    any onward-licensing restriction. dalicc:noWarrantyNotice rests on the no-warranty section.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: dalicc:ModifiedWorks, distributing a modified version and making it available to the public,
+    was missing although the licence permits adapting the Information and publishing, distributing and
+    transmitting it in the same list, and the sibling record NCGL-UK-2.0 carries the permission on the
+    identical wording. Added.
+  action: applied
+  change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:ModifiedWorks ] ;"
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The licence requires two things when the information is used and the record modelled only
+    one. Section "You must (where you do any of the above)": "acknowledge the source of the Information
+    by including the following attribution statement and, where possible, provide a link to this licence;
+    Contains Supreme Court information licensed under the Open Supreme Court Licence v1.0." cc:Attribution
+    was attached to cc:DerivativeWorks and odrl:distribute; cc:Notice was missing everywhere, although
+    the attribution statement is itself a licence notice and the licence asks for a link to itself. Added
+    next to cc:Attribution in both permissions, which is how the sibling record NCGL-UK-2.0 models the
+    same sentence.'
+  action: applied
+  change: "odrl:duty [ a odrl:Duty ;\n        odrl:action cc:Notice ] ;   # added to the cc:DerivativeWorks\
+    \ and odrl:distribute permissions"
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: cc:ShareAlike is modelled as an odrl:Prohibition. Nothing in the text forbids the licensee
+    from placing an adaptation under a share-alike licence; the opposite is true, the licence states that
+    its terms are compatible with the Creative Commons Attribution License 4.0 and with the Open Data
+    Commons Attribution License. In ODRL a prohibition says the licensee must not do the act, so this
+    statement asserts something the licence does not say, and it changes every compatibility answer against
+    a share-alike licence. The family-rule baseline raises the same point for permissive software licences
+    under rule 5b. Proposed for removal, together with the two sibling records that carry the identical
+    block.
+  action: proposed
+  change: "remove:\n    odrl:prohibition [ a odrl:Prohibition ;\n            odrl:action cc:ShareAlike\
+    \ ]"
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: 'dalicc:addStatement is modelled as an odrl:Prohibition, which the vocabulary reads as:
+    the licensee must pass the licence on unchanged and may not attach additional terms or notices. The
+    licence says the opposite in its permission list, the information may be combined with other information
+    or included in the licensee''s own product or application, and it imposes no pass-through condition
+    at all. Proposed for removal.'
+  action: proposed
+  change: "remove:\n    odrl:prohibition [ a odrl:Prohibition ;\n            odrl:action dalicc:addStatement\
+    \ ]"
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: 'The licence carries four conditions that no deontic term can express and the record carried
+    none of them: the non-endorsement rule, the duty not to mislead or misrepresent the information or
+    its source, the duty to have regard to the dignity of the Court and to its function as a working body
+    and not to jeopardise the proper administration of justice, and the duty not to breach the Data Protection
+    Act 1998 or the Privacy and Electronic Communications (EC Directive) Regulations 2003. Quoted verbatim
+    into dalicc:additionalClauses so that they are at least visible in the record.'
+  action: applied
+  change: 'dalicc:additionalClauses """You must (where you copy, publish, distribute, transmit, adapt
+    or exploit the Information): ... do not present the Information in a way that does not have regard
+    to the dignity of the Court ...""" ;'
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: dalicc:WarrantyDisclaimer holds both paragraphs of the No warranty section, quoted verbatim.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: dalicc:worldwide and dalicc:perpetual match the grant, "a worldwide, royalty-free, perpetual,
+    non-exclusive licence". The licence adds "This licence is governed by the laws of England and Wales",
+    which the model has no field for.
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The conditions now held as clause text are the gap: a duty not to misrepresent the source,
+    a duty of respect towards an institution and a data-protection compliance duty have no terms. Proposed
+    terms: dalicc:noMisrepresentation, dalicc:respectInstitutionalDignity, dalicc:dataProtectionCompliance.
+    The exemptions list and the automatic end of the rights on breach share the gaps recorded for OGL
+    3.0.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check reports no conflict, before and after the corrections.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'The record is the Supreme Court edition of the Open Government Licence: the freedoms list,
+    the no-warranty section and the definitions are word for word those of OGL 3.0, with the attribution
+    statement and the four court-specific conditions changed. Modelling it identically to OGL 3.0 is therefore
+    right, and the additional clauses are the only place where the records should differ.'
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 5 finding 7, applied to the third record of the Open Government
+    Licence family: the unsupported cc:ShareAlike and dalicc:addStatement prohibitions are removed and
+    the database right the licence covers is stated.'
+  action: applied
+family: Government licenses (United Kingdom, Canada)
+port_of: UkOpenGovernmentLicenseForPublicSectorInformation
+variant_kind: edition
+notes: The batch input listed this record as text-unavailable, pdf-not-fetched. The PDF at the cc:legalcode
+  URL was retrieved and read for this review, so the verdict is corrected rather than text-unavailable.
+  Nothing in this review is legal advice.

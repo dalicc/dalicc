@@ -1,0 +1,62 @@
+id: BSD-3-Clause
+title: The 3-Clause BSD License
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/BSD-3-Clause.txt
+text_retrieved: true
+verdict: corrected
+summary: The record models the three-clause BSD license, adding the endorsement prohibition that distinguishes
+  it from the two-clause variant. It had no link to the license text at all and no warranty disclaimer;
+  both were added from the text.
+findings:
+- rubric: 1
+  severity: major
+  field: cc:legalcode
+  description: The record had no cc:legalcode, so nothing in it pointed at the license text. Added the
+    Open Source Initiative URL that dct:source already used.
+  action: applied
+  change: 'cc:legalcode osl:BSD-3-Clause ;
+
+    '
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The disclaimer paragraph was missing although every sibling record carries it. Added, quoted
+    from the text.
+  action: applied
+  change: 'dalicc:WarrantyDisclaimer "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+    \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES ..." ;
+
+    '
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'dalicc:promote is prohibited and clause 3 supports it: "Neither the name of the copyright
+    holder nor the names of its contributors may be used to endorse or promote products derived from this
+    software without specific prior written permission."'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:ChangeLicense is prohibited although the text places no restriction on the terms
+    a licensee may redistribute under. Same family-level decision as in BSD-2-Clause.
+  action: proposed
+  change: "# remove\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:ChangeLicense\
+    \ ] ;\n"
+- rubric: 1
+  severity: minor
+  field: dct:publisher
+  description: No dct:publisher, as in BSD-2-Clause.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
+    its new siblings and versioned. Batch 3 finding 5: the disclaimer paragraph held both the warranty
+    sentence and the liability sentence. It is split at ''IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS
+    BE LIABLE'', as the six new BSD records split it.'
+  action: applied
+family: BSD family (0BSD, 2, 3 and 4 clause)
+port_of: null
+variant_kind: version
+notes: The record now has a legal-code link for the first time.

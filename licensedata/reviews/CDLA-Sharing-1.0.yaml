@@ -1,0 +1,129 @@
+id: CDLA-Sharing-1.0
+title: Community Data License Agreement Sharing 1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://spdx.org/licenses/CDLA-Sharing-1.0.html'
+text_retrieved: true
+verdict: created
+summary: >-
+  The reciprocal Community Data License Agreement: the data and any enhanced data must be
+  published under this same agreement, unmodified, with the credit preserved and the changed
+  files marked. The record carries cc:ShareAlike on odrl:distribute and odrl:derive rather
+  than licence-wide, because the reciprocity is triggered by publication and not by use, and
+  it prohibits dalicc:ChangeLicense, which its permissive sibling permits.
+findings:
+- rubric: 1
+  severity: minor
+  field: 'spdx:licenseId'
+  description: >-
+    The record carries the SPDX id CDLA-Sharing-1.0 and the SPDX name as dct:title, with the
+    long dashes of the licence's own name replaced by plain hyphens in dct:alternative.
+  action: applied
+- rubric: 2
+  severity: major
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Dataset and dalicc:CreativeWork, for the same reason as on the
+    CDLA-Permissive-1.0 record: Data is "the information (including copyrightable information,
+    such as images or text)".
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    The grant of section 2.1 is word for word that of the permissive agreement, "a worldwide,
+    non-exclusive, irrevocable (except as provided in Section 5) right to: (a) Use Data; and
+    (b) Publish Data", and section 2.2 licenses the Sui Generis Database Rights. The record
+    permits the same acts as the CDLA-Permissive-1.0 record, with
+    dalicc:suiGenerisDatabaseRights, dalicc:moralRightsNonAssertion and dalicc:sublicense, the
+    last because section 3.1(a) requires the data to be published under this same agreement,
+    which is passing the licence on unchanged.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    Two prohibitions. dalicc:ChangeLicense comes from section 3.3: "If You Publish Data You
+    Receive, You must do so under an unmodified form of this Agreement ... You may not modify
+    this Agreement or impose any further restrictions on the exercise of the rights granted
+    under this Agreement". dalicc:patentRetaliationTermination comes from section 5.2, as on
+    the permissive record, and is again wider than its name: any litigation based on the Data
+    ends the rights.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    cc:ShareAlike hangs off odrl:distribute and odrl:derive, not off the odrl:Set, because the
+    reciprocity attaches to publication: "The Data (including the Enhanced Data) must be
+    Published under this Agreement in accordance with this Section 3". Using or modifying the
+    data privately triggers nothing, which is why odrl:modify carries cc:Attribution,
+    cc:Notice and dalicc:modificationNotice but no cc:ShareAlike. The attribution and notice
+    duties are those of the permissive agreement.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyDisclaimer'
+  description: >-
+    Sections 6.1 and 6.2 go into dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation.
+    dalicc:additionalClauses carries the grant, the five conditions of section 3, including
+    the no-deterrence clause and the ledger sentence, the representations, both termination
+    clauses, the compliance and moral rights paragraphs and the definition of Sui Generis
+    Database Rights.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    cc:jurisdiction stays dalicc:worldwide, from section 2.1, and dalicc:validityType
+    dalicc:perpetual. The agreement names no governing law.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Section 3.2 forbids restricting or deterring a recipient from publishing the data publicly
+    or from recording it in a designated Ledger. Neither the no-deterrence duty nor the ledger
+    has a term; both are quoted. Proposed term dalicc:publicationNonObstruction.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Section 3.3 also forbids imposing further restrictions, including a restriction on
+    commercial or non-commercial use or a limitation to a platform, technology or field of
+    endeavour. dalicc:addLimitation exists but is used by no record as a prohibition, which
+    batch 1 already raised as an open question, so it was not written; the clause is quoted.
+  action: none
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Section 5.1 terminates the rights on an uncured material breach and keeps what was
+    published before alive. Quoted; proposed terms dalicc:terminatesOnBreach and
+    dalicc:sublicenseSurvival.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Family: CDLA-Sharing-1.0 is CDLA-Permissive-1.0 with section 3.1(a) turned round.
+    Everything else, the definitions, the grant, the warranty and liability sections and the
+    litigation termination, is shared, and the two records differ in exactly three statements:
+    the share-alike duties, the dalicc:ChangeLicense prohibition and the absence of a
+    dalicc:ChangeLicense permission.
+  action: none
+family: Community Data License Agreement
+port_of: null
+variant_kind: null
+notes: >-
+  Modelled from the SPDX plain text, read as a difference against the CDLA-Permissive-1.0
+  text. cc:legalcode points at the agreement on the steward's own site, dct:source at the SPDX
+  page. The long dashes in the name of the agreement are written as plain hyphens.

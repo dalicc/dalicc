@@ -1,0 +1,45 @@
+id: SunPublicLicenseVersion10
+title: SUN PUBLIC LICENSE Version 1.0
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail and 1 license-wide duty,
+    removed 1 permission and 1 prohibition and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: duty cc:ShareAlike
+    reason: Section 3.1 states that "The Modifications which You create or to which You contribute
+      are governed by the terms of this License, including without limitation Section 2.2." That is
+      a duty. Removed the cc:ShareAlike permission and added a license-wide cc:ShareAlike duty.
+    source: review-finding 5/odrl:permission
+  - action: removed
+    statement: permission cc:ShareAlike with duties [cc:Notice, cc:SourceCode]
+    reason: Section 3.1 states that "The Modifications which You create or to which You contribute
+      are governed by the terms of this License, including without limitation Section 2.2." That is
+      a duty. Removed the cc:ShareAlike permission and added a license-wide cc:ShareAlike duty.
+    source: review-finding 5/odrl:permission
+  - action: removed
+    statement: prohibition odrl:grantUse
+    reason: Sections 2.1(b) and 2.2(b) grant the right to "use, reproduce, modify, display, perform,
+      sublicense and distribute the Original Code (or portions thereof) with or without Modifications".
+      The record prohibited odrl:grantUse. Removed the prohibition; the matching permission is held
+      back by the same dependency-graph axiom as in OSL-3.0.
+    source: review-finding 3/odrl:prohibition
+  - action: added
+    statement: spdx:licenseId "SPL-1.0"
+    reason: 'Added SPL-1.0. Verified rather than assumed: cc:legalcode and dct:source already point
+      at the Open Source Initiative page for SPL-1.0 and the fetched text is the Sun Public License
+      version 1.0.'
+    source: review-finding 1/spdx:licenseId

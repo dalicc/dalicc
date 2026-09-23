@@ -1,0 +1,101 @@
+id: CDDL-1.1
+title: Common Development and Distribution License 1.1
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://javaee.github.io/glassfish/LICENSE'
+text_retrieved: true
+verdict: created
+summary: >-
+  Models the second version of the Common Development and Distribution License, the later
+  version of the text the library holds as CommonDevelopmentAndDistributionLicense10. Review
+  decision 10 aligned the 1.0 record with MPL-2.0 and this record keeps that alignment.
+  Nothing here is legal advice.
+findings:
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 2.1(a) grants rights "under intellectual property rights (other than patent or
+    trademark) Licensable by Initial Developer, to use, reproduce, modify, display, perform,
+    sublicense and distribute the Original Software", so dalicc:sublicense is a permission,
+    and 2.1(b) and 2.2(b) grant patent licences, so dalicc:patentGrant is a permission. The
+    existing 1.0 record carries neither statement although the 1.0 text has the same two
+    clauses; it was not edited.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    The grant excludes trademark rights, so dalicc:promote is a prohibition. Section 6.2 ends
+    the grant sixty days after a patent claim is asserted, modelled as
+    dalicc:patentRetaliationTermination and quoted. dalicc:ChangeLicense is prohibited for the
+    covered software in Source Code form.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    The reciprocity of this licence is file level, not whole work: the Source Code form of the
+    covered code must stay under this licence, while a Larger Work combining it with other
+    code may be distributed as a single product. The record therefore attaches cc:ShareAlike
+    to odrl:distribute, odrl:modify and odrl:derive rather than to the odrl:Set, which is the
+    shape the existing CommonDevelopmentAndDistributionLicense10 record uses. cc:SourceCode,
+    cc:Notice and cc:Attribution hang off the same three acts, and dalicc:modificationNotice
+    off odrl:modify and odrl:derive.
+  action: applied
+- rubric: 6
+  severity: major
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Quoted verbatim: section 3.5, under which "You may distribute the Executable form of the
+    Covered Software under the terms of this License or under the terms of a license of Your
+    choice"; the whole of section 6, including the patent retaliation and the survival of end
+    user licences; and section 9, which carries the applicable-law, venue and export-control
+    sentences. The warranty and liability sections use the curly quotation marks of the source
+    and are quoted word for word.
+  action: applied
+- rubric: 7
+  severity: minor
+  field: 'cc:jurisdiction'
+  description: >-
+    Section 9 defers the governing law to "the jurisdiction specified in a notice contained
+    within the Original Software", so the licence names no legal system of its own.
+    cc:jurisdiction stays dalicc:worldwide and the clause is quoted. Section 9 also places
+    export-control compliance on the licensee, which is quoted rather than modelled.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Two clauses have no vocabulary term. Automatic termination on breach with a cure period is
+    a policy quality with no property to hang it on; proposed term dalicc:terminatesOnBreach
+    as a property over the existing dalicc:terminationOnBreach concept. The survival of
+    validly granted end user licences after termination has no term either; proposed term
+    dalicc:sublicenseSurvival. Both clauses are quoted in dalicc:additionalClauses.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the dependency graph dg_default
+    returned an empty conflict list. cc:ShareAlike is required and dalicc:ChangeLicense is
+    prohibited, which is the combination the check expects; asserting both cc:ShareAlike and a
+    dalicc:ChangeLicense permission would have been reported as a direct conflict.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: >-
+    Follows licensedata/licenses/CommonDevelopmentAndDistributionLicense10.ttl. The 1.1 text
+    differs from 1.0 in naming Oracle rather than Sun as license steward, in section 4.3 on
+    modified versions of the licence itself, and in deferring the governing law to a notice in
+    the Original Software instead of fixing it. None of that changes the deontic model, so the
+    two records differ only by the patent and sublicence statements this record adds and by
+    the quoted clause text.
+  action: applied
+family: Mozilla and CDDL
+port_of: null
+variant_kind: version
+notes: >-
+  cc:legalcode points at the GlassFish copy of the text, which answers today; the older
+  java.net URL SPDX lists first does not.

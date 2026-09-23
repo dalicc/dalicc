@@ -1,0 +1,117 @@
+id: SSPL-1.0
+title: Server Side Public License, v 1
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/SSPL-1.0.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models the Server Side Public License, version 1. The text is the GNU General Public License version
+  3 with one section replaced: where the GPL asks for the source of the covered work, section 13 asks anyone who offers
+  the functionality as a service for the Service Source Code, which reaches every program used to run that service. That
+  is why the licence is not accepted as an open source licence, and the record says so by carrying the network trigger and
+  the reciprocity scope the text states.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name agree. cc:legalcode points at the publisher's
+    own page and dct:source at the SPDX entry. dct:publisher is MongoDB, Inc., which the copyright line and section 14 name.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only, following AGPL-3.0, whose text this one is built on.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Section 2 affirms 'your unlimited permission to run the unmodified Program, subject to section 13', sections
+    4 to 6 permit conveying verbatim copies, modified sources and object code, and section 11 grants a patent licence. That
+    gives odrl:reproduce, odrl:distribute, odrl:modify, odrl:derive, odrl:display, odrl:present, cc:DerivativeWorks, dalicc:ModifiedWorks,
+    cc:CommercialUse, dalicc:chargeDistributionFee for 'You may charge any price or no price for each copy that you convey'
+    and dalicc:patentGrant.
+  action: applied
+- rubric: 3
+  severity: major
+  field: dalicc:networkUseTrigger
+  description: 'dalicc:networkUseTrigger carries a cc:SourceCode duty for section 13: ''If you make the functionality of
+    the Program or a modified version available to third parties as a service, you must make the Service Source Code available
+    via network download to everyone at no charge, under the terms of this License.'' CAL-1.0 uses the same term for the
+    same kind of trigger. AGPL-3.0 does not carry it, which is a difference between the two records rather than between
+    the two texts, and it is proposed below.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:ChangeLicense for section 5(c), 'This License gives no permission to license the work in any other
+    way'. dalicc:sublicense for section 2, 'Sublicensing is not allowed; section 10 makes it unnecessary.' dalicc:addLimitation
+    for section 10, 'You may not impose any further restrictions on the exercise of the rights granted or affirmed under
+    this License.' dalicc:applyTechnicalProtectionMeasures for section 3. dalicc:patentRetaliationTermination for the litigation
+    sentence of section 10. dalicc:promote for section 7(d) and 7(e), which let a licensor limit the use of its names for
+    publicity and decline to grant trademark rights, the same reading AGPL-3.0 takes.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:grantUse
+  description: Section 10 says 'Each time you convey a covered work, the recipient automatically receives a license from
+    the original licensors', which would ordinarily give odrl:grantUse. It is left out, because the dependency graph holds
+    dalicc:sublicense owl:sameAs odrl:grantUse and section 2 forbids sublicensing, so asserting both would report a conflict.
+    CAL-1.0 is modelled the same way for the same pair of sentences. The clause is quoted instead.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:ShareAlike is licence-wide for section 5(c), 'You must license the entire work, as a whole, under this
+    License to anyone who comes into possession of a copy', which is the whole-work copyleft shape. cc:Attribution, cc:Notice
+    and cc:SourceCode hang on odrl:distribute, odrl:modify and odrl:derive, and dalicc:modificationNotice is added on the
+    last two for section 5(a). The network-use trigger carries its own cc:SourceCode duty, because the source it asks for
+    is wider than the source conveying asks for.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: Sections 15 and 16 are separate, so each goes into the property that names it, and section 4's fee sentence
+    is dalicc:WarrantyOrLiabilityAcceptance, exactly as in AGPL-3.0. Fifteen further clauses are quoted in dalicc:additionalClauses,
+    including both paragraphs of section 13 and the definition of Service Source Code.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:validityType
+  description: dalicc:validityType is dalicc:perpetual for section 2, 'All rights granted under this License are granted
+    for the term of copyright on the Program, and are irrevocable provided the stated conditions are met.' dalicc:orLaterVersionOption
+    is false, because this record models version 1 only, while section 14 lets a program opt into later versions; that sentence
+    is quoted. dalicc:terminatesOnBreach is true for section 8 and dalicc:curePeriod is '30 days' for the first-time cure
+    it offers. The text names no governing law.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:sourcePublicationPeriod
+  description: 'Section 13 says the Service Source Code must be available ''via network download to everyone at no charge''
+    but gives no period, so dalicc:sourcePublicationPeriod is left out rather than filled with a guess. The clause is quoted.
+    Proposed term: dalicc:serviceSourceScope, an annotation for the set of programs a network-use trigger reaches, which
+    here is wider than the covered work and has no counterpart in any other record.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run against licensedata/dependencygraph/dg_default.ttl, returned
+    no conflicts. The whole-work cc:ShareAlike duty sits beside a prohibited dalicc:ChangeLicense, which is the shape the
+    check expects of a copyleft licence.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: Against AGPL-3.0, which shares most of this text, the record adds dalicc:networkUseTrigger with a source
+    duty, dalicc:reciprocityScope, dalicc:sublicense, dalicc:addLimitation, dalicc:applyTechnicalProtectionMeasures, dalicc:patentRetaliationTermination,
+    odrl:display and odrl:present, and it carries a cure period. The clauses behind the statements AGPL-3.0 lacks are in
+    both texts, so those are proposals for AGPL-3.0 rather than differences between the licences; the network trigger
+    and the termination terms were applied to AGPL-3.0 on 2026-09-23 and the rest stay proposals.
+  action: none
+family: Source-available licences and riders
+port_of: null
+variant_kind: null
+variant_of: null
+notes: 'Section 13 is the clause that separates this licence from the GNU family: the source it asks for is not the source
+  of the covered work but of the whole service, ''all such that a user could run an instance of the service using the Service
+  Source Code you make available''. The record quotes it and names its reach in dalicc:reciprocityScope, and leaves to the
+  reader what counts as offering the functionality as a service.'

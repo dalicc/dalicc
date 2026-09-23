@@ -1,0 +1,101 @@
+id: BlueOak-1.0.0
+title: Blue Oak Model License 1.0.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/BlueOak-1.0.0.txt
+text_retrieved: true
+verdict: created
+summary: The record models the Blue Oak Model License 1.0.0, a permissive license written in plain language. Each
+  contributor licenses everything that would otherwise infringe their copyright and everything that would otherwise
+  infringe their patent claims, so the record carries dalicc:patentGrant as a permission. The one condition is that
+  everyone who gets a copy from you also gets the license text or a link to it, which is cc:Notice on distribute,
+  modify and derive.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The copyright grant reads: "Each contributor licenses you to do everything with this software that
+    would otherwise infringe that contributor''s copyright in it." Everything means the full permissive set, including
+    commercial use, both fee terms and modified and derivative works.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The patent section reads: "Each contributor licenses you to do everything with this software that
+    would otherwise infringe any patent claims they can license or become able to license." That is an express patent
+    license, so dalicc:patentGrant is a permission. This and MulanPSL-2.0 are the two records of the batch that
+    carry it.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The Notices section reads: "You must ensure that everyone who gets a copy of any part of this software
+    from you, with or without changes, also gets the text of this license or a link to <https://blueoakcouncil.org/license/1.0.0>."
+    cc:Notice on distribute, modify and derive. There is no cc:Attribution duty: the license asks for its own text,
+    not for a credit to the author.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'dalicc:ChangeLicense is prohibited, because the license text has to reach every recipient. The batch
+    notes expected a patent retaliation clause; version 1.0.0 has none, so dalicc:patentRetaliationTermination is
+    not written. The only way to lose the license is to fail the Notices section and not cure it. (Corrected on
+    2026-09-15 by the verification pass: see the rubric 3 finding on relicensing below.)'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The Excuse section is a cure period: a licensee notified in writing of a notices failure keeps the
+    license by taking all practical steps to comply within 30 days, and loses it otherwise. That is termination
+    on breach with a cure window, and no property can carry it. Proposed term: dalicc:terminatesOnBreach, a property
+    over the existing dalicc:terminationOnBreach concept, with a companion for the cure period. Quoted in dalicc:additionalClauses,
+    together with the Acceptance section and the irrevocability sentence.'
+  action: none
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The No Liability section is a single sentence covering both warranty and liability, so it is quoted
+    whole into dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation is left out, the way the MIT record keeps
+    one paragraph in one field. The three asterisks the source puts around the sentence are typographic emphasis
+    and are dropped.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual. The Reliability section adds that "No contributor can revoke this license.", which is quoted;
+    the library has a dalicc:irrevocable quality but no property to attach it to a record.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following BSL-1.0. The text licenses software.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: The closest existing record is BSL-1.0, which is also a short permissive license with a single notice
+    condition. Blue Oak differs in granting patent rights expressly and in the cure period.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Each contributor licenses you to do everything with this
+    software that would otherwise infringe that contributor''s copyright in it. ... You must ensure that everyone
+    who gets a copy of any part of this software from you, with or without changes, also gets the text of this license."
+    The permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive
+    the relicensing.'
+  action: applied
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text, which is the Markdown source published by the Blue Oak Council. Section
+  headings and the Markdown emphasis are not part of the quoted clauses.

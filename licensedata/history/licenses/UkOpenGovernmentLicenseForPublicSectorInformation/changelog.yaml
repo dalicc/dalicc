@@ -1,0 +1,115 @@
+id: UkOpenGovernmentLicenseForPublicSectorInformation
+title: UK Open Government License for Public Sector Information
+current_version: 4
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 identification detail and 1 permission, changed
+    2 permissions and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: changed
+    statement: permission cc:DerivativeWorks with duties [cc:Attribution, cc:Notice]
+    previous: permission cc:DerivativeWorks with duties [cc:Attribution]
+    reason: 'The licence requires two things when the information is used and the record modelled
+      only one. Section "You must (where you do any of the above)": "acknowledge the source of the
+      Information in your product or application by including or linking to any attribution statement
+      specified by the Information Provider(s) and, where possible, provide a link to this licence",
+      with the default statement "Contains public sector information licensed under the Open Government
+      Licence v3.0." cc:Attribution was attached to cc:DerivativeWorks and odrl:distribute; cc:Notice
+      was missing everywhere, although the attribution statement is itself a licence notice and the
+      licence asks for a link to itself. Added next to cc:Attribution in both permissions, which is
+      how the sibling record NCGL-UK-2.0 models the same sentence.'
+    source: review-finding 5/odrl:duty
+  - action: added
+    statement: permission dalicc:ModifiedWorks
+    reason: dalicc:ModifiedWorks, distributing a modified version and making it available to the public,
+      was missing although the licence permits adapting the Information and publishing, distributing
+      and transmitting it in the same list, and the sibling record NCGL-UK-2.0 carries the permission
+      on the identical wording. Added.
+    source: review-finding 3/odrl:permission
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution]
+    reason: 'The licence requires two things when the information is used and the record modelled
+      only one. Section "You must (where you do any of the above)": "acknowledge the source of the
+      Information in your product or application by including or linking to any attribution statement
+      specified by the Information Provider(s) and, where possible, provide a link to this licence",
+      with the default statement "Contains public sector information licensed under the Open Government
+      Licence v3.0." cc:Attribution was attached to cc:DerivativeWorks and odrl:distribute; cc:Notice
+      was missing everywhere, although the attribution statement is itself a licence notice and the
+      licence asks for a link to itself. Added next to cc:Attribution in both permissions, which is
+      how the sibling record NCGL-UK-2.0 models the same sentence.'
+    source: review-finding 5/odrl:duty
+  - action: added
+    statement: spdx:licenseId "OGL-UK-3.0"
+    reason: The record carried no SPDX identifier. cc:legalcode is the seeAlso URL of the SPDX entry
+      OGL-UK-3.0, Open Government Licence v3.0, and the fetched text confirms the version. The proposal
+      file rated this medium on the URL alone; the version statement in the document makes it certain.
+      Added.
+    source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 5 finding 7: the record prohibited cc:ShareAlike and dalicc:addStatement although
+    the licence prescribes an attribution statement and says nothing about share-alike, and it did
+    not state the database right although the licence covers ''copyright and database right material''.'
+  changes:
+  - action: added
+    statement: dalicc:LiabilityLimitation "The Information Provider and/or Licensor are not liable
+      for any errors or omissions in the Information and shall not be liable for any loss, injury
+      or damage of any kind caused by its use. The Information Provider does not guarantee the continued
+      supply of the Information."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: changed
+    statement: dalicc:WarrantyDisclaimer "The Information is licensed 'as is' and the Information
+      Provider and/or Licensor excludes all representations, warranties, obligations and liabilities
+      in relation to the Information to the maximum extent permitted by law."
+    previous: 'dalicc:WarrantyDisclaimer "The Information is licensed ''as is'' and the Information
+      Provider and/or Licensor excludes all representations, warranties, obligations and liabilities
+      in relation to the Information to the maximum extent permitted by law.
+
+      The Information Provider and/or Licensor are not liable for any errors or omissions in the Information
+      and shall not be liable for any loss, injury or damage of any kind caused by its use. The Information
+      Provider does not guarantee the continued supply of the Information."'
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: permission dalicc:suiGenerisDatabaseRights
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition cc:ShareAlike
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:addStatement
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+- version: 4
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Permit relicensing on permissive licences; the notice clause is a duty, not a bar. Family
+    rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no source
+    code asks only that the notice travels with the copy, which is a duty on the acts it governs and
+    not a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission
+    here, and the prohibition the earlier pass wrote is removed. The text reads: "The Licensor grants
+    you a worldwide, royalty-free, perpetual, non-exclusive licence to use the Information subject
+    to the conditions below." The permission carries the dalicc:compliantLicense duty, as Apache-2.0
+    does, because the notice has to survive the relicensing.'
+  changes:
+  - action: added
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

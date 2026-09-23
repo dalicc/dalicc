@@ -1,0 +1,116 @@
+id: Cc010Universal
+title: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/CC0-1.0.txt
+text_retrieved: true
+verdict: corrected
+summary: 'CC0 is a dedication, not a licence, and the record models it as one: every act is permitted, no duty
+  is imposed anywhere, and the only prohibition is the use of the affirmer''s trademarks. Applied: spdx:licenseId
+  and the public-licence fallback of Section 3, which is the clause that makes CC0 work in jurisdictions where
+  a dedication to the public domain is ineffective. The waiver covers sui generis database rights expressly,
+  which the model can only show through the dataset asset type.'
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: The record carried no SPDX identifier. Its cc:legalcode, https://creativecommons.org/publicdomain/zero/1.0/legalcode,
+    is the seeAlso URL of the SPDX entry CC0-1.0, Creative Commons Zero v1.0 Universal. Added.
+  action: applied
+  change: spdx:licenseId "CC0-1.0" ;
+- rubric: 1
+  severity: info
+  field: dct:title
+  description: Title, alternatives, cc:legalcode and dct:source all name CC0 1.0 Universal and resolve.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'The asset collection is dalicc:CreativeWork plus dcmitype:Dataset. The dataset type is not
+    decoration: Section 1(vi) names the sui generis database rights of Directive 96/9/EC among the rights waived.'
+  action: none
+- rubric: 3
+  severity: info
+  field: odrl:permission
+  description: 'Every act is permitted, which is what the text says: Section 2 waives "all of Affirmer''s Copyright
+    and Related Rights ... in any current or future medium and for any number of copies, and (iv) for any purpose
+    whatsoever, including without limitation commercial, advertising or promotional purposes". dalicc:ChangeLicense
+    is among the permissions, correctly: after a waiver there is no licence left to keep.'
+  action: none
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'The single prohibition, dalicc:promote, is supported by Section 4(a): "No trademark or patent
+    rights held by Affirmer are waived, abandoned, surrendered, licensed or otherwise affected by this document."
+    It restricts the use of the affirmer''s marks, not promotional use of the work itself, which Section 2
+    expressly allows.'
+  action: none
+- rubric: 5
+  severity: info
+  field: odrl:duty
+  description: 'The record carries no duty at all, which is correct for a dedication: CC0 imposes no attribution
+    and no notice requirement. The family-rule baseline lists this record among the four where no attribution
+    duty is expected.'
+  action: none
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: 'Section 3, the public-licence fallback, was missing from the record although it is the operative
+    clause wherever the waiver fails: it grants a royalty-free, irrevocable, unconditional licence for any
+    purpose whatsoever as a second line of defence. Quoted verbatim into dalicc:additionalClauses.'
+  action: applied
+  change: dalicc:additionalClauses """Public License Fallback. Should any part of the Waiver for any reason
+    be judged legally invalid or ineffective under applicable law, then the Waiver shall be preserved to the
+    maximum extent permitted ...""" ;
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: dalicc:WarrantyDisclaimer is Section 4(b) and 4(d) and dalicc:LiabilityLimitation is Section
+    4(a) and 4(c), both quoted verbatim. Placing the trademark and patent reservation under a field named LiabilityLimitation
+    is loose, but the text is accurate and the alternative, moving it to additionalClauses, would lose it from
+    the clause view of the site.
+  action: none
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: 'dalicc:worldwide and dalicc:perpetual are both supported: the waiver runs "(i) in all territories
+    worldwide, (ii) for the maximum duration provided by applicable law or treaty (including future time extensions)"
+    and is expressly not subject to revocation, rescission, cancellation or termination.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'Two things cannot be said with the present vocabulary. First, that this record is a dedication
+    rather than a licence: nothing distinguishes it from a very permissive licence, and the composer treats
+    it the same way. Proposed term: dalicc:publicDomainDedication, a policy quality next to dalicc:validityType.
+    Second, the express non-waiver of patent rights: dalicc:patentFree exists as a concept but says the opposite.
+    Proposed term: dalicc:patentRightsReserved.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: record
+  description: Section 4(c), that the affirmer disclaims responsibility for clearing third-party rights and
+    for obtaining consents, and the statement that Creative Commons is not a party to the document, have no
+    term either. They are carried as clause text instead.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check reports no conflict, before and after the corrections.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'CC0 shares its deontic signature with OdcPublicDomainDedicationAndLicence, the Open Data Commons
+    PDDL, which review_duplicates.md section 4 flags. The two records should be indistinguishable to the compatibility
+    checker, because the two documents do the same thing: a dedication with a licence fallback. The separation
+    into two records is justified by provenance, the publisher and the legal text differ, not by the model.
+    Both now carry their fallback clause in dalicc:additionalClauses, so the records differ in the one place
+    where the documents differ.'
+  action: none
+family: Creative Commons CC0 1.0 public domain dedication
+port_of: null
+variant_kind: null
+notes: CC0 is not a Creative Commons licence and has no element set, so port_of and variant_kind are empty.
+  The record's own cc:license is dalicclib:CC-BY-4.0, which is the licence of the DALICC metadata record and
+  not of the dedication. Nothing in this review is legal advice.

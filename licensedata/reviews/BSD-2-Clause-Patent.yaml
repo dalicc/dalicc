@@ -1,0 +1,80 @@
+id: BSD-2-Clause-Patent
+title: BSD-2-Clause Plus Patent License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/BSD-2-Clause-Patent.txt
+text_retrieved: true
+verdict: created
+summary: Models the two-clause BSD licence with the express patent licence added for the OpenIB and EDK II projects.
+  The copyright side is modelled exactly as BSD-2-Clause; the patent side adds a dalicc:patentGrant permission and
+  the quoted scope limits. Nothing here is legal advice.
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Beyond the two-clause BSD grant the text adds "each copyright holder and contributor hereby grants
+    to those receiving rights under this license a perpetual, worldwide, non-exclusive, no-charge, royalty-free,
+    irrevocable (except for failure to satisfy the conditions of this license) patent license to make, have made,
+    use, offer to sell, sell, import, and otherwise transfer this software". That is an express patent licence,
+    so dalicc:patentGrant is a permission.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: 'The text has no endorsement clause and no defensive-termination clause, so neither dalicc:promote
+    nor dalicc:patentRetaliationTermination is stated. The batch notes anticipated a retaliation sentence; the SPDX
+    text carries none, only the parenthesis "(except for failure to satisfy the conditions of this license)" inside
+    the patent grant. dalicc:ChangeLicense is prohibited as in the rest of the family. (Corrected on 2026-09-15
+    by the verification pass: see the rubric 3 finding on relicensing below.)'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: The retention conditions are the whole content of the licence. cc:Attribution and cc:Notice hang
+    off odrl:distribute, odrl:modify and odrl:derive, because the text requires the copyright notice, the list of
+    conditions and the disclaimer to travel with every redistributed and every modified copy.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: The whole patent paragraph, its two scope limbs (a) and (b) and the closing sentence "Except as expressly
+    stated above, no rights or licenses from any copyright holder or contributor is granted under this license,
+    whether expressly, by implication, estoppel or otherwise" are quoted verbatim, because the scope of a patent
+    grant cannot be expressed by the dalicc:patentGrant action alone. The warranty and liability sentences are split
+    as elsewhere in this batch.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer with the dependency graph dg_default returned an empty
+    conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Follows licensedata/licenses/BSD-2-Clause.ttl for the copyright grant and the duties, and is the
+    first BSD record in the library to carry dalicc:patentGrant.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
+    or without modification, are permitted provided that the following conditions are met: 1. Redistributions of
+    source code must retain the above copyright notice, this list of conditions and the following disclaimer." The
+    permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the
+    relicensing.'
+  action: applied
+family: BSD variants
+port_of: null
+variant_kind: null
+notes: The patent licence is granted to "those receiving rights under this license", so it travels with the software
+  rather than being a separate agreement; it is modelled as a permission of the licence, not as a duty.

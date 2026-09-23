@@ -1,0 +1,75 @@
+id: QPublicLicenseVersion10
+title: Q Public License Version 1.0
+reviewed_on: 2026-09-15
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/QPL-1.0.txt
+text_retrieved: true
+verdict: corrected
+summary: The Q Public License lets the Software be copied and distributed unmodified, modifications to
+  be distributed separately as patches, and executables to be distributed if source is available to every
+  recipient. The record captures the notice and source duties but prohibits commercial use, which the
+  text does not, and models share-alike as a permission where the text makes it a condition. The SPDX
+  id and the liability clause were added.
+findings:
+- rubric: 1
+  severity: minor
+  field: spdx:licenseId
+  description: Added QPL-1.0; the title matches the SPDX name.
+  action: applied
+  change: |
+    spdx:licenseId "QPL-1.0" ;
+- rubric: 6
+  severity: minor
+  field: dalicc:LiabilityLimitation
+  description: The section headed "Limitations of Liability" was not recorded. Added, quoted.
+  action: applied
+  change: |
+    dalicc:LiabilityLimitation "In no event shall the initial developers or copyright holders be liable for any damages whatsoever ..." ;
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'cc:CommercialUse is prohibited. Nothing in the license forbids commercial use of the Software:
+    clause 5 allows the licensee "to compile, link and run application programs legally developed by you
+    or by others" with no field-of-use limit. What the license does restrict is charging, and only in
+    two places: clause 4(b) requires source to be available "without any charge beyond the costs of data
+    transfer", and clause 6(b) requires recipients of linked items to be able to redistribute "without
+    any charges whatsoever". Those restrictions are already modelled as the dalicc:chargeDistributionFee
+    and dalicc:chargeLicenseFee prohibitions, so the commercial-use prohibition is a third, broader statement
+    that the text does not support. Not applied because clause 6(b) makes the boundary genuinely arguable.'
+  action: proposed
+  change: |
+    # remove
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action cc:CommercialUse ] ;
+- rubric: 5
+  severity: major
+  field: odrl:permission
+  description: 'cc:ShareAlike is modelled as a permission. Clause 4(c) makes it a condition: "You must
+    ensure that all modifications included in the machine-executable forms are available under the terms
+    of this license." It should be a license-wide duty. Not applied together with the commercial-use finding,
+    because the two decide the compatibility profile of the record jointly and belong in one owner decision.'
+  action: proposed
+  change: |
+    # remove
+    odrl:permission [ a odrl:Permission ;
+            odrl:action cc:ShareAlike ] ;
+    # add
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ] ;
+- rubric: 7
+  severity: minor
+  field: cc:jurisdiction
+  description: 'The closing section states: "This license is governed by the Laws of Norway. Disputes
+    shall be settled by Oslo City Court." cc:jurisdiction is dalicc:worldwide.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: vocabulary
+  description: 'Clause 3(b) grants the initial developer a licence back to every modification the licensee
+    releases, and clause 3 requires modifications to be distributed separately from the Software, as patches.
+    Neither has a term. Proposed: dalicc:grantBack, dalicc:separatePatchDistribution.'
+  action: none
+family: Other OSI approved licenses (corporate, academic, weak copyleft)
+port_of: null
+variant_kind: null
+notes: Both open findings are interpretive and were deliberately not applied.

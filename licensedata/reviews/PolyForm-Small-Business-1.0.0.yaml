@@ -1,0 +1,93 @@
+id: PolyForm-Small-Business-1.0.0
+title: PolyForm Small Business License 1.0.0
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/PolyForm-Small-Business-1.0.0.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models the PolyForm Small Business License 1.0.0. It is the PolyForm skeleton with one permitted-purpose
+  section: use for the benefit of a company that has fewer than 100 people working for it and made less than one million
+  US dollars in the prior tax year. Above that threshold there is no licence, so this is not an open source licence.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name agree. cc:legalcode is the URL the licence
+    text gives for itself and dct:source the SPDX entry.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software only, the same as the other PolyForm records.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The same three grants as PolyForm-Noncommercial-1.0.0, word for word, so the permission set is the same:
+    reproduce, display, present, distribute, modify, derive, cc:DerivativeWorks, dalicc:ModifiedWorks and dalicc:patentGrant.
+    cc:CommercialUse is permitted here, because the permitted purpose is defined by the size of the company and not by whether
+    the use earns money.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'dalicc:patentRetaliationTermination for ''If you make any written claim that the software infringes or contributes
+    to infringement of any patent, your patent license for the software granted under these terms ends immediately.'' dalicc:sublicense
+    and dalicc:ChangeLicense for ''These terms do not allow you to sublicense or transfer any of your licenses to anyone
+    else'', read with the Notices section, which makes the terms travel with every copy. dalicc:promote is absent: the licence
+    has no trademark or endorsement clause at all.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Notice, cc:Attribution and cc:ShareAlike on odrl:distribute, odrl:modify and odrl:derive, for the Notices
+    section, exactly as in PolyForm-Noncommercial-1.0.0.
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:WarrantyDisclaimer
+  description: The No Liability sentence is quoted whole into dalicc:WarrantyDisclaimer. Eleven further clauses are quoted
+    in dalicc:additionalClauses, including the whole Small Business section with its threshold and its inflation adjustment.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: The Small Business section writes the reference base of the price index as '1982-1984=100' with an en dash.
+    The quoted literal uses a plain hyphen instead, which is the only change made to the sentence. The emphasis asterisks
+    around the No Liability sentence are dropped in the same way as in the other PolyForm records.
+  action: applied
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'dalicc:terminatesOnBreach is true and dalicc:curePeriod is ''32 days'', which is the unusual figure the
+    Violations section gives: ''The first time you are notified in writing that you have violated any of these terms ...
+    your licenses can nonetheless continue if you come into full compliance with these terms, and take practical steps to
+    correct past violations, within 32 days of receiving notice.'' The cure is available once only. cc:jurisdiction stays
+    dalicc:worldwide and the text names no governing law.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:fieldOfUseRestriction
+  description: 'The size threshold has no term. dalicc:fieldOfUseRestriction carries it in a literal and the section is
+    quoted in full. Proposed term: dalicc:scaleThresholdCondition, an annotation holding the headcount, revenue or user
+    number above which a licence stops granting rights, with the unit and the base year the text gives.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run against licensedata/dependencygraph/dg_default.ttl, returned
+    no conflicts.
+  action: none
+- rubric: 10
+  severity: major
+  field: record
+  description: Against PolyForm-Noncommercial-1.0.0 this record differs in exactly two statements, cc:CommercialUse moving
+    from prohibition to permission, and in the permitted-purpose clause and the dalicc:fieldOfUseRestriction literal that
+    name the threshold. Everything else is the same.
+  action: none
+family: Source-available licences and riders
+port_of: null
+variant_kind: null
+variant_of: null
+notes: The revenue threshold is stated in 2019 dollars and has to be adjusted for inflation by a named price index, so the
+  figure in the record is the one the text gives and not the figure that applies today.

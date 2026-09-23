@@ -1,0 +1,96 @@
+id: CERN-OHL-W-2.0
+title: CERN Open Hardware Licence Version 2 - Weakly Reciprocal
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://www.ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2
+text_retrieved: true
+verdict: created
+summary: Models the weakly reciprocal variant of version 2 of the CERN Open Hardware Licence.
+  Modified Covered Source stays under the licence, but a Product made from it may be licensed
+  on other terms. The record expresses that with cc:ShareAlike as a duty on modify and derive
+  rather than as a license-wide duty, which is what separates it from the S record.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, license id, SPDX id and IRI agree; the SPDX name already uses plain
+    hyphens.
+  action: none
+- rubric: 2
+  severity: major
+  field: odrl:target
+  description: 'dalicc:CreativeWork next to dcmitype:Software, for the same reason as in the P
+    record: the licensed material is design material, not only code.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Sections 3.1 to 3.3 and 4.1 grant copying, conveying, modification and the making
+    and conveying of Products. dalicc:patentGrant models 7.1. dalicc:ChangeLicense is not permitted,
+    because 3.3(d) requires modified Covered Source to be licensed under this Licence.
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote (8.2), dalicc:addLimitation (2.3), dalicc:patentRetaliationTermination
+    (7.2) and dalicc:ChangeLicense (3.3(d)).
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'cc:ShareAlike is a duty on odrl:modify and odrl:derive, not a license-wide duty,
+    on the strength of 3.3(d): ''license the modified Covered Source under the terms and conditions
+    of this Licence ... Such modified Covered Source must be licensed as a whole, but excluding
+    Available Components contained in it or External Material to which it is interfaced''. cc:SourceCode
+    hangs off distribute, modify and derive for 3.2 and 4.1. cc:Attribution, cc:Notice and dalicc:modificationNotice
+    keep the placement of the P record.'
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: Sections 6.1 and 6.2 are quoted into dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation.
+    Eight clauses are quoted in dalicc:additionalClauses, among them 3.2, 3.3(d), 4.1, 4.3 and
+    the termination and reinstatement pair 8.4 and 8.5.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: Section 2.2 gives worldwide effect without limitation in time.
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'Automatic termination on breach has no property that a record can carry: dalicc:terminationOnBreach
+    is a policy quality with no predicate. The clause is quoted in dalicc:additionalClauses. Proposed
+    term: dalicc:terminatesOnBreach as a boolean property on odrl:Set, with the cure period as
+    a literal. Text: ''This Licence shall terminate with immediate effect if You fail to comply
+    with any of its terms and conditions'' (8.4), with reinstatement in 8.5.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: odrl:duty
+  description: 'Subsection 4.3 exempts the Product from the reciprocity that binds the Covered
+    Source. The model has no way to scope a share-alike duty to part of a work, so the record
+    puts cc:ShareAlike on modify and derive and quotes 4.3. Proposed term: dalicc:reciprocityScope
+    as a literal qualifier on a cc:ShareAlike duty, with values such as file, source or whole-product.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer, run with the 39 axioms of licensedata/dependencygraph/dg_default.ttl,
+    returned no conflicts.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Against CERN-OHL-S-2.0 the only modelled difference is the attachment level of
+    cc:ShareAlike, plus the quoted 4.2 and 4.3 clauses about External Material and Product licensing.
+    Against CERN-OHL-P-2.0 it adds cc:SourceCode, cc:ShareAlike and the ChangeLicense prohibition.
+  action: none
+family: Educational, hardware and logistics
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. Subsection 4.3 lets Products carry terms of Your choice;
+  the deontic model has one dalicc:ChangeLicense statement for the whole policy and cannot scope
+  it to the Product, so the record prohibits relicensing (which is true of the Covered Source)
+  and quotes 4.3 in dalicc:additionalClauses.

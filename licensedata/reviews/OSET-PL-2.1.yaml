@@ -1,0 +1,98 @@
+id: OSET-PL-2.1
+title: OSET Public License version 2.1
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'http://www.osetfoundation.org/public-license'
+text_retrieved: true
+verdict: created
+summary: >-
+  Models the OSET Public License 2.1, which is the Mozilla Public License 2.0 with a
+  government terms section written for election technology procurement. The record mirrors
+  MozillaPublicLicenseVersion20 and quotes the added sections. Nothing here is legal advice.
+findings:
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 2.1 grants rights "under intellectual property rights (other than patent or
+    trademark) ... to use, reproduce, make available, modify, display, perform, distribute,
+    and otherwise exploit its Contributions" and a patent licence in 2.1(b), so
+    dalicc:patentGrant is a permission. Section 3.2(b) lets the licensee distribute the
+    executable form under this licence "or sublicense it under different terms", so
+    dalicc:sublicense is a permission.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    The grant excludes trademark rights, so dalicc:promote is a prohibition. Section 5.2
+    terminates the grant on a patent infringement claim, modelled as
+    dalicc:patentRetaliationTermination and quoted. dalicc:ChangeLicense is prohibited for the
+    source code form.
+  action: applied
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    cc:ShareAlike hangs off the odrl:Set, following MozillaPublicLicenseVersion20, because
+    section 3.1 governs all distribution of the covered software in source code form. Section
+    3.1 also requires "You must cause any of Your Modifications to carry prominent notices
+    stating that You changed the files", which MPL 2.0 itself does not, so
+    dalicc:modificationNotice hangs off odrl:modify and odrl:derive here.
+  action: applied
+- rubric: 6
+  severity: major
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Quoted verbatim: section 3.2 with its sublicensing limb, the patent retaliation clause,
+    the litigation clause and the whole of section 9, which fixes the governing law to the law
+    of a state or to federal law depending on who the licensee is, denies sovereign immunity
+    and supersedes the federal acquisition regulations. The warranty and liability sections
+    are quoted word for word.
+  action: applied
+- rubric: 7
+  severity: major
+  field: 'cc:jurisdiction'
+  description: >-
+    Section 9.3 makes the governing law depend on the licensee: the law of a US state where
+    the licensee is that state government, federal law where it is a federal agency, and
+    otherwise section 8 sends litigation to the courts where the defendant has its principal
+    place of business. No single legal system governs the licence, so cc:jurisdiction stays
+    dalicc:worldwide and both clauses are quoted. This is a case the owner may want to look
+    at, because the record cannot show that a US government licensee is bound differently.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    Section 3.5.2 lets the licensee "place additional conditions upon the rights granted in
+    this License to the extent necessary due to statute, judicial order, regulation ...
+    national security, or public interest". The vocabulary has dalicc:addLimitation but only
+    as a flat permission or prohibition, with no way to record the condition under which it
+    applies; proposed term dalicc:conditionalAddLimitation. Termination on breach has no
+    property either (proposed dalicc:terminatesOnBreach).
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the dependency graph dg_default
+    returned an empty conflict list. cc:ShareAlike is required and dalicc:ChangeLicense is
+    prohibited, which is the combination the check expects; asserting both cc:ShareAlike and a
+    dalicc:ChangeLicense permission would have been reported as a direct conflict.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: >-
+    Diffed against the MPL 2.0 text rather than read in full. The record mirrors
+    MozillaPublicLicenseVersion20, with the same additions this batch makes to
+    MPL-2.0-no-copyleft-exception, plus dalicc:modificationNotice, which the OSET text
+    requires and MPL 2.0 does not.
+  action: none
+family: Mozilla and CDDL
+port_of: null
+variant_kind: null
+notes: >-
+  The licence uses curly quotation marks throughout; they are reproduced verbatim in the
+  quoted clauses.

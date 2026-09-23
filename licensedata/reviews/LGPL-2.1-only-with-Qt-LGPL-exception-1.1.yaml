@@ -1,0 +1,148 @@
+id: LGPL-2.1-only-with-Qt-LGPL-exception-1.1
+title: GNU Lesser General Public License v2.1 only with Qt LGPL exception 1.1
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/LGPL-2.1-only.txt
+text_retrieved: true
+verdict: created
+summary: The record models GNU Lesser General Public License v2.1 only with the exception the SPDX list
+  calls Qt-LGPL-exception-1.1. It copies the model of LGPL-2.1-only statement for statement and adds what
+  the exception grants. The exception lets object code that incorporates limited material from the unmodified
+  header files of the library travel under terms of your choice. The copyleft of the base licence still
+  reaches the library, not object code that incorporates limited material from its unmodified header files,
+  and the exception text is quoted in full in dalicc:additionalClauses.
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: The file name, the identifier and the local name of the odrl:Set IRI are all LGPL-2.1-only-with-Qt-LGPL-exception-1.1.
+    spdx:licenseId carries the SPDX expression "LGPL-2.1-only WITH Qt-LGPL-exception-1.1", with one space,
+    an upper-case WITH and one more space, which is how the SPDX list writes a licence combined with an
+    exception.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, copied from LGPL-2.1-only. The
+    exception speaks of code, modules and executables throughout.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 1 grants the verbatim-copy right and section 2 the right to modify the Library
+    and to distribute the modified work, so the record permits reproduce, distribute, modify, derive,
+    display, present, commercial use, derivative works and modified works. The record therefore keeps
+    every permission of LGPL-2.1-only: reproduce, distribute, modify, derive, display, present, commercial
+    use, derivative works, modified works and charging a distribution fee. The exception adds one more.
+    It reads: "As an additional permission to the GNU Lesser General Public License version 2.1, the object
+    code form of a "work that uses the Library" may incorporate material from a header file that is part
+    of the Library. You may distribute such object code under terms of your choice, provided that: (i)
+    the header files of the Library have not been modified; and (ii) the incorporated material is limited
+    to numerical parameters, data structure layouts, accessors, macros, inline functions and templates;
+    and (iii) you comply with the terms of Section 6 of the GNU Lesser General Public License version
+    2.1." That is material the licence carves out of its own condition, so it is modelled as a permission
+    dalicc:exceptedCombination.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: The prohibitions of LGPL-2.1-only stay as they are. dalicc:ChangeLicense is still prohibited,
+    because the exception narrows the reach of the reciprocity and does not let the covered work itself
+    leave the licence. Section 5 of the base licence makes object code that incorporates header material
+    a derivative of the Library. The exception lifts that result for a narrow class of header material
+    and leaves the rest of the licence in place.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: dalicc:promote is prohibited because LGPL-2.1-only prohibits it and an exception record
+    keeps every statement of its base. Neither the base text nor the exception has a trademark or endorsement
+    clause, so the prohibition is a library convention here and not text-supported. The review of GPL-2.0-only
+    proposed removing it library-wide.
+  action: applied
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: LGPL-2.1-only prohibits dalicc:sublicense on the strength of section 8, "You may not copy,
+    modify, sublicense, link with, or distribute the Library except as expressly provided under this License",
+    and this record keeps that prohibition. It is the one record of the set with three prohibitions instead
+    of two, because its base has three.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The licence-wide cc:ShareAlike duty of LGPL-2.1-only stays on the odrl:Set, because the
+    reciprocity of the base licence still covers the whole work. cc:Attribution, cc:Notice and cc:SourceCode
+    stay on distribute, modify and derive, and dalicc:modificationNotice on modify and derive. The carve-out
+    carries three conditions, and the third is a cross-reference: "you comply with the terms of Section
+    6 of the GNU Lesser General Public License version 2.1". Section 6 is already quoted in dalicc:additionalClauses
+    on the base record and its duties are already modelled on odrl:distribute, so the dalicc:exceptedCombination
+    permission carries no duty of its own and the three conditions stay in the quoted clause.'
+  action: applied
+- rubric: 5
+  severity: minor
+  field: dalicc:reciprocityScope
+  description: 'dalicc:reciprocityScope says in words how far the copyleft reaches after the exception:
+    "the library, not object code that incorporates limited material from its unmodified header files".
+    The base record carries no such annotation, because without the exception the reciprocity reaches
+    the whole work.'
+  action: applied
+- rubric: 6
+  severity: major
+  field: dalicc:additionalClauses
+  description: The exception text is quoted verbatim as one literal of dalicc:additionalClauses, from
+    https://spdx.org/licenses/Qt-LGPL-exception-1.1.html. Line breaks and runs of spaces were collapsed
+    to single spaces, the way every other clause literal in the library is written; no word was changed,
+    added or dropped. The warranty disclaimer and the limitation of liability are the ones of LGPL-2.1-only,
+    quoted verbatim from the base text, because the exception changes neither.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The base text and the exception name no legal system, so cc:jurisdiction stays dalicc:worldwide,
+    dalicc:validityType stays dalicc:perpetual and no dalicc:governingLaw is stated. The termination and
+    cure terms of the base licence are untouched by the exception.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:exceptedCombination
+  description: 'The exception carves the combination out of the condition of the licence, not out
+    of its grant. dalicc:exemptedMaterial says the opposite and is prohibited on OGL-UK-1.0, OGL-UK-2.0 and
+    NLOD-2.0, where it means material the licence never granted. The vocabulary defines
+    dalicc:exceptedCombination for this side of it since 2026-09-23, and the record carries it as
+    a permission.'
+  action: applied
+- rubric: 8
+  severity: gap
+  field: dalicc:additionalClauses
+  description: 'The exception may be dropped. The text says: "Furthermore, you are not required to apply
+    this additional permission to a modified version of the Library." Nothing in the vocabulary says that
+    a permission is optional for a downstream modifier, so a copy of this work may carry the base licence
+    alone and still be true to the text. Proposed term: dalicc:removableAdditionalPermission, an annotation
+    saying that a modifier may delete the exception statement.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check against dg_default returned no conflicts. The exempted permission
+    is a new action for the checker, it is not prohibited anywhere and the dependency graph holds no relation
+    for it, so it neither triggers nor hides a conflict. The share-alike rule is not triggered, because
+    dalicc:ChangeLicense stays prohibited.
+  action: none
+- rubric: 10
+  severity: info
+  field: dalicc:variantOf
+  description: 'The record is the base licence plus the exception, so it repeats LGPL-2.1-only statement
+    for statement and adds four things: the dalicc:exceptedCombination permission, the dalicc:reciprocityScope
+    annotation, the exception text in dalicc:additionalClauses and the pair dalicc:variantKind "exception"
+    with dalicc:variantOf dalicclib:LGPL-2.1-only. Nothing the base states was removed.'
+  action: applied
+family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
+port_of: null
+variant_kind: exception
+variant_of: LGPL-2.1-only
+notes: 'The base licence text is the SPDX text of LGPL-2.1-only, retrieved on 2026-09-22; the exception
+  text is the SPDX text of Qt-LGPL-exception-1.1, from https://spdx.org/licenses/Qt-LGPL-exception-1.1.html.
+  Nothing here is legal advice: the record says what the two texts say and quotes them. An exception record
+  never removes a statement its base carries, so anything that looks wrong in this record and is also
+  in LGPL-2.1-only belongs to the base record and is written up as a proposal instead.'

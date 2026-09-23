@@ -1,0 +1,149 @@
+id: DataExplorationLicence
+title: Data Exploration Licence
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://www.ordnancesurvey.co.uk/documents/licences/data-exploration-licence.pdf
+text_retrieved: true
+verdict: corrected
+summary: 'The batch input had only the Ordnance Survey product page for this licence. The terms document itself,
+  the OS Data Exploration Licence v9.5 of 1 December 2025, was fetched from the product page and read for this
+  review. The record was the most damaged in the batch: every permission and every prohibition appeared twice,
+  it had no validity type and no attribution duty, and both URLs were dead. All four were corrected. The record
+  still models the 2018 edition of the licence, which is a decision for the owner.'
+findings:
+- rubric: 1
+  severity: major
+  field: cc:legalcode
+  description: cc:legalcode and dct:source both pointed at https://www.ordnancesurvey.co.uk/business-and-government/licensing/licences/data-exploration.html,
+    which returns 404, so the record had no working link to the licence at all. cc:legalcode now points at
+    the terms PDF, https://www.ordnancesurvey.co.uk/documents/licences/data-exploration-licence.pdf, and dct:source
+    at the product page, https://www.ordnancesurvey.co.uk/licensing/data-exploration-licence. Both resolve.
+  action: applied
+  change: 'cc:legalcode <https://www.ordnancesurvey.co.uk/documents/licences/data-exploration-licence.pdf>
+    ;
+
+    dct:source <https://www.ordnancesurvey.co.uk/licensing/data-exploration-licence> ;'
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: SPDX has no entry for this licence and none was invented.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: 'dcmitype:Dataset only, which is right: the subject is OS Exploration Data.'
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: Every permission and every prohibition was stated twice, ten permission nodes for five statements
+    and twenty prohibition nodes for ten. The duplicates were removed, which the corrections policy treats
+    as clear cut and which rule 11 of the family-rule baseline lists as the largest case in the library after
+    the Norwegian NoDerivatives 3.0 port. The model is unchanged otherwise.
+  action: applied
+  change: removed the second copy of each odrl:permission and odrl:prohibition blank node
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'odrl:display is prohibited while the licence permits it: under Limited External Demonstration,
+    "You can display the OS Exploration Data or create prototypes on your own equipment, to promote how your
+    ideas or propositions for using our data would work to others, such as potential customers, investors,
+    or other financial backers." The sibling record DeveloperLicense, drafted from the same template, permits
+    display. Proposed rather than applied, because the prohibition may be faithful to the 2018 edition the
+    record models.'
+  action: proposed
+  change: "remove:\n    odrl:prohibition [ a odrl:Prohibition ;\n            odrl:action odrl:display ]\nadd:\n\
+    \    odrl:permission [ a odrl:Permission ;\n            odrl:action odrl:display ] ;"
+- rubric: 3
+  severity: minor
+  field: odrl:permission
+  description: 'cc:ShareAlike is modelled as a permission carrying a cc:Notice duty. The licence has no share-alike
+    clause of any kind. What it has is an acknowledgement duty, which is where the cc:Notice duty under this
+    node comes from. Proposed: drop the share-alike permission and keep the notice as a licence-wide duty next
+    to the attribution duty added below. Rule 5b of the family-rule baseline raises the same modelling question
+    for three permissive software licences.'
+  action: proposed
+  change: "remove:\n    odrl:permission [ a odrl:Permission ;\n            odrl:action cc:ShareAlike ;\n  \
+    \          odrl:duty [ a odrl:Duty ;\n                    odrl:action cc:Notice ] ]\nadd:\n    odrl:duty\
+    \ [ a odrl:Duty ;\n            odrl:action cc:Notice ] ;"
+- rubric: 4
+  severity: info
+  field: odrl:prohibition
+  description: 'The prohibitions follow the section "What are you not allowed to do with the data?": unauthorised
+    sharing, use beyond evaluation purposes, supplying a product or service that has made use of the data,
+    retaining the output of a live trial, and, in the current edition, use for machine learning or artificial
+    intelligence purposes. cc:CommercialUse, the two fee prohibitions, odrl:distribute, odrl:grantUse, cc:DerivativeWorks
+    and dalicc:addStatement all rest on those sentences.'
+  action: none
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The record had no attribution duty at all, although the licence makes the acknowledgement mandatory:
+    "You need to display the OS acknowledgement statement. To acknowledge that the OS Exploration Data is from
+    OS and is protected by law, you must clearly display the following statement alongside your use of the
+    data: Crown copyright and database rights Ordnance Survey Limited (insert year)." A licence-wide cc:Attribution
+    duty was added, licence-wide because the duty is owed for any use and not only when the data is passed
+    on.'
+  action: applied
+  change: "odrl:duty [ a odrl:Duty ;\n        odrl:action cc:Attribution ] ;"
+- rubric: 6
+  severity: info
+  field: dalicc:WarrantyDisclaimer
+  description: dalicc:WarrantyDisclaimer is the No Warranty clause of the edition the record models, quoted
+    verbatim. The current edition rewrote that clause, along with the rest of the document, in plain language.
+    Liabilities, termination, the destruction duty and the security and record keeping duties are not carried.
+  action: none
+- rubric: 7
+  severity: major
+  field: dalicc:validityType
+  description: 'The record was the only one in the library without a dalicc:validityType, and it carries scho:startDate
+    2018-01-01 and scho:endDate 2018-12-31. dalicc:specifyDate is the vocabulary term the composer pairs with
+    those two properties, so it was added. The licence itself is time limited: "You can use the OS Data for
+    6 months from the date you first access the OS Data", three months for third party data.'
+  action: applied
+  change: dalicc:validityType dalicc:specifyDate ;
+- rubric: 7
+  severity: minor
+  field: scho:startDate
+  description: The two dates are plain literals rather than xsd:date, while the composer writes them with the
+    datatype. Proposed rather than applied, because retyping a published literal changes the RDF for any client
+    that compares literals.
+  action: proposed
+  change: "scho:startDate \"2018-01-01\"^^xsd:date ;\n    scho:endDate \"2018-12-31\"^^xsd:date ;"
+- rubric: 8
+  severity: gap
+  field: record
+  description: 'The same gaps as the sibling Developer Licence: registration before access, destruction of
+    the data and of prototypes on termination, security and record keeping duties, the audit right and the
+    feedback duty. The current edition adds one more that no open licence had before: "Use of OS Exploration
+    Data in any way for or in connection with any machine learning and / or artificial intelligence purposes
+    (including without limitation, any use of the OS Exploration Data as reference training material) is prohibited."
+    Proposed term: dalicc:useForModelTraining, to be used as a prohibition. It is worth a vocabulary entry
+    of its own, because such clauses are spreading through data licences.'
+  action: none
+- rubric: 9
+  severity: minor
+  field: record
+  description: 'The consistency check reports one conflict, the same one the baseline listed and the same one
+    the Developer Licence has: odrl:derive permitted against cc:DerivativeWorks prohibited. Confirmed against
+    the text: the licence lets the licensee build prototypes from the data and forbids supplying anything that
+    has made use of it. The resolution is the same choice as for the Developer Licence and is left to the owner.'
+  action: proposed
+  change: 'option A, remove the odrl:derive permission
+
+    option B, weaken the derive implies DerivativeWorks axiom in licensedata/dependencygraph/dg_default.ttl'
+- rubric: 10
+  severity: major
+  field: record
+  description: 'The record models the 2018 edition. The published document is now v9.5 of 1 December 2025:
+    the licence period is six months rather than twelve, the machine-learning prohibition is new, and the whole
+    text was rewritten in plain language. The record should either be refreshed against v9.5 or be labelled
+    as the 2018 edition, which the scho:startDate and scho:endDate already suggest. A decision for the owner,
+    because refreshing it rewrites a published record rather than correcting it.'
+  action: proposed
+family: Government licenses (United Kingdom, Canada)
+port_of: null
+variant_kind: null
+notes: The batch input listed the text as a product page only. The terms PDF linked from that page was fetched
+  and read, so the record was checked against the licence itself, but against the current edition rather than
+  the one it models. Nothing in this review is legal advice.

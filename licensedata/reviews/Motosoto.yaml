@@ -1,0 +1,119 @@
+id: Motosoto
+title: Motosoto License
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: 'https://opensource.org/license/Motosoto'
+text_retrieved: true
+verdict: created
+summary: >-
+  The Motosoto Open Source License is the Jabber Open Source License, itself a Mozilla Public
+  License 1.1 derivative, with Dutch law and a Dutch forum. It carries the file-level
+  reciprocity of the Mozilla text: the Modifications you distribute stay under this licence
+  and their source must remain available. The record follows MPL-1.1. Nothing here is legal
+  advice.
+findings:
+- rubric: 2
+  severity: info
+  field: 'odrl:target'
+  description: >-
+    dcmitype:Software alone, following MPL-1.1, the parent text, and the two Eclipse records
+    of this family. The licence covers Covered Code and Modifications, which is software.
+  action: applied
+- rubric: 3
+  severity: major
+  field: 'odrl:permission'
+  description: >-
+    Section 1(a) grants the right to "Use, reproduce, modify, display, perform, sublicense and
+    distribute Licensed Product or portions thereof (including Modifications as hereinafter
+    defined), in both Source Code or as an executable program", so dalicc:sublicense is a
+    permission, and 1(c) and 2(b) grant patent licences, so dalicc:patentGrant is one.
+    dalicc:chargeDistributionFee is permitted; dalicc:chargeLicenseFee is not written, because
+    the only sentence that bars charging for the Source Code stands in the preamble, which the
+    text excludes from the licence.
+  action: applied
+- rubric: 4
+  severity: major
+  field: 'odrl:prohibition'
+  description: >-
+    dalicc:ChangeLicense, because section 4(a) says Modifications "may be distributed only
+    under the terms of this License or a future version of this License released under Section
+    7"; dalicc:promote, from section 3, "No right is granted to the trademarks of Licensor or
+    any Contributor even if such marks are included in the Licensed Product", and from section
+    7(d); and dalicc:patentRetaliationTermination from section 9(b).
+  action: applied
+- rubric: 3
+  severity: minor
+  field: 'dalicc:ChangeLicense'
+  description: >-
+    Sections 4(f) and 4(g) let You distribute an executable version, and a Derivative Work,
+    under a licence of your choice provided the requirements of this licence are met for the
+    Licensed Product itself. That is dalicc:ChangeLicense with a dalicc:compliantLicense duty,
+    but it cannot stand beside the prohibition that section 4(a) requires for the
+    Modifications, and the MPL-1.1 record takes the same decision. Both clauses are quoted.
+  action: proposed
+- rubric: 5
+  severity: major
+  field: 'odrl:duty'
+  description: >-
+    Section 4(a) governs the Modifications by this licence and requires a copy of the licence
+    with every copy (cc:ShareAlike, cc:Notice); 4(b) requires the Source Code of the Licensed
+    Product and of any Modifications to be made available (cc:SourceCode); 4(c) requires a
+    file documenting the additions, changes and deletions with their dates and a prominent
+    statement of derivation (dalicc:modificationNotice, cc:Attribution); 4(e) requires the
+    Exhibit A notice in each file (cc:Notice). The duties hang on odrl:distribute, odrl:modify
+    and odrl:derive, because the reciprocity reaches the files that carry the Licensed Product
+    and not the whole product.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: 'dalicc:WarrantyOrLiabilityAcceptance'
+  description: >-
+    Section 8 is quoted into dalicc:WarrantyDisclaimer, section 10 into
+    dalicc:LiabilityLimitation and the warranty offer of section 4(e) into
+    dalicc:WarrantyOrLiabilityAcceptance. dalicc:additionalClauses carries sections 3, 4(d),
+    4(f), 4(g), 5, 7(d), 9 and 13.
+  action: applied
+- rubric: 7
+  severity: info
+  field: 'cc:jurisdiction'
+  description: >-
+    Section 13 states: "This License shall be governed by Dutch law provisions." The record
+    keeps cc:jurisdiction dalicc:worldwide and quotes the clause, the choice this batch makes
+    for every governing-law clause; bpicounty:Netherlands is available if the owner would
+    rather read a choice of law as a jurisdiction.
+  action: applied
+- rubric: 8
+  severity: gap
+  field: 'dalicc:additionalClauses'
+  description: >-
+    The LEGAL file of section 4(d) could carry dalicc:includeNoticeFile, but MPL-1.1 quotes it
+    and this record follows. The automatic termination with a thirty day cure period in
+    section 9(a) has no property; proposed dalicc:terminatesOnBreach with a companion for the
+    cure period.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: >-
+    The consistency check of app.services.composer with the axioms of dg_default returned an
+    empty list for this record.
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: >-
+    Motosoto and CUA-OPL-1.0 are both Mozilla Public License 1.1 derivatives and carry the
+    same model; they differ in the steward, the governing law and the wording of the notice.
+    Section 7(a) of this text says so itself: "The Motosoto Open Source License is derived
+    from the Jabber Open Source License. All changes are related to applicable law and the
+    location of court."
+  action: none
+family: 'Eclipse, Common Public and Lucent'
+port_of: null
+variant_kind: null
+notes: >-
+  Modelled from the SPDX plain text of Motosoto and checked against the URL in cc:legalcode.
+  The published text carries two typographic slips, a space inside the word Licensor in
+  section 7(c) and inside the word resellers in section 9(d); neither sentence is quoted in
+  this record. The preamble, which the text itself says is not part of the licence, is not
+  modelled.

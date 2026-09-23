@@ -1,0 +1,72 @@
+id: Unlicense
+title: The Unlicense
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Unlicense.txt
+text_retrieved: true
+verdict: created
+summary: 'The record models the Unlicense, a dedication of the software to the public domain with a permissive
+  fallback. It follows Cc010Universal: every act is permitted, nothing is prohibited and no duty is attached,
+  with the dedication paragraph quoted in dalicc:additionalClauses. Unlike Cc010Universal it carries no dalicc:promote
+  prohibition, because the text says nothing about trademarks.'
+findings:
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads: "Anyone is free to copy, modify, publish, use, compile, sell, or distribute
+    this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial,
+    and by any means." The record permits reproduce, distribute, modify, derive, display, present, grantUse,
+    sublicense, change of license, commercial use, derivative works, modified works, the distribution fee and
+    the license fee. Sublicensing and relicensing follow from a dedication that keeps nothing back, and sell
+    supports both fee terms.'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: No duties, and no prohibitions. This and MIT-0 are the two records of the batch that impose
+    nothing at all on the licensee.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: Cc010Universal prohibits dalicc:promote because CC0 states that no trademark or patent rights
+    are waived. The Unlicense has no such sentence, so the prohibition is not written here. This is the one
+    deontic difference between the two dedications in the library.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: The dedication paragraph is quoted in dalicc:additionalClauses, because the relinquishment of
+    copyright in perpetuity is the substance of the license and no deontic term expresses it. Cc010Universal
+    quotes its fallback license the same way.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual. The dedication is expressly for jurisdictions that recognize copyright laws, with
+    a license as fallback, which the quoted clause carries.
+  action: none
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software, following Cc010Universal. The text licenses
+    software in source or binary form.
+  action: applied
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check with the axioms of dg_default returned no conflicts. No share-alike duty
+    is present, so permitting dalicc:ChangeLicense raises no conflict.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: 'Read against Cc010Universal: the same open model, one prohibition fewer, and a software target
+    instead of a creative-work and dataset target.'
+  action: none
+family: 'Permissive: MIT, ISC and BSD-like'
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text. The record keeps the SPDX title The Unlicense rather than the project
+  spelling unlicense.org.

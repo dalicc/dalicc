@@ -1,0 +1,72 @@
+id: Artistic-2.0
+title: Artistic License 2.0
+current_version: 3
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 2 clause texts, 1 permission and 2 prohibitions,
+    removed 1 prohibition and recorded the review state.
+  changes:
+  - action: added
+    statement: dalicc:LiabilityLimitation "UNLESS REQUIRED BY LAW, NO COPYRIGHT HOLDER OR CONTRIBUTOR
+      WILL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING IN ANY
+      WAY OUT OF THE USE OF THE PACKAGE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+    reason: Clause 14 was not recorded. Added, split into the warranty and the liability field.
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: added
+    statement: dalicc:WarrantyDisclaimer "THE PACKAGE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS
+      \"AS IS\" AND WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES. THE IMPLIED WARRANTIES OF MERCHANTABILITY,
+      FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT ARE DISCLAIMED TO THE EXTENT PERMITTED
+      BY YOUR LOCAL LAW."
+    reason: Clause 14 was not recorded. Added, split into the warranty and the liability field.
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: permission cc:CommercialUse
+    reason: 'Clause 1 states: "You are permitted to use the Standard Version and create and use Modified
+      Versions for any purpose without restriction", and clause 2 allows distribution "either gratis
+      or for a Distributor Fee". The record prohibited cc:CommercialUse. Removed it, added the permission,
+      and added the prohibition the text actually states, clause 7: "provided that you do not charge
+      a licensing fee for the Package".'
+    source: review-finding 4/odrl:prohibition
+  - action: removed
+    statement: prohibition cc:CommercialUse
+    reason: 'Clause 1 states: "You are permitted to use the Standard Version and create and use Modified
+      Versions for any purpose without restriction", and clause 2 allows distribution "either gratis
+      or for a Distributor Fee". The record prohibited cc:CommercialUse. Removed it, added the permission,
+      and added the prohibition the text actually states, clause 7: "provided that you do not charge
+      a licensing fee for the Package".'
+    source: review-finding 4/odrl:prohibition
+  - action: added
+    statement: prohibition dalicc:chargeLicenseFee
+    reason: 'Clause 1 states: "You are permitted to use the Standard Version and create and use Modified
+      Versions for any purpose without restriction", and clause 2 allows distribution "either gratis
+      or for a Distributor Fee". The record prohibited cc:CommercialUse. Removed it, added the permission,
+      and added the prohibition the text actually states, clause 7: "provided that you do not charge
+      a licensing fee for the Package".'
+    source: review-finding 4/odrl:prohibition
+  - action: added
+    statement: prohibition dalicc:promote
+    reason: 'Clause 12 states: "This license does not grant you the right to use any trademark, service
+      mark, tradename, or logo of the Copyright Holder." Added the dalicc:promote prohibition.'
+    source: review-finding 4/odrl:prohibition
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Family rule 14 of scripts/review/family_rules.py: dct:publisher was the placeholder ''N.N.''
+    and the clause literals carried a padding space.'
+  changes:
+  - action: removed
+    statement: dct:publisher "N.N."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

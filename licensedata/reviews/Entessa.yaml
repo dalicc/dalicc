@@ -1,0 +1,93 @@
+id: Entessa
+title: Entessa Public License v1.0
+reviewed_on: '2026-09-15'
+reviewer: Giray Havur
+text_source: https://opensource.org/license/Entessa
+text_retrieved: true
+verdict: created
+summary: 'The Entessa Public License is the Apache License 1.1 with the names changed: the two BSD redistribution
+  conditions, the prescribed acknowledgment in the end-user documentation, the no-endorsement clause and the bar
+  on calling a derived product openSEAL. The record follows BSD-3-Clause for its duties and PHP-3.01 for the acknowledgment.
+  Nothing here is legal advice.'
+findings:
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: dcmitype:Software alone, following BSD-3-Clause, whose text this licence follows sentence for sentence.
+    The licence speaks of software in source and binary forms and of nothing else.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'The grant reads: "Redistribution and use in source and binary forms, with or without modification,
+    are permitted provided that the following conditions are met". That is the library''s permissive base set: reproduce,
+    distribute, modify, derive, display, present, commercial use, derivative works, modified works and the distribution
+    fee. No patent licence is granted and none is refused, so nothing patent-related is written.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: 'Condition 4 says "The names "openSEAL" and "Entessa" must not be used to endorse or promote products
+    derived from this software without prior written permission", which is dalicc:promote. dalicc:ChangeLicense
+    is prohibited because conditions 1 and 2 require this list of conditions to travel with every copy, the reading
+    BSD-3-Clause and IscLicense carry. (Corrected on 2026-09-15 by the verification pass: see the rubric
+    3 finding on relicensing below.)'
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: Conditions 1 and 2 give cc:Attribution and cc:Notice on the three acts. Condition 3 requires the
+    acknowledgment "This product includes open source software developed by openSEAL (http://www.openseal.org/)."
+    in the end-user documentation, which is dalicc:addStatement on odrl:distribute with the text in dalicc:PromotionSpecification,
+    the pattern PHP-3.01 uses. Condition 5, "Products derived from this software may not be called "openSEAL"",
+    is dalicc:rename on odrl:modify and odrl:derive.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:additionalClauses
+  description: The disclaimer paragraph is split at "IN NO EVENT SHALL" into dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation,
+    the split the BSD records of batch 3 use. dalicc:additionalClauses carries conditions 4 and 5 and the closing
+    paragraph about the origin of the software.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no governing law and no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: info
+  field: vocabulary
+  description: 'No gap: every clause of this licence has a term. The prescribed acknowledgment is the only clause
+    that needed a second field, dalicc:PromotionSpecification, which already exists.'
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer with the axioms of dg_default returned an empty list
+    for this record.
+  action: none
+- rubric: 10
+  severity: info
+  field: family
+  description: Entessa and Naumen are the two Apache 1.1 derivatives of this batch. Entessa keeps the advertising
+    acknowledgment and the product-naming bar; Naumen drops both and adds a modification notice instead. Neither
+    has anything to do with the Common Public License, although the batch groups them with it.
+  action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+    source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
+    a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+    the earlier pass wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
+    or without modification, are permitted provided that the following conditions are met: 1. Redistributions of
+    source code must retain the above copyright notice, this list of conditions and the following disclaimer." The
+    permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the
+    relicensing.'
+  action: applied
+family: Eclipse, Common Public and Lucent
+port_of: null
+variant_kind: null
+notes: Modelled from the SPDX plain text of Entessa and checked against the URL in cc:legalcode. The disclaimer
+  uses the double-backtick quotation marks of the original BSD text and the quoted clause keeps them.

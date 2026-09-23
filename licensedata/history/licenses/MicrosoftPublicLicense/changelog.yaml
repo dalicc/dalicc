@@ -1,0 +1,53 @@
+id: MicrosoftPublicLicense
+title: Microsoft Public License
+current_version: 3
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 clause text and 1 identification detail and recorded
+    the review state.
+  changes:
+  - action: added
+    statement: dalicc:WarrantyDisclaimer "(E) The software is licensed \"as-is.\" You bear the risk
+      of using it. The contributors give no express warranties, guarantees, or conditions. You may
+      have additional consumer rights under your local laws which this license cannot change. To the
+      extent permitted under your local laws, the contributors exclude the implied warranties of merchantability,
+      fitness for a particular purpose and non-infringement."
+    reason: Condition 3(E) is a warranty disclaimer and was not recorded. Added, quoted.
+    source: review-finding 6/dalicc:WarrantyDisclaimer
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: spdx:licenseId "MS-PL"
+    reason: Added MS-PL; the title matches the SPDX name exactly.
+    source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 2 finding 6.1 and 6.2: dct:publisher was the placeholder ''N.N.'' and the record
+    made no patent statement although section 2(B) grants ''a non-exclusive, worldwide, royalty-free
+    license under its licensed patents'' and section 3(B) ends that grant on a patent claim, exactly
+    as the new MS-RL record models them.'
+  changes:
+  - action: changed
+    statement: dct:publisher "Microsoft"
+    previous: dct:publisher "N.N."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: permission dalicc:patentGrant
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: prohibition dalicc:patentRetaliationTermination
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

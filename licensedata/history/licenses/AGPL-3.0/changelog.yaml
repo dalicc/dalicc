@@ -1,0 +1,90 @@
+id: AGPL-3.0
+title: GNU Affero General Public License
+current_version: 4
+entries:
+- version: 2
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 added 1 permission and 1 statement, changed 2 identification
+    details, recorded the relation to the record this one was adapted from and recorded the review
+    state.
+  changes:
+  - action: added
+    statement: dalicc:orLaterVersionOption "false"^^xsd:boolean
+    reason: 'Review decision 6: the four GNU records model the ''-only'' reading, so the or-later
+      option is recorded as false rather than left unsaid.'
+    source: consolidation-decision 6
+  - action: added
+    statement: dalicc:reviewStatus dalicc:Reviewed
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:reviewedOn "2026-09-15"^^xsd:date
+    reason: Every record records how far it has come in the editorial workflow and when it was last
+      checked against the legal text.
+    source: review-state
+  - action: added
+    statement: dalicc:variantKind "version"
+    reason: The 2026-09-15 review made the relation between a jurisdiction port and the record it
+      was adapted from explicit in the data.
+    source: ports-metadata
+  - action: changed
+    statement: dct:publisher "Free Software Foundation"
+    previous: dct:publisher "GNU Affero General Public License"
+    reason: dct:publisher held the string "GNU Affero General Public License", that is the name of
+      the license, not its publisher. Corrected to the Free Software Foundation, in line with the
+      other three GNU records.
+    source: review-finding 1/dct:publisher
+  - action: added
+    statement: permission dalicc:chargeDistributionFee
+    reason: 'Section 4 states: "You may charge any price or no price for each copy that you convey."
+      Added the missing dalicc:chargeDistributionFee permission.'
+    source: review-finding 3/odrl:permission
+  - action: changed
+    statement: spdx:licenseId "AGPL-3.0-only"
+    previous: spdx:licenseId "AGPL-3.0"
+    reason: The record carried the deprecated SPDX id "AGPL-3.0". SPDX replaced it with AGPL-3.0-only
+      and AGPL-3.0-or-later; the record models no "any later version" option, so AGPL-3.0-only is
+      the matching id.
+    source: review-finding 1/spdx:licenseId
+- version: 3
+  date: '2026-09-15'
+  reviewer: Giray Havur
+  summary: 'Batch 1 finding 5.2: the record did not carry section 4 of the text, ''You may charge
+    any price or no price for each copy that you convey, and you may offer support or warranty protection
+    for a fee'', which every GNU record now carries.'
+  changes:
+  - action: added
+    statement: dalicc:WarrantyOrLiabilityAcceptance "You may charge any price or no price for each
+      copy that you convey, and you may offer support or warranty protection for a fee."
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+- version: 4
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: 'Section 13 is modelled at last: a dalicc:networkUseTrigger permission carrying a cc:SourceCode
+    duty, for "your modified version must prominently offer all users interacting with it remotely
+    through a computer network (if your version supports such interaction) an opportunity to receive
+    the Corresponding Source of your version". Section 8 gives dalicc:terminatesOnBreach and the cure
+    period, "you cure the violation prior to 30 days after your receipt of the notice", and section
+    11 of the GNU General Public License version 3, which this licence incorporates, gives the patent
+    grant: "Each contributor grants you a non-exclusive, worldwide, royalty-free patent license under
+    the contributor''s essential patent claims".'
+  changes:
+  - action: added
+    statement: dalicc:curePeriod "30 days"
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: permission dalicc:networkUseTrigger with duties [cc:SourceCode]
+    reason: Edited by hand; see the summary of this entry.
+    source: manual
+  - action: added
+    statement: permission dalicc:patentGrant
+    reason: Edited by hand; see the summary of this entry.
+    source: manual

@@ -1,0 +1,100 @@
+id: Libpng
+title: libpng License
+reviewed_on: '2026-09-22'
+reviewer: Giray Havur
+text_source: https://raw.githubusercontent.com/spdx/license-list-data/main/text/Libpng.txt
+text_retrieved: true
+verdict: created
+summary: 'Models the libpng notice as it stood for versions 1.2.6 to 1.4.5, which is the text SPDX lists under this
+  identifier. The operative part is three restrictions in the zlib shape: do not misrepresent the origin, mark altered
+  versions, and leave the copyright notice alone. The record follows TheZlibLibpngLicense.'
+findings:
+- rubric: 1
+  severity: info
+  field: spdx:licenseId
+  description: File name, record identifier, SPDX identifier and IRI local name are all Libpng. The library already
+    holds the zlib text under the descriptive identifier TheZlibLibpngLicense with spdx:licenseId Zlib, and that record
+    carries "Libpng" as a dct:alternative; the two are different texts and different SPDX identifiers.
+  action: applied
+- rubric: 2
+  severity: info
+  field: odrl:target
+  description: One odrl:AssetCollection of dct:type dcmitype:Software.
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: The grant reads "Permission is hereby granted to use, copy, modify, and distribute this source code,
+    or portions hereof, for any purpose, without fee, subject to the following restrictions". The record permits reproduce,
+    distribute, modify, derive, display, present, derivative works, modified works and the distribution fee. cc:CommercialUse
+    rests on the separate sentence "The Contributing Authors and Group 42, Inc. specifically permit, without fee,
+    and encourage the use of this source code as a component to supporting the PNG file format in commercial products".
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: dalicc:ChangeLicense is permitted with the dalicc:compliantLicense duty. Nothing in the text bars a
+    change of terms, and the notice condition has to survive one.
+  action: applied
+- rubric: 4
+  severity: minor
+  field: odrl:prohibition
+  description: No prohibitions. The text has no endorsement or trademark clause. The sentence about the PNG logo files
+    is a statement about what ships with the library, not a restriction.
+  action: none
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: cc:Notice hangs off odrl:distribute, odrl:modify and odrl:derive for restriction 3, "This Copyright
+    notice may not be removed or altered from any source or altered source distribution". dalicc:modificationNotice
+    and dalicc:rename hang off odrl:modify and odrl:derive for restriction 2, "Altered versions must be plainly marked
+    as such and must not be misrepresented as being the original source".
+  action: applied
+- rubric: 5
+  severity: minor
+  field: odrl:duty
+  description: No cc:Attribution. The text says "If you use this source code in a product, acknowledgment is not required
+    but would be appreciated", so there is no credit duty, which is the same reading TheZlibLibpngLicense gives.
+  action: applied
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyDisclaimer
+  description: The disclaimer paragraph carries the warranty sentences and the liability sentence and is split at
+    the sentence boundary. The additions to the disclaimer that the text attaches to versions 1.0.7 through 1.2.5
+    are quoted in dalicc:additionalClauses rather than merged into the disclaimer, because they apply to a named range
+    of versions. The quoted clauses come from a text that wraps lines and uses two spaces after a full stop. Line
+    breaks and repeated spaces are collapsed to a single space, which is how every other record in the library quotes
+    a multi-line clause. No word and no punctuation mark is changed.
+  action: applied
+- rubric: 7
+  severity: info
+  field: cc:jurisdiction
+  description: The text names no legal system and sets no term, so cc:jurisdiction is dalicc:worldwide and dalicc:validityType
+    is dalicc:perpetual.
+  action: applied
+- rubric: 8
+  severity: info
+  field: dalicc:additionalClauses
+  description: No clause of this text needs a term the vocabulary does not have. The per-version copyright roll and
+    the list of contributing authors are provenance rather than terms and are not quoted.
+  action: none
+- rubric: 9
+  severity: info
+  field: record
+  description: The consistency check of app.services.composer against the dependency graph dg_default returned an
+    empty conflict list.
+  action: none
+- rubric: 10
+  severity: info
+  field: record
+  description: Read against licensedata/licenses/TheZlibLibpngLicense.ttl the duty set is identical. The difference
+    is in the clause texts and in the express sentence about commercial products, which this text has and the zlib
+    text states inside its grant instead.
+  action: none
+family: Permissive variants
+port_of: null
+variant_kind: null
+variant_of: null
+notes: The text opens with the sentence that the notices in png.h prevail over this copy in case of a discrepancy;
+  that is a statement about which copy governs and is not modelled. cc:legalcode and dct:source both point at the
+  SPDX page, because the publisher's own address now serves version 2 of the licence.
