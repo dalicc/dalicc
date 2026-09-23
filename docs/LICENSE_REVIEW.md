@@ -6,6 +6,15 @@ deciding one of the open questions, or judging how far the data can be trusted.
 
 Part of the [documentation index](../README.md#documentation).
 
+This document is shared with the DALICC service repository, where the data is edited and
+where the service that serves it is developed. It therefore names things that are not in
+this repository: paths beginning with `app/` are modules of that service, and a handful
+of the scripts it names are the ones that export a running deployment's corrections back
+into the data, apply the decisions of the 2026 content review, or refresh the contract
+snapshots of the API. They are named so that you can see where the data comes from and
+where it is read. What is here is the data itself, the reasoner, and the checks that
+prove the data is sound, which `README.md` lists and `make check` runs.
+
 Contents: 1. method; 2. results; 3. the family map; 4. the seventeen consolidation
 decisions; 5. the modelling rules the standard licenses settled; 6. **open issues**;
 7. vocabulary gaps; 8. two readings that were reversed; 9. the family rules; 10. the scripts;
