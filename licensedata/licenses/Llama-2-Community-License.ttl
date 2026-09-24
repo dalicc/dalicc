@@ -19,6 +19,7 @@
 
 dalicclib:Llama-2-Community-License a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://raw.githubusercontent.com/meta-llama/llama/main/LICENSE> ;
     dalicc:LiabilityLimitation "4. Limitation of Liability. IN NO EVENT WILL META OR ITS AFFILIATES BE LIABLE UNDER ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, TORT, NEGLIGENCE, PRODUCTS LIABILITY, OR OTHERWISE, ARISING OUT OF THIS AGREEMENT, FOR ANY LOST PROFITS OR ANY INDIRECT, SPECIAL, CONSEQUENTIAL, INCIDENTAL, EXEMPLARY OR PUNITIVE DAMAGES, EVEN IF META OR ITS AFFILIATES HAVE BEEN ADVISED OF THE POSSIBILITY OF ANY OF THE FOREGOING." ;
@@ -44,25 +45,27 @@ dalicclib:Llama-2-Community-License a odrl:Set ;
         "Llama 2 Community License Agreement",
         "Llama-2-Community-License",
         "llama2" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Meta Platforms, Inc." ;
     dct:source <https://github.com/meta-llama/llama/blob/main/LICENSE> ;
     dct:title "Llama 2 Community License Agreement"@en ;
     odrl:duty [ a odrl:Duty ;
-            odrl:action dalicc:exportControlNotice ] ;
+            odrl:action dalicc:exportControlNotice ;
+            dalicc:evidence "Your use of the Llama Materials must comply with applicable laws and regulations (including trade compliance laws and regulations) and adhere to the Acceptable Use Policy for the Llama Materials (available at https://ai.meta.com/llama/use-policy), which is hereby incorporated by reference into this Agreement." ] ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "You must retain in all copies of the Llama Materials that you distribute the following attribution notice within a \"Notice\" text file distributed as a part of such copies: \"Llama 2 is licensed under the LLAMA 2 Community License, Copyright (c) Meta Platforms, Inc." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "If you distribute or make the Llama Materials, or any derivative works thereof, available to a third party, you shall provide a copy of this Agreement to such third party." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ],
-                [ a odrl:Duty ;
-                    odrl:action dalicc:includeNoticeFile ] ],
+                    odrl:action dalicc:includeNoticeFile ;
+                    dalicc:evidence "You must retain in all copies of the Llama Materials that you distribute the following attribution notice within a \"Notice\" text file distributed as a part of such copies: \"Llama 2 is licensed under the LLAMA 2 Community License, Copyright (c) Meta Platforms, Inc." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:modify ],
         [ a odrl:Permission ;
@@ -72,13 +75,17 @@ dalicclib:Llama-2-Community-License a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
-            odrl:action cc:CommercialUse ] ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ChangeLicense ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action dalicc:compliantLicense ] ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:useForModelTraining ],
+            odrl:action dalicc:useForModelTraining ;
+            dalicc:evidence "You will not use the Llama Materials or any output or results of the Llama Materials to improve any other large language model (excluding Llama 2 or derivative works thereof)." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:ChangeLicense ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "No trademark licenses are granted under this Agreement, and in connection with the Llama Materials, neither Meta nor Licensee may use any name or mark owned by or associated with the other or any of its affiliates, except as required for reasonable and customary use in describing and redistributing the Llama Materials." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ] ;
     odrl:target [ a odrl:AssetCollection ;

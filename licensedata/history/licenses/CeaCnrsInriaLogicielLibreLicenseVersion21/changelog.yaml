@@ -1,12 +1,16 @@
 id: CeaCnrsInriaLogicielLibreLicenseVersion21
 title: Cea Cnrs Inria Logiciel Libre License, version 2.1
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail, removed 1 prohibition and
-    recorded the review state.
+    recorded the review state. Later changes brought it in line with its family and its text in the
+    verification of 2026-09-15 and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
   changes:
   - action: added
     statement: dalicc:reviewStatus dalicc:Reviewed
@@ -29,19 +33,15 @@ entries:
     reason: Added CECILL-2.1. The record already carried "CECILL-2.1" as dct:alternative and the Open
       Source Initiative page for that id as dct:source.
     source: review-finding 1/spdx:licenseId
-- version: 3
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Batch 5 finding 7: dalicc:WarrantyDisclaimer held Article 8, the liability article, and
-    Article 9, the warranty article, was absent; the record prohibited dalicc:promote although CeCILL
-    2.1 has no trademark clause and prohibited dalicc:addStatement although Article 5.3.4 requires
-    a statement; and cc:attributionName and dct:publisher both began with a space. Article 9.3 is
-    quoted from the French legal code the record cites, which is the version that was retrieved.'
-  changes:
   - action: changed
     statement: cc:attributionName "CEA, CNRS, INRIA"
     previous: cc:attributionName " CEA, CNRS, INRIA"
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: dalicc:WarrantyDisclaimer held Article 8,
+      the liability article, and Article 9, the warranty article, was absent; the record prohibited
+      dalicc:promote although CeCILL 2.1 has no trademark clause and prohibited dalicc:addStatement
+      although Article 5.3.4 requires a statement; and cc:attributionName and dct:publisher both began
+      with a space. Article 9.3 is quoted from the French legal code the record cites, which is the
+      version that was retrieved.'
     source: manual
   - action: added
     statement: 'dalicc:LiabilityLimitation "8.1 Subject to the provisions of Article 8.2, the Licensee
@@ -58,7 +58,12 @@ entries:
       any disturbance to business activities) or any or all legal proceedings instituted against the
       Licensee by a third party, shall constitute consequential loss and shall not provide entitlement
       to any or all compensation from the Licensor."'
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: dalicc:WarrantyDisclaimer held Article 8,
+      the liability article, and Article 9, the warranty article, was absent; the record prohibited
+      dalicc:promote although CeCILL 2.1 has no trademark clause and prohibited dalicc:addStatement
+      although Article 5.3.4 requires a statement; and cc:attributionName and dct:publisher both began
+      with a space. Article 9.3 is quoted from the French legal code the record cites, which is the
+      version that was retrieved.'
     source: manual
   - action: changed
     statement: dalicc:WarrantyDisclaimer "9.3 Le Licencié reconnaît que le Logiciel est fourni \"en
@@ -81,18 +86,44 @@ entries:
       any disturbance to business activities) or any or all legal proceedings instituted against the
       Licensee by a third party, shall constitute consequential loss and shall not provide entitlement
       to any or all compensation from the Licensor."'
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: dalicc:WarrantyDisclaimer held Article 8,
+      the liability article, and Article 9, the warranty article, was absent; the record prohibited
+      dalicc:promote although CeCILL 2.1 has no trademark clause and prohibited dalicc:addStatement
+      although Article 5.3.4 requires a statement; and cc:attributionName and dct:publisher both began
+      with a space. Article 9.3 is quoted from the French legal code the record cites, which is the
+      version that was retrieved.'
     source: manual
   - action: changed
     statement: dct:publisher "CEA, CNRS, INRIA"
     previous: dct:publisher " CEA, CNRS, INRIA"
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: dalicc:WarrantyDisclaimer held Article 8,
+      the liability article, and Article 9, the warranty article, was absent; the record prohibited
+      dalicc:promote although CeCILL 2.1 has no trademark clause and prohibited dalicc:addStatement
+      although Article 5.3.4 requires a statement; and cc:attributionName and dct:publisher both began
+      with a space. Article 9.3 is quoted from the French legal code the record cites, which is the
+      version that was retrieved.'
     source: manual
   - action: removed
     statement: prohibition dalicc:addStatement
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: dalicc:WarrantyDisclaimer held Article 8,
+      the liability article, and Article 9, the warranty article, was absent; the record prohibited
+      dalicc:promote although CeCILL 2.1 has no trademark clause and prohibited dalicc:addStatement
+      although Article 5.3.4 requires a statement; and cc:attributionName and dct:publisher both began
+      with a space. Article 9.3 is quoted from the French legal code the record cites, which is the
+      version that was retrieved.'
     source: manual
   - action: removed
     statement: prohibition dalicc:promote
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: dalicc:WarrantyDisclaimer held Article 8,
+      the liability article, and Article 9, the warranty article, was absent; the record prohibited
+      dalicc:promote although CeCILL 2.1 has no trademark clause and prohibited dalicc:addStatement
+      although Article 5.3.4 requires a statement; and cc:attributionName and dct:publisher both began
+      with a space. Article 9.3 is quoted from the French legal code the record cites, which is the
+      version that was retrieved.'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

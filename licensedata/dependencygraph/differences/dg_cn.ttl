@@ -1,0 +1,47 @@
+# China default rules
+#
+# NOTHING IN THIS FILE IS LEGAL ADVICE. Each rule names the statute or the principle it
+# rests on so that a reader can check it, explains in plain words what it does, and is a
+# proposal for the association's legal reviewer, who decides whether it is adopted. What a
+# licence means is decided by its text, and what the law of a country requires is decided
+# by that country's courts.
+#
+# This difference adds default rules only. It removes no axiom of the core graph and
+# replaces none of its rules, because no source known to the reviewer says that the law
+# here departs from them; differences/README.md shows how a removal and a replacement are
+# written.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<https://dalicc.net/dependencygraph/dg_cn> dct:title "China default rules"@en ;
+    dct:description """The DALICC deontic dependency graph with default rules for what a licence does not say, under the law of China: the moral rights of authorship and integrity, which the Copyright Law does not let a licence remove, and mining, for which the law states no general exception. The graph is complete: it holds the axioms and the adopted rule of the core graph beside its own rules, and it is built from the core graph and a difference file. Each rule names its legal basis and says in plain words what it does. The rules are proposals until the association's legal reviewer adopts them. Nothing in this graph is legal advice."""@en ;
+    dct:coverage dalicc:CN ;
+    dalicc:basedOnGraph <https://dalicc.net/dependencygraph/dg_default> .
+
+# The default rules this graph adds.
+
+<https://dalicc.net/dependencygraph/rules/cn-moral> a dalicc:DefaultRule ;
+    rdfs:label "Authorship and integrity cannot be waived in China"@en ;
+    dalicc:appliesTo dalicc:moralRightsRestriction ;
+    dalicc:defaultOutcome dalicc:NotWaivable ;
+    dalicc:inJurisdiction dalicc:CN ;
+    dalicc:ruleBasis "Copyright Law article 10(1) to 10(4) and article 10, paragraphs 2 and 3: only the rights in items (5) to (17) may be licensed or transferred, so the rights of publication, authorship, alteration and integrity stay with the author; article 22 adds that the last three are unlimited in time" ;
+    dalicc:ruleExplanation "This rule adds nothing to a licence that says nothing about moral rights; it reports a finding when a licence permits the licensee to set aside the author's rights of authorship, alteration or integrity. The Copyright Law of China lets an author license or transfer only the economic rights, so the rights of authorship, alteration and integrity stay with the author, and a licence term that sets them aside may have no effect. A person combining licences under this graph sees the finding beside a licence that claims such a waiver."@en ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .
+
+<https://dalicc.net/dependencygraph/rules/cn-tdm> a dalicc:DefaultRule ;
+    rdfs:label "Mining is not allowed unless the licence allows it"@en ;
+    dalicc:appliesTo dalicc:textAndDataMining ;
+    dalicc:defaultOutcome dalicc:NotGrantedByDefault ;
+    dalicc:inJurisdiction dalicc:CN ;
+    dalicc:ruleBasis "Copyright Law article 24 lists the permitted uses and names no general exception for text and data mining, so a licence that says nothing leaves a mining act that reproduces a protected work unlicensed, unless a narrower exception such as use for personal study or research (article 24(1)) applies to the facts" ;
+    dalicc:ruleExplanation "A licence that says nothing about text and data mining is read as not allowing it. The Copyright Law of China lists the uses permitted without the rightholder's consent and names no general exception for mining, so a mining act that reproduces a protected work needs a licence that grants it, unless a narrower exception such as use for personal study or research applies to the facts. Combining a licence that is silent about it with one that permits it shows a conflict marked as coming from this rule."@en ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .

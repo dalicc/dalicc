@@ -1,12 +1,19 @@
 id: CC-BY-NC-ND-4.0
 title: Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, removed
-    2 permissions and recorded the review state.
+    2 permissions and recorded the review state. Later changes recorded what the text says about the
+    database right, recorded which sentence of the text each statement rests on, recorded when the
+    license ends on a breach and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
   changes:
   - action: added
     statement: dalicc:reviewStatus dalicc:Reviewed
@@ -41,16 +48,33 @@ entries:
     reason: The record carried no SPDX identifier although its own DALICC identifier is the SPDX list
       identifier CC-BY-NC-ND-4.0, whose SPDX seeAlso URL is the cc:legalcode of this record. Added.
     source: review-finding 1/spdx:licenseId
-- version: 3
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: 'Section 4 of the 4.0 text grants the database right where it applies: "for the avoidance
-    of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or
-    a substantial portion of the contents of the database", and Section 4(c) carries the conditions
-    of Section 3(a) over to it. dalicc:suiGenerisDatabaseRights is now permitted, with the attribution
-    and notice duties of the copyright grant.'
-  changes:
   - action: added
     statement: permission dalicc:suiGenerisDatabaseRights with duties [cc:Attribution, cc:Notice]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Section 4 of the 4.0 text grants the database right where it applies: "for the avoidance
+      of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or
+      a substantial portion of the contents of the database", and Section 4(c) carries the conditions
+      of Section 3(a) over to it. dalicc:suiGenerisDatabaseRights is now permitted, with the attribution
+      and notice duties of the copyright grant.'
+    source: manual
+  - action: changed
+    statement: prohibition cc:CommercialUse
+    previous: prohibition cc:CommercialUse
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "NonCommercial
+      means not primarily intended for or directed towards commercial advantage or monetary compensation."'
+    source: manual
+  - action: added
+    statement: dalicc:curePeriod "30 days"
+    reason: Section 6(b) reinstates the rights "automatically as of the date the violation is cured,
+      provided it is cured within 30 days of Your discovery of the violation".
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'Section 6(a) reads: "However, if You fail to comply with this Public License, then Your
+      rights under this Public License terminate automatically."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

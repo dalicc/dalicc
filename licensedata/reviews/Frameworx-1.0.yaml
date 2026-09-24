@@ -97,7 +97,7 @@ findings:
   severity: info
   field: family
   description: >-
-    Frameworx has no parent in this batch: it is neither a Common Public License nor an Apache
+    Frameworx has no parent in this review group: it is neither a Common Public License nor an Apache
     1.1 derivative, and its nearest relative in the library is the group of whole-work
     reciprocal records such as CERN-OHL-S-2.0 and SimPL-2.0, which also carry a licence-wide
     cc:ShareAlike duty.

@@ -19,6 +19,7 @@
 
 dalicclib:BigScience-BLOOM-RAIL-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://scancode-licensedb.aboutcode.org/bigscience-rail-1.0.LICENSE> ;
     dalicc:LiabilityLimitation "10. Limitation of Liability. In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Model and the Complementary Material (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages." ;
@@ -49,43 +50,56 @@ dalicclib:BigScience-BLOOM-RAIL-1.0 a odrl:Set ;
         "BigScience RAIL License v1.0",
         "BigScience-BLOOM-RAIL-1.0",
         "bigscience-bloom-rail-1.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "BigScience" ;
     dct:source <https://huggingface.co/spaces/bigscience/license> ;
     dct:title "BigScience RAIL License v1.0"@en ;
     odrl:permission [ a odrl:Permission ;
-            odrl:action odrl:reproduce ],
+            odrl:action odrl:reproduce ;
+            dalicc:evidence "Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare, publicly display, publicly perform, sublicense, and distribute the Complementary Material, the Model, and Derivatives of the Model." ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "You must retain all copyright, patent, trademark, and attribution notices excluding those notices that do not pertain to any part of the Model, Derivatives of the Model." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "You must give any Third Party recipients of the Model or Derivatives of the Model a copy of this License; 3." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "You must cause any modified files to carry prominent notices stating that You changed the files; 4." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "Use-based restrictions as referenced in paragraph 5 MUST be included as an enforceable provision by You in any type of legal agreement (e.g. a license) governing the use and/or distribution of the Model or Derivatives of the Model, and You shall give notice to subsequent users You Distribute to, that the Model or Derivatives of the Model are subject to paragraph 5." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "You must retain all copyright, patent, trademark, and attribution notices excluding those notices that do not pertain to any part of the Model, Derivatives of the Model." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "You must give any Third Party recipients of the Model or Derivatives of the Model a copy of this License; 3." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "You must cause any modified files to carry prominent notices stating that You changed the files; 4." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "Use-based restrictions as referenced in paragraph 5 MUST be included as an enforceable provision by You in any type of legal agreement (e.g. a license) governing the use and/or distribution of the Model or Derivatives of the Model, and You shall give notice to subsequent users You Distribute to, that the Model or Derivatives of the Model are subject to paragraph 5." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "You must retain all copyright, patent, trademark, and attribution notices excluding those notices that do not pertain to any part of the Model, Derivatives of the Model." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "You must give any Third Party recipients of the Model or Derivatives of the Model a copy of this License; 3." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "You must cause any modified files to carry prominent notices stating that You changed the files; 4." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "Use-based restrictions as referenced in paragraph 5 MUST be included as an enforceable provision by You in any type of legal agreement (e.g. a license) governing the use and/or distribution of the Model or Derivatives of the Model, and You shall give notice to subsequent users You Distribute to, that the Model or Derivatives of the Model are subject to paragraph 5." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -101,23 +115,34 @@ dalicclib:BigScience-BLOOM-RAIL-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ],
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ],
         [ a odrl:Permission ;
             odrl:action dalicc:patentGrant ],
         [ a odrl:Permission ;
             odrl:action dalicc:networkUseTrigger ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "You must retain all copyright, patent, trademark, and attribution notices excluding those notices that do not pertain to any part of the Model, Derivatives of the Model." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "You must give any Third Party recipients of the Model or Derivatives of the Model a copy of this License; 3." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "Use-based restrictions as referenced in paragraph 5 MUST be included as an enforceable provision by You in any type of legal agreement (e.g. a license) governing the use and/or distribution of the Model or Derivatives of the Model, and You shall give notice to subsequent users You Distribute to, that the Model or Derivatives of the Model are subject to paragraph 5." ] ;
+            dalicc:evidence "You may host for Third Party remote access purposes (e.g. software-as-a-service), reproduce and distribute copies of the Model or Derivatives of the Model thereof in any medium, with or without modifications, provided that You meet the following conditions: 1." ],
         [ a odrl:Permission ;
-            odrl:action dalicc:useForModelTraining ] ;
+            odrl:action dalicc:useForModelTraining ;
+            dalicc:evidence "Use may include creating any content with, finetuning, updating, running, training, evaluating and/or reparametrizing the Model." ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Nothing in this License permits You to make use of Licensors’ trademarks, trade names, logos or to otherwise suggest endorsement or misrepresent the relationship between the parties; and any rights not expressly granted herein are reserved by the Licensors." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:exemptedMaterial ],
+            odrl:action dalicc:exemptedMaterial ;
+            dalicc:evidence "The Data is not licensed under this License." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ] ;
     odrl:target [ a odrl:AssetCollection ;

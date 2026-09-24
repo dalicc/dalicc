@@ -1,0 +1,35 @@
+id: RPL-1.1
+title: Reciprocal Public License 1.1
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: duty cc:ShareAlike
+    previous: duty cc:ShareAlike
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "In consideration
+      of, and as an express condition to, the licenses granted to You under this License You hereby
+      agree that any Modifications, Derivative Works, or Required Components (collectively Extensions)
+      that You create or to which You contribute are governed by the terms of this License including,
+      without limitation, Section 4."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "No right is granted
+      to the trademarks of Licensor or any Contributor even if such marks are included in the Licensed
+      Software."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

@@ -49,7 +49,7 @@ findings:
   field: 'odrl:prohibition'
   description: >-
     Three prohibitions. dalicc:sublicense is refused in one sentence, "The Licensee shall not
-    sub-license or transfer this licence", which makes this the only record of the batch to
+    sub-license or transfer this licence", which makes this the only record of the review group to
     prohibit it from the text rather than from review decision 1. dalicc:promote carries
     Section 6, "Neither the licensor's nor other contributors' names or trademarks must be
     used to support, recommend or market the licensee or any products or services using the
@@ -124,9 +124,9 @@ findings:
   severity: info
   field: record
   description: >-
-    Family: the record follows the Open Government Licence records of this batch for its
+    Family: the record follows the Open Government Licence records of this review group for its
     attribution duties and the OdcOpenDatabaseLicense record for its database right. It is the
-    only record of the batch that prohibits sublicensing on the strength of its own text, and
+    only record of the review group that prohibits sublicensing on the strength of its own text, and
     one of four that permit dalicc:ChangeLicense with a compliant licence duty, the others
     being CeCILL-B, LiLiQ-P-1.1 and etalab-2.0.
   action: none

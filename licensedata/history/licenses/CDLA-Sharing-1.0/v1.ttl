@@ -1,0 +1,97 @@
+# Title: The machine-readable representation of "Community Data License Agreement Sharing 1.0"@en in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/CDLA-Sharing-1.0
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:CDLA-Sharing-1.0 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "CDLA-Sharing-1.0" ;
+    cc:attributionName "The Linux Foundation" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://cdla.io/sharing-1-0> ;
+    dalicc:LiabilityLimitation "6.2 NEITHER YOU NOR ANY DATA PROVIDERS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE DATA OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES." ;
+    dalicc:WarrantyDisclaimer "6.1 EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE DATA (INCLUDING ENHANCED DATA) IS PROVIDED ON AN “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE." ;
+    dalicc:additionalClauses "2.1 Subject to the conditions set forth in Section 3 of this Agreement, Data Provider(s) hereby grant(s) to You a worldwide, non-exclusive, irrevocable (except as provided in Section 5) right to: (a) Use Data; and (b) Publish Data. 2.2 To the extent that the Data or the coordination, selection or arrangement of Data is protected or protectable under copyright, Sui Generis Database Rights, or other law, Data Provider(s) further agree(s) that such Data or coordination, selection or arrangement is hereby licensed to You and to anyone else who Receives Data under this Agreement for Use and Publication, subject to the conditions set forth in Section 3 of this Agreement. 2.3 Except for these rights and licenses expressly granted, no other intellectual property rights are granted or should be implied. (a) The Data (including the Enhanced Data) must be Published under this Agreement in accordance with this Section 3; and (b) You must cause any Data files containing Enhanced Data to carry prominent notices that You have changed those files; and (c) If You Publish Data You Receive, You must preserve all credit or attribution to the Data Provider(s). Such retained credit or attribution includes any of the following to the extent they exist in Data as You have Received it: legal notices or metadata; identification of the Data Provider(s); or hyperlinks to Data to the extent it is practical to do so. 3.2 You may not restrict or deter the ability of anyone who Receives the Data (a) to Publish the Data in a publicly-accessible manner or (b) if the project has designated a Ledger for recording Data or grants of rights in Data for purposes of this Agreement, to record the Data or grants of rights in Data in the Ledger. 3.3 If You Publish Data You Receive, You must do so under an unmodified form of this Agreement and include the text of this Agreement, the name of this Agreement and/or a hyperlink or other method reasonably likely to provide a copy of the text of this Agreement. You may not modify this Agreement or impose any further restrictions on the exercise of the rights granted under this Agreement, including by adding any restriction on commercial or non-commercial Use of Data (including Your Enhanced Data) or by limiting permitted Use of such Data to any particular platform, technology or field of endeavor. Notices that purport to modify this Agreement shall be of no effect. 3.4 You and each Data Provider agree that Enhanced Data shall not be considered a work of joint authorship by virtue of its relationship to Data licensed under this Agreement and shall not require either any obligation of accounting to or the consent of any Data Provider. 3.5 This Agreement imposes no obligations or restrictions on Your Use or Publication of Results. 4.1 Each Data Provider represents that the Data Provider has exercised reasonable care, to assure that: (a) the Data it Publishes was created or generated by it or was obtained from others with the right to Publish the Data under this Agreement; and (b) Publication of such Data does not violate any privacy or confidentiality obligation undertaken by the Data Provider. 5.1 All of Your rights under this Agreement will terminate, and Your right to Receive, Use or Publish the Data will be revoked or modified if You materially fail to comply with the terms and conditions of this Agreement and You do not cure such failure in a reasonable period of time after becoming aware of such noncompliance. If Your rights under this Agreement terminate, You agree to cease Receipt, Use and Publication of Data. However, Your obligations and any rights and permissions granted by You under this Agreement relating to Data that You Published prior to such termination will continue and survive. 5.2 If You institute litigation against a Data Provider or anyone else who Receives the Data (including a cross-claim in a lawsuit) based on the Data, other than a claim asserting breach of this Agreement, then any rights previously granted to You to Receive, Use and Publish Data under this Agreement will terminate as of the date such litigation is filed. 7.1 You agree that it is solely Your responsibility to comply with all applicable laws with regard to Your Use or Publication of Data, including any applicable privacy, data protection, security and export laws. You agree to take reasonable steps to assist a Data Provider fulfilling responsibilities to comply with applicable laws with regard to Use or Publication of Data Received hereunder. 7.2 You and Data Provider(s), collectively and individually, waive and/or agree not to assert, to the extent permitted by law, any moral rights You or they hold in Data. 7.5 The Community Data License Agreement workgroup under The Linux Foundation is the steward of this Agreement (“Steward”). No one other than the Steward has the right to modify or publish new versions of this Agreement. Each version will be given a distinguishing version number. You may Use and Publish Data Received hereunder under the terms of the version of the Agreement under which You originally Received the Data, or under the terms of any subsequent version published by the Steward. 1.12 “Sui Generis Database Rights” means rights, other than copyright, resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other equivalent rights anywhere in the world." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
+    dalicc:sublicenseSurvival true ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CDLA-Sharing-1.0/versions> ;
+    dct:alternative "CDLA Sharing 1.0",
+        "CDLA-Sharing-1.0",
+        "Community Data License Agreement - Sharing - Version 1.0" ;
+    dct:hasVersion "1" ;
+    dct:modified "2026-09-15"^^xsd:date ;
+    dct:publisher "The Linux Foundation" ;
+    dct:source <https://spdx.org/licenses/CDLA-Sharing-1.0.html> ;
+    dct:title "Community Data License Agreement Sharing 1.0"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:ShareAlike ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:ShareAlike ] ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:suiGenerisDatabaseRights ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:moralRightsNonAssertion ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:sublicense ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:patentRetaliationTermination ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:publicationNonObstruction ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset ] .

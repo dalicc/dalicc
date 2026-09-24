@@ -27,12 +27,10 @@ findings:
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Every permission of Apache-2.0 is kept, including cc:CommercialUse and dalicc:chargeDistributionFee. The
-    condition bars one act only, selling the Software itself: ''Commons Clause only forbids you from "selling" the Commons
-    Clause software itself. You may develop on top of Commons Clause licensed software (adding applications, tools, utilities
-    or plug-ins) and you may embed and redistribute Commons Clause software in a larger product, and you may distribute
-    and even "sell" (which includes offering as a commercial SaaS service) your product.'' Apache-2.0 carries no dalicc:chargeLicenseFee,
-    so nothing had to be removed for the fee terms.'
+  description: 'Every permission of Apache-2.0 is kept, including cc:CommercialUse and
+    dalicc:chargeDistributionFee. The condition removes one right from the grant: "the grant of rights under
+    the License will not include, and the License does not grant to you, the right to Sell the Software".
+    Apache-2.0 carries no dalicc:chargeLicenseFee, so nothing had to be removed for the fee terms.'
   action: applied
 - rubric: 4
   severity: major
@@ -94,6 +92,15 @@ findings:
   description: 'Against its base record the rider differs in exactly five places: no spdx:licenseId, the title, the alternatives,
     three additional clause literals and the dalicc:sellCopy prohibition, plus dalicc:variantKind ''rider'' and dalicc:variantOf.
     Everything else is byte for byte the Apache-2.0 model.'
+  action: none
+- rubric: 8
+  severity: gap
+  field: dalicc:sellCopy
+  description: 'dalicc:sellCopy covers the sale of copies only; the condition''s "Sell" also covers paid
+    hosting and support whose value derives from the Software: "to provide to third parties, for a fee
+    or other consideration (including without limitation fees for hosting or consulting/ support services
+    related to the Software), a product or service whose value derives, entirely or substantially, from
+    the functionality of the Software". Proposed term: dalicc:valueDerivedCommercialService.'
   action: none
 family: Source-available licences and riders
 port_of: null

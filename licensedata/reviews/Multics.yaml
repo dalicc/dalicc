@@ -77,10 +77,10 @@ findings:
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Permission to use, copy, modify, and distribute these programs
+    the earlier reading wrote is removed. The text reads: "Permission to use, copy, modify, and distribute these programs
     and their documentation for any purpose and without fee is hereby granted,provided that the below copyright
     notice and historical background appear in all copies and that both the copyright notice and historical background
     and this permission notice appear in supporting documentation, and that the names of MIT, HIS, BULL or BULL

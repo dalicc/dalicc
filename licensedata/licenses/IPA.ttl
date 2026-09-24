@@ -19,6 +19,7 @@
 
 dalicclib:IPA a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "IPA" ;
     cc:attributionName "Information-technology Promotion Agency, Japan" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -34,8 +35,8 @@ dalicclib:IPA a odrl:Set ;
     dct:alternative "IPA",
         "IPA Font License",
         "IPA Font License Agreement v1.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Information-technology Promotion Agency, Japan" ;
     dct:source <https://spdx.org/licenses/IPA.html> ;
     dct:title "IPA Font License"@en ;
@@ -46,7 +47,8 @@ dalicclib:IPA a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "The Recipient must attach a copy of this Agreement to the Licensed Program." ],
                 [ a odrl:Duty ;
                     odrl:action cc:ShareAlike ] ],
         [ a odrl:Permission ;
@@ -56,7 +58,8 @@ dalicclib:IPA a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "The Recipient must attach a copy of this Agreement to the Licensed Program." ],
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
@@ -70,7 +73,8 @@ dalicclib:IPA a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "The Recipient must attach a copy of this Agreement to the Licensed Program." ],
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
@@ -90,7 +94,8 @@ dalicclib:IPA a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "In no sense is this Agreement intended to transfer ... any right relating to any trademark, trade name, or service mark to the Recipient" ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Software ] .

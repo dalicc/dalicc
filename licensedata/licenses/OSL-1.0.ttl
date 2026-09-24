@@ -19,6 +19,7 @@
 
 dalicclib:OSL-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "OSL-1.0" ;
     cc:attributionName "Lawrence E. Rosen" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -35,8 +36,8 @@ dalicclib:OSL-1.0 a odrl:Set ;
     dct:alternative "OSL 1.0",
         "OSL-1.0",
         "Open Software License 1.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Lawrence Rosen" ;
     dct:source <https://spdx.org/licenses/OSL-1.0.html> ;
     dct:title "Open Software License 1.0"@en ;
@@ -49,7 +50,8 @@ dalicclib:OSL-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "Licensor hereby grants You a world-wide, royalty-free, non-exclusive, perpetual, non-sublicenseable license to do the following: a) to reproduce the Original Work in copies; b) to prepare derivative works (“Derivative Works”) based upon the Original Work; c) to distribute copies of the Original Work and Derivative Works to the public, with the proviso that copies of Original Work or Derivative Works that You distribute shall be licensed under the Open Software License; d) to perform the Original Work publicly; and e) to display the Original Work publicly." ],
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ] ],
         [ a odrl:Permission ;
@@ -59,11 +61,13 @@ dalicclib:OSL-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ] ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "Licensor hereby grants You a world-wide, royalty-free, non-exclusive, perpetual, non-sublicenseable license to do the following: a) to reproduce the Original Work in copies; b) to prepare derivative works (“Derivative Works”) based upon the Original Work; c) to distribute copies of the Original Work and Derivative Works to the public, with the proviso that copies of Original Work or Derivative Works that You distribute shall be licensed under the Open Software License; d) to perform the Original Work publicly; and e) to display the Original Work publicly." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ] ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "Licensor hereby grants You a world-wide, royalty-free, non-exclusive, perpetual, non-sublicenseable license to do the following: a) to reproduce the Original Work in copies; b) to prepare derivative works (“Derivative Works”) based upon the Original Work; c) to distribute copies of the Original Work and Derivative Works to the public, with the proviso that copies of Original Work or Derivative Works that You distribute shall be licensed under the Open Software License; d) to perform the Original Work publicly; and e) to display the Original Work publicly." ] ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
@@ -73,7 +77,8 @@ dalicclib:OSL-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeLicenseFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:patentGrant ],
+            odrl:action dalicc:patentGrant ;
+            dalicc:evidence "Licensor hereby grants You a world-wide, royalty-free, non-exclusive, perpetual, non-sublicenseable license, under patent claims owned or controlled by the Licensor that are embodied in the Original Work as furnished by the Licensor (“Licensed Claims”) to make, use, sell and offer for sale the Original Work." ],
         [ a odrl:Permission ;
             odrl:action dalicc:networkUseTrigger ;
             odrl:duty [ a odrl:Duty ;

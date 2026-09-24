@@ -1,13 +1,22 @@
 id: CreativeCommonsAttribution30Luxembourg
 title: Creative Commons Attribution 3.0 Luxembourg
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, changed
     1 asset target, recorded the relation to the record this one was adapted from and recorded the
-    review state.
+    review state. Later changes recorded what the text says about the database right, recorded which
+    sentence of the text each statement rests on, recorded when the license ends on a breach, named
+    the license the record itself is published under and removed the quotes that do not name the act
+    they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
   changes:
   - action: added
     statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-4.0
@@ -60,21 +69,80 @@ entries:
       legal text names databases as licensed subject matter and disposes of the database maker's right
       in the grant itself, dcmitype:Dataset was added here rather than left as a proposal, which is
       how the same question was decided for the Portuguese, Czech and Azerbaijani ports. The ports
-      in this batch whose text has no database clause at all, Ecuador and Brazil, keep the proposal.
+      in this review group whose text has no database clause at all, Ecuador and Brazil, keep the
+      proposal.
     source: review-finding 2/odrl:target
-- version: 3
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: 'The port settles the sui generis database right in its own text: Section 3 grants "Lorsque
-    l''Oeuvre est une base de donnees, extraire et reutiliser des parties substantielles de l''Oeuvre"
-    and closes with "Si le Donneur de Licence est le titulaire de droits de base de donnees sui generis
-    suivant la transposition en droit national de la Directive Europeenne sur les Bases de Donnees,
-    le Donneur de Licence renonce a ces droits". dalicc:suiGenerisDatabaseRights is now permitted,
-    and it carries no duty because Section 4(f) adds that the restrictions of 4(a) and 4(b) do not
-    apply to the parts of an Oeuvre that fall inside the definition only because they are governed
-    by that sui generis right.'
-  changes:
   - action: added
     statement: permission dalicc:suiGenerisDatabaseRights
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The port settles the sui generis database right in its own text: Section 3 grants "Lorsque
+      l''Oeuvre est une base de donnees, extraire et reutiliser des parties substantielles de l''Oeuvre"
+      and closes with "Si le Donneur de Licence est le titulaire de droits de base de donnees sui
+      generis suivant la transposition en droit national de la Directive Europeenne sur les Bases
+      de Donnees, le Donneur de Licence renonce a ces droits". dalicc:suiGenerisDatabaseRights is
+      now permitted, and it carries no duty because Section 4(f) adds that the restrictions of 4(a)
+      and 4(b) do not apply to the parts of an Oeuvre that fall inside the definition only because
+      they are governed by that sui generis right.'
+    source: manual
+  - action: changed
+    statement: permission dalicc:suiGenerisDatabaseRights
+    previous: permission dalicc:suiGenerisDatabaseRights
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Lorsque l''Œuvre
+      est une base de données, extraire et réutiliser des parties substantielles de l''Œuvre."'
+    source: manual
+  - action: changed
+    statement: permission odrl:display
+    previous: permission odrl:display
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Sous réserve
+      des conditions de la présente Licence, le Donneur de Licence Vous accorde par les présentes
+      une licence mondiale, gratuite, non exclusive et perpétuelle (pour la durée du droit d’auteur
+      applicable) aux fins d’exercer les droits suivants sur l’Œuvre :"'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Sous réserve
+      des conditions de la présente Licence, le Donneur de Licence Vous accorde par les présentes
+      une licence mondiale, gratuite, non exclusive et perpétuelle (pour la durée du droit d’auteur
+      applicable) aux fins d’exercer les droits suivants sur l’Œuvre :"'
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Sous réserve
+      des conditions de la présente Licence, le Donneur de Licence Vous accorde par les présentes
+      une licence mondiale, gratuite, non exclusive et perpétuelle (pour la durée du droit d’auteur
+      applicable) aux fins d’exercer les droits suivants sur l’Œuvre :"'
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'The termination clause of this port reads: "La présente Licence ainsi que les droits
+      concédés en vertu des présentes seront automatiquement résiliés en cas de violation de Votre
+      part des conditions de la présente Licence."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: permission odrl:display
+    previous: permission odrl:display
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce: the quoted sentence does not name the act. The statements stay, read from the
+      text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce: the quoted sentence does not name the act. The statements stay, read from the
+      text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce: the quoted sentence does not name the act. The statements stay, read from the
+      text without a linked quote.'
     source: manual

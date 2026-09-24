@@ -70,7 +70,7 @@ findings:
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 4 finding 6.1 and consolidation decision 4: the record modelled
+    its new siblings and versioned. The review''s finding on family consistency and consolidation decision 4: the record modelled
     no reciprocity although section 3 says ''When the Program is made available in source code form: a)
     it must be made available under this Agreement'', it made no patent statement although section 2(b)
     grants one and section 7 ends it on patent litigation, and dct:publisher and cc:attributionName both

@@ -22,6 +22,11 @@
       "triples": 0,
       "dependency_graph": 0
     },
+    "https://dalicc.net/ns#AxiomRemoval": {
+      "licenses": 0,
+      "triples": 0,
+      "dependency_graph": 0
+    },
     "https://dalicc.net/ns#BR": {
       "licenses": 0,
       "triples": 0,
@@ -70,6 +75,11 @@
     "https://dalicc.net/ns#EU": {
       "licenses": 0,
       "triples": 0,
+      "dependency_graph": 0
+    },
+    "https://dalicc.net/ns#FromConvention": {
+      "licenses": 115,
+      "triples": 217,
       "dependency_graph": 0
     },
     "https://dalicc.net/ns#FromDefaultRule": {
@@ -242,6 +252,16 @@
       "triples": 0,
       "dependency_graph": 0
     },
+    "https://dalicc.net/ns#basedOnGraph": {
+      "licenses": 0,
+      "triples": 0,
+      "dependency_graph": 0
+    },
+    "https://dalicc.net/ns#basedOnVersion": {
+      "licenses": 0,
+      "triples": 0,
+      "dependency_graph": 0
+    },
     "https://dalicc.net/ns#chargeDistributionFee": {
       "licenses": 541,
       "triples": 541,
@@ -262,9 +282,14 @@
       "triples": 23,
       "dependency_graph": 0
     },
+    "https://dalicc.net/ns#compatibleWith": {
+      "licenses": 18,
+      "triples": 56,
+      "dependency_graph": 0
+    },
     "https://dalicc.net/ns#compliantLicense": {
-      "licenses": 118,
-      "triples": 119,
+      "licenses": 124,
+      "triples": 125,
       "dependency_graph": 0
     },
     "https://dalicc.net/ns#composedOf": {
@@ -292,14 +317,19 @@
       "triples": 6,
       "dependency_graph": 0
     },
+    "https://dalicc.net/ns#convention": {
+      "licenses": 115,
+      "triples": 217,
+      "dependency_graph": 0
+    },
     "https://dalicc.net/ns#covenantNotToSue": {
       "licenses": 2,
       "triples": 2,
       "dependency_graph": 0
     },
     "https://dalicc.net/ns#curePeriod": {
-      "licenses": 43,
-      "triples": 43,
+      "licenses": 49,
+      "triples": 49,
       "dependency_graph": 0
     },
     "https://dalicc.net/ns#databaseRightWaiver": {
@@ -312,6 +342,11 @@
       "triples": 0,
       "dependency_graph": 1
     },
+    "https://dalicc.net/ns#deprecatedOn": {
+      "licenses": 0,
+      "triples": 0,
+      "dependency_graph": 0
+    },
     "https://dalicc.net/ns#derivativeDatabaseAccess": {
       "licenses": 0,
       "triples": 0,
@@ -320,6 +355,11 @@
     "https://dalicc.net/ns#downstreamOffer": {
       "licenses": 0,
       "triples": 0,
+      "dependency_graph": 0
+    },
+    "https://dalicc.net/ns#evidence": {
+      "licenses": 369,
+      "triples": 1154,
       "dependency_graph": 0
     },
     "https://dalicc.net/ns#exceptedCombination": {
@@ -393,8 +433,8 @@
       "dependency_graph": 0
     },
     "https://dalicc.net/ns#modificationNotice": {
-      "licenses": 364,
-      "triples": 735,
+      "licenses": 362,
+      "triples": 731,
       "dependency_graph": 1
     },
     "https://dalicc.net/ns#moralRightsNonAssertion": {
@@ -463,8 +503,8 @@
       "dependency_graph": 0
     },
     "https://dalicc.net/ns#promote": {
-      "licenses": 363,
-      "triples": 363,
+      "licenses": 360,
+      "triples": 360,
       "dependency_graph": 1
     },
     "https://dalicc.net/ns#provideUserData": {
@@ -512,6 +552,11 @@
       "triples": 70,
       "dependency_graph": 0
     },
+    "https://dalicc.net/ns#replacesRule": {
+      "licenses": 0,
+      "triples": 0,
+      "dependency_graph": 0
+    },
     "https://dalicc.net/ns#reverseEngineerForInteroperability": {
       "licenses": 0,
       "triples": 0,
@@ -543,6 +588,11 @@
       "dependency_graph": 0
     },
     "https://dalicc.net/ns#ruleBasis": {
+      "licenses": 0,
+      "triples": 0,
+      "dependency_graph": 1
+    },
+    "https://dalicc.net/ns#ruleExplanation": {
       "licenses": 0,
       "triples": 0,
       "dependency_graph": 1
@@ -583,8 +633,8 @@
       "dependency_graph": 0
     },
     "https://dalicc.net/ns#statementOrigin": {
-      "licenses": 0,
-      "triples": 0,
+      "licenses": 115,
+      "triples": 217,
       "dependency_graph": 0
     },
     "https://dalicc.net/ns#sublicense": {
@@ -598,13 +648,13 @@
       "dependency_graph": 0
     },
     "https://dalicc.net/ns#suiGenerisDatabaseRights": {
-      "licenses": 98,
-      "triples": 98,
+      "licenses": 101,
+      "triples": 101,
       "dependency_graph": 0
     },
     "https://dalicc.net/ns#terminatesOnBreach": {
-      "licenses": 145,
-      "triples": 145,
+      "licenses": 438,
+      "triples": 438,
       "dependency_graph": 0
     },
     "https://dalicc.net/ns#terminationOnBreach": {

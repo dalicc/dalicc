@@ -1,11 +1,16 @@
 id: CATOSL-1.1
 title: Computer Associates Trusted Open Source License 1.1
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
-  summary: The content review of 2026-09-15 removed 1 prohibition and recorded the review state.
+  summary: The content review of 2026-09-15 removed 1 prohibition and recorded the review state. Later
+    changes brought it in line with its family and its text in the verification of 2026-09-15 and
+    named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
   changes:
   - action: added
     statement: dalicc:reviewStatus dalicc:Reviewed
@@ -23,12 +28,6 @@ entries:
       of this License" and requires source availability for any distribution. Prohibiting cc:ShareAlike
       asserts the opposite. Removed.
     source: review-finding 5/odrl:prohibition
-- version: 3
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Family rule 14 of scripts/review/family_rules.py: the warranty and liability literals
-    carried a padding space inside their quotation marks.'
-  changes:
   - action: changed
     statement: dalicc:WarrantyDisclaimer "EXCEPT AS EXPRESSLY SET FORTH IN THIS LICENSE, AND TO THE
       EXTENT PERMITTED BY LAW, NO CONTRIBUTOR SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL,
@@ -43,5 +42,12 @@ entries:
       NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR
       THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
       "
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Library convention 14: the warranty and liability literals carried a padding space inside
+      their quotation marks.'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

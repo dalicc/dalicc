@@ -19,6 +19,7 @@
 
 dalicclib:CERN-OHL-S-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CERN-OHL-S-2.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2> ;
@@ -41,8 +42,8 @@ dalicclib:CERN-OHL-S-2.0 a odrl:Set ;
     dct:alternative "CERN Open Hardware Licence Version 2 - Strongly Reciprocal",
         "CERN-OHL-S",
         "CERN-OHL-S-2.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "CERN" ;
     dct:source <https://www.ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2> ;
     dct:title "CERN Open Hardware Licence Version 2 - Strongly Reciprocal"@en ;
@@ -93,7 +94,8 @@ dalicclib:CERN-OHL-S-2.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Any such permitted use shall be factual and shall not be made so as to suggest any kind of endorsement or implication of involvement by the Licensor or its personnel." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ],
         [ a odrl:Prohibition ;

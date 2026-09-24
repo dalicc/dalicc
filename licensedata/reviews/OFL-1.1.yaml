@@ -17,7 +17,7 @@ findings:
   field: 'odrl:target'
   description: >-
     A font is a computer program and a work of design at once, so the record carries
-    dalicc:CreativeWork and dcmitype:Software, the pair the batch uses for all four font
+    dalicc:CreativeWork and dcmitype:Software, the pair the review group uses for all four font
     records. The licence itself speaks of "Font Software" and defines it as "the set of files
     released by the Copyright Holder(s) under this license", which may include "source files,
     build scripts and documentation".

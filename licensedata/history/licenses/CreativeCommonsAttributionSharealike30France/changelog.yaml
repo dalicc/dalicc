@@ -1,13 +1,19 @@
 id: CreativeCommonsAttributionSharealike30France
 title: Creative Commons Attribution-ShareAlike 3.0 France
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, changed
     4 alternative titles and 1 asset target, recorded the relation to the record this one was adapted
-    from and recorded the review state.
+    from and recorded the review state. Later changes recorded what the text says about the database
+    right, recorded when the license ends on a breach and named the license the record itself is published
+    under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
   changes:
   - action: added
     statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0
@@ -80,19 +86,25 @@ entries:
       covered by the database producer right alone. Because the grant of the database right is explicit
       in the text, dcmitype:Dataset was added rather than proposed.'
     source: review-finding 2/odrl:target
-- version: 3
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: 'The port settles the sui generis database right in its own text: Article 3 grants, over
-    and above the copyright acts, the right to "extraire et reutiliser des parties substantielles"
-    when the work is a database, the definition of Oeuvre covers "une base de donnees dans la mesure
-    ou elle est protegee par le droit d''auteur ou le droit des producteurs de bases de donnees",
-    and the licensor waives its own sui generis right where it holds one, "l''Offrant renonce a ce
-    droit". dalicc:suiGenerisDatabaseRights is now permitted, and it carries no duty because Article
-    4(e) adds that article 3 and articles 4(a) and 4(b) do not apply to the part of the work that
-    is covered by the database producer right alone.'
-  changes:
   - action: added
     statement: permission dalicc:suiGenerisDatabaseRights
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The port settles the sui generis database right in its own text: Article 3 grants, over
+      and above the copyright acts, the right to "extraire et reutiliser des parties substantielles"
+      when the work is a database, the definition of Oeuvre covers "une base de donnees dans la mesure
+      ou elle est protegee par le droit d''auteur ou le droit des producteurs de bases de donnees",
+      and the licensor waives its own sui generis right where it holds one, "l''Offrant renonce a
+      ce droit". dalicc:suiGenerisDatabaseRights is now permitted, and it carries no duty because
+      Article 4(e) adds that article 3 and articles 4(a) and 4(b) do not apply to the part of the
+      work that is covered by the database producer right alone.'
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'The termination clause of this port reads: "Toute violation par l''Acceptant des clauses
+      de cette Licence entraînera sa résiliation automatique et la fin des droits qui en découlent."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

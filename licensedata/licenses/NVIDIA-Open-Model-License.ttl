@@ -19,6 +19,7 @@
 
 dalicclib:NVIDIA-Open-Model-License a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/> ;
     dalicc:LiabilityLimitation "Limitation of Liability. In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, will NVIDIA be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this Agreement or out of the use or inability to use the Model, Derivative Models or outputs (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if NVIDIA has been advised of the possibility of such damages." ;
@@ -48,8 +49,8 @@ dalicclib:NVIDIA-Open-Model-License a odrl:Set ;
         "NVIDIA Open Model License Agreement",
         "NVIDIA-Open-Model-License",
         "nvidia-open-model-license" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "NVIDIA Corporation" ;
     dct:source <https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/> ;
     dct:title "NVIDIA Open Model License Agreement"@en ;
@@ -60,11 +61,14 @@ dalicclib:NVIDIA-Open-Model-License a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "If you distribute the Model, You must give any other recipients of the Model a copy of this Agreement and include the following attribution notice within a “Notice” text file with such copies: “Licensed by NVIDIA Corporation under the NVIDIA Open Model License”;" ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:includeNoticeFile ],
+                    odrl:action dalicc:includeNoticeFile ;
+                    dalicc:evidence "If you distribute the Model, You must give any other recipients of the Model a copy of this Agreement and include the following attribution notice within a “Notice” text file with such copies: “Licensed by NVIDIA Corporation under the NVIDIA Open Model License”;" ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "If you distribute the Model, You must give any other recipients of the Model a copy of this Agreement and include the following attribution notice within a “Notice” text file with such copies: “Licensed by NVIDIA Corporation under the NVIDIA Open Model License”;" ] ],
         [ a odrl:Permission ;
             odrl:action odrl:modify ],
         [ a odrl:Permission ;
@@ -72,7 +76,8 @@ dalicclib:NVIDIA-Open-Model-License a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
-            odrl:action odrl:present ],
+            odrl:action odrl:present ;
+            dalicc:evidence "Subject to the terms and conditions of this Agreement, NVIDIA hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, revocable (as stated in Section 2.1) license to publicly perform, publicly display, reproduce, use, create derivative works of, make, have made, sell, offer for sale, distribute (through multiple tiers of distribution) and import the Model." ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
@@ -84,15 +89,21 @@ dalicclib:NVIDIA-Open-Model-License a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ],
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ],
         [ a odrl:Permission ;
             odrl:action dalicc:patentGrant ],
         [ a odrl:Permission ;
             odrl:action dalicc:useForModelTraining ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ] ;
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "If you distribute the Model, You must give any other recipients of the Model a copy of this Agreement and include the following attribution notice within a “Notice” text file with such copies: “Licensed by NVIDIA Corporation under the NVIDIA Open Model License”;" ] ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "This Agreement does not grant permission to use the trade names, trademarks, service marks, or product names of NVIDIA, except as required for reasonable and customary use in describing the origin of the Model and reproducing the content of the “Notice” text file." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:exemptedMaterial ],
         [ a odrl:Prohibition ;

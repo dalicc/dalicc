@@ -86,7 +86,7 @@ findings:
   description: >-
     Read as a diff against MPL-1.0 rather than in full. Shares its duty placement with
     CommonDevelopmentAndDistributionLicense10 and is the parent text of CDDL-1.1, Nokia, SISSL
-    and RSCPL in this batch, which carry the same shape.
+    and RSCPL in this review group, which carry the same shape.
   action: none
 family: Mozilla and CDDL
 port_of: null

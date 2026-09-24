@@ -1,12 +1,20 @@
 id: MozillaPublicLicenseVersion20
 title: Mozilla Public License Version 2.0
-current_version: 4
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail, 1 permission and 1 prohibition
-    and recorded the review state.
+    and recorded the review state. Later changes brought it in line with its family and its text in
+    the verification of 2026-09-15, recorded which sentence of the text each statement rests on, named
+    the license the record itself is published under and recorded the licenses a work under it may
+    be released under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
   changes:
   - action: added
     statement: dalicc:reviewStatus dalicc:Reviewed
@@ -37,71 +45,245 @@ entries:
     statement: spdx:licenseId "MPL-2.0"
     reason: Added MPL-2.0.
     source: review-finding 1/spdx:licenseId
-- version: 3
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Batch 2 finding 6.3 and 6.4 and consolidation decision 4: the record made no patent statement
-    although section 2.1(b) grants a patent license and section 5.2 is a retaliation clause, and it
-    hung cc:ShareAlike off the license although MPL 2.0 reciprocity is file level: ''You must inform
-    recipients that the Source Code Form of the Covered Software is governed by the terms of this
-    License'' (3.1), while 3.2(b) lets a Larger Work go out ''under terms of Your choice''.'
-  changes:
   - action: removed
     statement: duty cc:ShareAlike
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      made no patent statement although section 2.1(b) grants a patent license and section 5.2 is
+      a retaliation clause, and it hung cc:ShareAlike off the license although MPL 2.0 reciprocity
+      is file level: ''You must inform recipients that the Source Code Form of the Covered Software
+      is governed by the terms of this License'' (3.1), while 3.2(b) lets a Larger Work go out ''under
+      terms of Your choice''.'
     source: manual
   - action: added
     statement: permission dalicc:ChangeLicense
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      made no patent statement although section 2.1(b) grants a patent license and section 5.2 is
+      a retaliation clause, and it hung cc:ShareAlike off the license although MPL 2.0 reciprocity
+      is file level: ''You must inform recipients that the Source Code Form of the Covered Software
+      is governed by the terms of this License'' (3.1), while 3.2(b) lets a Larger Work go out ''under
+      terms of Your choice''.'
     source: manual
   - action: added
     statement: permission dalicc:patentGrant
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      made no patent statement although section 2.1(b) grants a patent license and section 5.2 is
+      a retaliation clause, and it hung cc:ShareAlike off the license although MPL 2.0 reciprocity
+      is file level: ''You must inform recipients that the Source Code Form of the Covered Software
+      is governed by the terms of this License'' (3.1), while 3.2(b) lets a Larger Work go out ''under
+      terms of Your choice''.'
     source: manual
   - action: changed
     statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
     previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      made no patent statement although section 2.1(b) grants a patent license and section 5.2 is
+      a retaliation clause, and it hung cc:ShareAlike off the license although MPL 2.0 reciprocity
+      is file level: ''You must inform recipients that the Source Code Form of the Covered Software
+      is governed by the terms of this License'' (3.1), while 3.2(b) lets a Larger Work go out ''under
+      terms of Your choice''.'
     source: manual
   - action: changed
     statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
     previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      made no patent statement although section 2.1(b) grants a patent license and section 5.2 is
+      a retaliation clause, and it hung cc:ShareAlike off the license although MPL 2.0 reciprocity
+      is file level: ''You must inform recipients that the Source Code Form of the Covered Software
+      is governed by the terms of this License'' (3.1), while 3.2(b) lets a Larger Work go out ''under
+      terms of Your choice''.'
     source: manual
   - action: changed
     statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
     previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      made no patent statement although section 2.1(b) grants a patent license and section 5.2 is
+      a retaliation clause, and it hung cc:ShareAlike off the license although MPL 2.0 reciprocity
+      is file level: ''You must inform recipients that the Source Code Form of the Covered Software
+      is governed by the terms of this License'' (3.1), while 3.2(b) lets a Larger Work go out ''under
+      terms of Your choice''.'
     source: manual
   - action: removed
     statement: prohibition dalicc:ChangeLicense
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      made no patent statement although section 2.1(b) grants a patent license and section 5.2 is
+      a retaliation clause, and it hung cc:ShareAlike off the license although MPL 2.0 reciprocity
+      is file level: ''You must inform recipients that the Source Code Form of the Covered Software
+      is governed by the terms of this License'' (3.1), while 3.2(b) lets a Larger Work go out ''under
+      terms of Your choice''.'
     source: manual
   - action: added
     statement: prohibition dalicc:patentRetaliationTermination
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      made no patent statement although section 2.1(b) grants a patent license and section 5.2 is
+      a retaliation clause, and it hung cc:ShareAlike off the license although MPL 2.0 reciprocity
+      is file level: ''You must inform recipients that the Source Code Form of the Covered Software
+      is governed by the terms of this License'' (3.1), while 3.2(b) lets a Larger Work go out ''under
+      terms of Your choice''.'
     source: manual
-- version: 4
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Weak-copyleft family alignment of 2026-09-15: the record said nothing about three clauses
-    its text-modelled sibling MPL-2.0-no-copyleft-exception quotes. Section 2.1 grants the right to
-    ''use, reproduce, make available, modify, display, perform, distribute, and otherwise exploit
-    its Contributions'', which is the derivative-works permission; section 3.2(a) lets the distributor
-    pass on the source ''at a charge no more than the cost of distribution to the recipient'', which
-    is the distribution fee; and section 3.2(b) lets the distributor ''distribute such Executable
-    Form under the terms of this License, or sublicense it under different terms'', which is the sublicensing
-    permission.'
-  changes:
   - action: added
     statement: permission cc:DerivativeWorks
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Weak-copyleft family alignment of 2026-09-15: the record said nothing about three clauses
+      its text-modelled sibling MPL-2.0-no-copyleft-exception quotes. Section 2.1 grants the right
+      to ''use, reproduce, make available, modify, display, perform, distribute, and otherwise exploit
+      its Contributions'', which is the derivative-works permission; section 3.2(a) lets the distributor
+      pass on the source ''at a charge no more than the cost of distribution to the recipient'', which
+      is the distribution fee; and section 3.2(b) lets the distributor ''distribute such Executable
+      Form under the terms of this License, or sublicense it under different terms'', which is the
+      sublicensing permission.'
     source: manual
   - action: added
     statement: permission dalicc:chargeDistributionFee
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Weak-copyleft family alignment of 2026-09-15: the record said nothing about three clauses
+      its text-modelled sibling MPL-2.0-no-copyleft-exception quotes. Section 2.1 grants the right
+      to ''use, reproduce, make available, modify, display, perform, distribute, and otherwise exploit
+      its Contributions'', which is the derivative-works permission; section 3.2(a) lets the distributor
+      pass on the source ''at a charge no more than the cost of distribution to the recipient'', which
+      is the distribution fee; and section 3.2(b) lets the distributor ''distribute such Executable
+      Form under the terms of this License, or sublicense it under different terms'', which is the
+      sublicensing permission.'
     source: manual
   - action: added
     statement: permission dalicc:sublicense
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Weak-copyleft family alignment of 2026-09-15: the record said nothing about three clauses
+      its text-modelled sibling MPL-2.0-no-copyleft-exception quotes. Section 2.1 grants the right
+      to ''use, reproduce, make available, modify, display, perform, distribute, and otherwise exploit
+      its Contributions'', which is the derivative-works permission; section 3.2(a) lets the distributor
+      pass on the source ''at a charge no more than the cost of distribution to the recipient'', which
+      is the distribution fee; and section 3.2(b) lets the distributor ''distribute such Executable
+      Form under the terms of this License, or sublicense it under different terms'', which is the
+      sublicensing permission.'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    reason: Its duty cc:ShareAlike quotes "You must inform recipients that the Source Code Form of
+      the Covered Software is governed by the terms of this License, and how they can obtain a copy
+      of this License."
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    reason: Its duty cc:ShareAlike quotes "You must inform recipients that the Source Code Form of
+      the Covered Software is governed by the terms of this License, and how they can obtain a copy
+      of this License."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    reason: Its duty cc:ShareAlike quotes "You must inform recipients that the Source Code Form of
+      the Covered Software is governed by the terms of this License, and how they can obtain a copy
+      of this License."
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "This License
+      does not grant any rights in the trademarks, service marks, or logos of any Contributor (except
+      as may be necessary to comply with the notice requirements in Section 3.4)."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: added
+    statement: dalicc:compatibleWith dalicclib:AGPL-3.0
+    reason: 'Section 3.3 reads: "If the Larger Work is a combination of Covered Software with a work
+      governed by one or more Secondary Licenses, and the Covered Software is not Incompatible With
+      Secondary Licenses, this License permits You to additionally distribute such Covered Software
+      under the terms of such Secondary License(s)", and Section 1.12 defines a Secondary License
+      as "either the GNU General Public License, Version 2.0, the GNU Lesser General Public License,
+      Version 2.1, the GNU Affero General Public License, Version 3.0, or any later versions of those
+      licenses."'
+    source: manual
+  - action: added
+    statement: dalicc:compatibleWith dalicclib:AGPL-3.0-or-later
+    reason: 'Section 3.3 reads: "If the Larger Work is a combination of Covered Software with a work
+      governed by one or more Secondary Licenses, and the Covered Software is not Incompatible With
+      Secondary Licenses, this License permits You to additionally distribute such Covered Software
+      under the terms of such Secondary License(s)", and Section 1.12 defines a Secondary License
+      as "either the GNU General Public License, Version 2.0, the GNU Lesser General Public License,
+      Version 2.1, the GNU Affero General Public License, Version 3.0, or any later versions of those
+      licenses."'
+    source: manual
+  - action: added
+    statement: dalicc:compatibleWith dalicclib:GPL-2.0-only
+    reason: 'Section 3.3 reads: "If the Larger Work is a combination of Covered Software with a work
+      governed by one or more Secondary Licenses, and the Covered Software is not Incompatible With
+      Secondary Licenses, this License permits You to additionally distribute such Covered Software
+      under the terms of such Secondary License(s)", and Section 1.12 defines a Secondary License
+      as "either the GNU General Public License, Version 2.0, the GNU Lesser General Public License,
+      Version 2.1, the GNU Affero General Public License, Version 3.0, or any later versions of those
+      licenses."'
+    source: manual
+  - action: added
+    statement: dalicc:compatibleWith dalicclib:GPL-2.0-or-later
+    reason: 'Section 3.3 reads: "If the Larger Work is a combination of Covered Software with a work
+      governed by one or more Secondary Licenses, and the Covered Software is not Incompatible With
+      Secondary Licenses, this License permits You to additionally distribute such Covered Software
+      under the terms of such Secondary License(s)", and Section 1.12 defines a Secondary License
+      as "either the GNU General Public License, Version 2.0, the GNU Lesser General Public License,
+      Version 2.1, the GNU Affero General Public License, Version 3.0, or any later versions of those
+      licenses."'
+    source: manual
+  - action: added
+    statement: dalicc:compatibleWith dalicclib:GPL-3.0-only
+    reason: 'Section 3.3 reads: "If the Larger Work is a combination of Covered Software with a work
+      governed by one or more Secondary Licenses, and the Covered Software is not Incompatible With
+      Secondary Licenses, this License permits You to additionally distribute such Covered Software
+      under the terms of such Secondary License(s)", and Section 1.12 defines a Secondary License
+      as "either the GNU General Public License, Version 2.0, the GNU Lesser General Public License,
+      Version 2.1, the GNU Affero General Public License, Version 3.0, or any later versions of those
+      licenses."'
+    source: manual
+  - action: added
+    statement: dalicc:compatibleWith dalicclib:GPL-3.0-or-later
+    reason: 'Section 3.3 reads: "If the Larger Work is a combination of Covered Software with a work
+      governed by one or more Secondary Licenses, and the Covered Software is not Incompatible With
+      Secondary Licenses, this License permits You to additionally distribute such Covered Software
+      under the terms of such Secondary License(s)", and Section 1.12 defines a Secondary License
+      as "either the GNU General Public License, Version 2.0, the GNU Lesser General Public License,
+      Version 2.1, the GNU Affero General Public License, Version 3.0, or any later versions of those
+      licenses."'
+    source: manual
+  - action: added
+    statement: dalicc:compatibleWith dalicclib:LGPL-2.1-only
+    reason: 'Section 3.3 reads: "If the Larger Work is a combination of Covered Software with a work
+      governed by one or more Secondary Licenses, and the Covered Software is not Incompatible With
+      Secondary Licenses, this License permits You to additionally distribute such Covered Software
+      under the terms of such Secondary License(s)", and Section 1.12 defines a Secondary License
+      as "either the GNU General Public License, Version 2.0, the GNU Lesser General Public License,
+      Version 2.1, the GNU Affero General Public License, Version 3.0, or any later versions of those
+      licenses."'
+    source: manual
+  - action: added
+    statement: dalicc:compatibleWith dalicclib:LGPL-2.1-or-later
+    reason: 'Section 3.3 reads: "If the Larger Work is a combination of Covered Software with a work
+      governed by one or more Secondary Licenses, and the Covered Software is not Incompatible With
+      Secondary Licenses, this License permits You to additionally distribute such Covered Software
+      under the terms of such Secondary License(s)", and Section 1.12 defines a Secondary License
+      as "either the GNU General Public License, Version 2.0, the GNU Lesser General Public License,
+      Version 2.1, the GNU Affero General Public License, Version 3.0, or any later versions of those
+      licenses."'
+    source: manual
+  - action: added
+    statement: dalicc:compatibleWith dalicclib:LGPL-3.0-only
+    reason: 'Section 3.3 reads: "If the Larger Work is a combination of Covered Software with a work
+      governed by one or more Secondary Licenses, and the Covered Software is not Incompatible With
+      Secondary Licenses, this License permits You to additionally distribute such Covered Software
+      under the terms of such Secondary License(s)", and Section 1.12 defines a Secondary License
+      as "either the GNU General Public License, Version 2.0, the GNU Lesser General Public License,
+      Version 2.1, the GNU Affero General Public License, Version 3.0, or any later versions of those
+      licenses."'
+    source: manual
+  - action: added
+    statement: dalicc:compatibleWith dalicclib:LGPL-3.0-or-later
+    reason: 'Section 3.3 reads: "If the Larger Work is a combination of Covered Software with a work
+      governed by one or more Secondary Licenses, and the Covered Software is not Incompatible With
+      Secondary Licenses, this License permits You to additionally distribute such Covered Software
+      under the terms of such Secondary License(s)", and Section 1.12 defines a Secondary License
+      as "either the GNU General Public License, Version 2.0, the GNU Lesser General Public License,
+      Version 2.1, the GNU Affero General Public License, Version 3.0, or any later versions of those
+      licenses."'
     source: manual

@@ -19,6 +19,7 @@
 
 dalicclib:Unicode-DFS-2016 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "Unicode-DFS-2016" ;
     cc:attributionName "Unicode, Inc." ;
     cc:jurisdiction dalicc:worldwide ;
@@ -34,8 +35,8 @@ dalicclib:Unicode-DFS-2016 a odrl:Set ;
     dct:alternative "Unicode Data Files and Software License 2016",
         "Unicode License Agreement - Data Files and Software (2016)",
         "Unicode-DFS-2016" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Unicode, Inc." ;
     dct:source <https://spdx.org/licenses/Unicode-DFS-2016.html> ;
     dct:title "Unicode License Agreement - Data Files and Software (2016)"@en ;
@@ -76,9 +77,14 @@ dalicclib:Unicode-DFS-2016 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Except as contained in this notice, the name of a copyright holder shall not be used in advertising or otherwise to promote the sale, use or other dealings in these Data Files or Software without prior written authorization of the copyright holder." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Dataset,
                 dcmitype:Software ] .

@@ -46,6 +46,7 @@ OBJECT_INDENT = " " * 8
 PREDICATE_ORDER = (
     "a",
     "cc:license",
+    "dct:license",
     "spdx:licenseId",
     "cc:attributionName",
     "cc:jurisdiction",
@@ -64,6 +65,7 @@ PREDICATE_ORDER = (
     "dalicc:governingLaw",
     "dalicc:governmentRightsLimitation",
     "dalicc:compatibleLicenseTest",
+    "dalicc:compatibleWith",
     "dalicc:reciprocityScope",
     "dalicc:shareAlikeVersionQualifier",
     "dalicc:alternativeConditionSet",
@@ -96,6 +98,13 @@ PREDICATE_ORDER = (
     "foaf:img",
     "foaf:logo",
 )
+
+
+#: The record of the library is published under CC BY 4.0.  ``cc:license`` names DALICC's
+#: own record of that licence; ``dct:license`` names the licence by the address Creative
+#: Commons publishes it at, so a consumer that matches the canonical IRI finds it.
+RECORD_LICENCE_RECORD = "dalicclib:CC-BY-4.0"
+RECORD_LICENCE_IRI = "<https://creativecommons.org/licenses/by/4.0/>"
 
 
 class RecordError(RuntimeError):
@@ -243,8 +252,26 @@ class Record:
         )
 
     def write(self) -> None:
-        """Write the record back to its file with LF endings and a final newline."""
+        """Write the record back to its file with LF endings and a final newline.
+
+        A record published under DALICC's record of CC BY 4.0 also names the licence by
+        its canonical address (:meth:`name_record_licence`), so every record the tooling
+        writes carries both.
+        """
+        self.name_record_licence()
         self.path.write_text(self.render(), encoding="utf-8", newline="")
+
+    def name_record_licence(self) -> bool:
+        """Add ``dct:license <https://creativecommons.org/licenses/by/4.0/>`` where due.
+
+        Only a record whose ``cc:license`` is DALICC's record of CC BY 4.0 gets it; the
+        statement sits right after ``cc:license``.  Returns ``True`` when it was added.
+        """
+        if RECORD_LICENCE_RECORD not in self.objects("cc:license"):
+            return False
+        if RECORD_LICENCE_IRI in self.objects("dct:license"):
+            return False
+        return self.add_object("dct:license", RECORD_LICENCE_IRI)
 
     # -- queries -----------------------------------------------------------
 

@@ -51,12 +51,22 @@ Usage
     python scripts/review/bump_version.py MIT --summary "..." --base-file before.ttl
     python scripts/review/bump_version.py MIT Apache-2.0 BSD-3-Clause --summary "..."
     python scripts/review/bump_version.py --from-file ids.txt --summary "..."
+    python scripts/review/bump_version.py --from-file ids.txt --summary "..." \
+        --notes notes.json
+
+A library-wide change still owes every record a summary in its own words, and a change
+that the triples alone do not explain (a quote added to a permission reads the same as
+the permission did) owes it a reason.  ``--notes`` names a JSON file of the form
+``{"<id>": {"summary": "...", "reasons": {"<statement>": "..."}}}``: a record listed
+there gets its own summary instead of ``--summary``, and each change whose statement is
+a key of ``reasons`` gets that reason instead of the generic one.
 """
 
 from __future__ import annotations
 
 import argparse
 from datetime import date
+import json
 import logging
 from pathlib import Path
 import subprocess
@@ -166,7 +176,8 @@ def load_changelog(path: Path, license_id: str, title: str) -> dict:
 
 
 def plan_one(
-    license_id: str, committed_text: str | None, args: argparse.Namespace
+    license_id: str, committed_text: str | None, args: argparse.Namespace,
+    notes: dict | None = None,
 ) -> tuple[dict, str] | str:
     """Work out what versioning one record would do, without writing anything.
 
@@ -223,18 +234,20 @@ def plan_one(
         return f"{license_id}: the changelog already holds an entry for version {new_version}"
     changelog["title"] = title
     changelog["current_version"] = new_version
+    notes = notes or {}
+    reasons = notes.get("reasons") or {}
     changelog["entries"].append(
         {
             "version": new_version,
             "date": args.date,
             "reviewer": args.reviewer,
-            "summary": args.summary,
+            "summary": notes.get("summary") or args.summary,
             "changes": [
                 {
                     "action": change.action,
                     "statement": change.statement,
                     **({"previous": change.previous} if change.previous else {}),
-                    "reason": MANUAL_REASON,
+                    "reason": reasons.get(change.statement) or MANUAL_REASON,
                     "source": "manual",
                 }
                 for change in changes
@@ -290,6 +303,12 @@ def main(argv: list[str] | None = None) -> int:
              "blank lines and lines beginning with # are ignored",
     )
     parser.add_argument(
+        "--notes",
+        default="",
+        help="a JSON file giving a record its own summary and a change its own reason: "
+             '{"<id>": {"summary": "...", "reasons": {"<statement>": "..."}}}',
+    )
+    parser.add_argument(
         "--base-file",
         default="",
         help="the record as it stood before this edit, when the working tree already "
@@ -328,10 +347,18 @@ def main(argv: list[str] | None = None) -> int:
     else:
         committed = git_show_head_batch(license_ids)
 
+    notes: dict = {}
+    if args.notes:
+        notes_path = Path(args.notes)
+        if not notes_path.is_file():
+            LOG.error("no such notes file: %s", _rel(notes_path))
+            return 1
+        notes = json.loads(notes_path.read_text(encoding="utf-8"))
+
     plans: list[dict] = []
     problems: list[str] = []
     for license_id in license_ids:
-        outcome = plan_one(license_id, committed.get(license_id), args)
+        outcome = plan_one(license_id, committed.get(license_id), args, notes.get(license_id))
         if isinstance(outcome, str):
             problems.append(outcome)
             LOG.error("%s", outcome)

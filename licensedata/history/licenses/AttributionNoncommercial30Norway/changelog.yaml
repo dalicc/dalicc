@@ -3,11 +3,19 @@ title: Creative Commons Attribution-NonCommercial 3.0 Norway
 current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, changed
     1 asset target, recorded the relation to the record this one was adapted from and recorded the
-    review state.
+    review state. Later changes recorded which sentence of the text each statement rests on, recorded
+    when the license ends on a breach, named the license the record itself is published under and
+    removed the quotes that do not name the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
   changes:
   - action: added
     statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-4.0
@@ -52,9 +60,9 @@ entries:
     reason: The record targeted dalicc:CreativeWork only, while the 4.0 International parent CC-BY-NC-4.0
       targets dalicc:CreativeWork and dcmitype:Dataset. This port settles the sui generis database
       right expressly. Section 1 defines "Frembringelse" to reach beyond works under section 1 of
-      the Norwegian Copyright Act to subject matter protected under "aandsverksloven kapittel 5",
-      the chapter on neighbouring rights that contains the database and catalogue right of section
-      43. Section 3 closes with "Dersom lisensgiver innehar databaserettigheter eller lignende i henhold
+      the Norwegian Copyright Act to subject matter protected under "åndsverksloven kapittel 5", the
+      chapter on neighbouring rights that contains the database and catalogue right of section 43.
+      Section 3 closes with "Dersom lisensgiver innehar databaserettigheter eller lignende i henhold
       til aandsverklovens section 43 og EUs databasedirektiv, fraskriver lisensgiver seg disse rettigheter"
       (if the licensor holds database rights or the like under section 43 of the Copyright Act and
       the EU database directive, the licensor waives them). Section 4(e) adds that the restrictions
@@ -62,6 +70,70 @@ entries:
       Because the legal text names databases as licensed subject matter and disposes of the database
       maker's right in the grant itself, dcmitype:Dataset was added here rather than left as a proposal,
       which is how the same question was decided for the Portuguese, Czech and Azerbaijani ports.
-      The ports in this batch whose text has no database clause at all, Ecuador and Brazil, keep the
-      proposal.
+      The ports in this review group whose text has no database clause at all, Ecuador and Brazil,
+      keep the proposal.
     source: review-finding 2/odrl:target
+  - action: changed
+    statement: permission odrl:display
+    previous: permission odrl:display
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Under vilkårene
+      i denne lisens gir lisensgiver deg herved en global, vederlagsfri, ikke-eksklusiv og tidsubegrenset
+      (i frembringelsens opphavsrettslige vernetid) rett til å utnytte de rettigheter som fremgår
+      av følgende:"'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Under vilkårene
+      i denne lisens gir lisensgiver deg herved en global, vederlagsfri, ikke-eksklusiv og tidsubegrenset
+      (i frembringelsens opphavsrettslige vernetid) rett til å utnytte de rettigheter som fremgår
+      av følgende:"'
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Under vilkårene
+      i denne lisens gir lisensgiver deg herved en global, vederlagsfri, ikke-eksklusiv og tidsubegrenset
+      (i frembringelsens opphavsrettslige vernetid) rett til å utnytte de rettigheter som fremgår
+      av følgende:"'
+    source: manual
+  - action: changed
+    statement: prohibition cc:CommercialUse
+    previous: prohibition cc:CommercialUse
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Du har ikke rett
+      til å utøve noen av de rettigheter, som du gis i overensstemmelse med punkt 3 ovenfor, på en
+      måte som hovedsakelig eller primært er rettet mot å oppnå en kommersiell fordel, eller på en
+      måte som tar sikte på å oppnå et privat vederlag i form av penger."'
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'The termination clause of this port reads: "Denne lisensen og de rettigheter som følger
+      av den, vil automatisk opphøre ved ethvert brudd fra deg på lisensens vilkår."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: permission odrl:display
+    previous: permission odrl:display
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce: the quoted sentence does not name the act. The statements stay, read from the
+      text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce: the quoted sentence does not name the act. The statements stay, read from the
+      text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce: the quoted sentence does not name the act. The statements stay, read from the
+      text without a linked quote.'
+    source: manual

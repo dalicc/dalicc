@@ -19,6 +19,7 @@
 
 dalicclib:FSL-1.1-ALv2 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "FSL-1.1-ALv2" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://fsl.software/FSL-1.1-ALv2.template.md> ;
@@ -43,8 +44,8 @@ dalicclib:FSL-1.1-ALv2 a odrl:Set ;
     dct:alternative "FSL 1.1",
         "FSL-1.1-ALv2",
         "Functional Source License 1.1" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://spdx.org/licenses/FSL-1.1-ALv2.html> ;
     dct:title "Functional Source License, Version 1.1, ALv2 Future License"@en ;
     odrl:permission [ a odrl:Permission ;
@@ -52,21 +53,27 @@ dalicclib:FSL-1.1-ALv2 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "If you redistribute any copies, modifications or derivatives of the Software, you must include a copy of or a link to these Terms and Conditions and not remove any copyright notices provided in or with the Software." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ] ],
+                    odrl:action cc:ShareAlike ;
+                    dalicc:evidence "The Terms and Conditions apply to all copies, modifications and derivatives of the Software." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "If you redistribute any copies, modifications or derivatives of the Software, you must include a copy of or a link to these Terms and Conditions and not remove any copyright notices provided in or with the Software." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ] ],
+                    odrl:action cc:ShareAlike ;
+                    dalicc:evidence "The Terms and Conditions apply to all copies, modifications and derivatives of the Software." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "If you redistribute any copies, modifications or derivatives of the Software, you must include a copy of or a link to these Terms and Conditions and not remove any copyright notices provided in or with the Software." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ] ],
+                    odrl:action cc:ShareAlike ;
+                    dalicc:evidence "The Terms and Conditions apply to all copies, modifications and derivatives of the Software." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -82,7 +89,8 @@ dalicclib:FSL-1.1-ALv2 a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Except for displaying the License Details and identifying us as the origin of the Software, you have no right under these Terms and Conditions to use our trademarks, trade names, service marks or product names." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ] ;
     odrl:target [ a odrl:AssetCollection ;

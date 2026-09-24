@@ -19,6 +19,7 @@
 
 dalicclib:MPL-1.1 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "MPL-1.1" ;
     cc:attributionName "Netscape Communications Corporation" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -37,8 +38,8 @@ dalicclib:MPL-1.1 a odrl:Set ;
     dct:alternative "MPL 1.1",
         "MPL-1.1",
         "Mozilla Public License 1.1" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Netscape Communications Corporation" ;
     dct:source <https://spdx.org/licenses/MPL-1.1.html> ;
     dct:title "Mozilla Public License 1.1"@en ;
@@ -91,7 +92,8 @@ dalicclib:MPL-1.1 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:sublicense ],
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "under intellectual property rights (other than patent or trademark) Licensable by Initial Developer to use, reproduce, modify, display, perform, sublicense and distribute the Original Code (or portions thereof) with or without Modifications, and/or as part of a Larger Work; and" ],
         [ a odrl:Permission ;
             odrl:action dalicc:patentGrant ],
         [ a odrl:Permission ;

@@ -78,8 +78,8 @@ findings:
   field: 'cc:jurisdiction'
   description: >-
     Section 13 states: "This License shall be governed by Dutch law provisions." The record
-    keeps cc:jurisdiction dalicc:worldwide and quotes the clause, the choice this batch makes
-    for every governing-law clause; bpicounty:Netherlands is available if the owner would
+    keeps cc:jurisdiction dalicc:worldwide and quotes the clause, the choice this review group makes
+    for every governing-law clause; bpicounty:Netherlands is available if the association would
     rather read a choice of law as a jurisdiction.
   action: applied
 - rubric: 8

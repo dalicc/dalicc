@@ -60,7 +60,7 @@ findings:
   field: odrl:duty
   description: Section 4(c) requires retaining "all copyright, patent, trademark, and attribution notices".
     The vocabulary defines dalicc:patentNotice and dalicc:trademarkNotice for exactly this but no record
-    in the library uses them, so adding them here alone would break family consistency. Left to the owner
+    in the library uses them, so adding them here alone would break family consistency. Left open for the association's decision
     as one decision for the library.
   action: proposed
   change: "# add to the odrl:distribute, odrl:modify and odrl:derive duties\nodrl:duty [ a odrl:Duty ;\n\
@@ -84,7 +84,7 @@ findings:
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 2 finding 6.3: the record made no patent statement although
+    its new siblings and versioned. The review''s finding on family consistency: the record made no patent statement although
     section 3 grants a patent license ''to make, have made, use, offer to sell, sell, import, and otherwise
     transfer the Work'' and ends it ''If You institute patent litigation against any entity ... alleging
     that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent

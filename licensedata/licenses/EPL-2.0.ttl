@@ -19,6 +19,7 @@
 
 dalicclib:EPL-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "EPL-2.0" ;
     cc:attributionName "Eclipse Foundation" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -36,8 +37,8 @@ dalicclib:EPL-2.0 a odrl:Set ;
         "Eclipse Public License v2",
         "Eclipse Public License v2.0",
         "EPL-2.0" ;
-    dct:hasVersion "4" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Eclipse Foundation" ;
     dct:source osl:EPL-2.0 ;
     dct:title "Eclipse Public License 2.0" ;
@@ -52,7 +53,8 @@ dalicclib:EPL-2.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ],
+                    odrl:action cc:SourceCode ;
+                    dalicc:evidence "the Program must also be made available as Source Code, in accordance with section 3.2, and the Contributor must accompany the Program with a statement that the Source Code for the Program is available under this Agreement" ],
                 [ a odrl:Duty ;
                     odrl:action cc:ShareAlike ] ],
         [ a odrl:Permission ;
@@ -64,7 +66,8 @@ dalicclib:EPL-2.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ],
+                    odrl:action cc:SourceCode ;
+                    dalicc:evidence "the Program must also be made available as Source Code, in accordance with section 3.2, and the Contributor must accompany the Program with a statement that the Source Code for the Program is available under this Agreement" ],
                 [ a odrl:Duty ;
                     odrl:action cc:ShareAlike ] ],
         [ a odrl:Permission ;
@@ -76,7 +79,8 @@ dalicclib:EPL-2.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ],
+                    odrl:action cc:SourceCode ;
+                    dalicc:evidence "the Program must also be made available as Source Code, in accordance with section 3.2, and the Contributor must accompany the Program with a statement that the Source Code for the Program is available under this Agreement" ],
                 [ a odrl:Duty ;
                     odrl:action cc:ShareAlike ] ],
         [ a odrl:Permission ;

@@ -1,0 +1,63 @@
+id: ImageMagick
+title: ImageMagick License
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'The statement is marked as a library convention, family rule 15: Permissive records permit
+      relicensing: the text does not state it in as many words. Its duty dalicc:compliantLicense is
+      marked as a library convention, family rule 15: Permissive records permit relicensing.'
+    source: manual
+  - action: changed
+    statement: permission dalicc:patentGrant
+    previous: permission dalicc:patentGrant
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Subject to the
+      terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide,
+      non-exclusive, no-charge, royalty-free, irrevocable patent license to make, have made, use,
+      offer to sell, sell, import, and otherwise transfer the Work, where such license applies only
+      to those patent claims licensable by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s) with the Work to which such
+      Contribution(s) was submitted."'
+    source: manual
+  - action: changed
+    statement: permission dalicc:sublicense
+    previous: permission dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Subject to the
+      terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide,
+      non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare
+      Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work
+      and such Derivative Works in Source or Object form."'
+    source: manual
+  - action: changed
+    statement: permission odrl:grantUse
+    previous: permission odrl:grantUse
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Subject to the
+      terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide,
+      non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare
+      Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work
+      and such Derivative Works in Source or Object form."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "This License
+      does not grant permission to use the trade names, trademarks, service marks, or product names
+      of the Licensor, except as required for reasonable and customary use in describing the origin
+      of the Work and reproducing the content of the NOTICE file."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

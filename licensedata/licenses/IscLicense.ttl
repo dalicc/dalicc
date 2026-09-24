@@ -19,6 +19,7 @@
 
 dalicclib:IscLicense a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "ISC" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:ISC ;
@@ -29,8 +30,8 @@ dalicclib:IscLicense a odrl:Set ;
     dalicc:reviewedOn "2026-09-15"^^xsd:date ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/IscLicense/versions> ;
     dct:alternative "ISC" ;
-    dct:hasVersion "4" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source osl:ISC ;
     dct:title "ISC License" ;
     odrl:permission [ a odrl:Permission ;
@@ -66,10 +67,15 @@ dalicclib:IscLicense a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
-            odrl:action dalicc:chargeDistributionFee ],
+            odrl:action dalicc:chargeDistributionFee ;
+            dalicc:evidence "Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies." ],
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

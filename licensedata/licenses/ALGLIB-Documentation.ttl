@@ -19,6 +19,7 @@
 
 dalicclib:ALGLIB-Documentation a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "ALGLIB-Documentation" ;
     cc:attributionName "Sergey Bochkanov, ALGLIB Project" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -32,8 +33,8 @@ dalicclib:ALGLIB-Documentation a odrl:Set ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/ALGLIB-Documentation/versions> ;
     dct:alternative "ALGLIB Documentation License",
         "ALGLIB-Documentation" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "ALGLIB Project" ;
     dct:source <https://spdx.org/licenses/ALGLIB-Documentation.html> ;
     dct:title "ALGLIB Documentation License"@en ;
@@ -48,7 +49,8 @@ dalicclib:ALGLIB-Documentation a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:noWarrantyNotice ] ],
+                    odrl:action dalicc:noWarrantyNotice ] ;
+            dalicc:evidence "Redistribution and use of this document (ALGLIB Reference Manual) with or without modification, are permitted provided that such redistributions will retain the above copyright notice, this condition and the following disclaimer as the first (or last) lines of this file." ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -60,7 +62,8 @@ dalicclib:ALGLIB-Documentation a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:noWarrantyNotice ] ],
+                    odrl:action dalicc:noWarrantyNotice ] ;
+            dalicc:evidence "Redistribution and use of this document (ALGLIB Reference Manual) with or without modification, are permitted provided that such redistributions will retain the above copyright notice, this condition and the following disclaimer as the first (or last) lines of this file." ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
@@ -68,7 +71,8 @@ dalicclib:ALGLIB-Documentation a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:noWarrantyNotice ] ],
+                    odrl:action dalicc:noWarrantyNotice ] ;
+            dalicc:evidence "Redistribution and use of this document (ALGLIB Reference Manual) with or without modification, are permitted provided that such redistributions will retain the above copyright notice, this condition and the following disclaimer as the first (or last) lines of this file." ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
@@ -78,7 +82,11 @@ dalicclib:ALGLIB-Documentation a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Software ] .

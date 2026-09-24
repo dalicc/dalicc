@@ -22,7 +22,7 @@ findings:
   field: odrl:prohibition
   description: 'The single condition is the no-endorsement clause quoted above, modelled as a dalicc:promote prohibition.
     dalicc:ChangeLicense is prohibited as in the rest of the family. (Corrected on 2026-09-15 by the verification
-    of this batch: see the rubric 3 finding on relicensing below.)'
+    of this review group: see the rubric 3 finding on relicensing below.)'
   action: applied
 - rubric: 5
   severity: major
@@ -37,7 +37,7 @@ findings:
   field: dalicc:additionalClauses
   description: The grant sentence is quoted verbatim because its structure, a permission whose only proviso is a
     prohibition, is unusual enough that a reader should be able to check it. The warranty and liability sentences
-    are split as elsewhere in this batch.
+    are split as elsewhere in this review group.
   action: applied
 - rubric: 7
   severity: info
@@ -60,10 +60,10 @@ findings:
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
+    the earlier reading wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
     or without modification, are permitted provided that neither the name of Emin Martinian nor the names of any
     contributors are be used to endorse or promote products derived from this software without specific prior written
     permission." The permission carries no duty, as on the public-domain dedications, because nothing has to travel

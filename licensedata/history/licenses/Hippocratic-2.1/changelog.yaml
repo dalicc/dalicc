@@ -1,0 +1,69 @@
+id: Hippocratic-2.1
+title: Hippocratic License 2.1
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, dalicc:modificationNotice]
+    reason: Its duty cc:Notice quotes "Licensee must ensure that everyone who gets a copy of any part
+      of this Software from Licensee, with or without changes, also receives the License and the above
+      copyright notice (and if included by the Licensor, patent, trademark and attribution notice)."
+      Its duty cc:Attribution quotes "Licensee must ensure that everyone who gets a copy of any part
+      of this Software from Licensee, with or without changes, also receives the License and the above
+      copyright notice (and if included by the Licensor, patent, trademark and attribution notice)."
+      Its duty cc:ShareAlike quotes "For clarity, although Licensee is free to create modifications
+      of the Software and distribute only the modified portion created by Licensee with additional
+      or different terms, the portion of the Software not modified must be distributed pursuant to
+      this License."
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, dalicc:patentNotice,
+      dalicc:trademarkNotice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, dalicc:patentNotice,
+      dalicc:trademarkNotice]
+    reason: Its duty cc:Notice quotes "Licensee must ensure that everyone who gets a copy of any part
+      of this Software from Licensee, with or without changes, also receives the License and the above
+      copyright notice (and if included by the Licensor, patent, trademark and attribution notice)."
+      Its duty cc:Attribution quotes "Licensee must ensure that everyone who gets a copy of any part
+      of this Software from Licensee, with or without changes, also receives the License and the above
+      copyright notice (and if included by the Licensor, patent, trademark and attribution notice)."
+      Its duty cc:ShareAlike quotes "For clarity, although Licensee is free to create modifications
+      of the Software and distribute only the modified portion created by Licensee with additional
+      or different terms, the portion of the Software not modified must be distributed pursuant to
+      this License." Its duty dalicc:patentNotice quotes "Licensee must ensure that everyone who gets
+      a copy of any part of this Software from Licensee, with or without changes, also receives the
+      License and the above copyright notice (and if included by the Licensor, patent, trademark and
+      attribution notice)." Its duty dalicc:trademarkNotice quotes "Licensee must ensure that everyone
+      who gets a copy of any part of this Software from Licensee, with or without changes, also receives
+      the License and the above copyright notice (and if included by the Licensor, patent, trademark
+      and attribution notice)."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, dalicc:modificationNotice]
+    reason: Its duty cc:Notice quotes "Licensee must ensure that everyone who gets a copy of any part
+      of this Software from Licensee, with or without changes, also receives the License and the above
+      copyright notice (and if included by the Licensor, patent, trademark and attribution notice)."
+      Its duty cc:Attribution quotes "Licensee must ensure that everyone who gets a copy of any part
+      of this Software from Licensee, with or without changes, also receives the License and the above
+      copyright notice (and if included by the Licensor, patent, trademark and attribution notice)."
+      Its duty cc:ShareAlike quotes "For clarity, although Licensee is free to create modifications
+      of the Software and distribute only the modified portion created by Licensee with additional
+      or different terms, the portion of the Software not modified must be distributed pursuant to
+      this License."
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

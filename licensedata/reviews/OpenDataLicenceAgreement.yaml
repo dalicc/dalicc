@@ -9,7 +9,7 @@ summary: 'The licence is the Office of the Commissioner of Lobbying edition of t
   Licence: the freedoms list, the attribution condition, the exemptions, the non-endorsement section and the
   no-warranty section are word for word those of OGL-Canada-2.0, with the attribution statement and the Information
   Provider changed. The record models it correctly and nothing was changed. It is, together with NCGL 2.0,
-  the best modelled government record in the batch.'
+  the best modelled government record in the review group.'
 findings:
 - rubric: 1
   severity: info
@@ -31,8 +31,7 @@ findings:
   description: 'The permissions follow the freedoms list: "Copy, modify, publish, translate, adapt, distribute
     or otherwise use the Information in any medium, mode or format for any lawful purpose." Commercial use
     is express in the grant, "including for commercial purposes". cc:DerivativeWorks and dalicc:ModifiedWorks
-    are both present, which is what the freedoms list grants and what the parent record lacked before this
-    pass.'
+    are both present, which is what the freedoms list grants and what the parent record lacked before the review.'
   action: none
 - rubric: 4
   severity: info
@@ -88,6 +87,6 @@ findings:
 family: Government licenses (United Kingdom, Canada)
 port_of: OpenGovernmentLicenceCanada
 variant_kind: edition
-notes: The batch input listed the text as unavailable because the site answers automated requests with 403.
+notes: The review group input listed the text as unavailable because the site answers automated requests with 403.
   It was read from an Internet Archive snapshot, so the verdict is correct rather than text-unavailable. Nothing
   in this review is legal advice.

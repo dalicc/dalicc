@@ -1,0 +1,39 @@
+id: CreativeCommonsAttributionNoncommercialNoderivs30Norway
+title: Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Norway
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on,
+    recorded when the license ends on a breach, named the license the record itself is published under
+    and removed the quotes that do not name the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
+  changes:
+  - action: changed
+    statement: prohibition cc:CommercialUse
+    previous: prohibition cc:CommercialUse
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Du kan ikke gi
+      underlisenser til frembringelsen."'
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'The termination clause of this port reads: "Denne lisensen og de rettigheter som følger
+      av den, vil automatisk opphøre ved ethvert brudd fra deg på lisensens vilkår."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: prohibition cc:CommercialUse
+    previous: prohibition cc:CommercialUse
+    reason: 'Removed the quoted evidence of prohibition cc:CommercialUse: the quoted sentence does
+      not name the act. The statements stay, read from the text without a linked quote.'
+    source: manual

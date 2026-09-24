@@ -25,7 +25,7 @@ findings:
     duty, the way the GNU and Mozilla records model it. It was not applied because the record also permits
     odrl:grantUse, and the dependency graph axiom "cc:ShareAlike dalicc:contradicts odrl:grantUse" would
     then report a direct conflict. Sections 2.1(d) and 2.2(d) do grant sublicensing, so the axiom, not
-    the record, is what has to move. See the batch report.'
+    the record, is what has to move. See the review group report.'
   action: proposed
   change: "odrl:duty [ a odrl:Duty ;\n        odrl:action cc:ShareAlike ] ;\n"
 - rubric: 4
@@ -53,7 +53,7 @@ findings:
   severity: minor
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9 and 10: the record was corrected against
-    its new siblings and versioned. Family rule 14 of scripts/review/family_rules.py: the warranty and
+    its new siblings and versioned. Library convention 14: the warranty and
     liability literals carried a padding space inside their quotation marks.'
   action: applied
 - rubric: 4

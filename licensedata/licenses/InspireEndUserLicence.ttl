@@ -19,6 +19,7 @@
 
 dalicclib:InspireEndUserLicence a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:attributionName "Ordnance Survey Limited" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.ordnancesurvey.co.uk/business-and-government/public-sector/mapping-agreements/inspire-licence.html> ;
@@ -31,8 +32,8 @@ dalicclib:InspireEndUserLicence a odrl:Set ;
     dalicc:reviewStatus dalicc:Reviewed ;
     dalicc:reviewedOn "2026-09-15"^^xsd:date ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/InspireEndUserLicence/versions> ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Ordnance Survey Limited" ;
     dct:source <http://web.archive.org/web/20190330210447/https://www.ordnancesurvey.co.uk/business-and-government/public-sector/mapping-agreements/inspire-licence.html> ;
     dct:title "INSPIRE End User Licence" ;

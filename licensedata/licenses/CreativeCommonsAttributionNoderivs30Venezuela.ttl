@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionNoderivs30Venezuela a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Venezuela ;
     cc:legalcode <https://creativecommons.org/licenses/by-nd/3.0/ve/legalcode> ;
     dalicc:LiabilityLimitation """EL LICENCIANTE NO SERÁ RESPONSABLE FRENTE AL LICENCIATARIO POR DAÑO ALGUNO, SEA POR RESPONSABILIDAD EXTRACONTRACTUAL O CONTRACTUAL, OBJETIVA O SUBJETIVA, SE TRATE DE DAÑOS MORALES O PATRIMONIALES, DIRECTOS O INDIRECTOS, PREVISTOS O IMPREVISTOS, PRODUCIDOS POR EL USO DE ESTA LICENCIA O DE LA OBRA, AÚN CUANDO EL LICENCIANTE HAYA SIDO ADVERTIDO DE LA POSIBILIDAD DE DICHOS DAÑOS, SALVO QUE ALGUNAS LEYES NO PERMITAN LA EXCLUSIÓN DE CIERTA RESPONSABILIDAD Y/Ó PREVEAN EXPRESAMENTE EL DERECHO DE INDEMNIZACIÓN A FAVOR DEL LICENCIATARIO, EN CUYO CASO ESTA EXCLUSIÓN NO SERÁ APLICABLE.
@@ -26,6 +27,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Venezuela a odrl:Set ;
     dalicc:WarrantyDisclaimer """SALVO MUTUO ACUERDO POR ESCRITO ENTRE LAS PARTES, Y EN TODA LA EXTENSIÓN PERMITIDA POR LA LEY APLICABLE, EL LICENCIANTE OFRECE LA OBRA TAL COMO ES Y SIN BRINDAR GARANTÍAS DE NINGÚN TIPO RESPECTO DE LA OBRA, YA SEA EXPRESA, IMPLÍCITA, POR LEY O DE OTRA MANERA, INCLUYENDO, SIN LIMITACIONES, LAS GARANTÍAS DE TITUTLARIDAD, COMERCIALIZACIÓN, IDONEIDAD PARA UN PROPÓSITO PARTICULAR, INFRACCIÓN, O LA AUSENCIA DE DEFECTOS LATENTES, EXACTITUD, O LA PRESENCIA O AUSENCIA DE ERRORES, SEAN O NO DESCUBRIBLES. ALGUNAS JURISDICCIONES NO PERMITEN LA EXCLUSIÓN DE GARANTÍAS, POR LO QUE PUEDE NO SER APLICABLE AL LICENCIATARIO.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-ND-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -44,7 +46,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Venezuela a odrl:Set ;
         "Creative Commons BY-ND 3.0",
         "Creative Commons BY-ND 3.0 VE" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nd/3.0/ve/> ;
     dct:title "Creative Commons Attribution-NoDerivatives 3.0 Venezuela"@en ;

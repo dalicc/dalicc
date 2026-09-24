@@ -1,0 +1,29 @@
+id: CDLA-Sharing-1.0
+title: Community Data License Agreement Sharing 1.0
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission dalicc:suiGenerisDatabaseRights
+    previous: permission dalicc:suiGenerisDatabaseRights
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "2.2 To the extent
+      that the Data or the coordination, selection or arrangement of Data is protected or protectable
+      under copyright, Sui Generis Database Rights, or other law, Data Provider(s) further agree(s)
+      that such Data or coordination, selection or arrangement is hereby licensed to You and to anyone
+      else who Receives Data under this Agreement for Use and Publication, subject to the conditions
+      set forth in Section 3 of this Agreement."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

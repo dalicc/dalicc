@@ -1,0 +1,25 @@
+id: Cube
+title: Cube License
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: prohibition dalicc:ChangeLicense
+    previous: prohibition dalicc:ChangeLicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Source versions
+      may not be "relicensed" under a different license without my explicitly written permission."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

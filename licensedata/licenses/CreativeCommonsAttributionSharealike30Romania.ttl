@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionSharealike30Romania a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Romania ;
     cc:legalcode <https://creativecommons.org/licenses/by-sa/3.0/ro/legalcode> ;
     dalicc:LiabilityLimitation """Cu excepţia răspunderii cerută de normele imperative ale legii aplicabile şi a reparării prejudiciilor impuse de răspunderea faţă de terţi generată de încălcarea garanţiilor prevăzute la articolul 5, Licenţiatorul nu va fi responsabil faţa de Licenţiat, în temeiul niciunei doctrine juridice, pentru orice prejudicii directe, indirecte, materiale sau morale care decurg din această licenţă sau din utilizarea Operei, chiar dacă Licenţiatorul a fost avertizat asupra posibilităţii producerii unor asemenea prejudicii. 
@@ -35,6 +36,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Romania a odrl:Set ;
  
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -52,8 +54,8 @@ dalicclib:CreativeCommonsAttributionSharealike30Romania a odrl:Set ;
         "CC-BY-SA 3.0 RO",
         "Creative Commons BY-SA 3.0",
         "Creative Commons BY-SA 3.0 RO" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-sa/3.0/ro/> ;
     dct:title "Creative Commons Attribution-ShareAlike 3.0 Romania"@en ;
@@ -96,7 +98,8 @@ dalicclib:CreativeCommonsAttributionSharealike30Romania a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:suiGenerisDatabaseRights ] ;
+            odrl:action dalicc:suiGenerisDatabaseRights ;
+            dalicc:evidence "în cazul în care opera este o bază de date, dreptul de a extrage şi/sau a reutiliza părţi substanţiale din Operă;" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;

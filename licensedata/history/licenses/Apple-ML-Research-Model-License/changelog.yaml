@@ -1,0 +1,83 @@
+id: Apple-ML-Research-Model-License
+title: Apple Machine Learning Research Model License Agreement
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission odrl:derive with duties [dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [dalicc:modificationNotice]
+    reason: 'Its duty dalicc:modificationNotice quotes "* Distribution of Apple Machine Learning Research
+      Model and Model Derivatives: If you choose to redistribute Apple Machine Learning Research Model
+      or its Model Derivatives, you must provide a copy of this Agreement to such third party, and
+      ensure that the following attribution notice be provided: “Apple Machine Learning Research Model
+      is licensed under the Apple Machine Learning Research Model License Agreement.” Additionally,
+      all Model Derivatives must clearly be identified as such, including disclosure of modifications
+      and changes made to the Apple Machine Learning Research Model."'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, dalicc:addStatement,
+      dalicc:modificationNotice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, dalicc:addStatement,
+      dalicc:modificationNotice]
+    reason: 'Its duty cc:Attribution quotes "* Distribution of Apple Machine Learning Research Model
+      and Model Derivatives: If you choose to redistribute Apple Machine Learning Research Model or
+      its Model Derivatives, you must provide a copy of this Agreement to such third party, and ensure
+      that the following attribution notice be provided: “Apple Machine Learning Research Model is
+      licensed under the Apple Machine Learning Research Model License Agreement.” Additionally, all
+      Model Derivatives must clearly be identified as such, including disclosure of modifications
+      and changes made to the Apple Machine Learning Research Model." Its duty dalicc:addStatement
+      quotes "* Distribution of Apple Machine Learning Research Model and Model Derivatives: If you
+      choose to redistribute Apple Machine Learning Research Model or its Model Derivatives, you must
+      provide a copy of this Agreement to such third party, and ensure that the following attribution
+      notice be provided: “Apple Machine Learning Research Model is licensed under the Apple Machine
+      Learning Research Model License Agreement.” Additionally, all Model Derivatives must clearly
+      be identified as such, including disclosure of modifications and changes made to the Apple Machine
+      Learning Research Model." Its duty dalicc:modificationNotice quotes "* Distribution of Apple
+      Machine Learning Research Model and Model Derivatives: If you choose to redistribute Apple Machine
+      Learning Research Model or its Model Derivatives, you must provide a copy of this Agreement
+      to such third party, and ensure that the following attribution notice be provided: “Apple Machine
+      Learning Research Model is licensed under the Apple Machine Learning Research Model License
+      Agreement.” Additionally, all Model Derivatives must clearly be identified as such, including
+      disclosure of modifications and changes made to the Apple Machine Learning Research Model."'
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [dalicc:modificationNotice]
+    reason: 'Its duty dalicc:modificationNotice quotes "* Distribution of Apple Machine Learning Research
+      Model and Model Derivatives: If you choose to redistribute Apple Machine Learning Research Model
+      or its Model Derivatives, you must provide a copy of this Agreement to such third party, and
+      ensure that the following attribution notice be provided: “Apple Machine Learning Research Model
+      is licensed under the Apple Machine Learning Research Model License Agreement.” Additionally,
+      all Model Derivatives must clearly be identified as such, including disclosure of modifications
+      and changes made to the Apple Machine Learning Research Model."'
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "* License Scope:
+      In consideration of your agreement to abide by the following terms, and subject to these terms,
+      Apple hereby grants you a personal, non-exclusive, worldwide, non-transferable, royalty-free,
+      revocable, and limited license, to use, copy, modify, distribute, and create Model Derivatives
+      (defined below) of the Apple Machine Learning Research Model exclusively for Research Purposes."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "The name, trademarks,
+      service marks or logos of Apple may not be used to endorse or promote Model Derivatives or the
+      relationship between You and Apple."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

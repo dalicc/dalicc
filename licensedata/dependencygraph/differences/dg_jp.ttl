@@ -1,0 +1,57 @@
+# Japan default rules
+#
+# NOTHING IN THIS FILE IS LEGAL ADVICE. Each rule names the statute or the principle it
+# rests on so that a reader can check it, explains in plain words what it does, and is a
+# proposal for the association's legal reviewer, who decides whether it is adopted. What a
+# licence means is decided by its text, and what the law of a country requires is decided
+# by that country's courts.
+#
+# This difference adds default rules only. It removes no axiom of the core graph and
+# replaces none of its rules, because no source known to the reviewer says that the law
+# here departs from them; differences/README.md shows how a removal and a replacement are
+# written.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<https://dalicc.net/dependencygraph/dg_jp> dct:title "Japan default rules"@en ;
+    dct:description """The DALICC deontic dependency graph with default rules for what a licence does not say, under the law of Japan: moral rights that stay with the author, the mining exception of Article 30-4 and exhaustion of the transfer right. The graph is complete: it holds the axioms and the adopted rule of the core graph beside its own rules, and it is built from the core graph and a difference file. Each rule names its legal basis and says in plain words what it does. The rules are proposals until the association's legal reviewer adopts them. Nothing in this graph is legal advice."""@en ;
+    dct:coverage dalicc:JP ;
+    dalicc:basedOnGraph <https://dalicc.net/dependencygraph/dg_default> .
+
+# The default rules this graph adds.
+
+<https://dalicc.net/dependencygraph/rules/jp-moral> a dalicc:DefaultRule ;
+    rdfs:label "Moral rights cannot be transferred in Japan"@en ;
+    dalicc:appliesTo dalicc:moralRightsRestriction ;
+    dalicc:defaultOutcome dalicc:NotWaivable ;
+    dalicc:inJurisdiction dalicc:JP ;
+    dalicc:ruleBasis "Copyright Act article 59: the moral rights of the author are exclusive to the author and inalienable, so a licence cannot transfer them" ;
+    dalicc:ruleExplanation "This rule adds nothing to a licence that says nothing about moral rights; it reports a finding when a licence permits the licensee to set them aside. Under the Copyright Act of Japan the moral rights of the author are exclusive to the author and inalienable, so a licence cannot transfer them. A person combining licences under this graph sees the finding beside a licence that claims to transfer or waive them; an agreement not to exercise them is common in Japan and its effect is decided case by case."@en ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .
+
+<https://dalicc.net/dependencygraph/rules/jp-exhaustion> a dalicc:DefaultRule ;
+    rdfs:label "A copy that was sold may be sold on"@en ;
+    dalicc:appliesTo dalicc:sellCopy ;
+    dalicc:defaultOutcome dalicc:GrantedByDefault ;
+    dalicc:inJurisdiction dalicc:JP ;
+    dalicc:ruleBasis "Copyright Act article 26-2(2): the transfer right is exhausted once the original or a copy has been transferred with the authorisation of the rightholder. Cinematographic works fall under article 26 instead; the Supreme Court held the distribution right in game software exhausted after the first lawful transfer (25 April 2002)" ;
+    dalicc:ruleExplanation "A licence that says nothing about reselling a copy is read as allowing a copy that was sold to be sold on. The Copyright Act of Japan exhausts the transfer right once the original or a copy has been transferred with the authorisation of the rightholder. Combining a licence that is silent about it with one that prohibits it shows a conflict marked as coming from this rule."@en ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .
+
+<https://dalicc.net/dependencygraph/rules/jp-tdm> a dalicc:DefaultRule ;
+    rdfs:label "Mining is allowed unless the licence forbids it"@en ;
+    dalicc:appliesTo dalicc:textAndDataMining ;
+    dalicc:defaultOutcome dalicc:GrantedByDefault ;
+    dalicc:inJurisdiction dalicc:JP ;
+    dalicc:ruleBasis "Copyright Act article 30-4: a work may be exploited, to the extent considered necessary, where the purpose is not to enjoy the thoughts or sentiments expressed in it, including data analysis, unless this would unreasonably prejudice the interests of the copyright owner in light of the nature or purpose of the work or the circumstances of its exploitation" ;
+    dalicc:ruleExplanation "A licence that says nothing about text and data mining is read as allowing it. Article 30-4 of the Copyright Act of Japan lets a work be exploited to the extent considered necessary where the purpose is not to enjoy the thoughts or sentiments it expresses, which covers data analysis, except where the use would unreasonably prejudice the interests of the copyright owner. Combining a licence that is silent about it with one that prohibits it shows a conflict marked as coming from this rule."@en ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .

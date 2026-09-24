@@ -19,8 +19,8 @@ findings:
     dcmitype:Software alone, the type 32 of the library's software records carry, among them
     MIT, BSD-3-Clause, GPL-3.0-only and the sibling OSL-3.0. These texts license an "original
     work of authorship", which would also fit dalicc:CreativeWork, the type the AFL-3.0 record
-    carries beside Software and Dataset; the batch keeps the narrower reading its batch entry
-    prescribes, so that all nine records of the family answer alike and the owner can widen
+    carries beside Software and Dataset; the review group keeps the narrower reading its review plan
+    prescribes, so that all nine records of the family answer alike and the association can widen
     them in one pass.
   action: applied
 - rubric: 3
@@ -94,7 +94,7 @@ findings:
   description: >-
     UCL-1.0 is OSL-3.0 with clause 1(c) extended and a second copyright holder in section 16.
     It is not a version of the OSL in the SPDX sense, so dalicc:variantKind is left out,
-    unlike the AFL and OSL records of this batch.
+    unlike the AFL and OSL records of this review group.
   action: none
 family: Academic Free and Open Software
 port_of: null

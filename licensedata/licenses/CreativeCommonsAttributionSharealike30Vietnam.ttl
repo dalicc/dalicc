@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionSharealike30Vietnam a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Vietnam ;
     cc:legalcode <https://creativecommons.org/licenses/by-sa/3.0/vn/legalcode> ;
     dalicc:LiabilityLimitation """TRỪ KHI LUẬT ÁP DỤNG CÓ YÊU CẦU KHÁC, TRONG MỌI TRƯỜNG HỢP, BÊN CẤP PHÉP SẼ KHÔNG CÓ TRÁCH NHIỆM PHÁP LÝ ĐỐI VỚI BẠN THEO BẤT KỲ HỆ THỐNG PHÁP LÝ NÀO ĐỐI VỚI BẤT KỲ CÁC BỒI THƯỜNG THIỆT HẠI THỰC TẾ, BỒI THƯỜNG THIỆT HẠI DO VI PHẠM HỢP ĐỒNG, BỒI THƯỜNG DO GÂY THIỆT HẠI GIÁN TIẾP, BỒI THƯỜNG THIỆT HẠI MANG TÍNH TRỪNG PHẠT HOẶC LÀM GƯƠNG PHÁT SINH TỪ GIẤY PHÉP NÀY HOẶC TỪ VIỆC SỬ DỤNG TÁC PHẨM, KỂ CẢ TRONG TRƯỜNG HỢP BÊN CẤP PHÉP ĐÃ ĐƯỢC THÔNG BÁO TRƯỚC VỀ KHẢ NĂNG CÓ THỂ CÓ CÁC BỒI THƯỜNG THIỆT HẠI NHƯ VẬY.
@@ -26,6 +27,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Vietnam a odrl:Set ;
     dalicc:WarrantyDisclaimer """THEO GIẤY PHÉP NÀY, BÊN CẤP PHÉP KHẲNG ĐỊNH RẰNG HỌ CUNG CẤP TÁC PHẨM NHƯ NÓ VỐN CÓ VÀ TRỪ TRƯỜNG HỢP LUẬT ÁP DỤNG YÊU CẦU, KHÔNG CÓ BẤT KỲ TUYÊN BỐ HAY BẢO ĐẢM DƯỚI BẤT KỲ HÌNH THỨC NÀO LIÊN QUAN ĐẾN TÁC PHẨM, DÙ LÀ BẢO ĐẢM RÕ RÀNG HOẶC NGẦM ĐỊNH, DO PHÁP LUẬT QUY ĐỊNH HAY DƯỚI HÌNH THỨC KHÁC, BAO GỒM, NHƯNG KHÔNG GIỚI HẠN, CÁC BẢO ĐẢM VỀ QUYỀN SỞ HỮU, VỀ TÍNH THƯƠNG MẠI, VỀ SỰ PHÙ HỢP CHO MỘT MỤC ĐÍCH CỤ THỂ, VỀ HÀNH VI KHÔNG VI PHẠM, HOẶC BẢO ĐẢM KHÔNG CÓ LỖI TIỀM TÀNG HOẶC CÁC LỖI KHÁC, BẢO ĐẢM VỀ TÍNH CHÍNH XÁC, HOẶC BẢO ĐẢM KHÔNG CÓ LỖI DÙ LÀ LỖI CÓ THỂ PHÁT HIỆN HAY KHÔNG THỂ PHÁT HIỆN. 
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -43,8 +45,8 @@ dalicclib:CreativeCommonsAttributionSharealike30Vietnam a odrl:Set ;
         "CC-BY-SA 3.0 VN",
         "Creative Commons BY-SA 3.0",
         "Creative Commons BY-SA 3.0 VN" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-sa/3.0/vn/> ;
     dct:title "Creative Commons Attribution-ShareAlike 3.0 Vietnam"@en ;

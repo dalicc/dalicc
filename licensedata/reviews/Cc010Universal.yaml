@@ -102,7 +102,7 @@ findings:
   severity: info
   field: record
   description: 'CC0 shares its deontic signature with OdcPublicDomainDedicationAndLicence, the Open Data Commons
-    PDDL, which review_duplicates.md section 4 flags. The two records should be indistinguishable to the compatibility
+    PDDL, which the review of duplicates (see the review method, docs/LICENSE_REVIEW.md section 3) flags. The two records should be indistinguishable to the compatibility
     checker, because the two documents do the same thing: a dedication with a licence fallback. The separation
     into two records is justified by provenance, the publisher and the legal text differ, not by the model.
     Both now carry their fallback clause in dalicc:additionalClauses, so the records differ in the one place

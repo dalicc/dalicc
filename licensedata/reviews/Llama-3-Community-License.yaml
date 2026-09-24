@@ -162,6 +162,21 @@ findings:
     instead contemplates training another model, subject to the naming rule. This is also the
     only edition whose title carries the publisher's name.
   action: none
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The agreement must accompany the Llama Materials and derivative works, but the text does
+    not require a derivative to be licensed under it: clause 1.b.i reads "If you distribute or make available
+    the Llama Materials (or any derivative works thereof), or a product or service that uses any of them,
+    including another AI model, you shall (A) provide a copy of this Agreement with any such Llama Materials;
+    and (B) prominently display “Built with Meta Llama 3” on a related website, user interface, blogpost,
+    about page, or product documentation." The record therefore carries a notice duty and not share alike.
+    The cc:ShareAlike duty is removed from the acts it hung on, and the dalicc:ChangeLicense prohibition
+    written on 2026-09-22 is replaced by a dalicc:ChangeLicense permission with the dalicc:compliantLicense
+    duty, as Apache-2.0 carries it: a derivative may be offered under other terms as long as the copy
+    of the agreement and the notice travel with the Llama Materials. The cc:Notice duty the record carries
+    already states that the copy must travel.'
+  action: applied
 family: Model licences
 port_of: null
 variant_kind: null

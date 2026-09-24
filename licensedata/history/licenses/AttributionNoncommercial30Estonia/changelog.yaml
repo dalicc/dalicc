@@ -1,13 +1,22 @@
 id: AttributionNoncommercial30Estonia
 title: Creative Commons Attribution-NonCommercial 3.0 Estonia
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, changed
     1 asset target, recorded the relation to the record this one was adapted from and recorded the
-    review state.
+    review state. Later changes recorded what the text says about the database right, recorded which
+    sentence of the text each statement rests on, recorded when the license ends on a breach, named
+    the license the record itself is published under and removed the quotes that do not name the act
+    they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
   changes:
   - action: added
     statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-4.0
@@ -52,30 +61,72 @@ entries:
     reason: 'The record targeted dalicc:CreativeWork only, while the 4.0 International parent CC-BY-NC-4.0
       targets dalicc:CreativeWork and dcmitype:Dataset. This port licenses database rights in its
       own words, so the asset type is text supported rather than merely plausible. The Estonian port
-      is explicit twice over. Section 1 counts a database inside the licensed work: "Litsentsi tahenduses
+      is explicit twice over. Section 1 counts a database inside the licensed work: "Litsentsi tähenduses
       on Teoseks ka Teose esitus, fonogramm, raadio- ja televisioonisaade, filmi esmasalvestus ja
-      andmebaas selles ulatuses, millises see on kaitstud Eesti autorioiguse seadusega." Section 3
-      then disposes of the sui generis right: "Kui Litsentsiandja omab Eesti autorioiguse seaduse
-      kohaselt, millega on Eesti oiguskorda ule voetud Euroopa Parlamendi ja noukogu direktiiv 96/9/EU,
-      11. marts 1996, andmebaaside oiguskaitse kohta, sui generis andmebaasi tegija oigusi, loobub
-      Litsentsiandja kaesolevaga sellistest oigustest." Section 4(e) adds that the restrictions of
+      andmebaas selles ulatuses, millises see on kaitstud Eesti autoriõiguse seadusega." Section 3
+      then disposes of the sui generis right: "Kui Litsentsiandja omab Eesti autoriõiguse seaduse
+      kohaselt, millega on Eesti õiguskorda üle võetud Euroopa Parlamendi ja nõukogu direktiiv 96/9/EÜ,
+      11. märts 1996, andmebaaside õiguskaitse kohta, sui generis andmebaasi tegija õigusi, loobub
+      Litsentsiandja käesolevaga sellistest õigustest." Section 4(e) adds that the restrictions of
       4(a) to 4(d) do not apply to those database maker rights so far as Estonian law allows them
       to be limited. Added dcmitype:Dataset.'
     source: review-finding 2/odrl:target
-- version: 3
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: 'The port settles the sui generis database right in its own text: Section 1 counts a database
-    inside the licensed work, "Litsentsi tahenduses on Teoseks ka Teose esitus, fonogramm, raadio-
-    ja televisioonisaade, filmi esmasalvestus ja andmebaas selles ulatuses, millises see on kaitstud
-    Eesti autorioiguse seadusega.", and Section 3 disposes of the sui generis right, "Kui Litsentsiandja
-    omab Eesti autorioiguse seaduse kohaselt, millega on Eesti oiguskorda ule voetud Euroopa Parlamendi
-    ja noukogu direktiiv 96/9/EU, 11. marts 1996, andmebaaside oiguskaitse kohta, sui generis andmebaasi
-    tegija oigusi, loobub Litsentsiandja kaesolevaga sellistest oigustest.". dalicc:suiGenerisDatabaseRights
-    is now permitted, and it carries no duty because Section 4(e) adds that the restrictions of 4(a)
-    to 4(d) do not apply to those database maker rights so far as Estonian law allows them to be limited.'
-  changes:
   - action: added
     statement: permission dalicc:suiGenerisDatabaseRights
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The port settles the sui generis database right in its own text: Section 1 counts a database
+      inside the licensed work, "Litsentsi tähenduses on Teoseks ka Teose esitus, fonogramm, raadio-
+      ja televisioonisaade, filmi esmasalvestus ja andmebaas selles ulatuses, millises see on kaitstud
+      Eesti autoriõiguse seadusega.", and Section 3 disposes of the sui generis right, "Kui Litsentsiandja
+      omab Eesti autoriõiguse seaduse kohaselt, millega on Eesti õiguskorda üle võetud Euroopa Parlamendi
+      ja nõukogu direktiiv 96/9/EÜ, 11. märts 1996, andmebaaside õiguskaitse kohta, sui generis andmebaasi
+      tegija õigusi, loobub Litsentsiandja käesolevaga sellistest õigustest.". dalicc:suiGenerisDatabaseRights
+      is now permitted, and it carries no duty because Section 4(e) adds that the restrictions of
+      4(a) to 4(d) do not apply to those database maker rights so far as Estonian law allows them
+      to be limited.'
+    source: manual
+  - action: changed
+    statement: permission dalicc:ModifiedWorks
+    previous: permission dalicc:ModifiedWorks
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Eelnimetatud
+      õigused hõlmavad õigust teha selliseid muudatusi, mis on tehniliselt vajalikud teostamaks õigusi
+      muudes meediumites ja formaatides."'
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Eelnimetatud
+      õigused hõlmavad õigust teha selliseid muudatusi, mis on tehniliselt vajalikud teostamaks õigusi
+      muudes meediumites ja formaatides."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:ChangeLicense
+    previous: prohibition dalicc:ChangeLicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Te ei või kehtestada
+      Teosele tingimusi, mis kitsendavad Litsentsi tingimusi või Teose saaja võimet teostada Litsentsi
+      alusel Teosele saadud õigusi."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Te ei või seeläbi
+      vihjamisi ega selgesõnaliselt viidata mis tahes seosele Teie või Teie poolt Teose kasutamise
+      ning vastavalt Algse Autori, Litsentsiandja ja/või Viidatud isikute vahel ega viimaste toetusele,
+      ilma nende eelneva selgelt väljendatud kirjaliku loata."'
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'The termination clause of this port reads: "Litsents ja selle alusel antud õigused lõpevad
+      automaatselt Litsentsi tingimuse mis tahes rikkumise korral Teie poolt."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:ChangeLicense
+    previous: prohibition dalicc:ChangeLicense
+    reason: 'Removed the quoted evidence of prohibition dalicc:ChangeLicense: the quoted sentence
+      does not name the act. The statements stay, read from the text without a linked quote.'
     source: manual

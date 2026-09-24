@@ -19,6 +19,7 @@
 
 dalicclib:PythonLicense20 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "Python-2.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:Python-2.0 ;
@@ -29,13 +30,14 @@ dalicclib:PythonLicense20 a odrl:Set ;
     dalicc:reviewedOn "2026-09-15"^^xsd:date ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/PythonLicense20/versions> ;
     dct:alternative "Python License" ;
-    dct:hasVersion "4" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Python Software Foundation" ;
     dct:source osl:Python-2.0 ;
     dct:title "Python License-2.0" ;
     odrl:permission [ a odrl:Permission ;
-            odrl:action cc:DerivativeWorks ],
+            odrl:action cc:DerivativeWorks ;
+            dalicc:evidence "Subject to the terms and conditions of this License Agreement, PSF hereby grants Licensee a nonexclusive, royalty-free, world-wide license to reproduce, analyze, test, perform and/or display publicly, prepare derivative works, distribute, and otherwise use Python alone or in any derivative version, provided, however, that PSF's License Agreement and PSF's notice of copyright, i.e., \"Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006 Python Software Foundation; All Rights Reserved\" are retained in Python alone or in any derivative version prepared by Licensee." ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
@@ -43,7 +45,8 @@ dalicclib:PythonLicense20 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ] ;
+            dalicc:evidence "Subject to the terms and conditions of this License Agreement, PSF hereby grants Licensee a nonexclusive, royalty-free, world-wide license to reproduce, analyze, test, perform and/or display publicly, prepare derivative works, distribute, and otherwise use Python alone or in any derivative version, provided, however, that PSF's License Agreement and PSF's notice of copyright, i.e., \"Copyright (c) 2001, 2002, 2003, 2004, 2005, 2006 Python Software Foundation; All Rights Reserved\" are retained in Python alone or in any derivative version prepared by Licensee." ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -69,8 +72,13 @@ dalicclib:PythonLicense20 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "This License Agreement does not grant permission to use PSF trademarks or trade name in a trademark sense to endorse or promote products or services of Licensee, or any third party." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

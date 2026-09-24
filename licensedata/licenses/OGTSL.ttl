@@ -19,6 +19,7 @@
 
 dalicclib:OGTSL a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "OGTSL" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://www.opengroup.org/testing/downloads/The_Open_Group_TSL.txt> ;
@@ -30,8 +31,8 @@ dalicclib:OGTSL a odrl:Set ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/OGTSL/versions> ;
     dct:alternative "OGTSL",
         "Open Group Test Suite License" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "The Open Group" ;
     dct:source <https://spdx.org/licenses/OGTSL.html> ;
     dct:title "Open Group Test Suite License"@en ;
@@ -52,7 +53,8 @@ dalicclib:OGTSL a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "You may otherwise modify your copy of this Package in any way, provided that you insert a prominent notice in each changed file stating how and when you changed that file, and provided that you do at least the following:" ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:rename ] ],
         [ a odrl:Permission ;
@@ -64,7 +66,8 @@ dalicclib:OGTSL a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "You may otherwise modify your copy of this Package in any way, provided that you insert a prominent notice in each changed file stating how and when you changed that file, and provided that you do at least the following:" ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:rename ] ],
         [ a odrl:Permission ;
@@ -82,7 +85,8 @@ dalicclib:OGTSL a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:chargeLicenseFee ],
+            odrl:action dalicc:chargeLicenseFee ;
+            dalicc:evidence "You may not charge a fee for this Package itself." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;

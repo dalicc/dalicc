@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30France a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:France ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc-nd/3.0/fr/legalcode> ;
     dalicc:LiabilityLimitation """A l'exception des garanties d'ordre public imposées par la loi applicable, l'Offrant ne sera en aucun cas tenu responsable vis-à-vis de l'Acceptant, sur la base d'aucune théorie juridique ni en raison d'aucun préjudice direct, indirect, matériel ou moral, résultant de l'exécution du présent Contrat ou de l'utilisation de l'Œuvre, y compris dans l'hypothèse où l'Offrant avait connaissance de la possible existence d'un tel préjudice. 
@@ -26,6 +27,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30France a odrl:Set ;
     dalicc:WarrantyDisclaimer """SAUF ACCORD CONTRAIRE CONVENU PAR ECRIT ENTRE LES PARTIES ET DANS LA LIMITE DU DROIT APPLICABLE, L’OFFRANT MET L’ŒUVRE A DISPOSITION DE L’ACCEPTANT EN L’ETAT, SANS DECLARATION OU GARANTIE D’AUCUNE SORTE, EXPRESSE, IMPLICITE, LÉGALE OU AUTRE. SONT NOTAMMENT EXCLUES LES GARANTIES CONCERNANT LA COMMERCIABILITE, LA CONFORMITE, LES VICES CACHES ET LES VICES APPARENTS.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-ND-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -44,8 +46,8 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30France a odrl:Set ;
         "Creative Commons Attribution NonCommercial NoDerivatives 3.0 France",
         "Creative Commons BY-NC-ND 3.0",
         "Creative Commons BY-NC-ND 3.0 FR" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc-nd/3.0/fr/> ;
     dct:title "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 France"@en ;

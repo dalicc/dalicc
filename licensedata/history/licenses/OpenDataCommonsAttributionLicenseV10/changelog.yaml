@@ -1,12 +1,21 @@
 id: OpenDataCommonsAttributionLicenseV10
 title: Open Data Commons Attribution License v1.0
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 clause text, 1 identification detail and 1 prohibition,
-    removed 1 license-wide duty, changed 1 clause text and recorded the review state.
+    removed 1 license-wide duty, changed 1 clause text and recorded the review state. Later changes
+    permitted relicensing with the notice as a duty, recorded which sentence of the text each statement
+    rests on, recorded what the text says about the database right, named the license the record itself
+    is published under and left endorsement to the default rule of the core dependency graph.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
   changes:
   - action: added
     statement: 'dalicc:LiabilityLimitation "Subject to any liability that may not be excluded or limited
@@ -76,24 +85,104 @@ entries:
     reason: The record carried no SPDX identifier although its title is word for word the SPDX name
       of ODC-By-1.0 and its cc:legalcode is the SPDX seeAlso URL. Added.
     source: review-finding 1/spdx:licenseId
-- version: 3
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Permit relicensing on permissive licences; the notice clause is a duty, not a bar. Family
-    rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no source
-    code asks only that the notice travels with the copy, which is a duty on the acts it governs and
-    not a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission
-    here, and the prohibition the earlier pass wrote is removed. The text reads: "Subject to the terms
-    and conditions of this License, the Licensor grants to You a worldwide, royalty-free, non-exclusive,
-    terminable (but only under Section 9) license to Use the Database for the duration of any applicable
-    copyright and Database Rights." The permission carries the dalicc:compliantLicense duty, as Apache-2.0
-    does, because the notice has to survive the relicensing.'
-  changes:
   - action: added
     statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Permit relicensing on permissive licences; the notice clause is a duty, not a bar. Library
+      convention 15: a licence that asks for no reciprocity and no source code asks only that the
+      notice travels with the copy, which is a duty on the acts it governs and not a bar on putting
+      the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+      the record carried before is removed. The text reads: "Subject to the terms and conditions of
+      this License, the Licensor grants to You a worldwide, royalty-free, non-exclusive, terminable
+      (but only under Section 9) license to Use the Database for the duration of any applicable copyright
+      and Database Rights." The permission carries the dalicc:compliantLicense duty, as Apache-2.0
+      does, because the notice has to survive the relicensing.'
     source: manual
   - action: removed
     statement: prohibition dalicc:ChangeLicense
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Permit relicensing on permissive licences; the notice clause is a duty, not a bar. Library
+      convention 15: a licence that asks for no reciprocity and no source code asks only that the
+      notice travels with the copy, which is a duty on the acts it governs and not a bar on putting
+      the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+      the record carried before is removed. The text reads: "Subject to the terms and conditions of
+      this License, the Licensor grants to You a worldwide, royalty-free, non-exclusive, terminable
+      (but only under Section 9) license to Use the Database for the duration of any applicable copyright
+      and Database Rights." The permission carries the dalicc:compliantLicense duty, as Apache-2.0
+      does, because the notice has to survive the relicensing.'
+    source: manual
+  - action: changed
+    statement: permission cc:CommercialUse
+    previous: permission cc:CommercialUse
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "These rights
+      explicitly include commercial use, and do not exclude any field of endeavour."'
+    source: manual
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'The statement is marked as a library convention, family rule 15: Permissive records permit
+      relicensing: the text does not state it in as many words. Its duty dalicc:compliantLicense is
+      marked as a library convention, family rule 15: Permissive records permit relicensing.'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    reason: Its duty cc:Attribution quotes "Contains information from DATABASE NAME which is made
+      available under the ODC Attribution License." Its duty cc:Notice quotes "Contains information
+      from DATABASE NAME which is made available under the ODC Attribution License."
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: Its duty cc:Attribution quotes "Contains information from DATABASE NAME which is made
+      available under the ODC Attribution License." Its duty cc:Notice quotes "Contains information
+      from DATABASE NAME which is made available under the ODC Attribution License."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    reason: Its duty cc:Attribution quotes "Contains information from DATABASE NAME which is made
+      available under the ODC Attribution License." Its duty cc:Notice quotes "Contains information
+      from DATABASE NAME which is made available under the ODC Attribution License."
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "This License
+      does not cover any trademarks associated with the Database."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:sublicense
+    previous: prohibition dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may not sublicense
+      the Database."'
+    source: manual
+  - action: added
+    statement: permission dalicc:suiGenerisDatabaseRights with duties [cc:Attribution, cc:Notice]
+    reason: Section 3.1 grants the rights "for the duration of any applicable copyright and Database
+      Rights", and the licence defines Database Rights as the sui generis right of the Database Directive,
+      so the permission is text-supported. The attribution and notice conditions of Section 4 apply
+      to it as they apply to every use of the Database.
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    reason: 'No sentence of the text asks for a notice of changes: Section 4.2 asks for a copy or
+      the URI of the licence and intact notices, nothing more.'
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    reason: 'No sentence of the text asks for a notice of changes: Section 4.2 asks for a copy or
+      the URI of the licence and intact notices, nothing more.'
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:promote
+    reason: The sentence the prohibition rested on, "This License does not cover any trademarks associated
+      with the Database." (Section 2.3(c)), is silence about endorsement, which the default rule of
+      the core dependency graph covers.
     source: manual

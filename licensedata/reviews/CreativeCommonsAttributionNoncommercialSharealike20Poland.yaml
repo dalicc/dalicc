@@ -26,7 +26,7 @@ findings:
   field: spdx:licenseId
   description: SPDX has no identifier for this port. The legal-code URL implies CC-BY-NC-SA-2.0-PL, which
     the SPDX licence list does not define, so no identifier was invented. Of the thirty six records in
-    this batch only the German NonCommercial-ShareAlike port has an SPDX identifier.
+    this review group only the German NonCommercial-ShareAlike port has an SPDX identifier.
   action: none
 - rubric: 2
   severity: minor
@@ -45,7 +45,7 @@ findings:
   severity: info
   field: odrl:permission
   description: Every modelled permission is supported by the grant. Section IV grants a licence that is
-    "nieodplatna, niewylaczna, na czas nieoznaczony, ktorej stosowanie nie jest ograniczone terytorialnie"
+    "nieodpłatną, niewyłączną, na czas nieoznaczony, której stosowanie nie jest ograniczone terytorialnie"
     (free of charge, non-exclusive, for an indefinite time, not limited territorially). The grant covers
     reproduction, incorporation into collections, distribution, public display, public performance and
     communication to the public, and the creation and reproduction of derivative works, which the record
@@ -56,7 +56,7 @@ findings:
   field: odrl:permission
   description: 'The record permits dalicc:chargeDistributionFee while prohibiting cc:CommercialUse. Section
     V: the licensee may not exercise the rights granted in section IV in a way aimed at material gain
-    or monetary compensation ("skierowany jest na uzyskanie korzysci majatkowej lub pienieznego wynagrodzenia").
+    or monetary compensation ("skierowany jest na uzyskanie korzyści majątkowej lub pieniężnego wynagrodzenia").
     The vocabulary defines dalicc:chargeDistributionFee as a fee covering the act of providing the work
     to a third party, so a pure cost recovery fee is arguable under the commercial advantage test of the
     other five ports, but the statement sits uneasily next to the prohibition and the Japanese port has
@@ -72,12 +72,13 @@ findings:
   severity: major
   field: odrl:prohibition
   description: 'The licence forbids sublicensing and the record does not say so. Section V: "Licencjobiorca
-    nie moze udzielac sublicencji." (the licensee may not grant sublicences). The vocabulary already has
+    nie może udzielać sublicencji." (the licensee may not grant sublicences). The vocabulary already has
     dalicc:sublicense, but it is used by no record in the library and its skos:note says so, and the same
     sentence stands in every Creative Commons 2.0 and 3.0 record, so adding it to thirty six ports alone
     would split the compatibility behaviour of one family. Proposed as one library wide correction, together
     with an update of the vocabulary note.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: |-
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:sublicense ] ;
@@ -142,9 +143,9 @@ findings:
   severity: gap
   field: odrl:prohibition
   description: 'The licence forbids technological protection measures and the vocabulary has no term for
-    it. Section V: "Licencjobiorca nie moze rozpowszechniac, publicznie odtwarzac, publicznie wykonywac,
-    publicznie odtwarzac droga cyfrowa Utworu przy uzyciu srodkow technicznych pozwalajacych kontrolowac
-    dostep lub uzycie Utworu, w sposob sprzeczny z postanowieniami niniejszej licencji." Proposed term:
+    it. Section V: "Licencjobiorca nie może rozpowszechniać, publicznie odtwarzać, publicznie wykonywać,
+    publicznie odtwarzać drogą cyfrową Utworu przy użyciu środków technicznych pozwalających kontrolować
+    dostęp lub użycie Utworu, w sposób sprzeczny z postanowieniami niniejszej licencji." Proposed term:
     dalicc:applyTechnicalProtectionMeasures, an odrl:Action to be used as an odrl:Prohibition. Not modelled,
     because bending an existing term would be worse than the gap.'
   action: none
@@ -162,7 +163,7 @@ findings:
   description: The Polish port states no moral-rights restriction at all. Polish copyright law treats
     authors personal rights (autorskie prawa osobiste) as inalienable, so the port leaves them to the
     statute rather than repeating them in the licence. This is a real divergence from the other five ports
-    in this batch and from the 4.0 International parent.
+    in this review group and from the 4.0 International parent.
   action: none
 - rubric: 8
   severity: info
@@ -203,6 +204,14 @@ findings:
     only what the text states. Removed on 2026-09-23; see section 13 of docs/LICENSE_REVIEW.md.
   action: applied
   change: "# removed\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:promote ] ;\n"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Licencja automatycznie wygasa w przypadku
+    jakiegokolwiek naruszenia jej warunków przez Licencjobiorcę." The licence ends automatically on a
+    breach and this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach is true
+    and no dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 2.0 port: Poland (PL)'
 port_of: CC-BY-NC-SA-4.0
 variant_kind: jurisdiction-port

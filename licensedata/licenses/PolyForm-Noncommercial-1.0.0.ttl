@@ -19,6 +19,7 @@
 
 dalicclib:PolyForm-Noncommercial-1.0.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "PolyForm-Noncommercial-1.0.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://polyformproject.org/licenses/noncommercial/1.0.0> ;
@@ -46,8 +47,8 @@ dalicclib:PolyForm-Noncommercial-1.0.0 a odrl:Set ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/PolyForm-Noncommercial-1.0.0/versions> ;
     dct:alternative "PolyForm Noncommercial 1.0.0",
         "PolyForm-Noncommercial-1.0.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "PolyForm Project" ;
     dct:source <https://spdx.org/licenses/PolyForm-Noncommercial-1.0.0.html> ;
     dct:title "PolyForm Noncommercial License 1.0.0"@en ;
@@ -88,11 +89,14 @@ dalicclib:PolyForm-Noncommercial-1.0.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:patentGrant ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action cc:CommercialUse ],
+            odrl:action cc:CommercialUse ;
+            dalicc:evidence "Any noncommercial purpose is a permitted purpose." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:ChangeLicense ],
+            odrl:action dalicc:ChangeLicense ;
+            dalicc:evidence "These terms do not allow you to sublicense or transfer any of your licenses to anyone else, or prevent the licensor from granting licenses to anyone else." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ],
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "These terms do not allow you to sublicense or transfer any of your licenses to anyone else, or prevent the licensor from granting licenses to anyone else." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ] ;
     odrl:target [ a odrl:AssetCollection ;

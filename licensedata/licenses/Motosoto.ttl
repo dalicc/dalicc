@@ -19,6 +19,7 @@
 
 dalicclib:Motosoto a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "Motosoto" ;
     cc:attributionName "Motosoto.Com B.V." ;
     cc:jurisdiction dalicc:worldwide ;
@@ -36,8 +37,8 @@ dalicclib:Motosoto a odrl:Set ;
     dct:alternative "Motosoto",
         "Motosoto License",
         "Motosoto Open Source License 0.9.1" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Motosoto.Com B.V." ;
     dct:source <https://spdx.org/licenses/Motosoto.html> ;
     dct:title "Motosoto License"@en ;
@@ -94,9 +95,11 @@ dalicclib:Motosoto a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:patentGrant ],
         [ a odrl:Permission ;
-            odrl:action dalicc:ChangeLicense ] ;
+            odrl:action dalicc:ChangeLicense ;
+            dalicc:evidence "Any Modifications that you create or to which you contribute may be distributed only under the terms of this License or a future version of this License released under Section 7." ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "No right is granted to the trademarks of Licensor or any Contributor even if such marks are included in the Licensed Product." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ] ;
     odrl:target [ a odrl:AssetCollection ;

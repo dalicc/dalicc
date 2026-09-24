@@ -47,8 +47,7 @@ findings:
     4." That is dalicc:promote as a prohibition, the way the library expresses a no-trademark clause. dalicc:ChangeLicense
     is prohibited because the text requires the license itself to travel with every copy, which is the reading IscLicense
     and BSD-3-Clause take of the same clause. The MIT record does not carry the prohibition although its text has
-    the same requirement, so the library is not uniform here. (Corrected on 2026-09-15 by the verification of this
-    batch: see the rubric 3 finding on relicensing below.)'
+    the same requirement, so the library is not uniform here. (Corrected on 2026-09-15 by the verification of this review group: see the rubric 3 finding on relicensing below.)'
   action: applied
 - rubric: 6
   severity: minor
@@ -86,10 +85,10 @@ findings:
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Subject to the terms and conditions of this License, each
+    the earlier reading wrote is removed. The text reads: "Subject to the terms and conditions of this License, each
     Contributor hereby grants to you a perpetual, worldwide, royalty-free, non-exclusive, irrevocable copyright
     license to reproduce, use, modify, or distribute its Contribution, with modification or not." The permission
     carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the relicensing.'

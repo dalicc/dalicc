@@ -1,13 +1,18 @@
 id: CreativeCommonsAttribution30Ireland
 title: Creative Commons Attribution 3.0 Ireland
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, changed
     1 asset target, recorded the relation to the record this one was adapted from and recorded the
-    review state.
+    review state. Later changes recorded what the text says about the database right, recorded when
+    the license ends on a breach and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
   changes:
   - action: added
     statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-4.0
@@ -60,18 +65,24 @@ entries:
       the text is explicit, dcmitype:Dataset was added, which also brings the record into line with
       its parent.
     source: review-finding 2/odrl:target
-- version: 3
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: 'The port settles the sui generis database right in its own text: the definition of Work
-    says that "a Work shall also be taken to mean a live Performance or a database insofar as these
-    are protected under the applicable law within Your jurisdiction", the grant runs for the duration
-    of the sui generis database right, and section 3 waives the licensor own database rights under
-    the national law implementing Directive 96/9/EC. dalicc:suiGenerisDatabaseRights is now permitted,
-    and it carries no duty because section 4 carves the restrictions out of the parts that qualify
-    only under that right.'
-  changes:
   - action: added
     statement: permission dalicc:suiGenerisDatabaseRights
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The port settles the sui generis database right in its own text: the definition of Work
+      says that "a Work shall also be taken to mean a live Performance or a database insofar as these
+      are protected under the applicable law within Your jurisdiction", the grant runs for the duration
+      of the sui generis database right, and section 3 waives the licensor own database rights under
+      the national law implementing Directive 96/9/EC. dalicc:suiGenerisDatabaseRights is now permitted,
+      and it carries no duty because section 4 carves the restrictions out of the parts that qualify
+      only under that right.'
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'The termination clause of this port reads: "This Licence and the rights granted hereunder
+      will terminate automatically upon any breach by You of the terms of this Licence."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

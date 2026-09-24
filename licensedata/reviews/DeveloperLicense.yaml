@@ -32,7 +32,7 @@ findings:
   description: The asset collection included dcmitype:Software. The subject of this licence is Exploration
     Data, defined as data made available for research and development; unlike the other National Archives records,
     whose definition of Information names source code expressly, this document never mentions software. Removed,
-    under the owner's decision that asset types follow the legal text.
+    under the association's decision that asset types follow the legal text.
   action: applied
   change: "odrl:target [ a odrl:AssetCollection ;\n        dct:type dalicc:CreativeWork,\n            dcmitype:Dataset\
     \ ] ;"
@@ -44,7 +44,7 @@ findings:
     services which have benefitted from, relied on or made any use of Exploration Data". The only exception
     is providing prototypes to potential customers or investors, with prior agreement and on equivalent terms,
     which is a narrow permission and not general distribution. Proposed for removal rather than applied, because
-    the prototype exception means the answer is not simply no and the owner should decide how to model a permission
+    the prototype exception means the answer is not simply no and the association should decide how to model a permission
     that needs the licensor''s consent.'
   action: proposed
   change: "remove:\n    odrl:permission [ a odrl:Permission ;\n            odrl:action odrl:distribute ;\n\
@@ -110,7 +110,7 @@ findings:
     together are a fair reading of the document and the conflict is an artefact of a dependency graph that
     cannot separate making a derivative from publishing one. Two ways out: drop the odrl:derive permission,
     which loses information, or split the axiom so that odrl:derive implies cc:DerivativeWorks only where distribution
-    is permitted. Left to the owner; nothing was changed.'
+    is permitted. Left open for the association''s decision; nothing was changed.'
   action: proposed
   change: "option A, remove:\n    odrl:permission [ a odrl:Permission ;\n            odrl:action odrl:derive\
     \ ; ... ]\noption B, weaken the axiom derive implies DerivativeWorks in licensedata/dependencygraph/dg_default.ttl"
@@ -119,14 +119,14 @@ findings:
   field: record
   description: 'The document says of itself: "This United Kingdom Government Licensing Framework (UKGLF) licence
     is based on the Data Exploration Licence for the Geospatial Commission Partner Bodies (V2)", which is the
-    other Ordnance Survey record in this batch. The two records are modelled differently, mostly because DataExplorationLicence
+    other Ordnance Survey record in this review group. The two records are modelled differently, mostly because DataExplorationLicence
     carried every statement twice and prohibited display and present while this one permits them. Both now
     need the same decision on the derive conflict.'
   action: none
 family: Government licenses (United Kingdom, Canada)
 port_of: DataExplorationLicence
 variant_kind: edition
-notes: 'The batch input listed this record as text-unavailable, no source retrieved. The PDF at the cc:legalcode
+notes: 'The review group input listed this record as text-unavailable, no source retrieved. The PDF at the cc:legalcode
   URL was retrieved and read for this review. The document is a template with [Licensor] placeholders rather
   than a licence granted by a named body, which is worth saying on the site: a user cannot receive data under
   this record as it stands. Nothing in this review is legal advice.'

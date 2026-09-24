@@ -19,6 +19,7 @@
 
 dalicclib:Entessa a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "Entessa" ;
     cc:attributionName "Entessa, LLC" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -34,8 +35,8 @@ dalicclib:Entessa a odrl:Set ;
     dct:alternative "Entessa",
         "Entessa Public License 1.0",
         "Entessa Public License v1.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Entessa, LLC" ;
     dct:source <https://spdx.org/licenses/Entessa.html> ;
     dct:title "Entessa Public License v1.0"@en ;
@@ -50,7 +51,8 @@ dalicclib:Entessa a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "“This product includes open source software developed by openSEAL (http://www.openseal.org/).”" ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -80,8 +82,13 @@ dalicclib:Entessa a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "The names “openSEAL” and “Entessa” must not be used to endorse or promote products derived from this software without prior written permission." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

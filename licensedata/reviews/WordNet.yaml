@@ -25,7 +25,7 @@ findings:
   description: 'The condition reads: "provided that you agree to comply with the following copyright notice and
     statements, including the disclaimer, and that the same appear on ALL copies of the software, database and documentation,
     including modifications that you make for internal use or for distribution." cc:Attribution and cc:Notice on
-    distribute, modify and derive. The batch notes expected a source-code duty; the fetched text has no source obligation,
+    distribute, modify and derive. The review group notes expected a source-code duty; the fetched text has no source obligation,
     so cc:SourceCode is not written.'
   action: applied
 - rubric: 4
@@ -36,13 +36,13 @@ findings:
     dalicc:ChangeLicense is prohibited because the text requires the license itself to travel with every copy, which
     is the reading IscLicense and BSD-3-Clause take of the same clause. The MIT record does not carry the prohibition
     although its text has the same requirement, so the library is not uniform here. (Corrected on 2026-09-15 by
-    the verification of this batch: see the rubric 3 finding on relicensing below.)'
+    the verification of this review group: see the rubric 3 finding on relicensing below.)'
   action: applied
 - rubric: 2
   severity: major
   field: odrl:target
   description: The target carries dcmitype:Dataset as well as dcmitype:Software, because the license names the database
-    in every operative sentence and WordNet is used as data at least as often as it is used as software. The batch
+    in every operative sentence and WordNet is used as data at least as often as it is used as software. The review group
     entry proposed dcmitype:Software alone; the sibling for the two-type shape is OdcOpenDatabaseLicense, which
     pairs a dataset with the software around it.
   action: applied
@@ -68,15 +68,15 @@ findings:
   severity: info
   field: record
   description: 'The deontic model is the ISC model plus the advertising bar. What sets the record apart in the library
-    is the target: it is the only record of this batch that carries a dataset type.'
+    is the target: it is the only record of this review group that carries a dataset type.'
   action: none
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Permission to use, copy, modify and distribute this software
+    the earlier reading wrote is removed. The text reads: "Permission to use, copy, modify and distribute this software
     and database and its documentation for any purpose and without fee or royalty is hereby granted, provided that
     you agree to comply with the following copyright notice and statements, including the disclaimer, and that the
     same appear on ALL copies of the software, database and documentation, including modifications that you make

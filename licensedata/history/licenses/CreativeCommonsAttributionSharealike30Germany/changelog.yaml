@@ -1,13 +1,22 @@
 id: CreativeCommonsAttributionSharealike30Germany
 title: Creative Commons Attribution-ShareAlike 3.0 Germany
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 2 identification details and 1 prohibition, changed
     4 alternative titles and 1 asset target, recorded the relation to the record this one was adapted
-    from and recorded the review state.
+    from and recorded the review state. Later changes recorded what the text says about the database
+    right, recorded which sentence of the text each statement rests on, recorded when the license
+    ends on a breach, named the license the record itself is published under and removed the quotes
+    that do not name the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
   changes:
   - action: added
     statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0
@@ -75,13 +84,13 @@ entries:
       von Daten einen immaterialgueterrechtlichen Schutz eigener Art geniessen, unterfallen auch sie
       dem Begriff Schutzgegenstand im Sinne dieser Lizenz" (databases and compilations of data that
       enjoy sui generis protection are themselves subject matter of this licence), and Section 3 closes
-      with the waiver "verzichtet der Lizenzgeber auf saemtliche aus diesem Schutz resultierenden
-      Rechte". Section 4 adds that the restrictions do not bite on the parts that are subject matter
-      only because of that sui generis protection. Because the legal text names databases as licensed
-      subject matter and disposes of the database maker's right in the grant itself, dcmitype:Dataset
-      was added here rather than left as a proposal, which is how the same question was decided for
-      the Portuguese, Czech and Azerbaijani ports. The ports in this batch whose text has no database
-      clause at all, Ecuador and Brazil, keep the proposal.
+      with the waiver "verzichtet der Lizenzgeber auf sämtliche aus diesem Schutz resultierenden Rechte".
+      Section 4 adds that the restrictions do not bite on the parts that are subject matter only because
+      of that sui generis protection. Because the legal text names databases as licensed subject matter
+      and disposes of the database maker's right in the grant itself, dcmitype:Dataset was added here
+      rather than left as a proposal, which is how the same question was decided for the Portuguese,
+      Czech and Azerbaijani ports. The ports in this review group whose text has no database clause
+      at all, Ecuador and Brazil, keep the proposal.
     source: review-finding 2/odrl:target
   - action: added
     statement: spdx:licenseId "CC-BY-SA-3.0-DE"
@@ -89,18 +98,74 @@ entries:
       the canonical URL of the licence, https://creativecommons.org/licenses/by-sa/3.0/de/, and the
       six 4.0 International parents carry exactly that pair, legal code plus deed. Added.
     source: review-finding 1/dct:source
-- version: 3
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: 'The port settles the sui generis database right in its own text: Section 1 counts a protected
-    database as licensed subject matter, "Soweit Datenbanken oder Zusammenstellungen von Daten einen
-    immaterialgueterrechtlichen Schutz eigener Art geniessen, unterfallen auch sie dem Begriff Schutzgegenstand
-    im Sinne dieser Lizenz", and Section 3 closes with the waiver "verzichtet der Lizenzgeber auf
-    saemtliche aus diesem Schutz resultierenden Rechte". dalicc:suiGenerisDatabaseRights is now permitted,
-    and it carries no duty because Section 4 adds that the restrictions do not bite on the parts that
-    are subject matter only because of that sui generis protection.'
-  changes:
   - action: added
     statement: permission dalicc:suiGenerisDatabaseRights
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The port settles the sui generis database right in its own text: Section 1 counts a protected
+      database as licensed subject matter, "Soweit Datenbanken oder Zusammenstellungen von Daten einen
+      immaterialgueterrechtlichen Schutz eigener Art geniessen, unterfallen auch sie dem Begriff Schutzgegenstand
+      im Sinne dieser Lizenz", and Section 3 closes with the waiver "verzichtet der Lizenzgeber auf
+      sämtliche aus diesem Schutz resultierenden Rechte". dalicc:suiGenerisDatabaseRights is now permitted,
+      and it carries no duty because Section 4 adds that the restrictions do not bite on the parts
+      that are subject matter only because of that sui generis protection.'
+    source: manual
+  - action: changed
+    statement: permission odrl:display
+    previous: permission odrl:display
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Unter den Bedingungen
+      dieser Lizenz räumt Ihnen der Lizenzgeber - unbeschadet unverzichtbarer Rechte und vorbehaltlich
+      des Abschnitts 3.e) - das vergütungsfreie, räumlich und zeitlich (für die Dauer des Schutzrechts
+      am Schutzgegenstand) unbeschränkte einfache Recht ein, den Schutzgegenstand auf die folgenden
+      Arten und Weisen zu nutzen ("unentgeltlich eingeräumtes einfaches Nutzungsrecht für jedermann"):"'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Unter den Bedingungen
+      dieser Lizenz räumt Ihnen der Lizenzgeber - unbeschadet unverzichtbarer Rechte und vorbehaltlich
+      des Abschnitts 3.e) - das vergütungsfreie, räumlich und zeitlich (für die Dauer des Schutzrechts
+      am Schutzgegenstand) unbeschränkte einfache Recht ein, den Schutzgegenstand auf die folgenden
+      Arten und Weisen zu nutzen ("unentgeltlich eingeräumtes einfaches Nutzungsrecht für jedermann"):"'
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Unter den Bedingungen
+      dieser Lizenz räumt Ihnen der Lizenzgeber - unbeschadet unverzichtbarer Rechte und vorbehaltlich
+      des Abschnitts 3.e) - das vergütungsfreie, räumlich und zeitlich (für die Dauer des Schutzrechts
+      am Schutzgegenstand) unbeschränkte einfache Recht ein, den Schutzgegenstand auf die folgenden
+      Arten und Weisen zu nutzen ("unentgeltlich eingeräumtes einfaches Nutzungsrecht für jedermann"):"'
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'The termination clause of this port reads: "Diese Lizenz und die durch sie eingeräumten
+      Nutzungsrechte erlöschen mit Wirkung für die Zukunft im Falle eines Verstoßes gegen die Lizenzbedingungen
+      durch Sie, ohne dass es dazu der Kenntnis des Lizenzgebers vom Verstoß oder einer weiteren Handlung
+      einer der Vertragsparteien bedarf."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: permission odrl:display
+    previous: permission odrl:display
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce: the quoted sentence does not name the act. The statements stay, read from the
+      text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce: the quoted sentence does not name the act. The statements stay, read from the
+      text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce: the quoted sentence does not name the act. The statements stay, read from the
+      text without a linked quote.'
     source: manual

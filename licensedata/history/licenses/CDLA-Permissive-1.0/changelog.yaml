@@ -1,0 +1,54 @@
+id: CDLA-Permissive-1.0
+title: Community Data License Agreement Permissive 1.0
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [cc:Notice]
+    previous: permission dalicc:ChangeLicense with duties [cc:Notice]
+    reason: 'The statement is marked as a library convention, family rule 15: Permissive records permit
+      relicensing: the text does not state it in as many words.'
+    source: manual
+  - action: changed
+    statement: permission dalicc:moralRightsNonAssertion
+    previous: permission dalicc:moralRightsNonAssertion
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "7.2 You and Data
+      Provider(s), collectively and individually, waive and/or agree not to assert, to the extent
+      permitted by law, any moral rights You or they hold in Data."'
+    source: manual
+  - action: changed
+    statement: permission dalicc:suiGenerisDatabaseRights
+    previous: permission dalicc:suiGenerisDatabaseRights
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "2.2 To the extent
+      that the Data or the coordination, selection or arrangement of Data is protected or protectable
+      under copyright, Sui Generis Database Rights, or other law, Data Provider(s) further agree(s)
+      that such Data or coordination, selection or arrangement is hereby licensed to You and to anyone
+      else who Receives Data under this Agreement for Use and Publication, subject to the conditions
+      set forth in Section 3 of this Agreement."'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    reason: Its duty dalicc:modificationNotice quotes "You must cause any Data files containing Enhanced
+      Data to carry prominent notices that You have changed those files; and"
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    reason: Its duty dalicc:modificationNotice quotes "You must cause any Data files containing Enhanced
+      Data to carry prominent notices that You have changed those files; and"
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

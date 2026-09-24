@@ -1,0 +1,87 @@
+# Title: The machine-readable representation of "DOC License"@en in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/DOC
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:DOC a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "DOC" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://spdx.org/licenses/DOC.html> ;
+    dalicc:LiabilityLimitation "In no event shall the submitter be liable for any direct, indirect, special, exemplary, punitive, or consequential damages, including without limitation, lost profits, even if advised of the possibility of such damages. Washington University, UC Irvine, Vanderbilt University, their employees, and students shall have no liability with respect to the infringement of copyrights, trade secrets or any patents by DOC software or any part thereof. Moreover, in no event will Washington University, UC Irvine, or Vanderbilt University, their employees, or students be liable for any lost revenue or profits or other special, indirect and consequential damages." ;
+    dalicc:WarrantyDisclaimer "Submissions are provided by the submitter ``as is'' with no warranties whatsoever, including any warranty of merchantability, noninfringement of third party intellectual property, or fitness for any particular purpose. Likewise, DOC software is provided as is with no warranties of any kind, including the warranties of design, merchantability, and fitness for a particular purpose, noninfringement, or arising from a course of dealing, usage or trade practice." ;
+    dalicc:additionalClauses "You must, however, include this copyright statement along with any code built using DOC software that you release. No copyright statement needs to be provided if you just ship binary executables of your software products.",
+        "You can use DOC software in commercial and/or binary software releases and are under no obligation to redistribute any of your source code that is built using DOC software.",
+        "Note, however, that you may not misappropriate the DOC software code, such as copyrighting it yourself or claiming authorship of the DOC software code, in a way that will prevent DOC software from being distributed freely using an open-source development model.",
+        "The names ACE(TM), TAO(TM), CIAO(TM), DAnCE(TM), CoSMIC(TM), Washington University, UC Irvine, and Vanderbilt University, may not be used to endorse or promote products or services derived from this source without express written permission from Washington University, UC Irvine, or Vanderbilt University. This license grants no permission to call products or services derived from this source ACE(TM), TAO(TM), CIAO(TM), DAnCE(TM), or CoSMIC(TM), nor does it grant permission for the name Washington University, UC Irvine, or Vanderbilt University to appear in their names.",
+        "DOC software is provided with no support and without any obligation on the part of Washington University, UC Irvine, Vanderbilt University, their employees, or students to assist in its use, correction, modification, or enhancement." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-22"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/DOC/versions> ;
+    dct:alternative "DOC",
+        "DOC License" ;
+    dct:hasVersion "1" ;
+    dct:modified "2026-09-22"^^xsd:date ;
+    dct:source <https://spdx.org/licenses/DOC.html> ;
+    dct:title "DOC License"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:rename ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:rename ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ChangeLicense ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action dalicc:compliantLicense ] ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:addLimitation ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Software ] .

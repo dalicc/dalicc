@@ -23,14 +23,14 @@ findings:
   field: spdx:licenseId
   description: SPDX has no identifier for this port. The legal-code URL implies CC-BY-NC-SA-3.0-HR, which
     the SPDX licence list does not define, so no spdx:licenseId was invented. Of the forty two records
-    of this batch only the Attribution 3.0 Netherlands record can take one.
+    of this review group only the Attribution 3.0 Netherlands record can take one.
   action: none
 - rubric: 1
   severity: minor
   field: dct:title
   description: The dct:title literal ended in a space, "Creative Commons Attribution-NonCommercial-ShareAlike
     3.0 Croatia ", which the library list and the search index carry through. The space was removed. All
-    seven BY-NC-SA records of this batch carried the same defect. The header comment on line 1 of the
+    seven BY-NC-SA records of this review group carried the same defect. The header comment on line 1 of the
     file still quotes the old title with the space, as in the other ports of the library, and was left
     alone because it is a comment and not RDF.
   action: applied
@@ -79,10 +79,11 @@ findings:
   description: 'The licence forbids sublicensing and the record does not say so: article 4(a): "Ne smijete
     podlicencirati Djelo.". The vocabulary already has dalicc:sublicense, but no record in the library
     uses it and its skos:note says so, and the same sentence stands in every Creative Commons 2.0 and
-    3.0 record, so adding it to this batch alone would split the compatibility behaviour of one family.
+    3.0 record, so adding it to this review group alone would split the compatibility behaviour of one family.
     Proposed as one library wide correction, together with an update of the vocabulary note. Not applied
     for that reason.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -126,7 +127,7 @@ findings:
     text of this port and not from the English unported version, and each field holds its own clause rather
     than a copy of the other. Article 5, Jamstva, is a short disclaimer: unless the parties have agreed
     otherwise in writing or the applicable law provides otherwise, the licensor offers the Work as it
-    is, without warranties of any kind. Article 6 is the only limitation in the batch that is framed as
+    is, without warranties of any kind. Article 6 is the only limitation in the review group that is framed as
     a positive statement of what is owed: apart from the article 5 warranties the licensor is liable only
     for damage caused intentionally or by gross negligence. Both fields carry their own article verbatim
     in Croatian.'
@@ -172,7 +173,7 @@ findings:
   description: 'Moral rights are not expressible with the present vocabulary. Article 4 states that the
     licence leaves moral rights untouched to the extent that the applicable law recognises them and does
     not permit a waiver: "Ova Licenca ostavlja netaknutima moralna prava, u mjeri u kojoj ih mjerodavni
-    zakon priznaje i ne dopusta odricanje od njih." Proposed terms: dalicc:moralRightsRestriction for
+    zakon priznaje i ne dopušta odricanje od njih." Proposed terms: dalicc:moralRightsRestriction for
     a clause that binds the licensee and dalicc:moralRightsNonAssertion for one in which the licensor
     undertakes not to assert.'
   action: none
@@ -241,6 +242,14 @@ findings:
   action: applied
   change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
     \ ] ;"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Licenca i prava korištenja koja su njome dana
+    prestat će automatski važiti prekršite li uvjete Licence." The licence ends automatically on a breach
+    and this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach is true and
+    no dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Croatia (HR)'
 port_of: CC-BY-NC-SA-4.0
 variant_kind: jurisdiction-port

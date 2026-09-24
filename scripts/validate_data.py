@@ -21,7 +21,12 @@ Errors (exit status 1):
     ``https://dalicc.net/ns#`` namespace for DALICC terms (never plain ``http://``) and
     uses only the four known dependency relations.
 7.  ``licensedata/vocabulary/dalicc-ns.ttl`` parses, and every term it marks
-    ``owl:deprecated true`` names its replacement with ``dct:isReplacedBy``.
+    ``owl:deprecated true`` names its replacement with ``dct:isReplacedBy``.  Every
+    ``dalicc:`` IRI of the records, the dependency graphs and the difference files, and
+    every ``dalicc:`` term the application, the reasoner's programs, the SDK and the
+    scripts name, is defined there; a property used with a literal is a datatype
+    property and one used with an IRI an object property; every subject and object fits
+    the declared ``rdfs:domain`` and ``rdfs:range`` (:func:`vocabulary_use_problems`).
 8.  Every ``*.ttl`` that is loaded into Virtuoso has a matching ``*.ttl.graph`` file
     holding an absolute graph IRI.
 9.  Every license has a review record in ``licensedata/reviews/`` and every review record
@@ -70,6 +75,7 @@ from collections import Counter
 import json
 import logging
 from pathlib import Path
+import re
 import sys
 
 import rdflib
@@ -98,20 +104,31 @@ ACTION_NAMESPACES = (str(ODRL), str(CC), str(DALICC))
 DEPENDENCY_RELATIONS = {ODRL.includedIn, ODRL.implies, OWL.sameAs, DALICC.contradicts}
 
 #: The predicates a dependency graph may carry beside its four relations.  A
-#: dalicc:DefaultRule node says what applies to an action a license is silent about,
-#: and a graph may describe itself and name the graph it is read together with.
+#: dalicc:DefaultRule node says what applies to an action a license is silent about, a
+#: dalicc:AxiomRemoval names a core axiom a jurisdiction graph leaves out, and a graph
+#: may describe itself and name the graph it was built from.  dalicc:extendsGraph is
+#: deprecated in vocabulary version 2 and refused: every graph is complete.
 DEPENDENCY_RULE_PREDICATES = {
     rdflib.RDF.type,
     DALICC.appliesTo,
     DALICC.defaultOutcome,
     DALICC.inJurisdiction,
     DALICC.ruleBasis,
+    DALICC.ruleExplanation,
     DALICC.ruleStatus,
-    DALICC.extendsGraph,
+    DALICC.replacesRule,
+    DALICC.basedOnGraph,
+    DALICC.basedOnVersion,
+    rdflib.RDF.subject,
+    rdflib.RDF.predicate,
+    rdflib.RDF.object,
     rdflib.RDFS.label,
     DCT.title,
     DCT.description,
     DCT.date,
+    DCT.coverage,
+    DCT.contributor,
+    DCT.dateAccepted,
 }
 
 #: The four values a rule may conclude with, and the two states it may be in.
@@ -124,8 +141,8 @@ DEPENDENCY_RULE_OUTCOMES = {
 DEPENDENCY_RULE_STATUSES = {DALICC.Adopted, DALICC.Proposed}
 
 #: Every dependency graph that ships.  The core graph is the one the reasoner uses
-#: when nothing is chosen and the only one that may carry an adopted rule; the seven
-#: jurisdiction graphs hold proposals and are read together with it.
+#: when nothing is chosen and the only one that may adopt a rule; the seven
+#: jurisdiction graphs are complete graphs generated from it and a difference file.
 SHIPPED_DEPENDENCY_GRAPHS = (
     "dg_default", "dg_eu", "dg_us", "dg_cn", "dg_gb", "dg_jp", "dg_in", "dg_br",
 )
@@ -406,12 +423,19 @@ def validate_dependency_graph(report: Report) -> rdflib.Graph:
     basis and a status.  Anything else is refused, because the reasoner would not know
     what to do with it.
 
-    Only the core graph may carry an adopted rule: a rule that takes part in a check
-    the reader did not ask for is a decision of the library, and a jurisdiction graph
-    holds proposals.  The core graph is the one this function returns, because the
-    rest of the script reasons about it.
+    Only the core graph may adopt a rule: a rule that takes part in a check the reader
+    did not ask for is a decision of the library.  A jurisdiction graph is complete, so
+    it carries the core's adopted rules too, and what it adds is proposed.  It has to be
+    exactly what ``scripts/build_dependency_graphs.py`` generates from the core graph
+    and its difference file, name the core graph and its current version with
+    ``dalicc:basedOnGraph`` and ``dalicc:basedOnVersion``, never hold an axiom it
+    records as removed, and never hold two default rules of one kind for one action in
+    one territory.  Every rule and every removal carries a basis and an explanation.
+    The core graph is the one this function returns, because the rest of the script
+    reasons about it.
     """
     core = rdflib.Graph()
+    parsed: dict[str, rdflib.Graph] = {}
     for graph_id in SHIPPED_DEPENDENCY_GRAPHS:
         path = DATA_DIR / "dependencygraph" / f"{graph_id}.ttl"
         if not path.is_file():
@@ -425,7 +449,15 @@ def validate_dependency_graph(report: Report) -> rdflib.Graph:
         except Exception as exc:
             report.error(f"{path.relative_to(REPO_ROOT)}: Turtle parse error: {exc}")
             continue
+        if graph_id != "dg_default":
+            parsed[graph_id] = graph
         _check_dependency_graph(graph_id, graph, report)
+    core_rules = {
+        rule for rule in core.subjects(RDF.type, DALICC.DefaultRule)
+    }
+    for graph_id, graph in parsed.items():
+        _check_generated_graph(graph_id, graph, core_rules, report)
+    _check_build(report)
     return core
 
 
@@ -442,6 +474,12 @@ def _check_dependency_graph(graph_id: str, graph: rdflib.Graph, report: Report) 
                 )
         if predicate in DEPENDENCY_RELATIONS:
             continue
+        if predicate == DALICC.extendsGraph:
+            report.error(
+                f"{name}: dalicc:extendsGraph is deprecated; every published graph is "
+                "complete and names the graph it was built from with dalicc:basedOnGraph"
+            )
+            continue
         if predicate not in DEPENDENCY_RULE_PREDICATES:
             report.error(f"{name}: unknown dependency relation <{predicate}>")
             continue
@@ -455,6 +493,7 @@ def _check_dependency_graph(graph_id: str, graph: rdflib.Graph, report: Report) 
             ("an outcome", DALICC.defaultOutcome, DEPENDENCY_RULE_OUTCOMES),
             ("a jurisdiction", DALICC.inJurisdiction, None),
             ("a basis", DALICC.ruleBasis, None),
+            ("an explanation", DALICC.ruleExplanation, None),
             ("a status", DALICC.ruleStatus, DEPENDENCY_RULE_STATUSES),
         ):
             values = list(graph.objects(rule, predicate))
@@ -465,17 +504,90 @@ def _check_dependency_graph(graph_id: str, graph: rdflib.Graph, report: Report) 
                 report.error(f"{name}: <{rule}> names <{values[0]}>, which is not {label} "
                              f"the reasoner knows")
         adopted = DALICC.Adopted in set(graph.objects(rule, DALICC.ruleStatus))
-        if adopted and graph_id != "dg_default":
-            report.error(
-                f"{name}: <{rule}> is adopted, and only the core graph may adopt a rule"
-            )
         if not adopted and graph_id == "dg_default":
             report.error(
                 f"{name}: <{rule}> is a proposal, and the core graph carries only "
                 f"adopted rules"
             )
-    LOG.info("%s: %d axioms over %d relations, %d default rule(s)",
-             name, len(axioms), len({p for _, p, _ in axioms}), len(rules))
+    # A graph that every reader can choose is published; what is proposed is each rule,
+    # and dalicc:ruleStatus says so.  A title that says "proposal" contradicts that.
+    for title in graph.objects(None, DCT.title):
+        if "proposal" in str(title).lower():
+            report.error(
+                f"{name}: the title \"{title}\" says proposal; the status belongs on "
+                f"each rule (dalicc:ruleStatus), not in the name of the graph"
+            )
+    removals = set(graph.subjects(RDF.type, DALICC.AxiomRemoval))
+    for removal in sorted(removals, key=str):
+        parts = [graph.value(removal, predicate) for predicate in (RDF.subject, RDF.predicate,
+                                                                   RDF.object)]
+        if None in parts:
+            report.error(f"{name}: <{removal}> has to name the axiom it removes in full")
+        elif tuple(parts) in graph:
+            report.error(f"{name}: <{removal}> removes an axiom the graph still holds")
+        for label, predicate in (("a basis", DALICC.ruleBasis),
+                                 ("an explanation", DALICC.ruleExplanation)):
+            if len(list(graph.objects(removal, predicate))) != 1:
+                report.error(f"{name}: <{removal}> has to name {label} exactly once")
+    LOG.info("%s: %d axioms over %d relations, %d default rule(s), %d removal(s)",
+             name, len(axioms), len({p for _, p, _ in axioms}), len(rules), len(removals))
+
+
+def _check_generated_graph(
+    graph_id: str, graph: rdflib.Graph, core_rules: set, report: Report
+) -> None:
+    """A jurisdiction graph: its provenance, its adopted rules and its duplicates."""
+    sys.path.insert(0, str(REPO_ROOT / "scripts"))
+    from dalicc_check import depgraph_build
+    from dalicc_check.consistency import rules_from_triples
+
+    name = f"{graph_id}.ttl"
+    node = rdflib.URIRef(depgraph_build.graph_iri_for(graph_id))
+    based_on = list(graph.objects(node, DALICC.basedOnGraph))
+    if based_on != [rdflib.URIRef(depgraph_build.graph_iri_for("dg_default"))]:
+        report.error(f"{name}: has to name dg_default once with dalicc:basedOnGraph")
+    core_version = depgraph_build.file_version(HISTORY_DIR / "dependencygraph", "dg_default")
+    versions = [str(value) for value in graph.objects(node, DALICC.basedOnVersion)]
+    if versions != [str(core_version["version"])]:
+        report.error(
+            f"{name}: dalicc:basedOnVersion is {versions or 'missing'}, but the core graph "
+            f"is at version {core_version['version']} (run "
+            "scripts/build_dependency_graphs.py --bump)"
+        )
+    for rule in graph.subjects(RDF.type, DALICC.DefaultRule):
+        adopted = DALICC.Adopted in set(graph.objects(rule, DALICC.ruleStatus))
+        if adopted and rule not in core_rules:
+            report.error(
+                f"{name}: <{rule}> is adopted, and only the core graph may adopt a rule"
+            )
+    triples = [(str(s), str(p), str(o)) for s, p, o in graph]
+    for problem in depgraph_build.rule_problems(rules_from_triples(triples)):
+        report.error(f"{name}: {problem}")
+
+
+def _check_build(report: Report) -> None:
+    """Every generated graph is what the build writes from the core and its difference."""
+    sys.path.insert(0, str(REPO_ROOT / "scripts"))
+    from dalicc_check.depgraph_build import BuildError
+    import build_dependency_graphs as build_script
+
+    for graph_id in build_script.difference_ids():
+        path = DATA_DIR / "dependencygraph" / f"{graph_id}.ttl"
+        try:
+            expected = build_script.generate(graph_id)
+        except BuildError as exc:
+            report.error(f"differences/{graph_id}.ttl: {exc}")
+            continue
+        if not path.is_file() or path.read_text(encoding="utf-8") != expected:
+            report.error(
+                f"{graph_id}.ttl is not what the build generates from dg_default.ttl and "
+                f"differences/{graph_id}.ttl (run scripts/build_dependency_graphs.py)"
+            )
+    missing = sorted(
+        set(SHIPPED_DEPENDENCY_GRAPHS) - {"dg_default"} - set(build_script.difference_ids())
+    )
+    for graph_id in missing:
+        report.error(f"licensedata/dependencygraph/differences/{graph_id}.ttl: missing")
 
 
 def validate_vocabulary(report: Report) -> rdflib.Graph:
@@ -494,7 +606,8 @@ def validate_vocabulary(report: Report) -> rdflib.Graph:
     defined = set(graph.subjects(RDFS.isDefinedBy, DALICC[""]))
 
     # A deprecated term keeps dereferencing (external data may use its IRI), but it must
-    # say what replaces it, and the replacement must itself be a defined term.
+    # say what replaces it, and the replacement must itself be a defined term: one of
+    # this vocabulary, or an ODRL or Creative Commons action the library uses.
     deprecated = set(graph.subjects(OWL.deprecated, rdflib.Literal(True)))
     for term in sorted(deprecated, key=str):
         replacements = list(graph.objects(term, DCT.isReplacedBy))
@@ -505,7 +618,9 @@ def validate_vocabulary(report: Report) -> rdflib.Graph:
             )
             continue
         for replacement in replacements:
-            if replacement not in defined:
+            if replacement not in defined and not str(replacement).startswith(
+                (str(ODRL), str(CC))
+            ):
                 report.error(
                     f"{VOCABULARY_FILE.name}: <{term}> dct:isReplacedBy <{replacement}>, "
                     f"which is not defined in this vocabulary"
@@ -566,6 +681,169 @@ def validate_vocabulary_coverage(
 
     LOG.info("vocabulary: %d of %d DALICC terms used in the data are defined",
              len(used_terms) - len(undefined), len(used_terms))
+
+
+#: Where the application names ``dalicc:`` terms: Python, templates, scripts and the
+#: reasoner's programs.  Scanned by :func:`application_terms`.
+APPLICATION_SOURCES = (
+    ("app", ("**/*.py", "**/*.html")),
+    ("reasoner/app", ("**/*.py", "**/*.lp")),
+    ("sdk", ("**/*.py",)),
+    ("scripts", ("*.py", "review/*.py")),
+)
+
+#: ``dalicc:`` strings in the application that are not vocabulary terms, with the reason.
+#: A new entry needs a reason as good as these.
+APPLICATION_NON_TERMS = {
+    # a URN of the SPARQL property path trick, not the namespace
+    "none",
+}
+
+_APPLICATION_TERM_RE = re.compile(
+    r"(?:\bdalicc:|https://dalicc\.net/ns#)([A-Za-z][A-Za-z0-9]*)\b"
+)
+#: Python also spells a term ``DALICC + "<name>"``, ``DALICC.<name>`` or
+#: ``DALICC["<name>"]``; in a template or a script ``DALICC.`` is the site's JavaScript
+#: namespace, so these forms are read in Python files only.
+_PYTHON_TERM_RE = re.compile(
+    r"(?:\bDALICC\s*\+\s*[\"']|\b_?DALICC\.|\bDALICC\[[\"'])([A-Za-z][A-Za-z0-9]*)\b"
+)
+#: The reasoner's programs spell a term ``dalicc_<name>``.
+_PROGRAM_TERM_RE = re.compile(r"\bdalicc_([A-Za-z][A-Za-z0-9]*)\b")
+
+
+def application_terms(root: Path = REPO_ROOT) -> dict[str, set[str]]:
+    """``{local name: {file, ...}}`` of every ``dalicc:`` term the application names.
+
+    The reasoner's programs spell a term ``dalicc_<name>``; everything else spells it as
+    a CURIE, an IRI or ``DALICC + "<name>"``.
+    """
+    found: dict[str, set[str]] = {}
+    for base, patterns in APPLICATION_SOURCES:
+        for pattern in patterns:
+            for path in sorted((root / base).glob(pattern)):
+                if "__pycache__" in path.parts or path.name == "validate_data.py":
+                    continue
+                text = path.read_text(encoding="utf-8", errors="replace")
+                names = [match.group(1) for match in _APPLICATION_TERM_RE.finditer(text)]
+                if path.suffix == ".py":
+                    names += [match.group(1) for match in _PYTHON_TERM_RE.finditer(text)]
+                if path.suffix == ".lp":
+                    names += [match.group(1) for match in _PROGRAM_TERM_RE.finditer(text)]
+                for name in names:
+                    found.setdefault(name, set()).add(str(path.relative_to(root)))
+    return found
+
+
+def all_dependency_graphs() -> rdflib.Graph:
+    """Every shipped dependency graph and every difference file, in one graph."""
+    graph = rdflib.Graph()
+    folder = DATA_DIR / "dependencygraph"
+    for path in sorted(folder.glob("*.ttl")) + sorted((folder / "differences").glob("*.ttl")):
+        graph.parse(path, format="turtle")
+    return graph
+
+
+#: Classes whose members stand in for a declared domain or range.
+_SUBCLASSES = {
+    ODRL.Rule: {ODRL.Permission, ODRL.Prohibition, ODRL.Duty},
+    ODRL.Action: {ODRL.Action, DALICC.RuleAction, DALICC.DutyAction},
+}
+
+XSD = rdflib.XSD
+BPI_COUNTRIES = "http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#"
+
+
+def _has_class(node: rdflib.term.Node, cls: rdflib.term.Node, data: rdflib.Graph,
+               vocabulary: rdflib.Graph) -> bool:
+    types = set(data.objects(node, RDF.type)) | set(vocabulary.objects(node, RDF.type))
+    if types & _SUBCLASSES.get(cls, {cls}):
+        return True
+    if cls == ODRL.Action and isinstance(node, rdflib.URIRef) and not types:
+        # an action of the ODRL or CC vocabulary, which the data does not type
+        return str(node).startswith(ACTION_NAMESPACES)
+    # a BPI country is a jurisdiction; the comment of dalicc:inJurisdiction says so
+    return cls == DALICC.Jurisdiction and str(node).startswith(BPI_COUNTRIES)
+
+
+def _literal_fits(value: rdflib.Literal, datatype: rdflib.term.Node) -> bool:
+    if datatype == RDF.langString:
+        return bool(value.language)
+    if datatype == XSD.string:
+        return value.language is None and value.datatype in (None, XSD.string)
+    return value.datatype == datatype
+
+
+def vocabulary_use_problems(data: rdflib.Graph, vocabulary: rdflib.Graph,
+                            application: dict[str, set[str]] | None = None) -> list[str]:
+    """What the data and the application use of the vocabulary that it does not declare.
+
+    * every ``dalicc:`` IRI of the data, and every ``dalicc:`` name the application
+      uses, is a defined term;
+    * a property used with a literal is a datatype property, one used with an IRI or a
+      blank node an object property;
+    * every subject of a property with ``rdfs:domain`` is of that class, and every
+      object of one with ``rdfs:range`` is of that class or datatype.
+    """
+    problems: list[str] = []
+    defined = {str(s) for s in vocabulary.subjects(RDFS.isDefinedBy, DALICC[""])}
+    used = {
+        str(node)
+        for triple in data
+        for node in triple
+        if isinstance(node, rdflib.URIRef) and str(node).startswith(str(DALICC))
+        and str(node) != str(DALICC)
+    }
+    for iri in sorted(used - defined):
+        problems.append(f"<{iri}> is used in the data but not defined in the vocabulary")
+    for name, files in sorted((application or {}).items()):
+        if name in APPLICATION_NON_TERMS or str(DALICC) + name in defined:
+            continue
+        problems.append(f"dalicc:{name} is named in {', '.join(sorted(files)[:3])} "
+                        f"but not defined in the vocabulary")
+
+    for prop in sorted(defined):
+        predicate = rdflib.URIRef(prop)
+        kinds = set(vocabulary.objects(predicate, RDF.type))
+        if not kinds & {OWL.DatatypeProperty, OWL.ObjectProperty, OWL.AnnotationProperty}:
+            continue
+        domains = list(vocabulary.objects(predicate, RDFS.domain))
+        ranges = list(vocabulary.objects(predicate, RDFS.range))
+        name = "dalicc:" + prop[len(str(DALICC)):]
+        for subject, obj in data.subject_objects(predicate):
+            if isinstance(obj, rdflib.Literal):
+                if OWL.ObjectProperty in kinds:
+                    problems.append(f"{name} is an object property but has the literal {obj!r}")
+                    break
+            elif OWL.DatatypeProperty in kinds:
+                problems.append(f"{name} is a datatype property but has the object <{obj}>")
+                break
+            for domain in domains:
+                if not _has_class(subject, domain, data, vocabulary):
+                    problems.append(f"{name}: subject {subject} is not a {domain}")
+                    break
+            for range_ in ranges:
+                fits = (
+                    _literal_fits(obj, range_)
+                    if isinstance(obj, rdflib.Literal)
+                    else _has_class(obj, range_, data, vocabulary)
+                )
+                if not fits:
+                    problems.append(f"{name}: object {obj!r} does not fit the range {range_}")
+                    break
+    return problems
+
+
+def validate_vocabulary_use(licenses: rdflib.Graph, vocabulary: rdflib.Graph,
+                            report: Report) -> None:
+    """Every term used is defined, and every use fits the declared domain and range."""
+    data = rdflib.Graph()
+    data += licenses
+    data += all_dependency_graphs()
+    problems = vocabulary_use_problems(data, vocabulary, application_terms())
+    for problem in problems:
+        report.error(problem)
+    LOG.info("vocabulary use: %d problem(s)", len(problems))
 
 
 def load_reviews(report: Report) -> dict[str, dict]:
@@ -847,6 +1125,31 @@ def _changelog_versions(path: Path, report: Report) -> list[int] | None:
     return sorted(versions)
 
 
+def _check_modified(
+    license_id: str, licenses: rdflib.Graph, changelog_path: Path, version: int, report: Report
+) -> None:
+    """``dct:modified`` of a record past version 1 is the date of its current version.
+
+    The record page tells a reader that a record changed after its review by comparing
+    ``dct:modified`` with ``dalicc:reviewedOn``; a date older than the current version
+    hides the change.  ``bump_version.py`` writes both from the same day.
+    """
+    try:
+        payload = yaml.safe_load(changelog_path.read_text(encoding="utf-8")) or {}
+    except (OSError, yaml.YAMLError):
+        return
+    entry = next((e for e in payload.get("entries") or []
+                  if isinstance(e, dict) and e.get("version") == version), None)
+    if entry is None:
+        return
+    dates = [str(v) for v in licenses.objects(DALICCLIB[license_id], DCT.modified)]
+    if dates != [str(entry.get("date"))]:
+        report.error(
+            f"{license_id}: dct:modified is {dates or 'missing'} but version {version} is "
+            f"dated {entry.get('date')}; the record must carry the date of its current version"
+        )
+
+
 def validate_history(
     licenses: rdflib.Graph,
     canonical: dict[str, str],
@@ -926,6 +1229,7 @@ def validate_history(
                         f"{license_id}: the changelog describes versions {entries}, "
                         f"expected {expected}"
                     )
+                _check_modified(license_id, licenses, changelog_path, version, report)
         elif changelog_path.is_file():
             report.error(f"{license_id}: a changelog but no archived version")
 
@@ -967,15 +1271,30 @@ def validate_history(
 
 
 def validate_shared_history(report: Report) -> None:
-    """The dependency graph and the vocabulary carry the same kind of history."""
-    for name, stem in (("dependencygraph", "dg_default"), ("vocabulary", "dalicc-ns")):
+    """The dependency graphs and the vocabulary carry the same kind of history.
+
+    ``dg_default`` and the vocabulary keep ``changelog.yaml``; every other shipped
+    dependency graph keeps ``<id>-changelog.yaml`` beside its archived versions in the
+    same folder.  A shipped graph that has never been versioned has neither, and that is
+    allowed; one that has an archive needs a change log that describes it.
+    """
+    histories = [("dependencygraph", "dg_default", "changelog.yaml", True)]
+    histories += [
+        ("dependencygraph", graph_id, f"{graph_id}-changelog.yaml", False)
+        for graph_id in SHIPPED_DEPENDENCY_GRAPHS
+        if graph_id != "dg_default"
+    ]
+    histories.append(("vocabulary", "dalicc-ns", "changelog.yaml", True))
+    for name, stem, log_name, required in histories:
         folder = HISTORY_DIR / name
         if not folder.is_dir():
             report.error(f"licensedata/history/{name}: missing")
             continue
         archived = sorted(folder.glob(f"{stem}-v*.ttl"))
+        if not archived and not required and not (folder / log_name).is_file():
+            continue
         if not archived:
-            report.error(f"licensedata/history/{name}: no archived version")
+            report.error(f"licensedata/history/{name}: no archived version of {stem}")
         for path in archived:
             if check_encoding(path, report) is None:
                 continue
@@ -983,15 +1302,15 @@ def validate_shared_history(report: Report) -> None:
                 rdflib.Graph().parse(path, format="turtle")
             except Exception as exc:
                 report.error(f"{path.relative_to(REPO_ROOT)}: Turtle parse error: {exc}")
-        changelog = folder / "changelog.yaml"
+        changelog = folder / log_name
         if not changelog.is_file():
-            report.error(f"licensedata/history/{name}/changelog.yaml: missing")
+            report.error(f"licensedata/history/{name}/{log_name}: missing")
             continue
         versions = _changelog_versions(changelog, report) or []
         expected = list(range(2, len(archived) + 2))
         if versions != expected:
             report.error(
-                f"licensedata/history/{name}/changelog.yaml: describes versions "
+                f"licensedata/history/{name}/{log_name}: describes versions "
                 f"{versions}, expected {expected}"
             )
 
@@ -1141,6 +1460,7 @@ def main(argv: list[str] | None = None) -> int:
     dependency = validate_dependency_graph(report)
     vocabulary = validate_vocabulary(report)
     validate_vocabulary_coverage(union, dependency, vocabulary, report)
+    validate_vocabulary_use(union, vocabulary, report)
     reviews = load_reviews(report)
     validate_review_coverage(union, canonical, reviews, report)
     validate_ports(union, canonical, reviews, report)

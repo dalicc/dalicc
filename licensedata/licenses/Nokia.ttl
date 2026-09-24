@@ -19,6 +19,7 @@
 
 dalicclib:Nokia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "Nokia" ;
     cc:attributionName "Nokia Corporation" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -36,8 +37,8 @@ dalicclib:Nokia a odrl:Set ;
     dct:alternative "NOKOS License",
         "Nokia",
         "Nokia Open Source License" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Nokia Corporation" ;
     dct:source <https://spdx.org/licenses/Nokia.html> ;
     dct:title "Nokia Open Source License"@en ;

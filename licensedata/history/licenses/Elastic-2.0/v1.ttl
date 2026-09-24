@@ -1,0 +1,93 @@
+# Title: The machine-readable representation of "Elastic License 2.0"@en in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/Elastic-2.0
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:Elastic-2.0 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "Elastic-2.0" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://www.elastic.co/licensing/elastic-license> ;
+    dalicc:WarrantyDisclaimer "As far as the law allows, the software comes as is, without any warranty or condition, and the licensor will not be liable to you for any damages arising out of these terms or the use or nature of the software, under any kind of legal claim." ;
+    dalicc:additionalClauses "By using the software, you agree to all of the terms and conditions below.",
+        "The licensor grants you a non-exclusive, royalty-free, worldwide, non-sublicensable, non-transferable license to use, copy, distribute, make available, and prepare derivative works of the software, in each case subject to the limitations and conditions below.",
+        "You may not provide the software to third parties as a hosted or managed service, where the service provides users with access to any substantial set of the features or functionality of the software.",
+        "You may not move, change, disable, or circumvent the license key functionality in the software, and you may not remove or obscure any functionality in the software that is protected by the license key.",
+        "You may not alter, remove, or obscure any licensing, copyright, or other notices of the licensor in the software. Any use of the licensor’s trademarks is subject to applicable law.",
+        "The licensor grants you a license, under any patent claims the licensor can license, or becomes able to license, to make, have made, use, sell, offer for sale, import and have imported the software, in each case subject to the limitations and conditions in this license. This license does not cover any patent claims that you cause to be infringed by modifications or additions to the software. If you or your company make any written claim that the software infringes or contributes to infringement of any patent, your patent license for the software granted under these terms ends immediately. If your company makes such a claim, your patent license ends immediately for work on behalf of your company.",
+        "You must ensure that anyone who gets a copy of any part of the software from you also gets a copy of these terms.",
+        "If you modify the software, you must include in any modified copies of the software prominent notices stating that you have modified the software.",
+        "These terms do not imply any licenses other than those expressly granted in these terms.",
+        "If you use the software in violation of these terms, such use is not licensed, and your licenses will automatically terminate. If the licensor provides you with a notice of your violation, and you cease all violation of this license no later than 30 days after you receive that notice, your licenses will be reinstated retroactively. However, if you violate these terms after such reinstatement, any additional violation of these terms will cause your licenses to terminate automatically and permanently." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
+    dalicc:curePeriod "30 days" ;
+    dalicc:fieldOfUseRestriction "any use other than providing the software to third parties as a hosted or managed service that gives users access to a substantial set of its features" ;
+    dalicc:licenseVersion "2.0" ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-22"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/Elastic-2.0/versions> ;
+    dct:alternative "ELv2",
+        "Elastic License v2",
+        "Elastic-2.0" ;
+    dct:hasVersion "1" ;
+    dct:modified "2026-09-22"^^xsd:date ;
+    dct:publisher "Elastic" ;
+    dct:source <https://spdx.org/licenses/Elastic-2.0.html> ;
+    dct:title "Elastic License 2.0"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:ShareAlike ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:ShareAlike ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:ShareAlike ] ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:patentGrant ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:patentRetaliationTermination ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Software ] .

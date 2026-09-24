@@ -23,7 +23,7 @@ findings:
   severity: info
   field: spdx:licenseId
   description: SPDX has no identifier for this port. The legal code URL implies CC-BY-SA-3.0-BR, which
-    the SPDX licence list does not define, so none was invented. Of the thirty five records in this batch
+    the SPDX licence list does not define, so none was invented. Of the thirty five records in this review group
     only the six German ones take an SPDX identifier.
   action: none
 - rubric: 2
@@ -32,8 +32,7 @@ findings:
   description: 'The record targets dalicc:CreativeWork, while the 4.0 International parent CC-BY-SA-4.0
     targets dalicc:CreativeWork and dcmitype:Dataset. This port has no database clause at all: it neither
     licenses nor waives a sui generis database right, and its definition of the licensed subject matter
-    does not name databases, so the evidence that justified adding the type to the European ports of this
-    batch is missing here. Creative Commons licences are media neutral and the grant runs to all media
+    does not name databases, so the evidence that justified adding the type to the European ports of this review group is missing here. Creative Commons licences are media neutral and the grant runs to all media
     and formats now known or later devised, so the type is defensible on general grounds. Proposed, as
     one decision over every Creative Commons port without a database clause.'
   action: proposed
@@ -56,10 +55,11 @@ findings:
   description: The licence forbids sublicensing and the record does not say so. "Voce nao pode sublicenciar
     a Obra." Section 4(a). The vocabulary already has dalicc:sublicense, but no record in the library
     uses it and its skos:note says so, and the same sentence stands in every Creative Commons 2.0 and
-    3.0 record, so adding it to the thirty five ports of this batch alone would split the compatibility
+    3.0 record, so adding it to the thirty five ports of this review group alone would split the compatibility
     behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
-    note. Batches 3 and 6 made the same recommendation.
-  action: proposed
+    note. Other review groups made the same recommendation.
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -151,7 +151,7 @@ findings:
   severity: gap
   field: record
   description: 'The royalty collection arrangement has no vocabulary term. Section 4 has a single royalty
-    paragraph, and it is the only clause in this batch that names collecting societies: the Licensor reserves
+    paragraph, and it is the only clause in this review group that names collecting societies: the Licensor reserves
     the right to collect royalties individually or, where it is a member of a collective management society,
     "por exemplo, ECAD, ASCAP, BMI, SESAC", through that society, for any exercise of the rights that
     is for a commercial purpose or use as defined in the NonCommercial clause. Proposed term: dalicc:royaltyCollectionReserved,
@@ -184,6 +184,14 @@ findings:
     rights clause. The compatibility checker cannot tell this record from the other records of the BY-SA
     element set, across all three versions and every jurisdiction the library holds.'
   action: none
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Esta Licença e os direitos aqui concedidos
+    terminarão automaticamente no caso de qualquer violação dos termos desta Licença por Você." The licence
+    ends automatically on a breach and this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach
+    is true and no dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Brazil (BR)'
 port_of: CC-BY-SA-4.0
 variant_kind: jurisdiction-port

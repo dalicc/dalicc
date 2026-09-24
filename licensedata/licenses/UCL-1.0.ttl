@@ -19,6 +19,7 @@
 
 dalicclib:UCL-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "UCL-1.0" ;
     cc:attributionName "Nigel Tzeng" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -34,13 +35,14 @@ dalicclib:UCL-1.0 a odrl:Set ;
     dct:alternative "UCL-1.0",
         "Upstream Compatibility License 1.0",
         "Upstream Compatibility License v1.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Nigel Tzeng" ;
     dct:source <https://spdx.org/licenses/UCL-1.0.html> ;
     dct:title "Upstream Compatibility License v1.0"@en ;
     odrl:duty [ a odrl:Duty ;
-            odrl:action cc:ShareAlike ] ;
+            odrl:action cc:ShareAlike ;
+            dalicc:evidence "to distribute or communicate copies of the Original Work and Derivative Works to the public, with the proviso that copies of Original Work You distribute or communicate shall be licensed under this Upstream Compatibility License and all Derivative Work You distribute or communicate shall be licensed under both this Upstream Compatibility License and the Apache License 2.0 or later;" ] ;
     odrl:permission [ a odrl:Permission ;
             odrl:action cc:CommercialUse ],
         [ a odrl:Permission ;
@@ -68,7 +70,8 @@ dalicclib:UCL-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ],
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:evidence "to distribute or communicate copies of the Original Work and Derivative Works to the public, with the proviso that copies of Original Work You distribute or communicate shall be licensed under this Upstream Compatibility License and all Derivative Work You distribute or communicate shall be licensed under both this Upstream Compatibility License and the Apache License 2.0 or later;" ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
@@ -78,7 +81,8 @@ dalicclib:UCL-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ],
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:evidence "to distribute or communicate copies of the Original Work and Derivative Works to the public, with the proviso that copies of Original Work You distribute or communicate shall be licensed under this Upstream Compatibility License and all Derivative Work You distribute or communicate shall be licensed under both this Upstream Compatibility License and the Apache License 2.0 or later;" ] ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
@@ -88,7 +92,8 @@ dalicclib:UCL-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeLicenseFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:sublicense ],
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "Licensor grants You a worldwide, royalty-free, non-exclusive, sublicensable license, for the duration of the copyright, to do the following:" ],
         [ a odrl:Permission ;
             odrl:action dalicc:patentGrant ],
         [ a odrl:Permission ;
@@ -98,7 +103,8 @@ dalicclib:UCL-1.0 a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Neither the names of Licensor, nor the names of any contributors to the Original Work, nor any of their trademarks or service marks, may be used to endorse or promote products derived from this Original Work without express prior permission of the Licensor." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ] ;
     odrl:target [ a odrl:AssetCollection ;

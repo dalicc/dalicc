@@ -8,7 +8,7 @@ verdict: corrected
 summary: 'The record models the attribution-only database licence of Open Data Commons. The two clause fields
   were wrong: dalicc:WarrantyDisclaimer held the website disclaimer of opendatacommons.org instead of Section
   7.1 of the licence, and the liability limitation of Section 8 was missing altogether. Both were corrected,
-  and the SPDX identifier was added. The open question for the owner is the licence-wide cc:ShareAlike duty:
+  and the SPDX identifier was added. The open question for the association is the licence-wide cc:ShareAlike duty:
   this licence has no share-alike clause, but Section 4.2(a) does require conveying under the terms of this
   licence.'
 findings:
@@ -23,7 +23,7 @@ findings:
   severity: info
   field: dct:source
   description: cc:legalcode is https://opendatacommons.org/licenses/by/1.0/ and dct:source is the opendefinition.org
-    page for ODC-By. The two differ, which review_duplicates.md section 3 lists; here it is deliberate, the
+    page for ODC-By. The two differ, which the review of duplicates (see the review method, docs/LICENSE_REVIEW.md section 3) lists; here it is deliberate, the
     licence text plus a third-party description, not an error.
   action: none
 - rubric: 2
@@ -54,7 +54,8 @@ findings:
   description: Section 4.4 opens with "You may not sublicense the Database" and the record does not say so.
     dalicc:sublicense exists in the vocabulary and is used by no record. Proposed as one library-wide correction
     together with ODbL and the Creative Commons ports.
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 5
   severity: minor
@@ -66,7 +67,7 @@ findings:
     a derivative database or the database in a collective database, You must "Do so only under the terms of
     this License". That sentence is the whole basis for the duty and it is debated in practice. Left unchanged,
     because removing it is an interpretive decision that changes every compatibility answer this record gives,
-    and it is put to the owner instead.'
+    and it is put to the association instead.'
   action: none
 - rubric: 5
   severity: info
@@ -111,13 +112,42 @@ findings:
 - rubric: 10
   severity: info
   field: record
-  description: 'review_duplicates.md section 4 flagged that this record and CC-BY-SA-4.0 had an identical deontic
+  description: 'the review of duplicates (see the review method, docs/LICENSE_REVIEW.md section 3) flagged that this record and CC-BY-SA-4.0 had an identical deontic
     signature, which is wrong for a pair made of an attribution-only database licence and a copyleft content
-    licence. After this pass the two differ, because CC-BY-SA-4.0 regained dalicc:chargeDistributionFee, but
+    licence. After the review the two differ, because CC-BY-SA-4.0 regained dalicc:chargeDistributionFee, but
     the deeper cause is the cc:ShareAlike duty in this record, which is the open question above. Inside its
     own family this record now differs from ODbL exactly where the documents differ: ODbL adds Section 4.4
     share alike, Section 4.6 access to derivative databases and Section 4.7 technological measures.'
   action: none
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 3.1 reads: "Subject to the terms and conditions of this License, the Licensor
+    grants to You a worldwide, royalty-free, non-exclusive, terminable (but only under Section 9) license
+    to Use the Database for the duration of any applicable copyright and Database Rights." The licence
+    defines Database Rights as the sui generis database right, so the permission is text-supported; without
+    it, the proposed EU and UK default rule reads the licence as not granting the right it exists to grant.
+    dalicc:suiGenerisDatabaseRights is permitted, with the cc:Attribution and cc:Notice duties that Section
+    4 attaches to every use.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote was prohibited on the strength of "This License does not cover any trademarks
+    associated with the Database." (Section 2.3(c)). That sentence leaves trademarks outside the licence
+    and says nothing about endorsement, which is silence; since 2026-09-23 what a silent licence grants
+    about endorsement is the adopted default rule of the core dependency graph, not a statement of the
+    record (see section 13 of docs/LICENSE_REVIEW.md). Removed, as on the ODbL record.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'odrl:modify and odrl:derive carried a dalicc:modificationNotice duty that no sentence
+    of the text supports. Section 4.2 asks whoever Publicly Conveys the Database or a Derivative Database
+    to do so under this License, to "Include a copy of this License or its Uniform Resource Identifier
+    (URI)" and to "Keep intact any copyright or Database Right notices and notices that refer to this
+    License"; nothing asks for a notice of the changes made. Removed, as on the ODbL record.'
+  action: applied
 family: Open Data Commons (ODbL, PDDL, ODC-By)
 port_of: null
 variant_kind: null

@@ -3,9 +3,13 @@ title: Sample License (SL)
 current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
-  summary: The content review of 2026-09-15 added 1 statement and recorded the review state.
+  summary: The content review of 2026-09-15 added 1 statement and recorded the review state. Later
+    changes named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
   changes:
   - action: added
     statement: dalicc:recordStatus dalicc:testFixture
@@ -22,3 +26,9 @@ entries:
     reason: Every record records how far it has come in the editorial workflow and when it was last
       checked against the legal text.
     source: review-state
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

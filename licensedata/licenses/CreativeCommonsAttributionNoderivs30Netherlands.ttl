@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionNoderivs30Netherlands a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Netherlands ;
     cc:legalcode <https://creativecommons.org/licenses/by-nd/3.0/nl/legalcode> ;
     dalicc:LiabilityLimitation """DE LICENTIEGEVER AANVAARDT GEEN ENKELE AANSPRAKELIJKHEID JEGENS DE GEBRUIKER VOOR ENIGE BIJZONDERE OF INCIDENTELE SCHADE OF GEVOLGSCHADE VOORTVLOEIEND UIT DEZE LICENTIE OF HET GEBRUIK VAN HET WERK, ZELFS NIET INDIEN DE LICENTIEGEVER OP DE HOOGTE IS GESTELD VAN HET RISICO VAN DERGELIJKE SCHADE, INDIEN EN VOORZOVER DE WET NIET ANDERS BEPAALT.
@@ -26,6 +27,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Netherlands a odrl:Set ;
     dalicc:WarrantyDisclaimer """TENZIJ ANDERS SCHRIFTELIJK IS OVEREENGEKOMEN DOOR DE PARTIJEN, STELT DE LICENTIEGEVER HET WERK BESCHIKBAAR OP 'AS-IS' BASIS, ZONDER ENIGE GARANTIE, HETZIJ DIRECT, INDIRECT OF ANDERSZINS, MET BETREKKING TOT HET WERK, MET INBEGRIP VAN, MAAR NIET BEPERKT TOT GARANTIES MET BETREKKING TOT DE EIGENDOMSTITEL, DE VERKOOPBAARHEID, DE GESCHIKTHEID VOOR BEPAALDE DOELEINDEN, MOGELIJKE INBREUK, DE AFWEZIGHEID VAN LATENTE OF ANDERE TEKORTKOMINGEN, DE JUISTHEID OF DE AAN- OF AFWEZIGHEID VAN FOUTEN, ONGEACHT DE OPSPOORBAARHEID DAARVAN, INDIEN EN VOORZOVER DE WET NIET ANDERS BEPAALT.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-ND-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -43,8 +45,8 @@ dalicclib:CreativeCommonsAttributionNoderivs30Netherlands a odrl:Set ;
         "CC-BY-ND 3.0 NL",
         "Creative Commons BY-ND 3.0",
         "Creative Commons BY-ND 3.0 NL" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nd/3.0/nl/> ;
     dct:title "Creative Commons Attribution-NoDerivatives 3.0 Netherlands"@en ;

@@ -19,6 +19,7 @@
 
 dalicclib:Apple-ML-Research-Model-License a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://huggingface.co/apple/DepthPro/raw/main/LICENSE> ;
     dalicc:LiabilityLimitation "IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION, MODIFICATION AND/OR DISTRIBUTION OF THE APPLE MACHINE LEARNING RESEARCH MODEL AND ANY OUTPUTS OF THE APPLE MACHINE LEARNING RESEARCH MODEL, HOWEVER CAUSED AND WHETHER UNDER THEORY OF CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." ;
@@ -42,31 +43,37 @@ dalicclib:Apple-ML-Research-Model-License a odrl:Set ;
         "Apple Machine Learning Research Model License",
         "Apple-ML-Research-Model-License",
         "apple-amlr" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Apple Inc." ;
     dct:source <https://huggingface.co/apple/DepthPro/blob/main/LICENSE> ;
     dct:title "Apple Machine Learning Research Model License Agreement"@en ;
     odrl:permission [ a odrl:Permission ;
-            odrl:action odrl:reproduce ],
+            odrl:action odrl:reproduce ;
+            dalicc:evidence "* License Scope: In consideration of your agreement to abide by the following terms, and subject to these terms, Apple hereby grants you a personal, non-exclusive, worldwide, non-transferable, royalty-free, revocable, and limited license, to use, copy, modify, distribute, and create Model Derivatives (defined below) of the Apple Machine Learning Research Model exclusively for Research Purposes." ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "* Distribution of Apple Machine Learning Research Model and Model Derivatives: If you choose to redistribute Apple Machine Learning Research Model or its Model Derivatives, you must provide a copy of this Agreement to such third party, and ensure that the following attribution notice be provided: “Apple Machine Learning Research Model is licensed under the Apple Machine Learning Research Model License Agreement.” Additionally, all Model Derivatives must clearly be identified as such, including disclosure of modifications and changes made to the Apple Machine Learning Research Model." ],
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "* Distribution of Apple Machine Learning Research Model and Model Derivatives: If you choose to redistribute Apple Machine Learning Research Model or its Model Derivatives, you must provide a copy of this Agreement to such third party, and ensure that the following attribution notice be provided: “Apple Machine Learning Research Model is licensed under the Apple Machine Learning Research Model License Agreement.” Additionally, all Model Derivatives must clearly be identified as such, including disclosure of modifications and changes made to the Apple Machine Learning Research Model." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "* Distribution of Apple Machine Learning Research Model and Model Derivatives: If you choose to redistribute Apple Machine Learning Research Model or its Model Derivatives, you must provide a copy of this Agreement to such third party, and ensure that the following attribution notice be provided: “Apple Machine Learning Research Model is licensed under the Apple Machine Learning Research Model License Agreement.” Additionally, all Model Derivatives must clearly be identified as such, including disclosure of modifications and changes made to the Apple Machine Learning Research Model." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "* Distribution of Apple Machine Learning Research Model and Model Derivatives: If you choose to redistribute Apple Machine Learning Research Model or its Model Derivatives, you must provide a copy of this Agreement to such third party, and ensure that the following attribution notice be provided: “Apple Machine Learning Research Model is licensed under the Apple Machine Learning Research Model License Agreement.” Additionally, all Model Derivatives must clearly be identified as such, including disclosure of modifications and changes made to the Apple Machine Learning Research Model." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "* Distribution of Apple Machine Learning Research Model and Model Derivatives: If you choose to redistribute Apple Machine Learning Research Model or its Model Derivatives, you must provide a copy of this Agreement to such third party, and ensure that the following attribution notice be provided: “Apple Machine Learning Research Model is licensed under the Apple Machine Learning Research Model License Agreement.” Additionally, all Model Derivatives must clearly be identified as such, including disclosure of modifications and changes made to the Apple Machine Learning Research Model." ] ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
@@ -78,7 +85,8 @@ dalicclib:Apple-ML-Research-Model-License a odrl:Set ;
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "The name, trademarks, service marks or logos of Apple may not be used to endorse or promote Model Derivatives or the relationship between You and Apple." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Dataset,
                 dcmitype:Software ] .

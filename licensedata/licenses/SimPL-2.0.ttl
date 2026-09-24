@@ -19,6 +19,7 @@
 
 dalicclib:SimPL-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "SimPL-2.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://opensource.org/license/SiMPL-2.0> ;
@@ -37,8 +38,8 @@ dalicclib:SimPL-2.0 a odrl:Set ;
         "SimPL-2.0",
         "Simple Public License",
         "Simple Public License 2.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://opensource.org/license/SiMPL-2.0> ;
     dct:title "Simple Public License 2.0"@en ;
     odrl:duty [ a odrl:Duty ;
@@ -50,35 +51,41 @@ dalicclib:SimPL-2.0 a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "Conspicuously announcing that it is available under that license." ],
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "Conspicuously announcing that it is available under that license." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "Conspicuously announcing that it is available under that license." ],
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "Conspicuously announcing that it is available under that license." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "Conspicuously announcing that it is available under that license." ],
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "Conspicuously announcing that it is available under that license." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -94,7 +101,8 @@ dalicclib:SimPL-2.0 a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:promote ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:addLimitation ],
+            odrl:action dalicc:addLimitation ;
+            dalicc:evidence "Licensing it to everyone under SimPL, or substantially similar terms (such as GPL 2.0), without adding further restrictions to the rights provided;" ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ] ;
     odrl:target [ a odrl:AssetCollection ;

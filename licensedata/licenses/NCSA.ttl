@@ -19,6 +19,7 @@
 
 dalicclib:NCSA a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "NCSA" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://otm.illinois.edu/uiuc_openSource> ;
@@ -31,8 +32,8 @@ dalicclib:NCSA a odrl:Set ;
     dct:alternative "NCSA",
         "NCSA Open Source License",
         "University of Illinois/NCSA Open Source License" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://spdx.org/licenses/NCSA.html> ;
     dct:title "University of Illinois/NCSA Open Source License"@en ;
     odrl:permission [ a odrl:Permission ;
@@ -60,9 +61,11 @@ dalicclib:NCSA a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:present ],
         [ a odrl:Permission ;
-            odrl:action odrl:grantUse ],
+            odrl:action odrl:grantUse ;
+            dalicc:evidence "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal with the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:" ],
         [ a odrl:Permission ;
-            odrl:action dalicc:sublicense ],
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal with the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:" ],
         [ a odrl:Permission ;
             odrl:action cc:CommercialUse ],
         [ a odrl:Permission ;
@@ -74,8 +77,13 @@ dalicclib:NCSA a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "* Neither the names of <Name of Development Group, Name of Institution>, nor the names of its contributors may be used to endorse or promote products derived from this Software without specific prior written permission." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

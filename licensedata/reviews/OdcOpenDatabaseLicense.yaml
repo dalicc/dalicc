@@ -75,7 +75,7 @@ findings:
     over the internet", and Section 4.7(b)(i) requires the unrestricted parallel copy to be "available
     without additional fee". Section 3.1 at the same time allows commercial use. So the fee ban applies
     to the copy the licensee must hand over, not to every distribution. Left in place, because removing
-    it would lose the only trace of Section 4.6 in the record, and flagged for the owner.'
+    it would lose the only trace of Section 4.6 in the record, and left open for the association''s decision.'
   action: none
 - rubric: 4
   severity: major
@@ -84,7 +84,8 @@ findings:
     The vocabulary has dalicc:sublicense, defined but used by no record in the library. Proposed rather
     than applied, because the same sentence stands in ODC-By and in every Creative Commons 2.0 and 3.0
     record, so it is one library-wide correction.
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 5
   severity: info
@@ -146,10 +147,45 @@ findings:
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 5 finding 7: the record prohibited dalicc:chargeDistributionFee
+    its new siblings and versioned. The review''s finding on family consistency: the record prohibited dalicc:chargeDistributionFee
     although the ODbL nowhere forbids charging for a copy. What it does is cap the price of the copy that
     has to accompany a Restricted Database and of the derivative database file, and those two sentences
     are now quoted instead; dct:source was missing.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 3.1 reads: "Subject to the terms and conditions of this License, the Licensor
+    grants to You a worldwide, royalty-free, non-exclusive, terminable (but only under Section 9) license
+    to Use the Database for the duration of any applicable copyright and Database Rights." The licence
+    defines Database Rights as the sui generis database right, so the permission is text-supported; without
+    it, the proposed EU and UK default rule reads the licence as not granting the right it exists to grant.
+    dalicc:suiGenerisDatabaseRights is permitted, with the cc:Attribution and cc:Notice duties that Section
+    4 attaches to every use.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote was prohibited on the strength of "This License does not cover any trademarks
+    associated with the Database." That sentence leaves trademarks outside the licence and says nothing
+    about endorsement, which is silence; since 2026-09-23 what a silent licence grants about endorsement
+    is the adopted default rule of the core dependency graph, not a statement of the record (see section
+    13 of docs/LICENSE_REVIEW.md). Removed.
+  action: applied
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'odrl:modify and odrl:derive carried a dalicc:modificationNotice duty that no sentence
+    of the text supports. The licence asks for no change log: the alteration file of Section 4.6(b) is
+    one of two ways to give recipients access to a Derivative Database, an alternative to offering the
+    whole Derivative Database, not a notice of the changes. Removed.'
+  action: applied
+- rubric: 1
+  severity: minor
+  field: dct:publisher
+  description: dct:publisher read "Socialtext Incorporated", the publisher of the Common Public Attribution
+    License, which the record had been copied from. The ODbL is published by Open Data Commons, a project
+    of the Open Knowledge Foundation. Corrected to "Open Data Commons (Open Knowledge Foundation)".
   action: applied
 family: Open Data Commons (ODbL, PDDL, ODC-By)
 port_of: null

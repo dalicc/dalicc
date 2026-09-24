@@ -55,9 +55,6 @@ DEPENDENCY_FILE = REPO_ROOT / "licensedata" / "dependencygraph" / "dg_default.tt
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
 from dalicc_check.consistency import (  # noqa: E402
-    P_EXTENDS_GRAPH as EXTENDS_GRAPH,
-)
-from dalicc_check.consistency import (  # noqa: E402
     consistency_check,
     default_statements,
     rules_from_triples,
@@ -69,8 +66,9 @@ DEFAULT_EXPECTED = ("DataExplorationLicence", "DeveloperLicense")
 LOG = logging.getLogger("consistency_sweep")
 
 
-#: Every dependency graph that ships, the core one first.  The seven others hold the
-#: default rules proposed for one market each and are read together with the core one.
+#: Every dependency graph that ships, the core one first.  The seven others are complete
+#: graphs generated from the core one and a difference file each, and add the default
+#: rules proposed for one market.
 SHIPPED_GRAPHS = ("dg_default", "dg_eu", "dg_us", "dg_cn", "dg_gb", "dg_jp", "dg_in", "dg_br")
 
 
@@ -82,24 +80,15 @@ def graph_file(graph_id: str = "dg_default") -> Path:
 def dependency_relations(path: Path = DEPENDENCY_FILE) -> list[tuple[str, str, str]]:
     """Read the statements of one graph from the data, with no triple store involved.
 
-    A graph that names another with ``dalicc:extendsGraph`` is read together with it,
-    one step, exactly as the service reads it.
+    Every shipped graph is complete, so one file is read and no link is followed,
+    exactly as the service and the reasoner read it.
     """
     if not path.is_file():
         LOG.warning("No dependency graph available at %s", path)
         return []
     graph = Graph()
     graph.parse(path.as_posix(), format="turtle")
-    triples = [(str(s), str(p), str(o)) for s, p, o in graph]
-    extended = {obj for _s, predicate, obj in triples if predicate == EXTENDS_GRAPH}
-    for target in sorted(extended):
-        base = graph_file(target.rstrip("/").rsplit("/", 1)[-1])
-        if base.is_file() and base != path:
-            seen = set(triples)
-            triples += [
-                triple for triple in dependency_relations(base) if triple not in seen
-            ]
-    return triples
+    return [(str(s), str(p), str(o)) for s, p, o in graph]
 
 
 def records(licenses_dir: Path) -> list[tuple[str, Graph]]:

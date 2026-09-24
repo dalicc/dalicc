@@ -1,0 +1,87 @@
+id: SimPL-2.0
+title: Simple Public License 2.0
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on,
+    named the license the record itself is published under and removed the quotes that do not name
+    the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  changes:
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:addStatement,
+      dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:addStatement,
+      dalicc:modificationNotice]
+    reason: Its duty cc:Attribution quotes "Conspicuously announcing that it is available under that
+      license." Its duty cc:Notice quotes "Conspicuously announcing that it is available under that
+      license." Its duty cc:SourceCode quotes "Conspicuously announcing that it is available under
+      that license." Its duty dalicc:addStatement quotes "Conspicuously announcing that it is available
+      under that license."
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:addStatement]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:addStatement]
+    reason: Its duty cc:Attribution quotes "Conspicuously announcing that it is available under that
+      license." Its duty cc:Notice quotes "Conspicuously announcing that it is available under that
+      license." Its duty cc:SourceCode quotes "Conspicuously announcing that it is available under
+      that license." Its duty dalicc:addStatement quotes "Conspicuously announcing that it is available
+      under that license."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:addStatement,
+      dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:addStatement,
+      dalicc:modificationNotice]
+    reason: Its duty cc:Attribution quotes "Conspicuously announcing that it is available under that
+      license." Its duty cc:Notice quotes "Conspicuously announcing that it is available under that
+      license." Its duty cc:SourceCode quotes "Conspicuously announcing that it is available under
+      that license." Its duty dalicc:addStatement quotes "Conspicuously announcing that it is available
+      under that license."
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:addLimitation
+    previous: prohibition dalicc:addLimitation
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Licensing it
+      to everyone under SimPL, or substantially similar terms (such as GPL 2.0), without adding further
+      restrictions to the rights provided;"'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:addStatement,
+      dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:addStatement,
+      dalicc:modificationNotice]
+    reason: 'Removed the quoted evidence of duty cc:Attribution on odrl:derive, duty cc:Attribution
+      on odrl:distribute, duty cc:Attribution on odrl:modify, duty cc:SourceCode on odrl:derive, duty
+      cc:SourceCode on odrl:distribute, duty cc:SourceCode on odrl:modify: the quoted sentence does
+      not name the act. The statements stay, read from the text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:addStatement]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:addStatement]
+    reason: 'Removed the quoted evidence of duty cc:Attribution on odrl:derive, duty cc:Attribution
+      on odrl:distribute, duty cc:Attribution on odrl:modify, duty cc:SourceCode on odrl:derive, duty
+      cc:SourceCode on odrl:distribute, duty cc:SourceCode on odrl:modify: the quoted sentence does
+      not name the act. The statements stay, read from the text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:addStatement,
+      dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:addStatement,
+      dalicc:modificationNotice]
+    reason: 'Removed the quoted evidence of duty cc:Attribution on odrl:derive, duty cc:Attribution
+      on odrl:distribute, duty cc:Attribution on odrl:modify, duty cc:SourceCode on odrl:derive, duty
+      cc:SourceCode on odrl:distribute, duty cc:SourceCode on odrl:modify: the quoted sentence does
+      not name the act. The statements stay, read from the text without a linked quote.'
+    source: manual

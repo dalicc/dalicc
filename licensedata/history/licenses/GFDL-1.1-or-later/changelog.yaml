@@ -1,0 +1,142 @@
+id: GFDL-1.1-or-later
+title: GNU Free Documentation License v1.1 or later
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on,
+    named the license the record itself is published under and removed the quotes that do not name
+    the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  changes:
+  - action: changed
+    statement: duty cc:ShareAlike
+    previous: duty cc:ShareAlike
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may copy
+      and distribute a Modified Version of the Document under the conditions of sections 2 and 3 above,
+      provided that you release the Modified Version under precisely this License, with the Modified
+      Version filling the role of the Document, thus licensing distribution and modification of the
+      Modified Version to whoever possesses a copy of it."'
+    source: manual
+  - action: changed
+    statement: permission dalicc:chargeDistributionFee
+    previous: permission dalicc:chargeDistributionFee
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "However, you
+      may accept compensation in exchange for copies."'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:rename]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:rename]
+    reason: Its duty cc:Attribution quotes "You may copy and distribute the Document in any medium,
+      either commercially or noncommercially, provided that this License, the copyright notices, and
+      the license notice saying this License applies to the Document are reproduced in all copies,
+      and that you add no other conditions whatsoever to those of this License." Its duty cc:Notice
+      quotes "You may copy and distribute the Document in any medium, either commercially or noncommercially,
+      provided that this License, the copyright notices, and the license notice saying this License
+      applies to the Document are reproduced in all copies, and that you add no other conditions whatsoever
+      to those of this License."
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Translation is
+      considered a kind of modification, so you may distribute translations of the Document under
+      the terms of section 4." Its duty cc:Attribution quotes "You may copy and distribute the Document
+      in any medium, either commercially or noncommercially, provided that this License, the copyright
+      notices, and the license notice saying this License applies to the Document are reproduced in
+      all copies, and that you add no other conditions whatsoever to those of this License." Its duty
+      cc:Notice quotes "You may copy and distribute the Document in any medium, either commercially
+      or noncommercially, provided that this License, the copyright notices, and the license notice
+      saying this License applies to the Document are reproduced in all copies, and that you add no
+      other conditions whatsoever to those of this License."'
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:rename]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:rename]
+    reason: Its duty cc:Attribution quotes "You may copy and distribute the Document in any medium,
+      either commercially or noncommercially, provided that this License, the copyright notices, and
+      the license notice saying this License applies to the Document are reproduced in all copies,
+      and that you add no other conditions whatsoever to those of this License." Its duty cc:Notice
+      quotes "You may copy and distribute the Document in any medium, either commercially or noncommercially,
+      provided that this License, the copyright notices, and the license notice saying this License
+      applies to the Document are reproduced in all copies, and that you add no other conditions whatsoever
+      to those of this License."
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:ChangeLicense
+    previous: prohibition dalicc:ChangeLicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may copy
+      and distribute the Document in any medium, either commercially or noncommercially, provided
+      that this License, the copyright notices, and the license notice saying this License applies
+      to the Document are reproduced in all copies, and that you add no other conditions whatsoever
+      to those of this License."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:applyTechnicalProtectionMeasures
+    previous: prohibition dalicc:applyTechnicalProtectionMeasures
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may not use
+      technical measures to obstruct or control the reading or further copying of the copies you make
+      or distribute."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "M. Delete any
+      section entitled "Endorsements"."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:sublicense
+    previous: prohibition dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may not copy,
+      modify, sublicense, or distribute the Document except as expressly provided for under this License."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:rename]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:rename]
+    reason: 'Removed the quoted evidence of duty cc:Attribution on odrl:derive, duty cc:Attribution
+      on odrl:distribute, duty cc:Attribution on odrl:modify, prohibition dalicc:ChangeLicense: the
+      quoted sentence does not name the act. The statements stay, read from the text without a linked
+      quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode]
+    reason: 'Removed the quoted evidence of duty cc:Attribution on odrl:derive, duty cc:Attribution
+      on odrl:distribute, duty cc:Attribution on odrl:modify, prohibition dalicc:ChangeLicense: the
+      quoted sentence does not name the act. The statements stay, read from the text without a linked
+      quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:rename]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:rename]
+    reason: 'Removed the quoted evidence of duty cc:Attribution on odrl:derive, duty cc:Attribution
+      on odrl:distribute, duty cc:Attribution on odrl:modify, prohibition dalicc:ChangeLicense: the
+      quoted sentence does not name the act. The statements stay, read from the text without a linked
+      quote.'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:ChangeLicense
+    previous: prohibition dalicc:ChangeLicense
+    reason: 'Removed the quoted evidence of duty cc:Attribution on odrl:derive, duty cc:Attribution
+      on odrl:distribute, duty cc:Attribution on odrl:modify, prohibition dalicc:ChangeLicense: the
+      quoted sentence does not name the act. The statements stay, read from the text without a linked
+      quote.'
+    source: manual

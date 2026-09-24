@@ -1,0 +1,444 @@
+id: dg_us
+title: United States default rules
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: 'The title no longer says proposal, and the graph is complete: it holds the 46 axioms and the
+    adopted endorsement rule of the core graph beside its own rules, is generated from the core graph
+    and its difference file, and every rule explains itself in plain words, checked against the statute
+    it cites. Follows core graph version 2.'
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: dct:title "United States default rules"
+    previous: dct:title "United States default rules (proposal)"
+    reason: 'A title that says proposal reads as if the graph itself were not published, and it is: every
+      reader can choose it. What is proposed is each rule, and each rule says so with dalicc:ruleStatus
+      dalicc:Proposed, which the pages show next to it. The rules are unchanged.'
+    source: dependency-graph-review 2026-09-24
+  - action: changed
+    statement: 'dct:description: This graph extends the DALICC deontic dependency graph with default rules
+      for what a licence does not say, under the law of the United States: reverse engineering for interoperability
+      and the first-sale doctrine. There is no general moral-rights rule and no mining rule, because the
+      first reaches only works of visual art and the second is fair use decided case by case. Each rule
+      names its legal basis. The rules are proposals until the association''s legal reviewer adopts them.
+      Nothing in this graph is legal advice.'
+    previous: 'dct:description: The core graph plus the default rules proposed for the United States:
+      reverse engineering for interoperability and the first-sale doctrine. There is no general moral-rights
+      rule and no mining rule, because the first reaches only works of visual art and the second is fair
+      use decided case by case. Every rule is a proposal for the association''s legal reviewer. Nothing
+      in it is legal advice.'
+    reason: 'The description says in plain sentences what the graph is: it extends the core graph with
+      default rules for what a licence does not say, each rule names its legal basis, the rules are proposals
+      until the association''s legal reviewer adopts them, and nothing in the graph is legal advice.'
+    source: dependency-graph-review 2026-09-24
+  - action: added
+    statement: cc:Attribution odrl:implies cc:Notice
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:Attribution odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:Attribution owl:sameAs odrl:attribute
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:CommercialUse owl:sameAs odrl:commercialize
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:DerivativeWorks odrl:includedIn odrl:distribute
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:Notice odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:Notice owl:sameAs odrl:AttachPolicy
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:ShareAlike odrl:implies cc:SourceCode
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:ShareAlike odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:ShareAlike owl:sameAs odrl:shareAlike
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:SourceCode odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:SourceCode owl:sameAs odrl:attachSource
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: dalicc:chargeLicenseFee odrl:implies odrl:commercialize
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: dalicc:chargeLicenseFee odrl:implies odrl:sell
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: dalicc:chargeLicenseFee odrl:includedIn odrl:transfer
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: dalicc:modificationNotice odrl:includedIn odrl:AttachPolicy
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: dalicc:ModifiedWorks odrl:includedIn odrl:distribute
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: dalicc:sellCopy odrl:includedIn odrl:sell
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: dalicc:sublicense owl:sameAs odrl:grantUse
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:AttachPolicy owl:sameAs cc:Notice
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:attachSource owl:sameAs cc:SourceCode
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:attribute owl:sameAs cc:Attribution
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:commercialize owl:sameAs cc:CommercialUse
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:copy odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:copy owl:sameAs odrl:reproduce
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:derive odrl:implies cc:DerivativeWorks
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:derive odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:display odrl:includedIn odrl:present
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:display odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:distribute odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:ensureExclusivity dalicc:contradicts odrl:commercialize
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:ensureExclusivity odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:execute odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:extract odrl:implies cc:SourceCode
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:extract odrl:includedIn odrl:reproduce
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:extract odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:grantUse owl:sameAs dalicc:sublicense
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:modify odrl:implies cc:SourceCode
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:modify odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:present odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:print odrl:includedIn odrl:present
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:print odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:reproduce owl:sameAs odrl:copy
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:sell odrl:includedIn odrl:commercialize
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:sell odrl:includedIn odrl:transfer
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:shareAlike owl:sameAs cc:ShareAlike
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: rule dalicc:promote dalicc:NotGrantedByDefault in dalicc:worldwide
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:sellCopy dalicc:GrantedByDefault in dalicc:US
+    previous: rule dalicc:sellCopy dalicc:GrantedByDefault in dalicc:US
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:reverseEngineerForInteroperability dalicc:GrantedByDefault in dalicc:US
+    previous: rule dalicc:reverseEngineerForInteroperability dalicc:GrantedByDefault in dalicc:US
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: changed
+    statement: 'dct:description The DALICC deontic dependency graph with default rules for what a licence
+      does not say, under the law of the United States: reverse engineering for interoperability and the
+      first-sale doctrine. There is no general moral-rights rule and no mining rule, because the first
+      reaches only works of visual art and the second is fair use decided case by case. The graph is complete:
+      it holds the axioms and the adopted rule of the core graph beside its own rules, and it is built
+      from the core graph and a difference file. Each rule names its legal basis and says in plain words
+      what it does. The rules are proposals until the association''s legal reviewer adopts them. Nothing
+      in this graph is legal advice.'
+    previous: 'dct:description This graph extends the DALICC deontic dependency graph with default rules
+      for what a licence does not say, under the law of the United States: reverse engineering for interoperability
+      and the first-sale doctrine. There is no general moral-rights rule and no mining rule, because the
+      first reaches only works of visual art and the second is fair use decided case by case. Each rule
+      names its legal basis. The rules are proposals until the association''s legal reviewer adopts them.
+      Nothing in this graph is legal advice.'
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: changed
+    statement: dalicc:basedOnVersion 2
+    previous: dalicc:basedOnVersion
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_us.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:promote dalicc:NotGrantedByDefault in dalicc:worldwide
+    previous: rule dalicc:promote dalicc:NotGrantedByDefault in dalicc:worldwide
+    reason: 'The explanations of the rules were reviewed against the statutes they cite; two were corrected:
+      reverse engineering names the Ninth Circuit as the court that held the intermediate copying fair
+      use (Sega v. Accolade; Sony v. Connectix) and Bowers v. Baystate as the reason no finding is reported;
+      and first sale says that 17 U.S.C. 109(a) protects the owner of a copy, not a licensee (Vernor v.
+      Autodesk), and does not cover the resale of a digital file (Capitol Records v. ReDigi). The adopted
+      endorsement rule of the core graph cites its basis, says that only a use suggesting endorsement
+      is refused, and names who adopted it. Follows core graph version 3.'
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:sellCopy dalicc:GrantedByDefault in dalicc:US
+    previous: rule dalicc:sellCopy dalicc:GrantedByDefault in dalicc:US
+    reason: 'The explanations of the rules were reviewed against the statutes they cite; two were corrected:
+      reverse engineering names the Ninth Circuit as the court that held the intermediate copying fair
+      use (Sega v. Accolade; Sony v. Connectix) and Bowers v. Baystate as the reason no finding is reported;
+      and first sale says that 17 U.S.C. 109(a) protects the owner of a copy, not a licensee (Vernor v.
+      Autodesk), and does not cover the resale of a digital file (Capitol Records v. ReDigi). The adopted
+      endorsement rule of the core graph cites its basis, says that only a use suggesting endorsement
+      is refused, and names who adopted it. Follows core graph version 3.'
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:reverseEngineerForInteroperability dalicc:GrantedByDefault in dalicc:US
+    previous: rule dalicc:reverseEngineerForInteroperability dalicc:GrantedByDefault in dalicc:US
+    reason: 'The explanations of the rules were reviewed against the statutes they cite; two were corrected:
+      reverse engineering names the Ninth Circuit as the court that held the intermediate copying fair
+      use (Sega v. Accolade; Sony v. Connectix) and Bowers v. Baystate as the reason no finding is reported;
+      and first sale says that 17 U.S.C. 109(a) protects the owner of a copy, not a licensee (Vernor v.
+      Autodesk), and does not cover the resale of a digital file (Capitol Records v. ReDigi). The adopted
+      endorsement rule of the core graph cites its basis, says that only a use suggesting endorsement
+      is refused, and names who adopted it. Follows core graph version 3.'
+    source: build_dependency_graphs

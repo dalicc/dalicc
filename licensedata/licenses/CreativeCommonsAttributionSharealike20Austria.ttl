@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionSharealike20Austria a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Austria ;
     cc:legalcode <https://creativecommons.org/licenses/by-sa/2.0/at/legalcode> ;
     dalicc:LiabilityLimitation """Über die in Ziffer 5 genannte Gewährleistung hinaus haftet Ihnen der Lizenzgeber bezüglich Schäden, die in Verbindung mit der Erteilung der Nutzungsbewilligung entstehen, nur für Vorsatz. Für Geschäfte zwischen Unternehmern und Verbrauchern im Sinne des österreichischen Konsumentenschutzgesetzes gilt die Abweichung, dass nur die Haftung für leichte Fahrlässigkeit bei anderen Schäden als Personenschäden ausgeschlossen ist.
@@ -26,6 +27,7 @@ dalicclib:CreativeCommonsAttributionSharealike20Austria a odrl:Set ;
     dalicc:WarrantyDisclaimer """Sofern dies von den Vertragsparteien nicht schriftlich anders vereinbart wurde, bietet der Lizenzgeber keine Gewährleistung für die in diesem Lizenzvertrag erteilte Nutzungsbewilligung. Für Mängel anderer Art, insbesondere bei der mangelhaften Lieferung von Verkörperungen des Schutzgegenstandes, richtet sich die Gewährleistung nach der Regelung, die die Person, die Ihnen den Schutzgegenstand zur Verfügung stellt, mit Ihnen außerhalb der Lizenz vereinbart, oder - wenn eine solche Regelung nicht getroffen wurde - nach den gesetzlichen Vorschriften.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "2.0" ;
@@ -43,8 +45,8 @@ dalicclib:CreativeCommonsAttributionSharealike20Austria a odrl:Set ;
         "CC-BY-SA 2.0 AT",
         "Creative Commons BY-SA 2.0",
         "Creative Commons BY-SA 2.0 AT" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-sa/2.0/at/> ;
     dct:title "Creative Commons Attribution-ShareAlike 2.0 Austria"@en ;
@@ -65,7 +67,8 @@ dalicclib:CreativeCommonsAttributionSharealike20Austria a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ] ;
+            dalicc:evidence "Die genannte Nutzungsbewilligung beinhaltet die Befugnis, solche Veränderungen an dem Werk vorzunehmen, die technisch erforderlich sind, um die Nutzungsbewilligung für alle Nutzungsarten wahrzunehmen." ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
@@ -83,13 +86,16 @@ dalicclib:CreativeCommonsAttributionSharealike20Austria a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
-            odrl:action dalicc:ModifiedWorks ],
+            odrl:action dalicc:ModifiedWorks ;
+            dalicc:evidence "Die genannte Nutzungsbewilligung beinhaltet die Befugnis, solche Veränderungen an dem Werk vorzunehmen, die technisch erforderlich sind, um die Nutzungsbewilligung für alle Nutzungsarten wahrzunehmen." ],
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:ChangeLicense ],
+            odrl:action dalicc:ChangeLicense ;
+            dalicc:evidence "Sie dürfen keine Vertragsbedingungen anbieten oder fordern, die die Bedingungen dieser Lizenz oder die durch sie gewährten Befugnisse ändern oder beschränken." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ] ;
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "Sie dürfen den Schutzgegenstand nicht unterlizenzieren." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset ] ;

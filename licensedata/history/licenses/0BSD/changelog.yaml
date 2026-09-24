@@ -1,12 +1,20 @@
 id: 0BSD
 title: Free Public License 1.0.0
-current_version: 5
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 removed 1 prohibition, recorded the relation to the record
-    this one was adapted from and recorded the review state.
+    this one was adapted from and recorded the review state. Later changes brought it in line with
+    its family and its text in the verification of 2026-09-15, permitted relicensing with the notice
+    as a duty, left endorsement to the default rule of the core dependency graph, recorded which sentence
+    of the text each statement rests on and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
   changes:
   - action: added
     statement: dalicc:reviewStatus dalicc:Reviewed
@@ -29,27 +37,29 @@ entries:
       for any purpose with or without fee is hereby granted." A prohibition of cc:ShareAlike asserts
       that a licensee may not put the work out under these same terms, which the unconditional grant
       contradicts. cc:ShareAlike is a duty term; a license that is silent about relicensing must carry
-      no share-alike statement at all. Removed. Flagged as rule 5b in family_rules_baseline.md.'
+      no share-alike statement at all. Removed. Flagged by the family conventions checked before the
+      review.'
     source: review-finding 5/odrl:prohibition
-- version: 3
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Batch 1 finding 7.5 and 7.6: the record permitted dalicc:noWarrantyNotice and prohibited
-    dalicc:addStatement, neither of which the Zero Clause BSD text states, and carried the placeholder
-    ''- not specified - '' as its publisher and attribution name. The whole operative text is ''Permission
-    to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby
-    granted.'' The disclaimer paragraph is split at ''IN NO EVENT SHALL THE AUTHOR BE LIABLE''.'
-  changes:
   - action: removed
     statement: cc:attributionName "- not specified - "
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record permitted dalicc:noWarrantyNotice
+      and prohibited dalicc:addStatement, neither of which the Zero Clause BSD text states, and carried
+      the placeholder ''- not specified - '' as its publisher and attribution name. The whole operative
+      text is ''Permission to use, copy, modify, and/or distribute this software for any purpose with
+      or without fee is hereby granted.'' The disclaimer paragraph is split at ''IN NO EVENT SHALL
+      THE AUTHOR BE LIABLE''.'
     source: manual
   - action: added
     statement: dalicc:LiabilityLimitation "IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL,
       DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF
       USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
       ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE."
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record permitted dalicc:noWarrantyNotice
+      and prohibited dalicc:addStatement, neither of which the Zero Clause BSD text states, and carried
+      the placeholder ''- not specified - '' as its publisher and attribution name. The whole operative
+      text is ''Permission to use, copy, modify, and/or distribute this software for any purpose with
+      or without fee is hereby granted.'' The disclaimer paragraph is split at ''IN NO EVENT SHALL
+      THE AUTHOR BE LIABLE''.'
     source: manual
   - action: changed
     statement: dalicc:WarrantyDisclaimer "THE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS
@@ -61,43 +71,65 @@ entries:
       DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
       ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH
       THE USE OR PERFORMANCE OF THIS SOFTWARE."
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record permitted dalicc:noWarrantyNotice
+      and prohibited dalicc:addStatement, neither of which the Zero Clause BSD text states, and carried
+      the placeholder ''- not specified - '' as its publisher and attribution name. The whole operative
+      text is ''Permission to use, copy, modify, and/or distribute this software for any purpose with
+      or without fee is hereby granted.'' The disclaimer paragraph is split at ''IN NO EVENT SHALL
+      THE AUTHOR BE LIABLE''.'
     source: manual
   - action: removed
     statement: dct:publisher "- not specified - "
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record permitted dalicc:noWarrantyNotice
+      and prohibited dalicc:addStatement, neither of which the Zero Clause BSD text states, and carried
+      the placeholder ''- not specified - '' as its publisher and attribution name. The whole operative
+      text is ''Permission to use, copy, modify, and/or distribute this software for any purpose with
+      or without fee is hereby granted.'' The disclaimer paragraph is split at ''IN NO EVENT SHALL
+      THE AUTHOR BE LIABLE''.'
     source: manual
   - action: removed
     statement: permission dalicc:noWarrantyNotice
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record permitted dalicc:noWarrantyNotice
+      and prohibited dalicc:addStatement, neither of which the Zero Clause BSD text states, and carried
+      the placeholder ''- not specified - '' as its publisher and attribution name. The whole operative
+      text is ''Permission to use, copy, modify, and/or distribute this software for any purpose with
+      or without fee is hereby granted.'' The disclaimer paragraph is split at ''IN NO EVENT SHALL
+      THE AUTHOR BE LIABLE''.'
     source: manual
   - action: removed
     statement: prohibition dalicc:addStatement
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record permitted dalicc:noWarrantyNotice
+      and prohibited dalicc:addStatement, neither of which the Zero Clause BSD text states, and carried
+      the placeholder ''- not specified - '' as its publisher and attribution name. The whole operative
+      text is ''Permission to use, copy, modify, and/or distribute this software for any purpose with
+      or without fee is hereby granted.'' The disclaimer paragraph is split at ''IN NO EVENT SHALL
+      THE AUTHOR BE LIABLE''.'
     source: manual
-- version: 4
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Permit relicensing on permissive licences; the notice clause is a duty, not a bar. Family
-    rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no source
-    code asks only that the notice travels with the copy, which is a duty on the acts it governs and
-    not a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission
-    here, and the prohibition the earlier pass wrote is removed. The text reads: "Permission to use,
-    copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted."
-    The permission carries no duty, as on the public-domain dedications, because nothing has to travel
-    with the copy.'
-  changes:
   - action: added
     statement: permission dalicc:ChangeLicense
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Permit relicensing on permissive licences; the notice clause is a duty, not a bar. Library
+      convention 15: a licence that asks for no reciprocity and no source code asks only that the
+      notice travels with the copy, which is a duty on the acts it governs and not a bar on putting
+      the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+      the record carried before is removed. The text reads: "Permission to use, copy, modify, and/or
+      distribute this software for any purpose with or without fee is hereby granted." The permission
+      carries no duty, as on the public-domain dedications, because nothing has to travel with the
+      copy.'
     source: manual
-- version: 5
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
-    now supplies it.
-  changes:
   - action: removed
     statement: prohibition dalicc:promote
-    reason: Edited by hand; see the summary of this entry.
+    reason: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
+      now supplies it.
+    source: manual
+  - action: changed
+    statement: permission dalicc:ChangeLicense
+    previous: permission dalicc:ChangeLicense
+    reason: 'The statement is marked as a library convention, family rule 15: Permissive records permit
+      relicensing: the text does not state it in as many words.'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

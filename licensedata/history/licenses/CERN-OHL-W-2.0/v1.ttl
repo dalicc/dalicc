@@ -1,0 +1,109 @@
+# Title: The machine-readable representation of "CERN Open Hardware Licence Version 2 - Weakly Reciprocal"@en in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/CERN-OHL-W-2.0
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:CERN-OHL-W-2.0 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "CERN-OHL-W-2.0" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://www.ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2> ;
+    dalicc:LiabilityLimitation "EXCLUSION AND LIMITATION OF LIABILITY -- The Licensor shall, to the maximum extent permitted by law, have no liability for direct, indirect, special, incidental, consequential, exemplary, punitive or other damages of any character including, without limitation, procurement of substitute goods or services, loss of use, data or profits, or business interruption, however caused and on any theory of contract, warranty, tort (including negligence), product liability or otherwise, arising in any way in relation to the Covered Source, modified Covered Source and/or the Making or Conveyance of a Product, even if advised of the possibility of such damages, and You shall hold the Licensor(s) free and harmless from any liability, costs, damages, fees and expenses, including claims by third parties, in relation to such use." ;
+    dalicc:WarrantyDisclaimer "DISCLAIMER OF WARRANTY -- The Covered Source and any Products are provided 'as is' and any express or implied warranties, including, but not limited to, implied warranties of merchantability, of satisfactory quality, non-infringement of third party rights, and fitness for a particular purpose or use are disclaimed in respect of any Source or Product to the maximum extent permitted by law. The Licensor makes no representation that any Source or Product does not or will not infringe any patent, copyright, trade secret or other proprietary right. The entire risk as to the use, quality, and performance of any Source or Product shall be with You and not the Licensor. This disclaimer of warranty is an essential part of this Licence and a condition for the grant of any rights granted under this Licence." ;
+    dalicc:additionalClauses "You shall not attempt to restrict by contract or otherwise the rights granted under this Licence to other Licensees.",
+        "You may modify Covered Source, other than Notices, provided that You irrevocably undertake to make that modified Covered Source available from a Source Location should You Convey a Product in circumstances where the recipient does not otherwise receive a copy of the modified Covered Source. In each case subsection 3.3 shall apply. You may only delete Notices if they are no longer applicable to the corresponding Covered Source as modified by You and You may add additional Notices applicable to Your modifications.",
+        "license the modified Covered Source under the terms and conditions of this Licence (or, as set out in subsection 8.3, a later version, if permitted by the licence of the original Covered Source). Such modified Covered Source must be licensed as a whole, but excluding Available Components contained in it or External Material to which it is interfaced, which remain licensed under their own applicable licences.",
+        "You may Make Products, and/or Convey them, provided that You either provide each recipient with a copy of the Complete Source or ensure that each recipient is notified of the Source Location of the Complete Source. That Complete Source includes Covered Source and You must accordingly satisfy Your obligations set out in subsection 3.3. If specified in a Notice, the Product must visibly and securely display the Source Location on it or its packaging or documentation in the manner specified in that Notice.",
+        "You may license Products under terms of Your choice, provided that such terms do not restrict or attempt to restrict any recipients' rights under this Licence to the Covered Source.",
+        "If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Covered Source or a Product constitutes direct or contributory patent infringement, or You seek any declaration that a patent licensed to You under this Licence is invalid or unenforceable then any rights granted to You under this Licence shall terminate as of the date such process is initiated.",
+        "You shall not use any of the name (including acronyms and abbreviations), image, or logo by which the Licensor or CERN is known, except where needed to comply with section 3, or where the use is otherwise allowed by law. Any such permitted use shall be factual and shall not be made so as to suggest any kind of endorsement or implication of involvement by the Licensor or its personnel.",
+        "This Licence shall terminate with immediate effect if You fail to comply with any of its terms and conditions. 8.5 However, if You cease all breaches of this Licence, then Your Licence from any Licensor is reinstated unless such Licensor has terminated this Licence by giving You, while You remain in breach, a notice specifying the breach and requiring You to cure it within 30 days, and You have failed to come into compliance in all material respects by the end of the 30 day period. Should You repeat the breach after receipt of a cure notice and subsequent reinstatement, this Licence will terminate immediately and permanently. Section 6 shall continue to apply after any termination." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
+    dalicc:curePeriod "30 days" ;
+    dalicc:reciprocityScope "source" ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CERN-OHL-W-2.0/versions> ;
+    dct:alternative "CERN Open Hardware Licence Version 2 - Weakly Reciprocal",
+        "CERN-OHL-W",
+        "CERN-OHL-W-2.0" ;
+    dct:hasVersion "1" ;
+    dct:modified "2026-09-15"^^xsd:date ;
+    dct:publisher "CERN" ;
+    dct:source <https://www.ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2> ;
+    dct:title "CERN Open Hardware Licence Version 2 - Weakly Reciprocal"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action cc:ShareAlike ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action cc:ShareAlike ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:patentGrant ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ChangeLicense ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:patentRetaliationTermination ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:addLimitation ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork,
+                dalicc:Hardware,
+                dcmitype:Software ] .

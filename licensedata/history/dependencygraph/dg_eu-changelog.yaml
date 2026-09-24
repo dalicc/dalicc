@@ -1,0 +1,635 @@
+id: dg_eu
+title: European Union default rules
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: 'The title no longer says proposal, and the graph is complete: it holds the 46 axioms and the
+    adopted endorsement rule of the core graph beside its own rules, is generated from the core graph
+    and its difference file, and every rule explains itself in plain words, checked against the statute
+    it cites. Follows core graph version 2.'
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: dct:title "European Union default rules"
+    previous: dct:title "European Union default rules (proposal)"
+    reason: 'A title that says proposal reads as if the graph itself were not published, and it is: every
+      reader can choose it. What is proposed is each rule, and each rule says so with dalicc:ruleStatus
+      dalicc:Proposed, which the pages show next to it. The rules are unchanged.'
+    source: dependency-graph-review 2026-09-24
+  - action: changed
+    statement: 'dct:description: This graph extends the DALICC deontic dependency graph with default rules
+      for what a licence does not say, under the law of the European Union: moral rights that cannot be
+      waived in Austria, Germany and France, the sui generis database right, the mining exceptions of
+      the Digital Single Market Directive, decompilation for interoperability and exhaustion after a first
+      sale. Each rule names its legal basis. The rules are proposals until the association''s legal reviewer
+      adopts them. Nothing in this graph is legal advice.'
+    previous: 'dct:description: The core graph plus the default rules proposed for the European Union:
+      moral rights that cannot be waived in Austria, Germany and France, the sui generis database right,
+      the mining exceptions of the Digital Single Market Directive, decompilation for interoperability
+      and exhaustion after a first sale. Every rule is a proposal for the association''s legal reviewer.
+      Nothing in it is legal advice.'
+    reason: 'The description says in plain sentences what the graph is: it extends the core graph with
+      default rules for what a licence does not say, each rule names its legal basis, the rules are proposals
+      until the association''s legal reviewer adopts them, and nothing in the graph is legal advice.'
+    source: dependency-graph-review 2026-09-24
+  - action: added
+    statement: cc:Attribution odrl:implies cc:Notice
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:Attribution odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:Attribution owl:sameAs odrl:attribute
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:CommercialUse owl:sameAs odrl:commercialize
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:DerivativeWorks odrl:includedIn odrl:distribute
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:Notice odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:Notice owl:sameAs odrl:AttachPolicy
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:ShareAlike odrl:implies cc:SourceCode
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:ShareAlike odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:ShareAlike owl:sameAs odrl:shareAlike
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:SourceCode odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: cc:SourceCode owl:sameAs odrl:attachSource
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: dalicc:chargeLicenseFee odrl:implies odrl:commercialize
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: dalicc:chargeLicenseFee odrl:implies odrl:sell
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: dalicc:chargeLicenseFee odrl:includedIn odrl:transfer
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: dalicc:modificationNotice odrl:includedIn odrl:AttachPolicy
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: dalicc:ModifiedWorks odrl:includedIn odrl:distribute
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: dalicc:sellCopy odrl:includedIn odrl:sell
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: dalicc:sublicense owl:sameAs odrl:grantUse
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:AttachPolicy owl:sameAs cc:Notice
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:attachSource owl:sameAs cc:SourceCode
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:attribute owl:sameAs cc:Attribution
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:commercialize owl:sameAs cc:CommercialUse
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:copy odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:copy owl:sameAs odrl:reproduce
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:derive odrl:implies cc:DerivativeWorks
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:derive odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:display odrl:includedIn odrl:present
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:display odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:distribute odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:ensureExclusivity dalicc:contradicts odrl:commercialize
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:ensureExclusivity odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:execute odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:extract odrl:implies cc:SourceCode
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:extract odrl:includedIn odrl:reproduce
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:extract odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:grantUse owl:sameAs dalicc:sublicense
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:modify odrl:implies cc:SourceCode
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:modify odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:present odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:print odrl:includedIn odrl:present
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:print odrl:includedIn odrl:use
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:reproduce owl:sameAs odrl:copy
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:sell odrl:includedIn odrl:commercialize
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:sell odrl:includedIn odrl:transfer
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: odrl:shareAlike owl:sameAs cc:ShareAlike
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: added
+    statement: rule dalicc:promote dalicc:NotGrantedByDefault in dalicc:worldwide
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:sellCopy dalicc:GrantedByDefault in dalicc:EU
+    previous: rule dalicc:sellCopy dalicc:GrantedByDefault in dalicc:EU
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:reverseEngineerForInteroperability dalicc:GrantedByDefault in dalicc:EU
+    previous: rule dalicc:reverseEngineerForInteroperability dalicc:GrantedByDefault in dalicc:EU
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:reverseEngineerForInteroperability dalicc:NotWaivable in dalicc:EU
+    previous: rule dalicc:reverseEngineerForInteroperability dalicc:NotWaivable in dalicc:EU
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:moralRightsRestriction dalicc:NotWaivable in bpicountry:Austria
+    previous: rule dalicc:moralRightsRestriction dalicc:NotWaivable in bpicountry:Austria
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:moralRightsRestriction dalicc:NotWaivable in bpicountry:Germany
+    previous: rule dalicc:moralRightsRestriction dalicc:NotWaivable in bpicountry:Germany
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:moralRightsRestriction dalicc:NotWaivable in bpicountry:France
+    previous: rule dalicc:moralRightsRestriction dalicc:NotWaivable in bpicountry:France
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:suiGenerisDatabaseRights dalicc:NotGrantedByDefault in dalicc:EU
+    previous: rule dalicc:suiGenerisDatabaseRights dalicc:NotGrantedByDefault in dalicc:EU
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:textAndDataMining dalicc:GrantedByDefault in dalicc:EU
+    previous: rule dalicc:textAndDataMining dalicc:GrantedByDefault in dalicc:EU
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:textAndDataMining dalicc:NotWaivable in dalicc:EU
+    previous: rule dalicc:textAndDataMining dalicc:NotWaivable in dalicc:EU
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: changed
+    statement: 'dct:description The DALICC deontic dependency graph with default rules for what a licence
+      does not say, under the law of the European Union: moral rights that cannot be waived in Austria,
+      Germany and France, the sui generis database right, the mining exceptions of the Digital Single
+      Market Directive, decompilation for interoperability and exhaustion after a first sale. The graph
+      is complete: it holds the axioms and the adopted rule of the core graph beside its own rules, and
+      it is built from the core graph and a difference file. Each rule names its legal basis and says
+      in plain words what it does. The rules are proposals until the association''s legal reviewer adopts
+      them. Nothing in this graph is legal advice.'
+    previous: 'dct:description This graph extends the DALICC deontic dependency graph with default rules
+      for what a licence does not say, under the law of the European Union: moral rights that cannot be
+      waived in Austria, Germany and France, the sui generis database right, the mining exceptions of
+      the Digital Single Market Directive, decompilation for interoperability and exhaustion after a first
+      sale. Each rule names its legal basis. The rules are proposals until the association''s legal reviewer
+      adopts them. Nothing in this graph is legal advice.'
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: changed
+    statement: dalicc:basedOnVersion 2
+    previous: dalicc:basedOnVersion
+    reason: Every published graph is now complete, a jurisdiction can remove a core axiom or replace a
+      core rule, and every rule explains itself in plain words. licensedata/dependencygraph/differences/dg_eu.ttl
+      is now the source of truth and scripts/build_dependency_graphs.py writes this graph from it and
+      the core graph; the rules keep their outcomes, territories and bases.
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:promote dalicc:NotGrantedByDefault in dalicc:worldwide
+    previous: rule dalicc:promote dalicc:NotGrantedByDefault in dalicc:worldwide
+    reason: 'The explanations of the rules were reviewed against the statutes they cite; seven were corrected:
+      the Austrian moral-rights rule names what section 19(2) of the Urheberrechtsgesetz voids and what
+      section 20 leaves to agreement; the French rule cites the Code de la propriété intellectuelle with
+      its accents; decompilation is allowed within the limits of article 6 of the Software Directive,
+      and a prohibition is reported by eu-interop-void instead of being read as removing the exception;
+      resale follows Tom Kabinet (C-263/18) for works and UsedSoft (C-128/11) for software; the database
+      right names the lawful user''s right to insubstantial parts (articles 8(1) and 15 of the Database
+      Directive); the mining rule reads a prohibition in the licence as a reservation under article 4(3)
+      and recital 18 of the Digital Single Market Directive; and the research mining rule names cultural
+      heritage institutions and the purpose of scientific research. The description says that moral rights
+      are national law, which EU law does not harmonise. The adopted endorsement rule of the core graph
+      cites its basis, says that only a use suggesting endorsement is refused, and names who adopted it.
+      Follows core graph version 3.'
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:sellCopy dalicc:GrantedByDefault in dalicc:EU
+    previous: rule dalicc:sellCopy dalicc:GrantedByDefault in dalicc:EU
+    reason: 'The explanations of the rules were reviewed against the statutes they cite; seven were corrected:
+      the Austrian moral-rights rule names what section 19(2) of the Urheberrechtsgesetz voids and what
+      section 20 leaves to agreement; the French rule cites the Code de la propriété intellectuelle with
+      its accents; decompilation is allowed within the limits of article 6 of the Software Directive,
+      and a prohibition is reported by eu-interop-void instead of being read as removing the exception;
+      resale follows Tom Kabinet (C-263/18) for works and UsedSoft (C-128/11) for software; the database
+      right names the lawful user''s right to insubstantial parts (articles 8(1) and 15 of the Database
+      Directive); the mining rule reads a prohibition in the licence as a reservation under article 4(3)
+      and recital 18 of the Digital Single Market Directive; and the research mining rule names cultural
+      heritage institutions and the purpose of scientific research. The description says that moral rights
+      are national law, which EU law does not harmonise. The adopted endorsement rule of the core graph
+      cites its basis, says that only a use suggesting endorsement is refused, and names who adopted it.
+      Follows core graph version 3.'
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:reverseEngineerForInteroperability dalicc:GrantedByDefault in dalicc:EU
+    previous: rule dalicc:reverseEngineerForInteroperability dalicc:GrantedByDefault in dalicc:EU
+    reason: 'The explanations of the rules were reviewed against the statutes they cite; seven were corrected:
+      the Austrian moral-rights rule names what section 19(2) of the Urheberrechtsgesetz voids and what
+      section 20 leaves to agreement; the French rule cites the Code de la propriété intellectuelle with
+      its accents; decompilation is allowed within the limits of article 6 of the Software Directive,
+      and a prohibition is reported by eu-interop-void instead of being read as removing the exception;
+      resale follows Tom Kabinet (C-263/18) for works and UsedSoft (C-128/11) for software; the database
+      right names the lawful user''s right to insubstantial parts (articles 8(1) and 15 of the Database
+      Directive); the mining rule reads a prohibition in the licence as a reservation under article 4(3)
+      and recital 18 of the Digital Single Market Directive; and the research mining rule names cultural
+      heritage institutions and the purpose of scientific research. The description says that moral rights
+      are national law, which EU law does not harmonise. The adopted endorsement rule of the core graph
+      cites its basis, says that only a use suggesting endorsement is refused, and names who adopted it.
+      Follows core graph version 3.'
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:moralRightsRestriction dalicc:NotWaivable in bpicountry:Austria
+    previous: rule dalicc:moralRightsRestriction dalicc:NotWaivable in bpicountry:Austria
+    reason: 'The explanations of the rules were reviewed against the statutes they cite; seven were corrected:
+      the Austrian moral-rights rule names what section 19(2) of the Urheberrechtsgesetz voids and what
+      section 20 leaves to agreement; the French rule cites the Code de la propriété intellectuelle with
+      its accents; decompilation is allowed within the limits of article 6 of the Software Directive,
+      and a prohibition is reported by eu-interop-void instead of being read as removing the exception;
+      resale follows Tom Kabinet (C-263/18) for works and UsedSoft (C-128/11) for software; the database
+      right names the lawful user''s right to insubstantial parts (articles 8(1) and 15 of the Database
+      Directive); the mining rule reads a prohibition in the licence as a reservation under article 4(3)
+      and recital 18 of the Digital Single Market Directive; and the research mining rule names cultural
+      heritage institutions and the purpose of scientific research. The description says that moral rights
+      are national law, which EU law does not harmonise. The adopted endorsement rule of the core graph
+      cites its basis, says that only a use suggesting endorsement is refused, and names who adopted it.
+      Follows core graph version 3.'
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:moralRightsRestriction dalicc:NotWaivable in bpicountry:France
+    previous: rule dalicc:moralRightsRestriction dalicc:NotWaivable in bpicountry:France
+    reason: 'The explanations of the rules were reviewed against the statutes they cite; seven were corrected:
+      the Austrian moral-rights rule names what section 19(2) of the Urheberrechtsgesetz voids and what
+      section 20 leaves to agreement; the French rule cites the Code de la propriété intellectuelle with
+      its accents; decompilation is allowed within the limits of article 6 of the Software Directive,
+      and a prohibition is reported by eu-interop-void instead of being read as removing the exception;
+      resale follows Tom Kabinet (C-263/18) for works and UsedSoft (C-128/11) for software; the database
+      right names the lawful user''s right to insubstantial parts (articles 8(1) and 15 of the Database
+      Directive); the mining rule reads a prohibition in the licence as a reservation under article 4(3)
+      and recital 18 of the Digital Single Market Directive; and the research mining rule names cultural
+      heritage institutions and the purpose of scientific research. The description says that moral rights
+      are national law, which EU law does not harmonise. The adopted endorsement rule of the core graph
+      cites its basis, says that only a use suggesting endorsement is refused, and names who adopted it.
+      Follows core graph version 3.'
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:suiGenerisDatabaseRights dalicc:NotGrantedByDefault in dalicc:EU
+    previous: rule dalicc:suiGenerisDatabaseRights dalicc:NotGrantedByDefault in dalicc:EU
+    reason: 'The explanations of the rules were reviewed against the statutes they cite; seven were corrected:
+      the Austrian moral-rights rule names what section 19(2) of the Urheberrechtsgesetz voids and what
+      section 20 leaves to agreement; the French rule cites the Code de la propriété intellectuelle with
+      its accents; decompilation is allowed within the limits of article 6 of the Software Directive,
+      and a prohibition is reported by eu-interop-void instead of being read as removing the exception;
+      resale follows Tom Kabinet (C-263/18) for works and UsedSoft (C-128/11) for software; the database
+      right names the lawful user''s right to insubstantial parts (articles 8(1) and 15 of the Database
+      Directive); the mining rule reads a prohibition in the licence as a reservation under article 4(3)
+      and recital 18 of the Digital Single Market Directive; and the research mining rule names cultural
+      heritage institutions and the purpose of scientific research. The description says that moral rights
+      are national law, which EU law does not harmonise. The adopted endorsement rule of the core graph
+      cites its basis, says that only a use suggesting endorsement is refused, and names who adopted it.
+      Follows core graph version 3.'
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:textAndDataMining dalicc:GrantedByDefault in dalicc:EU
+    previous: rule dalicc:textAndDataMining dalicc:GrantedByDefault in dalicc:EU
+    reason: 'The explanations of the rules were reviewed against the statutes they cite; seven were corrected:
+      the Austrian moral-rights rule names what section 19(2) of the Urheberrechtsgesetz voids and what
+      section 20 leaves to agreement; the French rule cites the Code de la propriété intellectuelle with
+      its accents; decompilation is allowed within the limits of article 6 of the Software Directive,
+      and a prohibition is reported by eu-interop-void instead of being read as removing the exception;
+      resale follows Tom Kabinet (C-263/18) for works and UsedSoft (C-128/11) for software; the database
+      right names the lawful user''s right to insubstantial parts (articles 8(1) and 15 of the Database
+      Directive); the mining rule reads a prohibition in the licence as a reservation under article 4(3)
+      and recital 18 of the Digital Single Market Directive; and the research mining rule names cultural
+      heritage institutions and the purpose of scientific research. The description says that moral rights
+      are national law, which EU law does not harmonise. The adopted endorsement rule of the core graph
+      cites its basis, says that only a use suggesting endorsement is refused, and names who adopted it.
+      Follows core graph version 3.'
+    source: build_dependency_graphs
+  - action: changed
+    statement: rule dalicc:textAndDataMining dalicc:NotWaivable in dalicc:EU
+    previous: rule dalicc:textAndDataMining dalicc:NotWaivable in dalicc:EU
+    reason: 'The explanations of the rules were reviewed against the statutes they cite; seven were corrected:
+      the Austrian moral-rights rule names what section 19(2) of the Urheberrechtsgesetz voids and what
+      section 20 leaves to agreement; the French rule cites the Code de la propriété intellectuelle with
+      its accents; decompilation is allowed within the limits of article 6 of the Software Directive,
+      and a prohibition is reported by eu-interop-void instead of being read as removing the exception;
+      resale follows Tom Kabinet (C-263/18) for works and UsedSoft (C-128/11) for software; the database
+      right names the lawful user''s right to insubstantial parts (articles 8(1) and 15 of the Database
+      Directive); the mining rule reads a prohibition in the licence as a reservation under article 4(3)
+      and recital 18 of the Digital Single Market Directive; and the research mining rule names cultural
+      heritage institutions and the purpose of scientific research. The description says that moral rights
+      are national law, which EU law does not harmonise. The adopted endorsement rule of the core graph
+      cites its basis, says that only a use suggesting endorsement is refused, and names who adopted it.
+      Follows core graph version 3.'
+    source: build_dependency_graphs
+  - action: changed
+    statement: 'dct:description The DALICC deontic dependency graph with default rules for what a licence
+      does not say, under the law of the European Union and, for moral rights, which EU law does not harmonise,
+      under the national law of Austria, Germany and France: the core of moral rights that cannot be waived
+      in those three countries, the sui generis database right, the mining exceptions of the Digital Single
+      Market Directive, decompilation for interoperability and exhaustion after a first sale. The graph
+      is complete: it holds the axioms and the adopted rule of the core graph beside its own rules, and
+      it is built from the core graph and a difference file. Each rule names its legal basis and says
+      in plain words what it does. The rules are proposals until the association''s legal reviewer adopts
+      them. Nothing in this graph is legal advice.'
+    previous: 'dct:description The DALICC deontic dependency graph with default rules for what a licence
+      does not say, under the law of the European Union: moral rights that cannot be waived in Austria,
+      Germany and France, the sui generis database right, the mining exceptions of the Digital Single
+      Market Directive, decompilation for interoperability and exhaustion after a first sale. The graph
+      is complete: it holds the axioms and the adopted rule of the core graph beside its own rules, and
+      it is built from the core graph and a difference file. Each rule names its legal basis and says
+      in plain words what it does. The rules are proposals until the association''s legal reviewer adopts
+      them. Nothing in this graph is legal advice.'
+    reason: 'The explanations of the rules were reviewed against the statutes they cite; seven were corrected:
+      the Austrian moral-rights rule names what section 19(2) of the Urheberrechtsgesetz voids and what
+      section 20 leaves to agreement; the French rule cites the Code de la propriété intellectuelle with
+      its accents; decompilation is allowed within the limits of article 6 of the Software Directive,
+      and a prohibition is reported by eu-interop-void instead of being read as removing the exception;
+      resale follows Tom Kabinet (C-263/18) for works and UsedSoft (C-128/11) for software; the database
+      right names the lawful user''s right to insubstantial parts (articles 8(1) and 15 of the Database
+      Directive); the mining rule reads a prohibition in the licence as a reservation under article 4(3)
+      and recital 18 of the Digital Single Market Directive; and the research mining rule names cultural
+      heritage institutions and the purpose of scientific research. The description says that moral rights
+      are national law, which EU law does not harmonise. The adopted endorsement rule of the core graph
+      cites its basis, says that only a use suggesting endorsement is refused, and names who adopted it.
+      Follows core graph version 3.'
+    source: build_dependency_graphs

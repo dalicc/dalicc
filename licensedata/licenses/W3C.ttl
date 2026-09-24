@@ -19,6 +19,7 @@
 
 dalicclib:W3C a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "W3C" ;
     cc:attributionName "W3C" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -34,8 +35,8 @@ dalicclib:W3C a odrl:Set ;
     dct:alternative "W3C",
         "W3C Software Notice and License",
         "W3C Software Notice and License (2002-12-31)" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "W3C" ;
     dct:source <https://spdx.org/licenses/W3C.html> ;
     dct:title "W3C Software Notice and License (2002-12-31)"@en ;
@@ -76,9 +77,14 @@ dalicclib:W3C a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "The name and trademarks of copyright holders may NOT be used in advertising or publicity pertaining to the software without specific, written prior permission." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:target [ a odrl:AssetCollection ;

@@ -3,12 +3,58 @@ title: GNU General Public License v3.0 or later with GCC Runtime Library excepti
 current_version: 2
 entries:
 - version: 2
-  date: '2026-09-23'
+  date: '2026-09-24'
   reviewer: Giray Havur
-  summary: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
-    now supplies it.
+  summary: The changes since version 1 left endorsement to the default rule of the core dependency
+    graph, recorded which sentence of the text each statement rests on, corrected it against its text
+    on 2026-09-24 and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
   changes:
   - action: removed
     statement: prohibition dalicc:promote
-    reason: Edited by hand; see the summary of this entry.
+    reason: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
+      now supplies it.
+    source: manual
+  - action: changed
+    statement: duty cc:ShareAlike
+    previous: duty cc:ShareAlike
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You must license
+      the entire work, as a whole, under this License to anyone who comes into possession of a copy."'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
+    reason: Its duty dalicc:modificationNotice quotes "The work must carry prominent notices stating
+      that you modified it, and giving a relevant date."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
+    reason: Its duty dalicc:modificationNotice quotes "The work must carry prominent notices stating
+      that you modified it, and giving a relevant date."
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may charge
+      any price or no price for each copy that you convey, and you may offer support or warranty protection
+      for a fee."'
+    source: manual
+  - action: changed
+    statement: dalicc:WarrantyOrLiabilityAcceptance "you may offer support or warranty protection
+      for a fee"
+    previous: dalicc:WarrantyOrLiabilityAcceptance "You may charge any price or no price for each
+      copy that you convey, and you may offer support or warranty protection for a fee."
+    reason: The first half of the Section 4 sentence, "You may charge any price or no price for each
+      copy that you convey", is the permission to charge for a copy, not a warranty clause.
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

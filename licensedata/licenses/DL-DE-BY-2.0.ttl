@@ -19,6 +19,7 @@
 
 dalicclib:DL-DE-BY-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "DL-DE-BY-2.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.govdata.de/dl-de/by-2-0> ;
@@ -30,9 +31,9 @@ dalicclib:DL-DE-BY-2.0 a odrl:Set ;
     dct:alternative "DL-DE-BY-2.0",
         "Datenlizenz Deutschland - Namensnennung - Version 2.0",
         "dl-de/by-2-0" ;
-    dct:hasVersion "1" ;
+    dct:hasVersion "2" ;
     dct:language "de" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://spdx.org/licenses/DL-DE-BY-2.0.html> ;
     dct:title "Data licence Germany - attribution - version 2.0"@en ;
     odrl:permission [ a odrl:Permission ;
@@ -60,7 +61,8 @@ dalicclib:DL-DE-BY-2.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:addStatement ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "(3)Changes, editing, new designs or other amendments must be marked as such in the source note." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
@@ -70,7 +72,8 @@ dalicclib:DL-DE-BY-2.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:addStatement ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "(3)Changes, editing, new designs or other amendments must be marked as such in the source note." ] ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
@@ -80,7 +83,11 @@ dalicclib:DL-DE-BY-2.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset ] .

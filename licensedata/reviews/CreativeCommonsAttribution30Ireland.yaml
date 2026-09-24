@@ -23,7 +23,7 @@ findings:
   field: spdx:licenseId
   description: SPDX has no identifier for this port. The legal-code URL implies CC-BY-3.0-IE, which the
     SPDX licence list does not define, so no spdx:licenseId was invented. Of the forty two records of
-    this batch only the Attribution 3.0 Netherlands record can take one.
+    this review group only the Attribution 3.0 Netherlands record can take one.
   action: none
 - rubric: 2
   severity: minor
@@ -58,10 +58,11 @@ findings:
   description: 'The licence forbids sublicensing and the record does not say so: section 4(a): "You may
     not sublicense the Work.". The vocabulary already has dalicc:sublicense, but no record in the library
     uses it and its skos:note says so, and the same sentence stands in every Creative Commons 2.0 and
-    3.0 record, so adding it to this batch alone would split the compatibility behaviour of one family.
+    3.0 record, so adding it to this review group alone would split the compatibility behaviour of one family.
     Proposed as one library wide correction, together with an update of the vocabulary note. Not applied
     for that reason.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -94,7 +95,7 @@ findings:
     by law, the Work is licensed by the Licensor on an ''as is'' and ''as available'' basis and without
     any warranty of any kind, either express or implied." Section 8, Limit of Liability, is likewise one
     sentence excluding all liability for loss or damage subject to any liability that may not be excluded
-    by law. They are the shortest pair in the batch and neither is set in capitals, unlike the other six
+    by law. They are the shortest pair in the review group and neither is set in capitals, unlike the other six
     ports. Each field holds its own section verbatim.'
   action: none
 - rubric: 6
@@ -202,6 +203,14 @@ findings:
   action: applied
   change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
     \ ] ;"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "This Licence and the rights granted hereunder
+    will terminate automatically upon any breach by You of the terms of this Licence." The licence ends
+    automatically on a breach and this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach
+    is true and no dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Ireland (IE)'
 port_of: CC-BY-4.0
 variant_kind: jurisdiction-port

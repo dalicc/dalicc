@@ -3,12 +3,61 @@ title: LaTeX Project Public License, Version 1.0
 current_version: 2
 entries:
 - version: 2
-  date: '2026-09-23'
+  date: '2026-09-24'
   reviewer: Giray Havur
-  summary: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
-    now supplies it.
+  summary: The changes since version 1 left endorsement to the default rule of the core dependency
+    graph, recorded which sentence of the text each statement rests on and named the license the record
+    itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
   changes:
   - action: removed
     statement: prohibition dalicc:promote
-    reason: Edited by hand; see the summary of this entry.
+    reason: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
+      now supplies it.
+    source: manual
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: Its duty dalicc:compliantLicense quotes "Any such changed files must be distributed under
+      a license that forbids distribution of those files, and any files derived from them, under the
+      names used by the original files in the distribution of The Program."
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:originalVersionOffer, dalicc:rename]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:originalVersionOffer, dalicc:rename]
+    reason: Its duty dalicc:rename quotes "* You rename the file before you make any changes to it,
+      unless the file explicitly says that renaming is not required."
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Notice, cc:SourceCode]
+    previous: permission odrl:distribute with duties [cc:Notice, cc:SourceCode]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Redistribution
+      of unchanged files is allowed provided that all files that make up the distribution of The Program
+      are distributed."'
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:originalVersionOffer, dalicc:rename]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:originalVersionOffer, dalicc:rename]
+    reason: Its duty dalicc:rename quotes "* You rename the file before you make any changes to it,
+      unless the file explicitly says that renaming is not required."
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:addLimitation
+    previous: prohibition dalicc:addLimitation
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Individual files
+      may have specific further constraints on modification, but no file should have restrictions
+      on distribution other than those specified below."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

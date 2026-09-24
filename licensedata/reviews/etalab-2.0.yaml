@@ -9,7 +9,7 @@ summary: >-
   The Licence Ouverte 2.0, the French open licence for public sector information: a free,
   worldwide, unlimited right of reuse, commercial or not, against one condition, the mention
   of the source and of the date of the last update. The record follows the Open Government
-  Licence records of this batch and the Open Data Commons attribution record for its shape,
+  Licence records of this review group and the Open Data Commons attribution record for its shape,
   and quotes its clauses in French, the language of the legal code it cites.
 findings:
 - rubric: 1
@@ -107,7 +107,7 @@ findings:
   field: 'dalicc:additionalClauses'
   description: >-
     The quoted clauses are in French, the language of the legal code the record cites, and the
-    record has no way to say so. Proposed, as in batch 2: allow dct:language on a record and
+    record has no way to say so. Proposed, as in another review group: allow dct:language on a record and
     write "fr" here.
   action: none
 - rubric: 9

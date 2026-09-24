@@ -19,6 +19,7 @@
 
 dalicclib:CC-BY-SA-3.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CC-BY-SA-3.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://creativecommons.org/licenses/by-sa/3.0/legalcode> ;
@@ -35,6 +36,7 @@ dalicclib:CC-BY-SA-3.0 a odrl:Set ;
     dalicc:validityType dalicc:perpetual ;
     dalicc:terminatesOnBreach true ;
     dalicc:compatibleLicenseTest "listed at creativecommons.org/compatiblelicenses and approved by Creative Commons as essentially equivalent to this License" ;
+    dalicc:compatibleWith dalicclib:CC-BY-SA-4.0 ;
     dalicc:reciprocityScope "the adaptation, not a collection the work is included in" ;
     dalicc:shareAlikeVersionQualifier "this License, a later version of this License with the same License Elements, a Creative Commons jurisdiction license with the same License Elements, or a Creative Commons Compatible License" ;
     dalicc:variantKind "version" ;
@@ -51,8 +53,8 @@ dalicclib:CC-BY-SA-3.0 a odrl:Set ;
         "CC-BY-SA-3.0",
         "Creative Commons Attribution Share Alike 3.0 Unported",
         "Creative Commons BY-SA 3.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-sa/3.0/> ;
     dct:title "Creative Commons Attribution-ShareAlike 3.0 Unported"@en ;
@@ -77,7 +79,8 @@ dalicclib:CC-BY-SA-3.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "to Reproduce the Work, to incorporate the Work into one or more Collections, and to Reproduce the Work as incorporated in the Collections; b. to create and Reproduce Adaptations provided that any such Adaptation, including any translation in any medium, takes reasonable steps to clearly label, demarcate or otherwise identify that changes were made to the original Work." ] ],
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
@@ -87,7 +90,8 @@ dalicclib:CC-BY-SA-3.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "to Reproduce the Work, to incorporate the Work into one or more Collections, and to Reproduce the Work as incorporated in the Collections; b. to create and Reproduce Adaptations provided that any such Adaptation, including any translation in any medium, takes reasonable steps to clearly label, demarcate or otherwise identify that changes were made to the original Work." ] ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
@@ -97,11 +101,14 @@ dalicclib:CC-BY-SA-3.0 a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:moralRightsRestriction ],
+            odrl:action dalicc:moralRightsRestriction ;
+            dalicc:evidence "Except as otherwise agreed in writing by the Licensor or as may be otherwise permitted by applicable law, if You Reproduce, Distribute or Publicly Perform the Work either by itself or as part of any Adaptations or Collections, You must not distort, mutilate, modify or take other derogatory action in relation to the Work which would be prejudicial to the Original Author's honor or reputation." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "For the avoidance of doubt, You may only use the credit required by this Section for the purpose of attribution in the manner set out above and, by exercising Your rights under this License, You may not implicitly or explicitly assert or imply any connection with, sponsorship or endorsement by the Original Author, Licensor and/or Attribution Parties, as appropriate, of You or Your use of the Work, without the separate, express prior written permission of the Original Author, Licensor and/or Attribution Parties. d." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ] ;
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "You may not offer or impose any terms on the Work that restrict the terms of this License or the ability of the recipient of the Work to exercise the rights granted to that recipient under the terms of the License. You may not sublicense the Work." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset ] ;

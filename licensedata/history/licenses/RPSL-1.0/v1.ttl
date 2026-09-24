@@ -1,0 +1,115 @@
+# Title: The machine-readable representation of "RealNetworks Public Source License v1.0"@en in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/RPSL-1.0
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:RPSL-1.0 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "RPSL-1.0" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://helixcommunity.org/content/rpsl> ;
+    dalicc:LiabilityLimitation "TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT SHALL LICENSOR OR ANY CONTRIBUTOR BE LIABLE FOR ANY INCIDENTAL, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES ARISING OUT OF OR RELATING TO THIS LICENSE OR YOUR USE OR INABILITY TO USE THE COVERED CODE, OR ANY PORTION THEREOF, WHETHER UNDER A THEORY OF CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE OR STRICT LIABILITY), PRODUCTS LIABILITY OR OTHERWISE, EVEN IF LICENSOR OR SUCH CONTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND NOTWITHSTANDING THE FAILURE OF ESSENTIAL PURPOSE OF ANY REMEDY. SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OF LIABILITY OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS LIMITATION MAY NOT APPLY TO YOU. In no event shall Licensor's total liability to You for all damages (other than as may be required by applicable law) under this License exceed the amount of ten dollars ($10.00)." ;
+    dalicc:WarrantyDisclaimer "The Covered Code may contain in whole or in part pre-release, untested, or not fully tested works. The Covered Code may contain errors that could cause failures or loss of data, and may be incomplete or contain inaccuracies. You expressly acknowledge and agree that use of the Covered Code, or any portion thereof, is at Your sole and entire risk. THE COVERED CODE IS PROVIDED \"AS IS\" AND WITHOUT WARRANTY, UPGRADES OR SUPPORT OF ANY KIND AND LICENSOR AND LICENSOR'S LICENSOR(S) (COLLECTIVELY REFERRED TO AS \"LICENSOR\" FOR THE PURPOSES OF SECTIONS 8 AND 9) AND ALL CONTRIBUTORS EXPRESSLY DISCLAIM ALL WARRANTIES AND/OR CONDITIONS, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES AND/OR CONDITIONS OF MERCHANTABILITY, OF SATISFACTORY QUALITY, OF FITNESS FOR A PARTICULAR PURPOSE, OF ACCURACY, OF QUIET ENJOYMENT, AND NONINFRINGEMENT OF THIRD PARTY RIGHTS. LICENSOR AND EACH CONTRIBUTOR DOES NOT WARRANT AGAINST INTERFERENCE WITH YOUR ENJOYMENT OF THE COVERED CODE, THAT THE FUNCTIONS CONTAINED IN THE COVERED CODE WILL MEET YOUR REQUIREMENTS, THAT THE OPERATION OF THE COVERED CODE WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT DEFECTS IN THE COVERED CODE WILL BE CORRECTED. NO ORAL OR WRITTEN DOCUMENTATION, INFORMATION OR ADVICE GIVEN BY LICENSOR, A LICENSOR AUTHORIZED REPRESENTATIVE OR ANY CONTRIBUTOR SHALL CREATE A WARRANTY. You acknowledge that the Covered Code is not intended for use in high risk activities, including, but not limited to, the design, construction, operation or maintenance of nuclear facilities, aircraft navigation, aircraft communication systems, or air traffic control machines in which case the failure of the Covered Code could lead to death, personal injury, or severe physical or environmental damage. Licensor disclaims any express or implied warranty of fitness for such uses." ;
+    dalicc:WarrantyOrLiabilityAcceptance "You may choose to offer, and to charge a fee for, warranty, support, indemnity or liability obligations and/or other rights consistent with the scope of the license granted herein (\"Additional Terms\") to one or more recipients of Covered Code. However, You may do so only on Your own behalf and as Your sole responsibility, and not on behalf of Licensor or any Contributor. You must obtain the recipient's agreement that any such Additional Terms are offered by You alone, and You hereby agree to indemnify, defend and hold Licensor and every Contributor harmless for any liability incurred by or claims asserted against Licensor or such Contributor by reason of any such Additional Terms." ;
+    dalicc:additionalClauses "\"Externally Deploy\" means to Deploy the Covered Code in any way that may be accessed or used by anyone other than You, used to provide any services to anyone other than You, or used in any way to deliver any content to anyone other than You, whether the Covered Code is distributed to those parties, made available as an application intended for use over a computer network, or used to provide services or otherwise deliver content to anyone other than You.",
+        "(d) You must make Source Code of all Your Externally Deployed Modifications publicly available under the terms of this License, including the license grants set forth in Section 3 below, for as long as you Deploy the Covered Code or twelve (12) months from the date of initial Deployment, whichever is longer. You should preferably distribute the Source Code of Your Deployed Modifications electronically (e.g. download from a web site); and",
+        "You must cause any Derivative Work that you distribute, publish or Externally Deploy, that in whole or in part contains or is derived from the Covered Code or any part thereof, to be licensed as a whole at no charge to all third parties under the terms of this License and no other license except as provided in Section 4.2. You also must make Source Code available for the Derivative Work under the same terms as Modifications, described in Sections 2 and 3, above.",
+        "This License does not grant any rights to use the trademarks or trade names owned by Licensor (\"Licensor Marks\" defined in Exhibit C) or to any trademark or trade name belonging to any Contributor. No Licensor Marks may be used to endorse or promote products derived from the Original Code other than as permitted by the Licensor Trademark Policy defined in Exhibit C.",
+        "The term of this License is perpetual unless terminated as provided below. This License and the rights granted hereunder will terminate: (a) automatically without notice from Licensor if You fail to comply with any term(s) of this License and fail to cure such breach within 30 days of becoming aware of such breach; (b) immediately in the event of the circumstances described in Section 12.5(b); or (c) automatically without notice from Licensor if You, at any time during the term of this License, commence an action for patent infringement against Licensor (including by cross-claim or counter claim in a lawsuit); (d) upon written notice from Licensor if You, at any time during the term of this License, commence an action for patent infringement against any third party alleging that the Covered Code itself (excluding combinations with other software or hardware) infringes any patent (including by cross-claim or counter claim in a lawsuit).",
+        "This License constitutes the entire agreement between the parties with respect to the subject matter hereof. This License shall be governed by the laws of the United States and the State of Washington." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
+    dalicc:curePeriod "30 days" ;
+    dalicc:sourcePublicationPeriod "for as long as the covered code is deployed or twelve (12) months from the date of initial deployment, whichever is longer" ;
+    dalicc:governingLaw "the laws of the United States and the State of Washington" ;
+    dalicc:compatibleLicenseTest "one of the Compatible Source Licenses listed in section 4.2" ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/RPSL-1.0/versions> ;
+    dct:alternative "RPSL",
+        "RPSL-1.0",
+        "RealNetworks Public Source License",
+        "RealNetworks Public Source License v1.0" ;
+    dct:hasVersion "1" ;
+    dct:modified "2026-09-15"^^xsd:date ;
+    dct:publisher "RealNetworks, Inc." ;
+    dct:source <https://opensource.org/license/RPSL-1.0> ;
+    dct:title "RealNetworks Public Source License v1.0"@en ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ] ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:addStatement ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:addStatement ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:addStatement ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:patentGrant ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:networkUseTrigger ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ] ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:patentRetaliationTermination ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:addLimitation ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Software ] .

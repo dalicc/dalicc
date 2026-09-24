@@ -19,6 +19,7 @@
 
 dalicclib:MS-RL a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "MS-RL" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://www.microsoft.com/opensource/licenses.mspx> ;
@@ -37,8 +38,8 @@ dalicclib:MS-RL a odrl:Set ;
         "MS-RL",
         "MSRL",
         "Microsoft Reciprocal License" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Microsoft" ;
     dct:source <https://opensource.org/license/MS-RL> ;
     dct:title "Microsoft Reciprocal License"@en ;
@@ -87,9 +88,11 @@ dalicclib:MS-RL a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:ChangeLicense ] ;
+            odrl:action dalicc:ChangeLicense ;
+            dalicc:evidence "If you distribute any portion of the software in compiled or object code form, you may only do so under a license that complies with this license." ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "(B) No Trademark License- This license does not grant you rights to use any contributors’ name, logo, or trademarks." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ] ;
     odrl:target [ a odrl:AssetCollection ;

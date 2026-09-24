@@ -1,0 +1,50 @@
+id: AFL-1.1
+title: Academic Free License v1.1
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission dalicc:chargeLicenseFee
+    previous: permission dalicc:chargeLicenseFee
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Licensor hereby
+      grants to any person obtaining a copy of the Original Work ("You") a world-wide, royalty-free,
+      non-exclusive, perpetual, non-sublicenseable license"'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice]
+    reason: Its duty cc:Attribution quotes "Redistributions of the Original Work must reproduce all
+      copyright notices in the Original Work as furnished by the Licensor, both in the Original Work
+      itself and in any documentation and/or other materials provided with the distribution of the
+      Original Work in executable form."
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode]
+    reason: Its duty cc:Attribution quotes "Redistributions of the Original Work must reproduce all
+      copyright notices in the Original Work as furnished by the Licensor, both in the Original Work
+      itself and in any documentation and/or other materials provided with the distribution of the
+      Original Work in executable form."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice]
+    reason: Its duty cc:Attribution quotes "Redistributions of the Original Work must reproduce all
+      copyright notices in the Original Work as furnished by the Licensor, both in the Original Work
+      itself and in any documentation and/or other materials provided with the distribution of the
+      Original Work in executable form."
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

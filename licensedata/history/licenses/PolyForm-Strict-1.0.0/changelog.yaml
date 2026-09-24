@@ -1,0 +1,93 @@
+id: PolyForm-Strict-1.0.0
+title: PolyForm Strict License 1.0.0
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on,
+    named the license the record itself is published under and removed the quotes that do not name
+    the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  changes:
+  - action: changed
+    statement: prohibition cc:DerivativeWorks
+    previous: prohibition cc:DerivativeWorks
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "These terms do
+      not imply any other licenses."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:ModifiedWorks
+    previous: prohibition dalicc:ModifiedWorks
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "These terms do
+      not imply any other licenses."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:sublicense
+    previous: prohibition dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "These terms do
+      not allow you to sublicense or transfer any of your licenses to anyone else, or prevent the
+      licensor from granting licenses to anyone else."'
+    source: manual
+  - action: changed
+    statement: prohibition odrl:derive
+    previous: prohibition odrl:derive
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "These terms do
+      not imply any other licenses."'
+    source: manual
+  - action: changed
+    statement: prohibition odrl:distribute
+    previous: prohibition odrl:distribute
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "These terms do
+      not imply any other licenses."'
+    source: manual
+  - action: changed
+    statement: prohibition odrl:modify
+    previous: prohibition odrl:modify
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "These terms do
+      not imply any other licenses."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: prohibition cc:DerivativeWorks
+    previous: prohibition cc:DerivativeWorks
+    reason: 'Removed the quoted evidence of prohibition cc:DerivativeWorks, prohibition dalicc:ModifiedWorks,
+      prohibition odrl:derive, prohibition odrl:distribute, prohibition odrl:modify: the quoted sentence
+      does not name the act. The statements stay, read from the text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:ModifiedWorks
+    previous: prohibition dalicc:ModifiedWorks
+    reason: 'Removed the quoted evidence of prohibition cc:DerivativeWorks, prohibition dalicc:ModifiedWorks,
+      prohibition odrl:derive, prohibition odrl:distribute, prohibition odrl:modify: the quoted sentence
+      does not name the act. The statements stay, read from the text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: prohibition odrl:derive
+    previous: prohibition odrl:derive
+    reason: 'Removed the quoted evidence of prohibition cc:DerivativeWorks, prohibition dalicc:ModifiedWorks,
+      prohibition odrl:derive, prohibition odrl:distribute, prohibition odrl:modify: the quoted sentence
+      does not name the act. The statements stay, read from the text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: prohibition odrl:distribute
+    previous: prohibition odrl:distribute
+    reason: 'Removed the quoted evidence of prohibition cc:DerivativeWorks, prohibition dalicc:ModifiedWorks,
+      prohibition odrl:derive, prohibition odrl:distribute, prohibition odrl:modify: the quoted sentence
+      does not name the act. The statements stay, read from the text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: prohibition odrl:modify
+    previous: prohibition odrl:modify
+    reason: 'Removed the quoted evidence of prohibition cc:DerivativeWorks, prohibition dalicc:ModifiedWorks,
+      prohibition odrl:derive, prohibition odrl:distribute, prohibition odrl:modify: the quoted sentence
+      does not name the act. The statements stay, read from the text without a linked quote.'
+    source: manual

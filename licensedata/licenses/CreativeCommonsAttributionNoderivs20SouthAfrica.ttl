@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionNoderivs20SouthAfrica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:SouthAfrica ;
     cc:legalcode <https://creativecommons.org/licenses/by-nd/2.0/za/legalcode> ;
     dalicc:LiabilityLimitation """EXCEPT TO THE EXTENT REQUIRED BY APPLICABLE LAW, IN NO EVENT WILL LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY FOR ANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES ARISING OUT OF THIS LICENCE OR THE USE OF THE WORK, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
@@ -26,6 +27,7 @@ dalicclib:CreativeCommonsAttributionNoderivs20SouthAfrica a odrl:Set ;
     dalicc:WarrantyDisclaimer """THE LICENSOR MAKES THE WORK AVAILABLE UNDER THE GOOD FAITH BELIEF THAT LICENCED USE OF THE WORK DOES NOT VIOLATE THE COPYRIGHT OR WHERE APPROPRIATE PERFORMERS’ PROTECTION RIGHTS OF OTHERS. UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, LICENSOR OFFERS THE WORK AS-IS ON THE BASIS OF A GOOD FAITH BELIEF THAT IT DOES NOT VIOLATE THE RIGHTS OF OTHERS, AND MAKES NO OTHER REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING, WITHOUT LIMITATION, WARRANTIES OF ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS, WHETHER OR NOT DISCOVERABLE AND IF THE WORK INCLUDES SOFTWARE, WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO SUCH EXCLUSION MAY NOT APPLY TO YOU.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-ND-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "2.0" ;
@@ -43,8 +45,8 @@ dalicclib:CreativeCommonsAttributionNoderivs20SouthAfrica a odrl:Set ;
         "CC-BY-ND 2.0 ZA",
         "Creative Commons BY-ND 2.0",
         "Creative Commons BY-ND 2.0 ZA" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nd/2.0/za/> ;
     dct:title "Creative Commons Attribution-NoDerivatives 2.0 South Africa"@en ;

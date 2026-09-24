@@ -37,7 +37,7 @@ findings:
 - rubric: 5
   severity: minor
   field: odrl:duty
-  description: 'The batch notes expected a dalicc:modificationNotice duty and a dalicc:rename duty on this
+  description: 'The review group notes expected a dalicc:modificationNotice duty and a dalicc:rename duty on this
     record. The fetched text has neither: it asks for unchanged copyright notices, the license file and, for
     a binary that depends on a modified package, the public release of that package. The record follows the
     text.'

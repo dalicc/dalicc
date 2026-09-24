@@ -3,11 +3,19 @@ title: Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Chile
 current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, removed
     2 permissions, recorded the relation to the record this one was adapted from and recorded the
-    review state.
+    review state. Later changes recorded which sentence of the text each statement rests on, recorded
+    when the license ends on a breach, named the license the record itself is published under and
+    removed the quotes that do not name the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
   changes:
   - action: added
     statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-ND-4.0
@@ -58,3 +66,74 @@ entries:
       Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
       as many words.'
     source: consolidation-decision 1
+  - action: changed
+    statement: permission odrl:display
+    previous: permission odrl:display
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Bajo los términos
+      y condiciones de esta Licencia, el Licenciante le otorga a Usted una licencia mundial, gratuita,
+      no exclusiva y permanente (durante todo el período de vigencia de los derechos de autor) para
+      ejercer derechos sobre la Obra tal y como se indica a continuación:"'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Bajo los términos
+      y condiciones de esta Licencia, el Licenciante le otorga a Usted una licencia mundial, gratuita,
+      no exclusiva y permanente (durante todo el período de vigencia de los derechos de autor) para
+      ejercer derechos sobre la Obra tal y como se indica a continuación:"'
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Bajo los términos
+      y condiciones de esta Licencia, el Licenciante le otorga a Usted una licencia mundial, gratuita,
+      no exclusiva y permanente (durante todo el período de vigencia de los derechos de autor) para
+      ejercer derechos sobre la Obra tal y como se indica a continuación:"'
+    source: manual
+  - action: changed
+    statement: prohibition cc:CommercialUse
+    previous: prohibition cc:CommercialUse
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Usted no puede
+      ejercer ninguno de los derechos que le han sido otorgados en la Sección 3 precedente de modo
+      que estén principalmente destinados o directamente dirigidos a conseguir un provecho comercial
+      o una compensación monetaria privada."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:sublicense
+    previous: prohibition dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Usted no puede
+      sublicenciar la Obra."'
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'The termination clause of this port reads: "Esta Licencia y los derechos otorgados en
+      virtud de ella terminarán automáticamente si Usted infringe alguna condición establecida en
+      ella."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: permission odrl:display
+    previous: permission odrl:display
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce: the quoted sentence does not name the act. The statements stay, read from the
+      text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce: the quoted sentence does not name the act. The statements stay, read from the
+      text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce: the quoted sentence does not name the act. The statements stay, read from the
+      text without a linked quote.'
+    source: manual

@@ -3,11 +3,19 @@ title: Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Ecuador
 current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, changed
     1 identification detail, recorded the relation to the record this one was adapted from and recorded
-    the review state.
+    the review state. Later changes recorded which sentence of the text each statement rests on, recorded
+    when the license ends on a breach, named the license the record itself is published under and
+    removed the quotes that do not name the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
   changes:
   - action: added
     statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-SA-4.0
@@ -53,3 +61,81 @@ entries:
       Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
       as many words.'
     source: consolidation-decision 1
+  - action: changed
+    statement: permission odrl:display
+    previous: permission odrl:display
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Concesión de
+      la Licencia.- Sujeto a los términos y a las condiciones de esta Licencia, el Licenciante otorga
+      al Licenciatario una Licencia mundial, sin cobro de regalías, no exclusiva e indefinida (depende
+      del acuerdo de los contratantes de la Licencia), para ejercer los derechos de Licenciatario
+      de la Obra, tal como se estipulan a continuación:"'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Concesión de
+      la Licencia.- Sujeto a los términos y a las condiciones de esta Licencia, el Licenciante otorga
+      al Licenciatario una Licencia mundial, sin cobro de regalías, no exclusiva e indefinida (depende
+      del acuerdo de los contratantes de la Licencia), para ejercer los derechos de Licenciatario
+      de la Obra, tal como se estipulan a continuación:"'
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Concesión de
+      la Licencia.- Sujeto a los términos y a las condiciones de esta Licencia, el Licenciante otorga
+      al Licenciatario una Licencia mundial, sin cobro de regalías, no exclusiva e indefinida (depende
+      del acuerdo de los contratantes de la Licencia), para ejercer los derechos de Licenciatario
+      de la Obra, tal como se estipulan a continuación:"'
+    source: manual
+  - action: changed
+    statement: prohibition cc:CommercialUse
+    previous: prohibition cc:CommercialUse
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Para evitar toda
+      duda, el Licenciatario solamente podrá usar el crédito requerido por esta Sección con el propósito
+      de reconocimiento en la manera anteriormente descrita y, al ejercer sus derechos según esta
+      Licencia, el Licenciatario no podrá implícita ni tácitamente aseverar ni dar a entender ninguna
+      conexión, auspicio ni respaldo por parte del Autor, Licenciante ni Partes del Reconocimiento,
+      según corresponda, otorgado al Licenciatario o a su uso de la Obra, sin el permiso independiente,
+      expreso, previo y escrito del Autor, el Licenciante y/o las Partes del Reconocimiento."'
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'The termination clause of this port reads: "Esta Licencia y los derechos otorgados por
+      esta Licencia terminarán automáticamente si el Licenciatario incumpliera cualquiera de las condiciones
+      de esta Licencia."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: permission odrl:display
+    previous: permission odrl:display
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce, prohibition cc:CommercialUse: the quoted sentence does not name the act. The
+      statements stay, read from the text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce, prohibition cc:CommercialUse: the quoted sentence does not name the act. The
+      statements stay, read from the text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce, prohibition cc:CommercialUse: the quoted sentence does not name the act. The
+      statements stay, read from the text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: prohibition cc:CommercialUse
+    previous: prohibition cc:CommercialUse
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce, prohibition cc:CommercialUse: the quoted sentence does not name the act. The
+      statements stay, read from the text without a linked quote.'
+    source: manual

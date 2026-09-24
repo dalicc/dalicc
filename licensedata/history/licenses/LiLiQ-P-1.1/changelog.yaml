@@ -1,0 +1,48 @@
+id: LiLiQ-P-1.1
+title: Licence Libre du Québec - Permissive version 1.1
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on,
+    named the license the record itself is published under and removed the quotes that do not name
+    the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  changes:
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'The statement is marked as a library convention, family rule 15: Permissive records permit
+      relicensing: the text does not state it in as many words. Its duty dalicc:compliantLicense is
+      marked as a library convention, family rule 15: Permissive records permit relicensing.'
+    source: manual
+  - action: changed
+    statement: permission dalicc:sublicense
+    previous: permission dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Le licencié peut
+      distribuer des copies du logiciel, d''un logiciel modifié ou dérivé, sous réserve de respecter
+      les conditions suivantes :"'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "La licence n''accorde
+      aucune permission particulière qui permettrait d''utiliser les marques de commerce du concédant,
+      autre que celle requise permettant d''identifier la provenance du logiciel."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: permission dalicc:sublicense
+    previous: permission dalicc:sublicense
+    reason: 'Removed the quoted evidence of permission dalicc:sublicense: the quoted sentence does
+      not name the act. The statements stay, read from the text without a linked quote.'
+    source: manual

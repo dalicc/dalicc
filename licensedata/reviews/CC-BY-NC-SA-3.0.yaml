@@ -171,6 +171,14 @@ findings:
     A passage the element set does not have is absent, which is a difference between the texts and
     not between two readings.
   action: applied
+- rubric: 10
+  severity: major
+  field: dalicc:compatibleWith
+  description: The share-alike clause lets an adaptation be released under "this license, a later version
+    with the same license elements, or a Creative Commons jurisdiction license with the same license elements".
+    CC-BY-NC-SA-4.0 is that later version of the same License Elements, so the record links it. dalicc:compatibleWith
+    names CC-BY-NC-SA-4.0.
+  action: applied
 family: Creative Commons 3.0 Unported
 port_of: null
 variant_kind: version

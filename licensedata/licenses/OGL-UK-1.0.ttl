@@ -19,6 +19,7 @@
 
 dalicclib:OGL-UK-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "OGL-UK-1.0" ;
     cc:attributionName "UK Government" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -36,8 +37,8 @@ dalicclib:OGL-UK-1.0 a odrl:Set ;
     dct:alternative "OGL 1.0",
         "OGL-UK-1.0",
         "Open Government Licence v1.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "The National Archives" ;
     dct:source <https://spdx.org/licenses/OGL-UK-1.0.html> ;
     dct:title "Open Government Licence v1.0"@en ;
@@ -52,7 +53,8 @@ dalicclib:OGL-UK-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "Contains public sector information licensed under the Open Government Licence v1.0." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -64,7 +66,8 @@ dalicclib:OGL-UK-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "Contains public sector information licensed under the Open Government Licence v1.0." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
@@ -72,7 +75,8 @@ dalicclib:OGL-UK-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "Contains public sector information licensed under the Open Government Licence v1.0." ] ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
@@ -80,13 +84,19 @@ dalicclib:OGL-UK-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:suiGenerisDatabaseRights ],
+            odrl:action dalicc:suiGenerisDatabaseRights ;
+            dalicc:evidence "Use of copyright and database right material expressly made available under this licence (the ‘Information’) indicates your acceptance of the terms and conditions below." ],
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "ensure that you do not use the Information in a way that suggests any official status or that the Information Provider endorses you or your use of the Information;" ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:exemptedMaterial ] ;
     odrl:target [ a odrl:AssetCollection ;

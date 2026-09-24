@@ -23,7 +23,7 @@ findings:
   field: spdx:licenseId
   description: SPDX has no identifier for this port. The legal-code URL implies CC-BY-3.0-IT, which the
     SPDX licence list does not define, so no spdx:licenseId was invented. Of the forty two records of
-    this batch only the Attribution 3.0 Netherlands record can take one.
+    this review group only the Attribution 3.0 Netherlands record can take one.
   action: none
 - rubric: 2
   severity: minor
@@ -58,10 +58,11 @@ findings:
   description: 'The licence forbids sublicensing and the record does not say so: article 4(a): "Non puoi
     concedere l''Opera in sublicenza.". The vocabulary already has dalicc:sublicense, but no record in
     the library uses it and its skos:note says so, and the same sentence stands in every Creative Commons
-    2.0 and 3.0 record, so adding it to this batch alone would split the compatibility behaviour of one
+    2.0 and 3.0 record, so adding it to this review group alone would split the compatibility behaviour of one
     family. Proposed as one library wide correction, together with an update of the vocabulary note. Not
     applied for that reason.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -115,8 +116,7 @@ findings:
     rights. Article 8 closes: "La presente licenza e stata redatta sulla base della legge italiana, in
     particolare del Codice Civile del 1942 e della legge 22 Aprile 1941, n. 633 e successive modificazioni
     sulla protezione del diritto d''autore e di altri diritti connessi al suo esercizio." That is a statement
-    about the drafting basis rather than a choice-of-law clause, and it is the closest any port of this
-    batch other than Armenia comes to one. Note that the jurisdiction field records the legal home of
+    about the drafting basis rather than a choice-of-law clause, and it is the closest any port of this review group other than Armenia comes to one. Note that the jurisdiction field records the legal home of
     the port, not a territorial limit on the grant: the grant itself runs worldwide.'
   action: none
 - rubric: 8
@@ -150,7 +150,7 @@ findings:
   severity: gap
   field: record
   description: 'The royalty collection arrangements are not expressible either. Articles 4(f) and 4(g)
-    are the longest collecting-society clauses in the batch and the only ones that name the societies.
+    are the longest collecting-society clauses in the review group and the only ones that name the societies.
     For musical works the licensor reserves the exclusive right to collect, personally or through a collecting
     society such as SIAE, the fees for communication to the public and for performance, and the fees for
     cover versions; for sound recordings the same reservation runs through a society such as IMAIE; and
@@ -211,6 +211,16 @@ findings:
   action: applied
   change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
     \ ] ;"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "La presente Licenza si intenderà risolta di
+    diritto e i diritti con essa concessi cesseranno automaticamente, senza necessità di alcuna comunicazione
+    in tal senso da parte del Licenziante, in caso di qualsivoglia inadempimento dei termini della presente
+    Licenza da parte Tua, ed in particolare delle disposizioni di cui ai punti 4." The licence ends automatically
+    on a breach and this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach
+    is true and no dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Italy (IT)'
 port_of: CC-BY-4.0
 variant_kind: jurisdiction-port

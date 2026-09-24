@@ -1,13 +1,19 @@
 id: NCGL-UK-2.0
 title: Non-Commercial Government Licence
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, changed
     1 identification detail, recorded the relation to the record this one was adapted from and recorded
-    the review state.
+    the review state. Later changes brought it in line with its family and its text in the verification
+    of 2026-09-15, recorded which sentence of the text each statement rests on and named the license
+    the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
   changes:
   - action: added
     statement: dalicc:jurisdictionPortOf dalicclib:UkOpenGovernmentLicenseForPublicSectorInformation
@@ -40,27 +46,40 @@ entries:
       to use the Information in a way that suggests any official status or that the Information Provider
       and/or Licensor endorse you or your use of the Information", and the exemptions list excludes
       logos, crests, military insignia, the Royal Arms and trade marks. The library expresses this
-      by prohibiting dalicc:promote, which the other three government records of this batch already
-      did. Added.'
+      by prohibiting dalicc:promote, which the other three government records of this review group
+      already did. Added.'
     source: review-finding 4/odrl:prohibition
   - action: added
     statement: spdx:licenseId "NCGL-UK-2.0"
     reason: The record carried no SPDX identifier although its own DALICC identifier is the SPDX list
       identifier NCGL-UK-2.0 and its cc:legalcode is the SPDX seeAlso URL. Added.
     source: review-finding 1/spdx:licenseId
-- version: 3
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Batch 5 finding 7 and consolidation decision 9: the record called itself a dalicc:jurisdictionPortOf
-    the Open Government Licence while its dalicc:variantKind said ''edition''. The Non-Commercial
-    Government Licence is an edition of the same licence for the same jurisdiction, not a port of
-    it, so the port relation is replaced by the general dct:isVersionOf and the variant kind stays.'
-  changes:
   - action: removed
     statement: dalicc:jurisdictionPortOf dalicclib:UkOpenGovernmentLicenseForPublicSectorInformation
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 9: the record
+      called itself a dalicc:jurisdictionPortOf the Open Government Licence while its dalicc:variantKind
+      said ''edition''. The Non-Commercial Government Licence is an edition of the same licence for
+      the same jurisdiction, not a port of it, so the port relation is replaced by the general dct:isVersionOf
+      and the variant kind stays.'
     source: manual
   - action: added
     statement: dct:isVersionOf dalicclib:UkOpenGovernmentLicenseForPublicSectorInformation
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 9: the record
+      called itself a dalicc:jurisdictionPortOf the Open Government Licence while its dalicc:variantKind
+      said ''edition''. The Non-Commercial Government Licence is an edition of the same licence for
+      the same jurisdiction, not a port of it, so the port relation is replaced by the general dct:isVersionOf
+      and the variant kind stays.'
+    source: manual
+  - action: changed
+    statement: prohibition cc:CommercialUse
+    previous: prohibition cc:CommercialUse
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "The Licensor
+      grants you a worldwide, royalty-free, perpetual, non-exclusive licence to use the Information
+      for Non-Commercial purposes only subject to the conditions below."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

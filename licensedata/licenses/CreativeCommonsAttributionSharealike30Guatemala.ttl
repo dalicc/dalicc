@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionSharealike30Guatemala a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Guatemala ;
     cc:legalcode <https://creativecommons.org/licenses/by-sa/3.0/gt/legalcode> ;
     dalicc:LiabilityLimitation """SALVO QUE LA LEY APLICABLE LO EXIJA EXPRESAMENTE, EL LICENCIANTE EN NINGÚN CASO PODRÁ SER RESPONSABLE ANTE EL LICENCIATARIO POR DAÑOS DE NINGUNA CLASE, QUE SE DERIVEN DE ESTA LICENCIA O DEL USO DE LA OBRA, AUN CUANDO EL LICENCIANTE SEPA DE LA POSIBILIDAD DE ESOS DAÑOS.
@@ -26,6 +27,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Guatemala a odrl:Set ;
     dalicc:WarrantyDisclaimer """SALVO PACTO EN CONTRARIO DE AMBAS PARTES, QUE CONSTE POR ESCRITO, Y EN LA MAYOR AMPLITUD DE LO PERMITIDO POR LAS LEYES VIGENTES, EL LICENCIANTE OFRECE LA OBRA EN SUS CONDICIONES ACTUALES. EL AUTOR GARANTIZA LA AUTORÍA Y ORIGINALIDAD DE LA OBRA, PERO NO CONFIERE NINGUNA GARANTÍA SOBRE LA CALIDAD COMERCIAL DE LA MISMA O SU ADECUACIÓN PARA UN PROPÓSITO EN PARTICULAR.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -44,7 +46,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Guatemala a odrl:Set ;
         "Creative Commons BY-SA 3.0",
         "Creative Commons BY-SA 3.0 GT" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-sa/3.0/gt/> ;
     dct:title "Creative Commons Attribution-ShareAlike 3.0 Guatemala"@en ;

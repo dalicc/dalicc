@@ -26,14 +26,14 @@ findings:
   description: 'SPDX has no identifier for this port. The legal-code URL implies CC-BY-SA-3.0-EG, which
     the SPDX licence list does not define: of the ported 3.0 licences SPDX knows only the Austrian, Australian,
     German, Dutch, United States and IGO ones. No identifier was invented, and none of the forty two records
-    in this batch carries one.'
+    in this review group carries one.'
   action: none
 - rubric: 2
   severity: minor
   field: odrl:target
   description: 'The record targets dalicc:CreativeWork only, while the 4.0 International parent CC-BY-SA-4.0
     targets dalicc:CreativeWork and dcmitype:Dataset. This port has no sui generis database rights clause:
-    unlike the French and Polish ports in this batch it neither grants extraction and re-utilisation nor
+    unlike the French and Polish ports in this review group it neither grants extraction and re-utilisation nor
     waives the database producer right, so the case for dcmitype:Dataset rests only on the media neutrality
     of the grant, which runs to all media and formats now known or later devised. Aligning the ports with
     the parents is a single library wide decision covering every Creative Commons port, so it is left
@@ -57,10 +57,11 @@ findings:
   description: 'The licence forbids sublicensing and the record does not say so. clause 4(a): the work
     may not be sublicensed ("wa-la yajuzu kadhalika tarkhis al-musannaf min al-batin"). The vocabulary
     already has dalicc:sublicense, but it is used by no record in the library and its skos:note says so,
-    and the same sentence stands in every Creative Commons 2.0 and 3.0 record, so adding it to this batch
+    and the same sentence stands in every Creative Commons 2.0 and 3.0 record, so adding it to this review group
     alone would split the compatibility behaviour of one family. Proposed as one library wide correction,
     together with an update of the vocabulary note.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -166,7 +167,7 @@ findings:
   description: 'Moral rights have no vocabulary term, in either direction: a clause that restricts the
     licensee, and a clause that leaves the author personal rights untouched by the licence. Clause 4(f)
     is a numbered sub-section of its own, headed moral rights: the moral rights of the author are inalienable
-    and are not affected by the terms of this licence. Egypt is the only port in this batch that gives
+    and are not affected by the terms of this licence. Egypt is the only port in this review group that gives
     moral rights their own numbered sub-section. Proposed terms: dalicc:moralRightsRestriction and dalicc:moralRightsNonAssertion.'
   action: none
 - rubric: 8
@@ -204,6 +205,14 @@ findings:
     from the other records of the BY-SA element set, across all three versions and every jurisdiction
     the library holds.'
   action: none
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "ينتهي هذا الترخيص والحقوق الممنوحة بموجبه
+    تلقائيًّا في حالة قيام المرخَّص له بخرق أي بند من بنوده." The licence ends automatically on a breach
+    and this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach is true and
+    no dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Egypt (EG)'
 port_of: CC-BY-SA-4.0
 variant_kind: jurisdiction-port

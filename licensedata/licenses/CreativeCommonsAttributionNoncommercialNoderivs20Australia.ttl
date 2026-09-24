@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Australia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Australia ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc-nd/2.0/au/legalcode> ;
     dalicc:LiabilityLimitation """TO THE FULL EXTENT PERMITTED BY APPLICABLE LAW, AND EXCEPT FOR ANY LIABILITY ARISING FROM CONTRARY MUTUAL AGREEMENT AS REFERRED TO IN SECTION 5, IN NO EVENT WILL LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY (INCLUDING, WITHOUT LIMITATION, NEGLIGENCE) FOR ANY LOSS OR DAMAGE WHATSOEVER, INCLUDING (WITHOUT LIMITATION) LOSS OF PRODUCTION OR OPERATION TIME, LOSS, DAMAGE OR CORRUPTION OF DATA OR RECORDS; OR LOSS OF ANTICIPATED SAVINGS, OPPORTUNITY, REVENUE, PROFIT OR GOODWILL, OR OTHER ECONOMIC LOSS; OR ANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE OR EXEMPLARY DAMAGES ARISING OUT OF OR IN CONNECTION WITH THIS LICENCE OR THE USE OF THE WORK, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
@@ -26,6 +27,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Australia a odrl:Set 
     dalicc:WarrantyDisclaimer """EXCEPT AS EXPRESSLY STATED IN THIS LICENCE OR OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, AND TO THE FULL EXTENT PERMITTED BY APPLICABLE LAW, LICENSOR OFFERS THE WORK "AS-IS" AND MAKES NO REPRESENTATIONS, WARRANTIES OR CONDITIONS OF ANY KIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING, WITHOUT LIMITATION, ANY REPRESENTATIONS, WARRANTIES OR CONDITIONS REGARDING THE CONTENTS OR ACCURACY OF THE WORK, OR OF TITLE, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, THE ABSENCE OF LATENT OR OTHER DEFECTS, OR THE PRESENCE OR ABSENCE OF ERRORS, WHETHER OR NOT DISCOVERABLE.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-ND-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "2.0" ;
@@ -44,8 +46,8 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Australia a odrl:Set 
         "Creative Commons Attribution NonCommercial NoDerivatives 2.0 Australia",
         "Creative Commons BY-NC-ND 2.0",
         "Creative Commons BY-NC-ND 2.0 AU" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc-nd/2.0/au/> ;
     dct:title "Creative Commons Attribution-NonCommercial-NoDerivatives 2.0 Australia"@en ;
@@ -70,7 +72,8 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs20Australia a odrl:Set 
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ] ;
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "You may not sublicense the Work." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/au.png> ;

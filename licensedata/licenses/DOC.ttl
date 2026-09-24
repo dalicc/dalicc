@@ -19,6 +19,7 @@
 
 dalicclib:DOC a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "DOC" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://spdx.org/licenses/DOC.html> ;
@@ -35,8 +36,8 @@ dalicclib:DOC a odrl:Set ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/DOC/versions> ;
     dct:alternative "DOC",
         "DOC License" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://spdx.org/licenses/DOC.html> ;
     dct:title "DOC License"@en ;
     odrl:permission [ a odrl:Permission ;
@@ -62,13 +63,15 @@ dalicclib:DOC a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:rename ] ],
+                    odrl:action dalicc:rename ] ;
+            dalicc:evidence "This license grants no permission to call products or services derived from this source ACE(TM), TAO(TM), CIAO(TM), DAnCE(TM), or CoSMIC(TM), nor does it grant permission for the name Washington University, UC Irvine, or Vanderbilt University to appear in their names." ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
             odrl:action odrl:present ],
         [ a odrl:Permission ;
-            odrl:action cc:CommercialUse ],
+            odrl:action cc:CommercialUse ;
+            dalicc:evidence "You can use DOC software in commercial and/or binary software releases and are under no obligation to redistribute any of your source code that is built using DOC software." ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
@@ -78,10 +81,15 @@ dalicclib:DOC a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:addLimitation ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "The names ACE(TM), TAO(TM), CIAO(TM), DAnCE(TM), CoSMIC(TM), Washington University, UC Irvine, and Vanderbilt University, may not be used to endorse or promote products or services derived from this source without express written permission from Washington University, UC Irvine, or Vanderbilt University." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

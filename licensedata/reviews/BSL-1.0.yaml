@@ -27,7 +27,7 @@ findings:
     a duty term: as a permission it means nothing the general grant does not already say, and the dependency
     graph treats an asserted share-alike as contradicting odrl:grantUse, which is why the record had to
     prohibit sublicensing to stay consistent. The Boost license imposes no share-alike. Removed. Flagged
-    as rule 5b in family_rules_baseline.md.'
+    by the family conventions checked before the review.'
   action: applied
   change: "# removed\nodrl:permission [ a odrl:Permission ;\n        odrl:action cc:ShareAlike ;\n   \
     \     odrl:duty [ a odrl:Duty ;\n                odrl:action cc:Notice ] ] ;\n"
@@ -58,7 +58,7 @@ findings:
   severity: minor
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9 and 10: the record was corrected against
-    its new siblings and versioned. Family rules 10 and 14 of scripts/review/family_rules.py: the disclaimer
+    its new siblings and versioned. Library conventions 10 and 14: the disclaimer
     paragraph held the liability sentence, which begins ''IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE
     DISTRIBUTING THE SOFTWARE BE LIABLE'', and dct:publisher and cc:attributionName were the placeholder
     ''- not specified - ''.'
@@ -77,4 +77,4 @@ findings:
 family: MIT, ISC, Zlib, Boost, UPL, WTFPL (permissive, short)
 port_of: null
 variant_kind: null
-notes: One of the three share-alike misuses flagged in family_rules_baseline.md rule 5b.
+notes: One of the three share-alike misuses flagged in the family conventions checked before the review.

@@ -1,0 +1,103 @@
+id: CC-BY-SA-3.0
+title: Creative Commons Attribution-ShareAlike 3.0 Unported
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on,
+    named the license the record itself is published under, recorded the licenses a work under it
+    may be released under and removed the quotes that do not name the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
+  changes:
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    reason: Its duty cc:Attribution quotes "keep intact all copyright notices for the Work" Its duty
+      dalicc:modificationNotice quotes "to Reproduce the Work, to incorporate the Work into one or
+      more Collections, and to Reproduce the Work as incorporated in the Collections; b. to create
+      and Reproduce Adaptations provided that any such Adaptation, including any translation in any
+      medium, takes reasonable steps to clearly label, demarcate or otherwise identify that changes
+      were made to the original Work."
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: Its duty cc:Attribution quotes "keep intact all copyright notices for the Work"
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    reason: Its duty cc:Attribution quotes "keep intact all copyright notices for the Work" Its duty
+      dalicc:modificationNotice quotes "to Reproduce the Work, to incorporate the Work into one or
+      more Collections, and to Reproduce the Work as incorporated in the Collections; b. to create
+      and Reproduce Adaptations provided that any such Adaptation, including any translation in any
+      medium, takes reasonable steps to clearly label, demarcate or otherwise identify that changes
+      were made to the original Work."
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:moralRightsRestriction
+    previous: prohibition dalicc:moralRightsRestriction
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Except as otherwise
+      agreed in writing by the Licensor or as may be otherwise permitted by applicable law, if You
+      Reproduce, Distribute or Publicly Perform the Work either by itself or as part of any Adaptations
+      or Collections, You must not distort, mutilate, modify or take other derogatory action in relation
+      to the Work which would be prejudicial to the Original Author''s honor or reputation."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "For the avoidance
+      of doubt, You may only use the credit required by this Section for the purpose of attribution
+      in the manner set out above and, by exercising Your rights under this License, You may not implicitly
+      or explicitly assert or imply any connection with, sponsorship or endorsement by the Original
+      Author, Licensor and/or Attribution Parties, as appropriate, of You or Your use of the Work,
+      without the separate, express prior written permission of the Original Author, Licensor and/or
+      Attribution Parties. d."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:sublicense
+    previous: prohibition dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may not offer
+      or impose any terms on the Work that restrict the terms of this License or the ability of the
+      recipient of the Work to exercise the rights granted to that recipient under the terms of the
+      License. You may not sublicense the Work."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: added
+    statement: dalicc:compatibleWith dalicclib:CC-BY-SA-4.0
+    reason: 'Section 4(b) reads: "You may Distribute or Publicly Perform an Adaptation only under
+      the terms of: (i) this License; (ii) a later version of this License with the same License Elements
+      as this License; ..." and the Creative Commons list of compatible licenses (https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses)
+      names BY-SA 4.0 as the later version.'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    reason: 'Removed the quoted evidence of duty cc:Attribution on odrl:derive, duty cc:Attribution
+      on odrl:distribute, duty cc:Attribution on odrl:modify: the quoted sentence does not name the
+      act. The statements stay, read from the text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: 'Removed the quoted evidence of duty cc:Attribution on odrl:derive, duty cc:Attribution
+      on odrl:distribute, duty cc:Attribution on odrl:modify: the quoted sentence does not name the
+      act. The statements stay, read from the text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    reason: 'Removed the quoted evidence of duty cc:Attribution on odrl:derive, duty cc:Attribution
+      on odrl:distribute, duty cc:Attribution on odrl:modify: the quoted sentence does not name the
+      act. The statements stay, read from the text without a linked quote.'
+    source: manual

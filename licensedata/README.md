@@ -18,10 +18,11 @@ Nothing on this page is legal advice.
 | `licenses/` | 581 license records, one Turtle file per license. The source of truth |
 | `reviews/` | 581 review records, one YAML file per license. See [reviews/README.md](reviews/README.md) |
 | `licenselibrary/licenselibrary.ttl` | the combined document, generated from `licenses/` by `scripts/build_licenselibrary.py`. Never edited by hand |
-| `dependencygraph/dg_default.ttl` | the 46 reasoning axioms the reasoner works from |
+| `dependencygraph/` | the eight shipped dependency graphs: `dg_default.ttl`, the 46 axioms and the adopted default rule the reasoner works from, and the seven jurisdiction graphs `dg_eu`, `dg_us`, `dg_cn`, `dg_gb`, `dg_jp`, `dg_in` and `dg_br`, each generated from it and a difference file in `differences/` |
 | `vocabulary/dalicc-ns.ttl` | the `https://dalicc.net/ns#` vocabulary, plus `usage-counts.json` |
-| `history/licenses/<id>/` | the archived versions of one record, `v1.ttl`, `v2.ttl` and a `changelog.yaml` |
-| `history/dependencygraph/`, `history/vocabulary/` | the same archive for the graph and the vocabulary |
+| `history/licenses/<id>/` | the archived versions of one record, `v1.ttl` up to the version before the current one, and a `changelog.yaml` with one entry per version from 2 upwards |
+| `history/dependencygraph/`, `history/vocabulary/` | the same archive for the eight graphs (`dg_<id>-v<n>.ttl` and a change log each) and the vocabulary |
+| `releases/<data-id>.json` | the manifest of each registered data release: the version and content hash of every record, graph and the vocabulary, written by `scripts/build_release_manifest.py` when a release is cut. None is registered yet |
 | `spdx-mapping.json` | the SPDX identifier lookup table, generated from the records by `scripts/review/build_spdx_mapping.py` |
 | `deprecated/` | superseded files, kept for reference and never loaded |
 
@@ -59,7 +60,9 @@ endings and a final newline.
 When you redistribute this data or build on it, credit it as:
 
 ```
-DALICC License Library, DALICC association, https://dalicc.net, CC BY 4.0
+DALICC License Library, DALICC - Verein zur Förderung der Rechtssicherheit in der
+Datenbewirtschaftung, https://dalicc.net, CC BY 4.0
+(https://creativecommons.org/licenses/by/4.0/)
 ```
 
 The licence is declared inside the data as well: every license record carries

@@ -19,6 +19,7 @@
 
 dalicclib:CAL-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CAL-1.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://cryptographicautonomylicense.com/license-text.html> ;
@@ -43,46 +44,59 @@ dalicclib:CAL-1.0 a odrl:Set ;
         "CAL-1.0",
         "Cryptographic Autonomy License",
         "Cryptographic Autonomy License 1.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://opensource.org/license/CAL-1.0> ;
     dct:title "Cryptographic Autonomy License 1.0"@en ;
     odrl:duty [ a odrl:Duty ;
-            odrl:action cc:ShareAlike ] ;
+            odrl:action cc:ShareAlike ;
+            dalicc:evidence "The Source Code corresponding to the modifications in the Modified Work must be provided to the Recipient either a) under this License, or b) under a Compatible Open Source License." ] ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "You must retain all licensing, authorship, or attribution notices contained in the Source Code (the \"Notices\"), and provide all such Notices to each Recipient, together with a statement acknowledging the use of the Work." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "You must retain all licensing, authorship, or attribution notices contained in the Source Code (the \"Notices\"), and provide all such Notices to each Recipient, together with a statement acknowledging the use of the Work." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ],
+                    odrl:action cc:SourceCode ;
+                    dalicc:evidence "You must retain all licensing, authorship, or attribution notices contained in the Source Code (the \"Notices\"), and provide all such Notices to each Recipient, together with a statement acknowledging the use of the Work." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "You must retain all licensing, authorship, or attribution notices contained in the Source Code (the \"Notices\"), and provide all such Notices to each Recipient, together with a statement acknowledging the use of the Work." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:provideUserData ] ],
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "You must retain all licensing, authorship, or attribution notices contained in the Source Code (the \"Notices\"), and provide all such Notices to each Recipient, together with a statement acknowledging the use of the Work." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "You must retain all licensing, authorship, or attribution notices contained in the Source Code (the \"Notices\"), and provide all such Notices to each Recipient, together with a statement acknowledging the use of the Work." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ],
+                    odrl:action cc:SourceCode ;
+                    dalicc:evidence "You must retain all licensing, authorship, or attribution notices contained in the Source Code (the \"Notices\"), and provide all such Notices to each Recipient, together with a statement acknowledging the use of the Work." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "You must retain all licensing, authorship, or attribution notices contained in the Source Code (the \"Notices\"), and provide all such Notices to each Recipient, together with a statement acknowledging the use of the Work." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "You must retain all licensing, authorship, or attribution notices contained in the Source Code (the \"Notices\"), and provide all such Notices to each Recipient, together with a statement acknowledging the use of the Work." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "You must retain all licensing, authorship, or attribution notices contained in the Source Code (the \"Notices\"), and provide all such Notices to each Recipient, together with a statement acknowledging the use of the Work." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ],
+                    odrl:action cc:SourceCode ;
+                    dalicc:evidence "You must retain all licensing, authorship, or attribution notices contained in the Source Code (the \"Notices\"), and provide all such Notices to each Recipient, together with a statement acknowledging the use of the Work." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "You must retain all licensing, authorship, or attribution notices contained in the Source Code (the \"Notices\"), and provide all such Notices to each Recipient, together with a statement acknowledging the use of the Work." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -98,11 +112,14 @@ dalicclib:CAL-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ],
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 13: Reciprocity has one shape per kind" ] ],
         [ a odrl:Permission ;
             odrl:action dalicc:networkUseTrigger ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ],
+                    odrl:action cc:SourceCode ;
+                    dalicc:evidence "You must retain all licensing, authorship, or attribution notices contained in the Source Code (the \"Notices\"), and provide all such Notices to each Recipient, together with a statement acknowledging the use of the Work." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:provideUserData ] ] ;
     odrl:prohibition [ a odrl:Prohibition ;

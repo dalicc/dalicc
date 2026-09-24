@@ -19,6 +19,7 @@
 
 dalicclib:CPL-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CPL-1.0" ;
     cc:attributionName "IBM" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -35,8 +36,8 @@ dalicclib:CPL-1.0 a odrl:Set ;
         "CPL 1.0",
         "CPL-1.0",
         "Common Public License 1.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "International Business Machines Corporation" ;
     dct:source <https://spdx.org/licenses/CPL-1.0.html> ;
     dct:title "Common Public License 1.0"@en ;
@@ -53,7 +54,8 @@ dalicclib:CPL-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ] ],
+                    odrl:action cc:ShareAlike ;
+                    dalicc:evidence "When the Program is made available in source code form: a) it must be made available under this Agreement; and b) a copy of this Agreement must be included with each copy of the Program." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -67,7 +69,8 @@ dalicclib:CPL-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ],
+                    odrl:action cc:ShareAlike ;
+                    dalicc:evidence "When the Program is made available in source code form: a) it must be made available under this Agreement; and b) a copy of this Agreement must be included with each copy of the Program." ],
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ] ],
         [ a odrl:Permission ;
@@ -79,7 +82,8 @@ dalicclib:CPL-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ],
+                    odrl:action cc:ShareAlike ;
+                    dalicc:evidence "When the Program is made available in source code form: a) it must be made available under this Agreement; and b) a copy of this Agreement must be included with each copy of the Program." ],
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ] ],
         [ a odrl:Permission ;
@@ -91,7 +95,8 @@ dalicclib:CPL-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeLicenseFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:sublicense ],
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, distribute and sublicense the Contribution of such Contributor, if any, and such derivative works, in source code and object code form." ],
         [ a odrl:Permission ;
             odrl:action dalicc:patentGrant ],
         [ a odrl:Permission ;

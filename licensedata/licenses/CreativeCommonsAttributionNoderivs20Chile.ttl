@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionNoderivs20Chile a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Chile ;
     cc:legalcode <https://creativecommons.org/licenses/by-nd/2.0/cl/legalcode> ;
     dalicc:LiabilityLimitation """A MENOS QUE LO EXIJA EXPRESAMENTE LA LEY APLICABLE, EL LICENCIANTE NO SERÁ
@@ -41,6 +42,7 @@ dalicclib:CreativeCommonsAttributionNoderivs20Chile a odrl:Set ;
  PUEDE NO APLICARSE A USTED.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-ND-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "2.0" ;
@@ -58,8 +60,8 @@ dalicclib:CreativeCommonsAttributionNoderivs20Chile a odrl:Set ;
         "CC-BY-ND 2.0 CL",
         "Creative Commons BY-ND 2.0",
         "Creative Commons BY-ND 2.0 CL" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nd/2.0/cl/> ;
     dct:title "Creative Commons Attribution-NoDerivatives 2.0 Chile"@en ;
@@ -82,9 +84,11 @@ dalicclib:CreativeCommonsAttributionNoderivs20Chile a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action odrl:derive ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:ChangeLicense ],
+            odrl:action dalicc:ChangeLicense ;
+            dalicc:evidence "No es posible ofrecer o imponer ninguna condición sobre la Obra que altere o limite las condiciones de esta Licencia o el ejercicio de los derechos de los destinatarios otorgados en este documento." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ] ;
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "No es posible sublicenciar la Obra." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cl.png> ;

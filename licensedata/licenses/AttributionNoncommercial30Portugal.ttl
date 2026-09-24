@@ -19,6 +19,7 @@
 
 dalicclib:AttributionNoncommercial30Portugal a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Portugal ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc/3.0/pt/legalcode> ;
     dalicc:LiabilityLimitation """EXCETO NA EXTENSÃO EXIGIDA PELA LEGISLAÇÃO APLICÁVEL, EM NENHUMA CIRCUNSTÂNCIA O LICENCIANTE SERÁ RESPONSÁVEL PARA COM O UTILIZADOR, COM BASE EM NENHUMA TEORIA JURÍDICA, POR QUAISQUER DANOS, GERAIS OU ESPECIAIS (INCLUINDO DANOS EMERGENTES E LUCROS CESSANTES), INCIDENTAIS OU CONSEQUENCIAIS, PUNITIVOS OU EXEMPLARES, QUE RESULTEM DA PRESENTE LICENÇA OU DA UTILIZAÇÃO DO TRABALHO, AINDA QUE O LICENCIANTE TENHA SIDO AVISADO SOBRE A POSSIBILIDADE DE OCORRÊNCIA DE TAIS DANOS.
@@ -26,6 +27,7 @@ dalicclib:AttributionNoncommercial30Portugal a odrl:Set ;
     dalicc:WarrantyDisclaimer """EXCETO QUANDO EXPRESSAMENTE ACORDADO PELAS PARTES POR ESCRITO EM SENTIDO CONTRÁRIO E NA MEDIDA PERMITIDA PELA LEGISLAÇÃO APLICÁVEL, O LICENCIANTE DISPONIBILIZA O TRABALHO “NO ESTADO EM QUE SE ENCONTRA” (“AS-IS BASIS”), E NÃO FAZ QUAISQUER DECLARAÇÕES OU PRESTA GARANTIAS DE QUALQUER TIPO EM RELAÇÃO AO TRABALHO, SEJAM EXPRESSAS OU IMPLÍCITAS, LEGAIS OU OUTRAS, INCLUINDO, SEM LIMITAÇÃO, QUAISQUER GARANTIAS SOBRE A TITULARIDADE DO TRABALHO, POTENCIALIDADE COMERCIAL, ADEQUAÇÃO A UM FIM ESPECÍFICO, LEGALIDADE, AUSÊNCIA DE DEFEITOS LATENTES OU OUTROS, EXATIDÃO, EXISTÊNCIA OU AUSÊNCIA DE ERROS, SEJAM ELES APARENTES OU OCULTOS. ALGUMAS JURISDIÇÕES NÃO ADMITEM A EXCLUSÃO DE GARANTIAS IMPLÍCITAS, PELO QUE TAL EXCLUSÃO PODERÁ NÃO SER APLICÁVEL AO UTILIZADOR.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -43,8 +45,8 @@ dalicclib:AttributionNoncommercial30Portugal a odrl:Set ;
         "CC-BY-NC 3.0 PT",
         "Creative Commons BY-NC 3.0",
         "Creative Commons BY-NC 3.0 PT" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc/3.0/pt/> ;
     dct:title "Creative Commons Attribution-NonCommercial 3.0 Portugal"@en ;
@@ -85,13 +87,15 @@ dalicclib:AttributionNoncommercial30Portugal a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:suiGenerisDatabaseRights ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action cc:CommercialUse ],
+            odrl:action cc:CommercialUse ;
+            dalicc:evidence "O Utilizador não poderá exercer nenhum dos direitos concedidos na Secção 3 de nenhum modo que tenha como objetivo principal ou que seja direcionado para a obtenção de uma vantagem comercial ou compensação monetária." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:promote ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ] ;
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "O Utilizador não pode sub-licenciar o Trabalho." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset ] ;

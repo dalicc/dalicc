@@ -19,6 +19,7 @@
 
 dalicclib:RPL-1.5 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "RPL-1.5" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://opensource.org/license/RPL-1.5> ;
@@ -49,13 +50,14 @@ dalicclib:RPL-1.5 a odrl:Set ;
         "RPL-1.5",
         "Reciprocal Public License",
         "Reciprocal Public License 1.5" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Technical Pursuit Inc." ;
     dct:source <https://opensource.org/license/RPL-1.5> ;
     dct:title "Reciprocal Public License 1.5"@en ;
     odrl:duty [ a odrl:Duty ;
-            odrl:action cc:ShareAlike ] ;
+            odrl:action cc:ShareAlike ;
+            dalicc:evidence "In consideration of, and as an express condition to, the licenses granted to You under this License You hereby agree that any Modifications, Derivative Works, or Required Components (collectively Extensions) that You create or to which You contribute are governed by the terms of this License including, without limitation, Section 4." ] ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
         [ a odrl:Permission ;
@@ -69,7 +71,8 @@ dalicclib:RPL-1.5 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:includeNoticeFile ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "You must duplicate any notice contained in EXHIBIT A (the “License Notice”) in each file of the Source Code of any copy You distribute of the Licensed Software and Your Extensions." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:exportControlNotice ] ],
         [ a odrl:Permission ;
@@ -85,7 +88,8 @@ dalicclib:RPL-1.5 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:includeNoticeFile ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "You must duplicate any notice contained in EXHIBIT A (the “License Notice”) in each file of the Source Code of any copy You distribute of the Licensed Software and Your Extensions." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:rename ] ],
         [ a odrl:Permission ;
@@ -101,7 +105,8 @@ dalicclib:RPL-1.5 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:includeNoticeFile ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "You must duplicate any notice contained in EXHIBIT A (the “License Notice”) in each file of the Source Code of any copy You distribute of the Licensed Software and Your Extensions." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:rename ] ],
         [ a odrl:Permission ;
@@ -121,7 +126,8 @@ dalicclib:RPL-1.5 a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:SourceCode ] ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "No right is granted to the trademarks of Licensor or any Contributor even if such marks are included in the Licensed Software." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ],
         [ a odrl:Prohibition ;

@@ -19,6 +19,7 @@
 
 dalicclib:APSL-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "APSL-1.0" ;
     cc:attributionName "Apple Computer, Inc." ;
     cc:jurisdiction dalicc:worldwide ;
@@ -39,8 +40,8 @@ dalicclib:APSL-1.0 a odrl:Set ;
     dct:alternative "APSL 1.0",
         "APSL-1.0",
         "Apple Public Source License 1.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Apple Computer, Inc." ;
     dct:source <https://spdx.org/licenses/APSL-1.0.html> ;
     dct:title "Apple Public Source License 1.0"@en ;
@@ -55,9 +56,11 @@ dalicclib:APSL-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ],
+                    odrl:action cc:SourceCode ;
+                    dalicc:evidence "make all Your Deployed Modifications publicly available in Source Code form via electronic distribution (e.g. download from a web site) under the terms of this License and subject to the license grants set forth in Section 3 below, and any additional terms You may choose to offer under Section 6." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ] ],
+                    odrl:action cc:ShareAlike ;
+                    dalicc:evidence "make all Your Deployed Modifications publicly available in Source Code form via electronic distribution (e.g. download from a web site) under the terms of this License and subject to the license grants set forth in Section 3 below, and any additional terms You may choose to offer under Section 6." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -69,11 +72,13 @@ dalicclib:APSL-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ],
+                    odrl:action cc:SourceCode ;
+                    dalicc:evidence "make all Your Deployed Modifications publicly available in Source Code form via electronic distribution (e.g. download from a web site) under the terms of this License and subject to the license grants set forth in Section 3 below, and any additional terms You may choose to offer under Section 6." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ] ],
+                    odrl:action cc:ShareAlike ;
+                    dalicc:evidence "make all Your Deployed Modifications publicly available in Source Code form via electronic distribution (e.g. download from a web site) under the terms of this License and subject to the license grants set forth in Section 3 below, and any additional terms You may choose to offer under Section 6." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
@@ -81,11 +86,13 @@ dalicclib:APSL-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ],
+                    odrl:action cc:SourceCode ;
+                    dalicc:evidence "make all Your Deployed Modifications publicly available in Source Code form via electronic distribution (e.g. download from a web site) under the terms of this License and subject to the license grants set forth in Section 3 below, and any additional terms You may choose to offer under Section 6." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ] ],
+                    odrl:action cc:ShareAlike ;
+                    dalicc:evidence "make all Your Deployed Modifications publicly available in Source Code form via electronic distribution (e.g. download from a web site) under the terms of this License and subject to the license grants set forth in Section 3 below, and any additional terms You may choose to offer under Section 6." ] ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
@@ -97,14 +104,18 @@ dalicclib:APSL-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:patentGrant ],
         [ a odrl:Permission ;
-            odrl:action dalicc:ChangeLicense ],
+            odrl:action dalicc:ChangeLicense ;
+            dalicc:evidence "include a copy of this License with every copy of Source Code of Covered Code and documentation You distribute, and You may not offer or impose any terms on such Source Code that alter or restrict this License or the recipients' rights hereunder, except as permitted under Section 6; and" ],
         [ a odrl:Permission ;
             odrl:action dalicc:networkUseTrigger ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ] ] ;
+                    odrl:action cc:SourceCode ;
+                    dalicc:evidence "make all Your Deployed Modifications publicly available in Source Code form via electronic distribution (e.g. download from a web site) under the terms of this License and subject to the license grants set forth in Section 3 below, and any additional terms You may choose to offer under Section 6." ] ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "This License does not grant any rights to use the trademarks or trade names \"Apple\", \"Apple Computer\", \"Mac OS X\", \"Mac OS X Server\" or any other trademarks or trade names belonging to Apple (collectively \"Apple Marks\") and no Apple Marks may be used to endorse or promote products derived from the Original Code" ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:patentRetaliationTermination ] ;
+            odrl:action dalicc:patentRetaliationTermination ;
+            dalicc:evidence "automatically without notice from Apple if You, at any time during the term of this License, commence an action for patent infringement against Apple." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

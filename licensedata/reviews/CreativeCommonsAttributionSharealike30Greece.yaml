@@ -25,8 +25,7 @@ findings:
   severity: info
   field: spdx:licenseId
   description: 'The SPDX licence list defines no identifier for this port. The id that the legal code
-    URL implies, CC-BY-SA-3.0-GR, is not on the list, so none was invented. Only four records of this
-    batch can take an SPDX identifier: CC-BY-3.0-AU, CC-BY-3.0-AT, CC-BY-3.0-US and CC-BY-SA-3.0-AT.'
+    URL implies, CC-BY-SA-3.0-GR, is not on the list, so none was invented. Only four records of this review group can take an SPDX identifier: CC-BY-3.0-AU, CC-BY-3.0-AT, CC-BY-3.0-US and CC-BY-SA-3.0-AT.'
   action: none
 - rubric: 2
   severity: minor
@@ -70,9 +69,10 @@ findings:
     rendering: "You may not grant a licence for the further exploitation of the licensed subject matter."
     The vocabulary already has dalicc:sublicense, but no record in the library uses it and its skos:note
     says so, and the same sentence stands in every Creative Commons 2.0 and 3.0 record, so adding it to
-    this batch alone would split the compatibility behaviour of one family. Proposed as one library wide
+    this review group alone would split the compatibility behaviour of one family. Proposed as one library wide
     correction, together with an update of the vocabulary note.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -225,6 +225,14 @@ findings:
   action: applied
   change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
     \ ] ;"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Αυτή η Άδεια και τα παρεχόμενα μ’ αυτήν δικαιώματα
+    καταγγέλλονται αυτόματα με την παράβαση εκ μέρους Σας των όρων της Άδειας αυτής." The licence ends
+    automatically on a breach and this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach
+    is true and no dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Greece (GR)'
 port_of: CC-BY-SA-4.0
 variant_kind: jurisdiction-port

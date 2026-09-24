@@ -1,13 +1,19 @@
 id: EPL-2.0
 title: Eclipse Public License 2.0
-current_version: 4
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 2 clause texts, 1 identification detail and 2 permissions,
     changed 3 permissions, recorded the relation to the record this one was adapted from and recorded
-    the review state.
+    the review state. Later changes brought it in line with its family and its text in the verification
+    of 2026-09-15, recorded which sentence of the text each statement rests on and named the license
+    the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
   changes:
   - action: added
     statement: dalicc:LiabilityLimitation "EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO
@@ -86,17 +92,6 @@ entries:
     statement: spdx:licenseId "EPL-2.0"
     reason: The record id is the SPDX list id but the field was absent.
     source: review-finding 1/spdx:licenseId
-- version: 3
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Batch 4 finding 6.2 and consolidation decision 4: the record carried no prohibition although
-    section 7 says ''If Recipient institutes patent litigation against any entity ... alleging that
-    the Program itself ... infringes such Recipient''s patent(s), then such Recipient''s rights granted
-    under Section 2(b) shall terminate'', it modelled no reciprocity although section 3.1 requires
-    the Program in source form to be ''made available under this Agreement'', its dalicc:additionalClauses
-    began with the paraphrase ''Compliant License according to 1. DEFINITIONS:'' instead of the quotation,
-    and dct:publisher was ''N.N.''.'
-  changes:
   - action: changed
     statement: dalicc:additionalClauses "“Secondary License” means either the GNU General Public License,
       Version 2.0, or any later versions of that license, including any exceptions or additional permissions
@@ -105,67 +100,159 @@ entries:
       License” means either the GNU General Public License, Version 2.0, or any later versions of
       that license, including any exceptions or additional permissions as identified by the initial
       Contributor."'
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      carried no prohibition although section 7 says ''If Recipient institutes patent litigation against
+      any entity ... alleging that the Program itself ... infringes such Recipient''s patent(s), then
+      such Recipient''s rights granted under Section 2(b) shall terminate'', it modelled no reciprocity
+      although section 3.1 requires the Program in source form to be ''made available under this Agreement'',
+      its dalicc:additionalClauses began with the paraphrase ''Compliant License according to 1. DEFINITIONS:''
+      instead of the quotation, and dct:publisher was ''N.N.''.'
     source: manual
   - action: changed
     statement: dct:publisher "Eclipse Foundation"
     previous: dct:publisher "N.N."
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      carried no prohibition although section 7 says ''If Recipient institutes patent litigation against
+      any entity ... alleging that the Program itself ... infringes such Recipient''s patent(s), then
+      such Recipient''s rights granted under Section 2(b) shall terminate'', it modelled no reciprocity
+      although section 3.1 requires the Program in source form to be ''made available under this Agreement'',
+      its dalicc:additionalClauses began with the paraphrase ''Compliant License according to 1. DEFINITIONS:''
+      instead of the quotation, and dct:publisher was ''N.N.''.'
     source: manual
   - action: changed
     statement: permission dalicc:ChangeLicense
     previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      carried no prohibition although section 7 says ''If Recipient institutes patent litigation against
+      any entity ... alleging that the Program itself ... infringes such Recipient''s patent(s), then
+      such Recipient''s rights granted under Section 2(b) shall terminate'', it modelled no reciprocity
+      although section 3.1 requires the Program in source form to be ''made available under this Agreement'',
+      its dalicc:additionalClauses began with the paraphrase ''Compliant License according to 1. DEFINITIONS:''
+      instead of the quotation, and dct:publisher was ''N.N.''.'
     source: manual
   - action: added
     statement: permission dalicc:chargeDistributionFee
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      carried no prohibition although section 7 says ''If Recipient institutes patent litigation against
+      any entity ... alleging that the Program itself ... infringes such Recipient''s patent(s), then
+      such Recipient''s rights granted under Section 2(b) shall terminate'', it modelled no reciprocity
+      although section 3.1 requires the Program in source form to be ''made available under this Agreement'',
+      its dalicc:additionalClauses began with the paraphrase ''Compliant License according to 1. DEFINITIONS:''
+      instead of the quotation, and dct:publisher was ''N.N.''.'
     source: manual
   - action: added
     statement: permission dalicc:patentGrant
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      carried no prohibition although section 7 says ''If Recipient institutes patent litigation against
+      any entity ... alleging that the Program itself ... infringes such Recipient''s patent(s), then
+      such Recipient''s rights granted under Section 2(b) shall terminate'', it modelled no reciprocity
+      although section 3.1 requires the Program in source form to be ''made available under this Agreement'',
+      its dalicc:additionalClauses began with the paraphrase ''Compliant License according to 1. DEFINITIONS:''
+      instead of the quotation, and dct:publisher was ''N.N.''.'
     source: manual
   - action: changed
     statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
       dalicc:modificationNotice]
     previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      carried no prohibition although section 7 says ''If Recipient institutes patent litigation against
+      any entity ... alleging that the Program itself ... infringes such Recipient''s patent(s), then
+      such Recipient''s rights granted under Section 2(b) shall terminate'', it modelled no reciprocity
+      although section 3.1 requires the Program in source form to be ''made available under this Agreement'',
+      its dalicc:additionalClauses began with the paraphrase ''Compliant License according to 1. DEFINITIONS:''
+      instead of the quotation, and dct:publisher was ''N.N.''.'
     source: manual
   - action: changed
     statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
     previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      carried no prohibition although section 7 says ''If Recipient institutes patent litigation against
+      any entity ... alleging that the Program itself ... infringes such Recipient''s patent(s), then
+      such Recipient''s rights granted under Section 2(b) shall terminate'', it modelled no reciprocity
+      although section 3.1 requires the Program in source form to be ''made available under this Agreement'',
+      its dalicc:additionalClauses began with the paraphrase ''Compliant License according to 1. DEFINITIONS:''
+      instead of the quotation, and dct:publisher was ''N.N.''.'
     source: manual
   - action: changed
     statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
       dalicc:modificationNotice]
     previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      carried no prohibition although section 7 says ''If Recipient institutes patent litigation against
+      any entity ... alleging that the Program itself ... infringes such Recipient''s patent(s), then
+      such Recipient''s rights granted under Section 2(b) shall terminate'', it modelled no reciprocity
+      although section 3.1 requires the Program in source form to be ''made available under this Agreement'',
+      its dalicc:additionalClauses began with the paraphrase ''Compliant License according to 1. DEFINITIONS:''
+      instead of the quotation, and dct:publisher was ''N.N.''.'
     source: manual
   - action: added
     statement: prohibition dalicc:patentRetaliationTermination
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      carried no prohibition although section 7 says ''If Recipient institutes patent litigation against
+      any entity ... alleging that the Program itself ... infringes such Recipient''s patent(s), then
+      such Recipient''s rights granted under Section 2(b) shall terminate'', it modelled no reciprocity
+      although section 3.1 requires the Program in source form to be ''made available under this Agreement'',
+      its dalicc:additionalClauses began with the paraphrase ''Compliant License according to 1. DEFINITIONS:''
+      instead of the quotation, and dct:publisher was ''N.N.''.'
     source: manual
-- version: 4
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Weak-copyleft family alignment of 2026-09-15: section 2(a) grants the right to ''reproduce,
-    prepare Derivative Works of, publicly display, publicly perform, Distribute and sublicense the
-    Contribution'', which the family''s text-modelled records (CPL-1.0, IPL-1.0) write as dalicc:sublicense;
-    the record used the older spelling odrl:grantUse, which the dependency graph relates to it with
-    owl:sameAs, so the family now states the act once and in the same way. Section 3.2 lets a distributor
-    ''Distribute the Program under a license different than this Agreement'', under which a fee may
-    be charged, which is the licence-fee permission its three siblings carry.'
-  changes:
   - action: added
     statement: permission dalicc:chargeLicenseFee
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Weak-copyleft family alignment of 2026-09-15: section 2(a) grants the right to ''reproduce,
+      prepare Derivative Works of, publicly display, publicly perform, Distribute and sublicense the
+      Contribution'', which the family''s text-modelled records (CPL-1.0, IPL-1.0) write as dalicc:sublicense;
+      the record used the older spelling odrl:grantUse, which the dependency graph relates to it with
+      owl:sameAs, so the family now states the act once and in the same way. Section 3.2 lets a distributor
+      ''Distribute the Program under a license different than this Agreement'', under which a fee
+      may be charged, which is the licence-fee permission its three siblings carry.'
     source: manual
   - action: added
     statement: permission dalicc:sublicense
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Weak-copyleft family alignment of 2026-09-15: section 2(a) grants the right to ''reproduce,
+      prepare Derivative Works of, publicly display, publicly perform, Distribute and sublicense the
+      Contribution'', which the family''s text-modelled records (CPL-1.0, IPL-1.0) write as dalicc:sublicense;
+      the record used the older spelling odrl:grantUse, which the dependency graph relates to it with
+      owl:sameAs, so the family now states the act once and in the same way. Section 3.2 lets a distributor
+      ''Distribute the Program under a license different than this Agreement'', under which a fee
+      may be charged, which is the licence-fee permission its three siblings carry.'
     source: manual
   - action: removed
     statement: permission odrl:grantUse
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Weak-copyleft family alignment of 2026-09-15: section 2(a) grants the right to ''reproduce,
+      prepare Derivative Works of, publicly display, publicly perform, Distribute and sublicense the
+      Contribution'', which the family''s text-modelled records (CPL-1.0, IPL-1.0) write as dalicc:sublicense;
+      the record used the older spelling odrl:grantUse, which the dependency graph relates to it with
+      owl:sameAs, so the family now states the act once and in the same way. Section 3.2 lets a distributor
+      ''Distribute the Program under a license different than this Agreement'', under which a fee
+      may be charged, which is the licence-fee permission its three siblings carry.'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:modificationNotice]
+    reason: Its duty cc:SourceCode quotes "the Program must also be made available as Source Code,
+      in accordance with section 3.2, and the Contributor must accompany the Program with a statement
+      that the Source Code for the Program is available under this Agreement"
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    reason: Its duty cc:SourceCode quotes "the Program must also be made available as Source Code,
+      in accordance with section 3.2, and the Contributor must accompany the Program with a statement
+      that the Source Code for the Program is available under this Agreement"
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:modificationNotice]
+    reason: Its duty cc:SourceCode quotes "the Program must also be made available as Source Code,
+      in accordance with section 3.2, and the Contributor must accompany the Program with a statement
+      that the Source Code for the Program is available under this Agreement"
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

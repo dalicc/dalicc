@@ -19,6 +19,7 @@
 
 dalicclib:Vim a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "Vim" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://vimdoc.sourceforge.net/htmldoc/uganda.html> ;
@@ -29,8 +30,8 @@ dalicclib:Vim a odrl:Set ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/Vim/versions> ;
     dct:alternative "Vim",
         "Vim License" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://spdx.org/licenses/Vim.html> ;
     dct:title "Vim License"@en ;
     odrl:permission [ a odrl:Permission ;
@@ -46,7 +47,8 @@ dalicclib:Vim a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "A message must be added, at least in the output of the \":version\" command and in the intro screen, such that the user of the modified Vim is able to see that it was modified." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:contributionGrantBack ] ],
         [ a odrl:Permission ;
@@ -56,7 +58,8 @@ dalicclib:Vim a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "A message must be added, at least in the output of the \":version\" command and in the intro screen, such that the user of the modified Vim is able to see that it was modified." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:contributionGrantBack ] ],
         [ a odrl:Permission ;
@@ -74,6 +77,7 @@ dalicclib:Vim a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ] ;
+            dalicc:evidence "IV) It is not allowed to remove this license from the distribution of the Vim sources, parts of it or from a modified version." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

@@ -52,7 +52,7 @@ findings:
   severity: minor
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9 and 10: the record was corrected against
-    its new siblings and versioned. Family rule 14 of scripts/review/family_rules.py: the warranty and
+    its new siblings and versioned. Library convention 14: the warranty and
     liability literals carried a padding space inside their quotation marks.'
   action: applied
 family: Other OSI approved licenses (corporate, academic, weak copyleft)

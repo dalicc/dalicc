@@ -19,6 +19,7 @@
 
 dalicclib:AttributionNoncommercial20Croatia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Croatia ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc/2.0/hr/legalcode> ;
     dalicc:LiabilityLimitation """OSIM JAMSTAVA IZ ČLANKA 5., DAVATELJ LICENCE ĆE SNOSITI ODGOVORNOST SAMO ZA ŠTETE UZROKOVANE NAMJERNO ILI IZ KRAJNJE NEPAŽNJE. 
@@ -26,6 +27,7 @@ dalicclib:AttributionNoncommercial20Croatia a odrl:Set ;
     dalicc:WarrantyDisclaimer """OSIM AKO STRANKE NISU DRUGAČIJE NAPISMENO UGOVORILE ILI JE ODREĐENO MJERODAVNIM PRAVOM, DAVATELJ LICENCE NUDI DJELO "KAKVO JEST", BEZ JAMSTAVA BILO KOJE VRSTE VEZANIH UZ DJELO.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "2.0" ;
@@ -44,7 +46,7 @@ dalicclib:AttributionNoncommercial20Croatia a odrl:Set ;
         "Creative Commons BY-NC 2.0",
         "Creative Commons BY-NC 2.0 HR" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc/2.0/hr/> ;
     dct:title "Creative Commons Attribution-NonCommercial 2.0 Croatia"@en ;

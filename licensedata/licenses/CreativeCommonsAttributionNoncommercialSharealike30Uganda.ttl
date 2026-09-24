@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Uganda a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Uganda ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc-sa/3.0/ug/legalcode> ;
     dalicc:LiabilityLimitation """EXCEPT TO THE EXTENT REQUIRED BY THE APPLICABLE LAW, IN
@@ -33,6 +34,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Uganda a odrl:Set ;
  APPLICABLE LAW, THE LICENSOR OFFERS THE WORK AS-IS.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-SA-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -51,7 +53,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Uganda a odrl:Set ;
         "Creative Commons BY-NC-SA 3.0",
         "Creative Commons BY-NC-SA 3.0 UG" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc-sa/3.0/ug/> ;
     dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Uganda"@en ;
@@ -92,13 +94,15 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Uganda a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action cc:CommercialUse ],
+            odrl:action cc:CommercialUse ;
+            dalicc:evidence "The User may not exercise any of the rights granted to them in Section 3 above in any manner that is primarily intended for or directed toward commercial advantage or private monetary compensation." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:promote ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ] ;
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "The User may not sublicense the Work." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ug.png> ;

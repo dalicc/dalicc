@@ -19,6 +19,7 @@
 
 dalicclib:BSD-ask-to-endorse a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "BSD-ask-to-endorse" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://github.com/sudo-project/sudo/blob/c1307ea9ff340ce0538779f8e456501461fc44b7/plugins/sudoers/redblack.c#L24-L43> ;
@@ -31,8 +32,8 @@ dalicclib:BSD-ask-to-endorse a odrl:Set ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/BSD-ask-to-endorse/versions> ;
     dct:alternative "BSD - ask to endorse",
         "BSD-ask-to-endorse" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://spdx.org/licenses/BSD-ask-to-endorse.html> ;
     dct:title "BSD - ask to endorse"@en ;
     odrl:permission [ a odrl:Permission ;
@@ -56,8 +57,11 @@ dalicclib:BSD-ask-to-endorse a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:ChangeLicense ] ;
+            odrl:action dalicc:ChangeLicense ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Redistribution and use in source and binary forms, with or without modification, are permitted provided that neither the name of Emin Martinian nor the names of any contributors are be used to endorse or promote products derived from this software without specific prior written permission." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

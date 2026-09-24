@@ -19,6 +19,7 @@
 
 dalicclib:GFDL-1.1-or-later a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "GFDL-1.1-or-later" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.gnu.org/licenses/old-licenses/fdl-1.1.html> ;
@@ -45,15 +46,17 @@ dalicclib:GFDL-1.1-or-later a odrl:Set ;
         "GFDL-1.1+",
         "GFDL-1.1-or-later",
         "GNU FDL 1.1 or later" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Free Software Foundation" ;
     dct:source <https://www.gnu.org/licenses/old-licenses/fdl-1.1.html> ;
     dct:title "GNU Free Documentation License v1.1 or later"@en ;
     odrl:duty [ a odrl:Duty ;
-            odrl:action cc:ShareAlike ] ;
+            odrl:action cc:ShareAlike ;
+            dalicc:evidence "You may copy and distribute a Modified Version of the Document under the conditions of sections 2 and 3 above, provided that you release the Modified Version under precisely this License, with the Modified Version filling the role of the Document, thus licensing distribution and modification of the Modified Version to whoever possesses a copy of it." ] ;
     odrl:permission [ a odrl:Permission ;
-            odrl:action dalicc:chargeDistributionFee ],
+            odrl:action dalicc:chargeDistributionFee ;
+            dalicc:evidence "However, you may accept compensation in exchange for copies." ],
         [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
         [ a odrl:Permission ;
@@ -61,9 +64,11 @@ dalicclib:GFDL-1.1-or-later a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "You may copy and distribute the Document in any medium, either commercially or noncommercially, provided that this License, the copyright notices, and the license notice saying this License applies to the Document are reproduced in all copies, and that you add no other conditions whatsoever to those of this License." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ] ],
+                    odrl:action cc:SourceCode ] ;
+            dalicc:evidence "Translation is considered a kind of modification, so you may distribute translations of the Document under the terms of section 4." ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -73,7 +78,8 @@ dalicclib:GFDL-1.1-or-later a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "You may copy and distribute the Document in any medium, either commercially or noncommercially, provided that this License, the copyright notices, and the license notice saying this License applies to the Document are reproduced in all copies, and that you add no other conditions whatsoever to those of this License." ],
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
@@ -87,7 +93,8 @@ dalicclib:GFDL-1.1-or-later a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "You may copy and distribute the Document in any medium, either commercially or noncommercially, provided that this License, the copyright notices, and the license notice saying this License applies to the Document are reproduced in all copies, and that you add no other conditions whatsoever to those of this License." ],
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
@@ -101,11 +108,14 @@ dalicclib:GFDL-1.1-or-later a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:applyTechnicalProtectionMeasures ],
+            odrl:action dalicc:applyTechnicalProtectionMeasures ;
+            dalicc:evidence "You may not use technical measures to obstruct or control the reading or further copying of the copies you make or distribute." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "M. Delete any section entitled \"Endorsements\"." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ] ;
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "You may not copy, modify, sublicense, or distribute the Document except as expressly provided for under this License." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Software ] .

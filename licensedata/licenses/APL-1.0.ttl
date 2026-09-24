@@ -19,6 +19,7 @@
 
 dalicclib:APL-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "APL-1.0" ;
     cc:attributionName "- not specified -" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -29,8 +30,8 @@ dalicclib:APL-1.0 a odrl:Set ;
     dalicc:reviewedOn "2026-09-15"^^xsd:date ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/APL-1.0/versions> ;
     dct:alternative "APL-1.0" ;
-    dct:hasVersion "4" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "- not specified -" ;
     dct:source osl:APL-1.0 ;
     dct:title "Adaptive Public License 1.0" ;

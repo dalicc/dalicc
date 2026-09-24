@@ -19,6 +19,7 @@
 
 dalicclib:WTFPL a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "WTFPL" ;
     cc:attributionName "Sam Hocevar" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -28,8 +29,8 @@ dalicclib:WTFPL a odrl:Set ;
     dalicc:reviewedOn "2026-09-15"^^xsd:date ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/WTFPL/versions> ;
     dct:alternative "Do What the Fuck You Want to Public License" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <http://www.wtfpl.net/> ;
     dct:title "WTFPL" ;
     odrl:permission [ a odrl:Permission ;
@@ -51,7 +52,9 @@ dalicclib:WTFPL a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
-            odrl:action dalicc:ChangeLicense ],
+            odrl:action dalicc:ChangeLicense ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ],
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;

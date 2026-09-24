@@ -19,6 +19,7 @@
 
 dalicclib:AFL-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "AFL-2.0" ;
     cc:attributionName "Lawrence E. Rosen" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -35,8 +36,8 @@ dalicclib:AFL-2.0 a odrl:Set ;
     dct:alternative "AFL 2.0",
         "AFL-2.0",
         "Academic Free License v2.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Lawrence Rosen" ;
     dct:source <https://spdx.org/licenses/AFL-2.0.html> ;
     dct:title "Academic Free License v2.0"@en ;
@@ -83,11 +84,13 @@ dalicclib:AFL-2.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeLicenseFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:sublicense ],
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "Licensor hereby grants You a world-wide, royalty-free, non-exclusive, perpetual, sublicenseable license to do the following: a) to reproduce the Original Work in copies;" ],
         [ a odrl:Permission ;
             odrl:action dalicc:patentGrant ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Neither the names of Licensor, nor the names of any contributors to the Original Work, nor any of their trademarks or service marks, may be used to endorse or promote products derived from this Original Work without express prior written permission of the Licensor." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ] ;
     odrl:target [ a odrl:AssetCollection ;

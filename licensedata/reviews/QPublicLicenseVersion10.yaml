@@ -47,7 +47,7 @@ findings:
   description: 'cc:ShareAlike is modelled as a permission. Clause 4(c) makes it a condition: "You must
     ensure that all modifications included in the machine-executable forms are available under the terms
     of this license." It should be a license-wide duty. Not applied together with the commercial-use finding,
-    because the two decide the compatibility profile of the record jointly and belong in one owner decision.'
+    because the two decide the compatibility profile of the record jointly and belong in a decision of the association.'
   action: proposed
   change: |
     # remove

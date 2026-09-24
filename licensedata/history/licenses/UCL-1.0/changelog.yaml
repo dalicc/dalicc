@@ -1,0 +1,65 @@
+id: UCL-1.0
+title: Upstream Compatibility License v1.0
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: duty cc:ShareAlike
+    previous: duty cc:ShareAlike
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "to distribute
+      or communicate copies of the Original Work and Derivative Works to the public, with the proviso
+      that copies of Original Work You distribute or communicate shall be licensed under this Upstream
+      Compatibility License and all Derivative Work You distribute or communicate shall be licensed
+      under both this Upstream Compatibility License and the Apache License 2.0 or later;"'
+    source: manual
+  - action: changed
+    statement: permission dalicc:sublicense
+    previous: permission dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Licensor grants
+      You a worldwide, royalty-free, non-exclusive, sublicensable license, for the duration of the
+      copyright, to do the following:"'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:compliantLicense,
+      dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:compliantLicense,
+      dalicc:modificationNotice]
+    reason: Its duty dalicc:compliantLicense quotes "to distribute or communicate copies of the Original
+      Work and Derivative Works to the public, with the proviso that copies of Original Work You distribute
+      or communicate shall be licensed under this Upstream Compatibility License and all Derivative
+      Work You distribute or communicate shall be licensed under both this Upstream Compatibility
+      License and the Apache License 2.0 or later;"
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:compliantLicense,
+      dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:compliantLicense,
+      dalicc:modificationNotice]
+    reason: Its duty dalicc:compliantLicense quotes "to distribute or communicate copies of the Original
+      Work and Derivative Works to the public, with the proviso that copies of Original Work You distribute
+      or communicate shall be licensed under this Upstream Compatibility License and all Derivative
+      Work You distribute or communicate shall be licensed under both this Upstream Compatibility
+      License and the Apache License 2.0 or later;"
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Neither the names
+      of Licensor, nor the names of any contributors to the Original Work, nor any of their trademarks
+      or service marks, may be used to endorse or promote products derived from this Original Work
+      without express prior permission of the Licensor."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

@@ -1,0 +1,99 @@
+# Title: The machine-readable representation of "Apache License, Version 2.0 with LLVM Exception"@en in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/Apache-2.0-with-LLVM-exception
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:Apache-2.0-with-LLVM-exception a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "Apache-2.0 WITH LLVM-exception" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <http://www.apache.org/licenses/LICENSE-2.0> ;
+    dalicc:LiabilityLimitation "In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages." ;
+    dalicc:WarrantyDisclaimer "Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License." ;
+    dalicc:WarrantyOrLiabilityAcceptance "While redistributing the Work or Derivative Works thereof, You may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability." ;
+    dalicc:additionalClauses "---- LLVM Exceptions to the Apache 2.0 License ---- As an exception, if, as a result of your compiling your source code, portions of this Software are embedded into an Object form of such source code, you may redistribute such embedded portions in such Object form without complying with the conditions of Sections 4(a), 4(b) and 4(d) of the License. In addition, if you combine or link compiled forms of this Software with software that is licensed under the GPLv2 (\"Combined Software\") and if a court of competent jurisdiction determines that the patent provision (Section 3), the indemnity provision (Section 9) or other Section of the License conflicts with the conditions of the GPLv2, you may retroactively and prospectively choose to deem waived or otherwise exclude such Section(s) of the License, but only in their entirety and only with respect to the Combined Software." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:reciprocityScope "the Software, not portions of it embedded into an Object form by compiling your source code" ;
+    dalicc:variantKind "exception" ;
+    dalicc:variantOf dalicclib:Apache-2.0 ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-22"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/Apache-2.0-with-LLVM-exception/versions> ;
+    dct:alternative "Apache 2.0 with LLVM exception",
+        "Apache License 2.0 with LLVM Exception",
+        "Apache-2.0 WITH LLVM-exception",
+        "Apache-2.0-with-LLVM-exception",
+        "LLVM Exception" ;
+    dct:hasVersion "1" ;
+    dct:modified "2026-09-22"^^xsd:date ;
+    dct:publisher "The Apache Software Foundation" ;
+    dct:source <https://spdx.org/licenses/LLVM-exception.html> ;
+    dct:title "Apache License, Version 2.0 with LLVM Exception"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:grantUse ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ChangeLicense ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action dalicc:compliantLicense ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:patentGrant ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:exceptedCombination ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:patentRetaliationTermination ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset,
+                dcmitype:Software ] .

@@ -1,13 +1,19 @@
 id: CreativeCommonsAttributionSharealike20Japan
 title: Creative Commons Attribution-ShareAlike 2.0 Japan
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 clause text, 1 identification detail and 1 prohibition,
     changed 1 clause text and 4 alternative titles, recorded the relation to the record this one was
-    adapted from and recorded the review state.
+    adapted from and recorded the review state. Later changes left endorsement to the default rule
+    of the core dependency graph, recorded when the license ends on a breach and named the license
+    the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
   changes:
   - action: changed
     statement: 'dalicc:LiabilityLimitation "この利用許諾又はこの利用許諾に基づく本作品の利用から発生する、いかなる損害（許諾者が、本作品にかかる著作権、著作隣接権、著作者人格権、実演家人格権、商標権、パブリシティ権、不正競争防止法その他関連法規上保護される利益を有する者からの許諾を得ることなく本作品の利用許諾を行ったことにより発生する損害、プライバシー侵害又は名誉毀損から発生する損害等の通常損害、及び特別損害を含むが、これに限らない。）についても、許諾者に故意又は重大な過失がある場合を除き、許諾者がそのような損害発生の可能性を知らされたか否かを問わず、許諾者は、あなたに対し、これを賠償する責任を負わない。
@@ -19,9 +25,9 @@ entries:
     reason: 'The Japanese port has no separate disclaimer section: Article 6 is headed as the limitation
       of liability and its first paragraph is the warranty disclaimer, its second the limitation of
       liability. The record carried both paragraphs in dalicc:LiabilityLimitation and had no dalicc:WarrantyDisclaimer
-      at all, the only records of the batch without one. The first paragraph was moved into dalicc:WarrantyDisclaimer
-      and the liability field now holds the second paragraph, both quoted verbatim from the Japanese
-      text.'
+      at all, the only records of the review group without one. The first paragraph was moved into
+      dalicc:WarrantyDisclaimer and the liability field now holds the second paragraph, both quoted
+      verbatim from the Japanese text.'
     source: review-finding 6/dalicc:WarrantyDisclaimer
   - action: added
     statement: 'dalicc:WarrantyDisclaimer "この利用許諾の両当事者が書面にて別途合意しない限り、許諾者は本作品を現状のまま提供するものとし、明示・黙示を問わず、本作品に関していかなる保証（特定の利用目的への適合性、第三者の権利の非侵害、欠陥の不存在を含むが、これに限られない。）もしない。
@@ -30,9 +36,9 @@ entries:
     reason: 'The Japanese port has no separate disclaimer section: Article 6 is headed as the limitation
       of liability and its first paragraph is the warranty disclaimer, its second the limitation of
       liability. The record carried both paragraphs in dalicc:LiabilityLimitation and had no dalicc:WarrantyDisclaimer
-      at all, the only records of the batch without one. The first paragraph was moved into dalicc:WarrantyDisclaimer
-      and the liability field now holds the second paragraph, both quoted verbatim from the Japanese
-      text.'
+      at all, the only records of the review group without one. The first paragraph was moved into
+      dalicc:WarrantyDisclaimer and the liability field now holds the second paragraph, both quoted
+      verbatim from the Japanese text.'
     source: review-finding 6/dalicc:WarrantyDisclaimer
   - action: added
     statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0
@@ -91,13 +97,18 @@ entries:
       Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
       as many words.'
     source: consolidation-decision 1
-- version: 3
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
-    now supplies it.
-  changes:
   - action: removed
     statement: prohibition dalicc:promote
-    reason: Edited by hand; see the summary of this entry.
+    reason: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
+      now supplies it.
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'The termination clause of this port reads: "この利用許諾は、あなたがこの利用許諾の条項に違反すると自動的に終了する。"'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

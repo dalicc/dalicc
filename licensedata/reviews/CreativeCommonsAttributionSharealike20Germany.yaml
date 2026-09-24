@@ -25,7 +25,7 @@ findings:
   field: spdx:licenseId
   description: SPDX has no identifier for this port. The legal-code URL implies CC-BY-SA-2.0-DE, which
     the SPDX licence list does not define, so no identifier was invented. Of the thirty six records in
-    this batch only the German NonCommercial-ShareAlike port has an SPDX identifier.
+    this review group only the German NonCommercial-ShareAlike port has an SPDX identifier.
   action: none
 - rubric: 2
   severity: minor
@@ -43,8 +43,8 @@ findings:
 - rubric: 3
   severity: info
   field: odrl:permission
-  description: Every modelled permission is supported by the grant. Ziffer 3 grants a "lizenzgebuehrenfreies,
-    raeumlich und zeitlich (fuer die Dauer des Urheberrechts oder verwandten Schutzrechts) unbeschraenktes
+  description: Every modelled permission is supported by the grant. Ziffer 3 grants a "lizenzgebührenfreies,
+    räumlich und zeitlich (für die Dauer des Urheberrechts oder verwandten Schutzrechts) unbeschränktes
     einfaches Nutzungsrecht", a simple right of use unlimited in place and time. The grant covers reproduction,
     incorporation into collections, distribution, public display, public performance and communication
     to the public, and the creation and reproduction of derivative works, which the record models as odrl:reproduce,
@@ -53,13 +53,14 @@ findings:
 - rubric: 4
   severity: major
   field: odrl:prohibition
-  description: 'The licence forbids sublicensing and the record does not say so. Ziffer 4: "Sie duerfen
+  description: 'The licence forbids sublicensing and the record does not say so. Ziffer 4: "Sie dürfen
     den Schutzgegenstand nicht unterlizenzieren." The vocabulary already has dalicc:sublicense, but it
     is used by no record in the library and its skos:note says so, and the same sentence stands in every
     Creative Commons 2.0 and 3.0 record, so adding it to thirty six ports alone would split the compatibility
     behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
     note.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: |-
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:sublicense ] ;
@@ -125,7 +126,7 @@ findings:
   severity: gap
   field: odrl:prohibition
   description: 'The licence forbids technological protection measures and the vocabulary has no term for
-    it. Ziffer 4: "Sie duerfen den Schutzgegenstand mit keinen technischen Schutzmassnahmen versehen,
+    it. Ziffer 4: "Sie dürfen den Schutzgegenstand mit keinen technischen Schutzmaßnahmen versehen,
     die den Zugang oder den Gebrauch des Schutzgegenstandes in einer Weise kontrollieren, die mit den
     Bedingungen dieser Lizenz im Widerspruch stehen." Proposed term: dalicc:applyTechnicalProtectionMeasures,
     an odrl:Action to be used as an odrl:Prohibition. Not modelled, because bending an existing term would
@@ -185,6 +186,14 @@ findings:
     only what the text states. Removed on 2026-09-23; see section 13 of docs/LICENSE_REVIEW.md.
   action: applied
   change: "# removed\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:promote ] ;\n"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Dieser Lizenzvertrag und die durch ihn eingeräumten
+    Nutzungsrechte enden automatisch bei jeder Verletzung der Vertragsbedingungen durch Sie." The licence
+    ends automatically on a breach and this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach
+    is true and no dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 2.0 port: Germany (DE)'
 port_of: CC-BY-SA-4.0
 variant_kind: jurisdiction-port

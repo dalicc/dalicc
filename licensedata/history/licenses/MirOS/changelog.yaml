@@ -1,0 +1,81 @@
+id: MirOS
+title: The MirOS Licence
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on,
+    named the license the record itself is published under and removed the quotes that do not name
+    the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  changes:
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'The statement is marked as a library convention, family rule 15: Permissive records permit
+      relicensing: the text does not state it in as many words. Its duty dalicc:compliantLicense is
+      marked as a library convention, family rule 15: Permissive records permit relicensing.'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice]
+    reason: Its duty cc:Attribution quotes "Provided that these terms and disclaimer and all copyright
+      notices are retained or reproduced in an accompanying document, permission is granted to deal
+      in this work without restriction, including unlimited rights to use, publicly perform, distribute,
+      sell, modify, merge, give away, or sublicence."
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: Its duty cc:Attribution quotes "Provided that these terms and disclaimer and all copyright
+      notices are retained or reproduced in an accompanying document, permission is granted to deal
+      in this work without restriction, including unlimited rights to use, publicly perform, distribute,
+      sell, modify, merge, give away, or sublicence."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice]
+    reason: Its duty cc:Attribution quotes "Provided that these terms and disclaimer and all copyright
+      notices are retained or reproduced in an accompanying document, permission is granted to deal
+      in this work without restriction, including unlimited rights to use, publicly perform, distribute,
+      sell, modify, merge, give away, or sublicence."
+    source: manual
+  - action: changed
+    statement: permission odrl:present
+    previous: permission odrl:present
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Provided that
+      these terms and disclaimer and all copyright notices are retained or reproduced in an accompanying
+      document, permission is granted to deal in this work without restriction, including unlimited
+      rights to use, publicly perform, distribute, sell, modify, merge, give away, or sublicence."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice]
+    reason: 'Removed the quoted evidence of duty cc:Attribution on odrl:derive, duty cc:Attribution
+      on odrl:distribute, duty cc:Attribution on odrl:modify: the quoted sentence does not name the
+      act. The statements stay, read from the text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: 'Removed the quoted evidence of duty cc:Attribution on odrl:derive, duty cc:Attribution
+      on odrl:distribute, duty cc:Attribution on odrl:modify: the quoted sentence does not name the
+      act. The statements stay, read from the text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice]
+    reason: 'Removed the quoted evidence of duty cc:Attribution on odrl:derive, duty cc:Attribution
+      on odrl:distribute, duty cc:Attribution on odrl:modify: the quoted sentence does not name the
+      act. The statements stay, read from the text without a linked quote.'
+    source: manual

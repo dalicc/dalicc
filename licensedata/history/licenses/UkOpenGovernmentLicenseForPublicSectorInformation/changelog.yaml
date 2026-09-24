@@ -1,12 +1,20 @@
 id: UkOpenGovernmentLicenseForPublicSectorInformation
 title: UK Open Government License for Public Sector Information
-current_version: 4
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail and 1 permission, changed
-    2 permissions and recorded the review state.
+    2 permissions and recorded the review state. Later changes brought it in line with its family
+    and its text in the verification of 2026-09-15, permitted relicensing with the notice as a duty,
+    recorded which sentence of the text each statement rests on, named the license the record itself
+    is published under and removed the quotes that do not name the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
   changes:
   - action: added
     statement: dalicc:reviewStatus dalicc:Reviewed
@@ -58,19 +66,15 @@ entries:
       file rated this medium on the URL alone; the version statement in the document makes it certain.
       Added.
     source: review-finding 1/spdx:licenseId
-- version: 3
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Batch 5 finding 7: the record prohibited cc:ShareAlike and dalicc:addStatement although
-    the licence prescribes an attribution statement and says nothing about share-alike, and it did
-    not state the database right although the licence covers ''copyright and database right material''.'
-  changes:
   - action: added
     statement: dalicc:LiabilityLimitation "The Information Provider and/or Licensor are not liable
       for any errors or omissions in the Information and shall not be liable for any loss, injury
       or damage of any kind caused by its use. The Information Provider does not guarantee the continued
       supply of the Information."
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record prohibited cc:ShareAlike and
+      dalicc:addStatement although the licence prescribes an attribution statement and says nothing
+      about share-alike, and it did not state the database right although the licence covers ''copyright
+      and database right material''.'
     source: manual
   - action: changed
     statement: dalicc:WarrantyDisclaimer "The Information is licensed 'as is' and the Information
@@ -83,33 +87,79 @@ entries:
       The Information Provider and/or Licensor are not liable for any errors or omissions in the Information
       and shall not be liable for any loss, injury or damage of any kind caused by its use. The Information
       Provider does not guarantee the continued supply of the Information."'
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record prohibited cc:ShareAlike and
+      dalicc:addStatement although the licence prescribes an attribution statement and says nothing
+      about share-alike, and it did not state the database right although the licence covers ''copyright
+      and database right material''.'
     source: manual
   - action: added
     statement: permission dalicc:suiGenerisDatabaseRights
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record prohibited cc:ShareAlike and
+      dalicc:addStatement although the licence prescribes an attribution statement and says nothing
+      about share-alike, and it did not state the database right although the licence covers ''copyright
+      and database right material''.'
     source: manual
   - action: removed
     statement: prohibition cc:ShareAlike
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record prohibited cc:ShareAlike and
+      dalicc:addStatement although the licence prescribes an attribution statement and says nothing
+      about share-alike, and it did not state the database right although the licence covers ''copyright
+      and database right material''.'
     source: manual
   - action: removed
     statement: prohibition dalicc:addStatement
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record prohibited cc:ShareAlike and
+      dalicc:addStatement although the licence prescribes an attribution statement and says nothing
+      about share-alike, and it did not state the database right although the licence covers ''copyright
+      and database right material''.'
     source: manual
-- version: 4
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Permit relicensing on permissive licences; the notice clause is a duty, not a bar. Family
-    rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no source
-    code asks only that the notice travels with the copy, which is a duty on the acts it governs and
-    not a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission
-    here, and the prohibition the earlier pass wrote is removed. The text reads: "The Licensor grants
-    you a worldwide, royalty-free, perpetual, non-exclusive licence to use the Information subject
-    to the conditions below." The permission carries the dalicc:compliantLicense duty, as Apache-2.0
-    does, because the notice has to survive the relicensing.'
-  changes:
   - action: added
     statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Permit relicensing on permissive licences; the notice clause is a duty, not a bar. Library
+      convention 15: a licence that asks for no reciprocity and no source code asks only that the
+      notice travels with the copy, which is a duty on the acts it governs and not a bar on putting
+      the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
+      the record carried before is removed. The text reads: "The Licensor grants you a worldwide,
+      royalty-free, perpetual, non-exclusive licence to use the Information subject to the conditions
+      below." The permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because
+      the notice has to survive the relicensing.'
+    source: manual
+  - action: changed
+    statement: permission cc:DerivativeWorks with duties [cc:Attribution, cc:Notice]
+    previous: permission cc:DerivativeWorks with duties [cc:Attribution, cc:Notice]
+    reason: Its duty cc:Attribution quotes "Contains public sector information licensed under the
+      Open Government Licence v3.0."
+    source: manual
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'The statement is marked as a library convention, family rule 15: Permissive records permit
+      relicensing: the text does not state it in as many words. Its duty dalicc:compliantLicense is
+      marked as a library convention, family rule 15: Permissive records permit relicensing.'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: Its duty cc:Attribution quotes "Contains public sector information licensed under the
+      Open Government Licence v3.0."
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: permission cc:DerivativeWorks with duties [cc:Attribution, cc:Notice]
+    previous: permission cc:DerivativeWorks with duties [cc:Attribution, cc:Notice]
+    reason: 'Removed the quoted evidence of duty cc:Attribution on cc:DerivativeWorks, duty cc:Attribution
+      on odrl:distribute: the quoted sentence does not name the act. The statements stay, read from
+      the text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: 'Removed the quoted evidence of duty cc:Attribution on cc:DerivativeWorks, duty cc:Attribution
+      on odrl:distribute: the quoted sentence does not name the act. The statements stay, read from
+      the text without a linked quote.'
     source: manual

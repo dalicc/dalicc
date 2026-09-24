@@ -19,6 +19,7 @@
 
 dalicclib:Apache-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "Apache-1.0" ;
     cc:attributionName "The Apache Group" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -38,8 +39,8 @@ dalicclib:Apache-1.0 a odrl:Set ;
         "Apache License 1.0",
         "Apache License, Version 1.0",
         "Apache-1.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "The Apache Software Foundation" ;
     dct:source <https://spdx.org/licenses/Apache-1.0.html> ;
     dct:title "Apache License 1.0"@en ;
@@ -70,7 +71,8 @@ dalicclib:Apache-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:rename ] ],
+                    odrl:action dalicc:rename ] ;
+            dalicc:evidence "Products derived from this software may not be called \"Apache\" nor may \"Apache\" appear in their name, without prior written permission of the Apache Group." ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -86,8 +88,13 @@ dalicclib:Apache-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "The names \"Apache\" and \"Apache Software Foundation\" must not be used to endorse or promote products derived from this software without prior written permission." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

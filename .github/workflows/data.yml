@@ -46,8 +46,23 @@ jobs:
         run: python scripts/review/consistency_sweep.py
 
       # Rule 14 (no padding space inside a literal) has 575 open violations, all
-      # cosmetic and all in the Creative Commons ports. Fixing them takes 287 records to
+      # cosmetic and all in the Creative Commons ports. Fixing them takes 288 records to
       # a new version in one sweep, so it waits for a commit of its own; docs/DATA.md
       # records it under the known data-quality issues.
       - name: The family rules
         run: python scripts/review/family_rules.py --strict --skip-rule 14
+
+      # The command-line check of one record, on a record that passes every check, so a
+      # copy of the three service modules that no longer fits together fails here.
+      - name: Check one record offline
+        run: PYTHONPATH=scripts python -m dalicc_check MIT
+
+      # The README names the release identifier of the data it was published with, and
+      # the two have to agree: a data change pushed without the README it belongs to
+      # would leave the repository saying it holds data it does not hold.
+      - name: The release identifier in the README
+        run: |
+          release="$(PYTHONPATH=scripts python -m dalicc_check --release | awk '$1 == "release" {print $2}')"
+          test -n "$release"
+          echo "the data in this commit is $release"
+          grep -qF "$release" README.md

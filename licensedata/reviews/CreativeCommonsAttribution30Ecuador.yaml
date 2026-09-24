@@ -23,7 +23,7 @@ findings:
   severity: info
   field: spdx:licenseId
   description: SPDX has no identifier for this port. The legal code URL implies CC-BY-3.0-EC, which the
-    SPDX licence list does not define, so none was invented. Of the thirty five records in this batch
+    SPDX licence list does not define, so none was invented. Of the thirty five records in this review group
     only the six German ones take an SPDX identifier.
   action: none
 - rubric: 2
@@ -32,7 +32,7 @@ findings:
   description: 'The record targets dalicc:CreativeWork, while the 4.0 International parent CC-BY-4.0 targets
     dalicc:CreativeWork and dcmitype:Dataset. This port has no database clause at all: it neither licenses
     nor waives a sui generis database right, and its definition of the licensed subject matter does not
-    name databases, so the evidence that justified adding the type to the European ports of this batch
+    name databases, so the evidence that justified adding the type to the European ports of this review group
     is missing here. Creative Commons licences are media neutral and the grant runs to all media and formats
     now known or later devised, so the type is defensible on general grounds. Proposed, as one decision
     over every Creative Commons port without a database clause.'
@@ -43,7 +43,7 @@ findings:
   severity: info
   field: odrl:permission
   description: The modelled permissions follow the grant. Section 3 (Concesion de la Licencia) grants
-    "una Licencia mundial, sin cobro de regalias, no exclusiva e indefinida" covering reproduction and
+    "una Licencia mundial, sin cobro de regalías, no exclusiva e indefinida" covering reproduction and
     incorporation into Collections, the creation and reproduction of Obras Derivadas with a duty to label
     the change, and the distribution and public performance of the Work and of Obras Derivadas. The record
     models this as odrl:reproduce, odrl:distribute, odrl:display, odrl:present, odrl:modify, odrl:derive,
@@ -53,13 +53,14 @@ findings:
 - rubric: 4
   severity: major
   field: odrl:prohibition
-  description: The licence forbids sublicensing and the record does not say so. "No podra otorgar sub-licencias
+  description: The licence forbids sublicensing and the record does not say so. "No podrá otorgar sub-licencias
     de la Obra." Section 4(a). The vocabulary already has dalicc:sublicense, but no record in the library
     uses it and its skos:note says so, and the same sentence stands in every Creative Commons 2.0 and
-    3.0 record, so adding it to the thirty five ports of this batch alone would split the compatibility
+    3.0 record, so adding it to the thirty five ports of this review group alone would split the compatibility
     behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
-    note. Batches 3 and 6 made the same recommendation.
-  action: proposed
+    note. Other review groups made the same recommendation.
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -68,8 +69,8 @@ findings:
     only under the terms of this licence and the licensee may not offer or impose terms that alter or
     restrict it or the rights of downstream recipients. dalicc:promote is prohibited, which the 3.0 text
     supports better than the 2.0 text did, because the no endorsement rule sits in the licence body rather
-    than in the Creative Commons notice printed around it. Section 4(d): the Licensee "no podra implicita
-    ni tacitamente aseverar ni dar a entender ninguna conexion, auspicio ni respaldo por parte del Autor,
+    than in the Creative Commons notice printed around it. Section 4(d): the Licensee "no podrá implícita
+    ni tácitamente aseverar ni dar a entender ninguna conexión, auspicio ni respaldo por parte del Autor,
     Licenciante ni Partes del Reconocimiento".'
   action: none
 - rubric: 5
@@ -79,7 +80,7 @@ findings:
     of the licence or its URI with every copy shared, that the notices referring to the licence and to
     the warranty clause be kept intact, and that credit be given, and in this port credit is owed to the
     "Autor", the "Licenciante" and the "Partes del Reconocimiento", and a derivative must carry a note
-    identifying the use made of the Work, for example "El trabajo original fue traducido de ingles a espanol".
+    identifying the use made of the Work, for example "El trabajo original fue traducido de inglés a español".
     The duties hang on odrl:distribute, odrl:modify and odrl:derive, which matches the licence, since
     they are triggered by distributing or communicating the work to the public rather than by private
     use. dalicc:modificationNotice is supported by the duty to take reasonable steps to label a change.'
@@ -91,8 +92,8 @@ findings:
     of this port and not from the English unported version, each holds its own clause and nothing of the
     other, and both were checked sentence by sentence against the legal code. Section 5 (Declaraciones,
     Exoneracion de Garantia y Responsabilidad) mixes an affirmative warranty with a disclaimer in one
-    short paragraph: "EL AUTOR GARANTIZA LA AUTORIA Y ORIGINALIDAD DE LA OBRA, SIN EMBARGO NO CONFIERE
-    NINGUNA GARANTIA SOBRE LA CALIDAD COMERCIAL DE LA OBRA O SU ADECUACION PARA UN PROPOSITO EN PARTICULAR."
+    short paragraph: "EL AUTOR GARANTIZA LA AUTORÍA Y ORIGINALIDAD DE LA OBRA, SIN EMBARGO NO CONFIERE
+    NINGUNA GARANTÍA SOBRE LA CALIDAD COMERCIAL DE LA OBRA O SU ADECUACIÓN PARA UN PROPÓSITO EN PARTICULAR."
     The record holds it in dalicc:WarrantyDisclaimer, which is right as far as the field goes, but the
     affirmative half of it is invisible to the model. Section 6 (Limitacion de Responsabilidad) sits in
     dalicc:LiabilityLimitation on its own.'
@@ -113,7 +114,7 @@ findings:
     https://creativecommons.org/licenses/by/3.0/ec/legalcode, and dalicc:validityType is dalicc:perpetual,
     which matches a grant for the duration of the applicable copyright. Note that the jurisdiction field
     records the legal home of the port, not a territorial limit: the grant itself is worldwide. The port
-    names no governing law. Ecuador is the one port in this batch whose grant does not say "perpetual"
+    names no governing law. Ecuador is the one port in this review group whose grant does not say "perpetual"
     plainly: Section 3 calls the licence "indefinida (depende del acuerdo de los contratantes de la Licencia)",
     and Section 7 then runs the licence for the duration of the applicable copyright, which is what dalicc:perpetual
     records.'
@@ -122,7 +123,7 @@ findings:
   severity: gap
   field: odrl:prohibition
   description: 'The licence forbids technological protection measures and the vocabulary has no term for
-    it. Section 4(a): "el Licenciatario no podra imponer ninguna medida tecnologica vigente en la Obra
+    it. Section 4(a): "el Licenciatario no podrá imponer ninguna medida tecnológica vigente en la Obra
     que pueda restringir la capacidad de la parte que recibe la Obra por parte del Licenciatario para
     ejercer los derechos otorgados al receptor". Proposed term: dalicc:applyTechnicalProtectionMeasures,
     an odrl:Action to be used as an odrl:Prohibition. Not modelled, because bending an existing term would
@@ -140,10 +141,10 @@ findings:
   severity: gap
   field: record
   description: 'Moral rights have no vocabulary term, in either direction. Ecuador is the only port in
-    this batch that turns moral rights into an operative term binding the licensee. Section 4: "Los derechos
-    concedidos en la Seccion 3 se deben ejercer teniendo en cuenta los Derechos Morales del Autor para
-    objetar cualquier alteracion, mutilacion o deformacion u otra accion despectiva en relacion al trabajo,
-    que pudiera resultar perjudicial para el honor o reputacion del Autor o de su dignidad como tal en
+    this review group that turns moral rights into an operative term binding the licensee. Section 4: "Los derechos
+    concedidos en la Sección 3 se deben ejercer teniendo en cuenta los Derechos Morales del Autor para
+    objetar cualquier alteración, mutilación o deformación u otra acción despectiva en relación al trabajo,
+    que pudiera resultar perjudicial para el honor o reputación del Autor o de su dignidad como tal en
     la medida que el Autor no puede renunciar a los Derechos Morales bajo las disposiciones legales aplicables."
     Proposed terms: dalicc:moralRightsRestriction for a clause that binds the licensee and dalicc:moralRightsNonAssertion
     for one in which the licensor undertakes not to assert them.'
@@ -154,7 +155,7 @@ findings:
   description: 'The royalty collection arrangement has no vocabulary term. Ecuador has a single royalty
     paragraph rather than the three tier split of the other ports, and it points in opposite directions
     per element set: in the Attribution and Attribution-ShareAlike sets "el Licenciante renuncia al derecho
-    de recaudar regalias", in the NonCommercial sets "el Licenciante se reserva el derecho de recaudar
+    de recaudar regalías", in the NonCommercial sets "el Licenciante se reserva el derecho de recaudar
     regalias" for any exercise of the rights granted, with no non commercial carve out at all. The channel
     is "una sociedad de recaudaciones que maneje esquemas de licencias voluntarias"; no society is named.
     Proposed term: dalicc:royaltyCollectionReserved, with a counterpart for the waiver. It is one of the
@@ -179,6 +180,15 @@ findings:
     rights clause. The compatibility checker cannot tell this record from the other records of the BY
     element set, across all three versions and every jurisdiction the library holds.'
   action: none
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Esta Licencia y los derechos otorgados por
+    esta Licencia terminarán automáticamente si el Licenciatario incumpliera cualquiera de las condiciones
+    de esta Licencia." The licence ends automatically on a breach and this version of the text has no
+    reinstatement clause, so dalicc:terminatesOnBreach is true and no dalicc:curePeriod is written, as
+    on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Ecuador (EC)'
 port_of: CC-BY-4.0
 variant_kind: jurisdiction-port

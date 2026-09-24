@@ -1,0 +1,86 @@
+id: CAL-1.0
+title: Cryptographic Autonomy License 1.0
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: duty cc:ShareAlike
+    previous: duty cc:ShareAlike
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "The Source Code
+      corresponding to the modifications in the Modified Work must be provided to the Recipient either
+      a) under this License, or b) under a Compatible Open Source License."'
+    source: manual
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'Its duty dalicc:compliantLicense is marked as a library convention, family rule 13: Reciprocity
+      has one shape per kind.'
+    source: manual
+  - action: changed
+    statement: permission dalicc:networkUseTrigger with duties [cc:SourceCode, dalicc:provideUserData]
+    previous: permission dalicc:networkUseTrigger with duties [cc:SourceCode, dalicc:provideUserData]
+    reason: Its duty cc:SourceCode quotes "You must retain all licensing, authorship, or attribution
+      notices contained in the Source Code (the "Notices"), and provide all such Notices to each Recipient,
+      together with a statement acknowledging the use of the Work."
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:addStatement]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:addStatement]
+    reason: Its duty cc:Attribution quotes "You must retain all licensing, authorship, or attribution
+      notices contained in the Source Code (the "Notices"), and provide all such Notices to each Recipient,
+      together with a statement acknowledging the use of the Work." Its duty cc:Notice quotes "You
+      must retain all licensing, authorship, or attribution notices contained in the Source Code (the
+      "Notices"), and provide all such Notices to each Recipient, together with a statement acknowledging
+      the use of the Work." Its duty cc:SourceCode quotes "You must retain all licensing, authorship,
+      or attribution notices contained in the Source Code (the "Notices"), and provide all such Notices
+      to each Recipient, together with a statement acknowledging the use of the Work." Its duty dalicc:addStatement
+      quotes "You must retain all licensing, authorship, or attribution notices contained in the Source
+      Code (the "Notices"), and provide all such Notices to each Recipient, together with a statement
+      acknowledging the use of the Work."
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:addStatement,
+      dalicc:provideUserData]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:addStatement,
+      dalicc:provideUserData]
+    reason: Its duty cc:Attribution quotes "You must retain all licensing, authorship, or attribution
+      notices contained in the Source Code (the "Notices"), and provide all such Notices to each Recipient,
+      together with a statement acknowledging the use of the Work." Its duty cc:Notice quotes "You
+      must retain all licensing, authorship, or attribution notices contained in the Source Code (the
+      "Notices"), and provide all such Notices to each Recipient, together with a statement acknowledging
+      the use of the Work." Its duty cc:SourceCode quotes "You must retain all licensing, authorship,
+      or attribution notices contained in the Source Code (the "Notices"), and provide all such Notices
+      to each Recipient, together with a statement acknowledging the use of the Work." Its duty dalicc:addStatement
+      quotes "You must retain all licensing, authorship, or attribution notices contained in the Source
+      Code (the "Notices"), and provide all such Notices to each Recipient, together with a statement
+      acknowledging the use of the Work."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:addStatement]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:addStatement]
+    reason: Its duty cc:Attribution quotes "You must retain all licensing, authorship, or attribution
+      notices contained in the Source Code (the "Notices"), and provide all such Notices to each Recipient,
+      together with a statement acknowledging the use of the Work." Its duty cc:Notice quotes "You
+      must retain all licensing, authorship, or attribution notices contained in the Source Code (the
+      "Notices"), and provide all such Notices to each Recipient, together with a statement acknowledging
+      the use of the Work." Its duty cc:SourceCode quotes "You must retain all licensing, authorship,
+      or attribution notices contained in the Source Code (the "Notices"), and provide all such Notices
+      to each Recipient, together with a statement acknowledging the use of the Work." Its duty dalicc:addStatement
+      quotes "You must retain all licensing, authorship, or attribution notices contained in the Source
+      Code (the "Notices"), and provide all such Notices to each Recipient, together with a statement
+      acknowledging the use of the Work."
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

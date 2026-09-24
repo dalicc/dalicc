@@ -25,6 +25,12 @@ Usage
     python scripts/build_licenselibrary.py              # write the file
     python scripts/build_licenselibrary.py --check      # fail if the file is out of date
     python scripts/build_licenselibrary.py --output /tmp/x.ttl
+    python scripts/build_licenselibrary.py --name-record-licence   # add dct:license first
+
+Every record carries ``cc:license dalicclib:CC-BY-4.0``, the license of the record itself,
+and beside it ``dct:license <https://creativecommons.org/licenses/by/4.0/>``, the same
+licence by its canonical address.  The build refuses a record that has the first without
+the second; ``--name-record-licence`` writes the missing statement into the records.
 
 Exit status is 0 on success, 1 on a validation or --check failure.
 
@@ -64,6 +70,30 @@ LOG = logging.getLogger("build_licenselibrary")
 
 class BuildError(RuntimeError):
     """Raised when the inputs are not shaped the way the generator requires."""
+
+
+#: A record published under DALICC's record of CC BY 4.0 names that licence by its
+#: canonical address as well; the combined file carries whatever the records carry.
+RECORD_LICENCE = "cc:license dalicclib:CC-BY-4.0"
+CANONICAL_LICENCE = "dct:license <https://creativecommons.org/licenses/by/4.0/>"
+
+
+def name_record_licence(licenses_dir: Path) -> int:
+    """Write ``dct:license`` into every record that lacks it; return how many changed.
+
+    The record writer of ``scripts/review/ttl_record.py`` adds it whenever it writes a
+    record, so this only reaches a record written by hand.
+    """
+    sys.path.insert(0, str(REPO_ROOT / "scripts" / "review"))
+    from ttl_record import Record
+
+    changed = 0
+    for path in sorted(licenses_dir.glob("*.ttl")):
+        record = Record.parse(path)
+        if record.name_record_licence():
+            record.write()
+            changed += 1
+    return changed
 
 
 def split_license_file(path: Path) -> tuple[list[str], str]:
@@ -118,6 +148,11 @@ def build(licenses_dir: Path) -> str:
                 f"{path}: @prefix block differs from {files[0].name}; "
                 "all license files must share one prefix block"
             )
+        if RECORD_LICENCE in body and CANONICAL_LICENCE not in body:
+            raise BuildError(
+                f"{path}: carries {RECORD_LICENCE} but not {CANONICAL_LICENCE}; "
+                "run: python scripts/build_licenselibrary.py --name-record-licence"
+            )
         blocks.append(f"# {path.stem}\n{body}\n")
 
     assert shared_prefixes is not None  # guarded by the empty-dir check above
@@ -155,6 +190,10 @@ def main(argv: list[str] | None = None) -> int:
                         help="path of the combined library file to write")
     parser.add_argument("--check", action="store_true",
                         help="do not write; exit 1 if the output file is out of date")
+    parser.add_argument("--name-record-licence", action="store_true",
+                        help="first write dct:license <https://creativecommons.org/licenses/"
+                             "by/4.0/> into every record that carries cc:license "
+                             "dalicclib:CC-BY-4.0 without it")
     parser.add_argument("-v", "--verbose", action="store_true", help="debug logging")
     args = parser.parse_args(argv)
 
@@ -163,6 +202,9 @@ def main(argv: list[str] | None = None) -> int:
         format="%(levelname)s %(message)s",
     )
 
+    if args.name_record_licence:
+        LOG.info("named the record licence in %d record(s)",
+                 name_record_licence(args.licenses_dir))
     try:
         text = build(args.licenses_dir)
         verify(text, expected_sets=len(list(args.licenses_dir.glob("*.ttl"))))

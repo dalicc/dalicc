@@ -53,7 +53,7 @@ findings:
     this License or the ability of the recipient of the Work to exercise the rights granted to that recipient under
     the terms of the License. You may not sublicense the Work." That is dalicc:sublicense prohibited, which review
     decision 1 of 2026-09-15 requires of every Creative Commons record except the CC0 dedication, and dalicc:ChangeLicense
-    prohibited, which family rule 15 of scripts/review/family_rules.py expressly keeps for this family because the
+    prohibited, which library convention 15 expressly keeps for this family because the
     no-downstream-restrictions clause is the bar the rule otherwise denies.'
   action: applied
 - rubric: 4
@@ -159,6 +159,14 @@ findings:
     literal a single verbatim run of this record's own legal code, in the order the text states them.
     A passage the element set does not have is absent, which is a difference between the texts and
     not between two readings.
+  action: applied
+- rubric: 10
+  severity: major
+  field: dalicc:compatibleWith
+  description: 'Section 4(b) reads: "You may Distribute or Publicly Perform an Adaptation only under the
+    terms of: (i) this License; (ii) a later version of this License with the same License Elements as
+    this License; ..." and the Creative Commons list of compatible licenses (https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses)
+    names BY-SA 4.0 as the later version. dalicc:compatibleWith names CC-BY-SA-4.0.'
   action: applied
 family: Creative Commons 3.0 Unported
 port_of: null

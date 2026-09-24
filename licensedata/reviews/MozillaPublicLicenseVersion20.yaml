@@ -40,8 +40,9 @@ findings:
   severity: minor
   field: odrl:permission
   description: odrl:derive is permitted but cc:DerivativeWorks, the right to distribute the adaptation,
-    is not, while dalicc:ModifiedWorks is. Every other copyleft record in the batch carries both.
-  action: proposed
+    is not, while dalicc:ModifiedWorks is. Every other copyleft record in the review group carries both.
+  action: superseded
+  superseded_by: 2
   change: "odrl:permission [ a odrl:Permission ;\n        odrl:action cc:DerivativeWorks ] ;\n"
 - rubric: 8
   severity: gap
@@ -61,11 +62,23 @@ findings:
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 2 finding 6.3 and 6.4 and consolidation decision 4: the record
+    its new siblings and versioned. The review''s finding on family consistency and consolidation decision 4: the record
     made no patent statement although section 2.1(b) grants a patent license and section 5.2 is a retaliation
     clause, and it hung cc:ShareAlike off the license although MPL 2.0 reciprocity is file level: ''You
     must inform recipients that the Source Code Form of the Covered Software is governed by the terms
     of this License'' (3.1), while 3.2(b) lets a Larger Work go out ''under terms of Your choice''.'
+  action: applied
+- rubric: 10
+  severity: major
+  field: dalicc:compatibleWith
+  description: 'Section 3.3 reads: "If the Larger Work is a combination of Covered Software with a work
+    governed by one or more Secondary Licenses, and the Covered Software is not Incompatible With Secondary
+    Licenses, this License permits You to additionally distribute such Covered Software under the terms
+    of such Secondary License(s)", and Section 1.12 defines a Secondary License as "either the GNU General
+    Public License, Version 2.0, the GNU Lesser General Public License, Version 2.1, the GNU Affero General
+    Public License, Version 3.0, or any later versions of those licenses." dalicc:compatibleWith names
+    GPL-2.0-only, GPL-2.0-or-later, GPL-3.0-only, GPL-3.0-or-later, LGPL-2.1-only, LGPL-2.1-or-later,
+    LGPL-3.0-only, LGPL-3.0-or-later, AGPL-3.0, AGPL-3.0-or-later.'
   action: applied
 family: Other OSI approved licenses (corporate, academic, weak copyleft)
 port_of: null

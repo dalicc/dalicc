@@ -18,8 +18,9 @@ findings:
     requires only that the notice and disclaimer be retained, and says nothing that stops a licensee from
     redistributing under other terms. The same prohibition sits in BSD-3-Clause, BSD-4-Clause and IscLicense
     but not in MIT, 0BSD or the zlib record, so the family is internally inconsistent. One decision for
-    the whole family, left to the owner.'
-  action: proposed
+    the whole family, left open for the association''s decision.'
+  action: superseded
+  superseded_by: 2
   change: "# remove\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:ChangeLicense\
     \ ] ;\n"
 - rubric: 4
@@ -29,7 +30,8 @@ findings:
     for advertising". The two-clause text neither grants nor withholds trademark rights; it simply has
     no endorsement clause (that clause is what makes the three-clause variant). Silence is better modelled
     by omitting the statement than by permitting it.
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "# remove\nodrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:promote ] ;\n"
 - rubric: 1
   severity: minor
@@ -49,7 +51,7 @@ findings:
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 3 finding 5: the record permitted dalicc:promote although the
+    its new siblings and versioned. The review''s finding on family consistency: the record permitted dalicc:promote although the
     two-clause text says nothing about trademarks or endorsement, and it kept the liability sentence inside
     dalicc:WarrantyDisclaimer. The paragraph is split at ''IN NO EVENT SHALL'', as the six new BSD records
     split it.'

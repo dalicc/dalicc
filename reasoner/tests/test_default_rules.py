@@ -42,7 +42,13 @@ def rules_only() -> str:
 
 
 def fact(name: str, *args: str) -> str:
-    """One ASP fact with quoted string arguments."""
+    """One ASP fact with quoted string arguments.
+
+    ``license/1`` is written the way the service writes it, as the hex token of the
+    IRI, and ``&getLicenseIri`` hands the program the IRI back as ``bundleLicense/1``.
+    """
+    if name == "license" and len(args) == 1:
+        return f'license("{args[0].encode().hex()}"). bundleLicense("{args[0]}").'
     return f"{name}({','.join(chr(34) + arg + chr(34) for arg in args)})."
 
 

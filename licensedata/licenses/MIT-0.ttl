@@ -19,6 +19,7 @@
 
 dalicclib:MIT-0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "MIT-0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://github.com/aws/mit-0> ;
@@ -30,8 +31,8 @@ dalicclib:MIT-0 a odrl:Set ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/MIT-0/versions> ;
     dct:alternative "MIT No Attribution",
         "MIT-0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Amazon Web Services" ;
     dct:source <https://spdx.org/licenses/MIT-0.html> ;
     dct:title "MIT No Attribution"@en ;
@@ -48,11 +49,15 @@ dalicclib:MIT-0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:present ],
         [ a odrl:Permission ;
-            odrl:action odrl:grantUse ],
+            odrl:action odrl:grantUse ;
+            dalicc:evidence "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so." ],
         [ a odrl:Permission ;
-            odrl:action dalicc:sublicense ],
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so." ],
         [ a odrl:Permission ;
-            odrl:action dalicc:ChangeLicense ],
+            odrl:action dalicc:ChangeLicense ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ],
         [ a odrl:Permission ;
             odrl:action cc:CommercialUse ],
         [ a odrl:Permission ;

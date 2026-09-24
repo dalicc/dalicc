@@ -1,0 +1,87 @@
+id: APSL-1.2
+title: Apple Public Source License 1.2
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission dalicc:ChangeLicense
+    previous: permission dalicc:ChangeLicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You must include
+      a copy of this License with every copy of Source Code of Covered Code and documentation You
+      distribute, and You may not offer or impose any terms on such Source Code that alter or restrict
+      this License or the recipients'' rights hereunder, except as permitted under Section 6."'
+    source: manual
+  - action: changed
+    statement: permission dalicc:networkUseTrigger with duties [cc:SourceCode]
+    previous: permission dalicc:networkUseTrigger with duties [cc:SourceCode]
+    reason: Its duty cc:SourceCode quotes "You must make Source Code of all Your Deployed Modifications
+      publicly available under the terms of this License, including the license grants set forth in
+      Section 3 below, for as long as you Deploy the Covered Code or twelve (12) months from the date
+      of initial Deployment, whichever is longer."
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:modificationNotice]
+    reason: Its duty cc:SourceCode quotes "You must make Source Code of all Your Deployed Modifications
+      publicly available under the terms of this License, including the license grants set forth in
+      Section 3 below, for as long as you Deploy the Covered Code or twelve (12) months from the date
+      of initial Deployment, whichever is longer." Its duty cc:ShareAlike quotes "You must make Source
+      Code of all Your Deployed Modifications publicly available under the terms of this License,
+      including the license grants set forth in Section 3 below, for as long as you Deploy the Covered
+      Code or twelve (12) months from the date of initial Deployment, whichever is longer."
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    reason: Its duty cc:SourceCode quotes "You must make Source Code of all Your Deployed Modifications
+      publicly available under the terms of this License, including the license grants set forth in
+      Section 3 below, for as long as you Deploy the Covered Code or twelve (12) months from the date
+      of initial Deployment, whichever is longer." Its duty cc:ShareAlike quotes "You must make Source
+      Code of all Your Deployed Modifications publicly available under the terms of this License,
+      including the license grants set forth in Section 3 below, for as long as you Deploy the Covered
+      Code or twelve (12) months from the date of initial Deployment, whichever is longer."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:modificationNotice]
+    reason: Its duty cc:SourceCode quotes "You must make Source Code of all Your Deployed Modifications
+      publicly available under the terms of this License, including the license grants set forth in
+      Section 3 below, for as long as you Deploy the Covered Code or twelve (12) months from the date
+      of initial Deployment, whichever is longer." Its duty cc:ShareAlike quotes "You must make Source
+      Code of all Your Deployed Modifications publicly available under the terms of this License,
+      including the license grants set forth in Section 3 below, for as long as you Deploy the Covered
+      Code or twelve (12) months from the date of initial Deployment, whichever is longer."
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:patentRetaliationTermination
+    previous: prohibition dalicc:patentRetaliationTermination
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "automatically
+      without notice from Apple if You, at any time during the term of this License, commence an action
+      for patent infringement against Apple."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "No Apple Marks
+      may be used to endorse or promote products derived from the Original Code other than as permitted
+      by and in strict compliance at all times with Apple''s third party trademark usage guidelines
+      which are posted at http://www.apple.com/legal/guidelinesfor3rdparties.html."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

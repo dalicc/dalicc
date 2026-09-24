@@ -28,14 +28,14 @@ findings:
   description: 'SPDX has no identifier for this port. The legal-code URL implies CC-BY-NC-SA-3.0-PL, which
     the SPDX licence list does not define: of the ported 3.0 licences SPDX knows only the Austrian, Australian,
     German, Dutch, United States and IGO ones. No identifier was invented, and none of the forty two records
-    in this batch carries one.'
+    in this review group carries one.'
   action: none
 - rubric: 1
   severity: minor
   field: dct:title
   description: The dct:title literal ended in a space, "Creative Commons Attribution-NonCommercial-ShareAlike
     3.0 Poland ", which the library list and the search index carry through. The same defect sits on the
-    BY-NC-SA record of every port in this batch. Removed.
+    BY-NC-SA record of every port in this review group. Removed.
   action: applied
   change: dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Poland"@en ;
 - rubric: 2
@@ -43,10 +43,10 @@ findings:
   field: odrl:target
   description: 'The record targeted dalicc:CreativeWork alone, while the 4.0 International parent CC-BY-NC-SA-4.0
     targets dalicc:CreativeWork and dcmitype:Dataset. This port licenses database rights expressly. Paragraph
-    3 lists "Pobieranie danych z Utworu oraz ich wtorne wykorzystanie" (extraction of data from the work
+    3 lists "Pobieranie danych z Utworu oraz ich wtórne wykorzystanie" (extraction of data from the work
     and its re-utilisation) as one of the fields of exploitation granted, and the paragraph closes with
     the licensor waiving the sui generis right under the law implementing Directive 96/9/EC of 11 March
-    1996: "Licencjodawca zrzeka sie tego prawa", with an undertaking not to exercise it where the waiver
+    1996: "Licencjodawca zrzeka się tego prawa", with an undertaking not to exercise it where the waiver
     is ineffective. Paragraph 4(e) adds that the restrictions in 4(a) to 4(d) do not apply to a work,
     or a part of one, that is a work under this licence only because it is a database that is not itself
     an authored work. Because the grant of the database right is explicit in the text, dcmitype:Dataset
@@ -58,8 +58,8 @@ findings:
   severity: info
   field: odrl:permission
   description: The grant supports the modelled permissions. "Licencjodawca udziela niniejszym Licencjobiorcy
-    nieodplatnej i niewylacznej licencji na korzystanie z Utworu na terytorium calego swiata, na czas
-    nieoznaczony (do momentu wygasniecia praw autorskich)" (paragraph 3), listed as fields of exploitation
+    nieodpłatnej i niewyłącznej licencji na korzystanie z Utworu na terytorium całego świata, na czas
+    nieoznaczony (do momentu wygaśnięcia praw autorskich)" (paragraph 3), listed as fields of exploitation
     in the Polish manner. The record models the grant as odrl:reproduce, odrl:distribute, odrl:display,
     odrl:present, odrl:derive, odrl:modify, cc:DerivativeWorks, and dalicc:ModifiedWorks for alterations
     short of a new derivative work.
@@ -81,13 +81,14 @@ findings:
 - rubric: 4
   severity: major
   field: odrl:prohibition
-  description: The licence forbids sublicensing and the record does not say so. "Licencjobiorca nie moze
-    udzielac sublicencji." (paragraph 4(a)). The vocabulary already has dalicc:sublicense, but it is used
+  description: The licence forbids sublicensing and the record does not say so. "Licencjobiorca nie może
+    udzielać sublicencji." (paragraph 4(a)). The vocabulary already has dalicc:sublicense, but it is used
     by no record in the library and its skos:note says so, and the same sentence stands in every Creative
-    Commons 2.0 and 3.0 record, so adding it to this batch alone would split the compatibility behaviour
+    Commons 2.0 and 3.0 record, so adding it to this review group alone would split the compatibility behaviour
     of one family. Proposed as one library wide correction, together with an update of the vocabulary
     note.
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -176,8 +177,8 @@ findings:
   severity: gap
   field: odrl:prohibition
   description: 'The licence forbids technological protection measures and the vocabulary has no term for
-    it. The clause is in paragraph 4(a): "Licencjobiorca nie ma prawa stosowac zadnych skutecznych zabezpieczen
-    technicznych w stosunku do Utworu, ograniczajacych mozliwosc wykonywania praw wynikajacych z Licencji".
+    it. The clause is in paragraph 4(a): "Licencjobiorca nie ma prawa stosować żadnych skutecznych zabezpieczeń
+    technicznych w stosunku do Utworu, ograniczających możliwość wykonywania praw wynikających z Licencji".
     Proposed term: dalicc:applyTechnicalProtectionMeasures, an odrl:Action to be used as an odrl:Prohibition.
     Not modelled, because bending an existing term would be worse than the gap.'
   action: none
@@ -195,8 +196,8 @@ findings:
   field: record
   description: 'Moral rights have no vocabulary term, in either direction: a clause that restricts the
     licensee, and a clause that leaves the author personal rights untouched by the licence. Paragraph
-    4(g) leaves them to the statute: "Niniejsza licencja nie narusza praw osobistych Tworcy ani Licencjodawcy
-    w zakresie, w jakim prawa te sa chronione przez prawo wlasciwe". This is a change from the 2.0 Polish
+    4(g) leaves them to the statute: "Niniejsza licencja nie narusza praw osobistych Twórcy ani Licencjodawcy
+    w zakresie, w jakim prawa te są chronione przez prawo właściwe". This is a change from the 2.0 Polish
     port, which said nothing about moral rights at all. Proposed terms: dalicc:moralRightsRestriction
     and dalicc:moralRightsNonAssertion.'
   action: none
@@ -253,9 +254,9 @@ findings:
   field: odrl:permission
   description: 'The record said nothing about the sui generis database right although the port''s own
     text settles it, which the rubric 2 finding of this review read off the legal code: Paragraph 3 lists
-    "Pobieranie danych z Utworu oraz ich wtorne wykorzystanie" among the fields of exploitation granted
+    "Pobieranie danych z Utworu oraz ich wtórne wykorzystanie" among the fields of exploitation granted
     and closes with the licensor waiving the sui generis right under the law implementing Directive 96/9/EC,
-    "Licencjodawca zrzeka sie tego prawa", and Paragraph 4(e) adds that the restrictions in 4(a) to 4(d)
+    "Licencjodawca zrzeka się tego prawa", and Paragraph 4(e) adds that the restrictions in 4(a) to 4(d)
     do not apply to a work, or a part of one, that is a work under this licence only because it is a database
     that is not itself an authored work. Exercising that right is therefore permitted by this licence
     and dalicc:suiGenerisDatabaseRights is now a permission of the record. It carries no duty, which is
@@ -270,6 +271,14 @@ findings:
   action: applied
   change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
     \ ] ;"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Licencja automatycznie wygasa w przypadku
+    jakiegokolwiek jej naruszenia przez Licencjobiorcę." The licence ends automatically on a breach and
+    this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach is true and no
+    dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Poland (PL)'
 port_of: CC-BY-NC-SA-4.0
 variant_kind: jurisdiction-port
@@ -278,5 +287,5 @@ notes: 'The parent is the 4.0 International record of the same element set, sinc
   and not only the jurisdiction. The 3.0 text differs from 4.0 in substance as well: it prohibits sublicensing
   expressly, it has no thirty day cure period for a breach, it settles the royalty collection question
   per jurisdiction, and it states the moral rights position of the jurisdiction. The French and Polish
-  ports add a sui generis database rights clause, which the other five ports of this batch do not carry.
+  ports add a sui generis database rights clause, which the other five ports of this review group do not carry.
   None of that is visible in the model. Nothing in this review is legal advice.'

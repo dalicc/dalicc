@@ -57,7 +57,7 @@ findings:
   severity: minor
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9 and 10: the record was corrected against
-    its new siblings and versioned. Family rules 10 and 14 of scripts/review/family_rules.py: the disclaimer
+    its new siblings and versioned. Library conventions 10 and 14: the disclaimer
     held both sentences of the zlib notice, the second beginning ''In no event will the authors be held
     liable for any damages arising from the use of this software'', and dct:publisher was the placeholder
     ''N.N.''.'
@@ -65,5 +65,5 @@ findings:
 family: MIT, ISC, Zlib, Boost, UPL, WTFPL (permissive, short)
 port_of: null
 variant_kind: null
-notes: 'Zero prohibitions is listed in family_rules_baseline.md rule 7 and is nearly right: the one prohibition
+notes: 'Zero prohibitions is listed in the family conventions checked before the review nearly right: the one prohibition
   the text does have needs a new term.'

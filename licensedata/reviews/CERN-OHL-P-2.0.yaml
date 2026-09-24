@@ -7,7 +7,7 @@ text_retrieved: true
 verdict: created
 summary: Models the permissive variant of version 2 of the CERN Open Hardware Licence. The record
   follows Apache-2.0 for its permissive shape and carries no reciprocity at all, which is exactly
-  what separates it from the W and S variants written in the same batch. A reader should note
+  what separates it from the W and S variants written in the same review group. A reader should note
   that the subject matter is hardware design material, not only software.
 findings:
 - rubric: 1
@@ -51,7 +51,7 @@ findings:
     the modified Covered Source stating that You have modified it, with the date and brief description
     of how You have modified it''. No cc:SourceCode duty and no cc:ShareAlike: the permissive
     variant requires neither, and section 4 asks only that ''the recipient of the Product has
-    access to any Notices applicable to the Product''. This departs from the batch note, which
+    access to any Notices applicable to the Product''. This departs from the review group note, which
     expected a source duty on all three variants; the text does not support one for P.'
   action: applied
 - rubric: 6

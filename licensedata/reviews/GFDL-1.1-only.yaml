@@ -106,7 +106,7 @@ findings:
     The record for version 1.3 hangs a fourth duty on distribute, modify and derive whose
     odrl:action is dct:source. dct:source is a Dublin Core property and not an action, the
     validator reports it, and cc:SourceCode already sits beside it, so this record does not
-    repeat it. The report proposes removing those three duty nodes from the version 1.3
+    repeat it. The review proposes removing those three duty nodes from the version 1.3
     record.
   action: applied
 - rubric: 6
@@ -175,7 +175,7 @@ findings:
     dalicc:applyTechnicalProtectionMeasures, the prohibition dalicc:sublicense,
     dalicc:terminatesOnBreach true, dalicc:sublicenseSurvival true and the ten quoted clauses.
     It also leaves out the three duty nodes whose action is dct:source. The version 1.3 text
-    carries the same sentences for all of these, so the report proposes the same statements
+    carries the same sentences for all of these, so the review proposes the same statements
     for that record.
   action: applied
 family: GNU copyleft family (GPL, LGPL, AGPL, FDL)

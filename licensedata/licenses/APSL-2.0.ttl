@@ -19,6 +19,7 @@
 
 dalicclib:APSL-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "APSL-2.0" ;
     cc:attributionName "Apple" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -31,15 +32,16 @@ APPLE OR SUCH CONTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AN
     dalicc:reviewedOn "2026-09-15"^^xsd:date ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/APSL-2.0/versions> ;
     dct:alternative "APSL" ;
-    dct:hasVersion "4" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Apple" ;
     dct:source osl:APSL-2.0 ;
     dct:title "Apple Public Source License 2.0" ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ],
+                    odrl:action cc:ShareAlike ;
+                    dalicc:evidence "Source Code of Your Externally Deployed Modifications must be released under the terms set forth in this License, including the license grants set forth in Section 3 below, for as long as you Externally Deploy the Covered Code or twelve (12) months from the date of initial External Deployment, whichever is longer." ],
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ] ],
         [ a odrl:Permission ;
@@ -61,13 +63,15 @@ APPLE OR SUCH CONTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AN
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ] ],
+                    odrl:action cc:ShareAlike ;
+                    dalicc:evidence "Source Code of Your Externally Deployed Modifications must be released under the terms set forth in this License, including the license grants set forth in Section 3 below, for as long as you Externally Deploy the Covered Code or twelve (12) months from the date of initial External Deployment, whichever is longer." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ],
+                    odrl:action cc:ShareAlike ;
+                    dalicc:evidence "Source Code of Your Externally Deployed Modifications must be released under the terms set forth in this License, including the license grants set forth in Section 3 below, for as long as you Externally Deploy the Covered Code or twelve (12) months from the date of initial External Deployment, whichever is longer." ],
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ] ],
         [ a odrl:Permission ;

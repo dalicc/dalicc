@@ -1,0 +1,78 @@
+id: Confluent-Community-1.0
+title: Confluent Community License Agreement Version 1.0
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission cc:DerivativeWorks
+    previous: permission cc:DerivativeWorks
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Subject to the
+      terms and conditions of this Agreement, Confluent hereby grants to Licensee a non-exclusive,
+      royalty-free, worldwide, non-transferable, non-sublicenseable license during the term of this
+      Agreement to: (a) use the Software; (b) prepare modifications and derivative works of the Software;
+      (c) distribute the Software (including without limitation in source code or object code form);
+      and (d) reproduce copies of the Software (the “License”)."'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Notice, dalicc:addStatement, dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Notice, dalicc:addStatement, dalicc:modificationNotice]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Subject to the
+      terms and conditions of this Agreement, Confluent hereby grants to Licensee a non-exclusive,
+      royalty-free, worldwide, non-transferable, non-sublicenseable license during the term of this
+      Agreement to: (a) use the Software; (b) prepare modifications and derivative works of the Software;
+      (c) distribute the Software (including without limitation in source code or object code form);
+      and (d) reproduce copies of the Software (the “License”)." Its duty cc:Notice quotes "On each
+      Software copy, Licensee shall reproduce and not remove or alter all Confluent or third party
+      copyright or other proprietary notices contained in the Software, and Licensee must provide
+      the notice below with each copy."'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Notice, cc:ShareAlike, dalicc:addStatement]
+    previous: permission odrl:distribute with duties [cc:Notice, cc:ShareAlike, dalicc:addStatement]
+    reason: Its duty cc:Notice quotes "On each Software copy, Licensee shall reproduce and not remove
+      or alter all Confluent or third party copyright or other proprietary notices contained in the
+      Software, and Licensee must provide the notice below with each copy."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Notice, dalicc:addStatement, dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Notice, dalicc:addStatement, dalicc:modificationNotice]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Subject to the
+      terms and conditions of this Agreement, Confluent hereby grants to Licensee a non-exclusive,
+      royalty-free, worldwide, non-transferable, non-sublicenseable license during the term of this
+      Agreement to: (a) use the Software; (b) prepare modifications and derivative works of the Software;
+      (c) distribute the Software (including without limitation in source code or object code form);
+      and (d) reproduce copies of the Software (the “License”)." Its duty cc:Notice quotes "On each
+      Software copy, Licensee shall reproduce and not remove or alter all Confluent or third party
+      copyright or other proprietary notices contained in the Software, and Licensee must provide
+      the notice below with each copy."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Confluent hereby
+      reserves all rights not expressly granted to Licensee in this Agreement.Confluent hereby reserves
+      all rights in its trademarks and service marks, and no licenses therein are granted in this
+      Agreement."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:sublicense
+    previous: prohibition dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "The License does
+      not include the right to sublicense the Software, however, each recipient to which Licensee
+      provides the Software may exercise the Licenses so long as such recipient agrees to the terms
+      and conditions of this Agreement."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

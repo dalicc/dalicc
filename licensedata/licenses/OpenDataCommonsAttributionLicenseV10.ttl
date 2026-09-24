@@ -19,6 +19,7 @@
 
 dalicclib:OpenDataCommonsAttributionLicenseV10 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "ODC-By-1.0" ;
     cc:attributionName "Open Data Commons" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -33,8 +34,8 @@ If liability may not be excluded by law, it is limited to actual and direct fina
     dct:alternative "ODC Attribution License",
         "ODC By",
         "ODC-By" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Open Data Commons" ;
     dct:source <https://opendefinition.org/licenses/odc-by/> ;
     dct:title "Open Data Commons Attribution License v1.0" ;
@@ -43,9 +44,11 @@ If liability may not be excluded by law, it is limited to actual and direct fina
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "Contains information from DATABASE NAME which is made available under the ODC Attribution License." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ] ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "Contains information from DATABASE NAME which is made available under the ODC Attribution License." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -53,32 +56,43 @@ If liability may not be excluded by law, it is limited to actual and direct fina
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "Contains information from DATABASE NAME which is made available under the ODC Attribution License." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
-                [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "Contains information from DATABASE NAME which is made available under the ODC Attribution License." ] ],
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "Contains information from DATABASE NAME which is made available under the ODC Attribution License." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
-                [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "Contains information from DATABASE NAME which is made available under the ODC Attribution License." ] ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
-            odrl:action cc:CommercialUse ],
+            odrl:action cc:CommercialUse ;
+            dalicc:evidence "These rights explicitly include commercial use, and do not exclude any field of endeavour." ],
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:suiGenerisDatabaseRights ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ;
+            dalicc:evidence "Subject to the terms and conditions of this License, the Licensor grants to You a worldwide, royalty-free, non-exclusive, terminable (but only under Section 9) license to Use the Database for the duration of any applicable copyright and Database Rights." ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ] ;
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "You may not sublicense the Database." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Dataset ] .

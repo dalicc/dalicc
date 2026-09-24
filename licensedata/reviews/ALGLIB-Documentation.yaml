@@ -7,14 +7,14 @@ text_retrieved: true
 verdict: created
 summary: 'The licence of the ALGLIB Reference Manual: two-clause BSD written for a document, with the retention
   of the copyright notice, the condition itself and the disclaimer as the first or last lines of the file as its
-  only requirement. The record follows the BSD records of batch 3 and takes its asset types from GnuFreeDocumentationLicense.
+  only requirement. The record follows the BSD records of review group 3 and takes its asset types from GnuFreeDocumentationLicense.
   Nothing here is legal advice.'
 findings:
 - rubric: 1
   severity: minor
   field: cc:legalcode
   description: The SPDX entry for this licence carries no seeAlso URL, so cc:legalcode and dct:source both name
-    the SPDX reference page. Every other record in this batch points cc:legalcode at the licensor's own copy.
+    the SPDX reference page. Every other record in this review group points cc:legalcode at the licensor's own copy.
   action: applied
 - rubric: 2
   severity: info
@@ -75,17 +75,17 @@ findings:
 - rubric: 10
   severity: info
   field: family
-  description: The only documentation licence of the batch. Its nearest relatives in the library are the BSD records
+  description: The only documentation licence of the review group. Its nearest relatives in the library are the BSD records
     rather than GnuFreeDocumentationLicense, which is a copyleft licence with invariant sections; only the asset
     types are taken from there.
   action: none
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Redistribution and use of this document (ALGLIB Reference
+    the earlier reading wrote is removed. The text reads: "Redistribution and use of this document (ALGLIB Reference
     Manual) with or without modification, are permitted provided that such redistributions will retain the above
     copyright notice, this condition and the following disclaimer as the first (or last) lines of this file." The
     permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the
@@ -94,6 +94,6 @@ findings:
 family: Fonts and documentation
 port_of: null
 variant_kind: null
-notes: Modelled from the SPDX plain text. This is the one licence of the batch with no seeAlso URL on the SPDX list
+notes: Modelled from the SPDX plain text. This is the one licence of the review group with no seeAlso URL on the SPDX list
   and no page of its own on the ALGLIB site, so cc:legalcode and dct:source both point at the SPDX reference page,
   which is the only stable published copy of the text.

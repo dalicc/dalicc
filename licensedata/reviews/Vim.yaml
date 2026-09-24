@@ -72,17 +72,17 @@ findings:
 - rubric: 10
   severity: info
   field: record
-  description: 'This is the only record of the batch that is not OSI approved; it comes from the choosealicense.com
+  description: 'This is the only record of the review group that is not OSI approved; it comes from the choosealicense.com
     list. Its duty shape is closer to the GNU records than to the permissive ones, but there is no license-wide
     cc:ShareAlike duty: condition 2c lets the author of a change choose the license for the new code.'
   action: none
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Vim may also be distributed under the GNU General Public
+    the earlier reading wrote is removed. The text reads: "Vim may also be distributed under the GNU General Public
     License, version 2 or any later version. ... It is allowed to distribute a modified (or extended) version of
     Vim ... when the following four conditions are met: 1) This license text must be included unmodified." The permission
     carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the relicensing.'

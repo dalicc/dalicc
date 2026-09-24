@@ -19,6 +19,7 @@
 
 dalicclib:BSD-3-Clause-Clear a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "BSD-3-Clause-Clear" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://labs.metacarta.com/license-explanation.html#license> ;
@@ -32,8 +33,8 @@ dalicclib:BSD-3-Clause-Clear a odrl:Set ;
     dct:alternative "BSD 3-Clause Clear License",
         "BSD-3-Clause-Clear",
         "Clear BSD License" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://spdx.org/licenses/BSD-3-Clause-Clear.html> ;
     dct:title "BSD 3-Clause Clear License"@en ;
     odrl:permission [ a odrl:Permission ;
@@ -71,8 +72,13 @@ dalicclib:BSD-3-Clause-Clear a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "* Neither the name of [Owner Organization] nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

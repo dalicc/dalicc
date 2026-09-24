@@ -3,11 +3,19 @@ title: Creative Commons Attribution-ShareAlike 3.0 Uganda
 current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, changed
     4 alternative titles, recorded the relation to the record this one was adapted from and recorded
-    the review state.
+    the review state. Later changes recorded which sentence of the text each statement rests on, recorded
+    when the license ends on a breach, named the license the record itself is published under and
+    removed the quotes that do not name the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
   changes:
   - action: added
     statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0
@@ -66,3 +74,50 @@ entries:
       Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
       as many words.'
     source: consolidation-decision 1
+  - action: changed
+    statement: permission odrl:display
+    previous: permission odrl:display
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Subject to the
+      terms and conditions of this Licence, Licensor hereby grants the User a worldwide, royalty-free,
+      non-exclusive, perpetual (for the duration of the applicable copyright) license to exercise
+      the rights in the Work as stated below:"'
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Subject to the
+      terms and conditions of this Licence, Licensor hereby grants the User a worldwide, royalty-free,
+      non-exclusive, perpetual (for the duration of the applicable copyright) license to exercise
+      the rights in the Work as stated below:"'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:sublicense
+    previous: prohibition dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "The User may
+      not sublicense the Work."'
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'The termination clause of this port reads: "This Licence and the rights granted hereunder
+      will terminate automatically upon any breach by the User of the terms of this Licence."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: permission odrl:display
+    previous: permission odrl:display
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:reproduce: the
+      quoted sentence does not name the act. The statements stay, read from the text without a linked
+      quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:reproduce: the
+      quoted sentence does not name the act. The statements stay, read from the text without a linked
+      quote.'
+    source: manual

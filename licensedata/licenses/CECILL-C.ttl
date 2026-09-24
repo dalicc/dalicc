@@ -19,6 +19,7 @@
 
 dalicclib:CECILL-C a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CECILL-C" ;
     cc:attributionName "CEA, CNRS, INRIA" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -39,8 +40,8 @@ dalicclib:CECILL-C a odrl:Set ;
     dct:alternative "CECILL-C",
         "CeCILL-C",
         "CeCILL-C Free Software License Agreement" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "CEA, CNRS, INRIA" ;
     dct:source <https://spdx.org/licenses/CECILL-C.html> ;
     dct:title "CeCILL-C Free Software License Agreement"@en ;

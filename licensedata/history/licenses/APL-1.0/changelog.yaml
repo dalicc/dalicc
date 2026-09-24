@@ -1,11 +1,18 @@
 id: APL-1.0
 title: Adaptive Public License 1.0
-current_version: 4
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
-  summary: The content review of 2026-09-15 removed 1 prohibition and recorded the review state.
+  summary: The content review of 2026-09-15 removed 1 prohibition and recorded the review state. Later
+    changes brought it in line with its family and its text in the verification of 2026-09-15, left
+    endorsement to the default rule of the core dependency graph and named the license the record
+    itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
   changes:
   - action: added
     statement: dalicc:reviewStatus dalicc:Reviewed
@@ -24,29 +31,26 @@ entries:
       by a copy of this License". The record prohibited cc:ShareAlike, which reverses the license.
       Removed.
     source: review-finding 5/odrl:prohibition
-- version: 3
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Family rule 14 of scripts/review/family_rules.py: the warranty and liability literals
-    carried a padding space inside their quotation marks.'
-  changes:
   - action: changed
     statement: cc:attributionName "- not specified -"
     previous: cc:attributionName "- not specified - "
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Library convention 14: the warranty and liability literals carried a padding space inside
+      their quotation marks.'
     source: manual
   - action: changed
     statement: dct:publisher "- not specified -"
     previous: dct:publisher "- not specified - "
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Library convention 14: the warranty and liability literals carried a padding space inside
+      their quotation marks.'
     source: manual
-- version: 4
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
-    now supplies it.
-  changes:
   - action: removed
     statement: prohibition dalicc:promote
-    reason: Edited by hand; see the summary of this entry.
+    reason: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
+      now supplies it.
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

@@ -1,0 +1,60 @@
+id: etalab-2.0
+title: Etalab Open License 2.0
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'The statement is marked as a library convention, family rule 15: Permissive records permit
+      relicensing: the text does not state it in as many words. Its duty dalicc:compliantLicense is
+      marked as a library convention, family rule 15: Permissive records permit relicensing.'
+    source: manual
+  - action: changed
+    statement: permission dalicc:suiGenerisDatabaseRights
+    previous: permission dalicc:suiGenerisDatabaseRights
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Les « Droits
+      de propriété intellectuelle » : tous droits identifiés comme tels par le Code de la propriété
+      intellectuelle (notamment le droit d’auteur, droits voisins au droit d’auteur, droit sui generis
+      des producteurs de bases de données…)."'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:addStatement]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:addStatement]
+    reason: Its duty dalicc:addStatement quotes "« Ministère de xxx - Données originales téléchargées
+      sur http://www.data.gouv.fr/fr/datasets/xxx/, mise à jour du 14 février 2017 »."
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, dalicc:addStatement]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, dalicc:addStatement]
+    reason: Its duty dalicc:addStatement quotes "« Ministère de xxx - Données originales téléchargées
+      sur http://www.data.gouv.fr/fr/datasets/xxx/, mise à jour du 14 février 2017 »."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:addStatement]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:addStatement]
+    reason: Its duty dalicc:addStatement quotes "« Ministère de xxx - Données originales téléchargées
+      sur http://www.data.gouv.fr/fr/datasets/xxx/, mise à jour du 14 février 2017 »."
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Cette mention
+      de paternité ne confère aucun caractère officiel à la « Réutilisation » de l''« Information
+      », et ne doit pas suggérer une quelconque reconnaissance ou caution par le « Concédant », ou
+      par toute autre entité publique, du « Réutilisateur » ou de sa « Réutilisation »."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

@@ -19,6 +19,7 @@
 
 dalicclib:SunPublicLicenseVersion10 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "SPL-1.0" ;
     cc:attributionName "Sun Microsystems, Inc." ;
     cc:jurisdiction dalicc:worldwide ;
@@ -32,7 +33,7 @@ dalicclib:SunPublicLicenseVersion10 a odrl:Set ;
         "Sun Public License v1.0 (SPL-1.0)",
         "Sun Public License, Version 1.0 (SPL-1.0)" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Sun Microsystems, Inc." ;
     dct:source osl:SPL-1.0 ;
     dct:title "SUN PUBLIC LICENSE Version 1.0" ;

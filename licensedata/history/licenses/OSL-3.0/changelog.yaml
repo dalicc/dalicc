@@ -1,13 +1,17 @@
 id: OSL-3.0
 title: Open Software License 3.0
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 clause text, 1 identification detail and 1 license-wide
     duty, removed 1 permission and 1 prohibition, changed 1 identification detail and recorded the
-    review state.
+    review state. Later changes brought it in line with its family and its text in the verification
+    of 2026-09-15 and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
   changes:
   - action: added
     statement: dalicc:LiabilityLimitation "Under no circumstances and under no legal theory, whether
@@ -65,32 +69,54 @@ entries:
     reason: Added OSL-3.0 and repointed dct:source, which named rosenlaw.com/OSL3.0-explained.htm,
       an explanatory commentary, rather than the license text.
     source: review-finding 1/spdx:licenseId
-- version: 3
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Batch 4 finding 6.4 and consolidation decision 4: the record permitted dalicc:noWarrantyNotice
-    and prohibited dalicc:addStatement without support, made no patent statement although section
-    2 grants one and section 10 ends it on patent litigation, and said nothing about relicensing although
-    clause 1(c) requires every copy to be ''licensed under this License'', which the four new Open
-    Software License records model as a dalicc:ChangeLicense prohibition.'
-  changes:
   - action: removed
     statement: permission dalicc:noWarrantyNotice
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      permitted dalicc:noWarrantyNotice and prohibited dalicc:addStatement without support, made no
+      patent statement although section 2 grants one and section 10 ends it on patent litigation,
+      and said nothing about relicensing although clause 1(c) requires every copy to be ''licensed
+      under this License'', which the four new Open Software License records model as a dalicc:ChangeLicense
+      prohibition.'
     source: manual
   - action: added
     statement: permission dalicc:patentGrant
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      permitted dalicc:noWarrantyNotice and prohibited dalicc:addStatement without support, made no
+      patent statement although section 2 grants one and section 10 ends it on patent litigation,
+      and said nothing about relicensing although clause 1(c) requires every copy to be ''licensed
+      under this License'', which the four new Open Software License records model as a dalicc:ChangeLicense
+      prohibition.'
     source: manual
   - action: added
     statement: prohibition dalicc:ChangeLicense
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      permitted dalicc:noWarrantyNotice and prohibited dalicc:addStatement without support, made no
+      patent statement although section 2 grants one and section 10 ends it on patent litigation,
+      and said nothing about relicensing although clause 1(c) requires every copy to be ''licensed
+      under this License'', which the four new Open Software License records model as a dalicc:ChangeLicense
+      prohibition.'
     source: manual
   - action: removed
     statement: prohibition dalicc:addStatement
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      permitted dalicc:noWarrantyNotice and prohibited dalicc:addStatement without support, made no
+      patent statement although section 2 grants one and section 10 ends it on patent litigation,
+      and said nothing about relicensing although clause 1(c) requires every copy to be ''licensed
+      under this License'', which the four new Open Software License records model as a dalicc:ChangeLicense
+      prohibition.'
     source: manual
   - action: added
     statement: prohibition dalicc:patentRetaliationTermination
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      permitted dalicc:noWarrantyNotice and prohibited dalicc:addStatement without support, made no
+      patent statement although section 2 grants one and section 10 ends it on patent litigation,
+      and said nothing about relicensing although clause 1(c) requires every copy to be ''licensed
+      under this License'', which the four new Open Software License records model as a dalicc:ChangeLicense
+      prohibition.'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

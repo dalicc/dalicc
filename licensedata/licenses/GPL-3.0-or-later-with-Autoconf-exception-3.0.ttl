@@ -19,12 +19,13 @@
 
 dalicclib:GPL-3.0-or-later-with-Autoconf-exception-3.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "GPL-3.0-or-later WITH Autoconf-exception-3.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.gnu.org/licenses/gpl-3.0.html> ;
     dalicc:LiabilityLimitation "IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES." ;
     dalicc:WarrantyDisclaimer "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION." ;
-    dalicc:WarrantyOrLiabilityAcceptance "You may charge any price or no price for each copy that you convey, and you may offer support or warranty protection for a fee." ;
+    dalicc:WarrantyOrLiabilityAcceptance "you may offer support or warranty protection for a fee" ;
     dalicc:additionalClauses "AUTOCONF CONFIGURE SCRIPT EXCEPTION Version 3.0, 18 August 2009 Copyright © 2009 Free Software Foundation, Inc. <http://fsf.org/> Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed. This Exception is an additional permission under section 7 of the GNU General Public License, version 3 (\"GPLv3\"). It applies to a given file that bears a notice placed by the copyright holder of the file stating that the file is governed by GPLv3 along with this Exception. The purpose of this Exception is to allow distribution of Autoconf's typical output under terms of the recipient's choice (including proprietary). 0. Definitions. \"Covered Code\" is the source or object code of a version of Autoconf that is a covered work under this License. \"Normally Copied Code\" for a version of Autoconf means all parts of its Covered Code which that version can copy from its code (i.e., not from its input file) into its minimally verbose, non-debugging and non-tracing output. \"Ineligible Code\" is Covered Code that is not Normally Copied Code. 1. Grant of Additional Permission. You have permission to propagate output of Autoconf, even if such propagation would otherwise violate the terms of GPLv3. However, if by modifying Autoconf you cause any Ineligible Code of the version you received to become Normally Copied Code of your modified version, then you void this Exception for the resulting covered work. If you convey that resulting covered work, you must remove this Exception in accordance with the second paragraph of Section 7 of GPLv3. 2. No Weakening of Autoconf Copyleft. The availability of this Exception does not imply any general presumption that third-party software is unaffected by the copyleft requirements of the license of Autoconf." ;
     dalicc:validityType dalicc:perpetual ;
     dalicc:orLaterVersionOption true ;
@@ -43,16 +44,18 @@ dalicclib:GPL-3.0-or-later-with-Autoconf-exception-3.0 a odrl:Set ;
         "GPL-3.0-or-later-with-Autoconf-exception-3.0",
         "GPLv3 or later with Autoconf exception" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Free Software Foundation" ;
     dct:source <https://spdx.org/licenses/Autoconf-exception-3.0.html> ;
     dct:title "GNU General Public License v3.0 or later with Autoconf exception 3.0"@en ;
     odrl:duty [ a odrl:Duty ;
-            odrl:action cc:ShareAlike ] ;
+            odrl:action cc:ShareAlike ;
+            dalicc:evidence "You must license the entire work, as a whole, under this License to anyone who comes into possession of a copy." ] ;
     odrl:permission [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ],
         [ a odrl:Permission ;
-            odrl:action odrl:reproduce ],
+            odrl:action odrl:reproduce ;
+            dalicc:evidence "You may charge any price or no price for each copy that you convey, and you may offer support or warranty protection for a fee." ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
@@ -74,7 +77,8 @@ dalicclib:GPL-3.0-or-later-with-Autoconf-exception-3.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "The work must carry prominent notices stating that you modified it, and giving a relevant date." ] ],
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
@@ -86,7 +90,8 @@ dalicclib:GPL-3.0-or-later-with-Autoconf-exception-3.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "The work must carry prominent notices stating that you modified it, and giving a relevant date." ] ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;

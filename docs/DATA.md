@@ -1,19 +1,10 @@
 # DALICC data layer
 
-The reference for `licensedata/`: what each directory and file holds, how a licence record
+The reference for `licensedata/`: what each directory and file holds, how a license record
 is modelled, and how to add or change one. For anyone editing the data or the scripts that
 build, validate, load and export it.
 
 Part of the [documentation index](../README.md#documentation).
-
-This document is shared with the DALICC service repository, where the data is edited and
-where the service that serves it is developed. It therefore names things that are not in
-this repository: paths beginning with `app/` are modules of that service, and a handful
-of the scripts it names are the ones that export a running deployment's corrections back
-into the data, apply the decisions of the 2026 content review, or refresh the contract
-snapshots of the API. They are named so that you can see where the data comes from and
-where it is read. What is here is the data itself, the reasoner, and the checks that
-prove the data is sound, which `README.md` lists and `make check` runs.
 
 Contents: 1. what `licensedata/` holds; 2. the data model; 3. the two representations and
 the validation gate; 4. model history and versioning; 5. loading into the triple store;
@@ -34,22 +25,25 @@ licensedata/
 │   ├── licenselibrary.ttl                            all 581 licenses in one document (GENERATED)
 │   └── licenselibrary.ttl.graph  → https://dalicc.net/licenselibrary/
 ├── dependencygraph/
-│   ├── dg_default.ttl                                46 reasoning axioms + 1 default rule (version 5)
+│   ├── dg_default.ttl                                46 reasoning axioms + 1 default rule (version 2)
 │   ├── dg_default.ttl.graph      → https://dalicc.net/dependencygraph/dg_default
-│   ├── dg_eu|us|cn|gb|jp|in|br.ttl                   the default rules proposed for one market each
-│   └── dg_<id>.ttl.graph         → https://dalicc.net/dependencygraph/dg_<id>
+│   ├── dg_eu|us|cn|gb|jp|in|br.ttl                   complete graph for one market each (version 2, GENERATED)
+│   ├── dg_<id>.ttl.graph         → https://dalicc.net/dependencygraph/dg_<id>
+│   └── differences/dg_<id>.ttl + README.md           what each adds, removes and replaces (source of truth)
 ├── vocabulary/
-│   ├── dalicc-ns.ttl                                 the DALICC vocabulary, 132 terms (version 7)
+│   ├── dalicc-ns.ttl                                 the DALICC vocabulary, 142 terms (version 2)
 │   ├── dalicc-ns.ttl.graph       → https://dalicc.net/ns
 │   └── usage-counts.json                             how often each term is used (GENERATED)
 ├── history/                                          the model history; never loaded into the store
 │   ├── licenses/<id>/v<n>.ttl                        each superseded version of a record
 │   ├── licenses/<id>/changelog.yaml                  what every version changed, and why
 │   ├── dependencygraph/dg_default-v<n>.ttl + changelog.yaml
+│   ├── dependencygraph/dg_<id>-v<n>.ttl    + dg_<id>-changelog.yaml   the seven jurisdiction graphs
 │   └── vocabulary/dalicc-ns-v<n>.ttl       + changelog.yaml
 ├── reviews/                       581 × <id>.yaml    the review record of one license
 ├── spdx-mapping.json              DALICC id ↔ SPDX id, both directions (GENERATED)
 ├── deprecated/                    pre-2023-04-24 identifiers and Drupal-era exports, never loaded
+├── retired-identifiers.yaml       old id → successor for the 33 ids retired on 2023-04-24
 ├── LICENSE, README.md             the data is CC-BY-4.0; the README is its terms page
 └── copy_ttls.sh                   deprecated shim → scripts/load_data.sh
 ```
@@ -74,7 +68,7 @@ graph a file belongs to. **Never add a loadable `.ttl` without its `.graph` file
 | `https://dalicc.net/licenselibrary/` | `licenselibrary/licenselibrary.ttl` | `/licenselibrary/list`, `/licenselibrary/facetedsearch`, `/web/list`, `/web/searchresults` |
 | `https://dalicc.net/dependencygraph/dg_default` | `dependencygraph/dg_default.ttl` | `/dependencygraph/list`, the reasoner, `/compatibilitycheck/` |
 | `https://dalicc.net/ns` | `vocabulary/dalicc-ns.ttl` | the `/ns` vocabulary page; content negotiation on `dalicc:` terms |
-| `https://dalicc.net/customlicenses/` | **runtime only**, written when a licence is published | `/licenselibrary/license/{id}` fallback for composed licenses |
+| `https://dalicc.net/customlicenses/` | **runtime only**, written when a license is published | `/licenselibrary/license/{id}` fallback for composed licenses |
 | `https://dalicc.net/users/{user_id}/drafts/` | **runtime only**, one per account, written when a draft is saved (`DALICC_USER_GRAPH_TEMPLATE`) | the owner's own pages and the checks they run |
 | `https://dalicc.net/users/{user_id}/dependencygraphs/{graph_id}` | **runtime only**, one per unpublished graph of an account (`depgraph.user_graph_iri`) | the owner's editor, and a check that chooses that graph |
 | `https://dalicc.net/dependencygraph/{graph_id}` | **runtime only**, one per published graph (`depgraph.core_graph_iri`; `dg_default` keeps the configured IRI) | `/dependencygraph/list`, the reasoner where that graph is chosen |
@@ -121,6 +115,7 @@ normal case) or off the `Set` itself (a license-wide duty, as share-alike is on 
 ```turtle
 dalicclib:Apache-2.0 a odrl:Set ;
     cc:license      dalicclib:CC-BY-4.0 ;                # license of the METADATA RECORD
+    dct:license     <https://creativecommons.org/licenses/by/4.0/> ;   # the same, by its canonical address
     spdx:licenseId  "Apache-2.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode    <http://www.apache.org/licenses/LICENSE-2.0> ;
@@ -145,7 +140,7 @@ dalicclib:Apache-2.0 a odrl:Set ;
 ```
 
 One optional property is not on any curated record: `dalicc:licenseText`, which holds
-the whole licence in words. A record of the library points at the authoritative text with
+the whole license in words. A record of the library points at the authoritative text with
 `cc:legalcode` and quotes single clauses in the clause properties below; a license
 composed with the License Composer may carry the text written for it, and its license
 page renders that text after the clauses. It is a plain `xsd:string`, one per record, and
@@ -153,7 +148,15 @@ a license without one reads exactly as it always did.
 
 `cc:license` on a record is the license of the **record**, not the license the record
 models: every record carries `cc:license dalicclib:CC-BY-4.0`, which is what
-`licensedata/LICENSE` says in prose.
+`licensedata/LICENSE` says in prose. Beside it every record carries `dct:license
+<https://creativecommons.org/licenses/by/4.0/>`, the same license by the address Creative
+Commons publishes it at, because a consumer that looks for the canonical IRI does not find
+DALICC's own record of the license. The statement is additive: `cc:license` keeps its value
+and its meaning. `scripts/review/ttl_record.py` adds it whenever it writes a record that
+carries `cc:license dalicclib:CC-BY-4.0`, `scripts/build_licenselibrary.py` refuses a
+record that has the one without the other (`--name-record-licence` writes the missing
+statement), and a record published from the administration pages gets it when its version
+is stamped (`app.services.core_licenses.stamp_version`).
 
 The composer writes the same predicate. Its question "Under which license do you provide
 your license?" asks for the license of the document the author is about to publish, which
@@ -163,6 +166,76 @@ composed from a record that already had one: the only one in the library is the 
 `SampleLicenseSl`, and it is listed under [modelling errors](#modelling-errors) below.
 Read `cc:license` as "the terms this document is published under" and never as "the
 terms this document grants".
+
+**Where a statement comes from.** A permission, prohibition or duty node may say what it
+rests on. The record page reads three properties from the node itself and shows nothing
+extra when they are absent:
+
+```turtle
+odrl:permission [ a odrl:Permission ; odrl:action odrl:grantUse ;
+    dalicc:evidence "Permission is hereby granted, free of charge, to any person ..." ] ,
+  [ a odrl:Permission ; odrl:action dalicc:ChangeLicense ;
+    odrl:duty [ a odrl:Duty ; odrl:action dalicc:compliantLicense ;
+                dalicc:statementOrigin dalicc:FromConvention ;
+                dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+    dalicc:statementOrigin dalicc:FromConvention ;
+    dalicc:convention "family rule 15: Permissive records permit relicensing" ] .
+```
+
+| Property | Read as |
+|---|---|
+| `dalicc:evidence` | the sentence of the license text the statement rests on; the page quotes it in the statement's "?" bubble |
+| `dalicc:statementOrigin dalicc:FromConvention` | the library states this by convention rather than because a sentence of the text says it; the page marks it *by library convention* |
+| `dalicc:convention` | which convention, as a literal; the page names it in the bubble |
+
+A node without `dalicc:statementOrigin` is read as a statement of the text and marked
+*from the text*. Where several nodes state the same action, the statement counts as a
+convention only when every one of them says so. `app.services.licenses` exposes the reading
+as `origin`, `evidence` and `convention` on each `RuleDetail` and `DutyDetail`.
+
+**What the records carry.** `scripts/review/record_evidence.py` wrote the three properties
+onto the curated records from what the data already says, and nothing else:
+
+* `dalicc:evidence` where a review finding (`applied`, `none` or `superseded`, never a
+  proposal) quotes the text next to the statement's action, where a clause literal of the
+  record holds a sentence about one of a few distinctive actions (endorsement,
+  sublicensing, the database right, an excepted combination), or where an or-later,
+  exception or rider record shares the statement with its base record. Every quote is
+  looked up in the record's own legal text, fetched from `text_source` and the SPDX list
+  into `build/legal-texts/` with `--fetch`, and what is written is the text's own sentence
+  around it, with its own letters. A quote the text does not hold is not written, and an
+  English sentence that does not speak about the act, or is not phrased as a statement of
+  its kind, is left out. The script's docstring gives every rule.
+* `dalicc:statementOrigin dalicc:FromConvention` with `dalicc:convention "family rule N:
+  <title>"` on the `dalicc:ChangeLicense` permission and its `dalicc:compliantLicense`
+  duty of every record family rule 15 covers (except the records whose text names the
+  licenses a work may move to), on the `dalicc:compliantLicense` duty rule 13 asks of a
+  whole-work copyleft record, and on any statement a change log says a family rule added.
+
+| Statements | With evidence | By convention | Neither | All |
+|---|---|---|---|---|
+| Permissions | 256 | 111 | 5,309 | 5,676 |
+| Prohibitions | 411 | 0 | 1,179 | 1,590 |
+| License-wide duties | 35 | 0 | 148 | 183 |
+| Duties on a permission | 452 | 106 | 3,842 | 4,400 |
+| All | 1,154 | 217 | 10,478 | 11,849 |
+
+**Every quote names the act it supports.** A spot check of 40 quotes drawn at random from
+20 records (seed 20260924) found 12 that did not: the opening of a grant ("license to
+exercise the following rights in the Work", "para ejercer derechos sobre la Obra") quoted
+for `odrl:reproduce`, `odrl:display` or `odrl:distribute`, "keep intact all copyright
+notices" quoted for `cc:Attribution`, a sentence about restricting the terms quoted for
+`dalicc:ChangeLicense`. `scripts/review/check_evidence.py` holds every quote to the rule a
+reader applies: the sentence names the act, by the word the review rubric uses for it or a
+synonym, in the language of the text. On 2026-09-24 it removed 318 quotes from 129
+records, each of them versioned with a change log entry that names the statements; the
+statements stay and read as statements of the text without a linked quote. 112 quotes are
+of acts its table does not list and were left as they are.
+`tests/unit/test_data_review.py` runs the check over the records.
+
+A statement with neither is read as a statement of the text without a linked quote. Most of
+them are the core permissions of a grant ("to use, copy, modify, merge, publish,
+distribute"), which the review confirmed without quoting a sentence per act.
 
 ### Clause texts
 
@@ -197,14 +270,14 @@ relation is made explicit in the data instead:
 dalicclib:CreativeCommonsAttribution30Norway
     dalicc:jurisdictionPortOf dalicclib:CC-BY-4.0 ;   # sub-property of dct:isVersionOf
     dalicc:variantKind        "jurisdiction-port" ;
-    dalicc:licenseVersion     "3.0" ;                 # of the licence text, not of the model
+    dalicc:licenseVersion     "3.0" ;                 # of the license text, not of the model
     cc:jurisdiction           bpicounty:Norway .
 ```
 
 | Predicate | Records | Meaning |
 |---|---|---|
-| `dalicc:jurisdictionPortOf` | 290 | the record this one was adapted from. A sub-property of `dct:isVersionOf`, because the library holds no unported 2.0 or 3.0 record: the parent of every Creative Commons port is the **4.0 International** record of the same element set, so the relation carries a version difference as well as a jurisdiction difference |
-| `dalicc:licenseVersion` | 351 | the version of the *licence text* the record models, so that the version difference above stays readable (`"2.0"` on 96 records and `"3.0"` on 224; on the 287 ports alone, 77 and 210). `dct:hasVersion` carries the version of the DALICC **model**, and the two meanings do not share a term |
+| `dalicc:jurisdictionPortOf` | 290 | the record this one was adapted from. A sub-property of `dct:isVersionOf`: the parent of every Creative Commons port is the **4.0 International** record of the same element set, so the relation carries a version difference as well as a jurisdiction difference. The library now also holds the unported 1.0 to 3.0 records, and re-pointing the ports at them is open item 10 of [LICENSE_REVIEW.md section 11](LICENSE_REVIEW.md#what-is-still-open). A port and its parent do not say the same thing: each port carries the termination clause of its own text (`dalicc:terminatesOnBreach true`, no cure period), the 4.0 records the 30-day reinstatement of their Section 6(b) (`dalicc:curePeriod "30 days"`), and only the 4.0 records state the database right with the conditions of Section 3(a) |
+| `dalicc:licenseVersion` | 351 | the version of the *license text* the record models, so that the version difference above stays readable (`"2.0"` on 96 records and `"3.0"` on 224; on the 287 ports alone, 77 and 210). `dct:hasVersion` carries the version of the DALICC **model**, and the two meanings do not share a term |
 | `dalicc:variantKind` | 415 | `jurisdiction-port` (287), `version` (84), `exception` (18), `version-option` (14), `edition` (11) or `rider` (1). 323 records have a parent: 287 ports, 3 editions and the 33 variants below; the other 92 are version or edition variants of a text whose earlier version the library does not hold, so they name their kind without naming a parent |
 | `dalicc:variantOf` | 33 | the record this one is a **variant** of. A sub-property of `dct:relation`, not of `dct:isVersionOf`: a variant models the same legal text as its base with one thing changed. 14 are an or-later identifier, 18 are the base license read together with an SPDX exception, and one is Apache 2.0 with the Commons Clause rider |
 | `dalicc:translationOf` | 0 | defined for the ports whose legal text is a translation; not yet written into any record |
@@ -251,13 +324,31 @@ The license page lists the variants of a record under a heading of their own,
 is untouched: it still selects jurisdiction ports, and a variant is an ordinary row of every
 listing, search result and count.
 
-**The Creative Commons ports are deontically identical to their parents.** Every one of them
-carries exactly the permissions, duties, prohibitions and license-wide duties of its parent,
-statement for statement, so the compatibility checker cannot tell them apart. The one field
-where ports still differ is `odrl:target`: a port whose text licenses or waives a database
+**The Creative Commons ports share their parents' core statements.** Every one of them
+carries the permissions, duties, prohibitions and license-wide duties of its parent that its
+own text shares with the 4.0 text; they differ where the texts differ: the database right
+with the conditions of Section 3(a) only on the 4.0 records, the 30-day reinstatement after a
+breach only on the 4.0 records (the ports end on any breach, with no cure period), and the
+endorsement prohibition only where a text says so. Among the ports, the one field that
+differs is `odrl:target`: a port whose text licenses or waives a database
 right carries `dcmitype:Dataset`, a port whose text is silent about databases does not.
 Grouping them belongs in the presentation layer; see `app/services/ports.py` and the
 `ports=include|exclude|only` parameter in API.md.
+
+### Superseded and withdrawn
+
+A composed license that is no longer current carries `owl:deprecated true` and
+`dalicc:deprecatedOn`. The flag stands for two legal situations, and the page tells them
+apart by one more triple:
+
+| In the data | State | Set by | The page says |
+|---|---|---|---|
+| `owl:deprecated true` and `dct:isReplacedBy <newer>` | **superseded** | publishing a new version, or naming a successor when withdrawing | *A newer version exists*: replaced on the date by the newer version; rights already granted under this version are not affected |
+| `owl:deprecated true` without `dct:isReplacedBy` | **withdrawn** | *Withdraw this license* on `/my/licenses/<id>`, `POST /my/licenses/<id>/deprecate` or `POST /licenselibrary/mine/<id>/deprecate` | *Withdrawn by its publisher*: from the date no longer offered for new uses; whether granted rights continue is decided by its own terms |
+
+The routes keep the word *deprecate* and the flag keeps `owl:deprecated`, so no client
+and no stored document changes. `LicenseDetail.is_superseded` and
+`LicenseDetail.is_withdrawn` read the two states.
 
 ### Review state and record status
 
@@ -274,7 +365,9 @@ dalicclib:Apache-2.0
 `dalicc:Audited`; nothing sets the last two yet. All 581 records carry both triples. 343 are
 `dalicc:Reviewed`; 238 are `dalicc:Created`, namely the 237 records written from a legal text
 that no second reader has checked, and the composer fixture `SampleLicenseSl`, which has no
-license text to check it against at all.
+license text to check it against at all. What *Reviewed* means, who read the records and
+what nobody has checked yet is in [LICENSE_REVIEW.md](LICENSE_REVIEW.md#what-reviewed-means):
+a record marked Reviewed has been read against its text, and it is not a legal opinion.
 
 The audit trail behind the state is `licensedata/reviews/<id>.yaml`, one file per record:
 what was looked at, what was found, what was changed and what was only proposed. Its schema,
@@ -319,12 +412,12 @@ resolving; listings, search results and the homepage count leave them out.
 | | | | `foaf:logo` / `foaf:img` | 330 / 287 | 330 / 287 |
 | | | | `dalicc:jurisdictionPortOf` | 290 | 290 |
 | | | | `spdx:licenseId` | **276** | **276** |
-| | | | `dalicc:terminatesOnBreach` | 145 | 145 |
+| | | | `dalicc:terminatesOnBreach` | 438 | 438 |
 | | | | `cc:attributionName` | 95 | 95 |
 | | | | `dalicc:WarrantyOrLiabilityAcceptance` | 62 | 62 |
 | | | | `dalicc:orLaterVersionOption` | 58 | 58 |
 | | | | `dalicc:reciprocityScope` | 47 | 47 |
-| | | | `dalicc:curePeriod` | 43 | 43 |
+| | | | `dalicc:curePeriod` | 49 | 49 |
 | | | | `dalicc:variantOf` | 33 | 33 |
 | | | | `dalicc:fieldOfUseRestriction` | 30 | 30 |
 | | | | `dalicc:compatibleLicenseTest` | 23 | 23 |
@@ -350,39 +443,39 @@ CC REL. The count is the number of `odrl:action` triples that use the term.
 
 | Count | Action | Meaning |
 |---|---|---|
-| 1,448 | `cc:Notice` | attach or clearly refer to the license when distributing the work |
-| 1,388 | `cc:Attribution` | give credit to the copyright holder(s) and author(s) |
-| 735 | `dalicc:modificationNotice` | document every change and how the result differs from the original |
+| 1,448 | `cc:Notice` | keep the license and copyright notices with every copy |
+| 1,388 | `cc:Attribution` | give credit to the copyright holders or authors, in the form the licensor asks for |
+| 731 | `dalicc:modificationNotice` | document every change and how the result differs from the original |
 | 581 | `odrl:derive` | create a new work from the existing one (translation, adaptation, ...) |
-| 581 | `odrl:distribute` | provide the work to the public or make it accessible to anyone else |
-| 581 | `odrl:reproduce` | make duplicate copies of the work in any form |
-| 579 | `cc:CommercialUse` | income-generating use of any kind, direct or indirect |
-| 567 | `dalicc:ChangeLicense` | change, extend or replace the license terms |
-| 565 | `odrl:display` | create a static, transient rendition of the work |
-| 564 | `odrl:present` | publicly perform the work |
-| 541 | `dalicc:chargeDistributionFee` | charge a fee for distributing the work |
-| 363 | `dalicc:promote` | use the licensor's trademark for advertising and promotion |
-| 475 | `odrl:modify` | alter the work without substantially changing it (otherwise: `odrl:derive`) |
-| 475 | `cc:DerivativeWorks` | distribute the derivative and make it available to the public |
-| 458 | `dalicc:ModifiedWorks` | distribute the modified version of the work |
-| 401 | `dalicc:sublicense` | grant a third party a license of one's own, under the license received |
-| 318 | `cc:SourceCode` | provide access to the source code when distributing |
-| 312 | `cc:ShareAlike` | relicense the work, or the part the license names, under the original license |
+| 581 | `odrl:distribute` | provide copies of the work to the public or to anyone else |
+| 581 | `odrl:reproduce` | make copies of the work in any form |
+| 579 | `cc:CommercialUse` | use the work to generate income, directly or indirectly |
+| 567 | `dalicc:ChangeLicense` | replace the license of the work or of an adaptation, or change its terms |
+| 565 | `odrl:display` | show the work to the public without making a copy the viewer keeps |
+| 564 | `odrl:present` | perform the work in public, including by broadcast |
+| 541 | `dalicc:chargeDistributionFee` | charge a fee for providing a copy |
+| 360 | `dalicc:promote` | use the name or trademarks of the licensor or contributors to endorse or promote a product |
+| 475 | `odrl:modify` | alter the work without creating a new work (otherwise: `odrl:derive`) |
+| 475 | `cc:DerivativeWorks` | distribute an adaptation and make it available to the public |
+| 458 | `dalicc:ModifiedWorks` | distribute a modified version that is not a new, derivative work |
+| 401 | `dalicc:sublicense` | grant a third party rights under a license of one's own, rather than passing the original on |
+| 318 | `cc:SourceCode` | provide access to the source code with every copy distributed |
+| 312 | `cc:ShareAlike` | license adaptations under the same license or one it names as compatible |
 | 119 | `dalicc:addStatement` | attach additional terms or notices when redistributing |
 | 119 | `dalicc:compliantLicense` | the replacement license must stay compliant with the original |
-| 98 | `dalicc:suiGenerisDatabaseRights` | exercise the database right in the contents of a licensed database |
+| 98 | `dalicc:suiGenerisDatabaseRights` | extract or reuse a substantial part of a database (label since version 2) |
 | 91 | `dalicc:patentGrant` | the express patent license a contributor grants |
-| 77 | `dalicc:patentRetaliationTermination` | a patent claim over the work ends the grant |
+| 77 | `dalicc:patentRetaliationTermination` | a patent claim over the work ends the patent license, or the whole license; not a ban on suing |
 | 70 | `dalicc:rename` | give the modified work a name of its own |
 | 49 | `dalicc:chargeLicenseFee` | charge a fee for granting a license |
 | 42 | `odrl:grantUse` | pass the license on to a third party (the same act as `dalicc:sublicense`) |
 | 36 | `dalicc:noWarrantyNotice` | attach, or pass on, a notice that the work carries no warranty |
-| 30 | `dalicc:networkUseTrigger` | running the work over a network fires the duties the licence attaches |
+| 30 | `dalicc:networkUseTrigger` | running the work over a network fires the duties the license attaches |
 | 25 | `dalicc:includeNoticeFile` | carry a named NOTICE file forward |
 | 22 | `dalicc:addLimitation` | add a restriction downstream |
 | 18 | `dalicc:exceptedCombination` | combine the work as an SPDX exception allows, outside the condition it lifts |
 | 17 | `dalicc:useForModelTraining` | use the material to train an automated system |
-| 13 | `dalicc:exemptedMaterial` | use material the licence carves out of its grant |
+| 13 | `dalicc:exemptedMaterial` | use material the license carves out of its grant |
 | 20 more, each with fewer than 13 triples | | `dalicc:originalVersionOffer`, `dalicc:exportControlNotice`, `dalicc:royaltyCollectionReserved`, `dalicc:sellCopy`, `dalicc:applyTechnicalProtectionMeasures`, `dalicc:recipientAssent`, `dalicc:contributionGrantBack`, `dalicc:moralRightsRestriction`, `dalicc:patentFreedomCondition`, `dalicc:advertisingAcknowledgement`, `dalicc:provideUserData`, `dalicc:moralRightsNonAssertion`, `dalicc:standardsConformance`, `dalicc:covenantNotToSue`, `dalicc:computationalUseOnly`, `dalicc:publicationNonObstruction`, `dalicc:patentNotice`, `dalicc:trademarkNotice`, `dalicc:recipientRegistrationRequest`, `dalicc:conditionalAddLimitation` |
 
 Every one of the 53 is defined in the DALICC vocabulary or comes from ODRL or Creative
@@ -394,9 +487,9 @@ and `cc:SourceCode`, which sat beside each of them, carries the rule.
 
 `licensedata/dependencygraph/dg_default.ttl` holds the axioms the compatibility checker
 reasons with: 46 triples over four relations, hand-maintained, no blank nodes and no
-literals. Since version 5 it also holds one default rule, which is a different kind of
-statement and is described in [section 9](#9-dependency-graphs-as-data). It is at version 5;
-versions 1 to 4 and the change log are in `licensedata/history/dependencygraph/`.
+literals. It also holds one default rule, which is a different kind of statement and is
+described in [section 9](#9-dependency-graphs-as-data). It is at version 2; version 1 and
+the change log are in `licensedata/history/dependencygraph/`.
 
 | Relation | Triples | Semantics |
 |---|---|---|
@@ -477,72 +570,144 @@ Two axioms of the graph are load-bearing and are pinned by `scripts/validate_dat
   a bundle of CC-BY-4.0 and MIT answers "no conflict" although one forbids exactly what the
   other grants.
 
+#### Share alike between two licenses
+
+Two licenses that each keep the whole work under themselves conflict, although neither
+forbids anything the other permits. The reasoner reads a record that way when it carries
+the license-wide `odrl:duty cc:ShareAlike`, or `cc:ShareAlike` as a duty of its
+`odrl:derive` permission together with an `odrl:prohibition` of `dalicc:ChangeLicense`
+(the shape of BUSL-1.1, Elastic-2.0, the PolyForm and OFL records). Such a pair is
+reported as `share-alike-reciprocity` unless a path leads from one license to the other:
+
+| Path | What the records must state |
+|---|---|
+| the same license text | the same family and version, read from `spdx:licenseId` (an exception such as `GPL-2.0-only WITH Classpath-exception-2.0`, or a port such as `CC-BY-SA-3.0-AT`, keeps its base text); a port without an identifier borrows the family of its `dalicc:jurisdictionPortOf` parent and keeps its own `dalicc:licenseVersion` |
+| a later-version option | `dalicc:orLaterVersionOption true`, an identifier ending in `-or-later`, or a `dalicc:shareAlikeVersionQualifier` that accepts "a later version", on the license with the lower version of the same family |
+| a compatibility clause | a `dalicc:ChangeLicense` permission with the `dalicc:compliantLicense` duty under it (EUPL, CeCILL, LiLiQ-R+, CAL) |
+
+**Compatibility granted by name.** Some license texts name the licenses a work may move
+to: CC BY-SA 4.0 into GPL-3.0 (the Creative Commons compatibility list), LGPL into GPL,
+AGPL-3.0 and GPL-3.0 through their section 13. A record states each such license with
+`dalicc:compatibleWith`, and the reasoner reads the property in the direction it is
+stated: `L1 dalicc:compatibleWith L2` lets a work under `L1` be released under `L2`, so
+the pair is not reported as `share-alike-reciprocity`, and a `share-alike-direction`
+entry says the combined work has to be released under `L2`. The object may be `L2`
+itself or a record one hop from it, of the same license text or with an "or later"
+option that reaches `L2` (LGPL-2.1 names GPL-2.0-or-later, which reaches GPL-3.0). The
+mixer treats the direction as a restriction, and as a conflict when a target license is
+chosen that no stated direction reaches. Compatibility no record states is still not
+seen, and such a pair is reported as a conflict (CC BY-SA 3.0 and 4.0 are linked by the
+later-version option instead). A jurisdiction port of CC BY-SA 3.0 does not carry the
+qualifier of the unported record, so it does not reach 4.0 either.
+
+**What the records state.** A `dalicc:compatibleWith` triple is written only where a license
+text, or the licensor's own published list, names the other license, and each one has a
+review finding (`field: dalicc:compatibleWith`, rubric 10) that quotes the sentence or names
+the list. Compatibility that is only common opinion is not recorded. 18 records carry 56
+triples:
+
+| Record | Compatible with | Stated by |
+|---|---|---|
+| `LGPL-3.0-only`, `LGPL-3.0-or-later` | `GPL-3.0-only`, `GPL-3.0-or-later` | LGPL-3.0 section 2(b): a modified version may be conveyed "under the GNU GPL" |
+| `LGPL-2.1-only`, `LGPL-2.1-or-later` | `GPL-2.0-only`, `GPL-2.0-or-later`, `GPL-3.0-only`, `GPL-3.0-or-later` | LGPL-2.1 section 3: the ordinary GPL version 2 may be applied instead, "or a newer version" |
+| `AGPL-3.0`, `AGPL-3.0-or-later` and `GPL-3.0-only`, `GPL-3.0-or-later` | each other, both ways | section 13 of each text: a covered work may be combined with a work under the other license |
+| `MozillaPublicLicenseVersion20` | GPL-2.0, GPL-3.0, LGPL-2.1, LGPL-3.0 and AGPL-3.0 records, `-only` and `-or-later` | MPL-2.0 sections 3.3 and 1.12, the Secondary Licenses "or any later versions of those licenses" |
+| `CC-BY-SA-4.0` | `GPL-3.0-only` | the Creative Commons list of compatible licenses, one way |
+| `CC-BY-SA-3.0` | `CC-BY-SA-4.0` | section 4(b), a later version with the same License Elements, and the same list |
+| `CC-BY-SA-2.0`, `CC-BY-SA-2.5`, `CC-BY-NC-SA-2.0`, `CC-BY-NC-SA-2.5`, `CC-BY-NC-SA-3.0` | the 4.0 record of the same elements | their share-alike clause, which accepts a later version with the same License Elements |
+| `EUPL-1.2` | GPL-2.0, GPL-3.0, AGPL-3.0, OSL-2.1, OSL-3.0, EPL-1.0, CeCILL-2.1, MPL-2.0, LGPL-2.1, LGPL-3.0, CC BY-SA 3.0, EUPL-1.1, LiLiQ-R and LiLiQ-R+ records | article 5 and the appendix of Compatible Licences |
+| `EUPL-1.1` | `GPL-2.0-only`, `OSL-2.1`, `OSL-3.0`, `CPL-1.0`, `EclipsePublicLicense10` | article 5 and its appendix |
+
+The appendices also name CeCILL 2.0, of which the library holds no record, so it is not
+linked. The Creative Commons jurisdiction ports are not linked: their records carry neither
+`dalicc:orLaterVersionOption` nor `dalicc:shareAlikeVersionQualifier`, and linking them
+means reading the later-version clause of each port's own text first.
+
 ### The DALICC vocabulary
 
-`licensedata/vocabulary/dalicc-ns.ttl` defines **132 terms** in 1217 triples. Each carries
-`rdf:type`, `rdfs:label@en`, `rdfs:comment@en`, `rdfs:isDefinedBy <https://dalicc.net/ns#>`
-and, where an ODRL or CC counterpart exists, `rdfs:seeAlso`.
+`licensedata/vocabulary/dalicc-ns.ttl` defines **142 terms** in 1444 triples. Each carries
+`rdf:type`, `rdfs:label@en` in sentence case, `rdfs:comment@en`,
+`rdfs:isDefinedBy <https://dalicc.net/ns#>` and, where an ODRL, CC or schema.org counterpart
+exists, `rdfs:seeAlso` or `skos:closeMatch`. A property names its range where one datatype or
+class holds all its values, and its domain where one class holds all its subjects. No two
+terms share a label.
 
 | Kind | Count | How it is typed |
 |---|---|---|
-| Actions | 49 | `odrl:Action` and `skos:Concept`, plus `dalicc:RuleAction` (29) when the term may be the action of a permission or a prohibition and `dalicc:DutyAction` (23) when it may be the action of a duty. Three are both; an action typed neither is read as a rule action |
-| Classes | 14 | `owl:Class`: the asset types `dalicc:CreativeWork` and `dalicc:Hardware`, the classifiers `dalicc:AssetType`, `dalicc:Jurisdiction`, `dalicc:ValidityType`, `dalicc:DependencyRelation`, `dalicc:RecordStatus`, `dalicc:ReviewStatus`, `dalicc:RuleAction`, `dalicc:DutyAction`, and the four of the default-rule layer: `dalicc:DefaultRule`, `dalicc:DefaultOutcome`, `dalicc:RuleStatus`, `dalicc:StatementOrigin` |
-| Datatype properties | 13 | the clause properties (`dalicc:WarrantyDisclaimer`, `dalicc:LiabilityLimitation`, `dalicc:WarrantyOrLiabilityAcceptance`, `dalicc:additionalClauses`, `dalicc:PromotionSpecification`, `dalicc:licenseOwner`), `dalicc:licenseText` and the boolean and literal qualifiers, all with `rdfs:domain odrl:Set` |
-| Object properties | 9 | `dalicc:validityType`, `dalicc:jurisdictionPortOf`, `dalicc:translationOf`, `dalicc:variantOf`, `dalicc:recordStatus`, `dalicc:reviewStatus`, `dalicc:versionHistory`, `dalicc:composedOf` and `dalicc:contradicts`, which is also `owl:SymmetricProperty` |
-| Annotation properties | 9 | the per-record annotations such as `dalicc:curePeriod`, `dalicc:governingLaw` and `dalicc:compatibleLicenseTest` |
-| Policy qualities and controlled values | 14 | `skos:Concept` only: `dalicc:perpetual`, `dalicc:worldwide`, `dalicc:irrevocable`, `dalicc:patentFree`, `dalicc:royaltyFree`, `dalicc:specifyDate`, `dalicc:specifyPeriod`, `dalicc:terminationOnBreach`, the deprecated `dalicc:royalityFree`, the four `dalicc:ReviewStatus` values and `dalicc:testFixture` |
+| Actions | 51 | `odrl:Action`, `skos:Concept` and `owl:NamedIndividual`, plus `dalicc:RuleAction` (31) when the term may be the action of a permission or a prohibition and `dalicc:DutyAction` (23) when it may be the action of a duty. 3 are both; an action typed neither is read as a rule action |
+| Classes | 15 | `owl:Class`: the asset types `dalicc:CreativeWork` and `dalicc:Hardware`, the classifiers `dalicc:AssetType`, `dalicc:Jurisdiction`, `dalicc:ValidityType`, `dalicc:DependencyRelation`, `dalicc:RecordStatus`, `dalicc:ReviewStatus`, `dalicc:RuleAction`, `dalicc:DutyAction`, and the default-rule layer: `dalicc:DefaultRule`, `dalicc:AxiomRemoval`, `dalicc:DefaultOutcome`, `dalicc:RuleStatus`, `dalicc:StatementOrigin` |
+| Datatype properties | 28 | the clause texts (`dalicc:WarrantyDisclaimer`, `dalicc:LiabilityLimitation`, `dalicc:WarrantyOrLiabilityAcceptance`, `dalicc:additionalClauses`, `dalicc:PromotionSpecification`, `dalicc:licenseText`), `dalicc:licenseOwner`, the literal and boolean qualifiers of a record (`dalicc:curePeriod`, `dalicc:governingLaw`, `dalicc:terminatesOnBreach` and the rest, all with `rdfs:domain odrl:Set`), the history and rule literals (`dalicc:reviewedOn`, `dalicc:deprecatedOn`, `dalicc:basedOnVersion`, `dalicc:ruleBasis`, `dalicc:ruleExplanation`) and the two statement properties `dalicc:evidence` and `dalicc:convention` (`rdfs:domain odrl:Rule`) |
+| Object properties | 18 | the record relations (`dalicc:validityType`, `dalicc:jurisdictionPortOf`, `dalicc:translationOf`, `dalicc:variantOf`, `dalicc:composedOf`, `dalicc:compatibleWith`, `dalicc:recordStatus`, `dalicc:reviewStatus`, `dalicc:versionHistory`), the default-rule relations (`dalicc:appliesTo`, `dalicc:defaultOutcome`, `dalicc:inJurisdiction`, `dalicc:ruleStatus`, `dalicc:replacesRule`, `dalicc:basedOnGraph`, the deprecated `dalicc:extendsGraph`), `dalicc:statementOrigin` and `dalicc:contradicts`, which is also `owl:SymmetricProperty` |
+| Controlled values and policy qualities | 30 | `skos:Concept` and `owl:NamedIndividual`, most also an instance of their class: validity (`dalicc:perpetual`, `dalicc:specifyDate`, `dalicc:specifyPeriod`), jurisdictions (`dalicc:worldwide` and seven regions), default outcomes, rule statuses, statement origins, review and record statuses, and the qualities `dalicc:irrevocable`, `dalicc:royaltyFree` and the deprecated `dalicc:patentFree`, `dalicc:terminationOnBreach` and `dalicc:royalityFree` |
 
-Version 5 added one term, `dalicc:licenseText`. It holds the full text of a licence as its
-licensor publishes it, on the record itself. A curated record does not carry it: it points
-at the authoritative text with `cc:legalcode` and quotes single clauses in the clause
-properties. A licence composed with the License Composer may carry it, because the composer
-writes the licence text into the form and keeps it with the licence.
+`scripts/validate_data.py` and `tests/unit/test_vocabulary_use.py` hold the file to its data:
+every `dalicc:` IRI in a record, a dependency graph or a difference file, and every `dalicc:`
+term the application, the reasoner's programs or the scripts name, is defined; a property used
+with a literal is a datatype property and one used with an IRI an object property; and every
+subject and object fits the declared domain and range. A `dalicc:` string in the code that is
+not a term is listed with its reason in `APPLICATION_NON_TERMS`; the one left is the URN of a
+SPARQL property path. A misspelt term is corrected in the code, never listed there.
 
-Version 6 adds two, for the records of the licences GitHub projects use.
-`dalicc:variantOf` is the object property that names the record a version option, an
-exception combination or a rider varies, and the comment of `dalicc:variantKind` gained the
-three values that go with it. `dalicc:exceptedCombination` is the rule action of an SPDX
-exception: combining or linking the covered work with the material the exception names and
-conveying the result without the condition the exception lifts. It is the counterpart of
-`dalicc:exemptedMaterial`, which keeps its one meaning, material the grant does not reach at
-all, and which the exception records used to carry in the opposite position.
+**Version 1** is the vocabulary as the 2022 documentation and the data of 2023 left it.
+**Version 2** holds everything the 2026 work added before the first deployment: the terms the
+license review and the standard licenses needed, `dalicc:licenseText`, the variant relations
+and `dalicc:exceptedCombination`, the default-rule layer with its seven regions, and the terms
+of a graph built from another one; the change log lists each with its reason.
 
-Version 7 adds the terms for what a licence does **not** say. `dalicc:DefaultRule` is a rule
-about an action a licence is silent on; it names the action with `dalicc:appliesTo`, the
-conclusion with `dalicc:defaultOutcome` (`dalicc:NotGrantedByDefault`,
-`dalicc:GrantedByDefault`, `dalicc:RequiredByDefault` or `dalicc:NotWaivable`), the territory
-with `dalicc:inJurisdiction`, the statute or principle with `dalicc:ruleBasis` and its state
-with `dalicc:ruleStatus` (`dalicc:Adopted` or `dalicc:Proposed`). `dalicc:statementOrigin`
-says of a statement in a result whether it is `dalicc:FromText` or `dalicc:FromDefaultRule`;
-it is never written into a curated record. `dalicc:extendsGraph` relates one dependency graph
-to another it is read together with. Seven region jurisdictions, `dalicc:EU`, `dalicc:US`,
-`dalicc:CN`, `dalicc:GB`, `dalicc:JP`, `dalicc:IN` and `dalicc:BR`, name their members with
-`skos:member` and the BPI country IRIs the records use. Two actions came with them because
-the jurisdiction proposals had nothing to name: `dalicc:textAndDataMining`, the automated
-analysis the European and British mining exceptions describe, and
-`dalicc:reverseEngineerForInteroperability`, decompiling only so far as interoperability
-needs. Neither is used by a record, so neither is offered for authoring.
+**Version 3** (2026-09-24):
+
+* defines where a statement of a record comes from. `dalicc:FromConvention` joins
+  `dalicc:FromText` and `dalicc:FromDefaultRule` as a `dalicc:StatementOrigin`: the statement
+  is a library convention applied to every record of its kind, not a sentence of the license
+  text. `dalicc:evidence` quotes the sentence of the legal text a statement rests on and
+  `dalicc:convention` names the convention that put a statement there (a literal). A statement
+  node that names no origin is read as `dalicc:FromText`;
+* defines `dalicc:compatibleWith`, the directed relation from one record to another whose
+  license a work under the first may be released under, alone or combined, as the first
+  license's text or its licensor's published compatibility list says (LGPL-3.0 into GPL-3.0 by
+  its section 2, CC BY-SA 4.0 into GPL-3.0 by the Creative Commons list). It is not symmetric;
+* defines `dalicc:deprecatedOn`, which the License Composer already wrote;
+* rewrites every action definition as one neutral sentence that describes the act, because
+  the record page prints the same definition under Permissions and under Prohibitions. The
+  2022 wording of the 19 terms that had one is kept verbatim as `skos:historyNote`, and
+  remarks about modelling moved to `skos:scopeNote`. `dalicc:patentRetaliationTermination`
+  is labelled "Patent license ends on a patent claim" and `dalicc:suiGenerisDatabaseRights`
+  "Extract or reuse a substantial part of a database"; both IRIs stay;
+* makes the nine literal-valued annotation properties datatype properties of `odrl:Set`, gives
+  `dalicc:ruleExplanation` the range `rdf:langString`, labels the six value classes
+  "... value" so none shares a label with its property, types every individual
+  `owl:NamedIndividual` and states six `skos:closeMatch` alignments;
+* deprecates seven published terms that duplicate another and that no record uses (below).
+
+**Version 4** (2026-09-24) spells license with an s in the labels and comments of the five
+terms whose words named it, as the rest of the site does; the label of
+`dalicc:patentRetaliationTermination` is the one label that changed. The titles of licenses
+that spell it with a c, such as the CERN Open Hardware Licence, keep it. No term changed its
+meaning.
 
 Every superseded version is archived next to its change log, as
 `licensedata/history/vocabulary/dalicc-ns-v<n>.ttl`, and the change log says why each term
-was added.
+was added or changed.
 
 **The file is the source of truth, not a second copy of one.** `app/services/vocab.py` reads
-every `dalicc:` term from it at import: the label, the definition and the classification.
-Defining a term here is all it takes for the composer, `GET /licenselibrary/actions`,
-`input_from_graph` and the consistency check to accept it. The module supplies only the ODRL
-and Creative Commons terms, which the file does not define, and the plain-language
-descriptions that read better in a drop-down than a legal definition does.
+every `dalicc:` term from it at import: the label, the definition and the classification, and
+the definition of every property (`vocab.PROPERTY_DESCRIPTIONS`, which the comparator glossary
+shows beside each further term). Defining a term here is all it takes for the composer,
+`GET /licenselibrary/actions`, `input_from_graph` and the consistency check to accept it. The
+module supplies the ODRL and Creative Commons terms, which the file does not define, with
+descriptions written the same way; its own copies of `dalicc:` definitions are only the
+fallback for a checkout without the file.
 
 #### Where the definitions come from
 
 | Source | Carried as | Covers |
 |---|---|---|
-| The DALICC vocabulary documentation published at <https://dalicc.github.io/> (`index.md`, last updated 2022-03-15, served as `docs.dalicc.net`) | `rdfs:comment@en`, **verbatim**, with `dct:source <https://dalicc.github.io/>` | 23 `dalicc:` terms, lawyer-written |
-| The help texts of the original DALICC license composer | `skos:definition@en` where a documentation definition already occupies `rdfs:comment`, otherwise `rdfs:comment@en` | the terms the documentation never covered, and a plain-language gloss for the ones it did |
+| The DALICC vocabulary documentation published at <https://dalicc.github.io/> (`index.md`, last updated 2022-03-15, served as `docs.dalicc.net`) | `skos:historyNote@en` **verbatim**, with `dct:source <https://dalicc.github.io/>`; `rdfs:comment` where the wording is still the definition (`dalicc:CreativeWork`, `dalicc:worldwide` and a few more) | 23 `dalicc:` terms, lawyer-written |
+| The help texts of the original DALICC license composer, rewritten in 2026 | `rdfs:comment@en`, one sentence that describes the act and neither grants nor forbids it | every action |
 
-Where both exist the lawyer-written text wins. One verbatim oddity is preserved on purpose:
-`dalicc:promote` ends in a double full stop, exactly as published.
+The 2022 wording stays because it was published and data was written against it, and one
+verbatim oddity is kept on purpose: the historical note of `dalicc:promote` ends in a double
+full stop, exactly as published. The `/ns` page shows it under "2022 wording".
 
 The `/ns` page of this application supersedes `docs.dalicc.net`: same introduction, same
 information-model figure, same definitions, but generated from the file the triple store is
@@ -557,20 +722,26 @@ and nginx_confs/README.md.
 | `https://dalicc.net/ns#` | **canonical.** The only form allowed in new data; `validate_data.py` errors on anything else in `dg_default.ttl`. |
 | `http://dalicc.net/ns#` | **legacy.** Used by the 2022 documentation and by a handful of axioms still resident in the live Virtuoso database. Recorded in the vocabulary as `owl:priorVersion <http://dalicc.net/ns#>` and explained in the ontology's `rdfs:comment`. It denotes the same terms. |
 
-#### The one deprecated term
+#### Deprecated terms
 
-The 2022 documentation misspells "royalty". Both IRIs are defined:
+A deprecated term keeps dereferencing, because data written against a published version may
+use it. It carries `owl:deprecated true`, `dct:isReplacedBy` and a comment that names the
+replacement, and its label says "(deprecated)".
 
-* `dalicc:royaltyFree` is canonical: the same verbatim definition, with `dct:replaces` and
-  `skos:exactMatch` pointing at the alias;
-* `dalicc:royalityFree` is kept with `owl:deprecated true`,
-  `dct:isReplacedBy dalicc:royaltyFree`, `skos:exactMatch` and an explanatory `skos:note`.
-  Deleting it would break any data written against the published documentation, so it stays
-  and `GET /ns/royalityFree` keeps resolving.
+| Term | Replaced by | Why |
+|---|---|---|
+| `dalicc:royalityFree` | `dalicc:royaltyFree` | the 2022 documentation misspelt "royalty"; the two also carry `skos:exactMatch` |
+| `dalicc:extendsGraph` | `dalicc:basedOnGraph` | every dependency graph became complete (section 9) |
+| `dalicc:terminationOnBreach` | `dalicc:terminatesOnBreach` | the property a record carries says the same thing |
+| `dalicc:patentFree` | `dalicc:patentGrant` | its 2022 definition is the scope of a contributor's patent license |
+| `dalicc:chargeOffer` | `dalicc:chargeDistributionFee` | a fee for transferring a copy is a distribution fee |
+| `dalicc:redistribute`, `dalicc:publish` | `odrl:distribute` | the same act |
+| `dalicc:attributionNotice` | `cc:Attribution` | the library states attribution duties with it |
+| `dalicc:permissionNotice` | `cc:Notice` | the library states notice duties with it |
 
-`validate_data.py` enforces the pattern: every `owl:deprecated` term must name a defined
-replacement with `dct:isReplacedBy`, and a deprecated term that turns up in the data raises
-a warning.
+`validate_data.py` enforces the pattern: every `owl:deprecated` term must name a replacement
+with `dct:isReplacedBy` that is defined here or is an ODRL or Creative Commons term, and a
+deprecated term that turns up in the data raises a warning.
 
 #### The usage notes are generated, not asserted
 
@@ -579,7 +750,8 @@ record starts using the term:
 
 * "Defined in the 2022 documentation; not used by any license in the current library." is on
   9 terms: `attachoffer`, `attributionNotice`, `chargeOffer`, `irrevocable`, `patentFree`,
-  `permissionNotice`, `publish`, `redistribute`, `royaltyFree`. They are part of the
+  `permissionNotice`, `publish`, `redistribute`, `royaltyFree` (five of them deprecated since
+  version 2). They are part of the
   published namespace and must keep dereferencing.
 * The equivalent note on a vocabulary gap that is defined but applied nowhere is on 5 terms:
   `databaseRightWaiver`, `derivativeDatabaseAccess`, `downstreamOffer`,
@@ -624,8 +796,8 @@ own legal-code URL among its `seeAlso` links. Most jurisdiction ports have no SP
 at all, and that absence is deliberate. It is served at `GET /licenselibrary/spdx-mapping`
 and `GET /licenselibrary/spdx/{spdx_id}`.
 
-Two kinds of identifier were added with the records of the licences GitHub projects use.
-The 18 records that model a licence with an SPDX exception declare an **expression** rather
+Two kinds of identifier were added with the records of the licenses GitHub projects use.
+The 18 records that model a license with an SPDX exception declare an **expression** rather
 than a single identifier, with a space and an upper-case `WITH`:
 
 ```json
@@ -680,8 +852,16 @@ Errors (exit 1):
 4. The library file parses and holds exactly the same licenses as the per-license files,
    triple for triple.
 5. Every license carries `dct:title`, `odrl:target`, `odrl:permission` and `cc:jurisdiction`.
-6. The dependency graph parses, uses only `https://dalicc.net/ns#` (never `http://`) and only
-   the four known relations.
+6. Every shipped dependency graph parses, uses only `https://dalicc.net/ns#` (never
+   `http://`), and carries only the four relations, default rules, axiom removals and its
+   own metadata, never the deprecated `dalicc:extendsGraph`. Every rule names an action, an
+   outcome, a territory, a basis, an explanation and a status exactly once, and every
+   removal names its axiom in full with a basis and an explanation; no graph holds an axiom
+   it records as removed. Only the core graph adopts a rule. Each jurisdiction graph names
+   `dg_default` and its current version with `dalicc:basedOnGraph` and
+   `dalicc:basedOnVersion`, holds no two default rules of one kind for one action in one
+   territory, and is byte for byte what `scripts/build_dependency_graphs.py` generates from
+   the core graph and its difference file (the build's `--check`).
 7. The vocabulary parses and every `owl:deprecated` term names a defined replacement.
 8. Every loadable `.ttl` has a `.graph` sidecar holding an absolute IRI.
 9. Every license has a review record and every review record a license; each parses as YAML
@@ -730,13 +910,66 @@ licensedata/history/
 ├── licenses/<id>/v<n>.ttl            the record as it stood at version n, verbatim
 ├── licenses/<id>/changelog.yaml      one entry per version from 2 upwards
 ├── dependencygraph/dg_default-v<n>.ttl + changelog.yaml
+├── dependencygraph/dg_<id>-v<n>.ttl    + dg_<id>-changelog.yaml
 └── vocabulary/dalicc-ns-v<n>.ttl       + changelog.yaml
 ```
 
-343 records are past version 1 and 412 archived version files exist. An archived version is
+581 records are past version 1 and 581 archived version files exist: every record is at
+version 2 after the squash below, and a correction from now on is a version of its own.
+`scripts/validate_data.py` prints the current figures on every run (`history: ...
+record(s) past version 1, ... archived version file(s)`), and
+`tests/unit/test_review_figures.py` fails when this paragraph falls behind them. An
+archived version is
 the **committed file, byte for byte**, never an rdflib re-serialisation: the hand-curated
 Turtle layout is part of what was published, and a reader comparing two versions should see
 the change and not thousands of renamed blank nodes.
+
+### Two versions at the first deployment
+
+The work of 2026 corrected many models more than once before any of it was deployed: a
+record could reach version 6, the core graph version 6 and the vocabulary version 8, with
+intermediate states nobody outside the project had read. Before the first deployment every
+history was **squashed to two versions**, so that the deployment offers one prior version
+and not a history of many at the start:
+
+* **version 1** is the model as it was published before the 2026 work (for a model written
+  in 2026, its first version), archived byte for byte and untouched by the squash;
+* **version 2** is the model as it is now. Its one change-log entry is dated with the date of
+  the last merged entry, names Giray Havur as reviewer, says in one or two sentences what
+  changed overall, and lists the union of the merged change lists: every change with its
+  source, duplicates removed, in the order the versions were written. A hand edit whose
+  reason pointed at the summary of its entry carries that summary as its reason, so nothing
+  that was recorded about a change was lost, only the intermediate states. The statements
+  that carry nothing but a version number (the vocabulary's `owl:versionInfo`, a generated
+  graph's `dalicc:basedOnVersion`) are restated for the new numbering, once each.
+
+The entry carries a marker that says which versions it merged:
+
+```yaml
+- version: 2
+  date: '2026-09-23'
+  reviewer: Giray Havur
+  summary: The content review of 2026-09-15 ... Later changes ...
+  squashed_from: [2, 3, 4, 5]
+  changes: [...]
+```
+
+The squash ran twice on 2026-09-24. The first run, after the content review, touched 220
+records, the eight shipped dependency graphs and the vocabulary, removed 283 archived
+versions and merged 512 change-log entries into 229. The corrections of the review that
+followed moved 575 records to versions 3 to 6, the eight graphs to version 3 and the
+vocabulary to version 4, so the second run merged them again: 575 records, the eight graphs
+and the vocabulary, 1,290 archived versions removed and 1,874 change-log entries merged into
+584, whose 6,641 changes are kept as 6,633 (the eight left out restated a version number a
+second time). A version 2 entry the first run wrote keeps its changes, which come first, and
+its marker becomes the union of the numbers it named and the numbers merged now, so a
+stored graph row at a number either run merged is named in it. Models at one or two versions were
+not touched. `scripts/review/squash_history.py` does it deterministically (`--dry-run`
+reports what it would merge) and stays in the repository as the record of how it was done.
+It may run any number of times **before the first deployment** and never after it, because
+from then on every version is published and a published version is never renumbered
+(DEVELOPMENT.md). A deployment whose accounts database
+was written before a squash follows it at its next start (section 9).
 
 ### The change log
 
@@ -774,10 +1007,13 @@ Each change names **why** it was made:
 | `model-history` | the two vocabulary terms a versioned model needs |
 | `manual` | a hand edit, whose reason is the summary of its entry |
 
-The 412 entries hold 3,167 changes. Every one of the 2,951 changes recorded at version 2
-names a finding or a decision; only the 216 later hand edits carry `manual`.
-`scripts/review/build_history.py` prints anything it cannot attribute, and a unit test
-asserts that list is empty.
+The 581 entries hold 6,081 changes: 2,951 name a finding, a decision, the review state or
+a port relation, and the 3,130 hand edits carry `manual`, with the reason `--notes` gave
+them or, where that reason pointed at the summary of its entry, that summary (section
+"Adding or changing a record" below).
+`scripts/review/build_history.py` built the first history and printed anything it could not
+attribute. It is retired and refuses to run without `--i-know`
+(DEVELOPMENT.md).
 
 ### What a record says about itself
 
@@ -790,11 +1026,11 @@ dalicclib:Apache-2.0
 
 `dct:hasVersion` is the version of the **model**, exactly as it already was on a license
 composed with the License Composer. It is always one more than the number of archived
-versions, which is what makes the two representations impossible to drift apart. 238 records
-are at version 1 and archive nothing, 299 are at version 2, 20 at version 3, 23 at version 4
-and one at version 5.
+versions, which is what makes the two representations impossible to drift apart. Every
+record is past version 1: all 581 at version 2. A record written from now on starts at
+version 1 and archives nothing until it is corrected.
 
-The version of the **licence text** is a different fact and has its own term,
+The version of the **license text** is a different fact and has its own term,
 `dalicc:licenseVersion` (`"3.0"` on a Creative Commons 3.0 port).
 
 A jurisdiction port is a record like any other: its own history, its own `dct:hasVersion`,
@@ -804,13 +1040,9 @@ a comment naming its version, and the vocabulary says so in its ontology header:
 
 ```turtle
 <https://dalicc.net/ns#> a owl:Ontology ;
-    dct:hasVersion  "6" ;
-    owl:versionInfo "6.0" ;
+    dct:hasVersion  "2" ;
+    owl:versionInfo "2.0" ;
     owl:priorVersion <https://dalicc.net/ns/versions/1> ,
-        <https://dalicc.net/ns/versions/2> ,
-        <https://dalicc.net/ns/versions/3> ,
-        <https://dalicc.net/ns/versions/4> ,
-        <https://dalicc.net/ns/versions/5> ,
         <http://dalicc.net/ns#> ;                 # the legacy namespace spelling, unrelated
     dalicc:versionHistory <https://dalicc.net/ns/versions> .
 ```
@@ -838,7 +1070,7 @@ python scripts/review/refresh_vocab_notes.py
 
 # 5. prove it
 python scripts/validate_data.py                  # 0 errors
-python scripts/review/family_rules.py --strict   # the eighteen family rules
+python scripts/review/family_rules.py --strict   # the twenty family rules, rule 14 not counted
 python scripts/review/consistency_sweep.py       # the consistency check over every record
 make history-check                               # every changed model really was versioned
 
@@ -856,6 +1088,10 @@ working file says the same thing, archives the committed version as `v<n>.ttl`, 
 holding the summary from the command line and the triple-level difference. Every change in
 that entry carries `source: manual`, because that is what a hand edit is; write the reason
 into `--summary`, and edit the entry afterwards if one change needs a reason of its own.
+A library-wide change passes `--from-file ids.txt --notes notes.json`, where the JSON file
+gives each record a summary of its own and each changed statement a reason of its own
+(`{"<id>": {"summary": "...", "reasons": {"<statement>": "..."}}}`), because a quote added
+to a permission reads the same in the change list as the permission did before.
 `--dry-run` reports without writing, `--reviewer` sets the name (it defaults to "Giray
 Havur"), and `--base-file <path>` overrides what the new version supersedes, for the one case
 `HEAD` gets wrong: a pass that corrects a record a second time before the first correction is
@@ -864,7 +1100,9 @@ committed.
 ### The gate
 
 `validate_data.py` proves that for every record `dct:hasVersion` equals one plus the number
-of archived versions, that the archived versions are numbered `1..n` and all parse, that
+of archived versions, that a record past version 1 carries as `dct:modified` the date of the
+change log entry of its current version (the record page compares that date with
+`dalicc:reviewedOn` to say that a record changed after its review), that the archived versions are numbered `1..n` and all parse, that
 `dalicc:versionHistory` is present and correct, and that the change log holds exactly one
 entry per version from 2 upwards with every key its schema requires. The dependency graph and
 the vocabulary are held to the same rule.
@@ -925,6 +1163,88 @@ directly through `app/services/history.py`, which caches every parsed change log
 carry a "History" section, an archived version renders read only at
 `/license-library/{id}/versions/{n}`, and `/license-library/changes` lists recent changes
 across the library (see WEBSITE.md).
+
+### The content hash
+
+Every version of a license record, a dependency graph and the vocabulary has a content
+hash, `sha256:` followed by 64 hex digits, so that a reader can tell whether two copies of
+a version say the same thing without comparing files. It is computed by
+`app/services/content_hash.py` and published by the version 2 API
+(API.md).
+
+**What it covers.** The triples, never a serialisation: the same version served as Turtle,
+JSON-LD, RDF/XML or N-Triples has one hash, and comments, prefixes and the layout of a file
+play no part. For a license record the triples are the record's concise bounded
+description: every triple whose subject is the record IRI, plus, recursively, every triple
+whose subject is a blank node reached from it. That is exactly what
+`licensedata/licenses/<id>.ttl` holds (a unit test proves it for every file), and it is
+also what the record is inside the shared named graph of the store, so the file and the
+store give the same hash. For a dependency graph and the vocabulary the triples are the
+whole graph.
+
+**The canonical form, `dalicc-c14n-1`.** The triples are written as N-Triples in one fixed
+way: an IRI with the N-Triples escapes and nothing else; a literal with its lexical form
+exactly as parsed, `xsd:string` dropped and a language tag in lower case; a blank node
+named `b` plus the first 32 hex digits of the SHA-256 of its own sorted lines (predicate and
+object, children first). The lines are deduplicated, sorted by their UTF-8 bytes and each
+ends with LF. The hash is the SHA-256 of that text. The algorithm needs every blank node to
+be the object of exactly one triple and no chain of blank nodes to loop; it refuses any
+other graph (`NotTreeShaped`) instead of hashing it wrongly. All the Turtle the service
+serves or archives meets that condition, and `tests/unit/test_content_hash.py` checks it on
+every file together with four published test vectors.
+
+**Where it is computed.** At request time, from what the service serves: an administrator
+can publish a record or a graph version between deployments, so a hash written into the
+repository would be wrong on a running server. The resolution of "version `n` of X" lives
+in the same module and is the one every version 2 route uses: the current record through
+the loader of the library (a runtime version, the file, or the composed-licence graph of
+the store), an earlier one from `licensedata/history`; for a graph the stored version row,
+the file of a core graph, the archived file; for the vocabulary its file or the archived
+one. The hashes are cached by the source they come from (a file's path, modification time
+and size; a runtime version, which never changes once written), and the cache is emptied
+wherever the history cache is.
+
+### Release manifests
+
+A release of the data is the set of versions a server serves: the version and content hash
+of every curated record, every published core dependency graph and the vocabulary. It is
+named by four content addresses, each `<prefix>-` plus the first 16 hex digits of a SHA-256:
+
+```
+lib-   over "<id>\t<version>\t<hash>\n" for every record, sorted by the UTF-8 bytes of the id
+dg-    the same over the core graphs
+ns-    over "dalicc-ns\t<version>\t<hash>\n"
+data-  over "<lib-id>\n<dg-id>\n<ns-id>\n"
+```
+
+The same state has the same name on every server and in every checkout, and a server where
+an administrator published one more version has a different name at once. The application
+version and a date travel beside the identifiers as labels and are not part of them.
+Composed licenses and the graphs of accounts are never in a release. Test fixtures are,
+with their record status, because the manifest has to equal `licensedata/`.
+
+`app/services/releases.py` computes the state a server serves now (cached by a fingerprint
+of its sources) and reads the registered ones. A registered release is a file,
+`licensedata/releases/<data-id>.json`, with sorted keys and a two-space indent:
+
+```json
+{
+  "algorithm": "dalicc-c14n-1",
+  "application_version": "2.0.0",
+  "date": "2026-09-25",
+  "release": "data-...",
+  "library": {"id": "lib-...", "records": {"0BSD": {"date": "...", "hash": "sha256:...", "status": "current", "version": 2}}},
+  "graphs": {"id": "dg-...", "graphs": {"dg_default": {"date": "...", "hash": "sha256:...", "status": "current", "version": 2}}},
+  "vocabulary": {"id": "ns-...", "date": "...", "hash": "sha256:...", "version": 2}
+}
+```
+
+`date` in the file is the day the release was cut. `scripts/build_release_manifest.py`
+writes it from the checkout alone, with no store and no database, which is right for a
+release cut from the repository, and `--check` exits 1 when the newest registered manifest
+no longer names the checkout. A registered release never changes; it is the fixed point
+`GET /v2/changes?since=<release id>` answers against. The first one is written when 2.0.0
+is cut (DEVELOPMENT.md, step 1b).
 
 ---
 
@@ -1120,7 +1440,7 @@ costs. The backlog entry for each is in IMPROVEMENT_PLAN.md.
 
 | Issue | Records | Effect |
 |---|---|---|
-| No `spdx:licenseId` | **305 of 581** | no interoperability with SPDX-based tooling. Most of the 305 are jurisdiction ports that the SPDX license list does not define, and the 17 model licences have no SPDX identifier at all, which is why the absence is deliberate rather than a gap to close |
+| No `spdx:licenseId` | **305 of 581** | no interoperability with SPDX-based tooling. Most of the 305 are jurisdiction ports that the SPDX license list does not define, and the 17 model licenses have no SPDX identifier at all, which is why the absence is deliberate rather than a gap to close |
 | No `dct:publisher` | 71 | the record names no steward. Placeholder values such as `N.N.` and `- not specified - ` were removed rather than left to look like data |
 | No `odrl:prohibition` | 40 | expected for the short permissive licenses; the list is `MIT`, `IscLicense`, `WTFPL`, `Unlicense` and 36 more of that shape |
 | No `dct:alternative` | 4 | keyword search finds these only by their exact title: `DeveloperLicense`, `InspireEndUserLicence`, `SampleLicenseSl`, `StatisticsCanadaOpenLicenceAgreement` |
@@ -1134,7 +1454,7 @@ costs. The backlog entry for each is in IMPROVEMENT_PLAN.md.
 | Stray `odrl:assignee "Sample Licensee"` | `SampleLicenseSl.ttl` | a one-off; not part of the model and not rendered anywhere |
 | `dalicc:CreativeWork` alongside `dcmitype:Dataset` and `dcmitype:Software` | 378 records | mixes a proprietary term with a standard vocabulary; `dcmitype:Text`, `Image` and `Sound` would have served. At least defined in `dalicc-ns.ttl` with `rdfs:seeAlso` to the DCMI types |
 | Two test fixtures ship as production data | `SampleLicenseSl`, `DeveloperLicense` | removing them would remove published IRIs, so both carry `dalicc:recordStatus dalicc:testFixture` instead and every listing, search and count leaves them out while `GET /licenselibrary/license/{id}` keeps resolving |
-| 575 clause literals carry a padding space inside their quotation marks | 287 Creative Commons ports plus `SampleLicenseSl` | cosmetic, changes no compatibility answer, and it is the one family rule that is not clean (rule 14). Fixing it takes 287 records to a new version in one sweep, so it wants its own commit. The one on `LatexProjectPublicLicenseVersion13c` was stripped on 2026-09-23 |
+| 575 clause literals carry a padding space inside their quotation marks | 287 Creative Commons ports plus `SampleLicenseSl` | cosmetic, changes no compatibility answer, and it is the one family rule that is not clean (rule 14). Fixing it takes 288 records to a new version in one sweep, so it wants its own commit. The one on `LatexProjectPublicLicenseVersion13c` was stripped on 2026-09-23 |
 
 ### `http://` against `https://dalicc.net/ns#` in the live store
 
@@ -1181,8 +1501,26 @@ permanently broken external link either way. The superseded data is kept under
 `GPL-2.0-only`, `GPL-3.0-only`, `LGPL-3.0-only`, `MicrosoftPublicLicense`, `OSL-3.0`,
 `WTFPL`, `0BSD`, `AAL`, `AGPL-3.0`, `APL-1.0`, `CATOSL-1.1`, `NCGL-UK-2.0`.
 
-A redirect table from old to new identifiers would turn 33 dead links into 301s. It does not
-exist yet.
+`licensedata/retired-identifiers.yaml` is the redirect table. It lists all 33 old
+identifiers with their old title and the successor, matched by title, by the legal code URL
+and by the SPDX identifier of the successor record: 27 have a successor, and the six test
+and personal records (`Example`, `MyPersonalDataLicense`, `TassilosLicense`, `Test`,
+`TestLicenseFromAlex`, `Testlicense`) have `successor: null`. It is data about the data,
+like `spdx-mapping.json`, and is never loaded into the store.
+
+The table is consulted only when an identifier does not resolve on its own, so nothing that
+resolves today changes (`Wtfpl` still resolves to the WTFPL record through the
+case-insensitive file lookup and is listed only for completeness):
+
+| Request | Retired, with a successor | Retired, without one | An SPDX identifier a record declares |
+|---|---|---|---|
+| `GET /license-library/<id>` | `301` to `/license-library/<successor>` | `410` page: "The identifier ... was retired on 2023-04-24. No record in the library replaces it." | `303` to `/license-library/<record>` |
+| `GET /licenselibrary/license/<id>` | `301` to `/licenselibrary/license/<successor>`, query string kept | `410` with a JSON `detail` saying the same | `303` to `/licenselibrary/license/<record>`, query string kept |
+
+`GET /licenselibrary/<id>`, the dereference of the canonical IRI, redirects to one of these
+two and so reaches the successor as well. `app.services.licenses.retired_identifier` reads
+the table, case-insensitively. Any other identifier that resolves to nothing answers `404`,
+and the page offers a library search for it.
 
 ---
 
@@ -1196,7 +1534,7 @@ A graph holds two kinds of statement.
 
 An **axiom** relates two actions: triples of three IRIs, a subject action, one of the four
 relations, an object action, with no blank nodes and no literals. That is the whole of the
-model this section described until version 5 of the core graph.
+model this section described before the core graph gained its first default rule.
 
 A **default rule** says what applies to an action a license is silent about. It is a node of
 type `dalicc:DefaultRule` carrying five statements, and it exists because a record states what
@@ -1208,10 +1546,21 @@ its text states while most texts are silent about most acts:
     dalicc:appliesTo dalicc:promote ;
     dalicc:defaultOutcome dalicc:NotGrantedByDefault ;
     dalicc:inJurisdiction dalicc:worldwide ;
-    dalicc:ruleBasis "trademark law and the protection of names: a copyright licence that is silent grants no right to endorsement" ;
+    dalicc:ruleBasis "Trademark and name rights are separate from copyright: Regulation (EU) 2017/1001 article 9 ... The library's evidence is Creative Commons 4.0 section 2(b)(2): Patent and trademark rights are not licensed under this Public License. ..." ;
+    dalicc:ruleExplanation "A license that says nothing about endorsement is read as not allowing it: ..."@en ;
     dct:date "2026-09-23"^^xsd:date ;
+    dct:contributor "Giray Havur, for the association's review, adopted this rule on 2026-09-23" ;
+    dct:dateAccepted "2026-09-23"^^xsd:date ;
     dalicc:ruleStatus dalicc:Adopted .
 ```
+
+An adopted rule names who adopted it and when. The vocabulary has no reviewer property for
+rules, so the rule carries `dct:contributor`, a literal with the reviewer's name, the body he
+reviewed for and the date, and `dct:dateAccepted`, the date of adoption; `dct:date` stays the
+date the rule was written. `scripts/validate_data.py` accepts both predicates in a dependency
+graph. They live in the core file and in the store only: the rule model of
+`app/services/consistency.py` has no field for them, so the generated jurisdiction graphs, the
+rule editor and the `defaults` entries of the API do not carry them.
 
 `dalicc:defaultOutcome` takes one of four values. `dalicc:NotGrantedByDefault`: the action is
 not permitted unless the license permits it. `dalicc:GrantedByDefault`: it is permitted unless
@@ -1228,30 +1577,112 @@ rules only; a jurisdiction graph carries proposals, is never the default for any
 reached only by a reader who chooses it. `scripts/validate_data.py` refuses the other way
 round in either file. Nothing a rule states is legal advice.
 
-`dalicc:extendsGraph` relates a graph to one it is read together with, one step. A
-jurisdiction graph holds its own rules and takes the 46 curated axioms and the adopted
-endorsement rule from the core graph, so the axioms stay written in one place and the next
-graph review edits one file rather than eight.
+Every rule carries two texts. `dalicc:ruleBasis` is the citation a reader can check;
+`dalicc:ruleExplanation` is the reading of it in two or three plain sentences: what the rule
+does to a license that is silent, why the law of that jurisdiction leads there, and what a
+person combining licenses will notice. The explanation is shown next to the rule on the
+graph pages, in the comparator and in every check result where the rule fired, and the
+`defaults` entries of the API carry it as `explanation`. `scripts/validate_data.py` refuses
+a shipped rule without both texts.
+
+### Complete graphs and difference files
+
+Every published dependency graph is **complete**: it holds every axiom and every default rule
+a check under it reads, and the reasoner reads that one graph and follows no link. A
+jurisdiction graph is nevertheless written down as a **difference** from the core graph,
+because that is what a legal reviewer reads and what changes when a law changes:
+`licensedata/dependencygraph/differences/<id>.ttl` (with a README) is its source of truth. It
+holds the graph's metadata (`dct:title`, `dct:description`, the jurisdiction concept as
+`dct:coverage` and `dalicc:basedOnGraph <dg_default>`), the default rules it adds, the core
+axioms it removes and the core rules it replaces:
+
+```turtle
+<https://dalicc.net/dependencygraph/removals/xx-sellcopy-sell> a dalicc:AxiomRemoval ;
+    rdf:subject dalicc:sellCopy ;
+    rdf:predicate odrl:includedIn ;
+    rdf:object odrl:sell ;
+    dalicc:ruleBasis "the statute and article" ;
+    dalicc:ruleExplanation "Why the axiom does not hold there."@en ;
+    dalicc:ruleStatus dalicc:Proposed .
+
+<https://dalicc.net/dependencygraph/rules/xx-endorsement> a dalicc:DefaultRule ;
+    dalicc:replacesRule <https://dalicc.net/dependencygraph/rules/endorsement-worldwide> ;
+    dalicc:appliesTo dalicc:promote ;
+    dalicc:defaultOutcome dalicc:GrantedByDefault ;
+    dalicc:inJurisdiction dalicc:XX ;
+    dalicc:ruleBasis "the statute and article" ;
+    dalicc:ruleExplanation "What changes against the core rule."@en ;
+    dalicc:ruleStatus dalicc:Proposed .
+```
+
+No shipped difference removes an axiom or replaces a rule: the reviewer knows of no source
+under which one of the 46 axioms or the endorsement rule fails in one of the seven markets,
+and an invented example would put a claim about the law into the data. The two blocks above
+are the syntax, from the README.
+
+`scripts/build_dependency_graphs.py` reads `dg_default.ttl` and every difference file and
+writes the complete `licensedata/dependencygraph/<id>.ttl` deterministically: the core file's
+prefix block, a header comment naming the version, the core version and the difference file,
+the metadata with `dalicc:basedOnVersion` and `dct:date`, the axioms in canonical order (the
+core's without the removed ones), the rules (the core's without the replaced ones, then the
+added and replacing ones), and the removal records, so a graph's page can say what it removes
+and why. It refuses a removal of an axiom the core graph does not hold, a replacement of a rule
+it does not hold or of a rule about another action, a rule or removal without its two texts,
+and a result with two default rules of one kind for one action in one territory (a
+`dalicc:NotWaivable` rule beside a rule that supplies a statement is how a graph says that an
+exception cannot be contracted away, and is allowed). `--check` exits 1 when a generated file
+is stale, and `validate_data.py` runs it. `--extract <id>` goes the other way, from a complete
+graph and the core graph to the difference file, keeping the comment block of the file that is
+there; for every shipped graph the two directions reproduce each other byte for byte, which a
+test holds them to. The generated files are what the loader loads, the site serves and the
+download hands out, each with its `.graph` sidecar.
+
+**Versioning.** A generated graph is versioned like the core graph. When the build would
+change what a generated graph states, either because the core graph got a new version (which
+moves `dalicc:basedOnVersion`) or because its difference file changed, it refuses to overwrite
+the file and exits 1 until `--bump` is given. `--bump` archives the previous file as
+`licensedata/history/dependencygraph/<id>-v<n>.ttl`, adds the change-log entry of version
+*n+1* to `<id>-changelog.yaml`, with every added, removed and changed statement and a summary
+that names the cause ("Follows core graph version 3.", "The difference file added a rule."),
+and writes the new version; `--summary`, `--reason`, `--reviewer` and `--date` override what it
+would write. A change of the comments or the layout alone is written without a new version.
+`sync_repository_version` then moves a running deployment's rows of all eight graphs at its
+next start, as below.
 
 | IRI | What lives there |
 |---|---|
 | `DALICC_DEPENDENCY_GRAPH` (default `https://dalicc.net/dependencygraph/dg_default`) | the curated default graph: 46 axioms and one adopted default rule |
-| `https://dalicc.net/dependencygraph/dg_eu`, `dg_us`, `dg_cn`, `dg_gb`, `dg_jp`, `dg_in`, `dg_br` | the default rules proposed for one market each, read together with the core graph; every one of them a proposal and none of them a default |
+| `https://dalicc.net/dependencygraph/dg_eu`, `dg_us`, `dg_cn`, `dg_gb`, `dg_jp`, `dg_in`, `dg_br` | complete graphs built from the core graph and a difference file each: the core axioms and the adopted core rule, plus the default rules proposed for one market; none of them a default |
 | `https://dalicc.net/dependencygraph/{id}` | any other published graph, core or user |
 | `https://dalicc.net/users/{user_id}/dependencygraphs/{id}` | a graph somebody is working on; private, like a license draft |
 
-The census of the shipped graphs, on 2026-09-23:
+The census of the shipped graphs, on 2026-09-24:
 
-| Graph | Axioms | Default rules | Adopted |
-|---|---|---|---|
-| `dg_default` | 46 | 1 | 1 |
-| `dg_eu` | from the core graph | 9 | 0 |
-| `dg_us` | from the core graph | 2 | 0 |
-| `dg_cn` | from the core graph | 2 | 0 |
-| `dg_gb` | from the core graph | 5 | 0 |
-| `dg_jp` | from the core graph | 3 | 0 |
-| `dg_in` | from the core graph | 3 | 0 |
-| `dg_br` | from the core graph | 3 | 0 |
+| Graph | Title | Version | Axioms | Default rules | Adopted |
+|---|---|---|---|---|---|
+| `dg_default` | DALICC deontic dependency graph | 3 | 46 | 1 | 1 |
+| `dg_eu` | European Union default rules | 3 | 46 | 1 + 9 | 1 (the core's) |
+| `dg_us` | United States default rules | 3 | 46 | 1 + 2 | 1 (the core's) |
+| `dg_cn` | China default rules | 3 | 46 | 1 + 2 | 1 (the core's) |
+| `dg_gb` | United Kingdom default rules | 3 | 46 | 1 + 5 | 1 (the core's) |
+| `dg_jp` | Japan default rules | 3 | 46 | 1 + 3 | 1 (the core's) |
+| `dg_in` | India default rules | 3 | 46 | 1 + 3 | 1 (the core's) |
+| `dg_br` | Brazil default rules | 3 | 46 | 1 + 3 | 1 (the core's) |
+
+Version 2 of the seven (2026-09-24) is complete, generated from version 2 of the core graph;
+none of them removes an axiom or replaces a rule. Version 2 of the core graph is the one that
+gives its rule the explanation. Version 3 of all eight (2026-09-24) is the review of the rules
+against the statutes they cite: the core rule cites its basis and names who adopted it, and 22
+of the 27 jurisdiction rules had their explanation, basis or label corrected, each keeping its
+outcome and its status ([LICENSE_REVIEW.md](LICENSE_REVIEW.md#the-review-of-the-rules-against-their-statutes)).
+
+A graph's title names the graph and nothing else. Version 1 of the seven jurisdiction
+graphs ended every title in "(proposal)", which read as if the graph itself were
+unpublished; version 2 (2026-09-24) names them plainly, and the status lives where it
+belongs, on each rule as `dalicc:ruleStatus`. Every page that lists rules shows it beside
+the rule, and a finding a rule supplied says "by default rule (proposed)" or "by default rule
+(adopted)". `scripts/validate_data.py` refuses a shipped graph whose `dct:title` says
+proposal.
 
 [LICENSE_REVIEW.md](LICENSE_REVIEW.md#13-default-rules-and-jurisdictions) lists every rule
 with the statute or principle it rests on.
@@ -1269,14 +1700,16 @@ description, version chain, named-graph IRI), `dependency_graph_members`,
 `dependency_graph_revisions` (a snapshot per draft save) and `dependency_graph_versions` (a
 snapshot plus a change-log entry per published version). See USERS.md.
 
-The versions of `dg_default` live in two places and are shown as one sequence: in the
-repository as `licensedata/history/dependencygraph/dg_default-v<n>.ttl` and `changelog.yaml`,
-exactly as section 4 describes, and in the runtime store as one `dependency_graph_versions`
+The versions of a core graph live in two places and are shown as one sequence: in the
+repository as `licensedata/history/dependencygraph/dg_default-v<n>.ttl` and `changelog.yaml`
+for `dg_default`, and `<id>-v<n>.ttl` and `<id>-changelog.yaml` for the seven jurisdiction
+graphs (each at version 2), exactly as section 4 describes, and in the
+runtime store as one `dependency_graph_versions`
 row per version an administrator published on the deployment. `make export-library` writes the
 runtime half back:
 
 ```
-licensedata/dependencygraph/<id>.ttl                     the axioms the graph has now
+licensedata/dependencygraph/<id>.ttl                     the graph as it is now, complete
 licensedata/history/dependencygraph/<id>-v<n>.ttl        every superseded version
 licensedata/history/dependencygraph/changelog.yaml       dg_default, files and runtime merged
 licensedata/history/dependencygraph/<id>-changelog.yaml  any other core graph
@@ -1286,21 +1719,37 @@ The export compares bytes before writing, so it is idempotent. The workflow for 
 curated graph on a deployment is therefore: edit it at
 `/my/dependency-graphs/dg_default/edit` and publish version *n+1* with a summary and a reason;
 run `make export-library` on that deployment; review the diff of `licensedata/` and commit it.
+For a jurisdiction graph the export writes the complete graph, and
+`python scripts/build_dependency_graphs.py --extract <id>` then folds it back into its
+difference file, after which `--bump` regenerates it; see
+ADMINISTRATION.md.
 
 A graph a **user** published is never exported: it belongs to them, not to the curated data
 set.
 
-The version a deployment reports for `dg_default` is the one in its `dependency_graphs` row,
-and that row is written once, at the first start, from the archived files present then. A
+The version a deployment reports for a shipped graph is the one in its `dependency_graphs`
+row, and that row is written once, at the first start, from the archived files present then. A
 deployment that keeps its accounts database across an upgrade would therefore keep reporting
-the old number after a commit ships a newer graph, so `app/main.py` moves the row at every
-start: it follows `current_version` in
-`licensedata/history/dependencygraph/changelog.yaml` as soon as that file names a higher
-number. Only the number moves, because the change-log entries are read from the file anyway
-and become visible the moment the number does. A version published on this deployment and not
+the old number after a commit ships a newer graph, so `app/main.py` moves every shipped row at
+every start (`depgraph_history.sync_shipped_graphs`): each follows `current_version` in its
+change log (`changelog.yaml` for `dg_default`, `<id>-changelog.yaml` for the others) as soon
+as that file names a higher number. The number moves, and for a jurisdiction graph the title
+and the description the repository ships move with it, which is how a deployment registered
+on 2026-09-23 loses "(proposal)" from its selectors; the change-log entries are read from the
+file anyway and become visible the moment the number does. A version published on this deployment and not
 yet exported stops the move, since a file of the same number would otherwise hide what an
 administrator published here; the row keeps its number, the log names both, and
 `make export-library` is the way out.
+
+A row can also be **above** the repository: a database written before the squash of section 4
+holds `dg_default` at a number from 3 to 6 and a jurisdiction graph at 3, while the repository
+ships 2 after the squash. The row follows the repository down, to the newest version it ships,
+only when the version 2 entry of the change log carries the marker `squashed_from` and names
+the row's number in it, when the server published no version
+the marker does not name, and when what the server stores for the row's version (if it stores
+anything) states the axioms and the rules the repository's graph states. The server's own
+rows of the merged versions are then deleted, because the repository numbers those states no
+longer. Otherwise the row stays and the log says why.
 
 Curated license records have no such row and need no such step. What a record says about
 itself is its own `dct:hasVersion`, read from the document the deployment loads out of

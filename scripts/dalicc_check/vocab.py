@@ -26,9 +26,10 @@ graph are included too -- the consistency check reasons over them -- but are fla
 Since 2026-09-15 the vocabulary file is the source of truth rather than a second copy:
 every ``dalicc:`` term it defines is loaded at import with its label, its definition and
 its classification (``dalicc:RuleAction``, ``dalicc:DutyAction``, ``dalicc:AssetType``,
-a policy quality or a property), and the hand-written table below supplies only the ODRL
-and Creative Commons terms, which the file does not define, and the plain-language
-descriptions.  Defining a term in ``dalicc-ns.ttl`` is therefore all it takes to make the
+a policy quality or a property), and the hand-written table below supplies the ODRL
+and Creative Commons terms, which the file does not define, with their descriptions.  The
+``dalicc:`` entries of the table are only the fallback for a checkout without the file.
+Defining a term in ``dalicc-ns.ttl`` is therefore all it takes to make the
 composer, ``GET /licenselibrary/actions``, ``input_from_graph`` and the consistency check
 accept it; nothing has to be added here as well.
 """
@@ -56,6 +57,7 @@ __all__ = [
     "ORIGIN_FROM_TEXT",
     "OUTCOME_NOT_GRANTED",
     "POLICY_QUALITIES",
+    "PROPERTY_DESCRIPTIONS",
     "PROPERTY_LABELS",
     "RULE_STATUSES",
     "RULE_STATUS_ADOPTED",
@@ -174,139 +176,125 @@ _BUILTIN_TERMS: tuple[Term, ...] = (
     _term(
         "odrl:reproduce",
         "Reproduce",
-        "Reproduce means to make duplicate copies of the work in any form.",
+        "Making copies of the work in any form.",
     ),
     _term(
         "odrl:distribute",
         "Distribute",
-        "Distribute means providing the work to the public or making it accessible to "
-        "anyone else. This may also include to present, to display or to perform the work.",
+        "Providing copies of the work to the public or to anyone else.",
     ),
     _term(
         "odrl:display",
         "Display",
-        "Display means to create a static and transient rendition of the work.",
+        "Showing the work to the public without making a copy the viewer keeps.",
     ),
     _term(
         "odrl:present",
         "Present",
-        "Present means to publicly perform the work.",
+        "Performing the work in public, including by broadcast or other communication to "
+        "the public.",
     ),
     _term(
         "odrl:modify",
         "Modify",
-        "To modify a work means that it is slightly altered (such as updated) from time to "
-        "time without substantially changing it and thus creating a new work. If modifying "
-        "the work results in a new work the action 'derive' should be chosen.",
+        "Altering the work, for example by updating it, without creating a new work; an "
+        "alteration that creates a new work is Derive.",
     ),
     _term(
         "odrl:derive",
         "Derive",
-        "To make a derivative means to create a new work from an existing work. This "
-        "includes but is not limited to any translation, adaptation, arrangement, "
-        "modification, or any other substantial alteration of the work or of a part of it.",
+        "Creating a new work from the work, such as a translation, adaptation or "
+        "arrangement of it or of a part of it.",
     ),
     _term(
         "dalicc:ModifiedWorks",
         "Modified works",
-        "Distributing a modified version of the work and making it available to the public. "
-        "The counterpart of Derivative works for alterations that do not amount to a new, "
+        "Distributing a modified version of the work that does not amount to a new, "
         "derivative work.",
     ),
     _term(
         "cc:DerivativeWorks",
         "Derivative works",
-        "Derivative works means to distribute the derivative and making it available to the "
-        "public.",
+        "Distributing an adaptation of the work and making it available to the public.",
     ),
     _term(
         "cc:CommercialUse",
         "Commercial use",
-        "Commercial use is equivalent to income-generating use of any kind, whether direct "
-        "or indirect. This spans from generating revenue by selling the work (i.e. charging "
-        "a license fee) to using it for advertising purposes.",
+        "Using the work to generate income, directly or indirectly, for example by "
+        "selling it or by using it in advertising.",
     ),
     _term(
         "dalicc:promote",
         "Promote",
-        "Promote means that the licensee can use the licensor's trademark for advertising "
-        "and promotion purposes.",
+        "Using the name or trademarks of the licensor or of contributors to endorse or "
+        "promote a product.",
     ),
     _term(
         "dalicc:chargeDistributionFee",
         "Charge distribution fee",
-        "The licensee is allowed to charge a distribution fee.",
+        "Charging a fee for the act of providing a copy of the work to someone else.",
     ),
     _term(
         "dalicc:chargeLicenseFee",
         "Charge license fee",
-        "The licensee is allowed to charge a fee for granting a license to the work, that "
-        "is, to generate revenue from sub-licensing rather than from distribution alone.",
+        "Charging a fee for granting someone a license to the work.",
     ),
     _term(
         "dalicc:ChangeLicense",
         "Change license",
-        "The licensee may change, extend or modify the license terms and replace the "
-        "original license with a new one. Where the license carries a share-alike duty "
-        "for the whole work, this permission must carry the duty to use a compliant "
-        "license.",
+        "Replacing the license of the work, or of an adaptation, with another license, or "
+        "changing its terms.",
     ),
     _term(
         "odrl:grantUse",
         "Grant use",
-        "Grant use means to create policies for the use of the asset for third parties.",
+        "Granting third parties the right to use the work.",
     ),
     _term(
         "dalicc:addLimitation",
         "Add limitation",
-        "Adding further limitations or restrictions to the license terms when "
-        "redistributing the work. Where this action is prohibited the license may not be "
-        "made more restrictive downstream.",
+        "Adding further limitations or restrictions to the license terms when passing the "
+        "work on.",
     ),
     _term(
         "dalicc:addStatement",
         "Add statement",
-        "Attaching additional terms, notices or statements to the work when redistributing "
-        "it. Where this action is prohibited the licensee must pass the license on "
-        "unchanged.",
+        "Attaching terms, notices or statements of one's own to the work or to one's "
+        "modifications when passing it on.",
     ),
     _term(
         "dalicc:noWarrantyNotice",
         "No-warranty notice",
-        "The licensee may attach a notice stating that the work is provided without "
-        "warranty of any kind.",
+        "Attaching a notice that the work is provided without any warranty.",
         duty=True,
     ),
     # --- duty actions ------------------------------------------------------
     _term(
         "cc:Attribution",
         "Attribution",
-        "Attributing means to give credit to the copyright holder(s) and/or author(s) of "
-        "the work. The licensor might request a specific attribution notice.",
+        "Giving credit to the copyright holders or authors of the work, in the form the "
+        "licensor asks for.",
         duty=True,
         group="duty",
     ),
     _term(
         "cc:Notice",
         "Notice",
-        "Noticing means to attach or clearly refer to the license when distributing the "
-        "work.",
+        "Notice: keeping the license and copyright notices with every copy.",
         duty=True,
         group="duty",
     ),
     _term(
         "cc:SourceCode",
         "Source code",
-        "Including the source code means to provide access to the source code when "
-        "distributing the work.",
+        "Providing access to the source code of the work with every copy distributed.",
         duty=True,
         group="duty",
     ),
     _term(
         "dct:source",
         "Source",
-        "Including the source means to provide access to the source material when "
-        "distributing the work.",
+        "Providing access to the source material of the work with every copy distributed.",
         rule=False,
         duty=True,
         # No record of the current library names it as an odrl:action: only the pre-2023
@@ -320,34 +308,31 @@ _BUILTIN_TERMS: tuple[Term, ...] = (
     _term(
         "cc:ShareAlike",
         "Share alike",
-        "The licensee must license the entire work or modifications / derivatives thereof, "
-        "as a whole, under the original license to anyone who comes into possession of a "
-        "copy. Where it applies to the whole work, a permission to change the license "
-        "must carry the duty to use a compliant license.",
+        "Adaptations have to be licensed under the same license or one the license names "
+        "as compatible.",
         duty=True,
         group="duty",
     ),
     _term(
         "dalicc:rename",
         "Rename",
-        "Rename means to change the title of the modified or derived work so that it can be "
-        "clearly distinguished from the original work.",
+        "Giving a modified or derived work a name that tells it apart from the original.",
         duty=True,
         group="duty",
     ),
     _term(
         "dalicc:modificationNotice",
         "Modification notice",
-        "Providing a modification note means to document any changes done to the work and "
-        "clearly document how it differs from the original work.",
+        "Marking a changed work as changed, saying how it differs from the original and "
+        "keeping earlier notices of change.",
         duty=True,
         group="duty",
     ),
     _term(
         "dalicc:compliantLicense",
         "Use a compliant license",
-        "The replacement license chosen by the licensee must remain compliant with the "
-        "terms of the original license.",
+        "Choosing a replacement license that stays compliant with the terms of the "
+        "original license.",
         duty=True,
         group="duty",
     ),
@@ -453,53 +438,52 @@ _BUILTIN_TERMS: tuple[Term, ...] = (
         group="reasoning",
     ),
     # --- published in 2022, used by no license of the current library -------
-    # Definitions verbatim from https://dalicc.github.io/ (see
-    # licensedata/vocabulary/dalicc-ns.ttl).  They are resolved so that an imported or
+    # Their 2022 definitions are kept verbatim as skos:historyNote in
+    # licensedata/vocabulary/dalicc-ns.ttl.  They are resolved so that an imported or
     # hand-written policy that uses them still renders with a proper label, but they are
     # not offered for authoring: composable=False keeps them out of composable_actions()
     # and duty_actions().
     _term(
         "dalicc:attachoffer",
         "Attach offer",
-        "The Assignee may add a written offer for permissions according to the license.",
+        "Attaching to the work a written offer of further permissions.",
         composable=False,
         documented_only=True,
     ),
     _term(
         "dalicc:chargeOffer",
         "Charge offer",
-        "The Assignee may charge a fee for the physical act of transferring a copy, and "
-        "you may at your option offer warranty protection in exchange for a fee.",
+        "Charging a fee for transferring a copy of the work, or for a warranty offered "
+        "with it.",
         composable=False,
         documented_only=True,
     ),
     _term(
         "dalicc:publish",
         "Publish",
-        "The Assigner permits the Assignee to prepare and issue (a book, journal) for "
-        "public sale to make it generally known, to make available online.",
+        "Preparing and issuing the work for the public, in print or online.",
         composable=False,
         documented_only=True,
     ),
     _term(
         "dalicc:redistribute",
         "Redistribute",
-        "The Assigner permits/prohibits the Assignees to redistribute the Asset.",
+        "Passing copies of the work on to others.",
         composable=False,
         documented_only=True,
     ),
     _term(
         "dalicc:sellCopy",
         "Sell copy",
-        "The Assignee may sell the copies of the License Material.",
+        "Selling copies of the work.",
         composable=False,
         documented_only=True,
     ),
     _term(
         "dalicc:sublicense",
         "Sublicense",
-        "The license granted by a licensee to a third party, under the authority of the "
-        "license originally granted by a licensor to the licensee.",
+        "Granting a third party rights in the work under a license of the licensee's own, "
+        "rather than passing on the original license.",
         composable=False,
         documented_only=True,
     ),
@@ -507,7 +491,7 @@ _BUILTIN_TERMS: tuple[Term, ...] = (
     _term(
         "dalicc:attributionNotice",
         "Attribution notice",
-        "Notify the attributes of License Material.",
+        "Giving notice of the attributions that the licensed material carries.",
         rule=False,
         duty=True,
         composable=False,
@@ -517,7 +501,7 @@ _BUILTIN_TERMS: tuple[Term, ...] = (
     _term(
         "dalicc:patentNotice",
         "Patent notice",
-        "Notifies that Licensed Material is patented or includes patented parts.",
+        "Stating that the work is patented or contains patented parts.",
         rule=False,
         duty=True,
         composable=False,
@@ -527,7 +511,7 @@ _BUILTIN_TERMS: tuple[Term, ...] = (
     _term(
         "dalicc:permissionNotice",
         "Permission notice",
-        "The permission notices which are in the License shall be included.",
+        "Including the permission notice of the license with the work.",
         rule=False,
         duty=True,
         composable=False,
@@ -537,11 +521,7 @@ _BUILTIN_TERMS: tuple[Term, ...] = (
     _term(
         "dalicc:trademarkNotice",
         "Trademark notice",
-        "Informs that Licensed Material is a trademark or includes trademark. The license "
-        "does not grant permission to use the trade names, trademarks, service marks, or "
-        "product names of the Licensor, except as required for reasonable and customary "
-        "use in describing the origin of the Work and reproducing the content of the "
-        "notice file.",
+        "Stating that the work is, or contains, a trademark.",
         rule=False,
         duty=True,
         composable=False,
@@ -558,7 +538,7 @@ _BUILTIN_QUALITIES: tuple[Term, ...] = (
     _term(
         "dalicc:perpetual",
         "Perpetual",
-        "A perpetual license allows to use the licensed work indefinitely.",
+        "The license has no time limit.",
         rule=False,
         composable=False,
         group="quality",
@@ -566,7 +546,8 @@ _BUILTIN_QUALITIES: tuple[Term, ...] = (
     _term(
         "dalicc:specifyDate",
         "Specify date",
-        "The license is valid between an explicit start date and end date.",
+        "The license is valid between an explicit start date and end date, given as "
+        "schema:startDate and schema:endDate on the policy.",
         rule=False,
         composable=False,
         group="quality",
@@ -574,7 +555,8 @@ _BUILTIN_QUALITIES: tuple[Term, ...] = (
     _term(
         "dalicc:specifyPeriod",
         "Specify period",
-        "The license is valid for a duration counted from the moment it is granted.",
+        "The license is valid for a duration counted from the moment it is granted, given "
+        "as schema:validFor on the policy.",
         rule=False,
         composable=False,
         group="quality",
@@ -602,8 +584,8 @@ _BUILTIN_QUALITIES: tuple[Term, ...] = (
         "Patent free",
         "The license applies only to those patent claims licensable by such Contributor "
         "that are necessarily infringed by their Contribution(s) alone or by combination "
-        "of their Contribution(s) with the Licensed Material to which such Contribution(s) "
-        "was submitted.",
+        "of their Contribution(s) with the Licensed Material to which such "
+        "Contribution(s) was submitted.",
         rule=False,
         composable=False,
         group="quality",
@@ -623,9 +605,8 @@ _BUILTIN_QUALITIES: tuple[Term, ...] = (
     _term(
         "dalicc:royalityFree",
         "Royalty free (deprecated spelling)",
-        "Refers to the right to use copyright material or intellectual property without "
-        "the need to pay royalties or license fees for each use, per each copy or volume "
-        "sold or some time period of use or sales.",
+        "Deprecated misspelling of dalicc:royaltyFree, which replaces it: the right to "
+        "use the work without paying royalties or license fees.",
         rule=False,
         composable=False,
         group="quality",
@@ -724,7 +705,7 @@ def _load_vocabulary(
 ) -> tuple[list[Term], list[Term], dict[str, str], dict[str, str], dict[str, dict[str, str]]]:
     """Read the vocabulary file and return what the service reads out of it.
 
-    The last member is the default-rule vocabulary of version 7: the instances of
+    The last member is the default-rule vocabulary of version 2: the instances of
     ``dalicc:DefaultOutcome``, ``dalicc:RuleStatus``, ``dalicc:StatementOrigin`` and
     ``dalicc:Jurisdiction``, each as ``IRI -> label``.  A default rule may only name one
     of these, and the form that validates a rule reads exactly this, so the file stays
@@ -742,6 +723,8 @@ def _load_vocabulary(
         "statuses": {},
         "origins": {},
         "jurisdictions": {},
+        # not a controlled list: the definition of every property, for the glossaries
+        "property_descriptions": {},
     }
 
     for subject in sorted(graph.subjects(RDFS.isDefinedBy, _NS_IRI), key=str):
@@ -795,6 +778,7 @@ def _load_vocabulary(
 
         if types & set(_PROPERTY_TYPES):
             property_labels[iri] = label
+            controlled["property_descriptions"][iri] = description
             continue
 
         if SKOS.Concept in types and not (types & _RULE_VOCABULARY_CLASSES):
@@ -823,12 +807,12 @@ def _load_vocabulary(
 
 
 def _merge(builtin: tuple[Term, ...], loaded: list[Term]) -> tuple[Term, ...]:
-    """Overlay ``loaded`` on ``builtin``, keeping the hand-written description.
+    """Overlay ``loaded`` on ``builtin``.
 
-    The vocabulary file owns the label, the classification and the existence of a term;
-    the table above owns the plain-language description wherever it has one, because
-    those are the lawyer-reviewed help texts of the original composer and they read
-    better in a drop-down than the legal definition does.
+    The vocabulary file owns the label, the classification, the existence and, for a
+    ``dalicc:`` term, the definition, so the record page, the comparator and the
+    composer say what ``/ns`` says.  The table above owns the description of the ODRL
+    and Creative Commons terms, which the file does not define.
     """
     merged: dict[str, Term] = {term.iri: term for term in builtin}
     for term in loaded:
@@ -836,9 +820,14 @@ def _merge(builtin: tuple[Term, ...], loaded: list[Term]) -> tuple[Term, ...]:
         if existing is None:
             merged[term.iri] = term
             continue
+        # A ``dalicc:`` term is defined by the vocabulary file; the table's text is only
+        # the fallback for a checkout without it.  An ODRL or CC term keeps the table's.
+        own = term.iri.startswith(str(_DALICC))
         merged[term.iri] = replace(
             term,
-            description=existing.description or term.description,
+            description=(term.description or existing.description)
+            if own
+            else (existing.description or term.description),
             composable=term.composable and existing.group != "reasoning",
             group=existing.group if existing.group == "reasoning" else term.group,
         )
@@ -880,12 +869,14 @@ POLICY_QUALITIES: dict[str, Term] = {term.iri: term for term in _QUALITIES}
 #: file.  ``DEFAULT_OUTCOMES`` are the four conclusions a rule can draw,
 #: ``RULE_STATUSES`` are adopted and proposed, ``STATEMENT_ORIGINS`` are the two values
 #: a finding carries to say whether it came from the text or from a rule, and
-#: ``JURISDICTIONS`` are ``dalicc:worldwide`` and the region concepts version 7 defines.
+#: ``JURISDICTIONS`` are ``dalicc:worldwide`` and the region concepts version 2 defines.
 #: A rule that names anything else is refused by the editor and ignored by the reasoner.
 DEFAULT_OUTCOMES: dict[str, str] = dict(_LOADED_CONTROLLED.get("outcomes", {}))
 RULE_STATUSES: dict[str, str] = dict(_LOADED_CONTROLLED.get("statuses", {}))
 STATEMENT_ORIGINS: dict[str, str] = dict(_LOADED_CONTROLLED.get("origins", {}))
 JURISDICTIONS: dict[str, str] = dict(_LOADED_CONTROLLED.get("jurisdictions", {}))
+#: Property IRI -> its definition in the vocabulary file, for the comparator glossary.
+PROPERTY_DESCRIPTIONS: dict[str, str] = dict(_LOADED_CONTROLLED.get("property_descriptions", {}))
 
 #: The outcome a rule names when nothing else is chosen, and the status that keeps a
 #: rule out of every check the reader did not ask for.
@@ -896,6 +887,9 @@ ORIGIN_FROM_TEXT = "https://dalicc.net/ns#FromText"
 ORIGIN_FROM_DEFAULT_RULE = "https://dalicc.net/ns#FromDefaultRule"
 
 
+#: How ``dalicc:worldwide`` reads inside a sentence.
+WORLDWIDE_PHRASE = "all jurisdictions the graph covers"
+
 #: Territory names that read as "in the ..." rather than "in ...".
 _ARTICLE_JURISDICTIONS = frozenset(
     {"European Union", "United States", "United Kingdom", "Netherlands", "Philippines"}
@@ -903,12 +897,17 @@ _ARTICLE_JURISDICTIONS = frozenset(
 
 
 def jurisdiction_phrase(iri: str) -> str:
-    """The territory as it reads inside a sentence: "in Austria", "in the EU"."""
+    """The territory as it reads inside a sentence: "in Austria", "in the EU".
+
+    ``dalicc:worldwide`` reads "all jurisdictions the graph covers": a rule that holds
+    worldwide is a reading the graph applies everywhere it speaks for, not a survey of
+    every legal system, so "every jurisdiction" would claim more than the graph knows.
+    """
     label = jurisdiction_label(iri)
     if not label:
         return ""
     if label == "Worldwide":
-        return "every jurisdiction"
+        return WORLDWIDE_PHRASE
     return f"the {label}" if label in _ARTICLE_JURISDICTIONS else label
 
 
@@ -978,7 +977,7 @@ PROPERTY_LABELS: dict[str, str] = {
     "http://www.w3.org/ns/odrl/2/assignee": "Licensee",
     "https://dalicc.net/ns#additionalClauses": "Additional clauses",
     "https://dalicc.net/ns#licenseOwner": "Licensor",
-    # Added with version 5 of the vocabulary: the licence text a composed license
+    # Added with version 2 of the vocabulary: the licence text a composed license
     # carries with it.
     "https://dalicc.net/ns#licenseText": "License text",
     "https://dalicc.net/ns#LiabilityLimitation": "Limitation of liability",

@@ -19,6 +19,7 @@
 
 dalicclib:GPL-2.0-or-later-with-Classpath-exception-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "GPL-2.0-or-later WITH Classpath-exception-2.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.gnu.org/licenses/old-licenses/gpl-2.0.html> ;
@@ -42,16 +43,18 @@ dalicclib:GPL-2.0-or-later-with-Classpath-exception-2.0 a odrl:Set ;
         "GPL-2.0-or-later-with-Classpath-exception-2.0",
         "GPLv2 or later with Classpath exception" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Free Software Foundation" ;
     dct:source <https://spdx.org/licenses/Classpath-exception-2.0.html> ;
     dct:title "GNU General Public License v2.0 or later with Classpath exception 2.0"@en ;
     odrl:duty [ a odrl:Duty ;
-            odrl:action cc:ShareAlike ] ;
+            odrl:action cc:ShareAlike ;
+            dalicc:evidence "You must cause any work that you distribute or publish, that in whole or in part contains or is derived from the Program or any part thereof, to be licensed as a whole at no charge to all third parties under the terms of this License." ] ;
     odrl:permission [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ],
         [ a odrl:Permission ;
-            odrl:action odrl:reproduce ],
+            odrl:action odrl:reproduce ;
+            dalicc:evidence "You may charge a fee for the physical act of transferring a copy, and you may at your option offer warranty protection in exchange for a fee." ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
@@ -73,7 +76,8 @@ dalicclib:GPL-2.0-or-later-with-Classpath-exception-2.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "You must cause the modified files to carry prominent notices stating that you changed the files and the date of any change." ] ],
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
@@ -85,7 +89,8 @@ dalicclib:GPL-2.0-or-later-with-Classpath-exception-2.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "You must cause the modified files to carry prominent notices stating that you changed the files and the date of any change." ] ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;

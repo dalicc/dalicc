@@ -19,6 +19,7 @@
 
 dalicclib:Apple-Sample-Code-License a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://scancode-licensedb.aboutcode.org/apple-sscl.LICENSE> ;
     dalicc:WarrantyDisclaimer "This Apple sample source code has been provided \"AS IS\" and the responsibility for its operation is yours." ;
@@ -33,8 +34,8 @@ dalicclib:Apple-Sample-Code-License a odrl:Set ;
         "Apple-Sample-Code-License",
         "apple-ascl",
         "apple-sscl" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Apple Inc." ;
     dct:source <https://developer.apple.com/support/downloads/terms/apple-sample-code/Apple-Sample-Code-License.pdf> ;
     dct:title "Apple Sample Code License"@en ;
@@ -45,19 +46,22 @@ dalicclib:Apple-Sample-Code-License a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "If you're going to re-distribute the source, we require that you make it clear in the source that the code was descended from Apple sample source code, but that you've made changes." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:rename ] ],
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "If you're going to re-distribute the source, we require that you make it clear in the source that the code was descended from Apple sample source code, but that you've made changes." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:rename ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "If you're going to re-distribute the source, we require that you make it clear in the source that the code was descended from Apple sample source code, but that you've made changes." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:rename ] ],
         [ a odrl:Permission ;
@@ -69,6 +73,10 @@ dalicclib:Apple-Sample-Code-License a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

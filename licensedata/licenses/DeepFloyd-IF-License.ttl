@@ -19,6 +19,7 @@
 
 dalicclib:DeepFloyd-IF-License a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://raw.githubusercontent.com/deep-floyd/IF/develop/LICENSE-MODEL> ;
     dalicc:LiabilityLimitation "TO THE FULLEST EXTENT PERMITTED BY LAW, IN NO EVENT WILL STABILITY AI BE LIABLE TO YOU (A) UNDER ANY THEORY OF LIABILITY, WHETHER BASED IN CONTRACT, TORT, NEGLIGENCE, STRICT LIABILITY, WARRANTY, OR OTHERWISE UNDER THIS LICENSE, OR (B) FOR ANY INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, PUNITIVE OR SPECIAL DAMAGES OR LOST PROFITS, EVEN IF STABILITY AI HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE SOFTWARE PRODUCTS, THEIR CONSTITUENT COMPONENTS, AND ANY OUTPUT (COLLECTIVELY, “SOFTWARE MATERIALS”) ARE NOT DESIGNED OR INTENDED FOR USE IN ANY APPLICATION OR SITUATION WHERE FAILURE OR FAULT OF THE SOFTWARE MATERIALS COULD REASONABLY BE ANTICIPATED TO LEAD TO SERIOUS INJURY OF ANY PERSON, INCLUDING POTENTIAL DISCRIMINATION OR VIOLATION OF AN INDIVIDUAL’S PRIVACY RIGHTS, OR TO SEVERE PHYSICAL, PROPERTY, OR ENVIRONMENTAL DAMAGE (EACH, A “HIGH-RISK USE”). IF YOU ELECT TO USE ANY OF THE SOFTWARE MATERIALS FOR A HIGH-RISK USE, YOU DO SO AT YOUR OWN RISK. YOU AGREE TO DESIGN AND IMPLEMENT APPROPRIATE DECISION-MAKING AND RISK-MITIGATION PROCEDURES AND POLICIES IN CONNECTION WITH A HIGH-RISK USE SUCH THAT EVEN IF THERE IS A FAILURE OR FAULT IN ANY OF THE SOFTWARE MATERIALS, THE SAFETY OF PERSONS OR PROPERTY AFFECTED BY THE ACTIVITY STAYS AT A LEVEL THAT IS REASONABLE, APPROPRIATE, AND LAWFUL FOR THE FIELD OF THE HIGH-RISK USE." ;
@@ -46,21 +47,24 @@ dalicclib:DeepFloyd-IF-License a odrl:Set ;
         "DeepFloyd IF Research License Agreement",
         "DeepFloyd-IF-License",
         "deepfloyd-if-license" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Stability AI Ltd." ;
     dct:source <https://github.com/deep-floyd/IF/blob/develop/LICENSE-MODEL> ;
     dct:title "DeepFloyd IF License Agreement"@en ;
     odrl:permission [ a odrl:Permission ;
-            odrl:action odrl:reproduce ],
+            odrl:action odrl:reproduce ;
+            dalicc:evidence "Subject to your compliance with the Documentation and Sections 2, 3, and 5, Stability AI grants you a non-exclusive, worldwide, non-transferable, non-sublicensable, revocable, royalty free and limited license under Stability AI’s copyright interests to reproduce, distribute, and create derivative works of the Software solely for your non-commercial research purposes." ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "Together with any copies of the Software Products (as well as derivative works thereof or works incorporating the Software Products) that you distribute, you must provide (i) a copy of this License, and (ii) the following attribution notice: “DeepFloyd is licensed under the DeepFloyd License, Copyright (c) Stability AI Ltd." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "Together with any copies of the Software Products (as well as derivative works thereof or works incorporating the Software Products) that you distribute, you must provide (i) a copy of this License, and (ii) the following attribution notice: “DeepFloyd is licensed under the DeepFloyd License, Copyright (c) Stability AI Ltd." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:exportControlNotice ] ],
         [ a odrl:Permission ;
@@ -74,13 +78,17 @@ dalicclib:DeepFloyd-IF-License a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action cc:CommercialUse ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:ChangeLicense ],
+            odrl:action dalicc:ChangeLicense ;
+            dalicc:evidence "offer or impose any terms on the Software Products that alter, restrict, or are inconsistent with the terms of this License." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:addLimitation ],
+            odrl:action dalicc:addLimitation ;
+            dalicc:evidence "offer or impose any terms on the Software Products that alter, restrict, or are inconsistent with the terms of this License." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Licensee has not been granted any trademark license as part of this License and may not use any name or mark associated with Stability AI without the prior written permission of Stability AI, except to the extent necessary to make the reference required by the “ATTRIBUTION” section of this Agreement." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ],
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "The foregoing license is personal to you, and you may not assign or sublicense this License or any other rights or obligations under this License without Stability AI’s prior written consent; any such assignment or sublicense will be void and will automatically and immediately terminate this License." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:exemptedMaterial ] ;
     odrl:target [ a odrl:AssetCollection ;

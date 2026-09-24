@@ -1,0 +1,43 @@
+id: OSET-PL-2.1
+title: OSET Public License version 2.1
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission dalicc:sublicense
+    previous: permission dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may distribute
+      such Executable Form under the terms of this License, or sublicense it under different terms,
+      provided that the license for the Executable Form does not attempt to limit or alter the recipients’
+      rights in the Source Code Form under this License."'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:modificationNotice]
+    reason: Its duty dalicc:modificationNotice quotes "You must cause any of Your Modifications to
+      carry prominent notices stating that You changed the files."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:modificationNotice]
+    reason: Its duty dalicc:modificationNotice quotes "You must cause any of Your Modifications to
+      carry prominent notices stating that You changed the files."
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

@@ -19,6 +19,7 @@
 
 dalicclib:etalab-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "etalab-2.0" ;
     cc:attributionName "Etalab" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -34,9 +35,9 @@ dalicclib:etalab-2.0 a odrl:Set ;
     dct:alternative "Etalab 2.0",
         "Licence Ouverte 2.0",
         "Open Licence 2.0" ;
-    dct:hasVersion "1" ;
+    dct:hasVersion "2" ;
     dct:language "fr" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Etalab" ;
     dct:source <https://spdx.org/licenses/etalab-2.0.html> ;
     dct:title "Etalab Open License 2.0"@en ;
@@ -51,7 +52,8 @@ dalicclib:etalab-2.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "« Ministère de xxx - Données originales téléchargées sur http://www.data.gouv.fr/fr/datasets/xxx/, mise à jour du 14 février 2017 »." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -63,7 +65,8 @@ dalicclib:etalab-2.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "« Ministère de xxx - Données originales téléchargées sur http://www.data.gouv.fr/fr/datasets/xxx/, mise à jour du 14 février 2017 »." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
@@ -71,7 +74,8 @@ dalicclib:etalab-2.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "« Ministère de xxx - Données originales téléchargées sur http://www.data.gouv.fr/fr/datasets/xxx/, mise à jour du 14 février 2017 »." ] ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
@@ -79,13 +83,19 @@ dalicclib:etalab-2.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:suiGenerisDatabaseRights ],
+            odrl:action dalicc:suiGenerisDatabaseRights ;
+            dalicc:evidence "Les « Droits de propriété intellectuelle » : tous droits identifiés comme tels par le Code de la propriété intellectuelle (notamment le droit d’auteur, droits voisins au droit d’auteur, droit sui generis des producteurs de bases de données…)." ],
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Cette mention de paternité ne confère aucun caractère officiel à la « Réutilisation » de l'« Information », et ne doit pas suggérer une quelconque reconnaissance ou caution par le « Concédant », ou par toute autre entité publique, du « Réutilisateur » ou de sa « Réutilisation »." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset ] .

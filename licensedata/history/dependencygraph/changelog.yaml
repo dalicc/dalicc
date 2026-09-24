@@ -1,12 +1,22 @@
 id: dg_default
 title: DALICC deontic dependency graph
-current_version: 5
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
-  summary: The content review of 2026-09-15 removed the pair of axioms that made a reciprocal license
-    which also grants sublicensing contradict itself.
+  summary: 'The content review of 2026-09-15 removed the pair of axioms that made a reciprocal license
+    which also grants sublicensing contradict itself, and the reviews that followed related the two
+    names of sublicensing and the commercial-use terms, so the graph holds 46 axioms. The graph also
+    gained its first default rule, which Giray Havur adopted on 2026-09-23: a copyright license that
+    is silent grants no right to endorsement, which refuses only a use that suggests endorsement and
+    cites article 9 of the EU Trade Mark Regulation and section 2(b)(2) of Creative Commons 4.0.'
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
   changes:
   - action: removed
     statement: cc:ShareAlike dalicc:contradicts odrl:grantUse
@@ -18,13 +28,6 @@ entries:
     reason: 'Review decision 5: passing the same terms on is the normal way to satisfy a share-alike
       condition, not a contradiction of it.'
     source: consolidation-decision 5
-- version: 3
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'The standard-license addition of 2026-09-15 related the two terms that name the same act:
-    dalicc:sublicense, which 295 records use as a prohibition, and odrl:grantUse, which the permissive
-    records use as a permission.'
-  changes:
   - action: added
     statement: dalicc:sublicense owl:sameAs odrl:grantUse
     reason: 'Open issue 9 of the content review is decided: the two terms denote the same act, so
@@ -36,14 +39,6 @@ entries:
     reason: The inverse spelling, written explicitly because the graph states every owl:sameAs pair
       in both directions.
     source: consolidation-decision 5
-- version: 4
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: 'The review of 2026-09-23 read every action the vocabulary defines against the axioms that
-    mention it. Eight statements were added, three were removed, and the graph now holds 46. The commercial-use
-    cluster is the substance of the change: the term 579 library statements use was not in the graph
-    at all, so the axioms about selling and charging a fee concluded nothing.'
-  changes:
   - action: added
     statement: cc:CommercialUse owl:sameAs odrl:commercialize
     reason: cc:CommercialUse is 'income-generating use of any kind, whether direct or indirect' and
@@ -78,9 +73,8 @@ entries:
     source: dependency-graph-review 2026-09-23
   - action: added
     statement: odrl:AttachPolicy owl:sameAs cc:Notice
-    reason: The inverse of cc:Notice owl:sameAs odrl:AttachPolicy. The change log of version 3 says
-      the graph states every owl:sameAs pair in both directions; three pairs did not, and now every
-      one of them does.
+    reason: The inverse of cc:Notice owl:sameAs odrl:AttachPolicy. The graph states every owl:sameAs
+      pair in both directions; three pairs did not, and now every one of them does.
     source: dependency-graph-review 2026-09-23
   - action: added
     statement: odrl:attachSource owl:sameAs cc:SourceCode
@@ -108,15 +102,6 @@ entries:
       'render the asset in an audio or video form'. A static rendition is not an audio or video one,
       so displaying is not a kind of playing. Both remain kinds of odrl:present.
     source: dependency-graph-review 2026-09-23
-- version: 5
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: 'The graph gained a second kind of statement. An axiom relates two actions; a default rule
-    says what applies to an action a licence is silent about, in which jurisdiction, and on the strength
-    of which legal source. The first adopted rule is the one the library had been keeping as a house
-    convention on 519 records: a copyright licence that says nothing about endorsement grants none.
-    The 46 axioms are unchanged.'
-  changes:
   - action: added
     statement: rule dalicc:promote dalicc:NotGrantedByDefault in dalicc:worldwide
     reason: 'Open proposal 1 of the licence review: dalicc:promote was prohibited on 519 of 581 records
@@ -128,8 +113,55 @@ entries:
     source: dependency-graph-review 2026-09-23
   - action: added
     statement: the graphs dg_eu, dg_us, dg_cn, dg_gb, dg_jp, dg_in and dg_br
-    reason: The owner asked for options for the biggest markets. Each graph holds the default rules
-      proposed for one of them, names this graph with dalicc:extendsGraph so the axioms stay written
-      once, and carries only proposals, so nothing in it reaches a reader who chooses nothing. Every
-      rule names the statute or the principle it rests on, and nothing in any of them is legal advice.
+    reason: The review considered the seven largest markets and proposed default rules for each. Each
+      graph holds the default rules proposed for one of them, names this graph with dalicc:extendsGraph
+      so the axioms stay written once, and carries only proposals, so nothing in it reaches a reader
+      who chooses nothing. Every rule names the statute or the principle it rests on, and nothing
+      in any of them is legal advice.
     source: dependency-graph-review 2026-09-23
+  - action: changed
+    statement: rule dalicc:promote dalicc:NotGrantedByDefault in dalicc:worldwide
+    previous: rule dalicc:promote dalicc:NotGrantedByDefault in dalicc:worldwide, with no dalicc:ruleExplanation
+    reason: A citation alone does not say what a rule does. dalicc:ruleExplanation, a term the vocabulary
+      gained for it, now says what the rule does to a silent licence, why trademark law and the protection
+      of names lead there, and what a person combining licences will notice.
+    source: dependency-graph-review 2026-09-24
+  - action: changed
+    statement: the graphs dg_eu, dg_us, dg_cn, dg_gb, dg_jp, dg_in and dg_br are generated from this
+      graph
+    previous: the graphs dg_eu, dg_us, dg_cn, dg_gb, dg_jp, dg_in and dg_br name this graph with dalicc:extendsGraph
+    reason: Every graph under Graphs you can reason with reads like a complete graph, and a jurisdiction
+      whose law does not agree with the core graph had no way to say so. Each jurisdiction graph now
+      holds the 46 axioms and this rule itself, is built by scripts/build_dependency_graphs.py from
+      this file and its difference file, and can remove an axiom or replace a rule with a legal reason.
+      The reasoner reads one graph and follows no link.
+    source: dependency-graph-review 2026-09-24
+  - action: changed
+    statement: rule dalicc:promote dalicc:NotGrantedByDefault in dalicc:worldwide, with dalicc:ruleBasis
+      citing Regulation (EU) 2017/1001 article 9 and Creative Commons 4.0 section 2(b)(2)
+    previous: 'rule dalicc:promote dalicc:NotGrantedByDefault in dalicc:worldwide, with dalicc:ruleBasis:
+      trademark law and the protection of names: a copyright licence that is silent grants no right
+      to endorsement'
+    reason: 'The rule was the only adopted one and cited no source a lawyer could check. Trademark
+      and endorsement rights are separate from copyright: the EU Trade Mark Regulation gives the proprietor
+      the right to prevent use of the sign without consent, and the Creative Commons 4.0 licences,
+      which the library models, say in section 2(b)(2) that patent and trademark rights are not licensed
+      under them.'
+    source: dependency-graph-review 2026-09-24
+  - action: changed
+    statement: rule dalicc:promote dalicc:NotGrantedByDefault in dalicc:worldwide, with a dalicc:ruleExplanation
+      that refuses only a use suggesting endorsement
+    previous: rule dalicc:promote dalicc:NotGrantedByDefault in dalicc:worldwide, with a dalicc:ruleExplanation
+      that said the licensee may not use the name or the marks of the licensor to promote a product
+    reason: Descriptive or referential use of a name, such as saying truthfully that a product is
+      based on or compatible with the licensed work, is generally lawful; the legal limit is a use
+      that states or implies endorsement or origin.
+    source: dependency-graph-review 2026-09-24
+  - action: added
+    statement: 'rule dalicc:promote dalicc:NotGrantedByDefault in dalicc:worldwide: dct:contributor
+      "Giray Havur, for the association''s review, adopted this rule on 2026-09-23"; dct:dateAccepted
+      2026-09-23'
+    reason: A lawyer reading the graph could not tell who adopted the rule. The vocabulary has no
+      reviewer property for rules, so the rule names its reviewer with dct:contributor and the date
+      of adoption, which the version 2 entry of this log records, with dct:dateAccepted.
+    source: dependency-graph-review 2026-09-24

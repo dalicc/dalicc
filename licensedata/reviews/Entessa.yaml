@@ -46,7 +46,7 @@ findings:
   severity: minor
   field: dalicc:additionalClauses
   description: The disclaimer paragraph is split at "IN NO EVENT SHALL" into dalicc:WarrantyDisclaimer and dalicc:LiabilityLimitation,
-    the split the BSD records of batch 3 use. dalicc:additionalClauses carries conditions 4 and 5 and the closing
+    the split the BSD records of review group 3 use. dalicc:additionalClauses carries conditions 4 and 5 and the closing
     paragraph about the origin of the software.
   action: applied
 - rubric: 7
@@ -70,17 +70,17 @@ findings:
 - rubric: 10
   severity: info
   field: family
-  description: Entessa and Naumen are the two Apache 1.1 derivatives of this batch. Entessa keeps the advertising
+  description: Entessa and Naumen are the two Apache 1.1 derivatives of this review group. Entessa keeps the advertising
     acknowledgment and the product-naming bar; Naumen drops both and adds a modification notice instead. Neither
-    has anything to do with the Common Public License, although the batch groups them with it.
+    has anything to do with the Common Public License, although the review group groups them with it.
   action: none
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
+    the earlier reading wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
     or without modification, are permitted provided that the following conditions are met: 1. Redistributions of
     source code must retain the above copyright notice, this list of conditions and the following disclaimer." The
     permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the

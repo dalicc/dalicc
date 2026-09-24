@@ -76,7 +76,7 @@ findings:
     Article 5.2 states: "This Agreement shall be construed under the laws of Japan." Article 2
     nonetheless grants "a license to use the Licensed Program in any and all countries", so
     the record keeps cc:jurisdiction dalicc:worldwide and quotes the choice of law;
-    bpicounty:Japan is the alternative if the owner reads a choice of law as a jurisdiction.
+    bpicounty:Japan is the alternative if the association reads a choice of law as a jurisdiction.
   action: applied
 - rubric: 8
   severity: gap
@@ -112,4 +112,4 @@ variant_kind: null
 notes: >-
   Modelled from the SPDX plain text of the IPA Font License and checked against the URL in
   cc:legalcode. Article 5 chooses Japanese law; the clause is quoted and cc:jurisdiction stays
-  dalicc:worldwide, as everywhere in this batch.
+  dalicc:worldwide, as everywhere in this review group.

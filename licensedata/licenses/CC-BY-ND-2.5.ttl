@@ -19,6 +19,7 @@
 
 dalicclib:CC-BY-ND-2.5 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CC-BY-ND-2.5" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://creativecommons.org/licenses/by-nd/2.5/legalcode> ;
@@ -54,7 +55,7 @@ dalicclib:CC-BY-ND-2.5 a odrl:Set ;
         "Creative Commons BY-ND 2.5",
         "Creative Commons BY-ND 2.5 Generic" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nd/2.5/> ;
     dct:title "Creative Commons Attribution-NoDerivatives 2.5 Generic"@en ;
@@ -65,7 +66,8 @@ dalicclib:CC-BY-ND-2.5 a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ] ],
+                    odrl:action cc:Notice ] ;
+            dalicc:evidence "You may distribute, publicly display, publicly perform, or publicly digitally perform the Work only under the terms of this License, and You must include a copy of, or the Uniform Resource Identifier for, this License with every copy or phonorecord of the Work You distribute, publicly display, publicly perform, or publicly digitally perform." ],
         [ a odrl:Permission ;
             odrl:action odrl:present ],
         [ a odrl:Permission ;
@@ -77,9 +79,11 @@ dalicclib:CC-BY-ND-2.5 a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action odrl:derive ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:ChangeLicense ],
+            odrl:action dalicc:ChangeLicense ;
+            dalicc:evidence "You may distribute, publicly display, publicly perform, or publicly digitally perform the Work only under the terms of this License, and You must include a copy of, or the Uniform Resource Identifier for, this License with every copy or phonorecord of the Work You distribute, publicly display, publicly perform, or publicly digitally perform." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ] ;
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "You may not sublicense the Work." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:logo <https://licensebuttons.net/l/by-nd/2.5/88x31.png> .

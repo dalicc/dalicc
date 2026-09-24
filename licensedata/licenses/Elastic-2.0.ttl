@@ -19,6 +19,7 @@
 
 dalicclib:Elastic-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "Elastic-2.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.elastic.co/licensing/elastic-license> ;
@@ -44,13 +45,14 @@ dalicclib:Elastic-2.0 a odrl:Set ;
     dct:alternative "ELv2",
         "Elastic License v2",
         "Elastic-2.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Elastic" ;
     dct:source <https://spdx.org/licenses/Elastic-2.0.html> ;
     dct:title "Elastic License 2.0"@en ;
     odrl:permission [ a odrl:Permission ;
-            odrl:action odrl:reproduce ],
+            odrl:action odrl:reproduce ;
+            dalicc:evidence "The licensor grants you a non-exclusive, royalty-free, worldwide, non-sublicensable, non-transferable license to use, copy, distribute, make available, and prepare derivative works of the software, in each case subject to the limitations and conditions below." ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;

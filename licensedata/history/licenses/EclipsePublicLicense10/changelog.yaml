@@ -1,13 +1,19 @@
 id: EclipsePublicLicense10
 title: Eclipse Public License 1.0
-current_version: 4
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 clause text, 1 identification detail and 1 permission,
     removed 1 prohibition, changed 1 clause text, recorded the relation to the record this one was
-    adapted from and recorded the review state.
+    adapted from and recorded the review state. Later changes brought it in line with its family and
+    its text in the verification of 2026-09-15 and named the license the record itself is published
+    under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
   changes:
   - action: added
     statement: dalicc:LiabilityLimitation "EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER
@@ -70,104 +76,193 @@ entries:
     statement: spdx:licenseId "EPL-1.0"
     reason: Added EPL-1.0; the title matches the SPDX name.
     source: review-finding 1/spdx:licenseId
-- version: 3
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Batch 4 finding 6.1 and consolidation decision 4: the record modelled no reciprocity although
-    section 3 says ''When the Program is made available in source code form: a) it must be made available
-    under this Agreement'', it made no patent statement although section 2(b) grants one and section
-    7 ends it on patent litigation, and dct:publisher and cc:attributionName both ended with a space.'
-  changes:
   - action: changed
     statement: cc:attributionName "Eclipse"
     previous: cc:attributionName "Eclipse "
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      modelled no reciprocity although section 3 says ''When the Program is made available in source
+      code form: a) it must be made available under this Agreement'', it made no patent statement
+      although section 2(b) grants one and section 7 ends it on patent litigation, and dct:publisher
+      and cc:attributionName both ended with a space.'
     source: manual
   - action: changed
     statement: dct:publisher "Eclipse"
     previous: dct:publisher "Eclipse "
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      modelled no reciprocity although section 3 says ''When the Program is made available in source
+      code form: a) it must be made available under this Agreement'', it made no patent statement
+      although section 2(b) grants one and section 7 ends it on patent litigation, and dct:publisher
+      and cc:attributionName both ended with a space.'
     source: manual
   - action: changed
     statement: permission dalicc:ChangeLicense
     previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      modelled no reciprocity although section 3 says ''When the Program is made available in source
+      code form: a) it must be made available under this Agreement'', it made no patent statement
+      although section 2(b) grants one and section 7 ends it on patent litigation, and dct:publisher
+      and cc:attributionName both ended with a space.'
     source: manual
   - action: added
     statement: permission dalicc:patentGrant
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      modelled no reciprocity although section 3 says ''When the Program is made available in source
+      code form: a) it must be made available under this Agreement'', it made no patent statement
+      although section 2(b) grants one and section 7 ends it on patent litigation, and dct:publisher
+      and cc:attributionName both ended with a space.'
     source: manual
   - action: changed
     statement: permission odrl:derive with duties [cc:ShareAlike]
     previous: permission odrl:derive
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      modelled no reciprocity although section 3 says ''When the Program is made available in source
+      code form: a) it must be made available under this Agreement'', it made no patent statement
+      although section 2(b) grants one and section 7 ends it on patent litigation, and dct:publisher
+      and cc:attributionName both ended with a space.'
     source: manual
   - action: changed
     statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
     previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      modelled no reciprocity although section 3 says ''When the Program is made available in source
+      code form: a) it must be made available under this Agreement'', it made no patent statement
+      although section 2(b) grants one and section 7 ends it on patent litigation, and dct:publisher
+      and cc:attributionName both ended with a space.'
     source: manual
   - action: changed
     statement: permission odrl:modify with duties [cc:ShareAlike, dalicc:modificationNotice]
     previous: permission odrl:modify with duties [dalicc:modificationNotice]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      modelled no reciprocity although section 3 says ''When the Program is made available in source
+      code form: a) it must be made available under this Agreement'', it made no patent statement
+      although section 2(b) grants one and section 7 ends it on patent litigation, and dct:publisher
+      and cc:attributionName both ended with a space.'
     source: manual
   - action: added
     statement: prohibition dalicc:patentRetaliationTermination
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency and consolidation decision 4: the record
+      modelled no reciprocity although section 3 says ''When the Program is made available in source
+      code form: a) it must be made available under this Agreement'', it made no patent statement
+      although section 2(b) grants one and section 7 ends it on patent litigation, and dct:publisher
+      and cc:attributionName both ended with a space.'
     source: manual
-- version: 4
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Weak-copyleft family alignment of 2026-09-15: the record is brought onto the shape of
-    CPL-1.0 and IPL-1.0, which model the same text. Section 2(a) grants the right to ''reproduce,
-    prepare derivative works of, publicly display, publicly perform, distribute and sublicense the
-    Contribution'', so dalicc:sublicense replaces the older spelling odrl:grantUse and dalicc:ModifiedWorks
-    is stated; the attribution, notice and source duties that sat on the derivative-works permission
-    move onto odrl:modify and odrl:derive, where the rest of the family carries them; the unsupported
-    dalicc:noWarrantyNotice permission and dalicc:addStatement prohibition go, because section 3 lets
-    a distributor add its own notices rather than forbidding it; and the dalicc:promote prohibition
-    goes, because this text has no trademark or endorsement clause at all.'
-  changes:
   - action: changed
     statement: permission cc:DerivativeWorks
     previous: permission cc:DerivativeWorks with duties [cc:Attribution, cc:Notice, cc:SourceCode,
       dalicc:modificationNotice]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Weak-copyleft family alignment of 2026-09-15: the record is brought onto the shape of
+      CPL-1.0 and IPL-1.0, which model the same text. Section 2(a) grants the right to ''reproduce,
+      prepare derivative works of, publicly display, publicly perform, distribute and sublicense the
+      Contribution'', so dalicc:sublicense replaces the older spelling odrl:grantUse and dalicc:ModifiedWorks
+      is stated; the attribution, notice and source duties that sat on the derivative-works permission
+      move onto odrl:modify and odrl:derive, where the rest of the family carries them; the unsupported
+      dalicc:noWarrantyNotice permission and dalicc:addStatement prohibition go, because section 3
+      lets a distributor add its own notices rather than forbidding it; and the dalicc:promote prohibition
+      goes, because this text has no trademark or endorsement clause at all.'
     source: manual
   - action: added
     statement: permission dalicc:ModifiedWorks
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Weak-copyleft family alignment of 2026-09-15: the record is brought onto the shape of
+      CPL-1.0 and IPL-1.0, which model the same text. Section 2(a) grants the right to ''reproduce,
+      prepare derivative works of, publicly display, publicly perform, distribute and sublicense the
+      Contribution'', so dalicc:sublicense replaces the older spelling odrl:grantUse and dalicc:ModifiedWorks
+      is stated; the attribution, notice and source duties that sat on the derivative-works permission
+      move onto odrl:modify and odrl:derive, where the rest of the family carries them; the unsupported
+      dalicc:noWarrantyNotice permission and dalicc:addStatement prohibition go, because section 3
+      lets a distributor add its own notices rather than forbidding it; and the dalicc:promote prohibition
+      goes, because this text has no trademark or endorsement clause at all.'
     source: manual
   - action: removed
     statement: permission dalicc:noWarrantyNotice
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Weak-copyleft family alignment of 2026-09-15: the record is brought onto the shape of
+      CPL-1.0 and IPL-1.0, which model the same text. Section 2(a) grants the right to ''reproduce,
+      prepare derivative works of, publicly display, publicly perform, distribute and sublicense the
+      Contribution'', so dalicc:sublicense replaces the older spelling odrl:grantUse and dalicc:ModifiedWorks
+      is stated; the attribution, notice and source duties that sat on the derivative-works permission
+      move onto odrl:modify and odrl:derive, where the rest of the family carries them; the unsupported
+      dalicc:noWarrantyNotice permission and dalicc:addStatement prohibition go, because section 3
+      lets a distributor add its own notices rather than forbidding it; and the dalicc:promote prohibition
+      goes, because this text has no trademark or endorsement clause at all.'
     source: manual
   - action: added
     statement: permission dalicc:sublicense
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Weak-copyleft family alignment of 2026-09-15: the record is brought onto the shape of
+      CPL-1.0 and IPL-1.0, which model the same text. Section 2(a) grants the right to ''reproduce,
+      prepare derivative works of, publicly display, publicly perform, distribute and sublicense the
+      Contribution'', so dalicc:sublicense replaces the older spelling odrl:grantUse and dalicc:ModifiedWorks
+      is stated; the attribution, notice and source duties that sat on the derivative-works permission
+      move onto odrl:modify and odrl:derive, where the rest of the family carries them; the unsupported
+      dalicc:noWarrantyNotice permission and dalicc:addStatement prohibition go, because section 3
+      lets a distributor add its own notices rather than forbidding it; and the dalicc:promote prohibition
+      goes, because this text has no trademark or endorsement clause at all.'
     source: manual
   - action: changed
     statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
       dalicc:modificationNotice]
     previous: permission odrl:derive with duties [cc:ShareAlike]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Weak-copyleft family alignment of 2026-09-15: the record is brought onto the shape of
+      CPL-1.0 and IPL-1.0, which model the same text. Section 2(a) grants the right to ''reproduce,
+      prepare derivative works of, publicly display, publicly perform, distribute and sublicense the
+      Contribution'', so dalicc:sublicense replaces the older spelling odrl:grantUse and dalicc:ModifiedWorks
+      is stated; the attribution, notice and source duties that sat on the derivative-works permission
+      move onto odrl:modify and odrl:derive, where the rest of the family carries them; the unsupported
+      dalicc:noWarrantyNotice permission and dalicc:addStatement prohibition go, because section 3
+      lets a distributor add its own notices rather than forbidding it; and the dalicc:promote prohibition
+      goes, because this text has no trademark or endorsement clause at all.'
     source: manual
   - action: removed
     statement: permission odrl:grantUse
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Weak-copyleft family alignment of 2026-09-15: the record is brought onto the shape of
+      CPL-1.0 and IPL-1.0, which model the same text. Section 2(a) grants the right to ''reproduce,
+      prepare derivative works of, publicly display, publicly perform, distribute and sublicense the
+      Contribution'', so dalicc:sublicense replaces the older spelling odrl:grantUse and dalicc:ModifiedWorks
+      is stated; the attribution, notice and source duties that sat on the derivative-works permission
+      move onto odrl:modify and odrl:derive, where the rest of the family carries them; the unsupported
+      dalicc:noWarrantyNotice permission and dalicc:addStatement prohibition go, because section 3
+      lets a distributor add its own notices rather than forbidding it; and the dalicc:promote prohibition
+      goes, because this text has no trademark or endorsement clause at all.'
     source: manual
   - action: changed
     statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
       dalicc:modificationNotice]
     previous: permission odrl:modify with duties [cc:ShareAlike, dalicc:modificationNotice]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Weak-copyleft family alignment of 2026-09-15: the record is brought onto the shape of
+      CPL-1.0 and IPL-1.0, which model the same text. Section 2(a) grants the right to ''reproduce,
+      prepare derivative works of, publicly display, publicly perform, distribute and sublicense the
+      Contribution'', so dalicc:sublicense replaces the older spelling odrl:grantUse and dalicc:ModifiedWorks
+      is stated; the attribution, notice and source duties that sat on the derivative-works permission
+      move onto odrl:modify and odrl:derive, where the rest of the family carries them; the unsupported
+      dalicc:noWarrantyNotice permission and dalicc:addStatement prohibition go, because section 3
+      lets a distributor add its own notices rather than forbidding it; and the dalicc:promote prohibition
+      goes, because this text has no trademark or endorsement clause at all.'
     source: manual
   - action: removed
     statement: prohibition dalicc:addStatement
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Weak-copyleft family alignment of 2026-09-15: the record is brought onto the shape of
+      CPL-1.0 and IPL-1.0, which model the same text. Section 2(a) grants the right to ''reproduce,
+      prepare derivative works of, publicly display, publicly perform, distribute and sublicense the
+      Contribution'', so dalicc:sublicense replaces the older spelling odrl:grantUse and dalicc:ModifiedWorks
+      is stated; the attribution, notice and source duties that sat on the derivative-works permission
+      move onto odrl:modify and odrl:derive, where the rest of the family carries them; the unsupported
+      dalicc:noWarrantyNotice permission and dalicc:addStatement prohibition go, because section 3
+      lets a distributor add its own notices rather than forbidding it; and the dalicc:promote prohibition
+      goes, because this text has no trademark or endorsement clause at all.'
     source: manual
   - action: removed
     statement: prohibition dalicc:promote
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Weak-copyleft family alignment of 2026-09-15: the record is brought onto the shape of
+      CPL-1.0 and IPL-1.0, which model the same text. Section 2(a) grants the right to ''reproduce,
+      prepare derivative works of, publicly display, publicly perform, distribute and sublicense the
+      Contribution'', so dalicc:sublicense replaces the older spelling odrl:grantUse and dalicc:ModifiedWorks
+      is stated; the attribution, notice and source duties that sat on the derivative-works permission
+      move onto odrl:modify and odrl:derive, where the rest of the family carries them; the unsupported
+      dalicc:noWarrantyNotice permission and dalicc:addStatement prohibition go, because section 3
+      lets a distributor add its own notices rather than forbidding it; and the dalicc:promote prohibition
+      goes, because this text has no trademark or endorsement clause at all.'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

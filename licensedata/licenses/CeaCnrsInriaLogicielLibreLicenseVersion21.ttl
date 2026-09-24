@@ -19,6 +19,7 @@
 
 dalicclib:CeaCnrsInriaLogicielLibreLicenseVersion21 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CECILL-2.1" ;
     cc:attributionName "CEA, CNRS, INRIA" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -32,8 +33,8 @@ dalicclib:CeaCnrsInriaLogicielLibreLicenseVersion21 a odrl:Set ;
     dalicc:reviewedOn "2026-09-15"^^xsd:date ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/CeaCnrsInriaLogicielLibreLicenseVersion21/versions> ;
     dct:alternative "CECILL-2.1" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "CEA, CNRS, INRIA" ;
     dct:source osl:CECILL-2.1 ;
     dct:title "Cea Cnrs Inria Logiciel Libre License, version 2.1" ;

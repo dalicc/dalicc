@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike20France a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CC-BY-NC-SA-2.0-FR" ;
     cc:jurisdiction bpicounty:France ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc-sa/2.0/fr/legalcode> ;
@@ -62,6 +63,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike20France a odrl:Set ;
  
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-SA-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "2.0" ;
@@ -79,13 +81,14 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike20France a odrl:Set ;
         "CC-BY-NC-SA 2.0 FR",
         "Creative Commons BY-NC-SA 2.0",
         "Creative Commons BY-NC-SA 2.0 FR" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc-sa/2.0/fr/> ;
     dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 2.0 France"@en ;
     odrl:duty [ a odrl:Duty ;
-            odrl:action cc:ShareAlike ] ;
+            odrl:action cc:ShareAlike ;
+            dalicc:evidence "L'Acceptant peut reproduire, distribuer, représenter ou communiquer au public une Oeuvre dite Dérivée y compris par voie numérique uniquement sous les termes de ce Contrat, ou d'une version ultérieure de ce Contrat comprenant les mêmes Options du Contrat que le présent Contrat, ou un Contrat Creative Commons iCommons comprenant les mêmes Options du Contrat que le présent Contrat (par exemple Paternité - Pas d'Utilisation Commerciale - Partage Des Conditions Initiales A l'Identique 2.0 Japon)." ] ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -101,7 +104,8 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike20France a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ] ;
+            dalicc:evidence "Les droits ci-dessus incluent le droit d'effectuer les modifications nécessaires techniquement à l'exercice des droits dans d'autres formats et procédés techniques." ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
@@ -117,13 +121,15 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike20France a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
-            odrl:action dalicc:ModifiedWorks ],
+            odrl:action dalicc:ModifiedWorks ;
+            dalicc:evidence "Les droits ci-dessus incluent le droit d'effectuer les modifications nécessaires techniquement à l'exercice des droits dans d'autres formats et procédés techniques." ],
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action cc:CommercialUse ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:ChangeLicense ],
+            odrl:action dalicc:ChangeLicense ;
+            dalicc:evidence "L'Acceptant ne peut pas offrir ou imposer de conditions d'utilisation de l'Oeuvre qui altèrent ou restreignent les termes du présent Contrat ou l'exercice des droits qui y sont accordés au bénéficiaire." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;

@@ -25,7 +25,9 @@ from __future__ import annotations
 
 __all__ = [
     "DEPENDENCY_GRAPH_QUERY_TEMPLATE",
+    "LICENSE_COMPATIBILITY_QUERY_TEMPLATE",
     "LICENSE_DUTY_QUERY_TEMPLATE",
+    "LICENSE_PROFILE_QUERY_TEMPLATE",
     "LICENSE_QUERY_TEMPLATE",
 ]
 
@@ -48,6 +50,43 @@ SELECT DISTINCT ?s ?p ?ra ?da
   ?duty odrl:action ?da .
   FILTER (?s = {license_iri}) .
   FILTER (?p IN (odrl:permission, odrl:prohibition, odrl:obligation, odrl:duty)) .
+}}
+"""
+
+#: What a licence says about the licence it is a version of, for the share-alike
+#: reciprocity rule: its SPDX identifier, the version the record models, whether it
+#: offers a later version, the share-alike version qualifier, and the identifier of the
+#: licence it is a jurisdiction port of.  Every column is optional, because most records
+#: carry only some of them; :mod:`app.profiles` turns the rows into one profile.
+LICENSE_PROFILE_QUERY_TEMPLATE = """PREFIX dalicc: <https://dalicc.net/ns#>
+PREFIX spdx: <http://spdx.org/rdf/terms#>
+SELECT DISTINCT ?id ?version ?orlater ?qualifier ?portid
+{from_clause}WHERE {{
+  VALUES ?s {{ {license_iri} }}
+  OPTIONAL {{ ?s spdx:licenseId ?id . }}
+  OPTIONAL {{ ?s dalicc:licenseVersion ?version . }}
+  OPTIONAL {{ ?s dalicc:orLaterVersionOption ?orlater . }}
+  OPTIONAL {{ ?s dalicc:shareAlikeVersionQualifier ?qualifier . }}
+  OPTIONAL {{ ?s dalicc:jurisdictionPortOf ?parent . ?parent spdx:licenseId ?portid . }}
+}}
+"""
+
+#: The licences a record names with ``dalicc:compatibleWith``, each with the columns of
+#: the profile query read from the named record, so that the program can follow one
+#: hop (the same licence text, or an "or later" option) from the named licence to a
+#: licence of the request.  :mod:`app.profiles` groups the rows by ``?other``.
+LICENSE_COMPATIBILITY_QUERY_TEMPLATE = """PREFIX dalicc: <https://dalicc.net/ns#>
+PREFIX spdx: <http://spdx.org/rdf/terms#>
+SELECT DISTINCT ?other ?id ?version ?orlater ?qualifier ?portid
+{from_clause}WHERE {{
+  VALUES ?s {{ {license_iri} }}
+  ?s dalicc:compatibleWith ?other .
+  FILTER(isIRI(?other))
+  OPTIONAL {{ ?other spdx:licenseId ?id . }}
+  OPTIONAL {{ ?other dalicc:licenseVersion ?version . }}
+  OPTIONAL {{ ?other dalicc:orLaterVersionOption ?orlater . }}
+  OPTIONAL {{ ?other dalicc:shareAlikeVersionQualifier ?qualifier . }}
+  OPTIONAL {{ ?other dalicc:jurisdictionPortOf ?parent . ?parent spdx:licenseId ?portid . }}
 }}
 """
 

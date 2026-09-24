@@ -24,9 +24,9 @@ findings:
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'The grant is the MIT grant: ''wird hiermit kostenlos die Erlaubnis erteilt, ohne Einschraenkung
-    die Software zu verwenden, einschliesslich und ohne Einschraenkung der Rechte zur Nutzung, zum Kopieren, Aendern,
-    Zusammenfuehren, Veroeffentlichen, Verteilen, Unterlizenzieren und/oder Verkaufen von Kopien der Software''.
+  description: 'The grant is the MIT grant: ''wird hiermit kostenlos die Erlaubnis erteilt, ohne Einschränkung
+    die Software zu verwenden, einschließlich und ohne Einschränkung der Rechte zur Nutzung, zum Kopieren, Ändern,
+    Zusammenführen, Veröffentlichen, Verteilen, Unterlizenzieren und/oder Verkaufen von Kopien der Software''.
     The record therefore carries reproduce, distribute, modify, derive, display, present, grant use (Unterlizenzieren),
     commercial use, derivative works, modified works and the distribution fee (Verkaufen von Kopien).'
   action: applied
@@ -40,7 +40,7 @@ findings:
   severity: major
   field: odrl:duty
   description: 'cc:Attribution and cc:Notice hang off distribute, modify and derive: ''Der obige Urheberrechtshinweis
-    und dieser Genehmigungshinweis muessen in allen Kopien oder wesentlichen Teilen der Software enthalten sein.''
+    und dieser Genehmigungshinweis müssen in allen Kopien oder wesentlichen Teilen der Software enthalten sein.''
     Nothing is license-wide.'
   action: applied
 - rubric: 6
@@ -61,7 +61,7 @@ findings:
   severity: gap
   field: record
   description: 'No vocabulary gap. The record carries no language property: the library has none, and dct:language
-    is not in the prefix block. Proposed for the consolidation pass: a dct:language triple on records whose legal
+    is not in the prefix block. Proposed for the consolidation: a dct:language triple on records whose legal
     code is not English, which would also serve the CeCILL, LiLiQ and DL-DE records.'
   action: none
 - rubric: 9
@@ -80,10 +80,10 @@ findings:
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Jedem, der eine Kopie dieser Software und der zugehoerigen
+    the earlier reading wrote is removed. The text reads: "Jedem, der eine Kopie dieser Software und der zugehoerigen
     Dokumentationsdateien erhaelt, wird hiermit kostenlos die Erlaubnis erteilt, ohne Einschraenkung die Software
     zu verwenden, einschliesslich ... des Rechts zum Unterlizenzieren und/oder Verkaufen von Kopien der Software
     ... unter den folgenden Bedingungen: Der obige Urheberrechtshinweis und dieser Genehmigungshinweis muessen in

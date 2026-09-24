@@ -3,12 +3,55 @@ title: Creative Commons Attribution-NonCommercial 1.0 Generic
 current_version: 2
 entries:
 - version: 2
-  date: '2026-09-23'
+  date: '2026-09-24'
   reviewer: Giray Havur
-  summary: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
-    now supplies it.
+  summary: The changes since version 1 left endorsement to the default rule of the core dependency
+    graph, recorded which sentence of the text each statement rests on and named the license the record
+    itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
   changes:
   - action: removed
     statement: prohibition dalicc:promote
-    reason: Edited by hand; see the summary of this entry.
+    reason: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
+      now supplies it.
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may distribute,
+      publicly display, publicly perform, or publicly digitally perform the Work only under the terms
+      of this License, and You must include a copy of, or the Uniform Resource Identifier for, this
+      License with every copy or phonorecord of the Work You distribute, publicly display, publicly
+      perform, or publicly digitally perform."'
+    source: manual
+  - action: changed
+    statement: prohibition cc:CommercialUse
+    previous: prohibition cc:CommercialUse
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may not exercise
+      any of the rights granted to You in Section 3 above in any manner that is primarily intended
+      for or directed toward commercial advantage or private monetary compensation."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:ChangeLicense
+    previous: prohibition dalicc:ChangeLicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may distribute,
+      publicly display, publicly perform, or publicly digitally perform the Work only under the terms
+      of this License, and You must include a copy of, or the Uniform Resource Identifier for, this
+      License with every copy or phonorecord of the Work You distribute, publicly display, publicly
+      perform, or publicly digitally perform."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:sublicense
+    previous: prohibition dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may not sublicense
+      the Work."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

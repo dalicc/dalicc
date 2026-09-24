@@ -19,6 +19,7 @@
 
 dalicclib:Artistic-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "Artistic-1.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://opensource.org/license/Artistic-1.0> ;
@@ -33,8 +34,8 @@ dalicclib:Artistic-1.0 a odrl:Set ;
     dct:alternative "Artistic License 1.0",
         "Artistic-1.0",
         "The Artistic License" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://spdx.org/licenses/Artistic-1.0.html> ;
     dct:title "Artistic License 1.0"@en ;
     odrl:permission [ a odrl:Permission ;
@@ -62,7 +63,8 @@ dalicclib:Artistic-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:rename ] ],
+                    odrl:action dalicc:rename ] ;
+            dalicc:evidence "You may otherwise modify your copy of this Package in any way, provided that you insert a prominent notice in each changed file stating how and when you changed that file, and provided that you do at least ONE of the following:" ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
@@ -74,7 +76,8 @@ dalicclib:Artistic-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:rename ] ],
+                    odrl:action dalicc:rename ] ;
+            dalicc:evidence "You may otherwise modify your copy of this Package in any way, provided that you insert a prominent notice in each changed file stating how and when you changed that file, and provided that you do at least ONE of the following:" ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
@@ -82,10 +85,12 @@ dalicclib:Artistic-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "The name of the Copyright Holder may not be used to endorse or promote products derived from this software without specific prior written permission." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:chargeLicenseFee ] ;
+            odrl:action dalicc:chargeLicenseFee ;
+            dalicc:evidence "You may not charge a fee for this Package itself." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

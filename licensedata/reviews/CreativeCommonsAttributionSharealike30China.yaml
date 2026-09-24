@@ -26,14 +26,14 @@ findings:
   description: 'SPDX has no identifier for this port. The legal-code URL implies CC-BY-SA-3.0-CN, which
     the SPDX licence list does not define: of the ported 3.0 licences SPDX knows only the Austrian, Australian,
     German, Dutch, United States and IGO ones. No identifier was invented, and none of the forty two records
-    in this batch carries one.'
+    in this review group carries one.'
   action: none
 - rubric: 2
   severity: minor
   field: odrl:target
   description: 'The record targets dalicc:CreativeWork only, while the 4.0 International parent CC-BY-SA-4.0
     targets dalicc:CreativeWork and dcmitype:Dataset. This port has no sui generis database rights clause:
-    unlike the French and Polish ports in this batch it neither grants extraction and re-utilisation nor
+    unlike the French and Polish ports in this review group it neither grants extraction and re-utilisation nor
     waives the database producer right, so the case for dcmitype:Dataset rests only on the media neutrality
     of the grant, which runs to all media and formats now known or later devised. Aligning the ports with
     the parents is a single library wide decision covering every Creative Commons port, so it is left
@@ -57,10 +57,11 @@ findings:
   description: 'The licence forbids sublicensing and the record does not say so. article 4 item 1: the
     licensee may not sublicense the work ("nin bu de dui ben zuo pin jin xing zai xu ke"). The vocabulary
     already has dalicc:sublicense, but it is used by no record in the library and its skos:note says so,
-    and the same sentence stands in every Creative Commons 2.0 and 3.0 record, so adding it to this batch
+    and the same sentence stands in every Creative Commons 2.0 and 3.0 record, so adding it to this review group
     alone would split the compatibility behaviour of one family. Proposed as one library wide correction,
     together with an update of the vocabulary note.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -135,8 +136,7 @@ findings:
     copyright. Note that the jurisdiction field records the legal home of the port, not a territorial
     limit: the grant itself is worldwide. The China port is the mainland port ("3.0 zhong guo da lu"):
     Hong Kong, Macau and Taiwan have their own ports, which the record title "Creative Commons Attribution
-    3.0 China" and cc:jurisdiction bpicounty:China do not distinguish. It is also the only port in the
-    batch that names its national statute in the preamble, the Copyright Law of the People''s Republic
+    3.0 China" and cc:jurisdiction bpicounty:China do not distinguish. It is also the only port in the review group that names its national statute in the preamble, the Copyright Law of the People''s Republic
     of China, and its definition of the work extends the licence to performances, sound recordings and
     radio and television programmes. It carries no choice of law clause.'
   action: none
@@ -206,6 +206,13 @@ findings:
     from the other records of the BY-SA element set, across all three versions and every jurisdiction
     the library holds.'
   action: none
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "在您违反本许可协议任何条款时，本许可及其所授予的权利将自动终止。" The licence
+    ends automatically on a breach and this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach
+    is true and no dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: China (CN)'
 port_of: CC-BY-SA-4.0
 variant_kind: jurisdiction-port

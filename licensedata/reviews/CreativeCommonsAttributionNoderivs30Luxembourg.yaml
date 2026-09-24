@@ -23,7 +23,7 @@ findings:
   severity: info
   field: spdx:licenseId
   description: SPDX has no identifier for this port. The legal code URL implies CC-BY-ND-3.0-LU, which
-    the SPDX licence list does not define, so none was invented. Of the thirty five records in this batch
+    the SPDX licence list does not define, so none was invented. Of the thirty five records in this review group
     only the six German ones take an SPDX identifier.
   action: none
 - rubric: 2
@@ -39,7 +39,7 @@ findings:
     only because they are governed by that sui generis right. Because the legal text names databases as
     licensed subject matter and disposes of the database maker's right in the grant itself, dcmitype:Dataset
     was added here rather than left as a proposal, which is how the same question was decided for the
-    Portuguese, Czech and Azerbaijani ports. The ports in this batch whose text has no database clause
+    Portuguese, Czech and Azerbaijani ports. The ports in this review group whose text has no database clause
     at all, Ecuador and Brazil, keep the proposal.
   action: applied
   change: "odrl:target [ a odrl:AssetCollection ;\n        dct:type dalicc:CreativeWork,\n           \
@@ -67,9 +67,10 @@ findings:
     autrement, Vous n''avez pas le droit de creer des Adaptations de l''Oeuvre". The 4.0 International
     parent CC-BY-ND-4.0 is modelled the same way and its own review record carries the same finding, so
     this belongs in one sweep over every NoDerivatives record of the library rather than in a change to
-    this file. Recorded as major because the text of this port is explicit. Not applied, pending the owner''s
+    this file. Recorded as major because the text of this port is explicit. Not applied, pending the association''s
     decision.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "remove:\n  odrl:permission [ a odrl:Permission ;\n        odrl:action odrl:modify ;\n     \
     \   odrl:duty [ a odrl:Duty ; odrl:action cc:Attribution ],\n            [ a odrl:Duty ; odrl:action\
     \ cc:Notice ],\n            [ a odrl:Duty ; odrl:action dalicc:modificationNotice ] ] ;\n  odrl:permission\
@@ -80,10 +81,11 @@ findings:
   description: The licence forbids sublicensing and the record does not say so. "Vous ne pouvez pas sous-licencier
     l'Oeuvre." Section 4(a). The vocabulary already has dalicc:sublicense, but no record in the library
     uses it and its skos:note says so, and the same sentence stands in every Creative Commons 2.0 and
-    3.0 record, so adding it to the thirty five ports of this batch alone would split the compatibility
+    3.0 record, so adding it to the thirty five ports of this review group alone would split the compatibility
     behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
-    note. Batches 3 and 6 made the same recommendation.
-  action: proposed
+    note. Other review groups made the same recommendation.
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -216,6 +218,15 @@ findings:
   action: applied
   change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
     \ ] ;"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "La présente Licence ainsi que les droits concédés
+    en vertu des présentes seront automatiquement résiliés en cas de violation de Votre part des conditions
+    de la présente Licence." The licence ends automatically on a breach and this version of the text has
+    no reinstatement clause, so dalicc:terminatesOnBreach is true and no dalicc:curePeriod is written,
+    as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Luxembourg (LU)'
 port_of: CC-BY-ND-4.0
 variant_kind: jurisdiction-port

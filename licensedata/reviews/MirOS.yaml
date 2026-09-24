@@ -59,17 +59,17 @@ findings:
 - rubric: 10
   severity: info
   field: record
-  description: 'The batch notes expected a condition on distributing modified versions. The fetched text has none:
+  description: 'The review group notes expected a condition on distributing modified versions. The fetched text has none:
     the only condition is the retention of the terms, the disclaimer and the copyright notices, which applies to
     every copy. The record follows the text.'
   action: none
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Provided that these terms and disclaimer and all copyright
+    the earlier reading wrote is removed. The text reads: "Provided that these terms and disclaimer and all copyright
     notices are retained or reproduced in an accompanying document, permission is granted to deal in this work without
     restriction, including unlimited rights to use, publicly perform, distribute, sell, modify, merge, give away,
     or sublicence." The permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice

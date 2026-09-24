@@ -21,7 +21,7 @@ findings:
   field: odrl:prohibition
   description: 'Clause 7 carries the same trademark sentence as the 1.6b1 agreement, so dalicc:promote is a prohibition,
     and no right to relicense is granted, so dalicc:ChangeLicense is prohibited. (Corrected on 2026-09-15 by the
-    verification of this batch: see the rubric 3 finding on relicensing below.)'
+    verification of this review group: see the rubric 3 finding on relicensing below.)'
   action: applied
 - rubric: 5
   severity: major
@@ -69,10 +69,10 @@ findings:
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Subject to the terms and conditions of this License Agreement,
+    the earlier reading wrote is removed. The text reads: "Subject to the terms and conditions of this License Agreement,
     CNRI hereby grants Licensee a non-exclusive, royalty-free, world-wide license to reproduce, analyze, test, perform
     and/or display publicly, prepare derivative works, distribute, and otherwise use Python 1.6.1 alone or in any
     derivative version, provided ... CNRI''s License Agreement is retained in Python 1.6.1." The permission carries

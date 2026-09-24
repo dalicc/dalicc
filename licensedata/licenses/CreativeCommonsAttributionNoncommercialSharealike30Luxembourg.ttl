@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Luxembourg a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Luxembourg ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc-sa/3.0/lu/legalcode> ;
     dalicc:LiabilityLimitation """SAUF DANS LA MESURE REQUISE PAR LA LOI APPLICABLE, LE DONNEUR DE LICENCE NE SAURAIT EN AUCUN CAS ETRE TENU RESPONSABLE A VOTRE EGARD AU TITRE DE QUELQUE DOCTRINE QUE CE SOIT DE TOUS DOMMAGES SPECIAUX, ACCESSOIRES, INDIRECTS, PUNITIFS OU EXEMPLAIRES DECOULANT DE LA PRESENTE LICENCE OU DE L’UTILISATION DE L’ŒUVRE, MEME DANS LE CAS OU LE DONNEUR DE LICENCE AURAIT ETE AVISE DE L'EVENTUALITE DESDITS DOMMAGES.
@@ -26,6 +27,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Luxembourg a odrl:S
     dalicc:WarrantyDisclaimer """SAUF ACCORD COMMUN ECRIT DES PARTIES ET DANS LA MESURE PERMISE PAR LA LOI APPLICABLE, LE DONNEUR DE LICENCE PROPOSE L’ŒUVRE EN L'ETAT ET NE FORMULE AUCUNE GARANTIE NI DECLARATION DE QUELQUE NATURE QUE CE SOIT. CERTAINES JURIDICTIONS INTERDISENT L’EXCLUSION DE GARANTIES, AUQUEL CAS LA PRESENTE EXCLUSION NE VOUS EST PAS APPLICABLE.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-SA-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -43,8 +45,8 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Luxembourg a odrl:S
         "CC-BY-NC-SA 3.0 LU",
         "Creative Commons BY-NC-SA 3.0",
         "Creative Commons BY-NC-SA 3.0 LU" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc-sa/3.0/lu/> ;
     dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Luxembourg"@en ;
@@ -85,9 +87,11 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Luxembourg a odrl:S
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:suiGenerisDatabaseRights ] ;
+            odrl:action dalicc:suiGenerisDatabaseRights ;
+            dalicc:evidence "Lorsque l'Œuvre est une base de données, extraire et réutiliser des parties substantielles de l'Œuvre." ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action cc:CommercialUse ],
+            odrl:action cc:CommercialUse ;
+            dalicc:evidence "L’échange de l’Œuvre contre d’autres œuvres protégées par le droit d’auteur par voie de partage de fichiers numériques ou de toute autre manière ne sera pas considéré comme ayant pour objectif ou visant un avantage commercial ou une compensation financière personnelle, sous réserve de l’absence de tout paiement d’une compensation financière personnelle en relation avec l’échange d’œuvres protégées par le droit d’auteur." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;

@@ -89,8 +89,7 @@ findings:
 - rubric: 10
   severity: info
   field: record
-  description: 'The record shares its deontic signature with Cc010Universal, which review_duplicates.md
-    section 4 flags as a cross-family pair. That is correct rather than a defect: both documents dedicate
+  description: 'The record shares its deontic signature with Cc010Universal, which the review of duplicates (see the review method, docs/LICENSE_REVIEW.md section 3) flags as a cross-family pair. That is correct rather than a defect: both documents dedicate
     the work and both fall back to a permissive licence. The separation into two records is justified
     by provenance and by the subject matter, a database against any work. Inside the Open Data Commons
     family this record is the permissive end, ODC-By the attribution end and ODbL the share-alike end,
@@ -100,8 +99,28 @@ findings:
   severity: minor
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9 and 10: the record was corrected against
-    its new siblings and versioned. Family rule 14 of scripts/review/family_rules.py: the warranty literal
+    its new siblings and versioned. Library convention 14: the warranty literal
     carried a padding space inside its quotation marks.'
+  action: applied
+- rubric: 3
+  severity: major
+  field: odrl:permission
+  description: 'Section 3.3(a), the licence that applies where the dedication and waiver of Sections 3.1
+    and 3.2 do not, reads: "The Licensor grants to You a worldwide, royalty-free, non-exclusive, licence
+    to Use the Work for the duration of any applicable Copyright and Database Rights." The licence defines
+    Database Rights as the sui generis database right, so the permission is text-supported; without it,
+    the proposed EU and UK default rule reads the licence as not granting the right it exists to grant.
+    dalicc:suiGenerisDatabaseRights is permitted, with no duty, as the dedication asks for nothing.'
+  action: applied
+- rubric: 4
+  severity: major
+  field: odrl:prohibition
+  description: dalicc:promote was prohibited with no sentence of the text quoted for it. The only sentence
+    near the subject, "This Document does not cover any trade marks associated with the Database."
+    (Section 2.2(c)), leaves trademarks outside the dedication and says nothing about endorsement, which
+    is silence; since 2026-09-23 what a silent licence grants about endorsement is the adopted default
+    rule of the core dependency graph, not a statement of the record (see section 13 of
+    docs/LICENSE_REVIEW.md). Removed, as on the ODbL record.
   action: applied
 family: Open Data Commons (ODbL, PDDL, ODC-By)
 port_of: null

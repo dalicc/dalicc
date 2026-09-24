@@ -3,10 +3,15 @@ title: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
 current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 clause text and 1 identification detail and recorded
-    the review state.
+    the review state. Later changes recorded which sentence of the text each statement rests on and
+    named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
   changes:
   - action: added
     statement: dalicc:additionalClauses "Public License Fallback. Should any part of the Waiver for
@@ -38,3 +43,16 @@ entries:
     reason: The record carried no SPDX identifier. Its cc:legalcode, https://creativecommons.org/publicdomain/zero/1.0/legalcode,
       is the seeAlso URL of the SPDX entry CC0-1.0, Creative Commons Zero v1.0 Universal. Added.
     source: review-finding 1/spdx:licenseId
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "No trademark
+      or patent rights held by Affirmer are waived, abandoned, surrendered, licensed or otherwise
+      affected by this document. b."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

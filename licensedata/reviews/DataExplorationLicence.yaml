@@ -5,11 +5,11 @@ reviewer: Giray Havur
 text_source: https://www.ordnancesurvey.co.uk/documents/licences/data-exploration-licence.pdf
 text_retrieved: true
 verdict: corrected
-summary: 'The batch input had only the Ordnance Survey product page for this licence. The terms document itself,
+summary: 'The review group input had only the Ordnance Survey product page for this licence. The terms document itself,
   the OS Data Exploration Licence v9.5 of 1 December 2025, was fetched from the product page and read for this
-  review. The record was the most damaged in the batch: every permission and every prohibition appeared twice,
+  review. The record was the most damaged in the review group: every permission and every prohibition appeared twice,
   it had no validity type and no attribution duty, and both URLs were dead. All four were corrected. The record
-  still models the 2018 edition of the licence, which is a decision for the owner.'
+  still models the 2018 edition of the licence, which is a decision for the association.'
 findings:
 - rubric: 1
   severity: major
@@ -127,7 +127,7 @@ findings:
   description: 'The consistency check reports one conflict, the same one the baseline listed and the same one
     the Developer Licence has: odrl:derive permitted against cc:DerivativeWorks prohibited. Confirmed against
     the text: the licence lets the licensee build prototypes from the data and forbids supplying anything that
-    has made use of it. The resolution is the same choice as for the Developer Licence and is left to the owner.'
+    has made use of it. The resolution is the same choice as for the Developer Licence and is left open for the association''s decision.'
   action: proposed
   change: 'option A, remove the odrl:derive permission
 
@@ -138,12 +138,12 @@ findings:
   description: 'The record models the 2018 edition. The published document is now v9.5 of 1 December 2025:
     the licence period is six months rather than twelve, the machine-learning prohibition is new, and the whole
     text was rewritten in plain language. The record should either be refreshed against v9.5 or be labelled
-    as the 2018 edition, which the scho:startDate and scho:endDate already suggest. A decision for the owner,
+    as the 2018 edition, which the scho:startDate and scho:endDate already suggest. A decision for the association,
     because refreshing it rewrites a published record rather than correcting it.'
   action: proposed
 family: Government licenses (United Kingdom, Canada)
 port_of: null
 variant_kind: null
-notes: The batch input listed the text as a product page only. The terms PDF linked from that page was fetched
+notes: The review group input listed the text as a product page only. The terms PDF linked from that page was fetched
   and read, so the record was checked against the licence itself, but against the current edition rather than
   the one it models. Nothing in this review is legal advice.

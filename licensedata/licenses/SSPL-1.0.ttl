@@ -19,12 +19,13 @@
 
 dalicclib:SSPL-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "SSPL-1.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.mongodb.com/licensing/server-side-public-license> ;
     dalicc:LiabilityLimitation "IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES." ;
     dalicc:WarrantyDisclaimer "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION." ;
-    dalicc:WarrantyOrLiabilityAcceptance "You may charge any price or no price for each copy that you convey, and you may offer support or warranty protection for a fee." ;
+    dalicc:WarrantyOrLiabilityAcceptance "you may offer support or warranty protection for a fee" ;
     dalicc:additionalClauses "All rights granted under this License are granted for the term of copyright on the Program, and are irrevocable provided the stated conditions are met.",
         "Conveying under any other circumstances is permitted solely under the conditions stated below. Sublicensing is not allowed; section 10 makes it unnecessary.",
         "No covered work shall be deemed part of an effective technological measure under any applicable law fulfilling obligations under article 11 of the WIPO copyright treaty adopted on 20 December 1996, or similar laws prohibiting or restricting circumvention of such measures.",
@@ -54,14 +55,16 @@ dalicclib:SSPL-1.0 a odrl:Set ;
         "Server Side Public License",
         "Server Side Public License 1.0" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "MongoDB, Inc." ;
     dct:source <https://spdx.org/licenses/SSPL-1.0.html> ;
     dct:title "Server Side Public License, v 1"@en ;
     odrl:duty [ a odrl:Duty ;
-            odrl:action cc:ShareAlike ] ;
+            odrl:action cc:ShareAlike ;
+            dalicc:evidence "You must license the entire work, as a whole, under this License to anyone who comes into possession of a copy." ] ;
     odrl:permission [ a odrl:Permission ;
-            odrl:action odrl:reproduce ],
+            odrl:action odrl:reproduce ;
+            dalicc:evidence "You may charge any price or no price for each copy that you convey, and you may offer support or warranty protection for a fee." ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
@@ -69,7 +72,9 @@ dalicclib:SSPL-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ] ],
+                    odrl:action cc:SourceCode ;
+                    dalicc:evidence "If you make the functionality of the Program or a modified version available to third parties as a service, you must make the Service Source Code available via network download to everyone at no charge, under the terms of this License." ] ;
+            dalicc:evidence "You may charge any price or no price for each copy that you convey, and you may offer support or warranty protection for a fee." ],
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
@@ -77,7 +82,8 @@ dalicclib:SSPL-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ],
+                    odrl:action cc:SourceCode ;
+                    dalicc:evidence "If you make the functionality of the Program or a modified version available to third parties as a service, you must make the Service Source Code available via network download to everyone at no charge, under the terms of this License." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ] ],
         [ a odrl:Permission ;
@@ -87,7 +93,8 @@ dalicclib:SSPL-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ],
+                    odrl:action cc:SourceCode ;
+                    dalicc:evidence "If you make the functionality of the Program or a modified version available to third parties as a service, you must make the Service Source Code available via network download to everyone at no charge, under the terms of this License." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ] ],
         [ a odrl:Permission ;
@@ -99,21 +106,27 @@ dalicclib:SSPL-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
-            odrl:action cc:CommercialUse ],
+            odrl:action cc:CommercialUse ;
+            dalicc:evidence "You may charge any price or no price for each copy that you convey, and you may offer support or warranty protection for a fee." ],
         [ a odrl:Permission ;
-            odrl:action dalicc:chargeDistributionFee ],
+            odrl:action dalicc:chargeDistributionFee ;
+            dalicc:evidence "You may charge any price or no price for each copy that you convey, and you may offer support or warranty protection for a fee." ],
         [ a odrl:Permission ;
             odrl:action dalicc:patentGrant ],
         [ a odrl:Permission ;
             odrl:action dalicc:networkUseTrigger ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:SourceCode ] ] ;
+                    odrl:action cc:SourceCode ;
+                    dalicc:evidence "If you make the functionality of the Program or a modified version available to third parties as a service, you must make the Service Source Code available via network download to everyone at no charge, under the terms of this License." ] ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:ChangeLicense ],
+            odrl:action dalicc:ChangeLicense ;
+            dalicc:evidence "This License gives no permission to license the work in any other way, but it does not invalidate such permission if you have separately received it." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ],
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "Sublicensing is not allowed; section 10 makes it unnecessary." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:addLimitation ],
+            odrl:action dalicc:addLimitation ;
+            dalicc:evidence "You may not impose any further restrictions on the exercise of the rights granted or affirmed under this License." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:applyTechnicalProtectionMeasures ],
         [ a odrl:Prohibition ;

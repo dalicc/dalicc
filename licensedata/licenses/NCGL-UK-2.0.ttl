@@ -19,6 +19,7 @@
 
 dalicclib:NCGL-UK-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "NCGL-UK-2.0" ;
     cc:attributionName "The National Archives" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -36,9 +37,9 @@ The Information Provider is not liable for any errors or omissions in the Inform
         "UK Non-Commercial Government Licence v2.0",
         "UK Non-Commercial Government Licence version 2.0",
         "NCGL UK 2.0" ;
-    dct:hasVersion "3" ;
+    dct:hasVersion "2" ;
     dct:isVersionOf dalicclib:UkOpenGovernmentLicenseForPublicSectorInformation ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "The National Archives" ;
     dct:source <http://www.nationalarchives.gov.uk/doc/non-commercial-government-licence/version/2/> ;
     dct:title "Non-Commercial Government Licence" ;
@@ -71,7 +72,8 @@ The Information Provider is not liable for any errors or omissions in the Inform
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action cc:CommercialUse ],
+            odrl:action cc:CommercialUse ;
+            dalicc:evidence "The Licensor grants you a worldwide, royalty-free, perpetual, non-exclusive licence to use the Information for Non-Commercial purposes only subject to the conditions below." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:promote ],
         [ a odrl:Prohibition ;

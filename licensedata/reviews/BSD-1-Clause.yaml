@@ -39,7 +39,7 @@ findings:
     it at the sentence boundary: the warranty sentence goes to dalicc:WarrantyDisclaimer and the "IN NO EVENT SHALL"
     sentence to dalicc:LiabilityLimitation, both verbatim. The existing BSD-2-Clause, BSD-3-Clause and BSD-4-Clause
     records keep the whole paragraph in dalicc:WarrantyDisclaimer and carry no dalicc:LiabilityLimitation; those
-    records were not edited, and the divergence is reported for the consolidation pass.'
+    records were not edited, and the divergence is reported for the consolidation.'
   action: applied
 - rubric: 7
   severity: info
@@ -64,10 +64,10 @@ findings:
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
+    the earlier reading wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
     or without modification, are permitted provided that the following conditions are met: 1. Redistributions of
     source code must retain the above copyright notice, this list of conditions and the following disclaimer." The
     permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the

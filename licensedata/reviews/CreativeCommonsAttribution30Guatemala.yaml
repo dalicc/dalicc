@@ -23,7 +23,7 @@ findings:
   field: spdx:licenseId
   description: SPDX has no identifier for this port. The legal-code URL implies CC-BY-3.0-GT, which the
     SPDX licence list does not define, so no spdx:licenseId was invented. Of the forty two records of
-    this batch only the Attribution 3.0 Netherlands record can take one.
+    this review group only the Attribution 3.0 Netherlands record can take one.
   action: none
 - rubric: 2
   severity: minor
@@ -31,7 +31,7 @@ findings:
   description: 'The record targets dalicc:CreativeWork only, while the 4.0 International parent CC-BY-4.0
     targets dalicc:CreativeWork and dcmitype:Dataset. The Guatemalan port has no database language at
     all: neither the definitions nor the grant nor the restrictions mention a base de datos or a sui generis
-    right. The four European Union ports of this batch, Italy, the Netherlands, Ireland and Croatia, were
+    right. The four European Union ports of this review group, Italy, the Netherlands, Ireland and Croatia, were
     corrected because their texts license database rights in terms; this one was not, and aligning it
     with the parent is part of the single library wide decision on the asset types of the Creative Commons
     family.'
@@ -53,12 +53,13 @@ findings:
   severity: major
   field: odrl:prohibition
   description: 'The licence forbids sublicensing and the record does not say so: clause 4: the licensee
-    is "ni esta facultado para otorgar sub-licencias sobre la misma". The vocabulary already has dalicc:sublicense,
+    is "ni está facultado para otorgar sub-licencias sobre la misma". The vocabulary already has dalicc:sublicense,
     but no record in the library uses it and its skos:note says so, and the same sentence stands in every
-    Creative Commons 2.0 and 3.0 record, so adding it to this batch alone would split the compatibility
+    Creative Commons 2.0 and 3.0 record, so adding it to this review group alone would split the compatibility
     behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
     note. Not applied for that reason.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -88,8 +89,8 @@ findings:
     of this port and not from the English unported version, and each field holds its own clause rather
     than a copy of the other. Clause 5 is not a pure disclaimer. It offers the Obra in its present condition
     and denies any warranty of commercial quality or fitness for a particular purpose, but in the same
-    sentence it gives a warranty: "EL AUTOR GARANTIZA LA AUTORIA Y ORIGINALIDAD DE LA OBRA". Guatemala
-    is the only port of this batch whose warranty section warrants authorship and originality. Clause
+    sentence it gives a warranty: "EL AUTOR GARANTIZA LA AUTORÍA Y ORIGINALIDAD DE LA OBRA". Guatemala
+    is the only port of this review group whose warranty section warrants authorship and originality. Clause
     6 is a conventional exclusion of damages. Each field carries its own clause verbatim in Spanish.'
   action: none
 - rubric: 6
@@ -169,6 +170,15 @@ findings:
     cannot tell this record from the other records of the BY element set, across all three versions and
     every jurisdiction the library holds.'
   action: none
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Esta Licencia y los derechos otorgados en
+    ella dejarán de surtir efecto automáticamente, si Usted incumple cualquiera de las condiciones aquí
+    contenidas." The licence ends automatically on a breach and this version of the text has no reinstatement
+    clause, so dalicc:terminatesOnBreach is true and no dalicc:curePeriod is written, as on the unported
+    record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Guatemala (GT)'
 port_of: CC-BY-4.0
 variant_kind: jurisdiction-port

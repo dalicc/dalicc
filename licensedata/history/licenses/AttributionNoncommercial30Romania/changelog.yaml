@@ -1,13 +1,22 @@
 id: AttributionNoncommercial30Romania
 title: Creative Commons Attribution-NonCommercial 3.0 Romania
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, changed
     1 clause text and 1 asset target, recorded the relation to the record this one was adapted from
-    and recorded the review state.
+    and recorded the review state. Later changes recorded what the text says about the database right,
+    recorded which sentence of the text each statement rests on, recorded when the license ends on
+    a breach, named the license the record itself is published under and removed the quotes that do
+    not name the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
   changes:
   - action: changed
     statement: "dalicc:WarrantyDisclaimer \"Prin punerea Operei la dispoziţia publicului în conformitate\
@@ -108,23 +117,50 @@ entries:
       only under the Romanian sui generis database right. Because the legal text names databases as
       licensed subject matter and disposes of the database maker's right in the grant itself, dcmitype:Dataset
       was added here rather than left as a proposal, which is how the same question was decided for
-      the Portuguese, Czech and Azerbaijani ports. The ports in this batch whose text has no database
-      clause at all, Ecuador and Brazil, keep the proposal.
+      the Portuguese, Czech and Azerbaijani ports. The ports in this review group whose text has no
+      database clause at all, Ecuador and Brazil, keep the proposal.
     source: review-finding 2/odrl:target
-- version: 3
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: 'The port settles the sui generis database right in its own text: Section 1 defines Opera
-    to include "o baza de date in conformitate cu definitiile din legislatia in vigoare privind drepturile
-    de autor si drepturile conexe", Section 3 grants "in cazul in care opera este o baza de date,
-    dreptul de a extrage si/sau a reutiliza parti substantiale din Opera" and closes with "Daca Licentiatorul
-    este titularul drepturilor sui-generis asupra unei baze de date, in conformitate cu legea nationala
-    care implementeaza Directiva Europeana privind Bazele de Date, Licentiatorul va renunta la aceste
-    drepturi". dalicc:suiGenerisDatabaseRights is now permitted, and it carries no duty because Section
-    4 adds that the restrictions do not apply to the parts of the Work that qualify only under the
-    Romanian sui generis database right.'
-  changes:
   - action: added
     statement: permission dalicc:suiGenerisDatabaseRights
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The port settles the sui generis database right in its own text: Section 1 defines Opera
+      to include "o baza de date in conformitate cu definitiile din legislatia in vigoare privind
+      drepturile de autor si drepturile conexe", Section 3 grants "in cazul in care opera este o baza
+      de date, dreptul de a extrage si/sau a reutiliza parti substantiale din Opera" and closes with
+      "Daca Licentiatorul este titularul drepturilor sui-generis asupra unei baze de date, in conformitate
+      cu legea nationala care implementeaza Directiva Europeana privind Bazele de Date, Licentiatorul
+      va renunta la aceste drepturi". dalicc:suiGenerisDatabaseRights is now permitted, and it carries
+      no duty because Section 4 adds that the restrictions do not apply to the parts of the Work that
+      qualify only under the Romanian sui generis database right.'
+    source: manual
+  - action: changed
+    statement: permission dalicc:suiGenerisDatabaseRights
+    previous: permission dalicc:suiGenerisDatabaseRights
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "în cazul în care
+      opera este o bază de date, dreptul de a extrage şi/sau a reutiliza părţi substanţiale din Operă."'
+    source: manual
+  - action: changed
+    statement: prohibition cc:CommercialUse
+    previous: prohibition cc:CommercialUse
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "nu are dreptul
+      de a susţine sau a sugera, direct sau indirect, orice legătură, finanţare sau susţinere din
+      partea Autorului, Titularului de Drepturi Conexe, Licenţiatorului şi/sau părţii desemnate de
+      aceştia pentru atribuire"'
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'The termination clause of this port reads: "Această licenţă este reziliată de plin drept,
+      iar drepturile acordate prin intermediul său vor înceta în mod implicit în cazul în care Licenţiatul
+      săvârşeşte orice fel de încălcare a condiţiilor licenţei."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: prohibition cc:CommercialUse
+    previous: prohibition cc:CommercialUse
+    reason: 'Removed the quoted evidence of prohibition cc:CommercialUse: the quoted sentence does
+      not name the act. The statements stay, read from the text without a linked quote.'
     source: manual

@@ -1,11 +1,17 @@
 id: AAL
 title: Attribution Assurance License
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
-  summary: The content review of 2026-09-15 recorded the review state.
+  summary: The content review of 2026-09-15 recorded the review state. Later changes brought it in
+    line with its family and its text in the verification of 2026-09-15, recorded which sentence of
+    the text each statement rests on and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
   changes:
   - action: added
     statement: dalicc:reviewStatus dalicc:Reviewed
@@ -17,14 +23,6 @@ entries:
     reason: Every record records how far it has come in the editorial workflow and when it was last
       checked against the legal text.
     source: review-state
-- version: 3
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Family rule 10 of scripts/review/family_rules.py: the disclaimer paragraph held both the
-    warranty sentence and the liability sentence, which begins ''IN NO EVENT SHALL THE AUTHOR OR ANY
-    CONTRIBUTOR BE LIABLE''. It is split, as the 116 records of the standard-license addition split
-    it.'
-  changes:
   - action: added
     statement: 'dalicc:LiabilityLimitation "IN NO EVENT SHALL THE AUTHOR OR ANY CONTRIBUTOR BE LIABLE
       FOR
@@ -35,7 +33,9 @@ entries:
       ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
       OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
       OF SUCH DAMAGE."'
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Library convention 10: the disclaimer paragraph held both the warranty sentence and the
+      liability sentence, which begins ''IN NO EVENT SHALL THE AUTHOR OR ANY CONTRIBUTOR BE LIABLE''.
+      It is split, as the 116 records of the standard-license addition split it.'
     source: manual
   - action: changed
     statement: dalicc:WarrantyDisclaimer "THIS FREE SOFTWARE IS PROVIDED BY THE AUTHOR \"AS IS\" AND
@@ -52,5 +52,36 @@ entries:
       ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
       OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
       OF SUCH DAMAGE."'
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Library convention 10: the disclaimer paragraph held both the warranty sentence and the
+      liability sentence, which begins ''IN NO EVENT SHALL THE AUTHOR OR ANY CONTRIBUTOR BE LIABLE''.
+      It is split, as the 116 records of the standard-license addition split it.'
+    source: manual
+  - action: changed
+    statement: permission cc:DerivativeWorks with duties [cc:Attribution, cc:Notice]
+    previous: permission cc:DerivativeWorks with duties [cc:Attribution, cc:Notice]
+    reason: Its duty cc:Attribution quotes "Redistributions of the Code in binary form must be accompanied
+      by this GPG-signed text in any documentation and, each time the resulting executable program
+      or a program dependent thereon is launched, a prominent display (e.g., splash screen or banner
+      text) of the Author's attribution information, which includes:"
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: Its duty cc:Attribution quotes "Redistributions of the Code in binary form must be accompanied
+      by this GPG-signed text in any documentation and, each time the resulting executable program
+      or a program dependent thereon is launched, a prominent display (e.g., splash screen or banner
+      text) of the Author's attribution information, which includes:"
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Neither the name
+      nor any trademark of the Author may be used to endorse or promote products derived from this
+      software without specific prior written permission."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

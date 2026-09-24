@@ -40,7 +40,8 @@ findings:
   field: odrl:prohibition
   description: dalicc:ChangeLicense is prohibited although the text places no restriction on the terms
     a licensee may redistribute under. Same family-level decision as in BSD-2-Clause.
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "# remove\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:ChangeLicense\
     \ ] ;\n"
 - rubric: 1
@@ -52,7 +53,7 @@ findings:
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 3 finding 5: the disclaimer paragraph held both the warranty
+    its new siblings and versioned. The review''s finding on family consistency: the disclaimer paragraph held both the warranty
     sentence and the liability sentence. It is split at ''IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS
     BE LIABLE'', as the six new BSD records split it.'
   action: applied

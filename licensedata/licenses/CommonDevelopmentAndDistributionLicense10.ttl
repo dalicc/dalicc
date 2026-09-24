@@ -19,6 +19,7 @@
 
 dalicclib:CommonDevelopmentAndDistributionLicense10 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CDDL-1.0" ;
     cc:attributionName "SUN Microsystems" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -30,8 +31,8 @@ dalicclib:CommonDevelopmentAndDistributionLicense10 a odrl:Set ;
     dalicc:reviewedOn "2026-09-15"^^xsd:date ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/CommonDevelopmentAndDistributionLicense10/versions> ;
     dct:alternative "CDDL-1.0" ;
-    dct:hasVersion "4" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source osl:CDDL-1.0 ;
     dct:title "Common Development and Distribution License 1.0" ;
     odrl:permission [ a odrl:Permission ;

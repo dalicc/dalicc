@@ -1,13 +1,15 @@
-# Version 5 of the dependency graph, 2026-09-23. Versions 1 to 4 and the change log are in
+# Version 2 of the dependency graph, 2026-09-24. Version 1 and the change log are in
 # licensedata/history/dependencygraph/. Reviewer: Giray Havur.
 #
 # The graph holds two kinds of statement. An axiom relates two actions: it says that one
 # is a kind of another, entails it, is another name for it, or cannot hold beside it. A
 # default rule says what applies to an action a licence is silent about, in which
-# jurisdiction, and on the strength of which legal source. The rules proposed for the
-# seven biggest markets live in dg_eu, dg_us, dg_cn, dg_gb, dg_jp, dg_in and dg_br, which
-# are read together with this graph and are chosen deliberately. Only the rule below is
-# adopted, and nothing here is legal advice.
+# jurisdiction, on the strength of which legal source, and, in plain words, what that does.
+# The seven jurisdiction graphs dg_eu, dg_us, dg_cn, dg_gb, dg_jp, dg_in and dg_br are
+# complete graphs generated from this one and a difference file each
+# (licensedata/dependencygraph/differences/, scripts/build_dependency_graphs.py), so a new
+# version of this graph is a new version of each of them. Only the rule below is adopted,
+# and nothing here is legal advice.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -71,6 +73,9 @@ odrl:shareAlike owl:sameAs cc:ShareAlike .
     dalicc:appliesTo dalicc:promote ;
     dalicc:defaultOutcome dalicc:NotGrantedByDefault ;
     dalicc:inJurisdiction dalicc:worldwide ;
-    dalicc:ruleBasis "trademark law and the protection of names: a copyright licence that is silent grants no right to endorsement" ;
+    dalicc:ruleBasis "Trademark and name rights are separate from copyright: Regulation (EU) 2017/1001 article 9 lets the proprietor of an EU trade mark prevent all third parties not having his consent from using the sign in the course of trade, and Directive (EU) 2015/2436 article 10, 15 U.S.C. 1114 and 1125(a), section 12 BGB and section 43 ABGB protect marks and names in the same way. The library's evidence is Creative Commons 4.0 section 2(b)(2): Patent and trademark rights are not licensed under this Public License. A copyright licence that is silent grants no right to use the licensor's name or marks to suggest endorsement" ;
+    dalicc:ruleExplanation "A licence that says nothing about endorsement is read as not allowing it: the licence gives the licensee no right to use the licensor's name or marks in a way that states or implies that the licensor endorses the licensee or its product, while stating truthfully that a work is based on or uses the licensed work is a different act that this rule does not decide. A copyright licence grants rights in the work, and the right to use a name or a trademark is a separate right under trademark law and the protection of names, which a silent copyright licence does not pass on. Combining a licence that is silent about endorsement with one that permits it shows a conflict marked as coming from this rule."@en ;
     dct:date "2026-09-23"^^xsd:date ;
+    dct:contributor "Giray Havur, for the association's review, adopted this rule on 2026-09-23" ;
+    dct:dateAccepted "2026-09-23"^^xsd:date ;
     dalicc:ruleStatus dalicc:Adopted .

@@ -69,7 +69,8 @@ findings:
     a share-alike licence. The family-rule baseline raises the same point for permissive software licences
     under rule 5b. Proposed for removal, together with the two sibling records that carry the identical
     block.
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "remove:\n    odrl:prohibition [ a odrl:Prohibition ;\n            odrl:action cc:ShareAlike\
     \ ]"
 - rubric: 4
@@ -80,7 +81,8 @@ findings:
     licence says the opposite in its permission list, the information may be combined with other information
     or included in the licensee''s own product or application, and it imposes no pass-through condition
     at all. Proposed for removal.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "remove:\n    odrl:prohibition [ a odrl:Prohibition ;\n            odrl:action dalicc:addStatement\
     \ ]"
 - rubric: 6
@@ -134,13 +136,13 @@ findings:
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 5 finding 7, applied to the third record of the Open Government
+    its new siblings and versioned. The review''s finding on family consistency, applied to the third record of the Open Government
     Licence family: the unsupported cc:ShareAlike and dalicc:addStatement prohibitions are removed and
     the database right the licence covers is stated.'
   action: applied
 family: Government licenses (United Kingdom, Canada)
 port_of: UkOpenGovernmentLicenseForPublicSectorInformation
 variant_kind: edition
-notes: The batch input listed this record as text-unavailable, pdf-not-fetched. The PDF at the cc:legalcode
+notes: The review group input listed this record as text-unavailable, pdf-not-fetched. The PDF at the cc:legalcode
   URL was retrieved and read for this review, so the verdict is corrected rather than text-unavailable.
   Nothing in this review is legal advice.

@@ -57,7 +57,7 @@ findings:
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 2 finding 6.5: cc:attributionName and dct:publisher both began
+    its new siblings and versioned. The review''s finding on family consistency: cc:attributionName and dct:publisher both began
     with a space.'
   action: applied
 family: Apache Software Foundation (1.1, 2.0)

@@ -19,6 +19,7 @@
 
 dalicclib:HPND a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "HPND" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://opensource.org/license/HPND> ;
@@ -30,8 +31,8 @@ dalicclib:HPND a odrl:Set ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/HPND/versions> ;
     dct:alternative "HPND",
         "Historical Permission Notice and Disclaimer" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://spdx.org/licenses/HPND.html> ;
     dct:title "Historical Permission Notice and Disclaimer"@en ;
     odrl:permission [ a odrl:Permission ;
@@ -69,8 +70,13 @@ dalicclib:HPND a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Permission to use, copy, modify, and distribute this software and its documentation for any purpose and without fee is hereby granted, provided that the above copyright notice appear in all copies, and that both that copyright notice and this permission notice appear in supporting documentation, and that the name of <copyright holder> or <related entities> not be used in advertising or publicity pertaining to distribution of the software without specific, written prior permission. <copyright holder> makes no representations about the suitability of this software for any purpose." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

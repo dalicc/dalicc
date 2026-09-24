@@ -17,7 +17,7 @@ findings:
   field: 'spdx:licenseId'
   description: >-
     The record carries the SPDX id LiLiQ-Rplus-1.1. dct:title is the SPDX name with its long
-    dash replaced by a plain hyphen, as the batch conventions require, and dct:alternative
+    dash replaced by a plain hyphen, as the review conventions require, and dct:alternative
     holds the short forms. The library holds no other Quebec licence, so dalicc:variantKind is
     left out.
   action: applied
@@ -28,7 +28,7 @@ findings:
     Two asset types, dcmitype:Software and dalicc:CreativeWork, because article 2 defines the
     licensed object as "une œuvre protégée par le droit d'auteur, telle qu'un programme
     d'ordinateur et sa documentation": the documentation is licensed with the program. The
-    other software records of this batch carry dcmitype:Software alone.
+    other software records of this review group carry dcmitype:Software alone.
   action: applied
 - rubric: 3
   severity: major
@@ -39,7 +39,7 @@ findings:
     substantial part, perform or represent it in public, publish it. The record permits
     reproduce, distribute, display, present, modify, derive, commercial use, derivative works,
     modified works and the distribution fee; article 4 confirms modification and derivation by
-    allowing copies of "un logiciel modifie ou derive" to be distributed. The fourth right of
+    allowing copies of "un logiciel modifié ou dérivé" to be distributed. The fourth right of
     the permissive licence, sublicensing under another free licence, is absent from this text,
     so neither dalicc:sublicense nor dalicc:ChangeLicense is written.
   action: applied
@@ -101,7 +101,7 @@ findings:
   description: >-
     The language of the quoted clauses is French, the language of the legal code the record
     cites. The record cannot say so: dct:language is not in the prefix block and not in the
-    predicate order. Proposed, as in batch 2: allow dct:language on a record and write "fr"
+    predicate order. Proposed, as in another review group: allow dct:language on a record and write "fr"
     here.
   action: none
 - rubric: 8
@@ -138,7 +138,7 @@ findings:
     and the difference between them is exactly the share-alike scope: none in LiLiQ-P-1.1, on
     distribution and modification in LiLiQ-R-1.1, licence-wide in LiLiQ-Rplus-1.1. Their
     compatible licence lists differ as well, twelve licences in LiLiQ-R-1.1 and six in
-    LiLiQ-Rplus-1.1, both quoted. Against the other records of this batch: the EUPL 1.2
+    LiLiQ-Rplus-1.1, both quoted. Against the other records of this review group: the EUPL 1.2
     appendix names the two reciprocity licences of this family as compatible, and LiLiQ-R-1.1
     names EUPL 1.1, CeCILL 2.1 and CeCILL-C in return.
   action: none

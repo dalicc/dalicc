@@ -1,0 +1,161 @@
+id: CreativeML-OpenRAIL-Mpp
+title: CreativeML Open RAIL++-M License
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'The statement is marked as a library convention, family rule 15: Permissive records permit
+      relicensing: the text does not state it in as many words. Its duty dalicc:compliantLicense is
+      marked as a library convention, family rule 15: Permissive records permit relicensing.'
+    source: manual
+  - action: changed
+    statement: permission dalicc:networkUseTrigger with duties [cc:Attribution, cc:Notice, dalicc:addStatement]
+    previous: permission dalicc:networkUseTrigger with duties [cc:Attribution, cc:Notice, dalicc:addStatement]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may host
+      for Third Party remote access purposes (e.g. software-as-a-service), reproduce and distribute
+      copies of the Model or Derivatives of the Model thereof in any medium, with or without modifications,
+      provided that You meet the following conditions: Use-based restrictions as referenced in paragraph
+      5 MUST be included as an enforceable provision by You in any type of legal agreement (e.g. a
+      license) governing the use and/or distribution of the Model or Derivatives of the Model, and
+      You shall give notice to subsequent users You Distribute to, that the Model or Derivatives of
+      the Model are subject to paragraph 5." Its duty cc:Attribution quotes "You must give any Third
+      Party recipients of the Model or Derivatives of the Model a copy of this License; You must cause
+      any modified files to carry prominent notices stating that You changed the files; You must retain
+      all copyright, patent, trademark, and attribution notices excluding those notices that do not
+      pertain to any part of the Model, Derivatives of the Model." Its duty cc:Notice quotes "You
+      must give any Third Party recipients of the Model or Derivatives of the Model a copy of this
+      License; You must cause any modified files to carry prominent notices stating that You changed
+      the files; You must retain all copyright, patent, trademark, and attribution notices excluding
+      those notices that do not pertain to any part of the Model, Derivatives of the Model." Its duty
+      dalicc:addStatement quotes "You may host for Third Party remote access purposes (e.g. software-as-a-service),
+      reproduce and distribute copies of the Model or Derivatives of the Model thereof in any medium,
+      with or without modifications, provided that You meet the following conditions: Use-based restrictions
+      as referenced in paragraph 5 MUST be included as an enforceable provision by You in any type
+      of legal agreement (e.g. a license) governing the use and/or distribution of the Model or Derivatives
+      of the Model, and You shall give notice to subsequent users You Distribute to, that the Model
+      or Derivatives of the Model are subject to paragraph 5."'
+    source: manual
+  - action: changed
+    statement: permission dalicc:useForModelTraining
+    previous: permission dalicc:useForModelTraining
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Use may include
+      creating any content with, finetuning, updating, running, training, evaluating and/or reparametrizing
+      the Model."'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:addStatement,
+      dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:addStatement,
+      dalicc:modificationNotice]
+    reason: 'Its duty cc:Attribution quotes "You must give any Third Party recipients of the Model
+      or Derivatives of the Model a copy of this License; You must cause any modified files to carry
+      prominent notices stating that You changed the files; You must retain all copyright, patent,
+      trademark, and attribution notices excluding those notices that do not pertain to any part of
+      the Model, Derivatives of the Model." Its duty cc:Notice quotes "You must give any Third Party
+      recipients of the Model or Derivatives of the Model a copy of this License; You must cause any
+      modified files to carry prominent notices stating that You changed the files; You must retain
+      all copyright, patent, trademark, and attribution notices excluding those notices that do not
+      pertain to any part of the Model, Derivatives of the Model." Its duty dalicc:modificationNotice
+      quotes "You must give any Third Party recipients of the Model or Derivatives of the Model a
+      copy of this License; You must cause any modified files to carry prominent notices stating that
+      You changed the files; You must retain all copyright, patent, trademark, and attribution notices
+      excluding those notices that do not pertain to any part of the Model, Derivatives of the Model."
+      Its duty dalicc:addStatement quotes "You may host for Third Party remote access purposes (e.g.
+      software-as-a-service), reproduce and distribute copies of the Model or Derivatives of the Model
+      thereof in any medium, with or without modifications, provided that You meet the following conditions:
+      Use-based restrictions as referenced in paragraph 5 MUST be included as an enforceable provision
+      by You in any type of legal agreement (e.g. a license) governing the use and/or distribution
+      of the Model or Derivatives of the Model, and You shall give notice to subsequent users You
+      Distribute to, that the Model or Derivatives of the Model are subject to paragraph 5."'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, dalicc:addStatement,
+      dalicc:modificationNotice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, dalicc:addStatement,
+      dalicc:modificationNotice]
+    reason: 'Its duty cc:Attribution quotes "You must give any Third Party recipients of the Model
+      or Derivatives of the Model a copy of this License; You must cause any modified files to carry
+      prominent notices stating that You changed the files; You must retain all copyright, patent,
+      trademark, and attribution notices excluding those notices that do not pertain to any part of
+      the Model, Derivatives of the Model." Its duty cc:Notice quotes "You must give any Third Party
+      recipients of the Model or Derivatives of the Model a copy of this License; You must cause any
+      modified files to carry prominent notices stating that You changed the files; You must retain
+      all copyright, patent, trademark, and attribution notices excluding those notices that do not
+      pertain to any part of the Model, Derivatives of the Model." Its duty dalicc:modificationNotice
+      quotes "You must give any Third Party recipients of the Model or Derivatives of the Model a
+      copy of this License; You must cause any modified files to carry prominent notices stating that
+      You changed the files; You must retain all copyright, patent, trademark, and attribution notices
+      excluding those notices that do not pertain to any part of the Model, Derivatives of the Model."
+      Its duty dalicc:addStatement quotes "You may host for Third Party remote access purposes (e.g.
+      software-as-a-service), reproduce and distribute copies of the Model or Derivatives of the Model
+      thereof in any medium, with or without modifications, provided that You meet the following conditions:
+      Use-based restrictions as referenced in paragraph 5 MUST be included as an enforceable provision
+      by You in any type of legal agreement (e.g. a license) governing the use and/or distribution
+      of the Model or Derivatives of the Model, and You shall give notice to subsequent users You
+      Distribute to, that the Model or Derivatives of the Model are subject to paragraph 5."'
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:addStatement,
+      dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:addStatement,
+      dalicc:modificationNotice]
+    reason: 'Its duty cc:Attribution quotes "You must give any Third Party recipients of the Model
+      or Derivatives of the Model a copy of this License; You must cause any modified files to carry
+      prominent notices stating that You changed the files; You must retain all copyright, patent,
+      trademark, and attribution notices excluding those notices that do not pertain to any part of
+      the Model, Derivatives of the Model." Its duty cc:Notice quotes "You must give any Third Party
+      recipients of the Model or Derivatives of the Model a copy of this License; You must cause any
+      modified files to carry prominent notices stating that You changed the files; You must retain
+      all copyright, patent, trademark, and attribution notices excluding those notices that do not
+      pertain to any part of the Model, Derivatives of the Model." Its duty dalicc:modificationNotice
+      quotes "You must give any Third Party recipients of the Model or Derivatives of the Model a
+      copy of this License; You must cause any modified files to carry prominent notices stating that
+      You changed the files; You must retain all copyright, patent, trademark, and attribution notices
+      excluding those notices that do not pertain to any part of the Model, Derivatives of the Model."
+      Its duty dalicc:addStatement quotes "You may host for Third Party remote access purposes (e.g.
+      software-as-a-service), reproduce and distribute copies of the Model or Derivatives of the Model
+      thereof in any medium, with or without modifications, provided that You meet the following conditions:
+      Use-based restrictions as referenced in paragraph 5 MUST be included as an enforceable provision
+      by You in any type of legal agreement (e.g. a license) governing the use and/or distribution
+      of the Model or Derivatives of the Model, and You shall give notice to subsequent users You
+      Distribute to, that the Model or Derivatives of the Model are subject to paragraph 5."'
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Subject to the
+      terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide,
+      non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare,
+      publicly display, publicly perform, sublicense, and distribute the Complementary Material, the
+      Model, and Derivatives of the Model."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:exemptedMaterial
+    previous: prohibition dalicc:exemptedMaterial
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "The Data is not
+      licensed under this License."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Nothing in this
+      License permits You to make use of Licensors’ trademarks, trade names, logos or to otherwise
+      suggest endorsement or misrepresent the relationship between the parties; and any rights not
+      expressly granted herein are reserved by the Licensors."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

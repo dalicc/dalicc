@@ -1,0 +1,84 @@
+id: Llama-2-Community-License
+title: Llama 2 Community License Agreement
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on,
+    corrected it against its text on 2026-09-24, named the license the record itself is published
+    under and removed the quotes that do not name the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
+  changes:
+  - action: changed
+    statement: duty dalicc:exportControlNotice
+    previous: duty dalicc:exportControlNotice
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Your use of the
+      Llama Materials must comply with applicable laws and regulations (including trade compliance
+      laws and regulations) and adhere to the Acceptable Use Policy for the Llama Materials (available
+      at https://ai.meta.com/llama/use-policy), which is hereby incorporated by reference into this
+      Agreement."'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, dalicc:includeNoticeFile]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, dalicc:includeNoticeFile]
+    reason: 'Its duty cc:Attribution quotes "You must retain in all copies of the Llama Materials
+      that you distribute the following attribution notice within a "Notice" text file distributed
+      as a part of such copies: "Llama 2 is licensed under the LLAMA 2 Community License, Copyright
+      (c) Meta Platforms, Inc." Its duty cc:Notice quotes "If you distribute or make the Llama Materials,
+      or any derivative works thereof, available to a third party, you shall provide a copy of this
+      Agreement to such third party." Its duty dalicc:includeNoticeFile quotes "You must retain in
+      all copies of the Llama Materials that you distribute the following attribution notice within
+      a "Notice" text file distributed as a part of such copies: "Llama 2 is licensed under the LLAMA
+      2 Community License, Copyright (c) Meta Platforms, Inc."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "No trademark
+      licenses are granted under this Agreement, and in connection with the Llama Materials, neither
+      Meta nor Licensee may use any name or mark owned by or associated with the other or any of its
+      affiliates, except as required for reasonable and customary use in describing and redistributing
+      the Llama Materials."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:useForModelTraining
+    previous: prohibition dalicc:useForModelTraining
+    reason: The statement now quotes the sentence of the licence text it rests on; the record carries
+      it as dalicc:evidence.
+    source: manual
+  - action: added
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'Clause 1.b.i reads: "If you distribute or make the Llama Materials, or any derivative
+      works thereof, available to a third party, you shall provide a copy of this Agreement to such
+      third party." A derivative may be offered under other terms as long as the agreement travels
+      with the Llama Materials.'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, dalicc:includeNoticeFile]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, dalicc:includeNoticeFile]
+    reason: 'The cc:ShareAlike duty is removed: the text asks that a copy of the agreement accompanies
+      the Llama Materials and derivative works, which the cc:Notice duty states, and does not require
+      a derivative to be licensed under the agreement.'
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:ChangeLicense
+    reason: The text asks that a copy of the agreement travels with the Llama Materials; it does not
+      bar offering a derivative under other terms.
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'Removed the quoted evidence of permission dalicc:ChangeLicense: the quoted sentence does
+      not name the act. The statements stay, read from the text without a linked quote.'
+    source: manual

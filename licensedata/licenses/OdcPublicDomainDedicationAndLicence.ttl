@@ -19,6 +19,7 @@
 
 dalicclib:OdcPublicDomainDedicationAndLicence a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "PDDL-1.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://opendatacommons.org/licenses/pddl/1.0/> ;
@@ -33,8 +34,8 @@ If liability may not be excluded by law, it is limited to actual and direct fina
     dct:alternative "ODC PDDL",
         "ODC PDDL 1.0",
         "PDDL 1.0" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Open Data Commons" ;
     dct:source <https://opendefinition.org/licenses/odc-pddl/> ;
     dct:title "ODC Public Domain Dedication and Licence (PDDL)"@en ;
@@ -55,12 +56,15 @@ If liability may not be excluded by law, it is limited to actual and direct fina
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
-            odrl:action dalicc:ChangeLicense ],
+            odrl:action dalicc:ChangeLicense ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ],
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
-            odrl:action dalicc:chargeDistributionFee ] ;
-    odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:chargeDistributionFee ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:suiGenerisDatabaseRights ;
+            dalicc:evidence "The Licensor grants to You a worldwide, royalty-free, non-exclusive, licence to Use the Work for the duration of any applicable Copyright and Database Rights." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Dataset ] .

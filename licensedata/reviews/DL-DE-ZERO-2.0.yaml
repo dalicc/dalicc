@@ -88,7 +88,7 @@ findings:
     Family: DL-DE-ZERO-2.0 is DL-DE-BY-2.0 without the source note, and the two records differ
     in exactly that: no duty, and three more permissions (dalicc:ChangeLicense,
     dalicc:sublicense and dalicc:chargeLicenseFee). Its nearest neighbours in the library are
-    Cc010Universal and the Unlicense record of batch 1.
+    Cc010Universal and the Unlicense record of review group 1.
   action: none
 family: National open government data licences
 port_of: null

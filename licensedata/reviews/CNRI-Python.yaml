@@ -50,7 +50,7 @@ findings:
   description: Clause 7 states "This License Agreement shall be governed by and interpreted in all respects by the
     law of the State of Virginia, excluding conflict of law provisions", while the grant itself is world-wide. Virginia
     is a state, not a country, and the bpicounty vocabulary the library uses for jurisdiction ports has no IRI for
-    it, so cc:jurisdiction stays dalicc:worldwide and the clause is quoted. The owner may want to decide whether
+    it, so cc:jurisdiction stays dalicc:worldwide and the clause is quoted. The association may want to decide whether
     a sub-national choice of law deserves its own property.
   action: applied
 - rubric: 8
@@ -71,16 +71,15 @@ findings:
   description: Follows licensedata/licenses/PythonLicense20.ttl for the permission set and the modification notice.
     It deliberately does not copy four of that record's prohibitions (odrl:grantUse, cc:ShareAlike, dalicc:addLimitation
     and dalicc:addStatement) nor its dalicc:chargeDistributionFee prohibition, because neither this text nor the
-    PSF text states any of them. The existing record was not edited; the observation is passed to the consolidation
-    pass.
+    PSF text states any of them. The existing record was not edited; the observation is passed to the consolidation.
   action: applied
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Subject to the terms and conditions of this License Agreement,
+    the earlier reading wrote is removed. The text reads: "Subject to the terms and conditions of this License Agreement,
     CNRI hereby grants Licensee a non-exclusive, royalty-free, world-wide license to reproduce, analyze, test, perform
     and/or display publicly, prepare derivative works, distribute, and otherwise use Python 1.6, beta 1 alone or
     in any derivative version, provided ... CNRI''s License Agreement is retained in Python 1.6, beta ..." The permission

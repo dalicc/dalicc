@@ -24,7 +24,7 @@ findings:
   field: spdx:licenseId
   description: SPDX has no identifier for this port. The legal code URL implies CC-BY-3.0-CL, which the
     SPDX licence list does not define, so no identifier was invented. None of the forty two records in
-    this batch has an SPDX identifier.
+    this review group has an SPDX identifier.
   action: none
 - rubric: 2
   severity: minor
@@ -32,7 +32,7 @@ findings:
   description: The record targets dalicc:CreativeWork only, while the 4.0 International parent CC-BY-4.0
     targets dalicc:CreativeWork and dcmitype:Dataset. Creative Commons licences are media neutral and
     this port grants the rights in all media and formats now known or later devised, but its legal text
-    carries no database rights clause, unlike the Portuguese, Czech and Azerbaijani ports of this batch.
+    carries no database rights clause, unlike the Portuguese, Czech and Azerbaijani ports of this review group.
     Aligning the ports with the parents is a single library wide decision covering every Creative Commons
     port, so it is left as a proposal here.
   action: proposed
@@ -42,7 +42,7 @@ findings:
   severity: info
   field: odrl:permission
   description: The modelled permissions follow the grant. Section 3 grants "una licencia mundial, gratuita,
-    no exclusiva y permanente (durante todo el periodo de vigencia de los derechos de autor)", covering
+    no exclusiva y permanente (durante todo el período de vigencia de los derechos de autor)", covering
     reproduction, incorporation into Collections, creation and reproduction of Adaptations with a duty
     to label the change, and distribution and public performance of the Work and of Adaptations, in all
     media and formats now known or later invented. The record models this as odrl:reproduce, odrl:distribute,
@@ -56,10 +56,11 @@ findings:
   description: 'The licence forbids sublicensing and the record does not say so. Section 4(a): "Usted
     no puede sublicenciar la Obra." The vocabulary already has dalicc:sublicense, but no record in the
     library uses it and its skos:note says so, and the same sentence stands in every Creative Commons
-    2.0 and 3.0 record, so adding it to the forty two ports of this batch alone would split the compatibility
+    2.0 and 3.0 record, so adding it to the forty two ports of this review group alone would split the compatibility
     behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
     note.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -68,8 +69,8 @@ findings:
     only under the terms of this licence and the licensee may not offer or impose terms that alter or
     restrict it. dalicc:promote is prohibited, which the 3.0 text supports better than the 2.0 text did,
     because the no endorsement rule sits in the licence body rather than in the Creative Commons notice
-    around it. Section 4(d): the licensee "no puede implicita ni explicitamente afirmar ni sugerir ninguna
-    conexion, patrocinio o respaldo" of the Original Author, the Licensor or the Attribution Parties.'
+    around it. Section 4(d): the licensee "no puede implícita ni explícitamente afirmar ni sugerir ninguna
+    conexión, patrocinio o respaldo" of the Original Author, the Licensor or the Attribution Parties.'
   action: none
 - rubric: 5
   severity: info
@@ -81,7 +82,7 @@ findings:
     The duties hang on odrl:distribute, odrl:modify and odrl:derive, which matches the licence, since
     they are triggered by distributing or communicating the work to the public rather than by private
     use. In this port the parties are "Licenciante" and "Usted", the acts are "Reproducir", "Distribuir"
-    and "Ejecutar Publicamente", and a derivative is an "Adaptacion".'
+    and "Ejecutar Públicamente", and a derivative is an "Adaptacion".'
   action: none
 - rubric: 6
   severity: info
@@ -128,7 +129,7 @@ findings:
   severity: gap
   field: record
   description: 'Moral rights have no vocabulary term. Section 4 closes with "Los derechos morales no se
-    veran alterados por esta Licencia en la medida que estos sean reconocidos, y no considerados renunciables,
+    verán alterados por esta Licencia en la medida que éstos sean reconocidos, y no considerados renunciables,
     por el derecho aplicable.". Proposed terms: dalicc:moralRightsRestriction for a clause that binds
     the licensee and dalicc:moralRightsNonAssertion for one in which the licensor undertakes not to assert
     them.'
@@ -163,6 +164,15 @@ findings:
     other records of the BY element set, across all three versions and every jurisdiction the library
     holds.'
   action: none
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Esta Licencia y los derechos otorgados en
+    virtud de ella terminarán automáticamente si Usted infringe alguna condición establecida en ella."
+    The licence ends automatically on a breach and this version of the text has no reinstatement clause,
+    so dalicc:terminatesOnBreach is true and no dalicc:curePeriod is written, as on the unported record
+    of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Chile (CL)'
 port_of: CC-BY-4.0
 variant_kind: jurisdiction-port

@@ -1,0 +1,65 @@
+id: DOC
+title: DOC License
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on,
+    named the license the record itself is published under and removed the quotes that do not name
+    the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  changes:
+  - action: changed
+    statement: permission cc:CommercialUse
+    previous: permission cc:CommercialUse
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You can use DOC
+      software in commercial and/or binary software releases and are under no obligation to redistribute
+      any of your source code that is built using DOC software."'
+    source: manual
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'The statement is marked as a library convention, family rule 15: Permissive records permit
+      relicensing: the text does not state it in as many words. Its duty dalicc:compliantLicense is
+      marked as a library convention, family rule 15: Permissive records permit relicensing.'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:rename]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:rename]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "This license
+      grants no permission to call products or services derived from this source ACE(TM), TAO(TM),
+      CIAO(TM), DAnCE(TM), or CoSMIC(TM), nor does it grant permission for the name Washington University,
+      UC Irvine, or Vanderbilt University to appear in their names."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:addLimitation
+    previous: prohibition dalicc:addLimitation
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Note, however,
+      that you may not misappropriate the DOC software code, such as copyrighting it yourself or claiming
+      authorship of the DOC software code, in a way that will prevent DOC software from being distributed
+      freely using an open-source development model."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "The names ACE(TM),
+      TAO(TM), CIAO(TM), DAnCE(TM), CoSMIC(TM), Washington University, UC Irvine, and Vanderbilt University,
+      may not be used to endorse or promote products or services derived from this source without
+      express written permission from Washington University, UC Irvine, or Vanderbilt University."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:addLimitation
+    previous: prohibition dalicc:addLimitation
+    reason: 'Removed the quoted evidence of prohibition dalicc:addLimitation: the quoted sentence
+      does not name the act. The statements stay, read from the text without a linked quote.'
+    source: manual

@@ -158,6 +158,19 @@ findings:
     dalicc:networkUseTrigger. Like the second edition and unlike the four later ones it
     prohibits dalicc:useForModelTraining.
   action: none
+- rubric: 5
+  severity: major
+  field: odrl:duty
+  description: 'The agreement must accompany the Llama Materials and derivative works, but the text does
+    not require a derivative to be licensed under it: clause 1.b.i reads "If you distribute or make the
+    Llama Materials, or any derivative works thereof, available to a third party, you shall provide a
+    copy of this Agreement to such third party." The record therefore carries a notice duty and not share
+    alike. The cc:ShareAlike duty is removed from the acts it hung on, and the dalicc:ChangeLicense prohibition
+    written on 2026-09-22 is replaced by a dalicc:ChangeLicense permission with the dalicc:compliantLicense
+    duty, as Apache-2.0 carries it: a derivative may be offered under other terms as long as the copy
+    of the agreement and the notice travel with the Llama Materials. The cc:Notice duty the record carries
+    already states that the copy must travel.'
+  action: applied
 family: Model licences
 port_of: null
 variant_kind: null

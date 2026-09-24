@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Singapore a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Singapore ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc-nd/3.0/sg/legalcode> ;
     dalicc:LiabilityLimitation """EXCEPT TO
@@ -42,6 +43,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Singapore a odrl:Set 
  WARRANTIES, SO THIS EXCLUSION MAY NOT APPLY TO YOU.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-ND-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -61,7 +63,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Singapore a odrl:Set 
         "Creative Commons BY-NC-ND 3.0",
         "Creative Commons BY-NC-ND 3.0 SG" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc-nd/3.0/sg/> ;
     dct:title "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Singapore"@en ;

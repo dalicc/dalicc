@@ -19,6 +19,7 @@
 
 dalicclib:MicrosoftPublicLicense a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "MS-PL" ;
     cc:attributionName "Microsoft" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -32,8 +33,8 @@ dalicclib:MicrosoftPublicLicense a odrl:Set ;
     dct:alternative "MS Public License",
         "MS-PL",
         "MSPL" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Microsoft" ;
     dct:source osl:MS-PL ;
     dct:title "Microsoft Public License" ;
@@ -60,7 +61,11 @@ dalicclib:MicrosoftPublicLicense a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ],
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ],
         [ a odrl:Permission ;
             odrl:action odrl:present ],
         [ a odrl:Permission ;
@@ -76,7 +81,8 @@ dalicclib:MicrosoftPublicLicense a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:patentGrant ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Conditions and Limitations (A) No Trademark License- This license does not grant you rights to use any contributors' name, logo, or trademarks." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ] ;
     odrl:target [ a odrl:AssetCollection ;

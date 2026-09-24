@@ -99,7 +99,7 @@ findings:
     sublicense or distribute Covered Code other than for Your internal research and
     development (R&D)" and it, rather than distribution, is what triggers the source
     publication duty of section 2.2(b). The clause is quoted; proposed term
-    dalicc:networkUseTrigger, the same term batch 2 of this addition proposed for the RPL and
+    dalicc:networkUseTrigger, the same term another review group of this addition proposed for the RPL and
     CAL records.
   action: none
 - rubric: 8
@@ -118,7 +118,7 @@ findings:
     Section 2.2(b) fixes how long the source of the Deployed Modifications must stay available
     ("for as long as you Deploy the Covered Code or twelve (12) months from the date of
     initial Deployment, whichever is longer"). No qualifier on a cc:SourceCode duty can carry
-    that period; proposed term dalicc:sourcePublicationPeriod, as in batch 2.
+    that period; proposed term dalicc:sourcePublicationPeriod, as in another review group.
   action: none
 - rubric: 8
   severity: info

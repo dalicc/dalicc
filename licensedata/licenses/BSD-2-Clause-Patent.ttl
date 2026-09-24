@@ -19,6 +19,7 @@
 
 dalicclib:BSD-2-Clause-Patent a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "BSD-2-Clause-Patent" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://opensource.org/license/BSD-2-Clause-Patent> ;
@@ -33,8 +34,8 @@ dalicclib:BSD-2-Clause-Patent a odrl:Set ;
         "BSD-2-Clause Plus Patent License",
         "BSD-2-Clause-Patent",
         "BSDplusPatent" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://spdx.org/licenses/BSD-2-Clause-Patent.html> ;
     dct:title "BSD-2-Clause Plus Patent License"@en ;
     odrl:permission [ a odrl:Permission ;
@@ -70,10 +71,15 @@ dalicclib:BSD-2-Clause-Patent a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:patentGrant ],
+            odrl:action dalicc:patentGrant ;
+            dalicc:evidence "Subject to the terms and conditions of this license, each copyright holder and contributor hereby grants to those receiving rights under this license a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except for failure to satisfy the conditions of this license) patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer this software, where such license applies only to those patent claims, already acquired or hereafter acquired, licensable by such copyright holder or contributor that are necessarily infringed by:" ],
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

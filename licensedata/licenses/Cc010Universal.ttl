@@ -19,6 +19,7 @@
 
 dalicclib:Cc010Universal a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CC0-1.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://creativecommons.org/publicdomain/zero/1.0/legalcode> ;
@@ -37,7 +38,7 @@ Affirmer understands and acknowledges that Creative Commons is not a party to th
         "CC0 1.0 Universal Public Domain Dedication",
         "Creative Commons Zero 1.0 Universal" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/publicdomain/zero/1.0/> ;
     dct:title "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication"@en ;
@@ -64,7 +65,8 @@ Affirmer understands and acknowledges that Creative Commons is not a party to th
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "No trademark or patent rights held by Affirmer are waived, abandoned, surrendered, licensed or otherwise affected by this document. b." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset ] .

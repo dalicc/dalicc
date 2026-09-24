@@ -19,6 +19,7 @@
 
 dalicclib:Apache-1.1 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "Apache-1.1" ;
     cc:attributionName "The Apache Software Foundation" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -34,8 +35,8 @@ dalicclib:Apache-1.1 a odrl:Set ;
         "Apache License 1.1",
         "Apache License Version 1.1",
         "Apache Version 1.1" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "The Apache Software Foundation" ;
     dct:source <http://www.apache.org/licenses/LICENSE-1.1> ;
     dct:title "Apache License, Version 1.1"@en ;
@@ -46,7 +47,8 @@ dalicclib:Apache-1.1 a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ] ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
@@ -56,7 +58,8 @@ dalicclib:Apache-1.1 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:rename ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ] ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
@@ -64,11 +67,16 @@ dalicclib:Apache-1.1 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ] ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer." ] ],
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ],
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;

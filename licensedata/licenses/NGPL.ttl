@@ -19,6 +19,7 @@
 
 dalicclib:NGPL a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "NGPL" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://opensource.org/license/NGPL> ;
@@ -32,12 +33,13 @@ dalicclib:NGPL a odrl:Set ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/NGPL/versions> ;
     dct:alternative "NGPL",
         "Nethack General Public License" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://opensource.org/license/NGPL> ;
     dct:title "Nethack General Public License"@en ;
     odrl:duty [ a odrl:Duty ;
-            odrl:action cc:ShareAlike ] ;
+            odrl:action cc:ShareAlike ;
+            dalicc:evidence "cause the whole of any work that you distribute or publish, that in whole or in part contains or is a derivative of NetHack or any part thereof, to be licensed at no charge to all third parties on terms identical to those contained in this License Agreement (except that you may choose to grant more extensive warranty protection to some or all third parties, at your option)" ] ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
         [ a odrl:Permission ;
@@ -49,7 +51,8 @@ dalicclib:NGPL a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:noWarrantyNotice ] ],
+                    odrl:action dalicc:noWarrantyNotice ;
+                    dalicc:evidence "You may copy and distribute verbatim copies of NetHack source code as you receive it, in any medium, provided that you keep intact the notices on all files that refer to copyrights, to this License Agreement, and to the absence of any warranty; and give any other recipients of the NetHack program a copy of this License Agreement along with the program." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
@@ -61,7 +64,8 @@ dalicclib:NGPL a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:noWarrantyNotice ] ],
+                    odrl:action dalicc:noWarrantyNotice ;
+                    dalicc:evidence "You may copy and distribute verbatim copies of NetHack source code as you receive it, in any medium, provided that you keep intact the notices on all files that refer to copyrights, to this License Agreement, and to the absence of any warranty; and give any other recipients of the NetHack program a copy of this License Agreement along with the program." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
@@ -73,7 +77,8 @@ dalicclib:NGPL a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:noWarrantyNotice ] ],
+                    odrl:action dalicc:noWarrantyNotice ;
+                    dalicc:evidence "You may copy and distribute verbatim copies of NetHack source code as you receive it, in any medium, provided that you keep intact the notices on all files that refer to copyrights, to this License Agreement, and to the absence of any warranty; and give any other recipients of the NetHack program a copy of this License Agreement along with the program." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -85,9 +90,11 @@ dalicclib:NGPL a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
-            odrl:action dalicc:chargeDistributionFee ] ;
+            odrl:action dalicc:chargeDistributionFee ;
+            dalicc:evidence "You may charge a distribution fee for the physical act of transferring a copy, and you may at your option offer warranty protection in exchange for a fee." ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ],
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "You may not copy, sublicense, distribute or transfer NetHack except as expressly provided under this License Agreement." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ] ;
     odrl:target [ a odrl:AssetCollection ;

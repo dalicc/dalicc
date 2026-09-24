@@ -19,6 +19,7 @@
 
 dalicclib:Confluent-Community-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.confluent.io/confluent-community-license/> ;
     dalicc:LiabilityLimitation "CONFLUENT WILL NOT BE LIABLE FOR ANY DAMAGES OF ANY KIND, INCLUDING BUT NOT LIMITED TO, LOST PROFITS OR ANY CONSEQUENTIAL, SPECIAL, INCIDENTAL, INDIRECT, OR DIRECT DAMAGES, HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, ARISING OUT OF THIS AGREEMENT. THE FOREGOING SHALL APPLY TO THE EXTENT PERMITTED BY APPLICABLE LAW." ;
@@ -46,8 +47,8 @@ dalicclib:Confluent-Community-1.0 a odrl:Set ;
     dct:alternative "CCL",
         "Confluent Community License",
         "Confluent Community License 1.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Confluent, Inc." ;
     dct:source <https://www.confluent.io/confluent-community-license/> ;
     dct:title "Confluent Community License Agreement Version 1.0"@en ;
@@ -56,7 +57,8 @@ dalicclib:Confluent-Community-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "On each Software copy, Licensee shall reproduce and not remove or alter all Confluent or third party copyright or other proprietary notices contained in the Software, and Licensee must provide the notice below with each copy." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:addStatement ],
                 [ a odrl:Duty ;
@@ -64,21 +66,26 @@ dalicclib:Confluent-Community-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "On each Software copy, Licensee shall reproduce and not remove or alter all Confluent or third party copyright or other proprietary notices contained in the Software, and Licensee must provide the notice below with each copy." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:addStatement ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ] ;
+            dalicc:evidence "Subject to the terms and conditions of this Agreement, Confluent hereby grants to Licensee a non-exclusive, royalty-free, worldwide, non-transferable, non-sublicenseable license during the term of this Agreement to: (a) use the Software; (b) prepare modifications and derivative works of the Software; (c) distribute the Software (including without limitation in source code or object code form); and (d) reproduce copies of the Software (the “License”)." ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "On each Software copy, Licensee shall reproduce and not remove or alter all Confluent or third party copyright or other proprietary notices contained in the Software, and Licensee must provide the notice below with each copy." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:addStatement ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ] ;
+            dalicc:evidence "Subject to the terms and conditions of this Agreement, Confluent hereby grants to Licensee a non-exclusive, royalty-free, worldwide, non-transferable, non-sublicenseable license during the term of this Agreement to: (a) use the Software; (b) prepare modifications and derivative works of the Software; (c) distribute the Software (including without limitation in source code or object code form); and (d) reproduce copies of the Software (the “License”)." ],
         [ a odrl:Permission ;
-            odrl:action cc:DerivativeWorks ],
+            odrl:action cc:DerivativeWorks ;
+            dalicc:evidence "Subject to the terms and conditions of this Agreement, Confluent hereby grants to Licensee a non-exclusive, royalty-free, worldwide, non-transferable, non-sublicenseable license during the term of this Agreement to: (a) use the Software; (b) prepare modifications and derivative works of the Software; (c) distribute the Software (including without limitation in source code or object code form); and (d) reproduce copies of the Software (the “License”)." ],
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
@@ -86,8 +93,10 @@ dalicclib:Confluent-Community-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ],
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "The License does not include the right to sublicense the Software, however, each recipient to which Licensee provides the Software may exercise the Licenses so long as such recipient agrees to the terms and conditions of this Agreement." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Confluent hereby reserves all rights not expressly granted to Licensee in this Agreement.Confluent hereby reserves all rights in its trademarks and service marks, and no licenses therein are granted in this Agreement." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

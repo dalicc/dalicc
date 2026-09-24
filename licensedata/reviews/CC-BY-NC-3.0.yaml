@@ -59,7 +59,7 @@ findings:
     this License or the ability of the recipient of the Work to exercise the rights granted to that recipient under
     the terms of the License. You may not sublicense the Work." That is dalicc:sublicense prohibited, which review
     decision 1 of 2026-09-15 requires of every Creative Commons record except the CC0 dedication, and dalicc:ChangeLicense
-    prohibited, which family rule 15 of scripts/review/family_rules.py expressly keeps for this family because the
+    prohibited, which library convention 15 expressly keeps for this family because the
     no-downstream-restrictions clause is the bar the rule otherwise denies.'
   action: applied
 - rubric: 4

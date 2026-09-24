@@ -41,7 +41,7 @@ findings:
   severity: info
   field: odrl:permission
   description: 'Every modelled permission is supported by the grant. Section 3 grants "una licencia mundial,
-    gratuita, no exclusiva y permanente (durante todo el periodo de vigencia de los derechos de autor)",
+    gratuita, no exclusiva y permanente (durante todo el período de vigencia de los derechos de autor)",
     a worldwide, free, non exclusive and permanent licence. It covers reproduction, incorporation into
     collective works, distribution of copies, public exhibition, public performance and making available
     to the public, and the creation and reproduction of derivative works and their distribution, public
@@ -49,15 +49,15 @@ findings:
     odrl:distribute, odrl:display, odrl:present, odrl:derive and cc:DerivativeWorks, plus odrl:modify
     and dalicc:ModifiedWorks, which rest on the technical modification sentence of the grant: Section
     3: "Los derechos antes mencionados incluyen el derecho a realizar dichas modificaciones en la medida
-    que sean tecnicamente necesarias para ejercer los derechos en otro medio o formatos."'
+    que sean técnicamente necesarias para ejercer los derechos en otro medio o formatos."'
   action: none
 - rubric: 3
   severity: minor
   field: odrl:permission
   description: 'The record permits dalicc:chargeDistributionFee while prohibiting cc:CommercialUse. Section
-    4: "Usted no puede ejercer ninguno de los derechos que le han sido otorgados en la Seccion 3 precedente
-    de modo que esten principalmente destinados o directamente dirigidos a conseguir un provecho comercial
-    o una compensacion monetaria privada", with the file sharing carve out that follows it. The vocabulary
+    4: "Usted no puede ejercer ninguno de los derechos que le han sido otorgados en la Sección 3 precedente
+    de modo que estén principalmente destinados o directamente dirigidos a conseguir un provecho comercial
+    o una compensación monetaria privada", with the file sharing carve out that follows it. The vocabulary
     defines dalicc:chargeDistributionFee as a fee covering the act of providing the work to a third party,
     so a pure cost recovery fee is arguable under the primary purpose test, but the statement sits uneasily
     next to the prohibition. The same statement is in the 4.0 International parent CC-BY-NC-4.0 and in
@@ -74,9 +74,10 @@ findings:
   description: 'The licence forbids sublicensing and the record does not say so. Section 4: "No es posible
     sublicenciar la Obra." The vocabulary already has dalicc:sublicense, but no record in the library
     uses it and its skos:note says so, and the same sentence stands in every Creative Commons 2.0 and
-    3.0 record, so adding it to this batch alone would split the compatibility behaviour of one family.
+    3.0 record, so adding it to this review group alone would split the compatibility behaviour of one family.
     Proposed as one library wide correction, together with an update of the vocabulary note.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: |-
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:sublicense ] ;
@@ -84,7 +85,7 @@ findings:
   severity: info
   field: odrl:prohibition
   description: 'dalicc:ChangeLicense is prohibited, which the licence supports: Section 4: "No es posible
-    ofrecer o imponer ninguna condicion sobre la Obra que altere o limite las condiciones de esta Licencia
+    ofrecer o imponer ninguna condición sobre la Obra que altere o limite las condiciones de esta Licencia
     o el ejercicio de los derechos de los destinatarios otorgados en este documento." dalicc:promote is
     prohibited, which rests on the reservation of all rights not expressly granted and the Creative Commons
     trademark paragraph of the notice around the licence body, not a clause of the licence itself cc:CommercialUse
@@ -98,8 +99,8 @@ findings:
     performed or made available, and that every notice referring to the licence and to the warranty clause
     of section 5 be kept intact. Credit is owed to the "Autor Original", by name or pseudonym if given,
     with the title of the work and, where practicable, the URI the licensor specifies; a derivative work
-    must carry a credit identifying the use made of the work, for example "Traduccion al frances de la
-    Obra del Autor Original". Section 4 requires a derivative work to carry "un credito que identifique
+    must carry a credit identifying the use made of the work, for example "Traducción al francés de la
+    Obra del Autor Original". Section 4 requires a derivative work to carry "un crédito que identifique
     el uso de la Obra en la Obra Derivada". The duties hang on odrl:distribute, odrl:modify and odrl:derive,
     which matches the licence, since they are triggered by making the work public rather than by private
     use.
@@ -118,7 +119,7 @@ findings:
   field: dalicc:LiabilityLimitation
   description: dalicc:LiabilityLimitation reproduces the Chilean text as the Attribution 2.0 Chile page
     publishes it, including the misspelling "PATRINMONIALES" for "PATRIMONIALES" and the closing sentence
-    "ALGUNAS LEYES NO PERMITEN LA EXCLUSION DE CIERTA RESPONSABILIDAD, EN CUYO CASO ESTA EXCLUSION PUEDE
+    "ALGUNAS LEYES NO PERMITEN LA EXCLUSIÓN DE CIERTA RESPONSABILIDAD, EN CUYO CASO ESTA EXCLUSIÓN PUEDE
     NO APLICARSE A USTED", which the by-sa, by-nd and by-nc-nd pages of the same port do not print. The
     substance is the same in all six pages, so this is a quotation source note, not a modelling defect,
     and the quote was left untouched.
@@ -146,8 +147,8 @@ findings:
   severity: gap
   field: odrl:prohibition
   description: 'The licence forbids technological protection measures and the vocabulary has no term for
-    it. Section 4: "Usted no puede distribuir, exhibir publicamente, ejecutar publicamente, o poner a
-    disposicion publica la Obra con alguna medida tecnologica que controle el acceso o la utilizacion
+    it. Section 4: "Usted no puede distribuir, exhibir públicamente, ejecutar públicamente, o poner a
+    disposición pública la Obra con alguna medida tecnológica que controle el acceso o la utilización
     de ella de una forma que sea inconsistente con las condiciones de esta Licencia." Proposed term: dalicc:applyTechnicalProtectionMeasures,
     an odrl:Action to be used as an odrl:Prohibition. Not modelled, because bending an existing term would
     be worse than the gap.'
@@ -167,7 +168,7 @@ findings:
   field: record
   description: 'The Chilean 2.0 port has no moral rights clause at all: neither "derechos morales" nor
     any equivalent appears in the licence body, so the inalienable moral rights of Chilean law (Ley 17.336)
-    are left to the statute. Section 6 mentions "danos morales" only as a head of damage. Among the ports
+    are left to the statute. Section 6 mentions "daños morales" only as a head of damage. Among the ports
     reviewed so far this puts Chile with France and Poland rather than with Austria, the Netherlands or
     Germany. Nothing is missing from the record here, but the silence is worth recording next to the ports
     that do speak.'
@@ -176,11 +177,11 @@ findings:
   severity: gap
   field: record
   description: 'Section 4 reserves royalty collection for musical works in all six element sets, including
-    the plain Attribution licence: "Cuando la Obra es una composicion o interpretacion musical el Licenciante
-    se reserva el derecho exclusivo de percibir, ya sea individualmente o a traves de una sociedad de
-    gestion de derechos (p. ej. SCD u otras), los derechos por ejecucion publica o puesta a disposicion
-    publica de la Obra (p. ej webcast), si dicha ejecucion esta basicamente intencionada o dirigida a
-    obtener un provecho comercial o una compensacion monetaria privada." The vocabulary has no term for
+    the plain Attribution licence: "Cuando la Obra es una composición o interpretación musical el Licenciante
+    se reserva el derecho exclusivo de percibir, ya sea individualmente o a través de una sociedad de
+    gestión de derechos (p. ej. SCD u otras), los derechos por ejecución pública o puesta a disposición
+    pública de la Obra (p. ej webcast), si dicha ejecución está básicamente intencionada o dirigida a
+    obtener un provecho comercial o una compensación monetaria privada." The vocabulary has no term for
     a reserved or waived royalty collection right. Proposed term: dalicc:royaltyCollectionReserved, with
     a companion for the waiver.'
   action: none
@@ -214,6 +215,15 @@ findings:
     only what the text states. Removed on 2026-09-23; see section 13 of docs/LICENSE_REVIEW.md.
   action: applied
   change: "# removed\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:promote ] ;\n"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Esta Licencia y los derechos otorgados en
+    virtud de ella terminarán automáticamente si Usted infringe alguna condición establecida en ella."
+    The licence ends automatically on a breach and this version of the text has no reinstatement clause,
+    so dalicc:terminatesOnBreach is true and no dalicc:curePeriod is written, as on the unported record
+    of the same version.'
+  action: applied
 family: 'Creative Commons 2.0 port: Chile (CL)'
 port_of: CC-BY-NC-4.0
 variant_kind: jurisdiction-port

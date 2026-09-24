@@ -24,7 +24,7 @@ findings:
   field: spdx:licenseId
   description: SPDX has no identifier for this port. The legal code URL implies CC-BY-SA-3.0-CZ, which
     the SPDX licence list does not define, so no identifier was invented. None of the forty two records
-    in this batch has an SPDX identifier.
+    in this review group has an SPDX identifier.
   action: none
 - rubric: 2
   severity: minor
@@ -38,7 +38,7 @@ findings:
     (databases are also considered works) and names computer programs among the licensed subject matter.
     Because the legal text names databases as licensed subject matter and disposes of the database maker''s
     right in the grant itself, dcmitype:Dataset was added here rather than left as a proposal. The ports
-    in this batch whose text has no database clause at all keep the proposal.'
+    in this review group whose text has no database clause at all keep the proposal.'
   action: applied
   change: "odrl:target [ a odrl:AssetCollection ;\n        dct:type dalicc:CreativeWork,\n           \
     \ dcmitype:Dataset ] ;"
@@ -61,10 +61,11 @@ findings:
   description: 'The licence forbids sublicensing and the record does not say so. Article 4(a): "Nabyvatel
     neni opravnen poskytovat podlicenci k Dilu." The vocabulary already has dalicc:sublicense, but no
     record in the library uses it and its skos:note says so, and the same sentence stands in every Creative
-    Commons 2.0 and 3.0 record, so adding it to the forty two ports of this batch alone would split the
+    Commons 2.0 and 3.0 record, so adding it to the forty two ports of this review group alone would split the
     compatibility behaviour of one family. Proposed as one library wide correction, together with an update
     of the vocabulary note.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -122,7 +123,7 @@ findings:
     https://creativecommons.org/licenses/by-sa/3.0/cz/legalcode, and dalicc:validityType is dalicc:perpetual,
     which matches a grant for the duration of the applicable copyright. Article 8 ends with a choice of
     law: "Pokud se smluvni strany nedohodnou jinak, ridi se pravni vztahy podle tohoto ujednani pravem
-    Ceske republiky." This is the only port in the batch that chooses a governing law. Note that the jurisdiction
+    Ceske republiky." This is the only port in the review group that chooses a governing law. Note that the jurisdiction
     field records the legal home of the port, not a territorial limit: the grant itself is worldwide.'
   action: none
 - rubric: 8
@@ -209,6 +210,14 @@ findings:
   action: applied
   change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
     \ ] ;"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Nabyvateli zaniká licence k Dílu podle tohoto
+    ujednání okamžikem, kdy nabyvatel poruší podmínky tohoto ujednání." The licence ends automatically
+    on a breach and this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach
+    is true and no dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Czech Republic (CZ)'
 port_of: CC-BY-SA-4.0
 variant_kind: jurisdiction-port

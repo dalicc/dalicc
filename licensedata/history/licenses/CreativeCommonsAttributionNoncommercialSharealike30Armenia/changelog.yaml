@@ -3,11 +3,16 @@ title: Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Armenia
 current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, changed
     1 identification detail, recorded the relation to the record this one was adapted from and recorded
-    the review state.
+    the review state. Later changes recorded when the license ends on a breach and named the license
+    the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
   changes:
   - action: added
     statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-SA-4.0
@@ -45,9 +50,9 @@ entries:
     previous: dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Armenia "@en
     reason: The dct:title literal ended in a space, "Creative Commons Attribution-NonCommercial-ShareAlike
       3.0 Armenia ", which the library list and the search index carry through. The space was removed.
-      All seven BY-NC-SA records of this batch carried the same defect. The header comment on line
-      1 of the file still quotes the old title with the space, as in the other ports of the library,
-      and was left alone because it is a comment and not RDF.
+      All seven BY-NC-SA records of this review group carried the same defect. The header comment
+      on line 1 of the file still quotes the old title with the space, as in the other ports of the
+      library, and was left alone because it is a comment and not RDF.
     source: review-finding 1/dct:title
   - action: added
     statement: prohibition dalicc:sublicense
@@ -55,3 +60,14 @@ entries:
       Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
       as many words.'
     source: consolidation-decision 1
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'The termination clause of this port reads: "Սույն Լիցենզիան և սույնով տրամադրված իրավունքներն
+      ինքնաբերաբար դադարեցվում են, եթե Լիցենզառուն խախտել է սույն Լիցենզիայի պայմանները։"'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

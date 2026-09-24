@@ -19,6 +19,7 @@
 
 dalicclib:OpenGovernmentLicenceCanada a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "OGL-Canada-2.0" ;
     cc:attributionName "Her Majesty the Queen in right of Canada" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -31,8 +32,8 @@ The Information Provider is not liable for any errors or omissions in the Inform
     dalicc:versionHistory <https://dalicc.net/licenselibrary/OpenGovernmentLicenceCanada/versions> ;
     dct:alternative "OGL-Canada-2.0",
         "Open Government Licence - Canada 2.0" ;
-    dct:hasVersion "4" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Her Majesty the Queen in right of Canada" ;
     dct:source <https://open.canada.ca/en/open-government-licence-canada> ;
     dct:title "Open Government Licence - Canada" ;
@@ -43,13 +44,15 @@ The Information Provider is not liable for any errors or omissions in the Inform
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ] ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "You must, where you do any of the above: * Acknowledge the source of the Information by including any attribution statement specified by the Information Provider(s) and, where possible, provide a link to this licence. * If the Information Provider does not provide a specific attribution statement, or if you are using Information from several information providers and multiple attributions are not practical for your product or application, you must use the following attribution statement: Contains information licensed under the Open Government Licence - Canada." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ] ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "You must, where you do any of the above: * Acknowledge the source of the Information by including any attribution statement specified by the Information Provider(s) and, where possible, provide a link to this licence. * If the Information Provider does not provide a specific attribution statement, or if you are using Information from several information providers and multiple attributions are not practical for your product or application, you must use the following attribution statement: Contains information licensed under the Open Government Licence - Canada." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -61,7 +64,8 @@ The Information Provider is not liable for any errors or omissions in the Inform
         [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
         [ a odrl:Permission ;
-            odrl:action cc:CommercialUse ],
+            odrl:action cc:CommercialUse ;
+            dalicc:evidence "Using Information under this licence * Use of any Information indicates your acceptance of the terms below. * The Information Provider grants you a worldwide, royalty-free, perpetual, non-exclusive licence to use the Information, including for commercial purposes, subject to the terms below." ],
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ],
         [ a odrl:Permission ;
@@ -73,9 +77,14 @@ The Information Provider is not liable for any errors or omissions in the Inform
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Exemptions This licence does not grant you any right to use: * Personal Information; * third party rights the Information Provider is not authorized to license; * the names, crests, logos, or other official symbols of the Information Provider; and * Information subject to other intellectual property rights, including patents, trade-marks and official marks." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset,

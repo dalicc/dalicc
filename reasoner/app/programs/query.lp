@@ -19,6 +19,8 @@
 #const dalicc_NotWaivable = "https://dalicc.net/ns#NotWaivable".
 #const dalicc_ChangeLicense = "https://dalicc.net/ns#ChangeLicense".
 #const dalicc_compliantLicense = "https://dalicc.net/ns#compliantLicense".
+#const odrl_derive = "http://www.w3.org/ns/odrl/2/derive".
+#const dalicc_compatibleWith = "https://dalicc.net/ns#compatibleWith".
 
 %% core compatibility relations
 %t(X, odrl_includedIn, Z) :-  t(X, odrl_includedIn, Y), t(Y, odrl_includedIn, Z).
@@ -37,6 +39,23 @@ license(S,P,O) :- &getLicense[L](S,P,O), license(L).
 %% under a prohibition or under another duty does not vanish. The composer's expert
 %% view builds exactly these trees, and the questionnaire builds the permission case.
 licenseDuty(S,P,RA,DA) :- &getLicenseDuties[L](S,P,RA,DA), license(L).
+
+%% Reading: the licences of the request, by their IRI. license/1 holds the token the
+%% request was written with, and every statement above names the licence by its IRI,
+%% so a rule that ranges over the licences themselves reads this atom.
+bundleLicense(S) :- &getLicenseIri[L](S), license(L).
+
+%% Reading: which licence a record is a version of: its family, its version as a key
+%% that sorts like the number, and whether it offers "this version or any later
+%% version". app/profiles.py reads them from the record; a record it cannot place has
+%% no profile.
+licenseProfile(S,F,V,O) :- &getLicenseProfile[L](S,F,V,O), license(L).
+
+%% Reading: the licences a record names with dalicc:compatibleWith, each with the
+%% profile of the named record ("unplaced" three times when app/profiles.py cannot
+%% place it). L compatibleWith X says a work under L may be released under X, and
+%% nothing about the other way round.
+namedCompatibility(S,X,F,V,O) :- &getLicenseCompatibility[L](S,X,F,V,O), license(L).
 
 %% get dependency graph
 dg(S,P,O) :- &getDependencyGraph["dg_default"](S,P,O).
@@ -152,7 +171,7 @@ speaksAbout(L,A) :- requiredByText(L,X), sameAs(X,A,_).
 
 %% The negation is stratified: nothing below speaksAbout/2 derives it, so the program
 %% still has exactly one answer set.
-silent(L,A) :- license(L), ruleAction(R,A), ruleApplies(R), not speaksAbout(L,A).
+silent(L,A) :- bundleLicense(L), ruleAction(R,A), ruleApplies(R), not speaksAbout(L,A).
 
 defaultStatement(L,odrl_prohibition,A,R) :- silent(L,A), ruleAction(R,A), ruleApplies(R),
                                             ruleOutcome(R,dalicc_NotGrantedByDefault).
@@ -213,6 +232,64 @@ compliantRelicensing(L) :- licenseDuty(L,odrl_permission,dalicc_ChangeLicense,da
 directConflict(L1,odrl_duty,cc_ShareAlike,L2,odrl_permission,dalicc_ChangeLicense,"share-alike-escape") :- license(L1,odrl_duty,cc_ShareAlike),
                                                                                                           holds(L2,odrl_permission,dalicc_ChangeLicense),
                                                                                                           not compliantRelicensing(L2).
+
+%% Reading: a licence binds the whole of a work it takes part in to itself when it
+%% requires share alike of the whole work (the reading share-alike-escape uses), and
+%% also when it requires share alike of every derivative work and forbids changing the
+%% license: then no derivative of it can carry another licence either. A share-alike
+%% duty on Modify or Distribute alone is file-level reciprocity and binds nothing else.
+bindsWholeWork(L) :- license(L,odrl_duty,cc_ShareAlike).
+bindsWholeWork(L) :- licenseDuty(L,odrl_permission,odrl_derive,cc_ShareAlike),
+                     license(L,odrl_prohibition,dalicc_ChangeLicense).
+
+%% Reading: a path from one such licence to another. The same licence text is one (the
+%% same family and version, as an exception or a jurisdiction port of it is); an
+%% "or later" option that reaches the other's version is another; a compatibility
+%% clause (compliantRelicensing) lets the work move to a licence that complies with
+%% it. A licence named with dalicc:compatibleWith is handled below, because it leads
+%% one way only and the combined work then has to go that way.
+reciprocityPath(L1,L2) :- licenseProfile(L1,F,V,_), licenseProfile(L2,F,V,_), L1 != L2.
+reciprocityPath(L1,L2) :- licenseProfile(L1,F,V1,"or-later"), licenseProfile(L2,F,V2,_),
+                          V1 <= V2, L1 != L2.
+reciprocityPath(L1,L2) :- compliantRelicensing(L1), bindsWholeWork(L2), L1 != L2.
+reciprocityPath(L1,L2) :- reciprocityPath(L2,L1).
+
+%% Reading: two licences that each bind the whole work to themselves, with no path
+%% above between them, in the order of their IRIs.
+reciprocityGap(L1,L2) :- bindsWholeWork(L1), bindsWholeWork(L2), L1 < L2,
+                         not reciprocityPath(L1,L2).
+
+%% Reading: L1 grants by name that a work under it may be released under L2. The name
+%% is L2 itself, or one hop from it: a record of the same licence text as L2, or one
+%% whose "or later" option reaches L2's version (LGPL-2.1 names GPL-2.0-or-later, which
+%% reaches GPL-3.0). A named licence the reasoner cannot place only matches by its IRI.
+compatibleByName(L1,L2) :- namedCompatibility(L1,L2,_,_,_), bindsWholeWork(L2), L1 != L2.
+compatibleByName(L1,L2) :- namedCompatibility(L1,X,F,V,_), licenseProfile(L2,F,V,_),
+                           F != "unplaced", bindsWholeWork(L2), L1 != L2.
+compatibleByName(L1,L2) :- namedCompatibility(L1,X,F,V1,"or-later"), licenseProfile(L2,F,V2,_),
+                           F != "unplaced", V1 <= V2, bindsWholeWork(L2), L1 != L2.
+namedPath(L1,L2) :- compatibleByName(L1,L2).
+namedPath(L1,L2) :- compatibleByName(L2,L1).
+
+%% Reading: two licences that each bind the whole work to themselves cannot both be
+%% satisfied by one combined work unless a path leads from one to the other. The pair
+%% is reported once, in the order of the IRIs, whichever order the request names them.
+%% The negations are stratified: nothing reciprocityPath/2 or namedPath/2 depends on is
+%% derived from a conflict, so the program still has exactly one answer set.
+directConflict(L1,odrl_duty,cc_ShareAlike,L2,odrl_duty,cc_ShareAlike,"share-alike-reciprocity") :-
+    reciprocityGap(L1,L2), not namedPath(L1,L2).
+
+%% Reading: a named compatibility clears the pair in the direction it states, and that
+%% direction is a restriction on the combined work: it has to be released under L2.
+%% One entry per direction the records state, so a pair that names each other (AGPL-3.0
+%% and GPL-3.0) gets two. The first statement reads L1 compatibleWith L2, with L2 the
+%% licence of the request the name reaches (the named record itself, or the one a hop
+%% leads to); a client that checks against a target licence compares the target with
+%% its object.
+directConflict(L1,dalicc_compatibleWith,L2,L2,odrl_duty,cc_ShareAlike,"share-alike-direction") :-
+    reciprocityGap(L1,L2), compatibleByName(L1,L2).
+directConflict(L2,dalicc_compatibleWith,L1,L1,odrl_duty,cc_ShareAlike,"share-alike-direction") :-
+    reciprocityGap(L1,L2), compatibleByName(L2,L1).
 
 %% Reading: what a licence asserts about an action is that it is permitted, or that
 %% it is required. A duty to do X commits the licensee to X as surely as a permission

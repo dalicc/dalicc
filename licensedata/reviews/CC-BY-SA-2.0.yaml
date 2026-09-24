@@ -49,7 +49,7 @@ findings:
   description: 'Section 4(a) reads: "You may not offer or impose any terms on the Work that alter or restrict the
     terms of this License or the recipients'' exercise of the rights granted hereunder. You may not sublicense the
     Work." That is dalicc:sublicense prohibited, which review decision 1 of 2026-09-15 requires of every Creative
-    Commons record except the CC0 dedication, and dalicc:ChangeLicense prohibited, which family rule 15 of scripts/review/family_rules.py
+    Commons record except the CC0 dedication, and dalicc:ChangeLicense prohibited, which library convention 15
     expressly keeps for this family because the no-downstream-restrictions clause is the bar the rule otherwise
     denies.'
   action: applied
@@ -160,6 +160,14 @@ findings:
     only what the text states. Removed on 2026-09-23; see section 13 of docs/LICENSE_REVIEW.md.
   action: applied
   change: "# removed\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:promote ] ;\n"
+- rubric: 10
+  severity: major
+  field: dalicc:compatibleWith
+  description: The share-alike clause lets an adaptation be released under "this License, a later version
+    of this License with the same License Elements, or a Creative Commons iCommons license with the same
+    License Elements". CC-BY-SA-4.0 is that later version of the same License Elements, so the record
+    links it. dalicc:compatibleWith names CC-BY-SA-4.0.
+  action: applied
 family: Creative Commons 2.0 Generic
 port_of: null
 variant_kind: version

@@ -1,0 +1,42 @@
+id: RSALv2
+title: Redis Source Available License 2.0
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on,
+    named the license the record itself is published under and removed the quotes that do not name
+    the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  changes:
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "The Licensor
+      grants You a non-exclusive, royalty-free, worldwide, non-sublicensable, non-transferable license
+      to use, copy, distribute, make available, and prepare derivative works of the Software, in each
+      case subject to the limitations and conditions below."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:ChangeLicense
+    previous: prohibition dalicc:ChangeLicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "The terms and
+      conditions of this Agreement do not imply any Licenses other than those expressly granted in
+      this Agreement."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:ChangeLicense
+    previous: prohibition dalicc:ChangeLicense
+    reason: 'Removed the quoted evidence of prohibition dalicc:ChangeLicense: the quoted sentence
+      does not name the act. The statements stay, read from the text without a linked quote.'
+    source: manual

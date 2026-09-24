@@ -136,8 +136,8 @@ findings:
   field: record
   description: 'The record is not an edition of the Canadian Open Government Licence: it is an older, longer
     and more restrictive agreement with its own structure, and it should not be modelled like the other two
-    Canadian records. What it shares with them after this pass is the attribution duty and the non-endorsement
-    prohibition. It is the only record of the batch that grants sublicensing expressly.'
+    Canadian records. What it shares with them after the review is the attribution duty and the non-endorsement
+    prohibition. It is the only record of the review group that grants sublicensing expressly.'
   action: none
 family: Government licenses (United Kingdom, Canada)
 port_of: null

@@ -24,7 +24,7 @@ findings:
   field: spdx:licenseId
   description: SPDX has no identifier for this port. The legal code URL implies CC-BY-NC-ND-3.0-UG, which
     the SPDX licence list does not define, so no identifier was invented. None of the forty two records
-    in this batch has an SPDX identifier.
+    in this review group has an SPDX identifier.
   action: none
 - rubric: 2
   severity: minor
@@ -32,7 +32,7 @@ findings:
   description: 'The record targets dalicc:CreativeWork only, while the 4.0 International parent CC-BY-NC-ND-4.0
     targets dalicc:CreativeWork and dcmitype:Dataset. Creative Commons licences are media neutral and
     this port grants the rights in all media and formats now known or later devised, but its legal text
-    carries no database rights clause, unlike the Portuguese, Czech and Azerbaijani ports of this batch.
+    carries no database rights clause, unlike the Portuguese, Czech and Azerbaijani ports of this review group.
     The definition of the licensed subject matter reaches data as well: the definition of "Work" names
     "a compilation of data to the extent it is protected as a copyrightable work". Aligning the ports
     with the parents is a single library wide decision covering every Creative Commons port, so it is
@@ -73,10 +73,11 @@ findings:
   description: 'The licence forbids sublicensing and the record does not say so. Section 4(a): "The User
     may not sublicense the Work." The vocabulary already has dalicc:sublicense, but no record in the library
     uses it and its skos:note says so, and the same sentence stands in every Creative Commons 2.0 and
-    3.0 record, so adding it to the forty two ports of this batch alone would split the compatibility
+    3.0 record, so adding it to the forty two ports of this review group alone would split the compatibility
     behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
     note.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -202,6 +203,14 @@ findings:
     other records of the BY-NC-ND element set, across all three versions and every jurisdiction the library
     holds.'
   action: none
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "This Licence and the rights granted hereunder
+    will terminate automatically upon any breach by the User of the terms of this Licence." The licence
+    ends automatically on a breach and this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach
+    is true and no dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Uganda (UG)'
 port_of: CC-BY-NC-ND-4.0
 variant_kind: jurisdiction-port

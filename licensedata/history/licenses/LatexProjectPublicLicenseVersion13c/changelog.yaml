@@ -1,12 +1,20 @@
 id: LatexProjectPublicLicenseVersion13c
 title: LaTeX Project Public License, Version 1.3c
-current_version: 5
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 2 identification details and 4 permissions, removed
-    2 prohibitions and recorded the review state.
+    2 prohibitions and recorded the review state. Later changes brought it in line with its family
+    and its text in the verification of 2026-09-15, corrected it against its text on 2026-09-23, left
+    endorsement to the default rule of the core dependency graph, recorded which sentence of the text
+    each statement rests on and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
   changes:
   - action: added
     statement: dalicc:reviewStatus dalicc:Reviewed
@@ -76,13 +84,6 @@ entries:
       already points at the Open Source Initiative page that the SPDX entry lists under seeAlso, and
       the fetched text is version 1.3c.'
     source: review-finding 1/spdx:licenseId
-- version: 3
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Family rule 10 of scripts/review/family_rules.py: the disclaimer paragraph held the liability
-    sentence, which begins ''IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
-    WILL THE COPYRIGHT HOLDER ... BE LIABLE''.'
-  changes:
   - action: added
     statement: dalicc:LiabilityLimitation "In no event unless required by applicable law or agreed
       to in writing will The Copyright Holder, or any author named in the components of the Work,
@@ -92,7 +93,9 @@ entries:
       loss of data, data being rendered inaccurate, or losses sustained by anyone as a result of any
       failure of the Work to operate with any other programs), even if the Copyright Holder or said
       author or said other party has been advised of the possibility of such damages."
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Library convention 10: the disclaimer paragraph held the liability sentence, which begins
+      ''IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL THE COPYRIGHT HOLDER
+      ... BE LIABLE''.'
     source: manual
   - action: changed
     statement: dalicc:WarrantyDisclaimer "There is no warranty for the Work. Except when otherwise
@@ -117,20 +120,10 @@ entries:
       losses sustained by anyone as a result of any failure of the Work to operate with any other
       programs), even if the Copyright Holder or said author or said other party has been advised
       of the possibility of such damages. "'
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Library convention 10: the disclaimer paragraph held the liability sentence, which begins
+      ''IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL THE COPYRIGHT HOLDER
+      ... BE LIABLE''.'
     source: manual
-- version: 4
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: 'Four corrections the text supports. The cc:ShareAlike prohibition goes, because no sentence
-    of the licence forbids a share-alike condition and clause 10(a) lets a Derived Work go under another
-    licence that honours clause 6. Clause 6(d) is the dalicc:originalVersionOffer duty on modify and
-    derive: "You distribute at least one of the following with the Derived Work: 1. A complete, unmodified
-    copy of the Work ... 2. Information that is sufficient to obtain a complete, unmodified copy of
-    the Work." The target gains dalicc:CreativeWork, because the licence governs "Any work being distributed
-    under this License" and not only a program. The padding spaces inside dalicc:WarrantyOrLiabilityAcceptance
-    are stripped and dct:title carries its language tag.'
-  changes:
   - action: changed
     statement: "dalicc:WarrantyOrLiabilityAcceptance \"The Work has the status `author-maintained'\
       \ if the Copyright Holder explicitly and prominently states near the primary copyright notice\
@@ -201,39 +194,109 @@ entries:
       \ within the Work, a prominent and unambiguous statement of your status as Current Maintainer.\
       \ You should also announce your new status to the same pertinent community as in 2b) above.\
       \ \""
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Four corrections the text supports. The cc:ShareAlike prohibition goes, because no sentence
+      of the licence forbids a share-alike condition and clause 10(a) lets a Derived Work go under
+      another licence that honours clause 6. Clause 6(d) is the dalicc:originalVersionOffer duty on
+      modify and derive: "You distribute at least one of the following with the Derived Work: 1. A
+      complete, unmodified copy of the Work ... 2. Information that is sufficient to obtain a complete,
+      unmodified copy of the Work." The target gains dalicc:CreativeWork, because the licence governs
+      "Any work being distributed under this License" and not only a program. The padding spaces inside
+      dalicc:WarrantyOrLiabilityAcceptance are stripped and dct:title carries its language tag.'
     source: manual
   - action: changed
     statement: dct:title "LaTeX Project Public License, Version 1.3c"@en
     previous: dct:title "LaTeX Project Public License, Version 1.3c"
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Four corrections the text supports. The cc:ShareAlike prohibition goes, because no sentence
+      of the licence forbids a share-alike condition and clause 10(a) lets a Derived Work go under
+      another licence that honours clause 6. Clause 6(d) is the dalicc:originalVersionOffer duty on
+      modify and derive: "You distribute at least one of the following with the Derived Work: 1. A
+      complete, unmodified copy of the Work ... 2. Information that is sufficient to obtain a complete,
+      unmodified copy of the Work." The target gains dalicc:CreativeWork, because the licence governs
+      "Any work being distributed under this License" and not only a program. The padding spaces inside
+      dalicc:WarrantyOrLiabilityAcceptance are stripped and dct:title carries its language tag.'
     source: manual
   - action: changed
     statement: permission odrl:derive with duties [cc:SourceCode, dalicc:modificationNotice, dalicc:originalVersionOffer]
     previous: permission odrl:derive with duties [cc:SourceCode, dalicc:modificationNotice]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Four corrections the text supports. The cc:ShareAlike prohibition goes, because no sentence
+      of the licence forbids a share-alike condition and clause 10(a) lets a Derived Work go under
+      another licence that honours clause 6. Clause 6(d) is the dalicc:originalVersionOffer duty on
+      modify and derive: "You distribute at least one of the following with the Derived Work: 1. A
+      complete, unmodified copy of the Work ... 2. Information that is sufficient to obtain a complete,
+      unmodified copy of the Work." The target gains dalicc:CreativeWork, because the licence governs
+      "Any work being distributed under this License" and not only a program. The padding spaces inside
+      dalicc:WarrantyOrLiabilityAcceptance are stripped and dct:title carries its language tag.'
     source: manual
   - action: changed
     statement: permission odrl:modify with duties [cc:SourceCode, dalicc:modificationNotice, dalicc:originalVersionOffer]
     previous: permission odrl:modify with duties [cc:SourceCode, dalicc:modificationNotice]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Four corrections the text supports. The cc:ShareAlike prohibition goes, because no sentence
+      of the licence forbids a share-alike condition and clause 10(a) lets a Derived Work go under
+      another licence that honours clause 6. Clause 6(d) is the dalicc:originalVersionOffer duty on
+      modify and derive: "You distribute at least one of the following with the Derived Work: 1. A
+      complete, unmodified copy of the Work ... 2. Information that is sufficient to obtain a complete,
+      unmodified copy of the Work." The target gains dalicc:CreativeWork, because the licence governs
+      "Any work being distributed under this License" and not only a program. The padding spaces inside
+      dalicc:WarrantyOrLiabilityAcceptance are stripped and dct:title carries its language tag.'
     source: manual
   - action: removed
     statement: prohibition cc:ShareAlike
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Four corrections the text supports. The cc:ShareAlike prohibition goes, because no sentence
+      of the licence forbids a share-alike condition and clause 10(a) lets a Derived Work go under
+      another licence that honours clause 6. Clause 6(d) is the dalicc:originalVersionOffer duty on
+      modify and derive: "You distribute at least one of the following with the Derived Work: 1. A
+      complete, unmodified copy of the Work ... 2. Information that is sufficient to obtain a complete,
+      unmodified copy of the Work." The target gains dalicc:CreativeWork, because the licence governs
+      "Any work being distributed under this License" and not only a program. The padding spaces inside
+      dalicc:WarrantyOrLiabilityAcceptance are stripped and dct:title carries its language tag.'
     source: manual
   - action: changed
     statement: target asset types [dalicc:CreativeWork, dcmitype:Software]
     previous: target asset types [dcmitype:Software]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Four corrections the text supports. The cc:ShareAlike prohibition goes, because no sentence
+      of the licence forbids a share-alike condition and clause 10(a) lets a Derived Work go under
+      another licence that honours clause 6. Clause 6(d) is the dalicc:originalVersionOffer duty on
+      modify and derive: "You distribute at least one of the following with the Derived Work: 1. A
+      complete, unmodified copy of the Work ... 2. Information that is sufficient to obtain a complete,
+      unmodified copy of the Work." The target gains dalicc:CreativeWork, because the licence governs
+      "Any work being distributed under this License" and not only a program. The padding spaces inside
+      dalicc:WarrantyOrLiabilityAcceptance are stripped and dct:title carries its language tag.'
     source: manual
-- version: 5
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
-    now supplies it.
-  changes:
   - action: removed
     statement: prohibition dalicc:promote
-    reason: Edited by hand; see the summary of this entry.
+    reason: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
+      now supplies it.
+    source: manual
+  - action: changed
+    statement: permission cc:DerivativeWorks
+    previous: permission cc:DerivativeWorks
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "If you are not
+      the Current Maintainer of the Work, you may modify your copy of the Work, thus creating a Derived
+      Work based on the Work, and compile this Derived Work, thus creating a Compiled Work based on
+      the Derived Work."'
+    source: manual
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "A Derived Work
+      may be distributed under a different license provided that license itself honors the conditions
+      listed in Clause 6 above, in regard to the Work, though it does not have to honor the rest of
+      the conditions in this license." Its duty dalicc:compliantLicense quotes "A Derived Work may
+      be distributed under a different license provided that license itself honors the conditions
+      listed in Clause 6 above, in regard to the Work, though it does not have to honor the rest of
+      the conditions in this license."'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:SourceCode, dalicc:modificationNotice, dalicc:originalVersionOffer]
+    previous: permission odrl:derive with duties [cc:SourceCode, dalicc:modificationNotice, dalicc:originalVersionOffer]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "If you are not
+      the Current Maintainer of the Work, you may modify your copy of the Work, thus creating a Derived
+      Work based on the Work, and compile this Derived Work, thus creating a Compiled Work based on
+      the Derived Work."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

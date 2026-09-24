@@ -74,8 +74,7 @@ findings:
   field: 'cc:jurisdiction'
   description: >-
     Section 6 states that the licence "shall be governed by and construed in accordance with
-    the laws of the State of Ohio and the United States of America". As everywhere in this
-    batch, cc:jurisdiction stays dalicc:worldwide and the clause is quoted.
+    the laws of the State of Ohio and the United States of America". As everywhere in this review group, cc:jurisdiction stays dalicc:worldwide and the clause is quoted.
   action: applied
 - rubric: 8
   severity: gap
@@ -100,7 +99,7 @@ findings:
   severity: info
   field: family
   description: >-
-    OCLC-2.0 belongs to no family in this batch. Its licence-wide cc:ShareAlike duty, its
+    OCLC-2.0 belongs to no family in this review group. Its licence-wide cc:ShareAlike duty, its
     no-charge rule and its further-restrictions bar put it next to SimPL-2.0 and the GNU
     records rather than next to the Common Public License.
   action: none

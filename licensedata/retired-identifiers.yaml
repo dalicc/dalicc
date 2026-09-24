@@ -1,0 +1,112 @@
+# The identifiers the license library retired on 2023-04-24, and where each one went.
+#
+# The old records are kept under deprecated/licenses_pre24042023/ and are never loaded.
+# Each entry below was matched to its successor by title, by the legal code URL and by
+# the SPDX identifier of the successor record; `successor: null` marks the six test and
+# personal records that were dropped without one.
+#
+# The site answers /license-library/<old id> with a 301 to the successor's page, and
+# GET /licenselibrary/license/<old id> with a 301 to the successor's document, whenever
+# the old identifier no longer resolves on its own. An identifier with no successor
+# answers 410. docs/DATA.md section 8 describes the table.
+retired_on: '2023-04-24'
+identifiers:
+  AGPL:
+    title: GNU Affero General Public License
+    successor: AGPL-3.0
+  AcademicFreeLicense30:
+    title: Academic Free License 3.0
+    successor: AFL-3.0
+  AdaptivePublicLicense10:
+    title: Adaptive Public License 1.0
+    successor: APL-1.0
+  ApplePublicSourceLicense20:
+    title: Apple Public Source License 2.0
+    successor: APSL-2.0
+  ArtisticLicense20:
+    title: Artistic License 2.0
+    successor: Artistic-2.0
+  AttributionAssuranceLicense:
+    title: Attribution Assurance License
+    successor: AAL
+  BSD-2:
+    title: The 2-Clause BSD License
+    successor: BSD-2-Clause
+  BSD-3:
+    title: The 3-Clause BSD License
+    successor: BSD-3-Clause
+  BSD-4:
+    title: The 4-Clause BSD License
+    successor: BSD-4-Clause
+  BoostSoftwareLicense10:
+    title: Boost Software License 1.0
+    successor: BSL-1.0
+  CC-BY-3.0-NL:
+    title: Creative Commons Attribution 3.0 Netherlands
+    successor: CreativeCommonsAttribution30Netherlands
+  CC-BY-NC-ND_v4:
+    title: Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
+    successor: CC-BY-NC-ND-4.0
+  CC-BY-NC-SA_v4:
+    title: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+    successor: CC-BY-NC-SA-4.0
+  CC-BY-NC_v4:
+    title: Creative Commons Attribution-NonCommercial 4.0 International
+    successor: CC-BY-NC-4.0
+  CC-BY-ND_v4:
+    title: Creative Commons Attribution-NoDerivatives 4.0 International
+    successor: CC-BY-ND-4.0
+  CC-BY-SA_v4:
+    title: Creative Commons Attribution-ShareAlike 4.0 International
+    successor: CC-BY-SA-4.0
+  CC-BY_v4:
+    title: Creative Commons Attribution 4.0 International
+    successor: CC-BY-4.0
+  ComputerAssociatesTrustedOpenSourceLicense11:
+    title: Computer Associates Trusted Open Source License 1.1
+    successor: CATOSL-1.1
+  EclipsePublicLicense20:
+    title: Eclipse Public License 2.0
+    successor: EPL-2.0
+  FreePublicLicense100:
+    title: Free Public License 1.0.0
+    successor: 0BSD
+  GNU_GPL_v2:
+    title: GNU General Public License, Version 2
+    successor: GPL-2.0-only
+  GNU_GPL_v3:
+    title: GNU General Public License 3
+    successor: GPL-3.0-only
+  LGPLv3:
+    title: GNU Lesser General Public License version 3.0
+    successor: LGPL-3.0-only
+  MS-PL:
+    title: Microsoft Public License
+    successor: MicrosoftPublicLicense
+  NonCommercialGovernmentLicence:
+    title: Non-Commercial Government Licence
+    successor: NCGL-UK-2.0
+  OpenSoftwareLicenseV30:
+    title: Open Software License v. 3.0
+    successor: OSL-3.0
+  Wtfpl:
+    title: WTFPL
+    successor: WTFPL
+  Example:
+    title: Example
+    successor: null
+  MyPersonalDataLicense:
+    title: My Personal Data License
+    successor: null
+  TassilosLicense:
+    title: Tassilos License
+    successor: null
+  Test:
+    title: test
+    successor: null
+  TestLicenseFromAlex:
+    title: test license from alex
+    successor: null
+  Testlicense:
+    title: TestLicense
+    successor: null

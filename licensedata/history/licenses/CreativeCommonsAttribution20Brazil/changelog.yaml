@@ -3,10 +3,16 @@ title: Creative Commons Attribution 2.0 Brazil
 current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, recorded
-    the relation to the record this one was adapted from and recorded the review state.
+    the relation to the record this one was adapted from and recorded the review state. Later changes
+    recorded when the license ends on a breach and named the license the record itself is published
+    under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
   changes:
   - action: added
     statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-4.0
@@ -38,7 +44,7 @@ entries:
     reason: The record carried cc:legalcode but no dct:source, so it had a single provenance link
       where the 4.0 International parents carry two. The canonical URL of the port, https://creativecommons.org/licenses/by/2.0/br/,
       was added, which is the pair, legal code plus deed, that the parents use and that the other
-      2.0 port batch applied as well.
+      2.0 port group applied as well.
     source: review-finding 1/dct:source
   - action: added
     statement: prohibition dalicc:sublicense
@@ -46,3 +52,14 @@ entries:
       Open Database License and the Open Data Commons Attribution License, forbids sublicensing in
       as many words.'
     source: consolidation-decision 1
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'The termination clause of this port reads: "Esta Licença e os direitos aqui concedidos
+      terminarão automaticamente no caso de qualquer violação dos termos desta Licença por Você."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

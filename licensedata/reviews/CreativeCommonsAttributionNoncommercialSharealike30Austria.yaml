@@ -26,8 +26,7 @@ findings:
   severity: info
   field: spdx:licenseId
   description: 'The SPDX licence list defines no identifier for this port. The id that the legal code
-    URL implies, CC-BY-NC-SA-3.0-AT, is not on the list, so none was invented. Only four records of this
-    batch can take an SPDX identifier: CC-BY-3.0-AU, CC-BY-3.0-AT, CC-BY-3.0-US and CC-BY-SA-3.0-AT.'
+    URL implies, CC-BY-NC-SA-3.0-AT, is not on the list, so none was invented. Only four records of this review group can take an SPDX identifier: CC-BY-3.0-AU, CC-BY-3.0-AT, CC-BY-3.0-US and CC-BY-SA-3.0-AT.'
   action: none
 - rubric: 1
   severity: minor
@@ -43,8 +42,8 @@ findings:
   description: 'The record targeted dalicc:CreativeWork alone, while the 4.0 International parent CC-BY-NC-SA-4.0
     targets dalicc:CreativeWork and dcmitype:Dataset. This port names a database as licensed subject matter
     in its own text: Ziffer 3: "Soweit Datenbanken oder Zusammenstellungen von Daten Schutzgegenstand
-    dieser Lizenz oder Teil dessen sind und einen immaterialgueterrechtlichen Schutz eigener Art geniessen,
-    verzichtet der Lizenzgeber auf die Geltendmachung saemtlicher daraus resultierender Rechte." Ziffer
+    dieser Lizenz oder Teil dessen sind und einen immaterialgüterrechtlichen Schutz eigener Art genießen,
+    verzichtet der Lizenzgeber auf die Geltendmachung sämtlicher daraus resultierender Rechte." Ziffer
     4 adds that the restrictions do not apply to parts of the Schutzgegenstand that fall under the definition
     only because they enjoy sui generis database protection. Since the text is explicit, dcmitype:Dataset
     was added here rather than left to the library wide decision that covers the ports whose text says
@@ -55,9 +54,9 @@ findings:
 - rubric: 3
   severity: info
   field: odrl:permission
-  description: Every modelled permission is supported by the grant. Ziffer 3 grants the "verguetungsfreie,
-    raeumlich und zeitlich (fuer die Dauer des Urheberrechts oder verwandten Schutzrechts am Schutzgegenstand)
-    unbeschraenkte Nutzungsbewilligung", a permission of use free of remuneration and unlimited in place
+  description: Every modelled permission is supported by the grant. Ziffer 3 grants the "vergütungsfreie,
+    räumlich und zeitlich (für die Dauer des Urheberrechts oder verwandten Schutzrechts am Schutzgegenstand)
+    unbeschränkte Nutzungsbewilligung", a permission of use free of remuneration and unlimited in place
     and time. The grant covers reproduction in any form and number, integration into Sammelwerke (collections)
     and reproduction as part of them, adaptation including translation, public communication and distribution
     of the Schutzgegenstand alone or in a collection, and publication, public communication and distribution
@@ -81,13 +80,14 @@ findings:
 - rubric: 4
   severity: major
   field: odrl:prohibition
-  description: 'The licence forbids sublicensing and the record does not say so. Ziffer 4.a): "Sie duerfen
+  description: 'The licence forbids sublicensing and the record does not say so. Ziffer 4.a): "Sie dürfen
     den Schutzgegenstand nicht unterlizenzieren." The vocabulary already has dalicc:sublicense, but no
     record in the library uses it and its skos:note says so, and the same sentence stands in every Creative
-    Commons 2.0 and 3.0 record, so adding it to this batch alone would split the compatibility behaviour
+    Commons 2.0 and 3.0 record, so adding it to this review group alone would split the compatibility behaviour
     of one family. Proposed as one library wide correction, together with an update of the vocabulary
     note.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -148,7 +148,7 @@ findings:
     and dalicc:validityType is dalicc:perpetual, which matches a grant for the duration of copyright.
     On the governing law: Ziffer 8: "Sofern zwischen Ihnen und dem Lizenzgeber keine anderweitige Vereinbarung
     getroffen wurde und soweit Wahlfreiheit besteht, findet auf diesen Lizenzvertrag das Recht der Republik
-    Oesterreich Anwendung." Note that the jurisdiction field records the legal home of the port, not a
+    Österreich Anwendung." Note that the jurisdiction field records the legal home of the port, not a
     territorial limit on the grant: the grant itself is worldwide.'
   action: none
 - rubric: 8
@@ -156,9 +156,9 @@ findings:
   field: odrl:prohibition
   description: 'The licence forbids technological protection measures and the vocabulary has no term for
     it. Ziffer 4.a) forbids technical measures that can hinder the user of the Schutzgegenstand in exercising
-    the rights granted by the licence ("duerfen Sie (in Bezug auf den Schutzgegenstand) keine technischen
-    Massnahmen ergreifen, die den Nutzer des Schutzgegenstandes in der Ausuebung der ihm durch diese Lizenz
-    gewaehrten Rechte behindern koennen"). Proposed term: dalicc:applyTechnicalProtectionMeasures, an
+    the rights granted by the licence ("dürfen Sie (in Bezug auf den Schutzgegenstand) keine technischen
+    Maßnahmen ergreifen, die den Nutzer des Schutzgegenstandes in der Ausübung der ihm durch diese Lizenz
+    gewährten Rechte behindern können"). Proposed term: dalicc:applyTechnicalProtectionMeasures, an
     odrl:Action to be used as an odrl:Prohibition. Not modelled, because bending an existing term would
     be worse than the gap.'
   action: none
@@ -174,8 +174,8 @@ findings:
 - rubric: 8
   severity: gap
   field: record
-  description: 'The moral rights clause of this port is not expressible. Ziffer 4.g): "(Urheber)Persoenlichkeitsrechte
-    bleiben - soweit sie bestehen - von dieser Lizenz unberuehrt." The Austrian port leaves the author
+  description: 'The moral rights clause of this port is not expressible. Ziffer 4.g): "(Urheber)Persönlichkeitsrechte
+    bleiben - soweit sie bestehen - von dieser Lizenz unberührt." The Austrian port leaves the author
     personality rights untouched rather than restricting the licensee or binding the licensor. Proposed
     terms: dalicc:moralRightsRestriction and dalicc:moralRightsNonAssertion, so that the direction of
     the clause can be recorded.'
@@ -228,8 +228,8 @@ findings:
   description: 'The record said nothing about the sui generis database right although the port''s own
     text settles it, which the rubric 2 finding of this review read off the legal code: Ziffer 3 disposes
     of the right in the grant itself: "Soweit Datenbanken oder Zusammenstellungen von Daten Schutzgegenstand
-    dieser Lizenz oder Teil dessen sind und einen immaterialgueterrechtlichen Schutz eigener Art geniessen,
-    verzichtet der Lizenzgeber auf die Geltendmachung saemtlicher daraus resultierender Rechte.", and
+    dieser Lizenz oder Teil dessen sind und einen immaterialgüterrechtlichen Schutz eigener Art genießen,
+    verzichtet der Lizenzgeber auf die Geltendmachung sämtlicher daraus resultierender Rechte.", and
     Ziffer 4 adds that the restrictions do not apply to the parts of the Schutzgegenstand that fall under
     the definition only because they enjoy sui generis database protection. Exercising that right is therefore
     permitted by this licence and dalicc:suiGenerisDatabaseRights is now a permission of the record. It
@@ -244,6 +244,16 @@ findings:
   action: applied
   change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
     \ ] ;"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Diese Lizenz und die durch sie erteilte Nutzungsbewilligung
+    erlöschen mit Wirkung für die Zukunft im Falle eines Verstoßes gegen die Lizenzbedingungen durch Sie,
+    ohne dass es dazu der Kenntnis des Lizenzgebers vom Verstoß oder einer weiteren Handlung einer der
+    Vertragsparteien bedarf." The licence ends automatically on a breach and this version of the text
+    has no reinstatement clause, so dalicc:terminatesOnBreach is true and no dalicc:curePeriod is written,
+    as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Austria (AT)'
 port_of: CC-BY-NC-SA-4.0
 variant_kind: jurisdiction-port

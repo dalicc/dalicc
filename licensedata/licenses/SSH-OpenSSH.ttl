@@ -19,6 +19,7 @@
 
 dalicclib:SSH-OpenSSH a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "SSH-OpenSSH" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://spdx.org/licenses/SSH-OpenSSH.html> ;
@@ -33,8 +34,8 @@ dalicclib:SSH-OpenSSH a odrl:Set ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/SSH-OpenSSH/versions> ;
     dct:alternative "SSH OpenSSH",
         "SSH-OpenSSH" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://spdx.org/licenses/SSH-OpenSSH.html> ;
     dct:title "SSH OpenSSH license"@en ;
     odrl:permission [ a odrl:Permission ;
@@ -68,6 +69,10 @@ dalicclib:SSH-OpenSSH a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

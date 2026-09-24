@@ -19,6 +19,7 @@
 
 dalicclib:Watcom-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "Watcom-1.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://opensource.org/license/Watcom-1.0> ;
@@ -45,8 +46,8 @@ dalicclib:Watcom-1.0 a odrl:Set ;
         "Sybase Open Watcom Public License",
         "Sybase Open Watcom Public License 1.0",
         "Watcom-1.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Sybase, Inc." ;
     dct:source <https://opensource.org/license/Watcom-1.0> ;
     dct:title "Sybase Open Watcom Public License 1.0"@en ;
@@ -103,13 +104,15 @@ dalicclib:Watcom-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
-            odrl:action dalicc:ChangeLicense ],
+            odrl:action dalicc:ChangeLicense ;
+            dalicc:evidence "You must make Source Code of all Your Deployed Modifications publicly available under the terms of this License, including the license grants set forth in Section 3 below, for as long as you Deploy the Covered Code or twelve (12) months from the date of initial Deployment, whichever is longer." ],
         [ a odrl:Permission ;
             odrl:action dalicc:networkUseTrigger ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:SourceCode ] ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "No Sybase Marks or Contributor Marks may be used to endorse or promote products derived from the Original Code or Covered Code other than with the prior written consent of Sybase or the Contributor, as applicable." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ],
         [ a odrl:Prohibition ;

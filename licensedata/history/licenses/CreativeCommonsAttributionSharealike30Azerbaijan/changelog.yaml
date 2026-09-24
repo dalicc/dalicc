@@ -3,11 +3,20 @@ title: Creative Commons Attribution-ShareAlike 3.0 Azerbaijan
 current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 clause text, 1 identification detail and 1 prohibition,
     removed 1 clause text, changed 4 alternative titles and 1 asset target, recorded the relation
-    to the record this one was adapted from and recorded the review state.
+    to the record this one was adapted from and recorded the review state. Later changes recorded
+    which sentence of the text each statement rests on, recorded when the license ends on a breach,
+    named the license the record itself is published under and removed the quotes that do not name
+    the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
   changes:
   - action: removed
     statement: "dalicc:WarrantyDisclaimer \"Lisenziya verən təmsilçilik edir və zəmanət verir ki:\n\
@@ -16,8 +25,8 @@ entries:
       \ ilə verilən bütün hüquqlara sahiblik hüququ vardır və bu hüquqları həyata keçirmək üçün heç\
       \ bir hüquqi əngəl yoxdur.\n\""
     reason: 'The record held the text of Section 5 in dalicc:WarrantyDisclaimer, but Section 5 of
-      this port is not a disclaimer: it is an affirmative warranty. It is headed "Numayendelik ve
-      zemanet" (representation and warranty) and reads "Lisenziya veren temsilcilik edir ve zemanet
+      this port is not a disclaimer: it is an affirmative warranty. It is headed "Nümayəndəlik və
+      zəmanət" (representation and warranty) and reads "Lisenziya verən təmsilçilik edir və zəmanət
       verir ki" (the Licensor represents and warrants that) the grant is within the Licensor''s power,
       conflicts with no statute, and that the Licensor owns the rights granted with no legal obstacle
       to exercising them. The Azerbaijani port carries no warranty disclaimer anywhere in the licence
@@ -31,8 +40,8 @@ entries:
       \ ilə verilən bütün hüquqlara sahiblik hüququ vardır və bu hüquqları həyata keçirmək üçün heç\
       \ bir hüquqi əngəl yoxdur.\n\""
     reason: 'The record held the text of Section 5 in dalicc:WarrantyDisclaimer, but Section 5 of
-      this port is not a disclaimer: it is an affirmative warranty. It is headed "Numayendelik ve
-      zemanet" (representation and warranty) and reads "Lisenziya veren temsilcilik edir ve zemanet
+      this port is not a disclaimer: it is an affirmative warranty. It is headed "Nümayəndəlik və
+      zəmanət" (representation and warranty) and reads "Lisenziya verən təmsilçilik edir və zəmanət
       verir ki" (the Licensor represents and warrants that) the grant is within the Licensor''s power,
       conflicts with no statute, and that the Licensor owns the rights granted with no legal obstacle
       to exercising them. The Azerbaijani port carries no warranty disclaimer anywhere in the licence
@@ -108,6 +117,69 @@ entries:
       fixations of film and broadcasting organisation programmes, and a separate definition of Database
       follows it. Because the legal text names databases as licensed subject matter and disposes of
       the database maker''s right in the grant itself, dcmitype:Dataset was added here rather than
-      left as a proposal. The ports in this batch whose text has no database clause at all keep the
-      proposal.'
+      left as a proposal. The ports in this review group whose text has no database clause at all
+      keep the proposal.'
     source: review-finding 2/odrl:target
+  - action: changed
+    statement: permission odrl:display
+    previous: permission odrl:display
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Bu Lisenziyanın
+      şərtlərinə uyğun olaraq, Lisenziya verən bununla sizə ümumdünya, müəllif honorarından azad,
+      qeyri-müstəsna, daimi (tətbiqedilən müəllif hüququnun müddətinə) aşağıda göstərildiyi kimi Əsərə
+      olan hüquqlardan istifadə üçün lisenziya verir:"'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Bu Lisenziyanın
+      şərtlərinə uyğun olaraq, Lisenziya verən bununla sizə ümumdünya, müəllif honorarından azad,
+      qeyri-müstəsna, daimi (tətbiqedilən müəllif hüququnun müddətinə) aşağıda göstərildiyi kimi Əsərə
+      olan hüquqlardan istifadə üçün lisenziya verir:"'
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Bu Lisenziyanın
+      şərtlərinə uyğun olaraq, Lisenziya verən bununla sizə ümumdünya, müəllif honorarından azad,
+      qeyri-müstəsna, daimi (tətbiqedilən müəllif hüququnun müddətinə) aşağıda göstərildiyi kimi Əsərə
+      olan hüquqlardan istifadə üçün lisenziya verir:"'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:sublicense
+    previous: prohibition dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Lisenziya alan
+      Əsərə əlavə lisenziya verə bilməz."'
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'The termination clause of this port reads: "Bu Müqavilə (Lisenziya) və ona əsasən verilən
+      hüquqlara Lisenziya alan tərəfindən Lisenziyanın şərtləri pozulduqda avtomatik olaraq xitam
+      veriləcək."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: permission odrl:display
+    previous: permission odrl:display
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce: the quoted sentence does not name the act. The statements stay, read from the
+      text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce: the quoted sentence does not name the act. The statements stay, read from the
+      text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'Removed the quoted evidence of permission odrl:display, permission odrl:distribute, permission
+      odrl:reproduce: the quoted sentence does not name the act. The statements stay, read from the
+      text without a linked quote.'
+    source: manual

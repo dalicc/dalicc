@@ -6,7 +6,7 @@ text_source: https://spdx.org/licenses/CDLA-Permissive-2.0.html
 text_retrieved: true
 verdict: created
 summary: 'The permissive Community Data License Agreement, version 2.0: one page, one condition, the text of the
-  agreement travels with the data. The record follows the CDLA-Permissive-1.0 record of this batch and differs from
+  agreement travels with the data. The record follows the CDLA-Permissive-1.0 record of this review group and differs from
   it where the text does: no attribution duty, no changed file notice, no database right, no termination, and no
   option to publish under a licence of your choice.'
 findings:
@@ -14,7 +14,7 @@ findings:
   severity: minor
   field: spdx:licenseId
   description: 'The record carries the SPDX id CDLA-Permissive-2.0 and the SPDX name as dct:title. dalicc:variantKind
-    is "version": this is the later version of the text the CDLA-Permissive-1.0 record of this batch holds.'
+    is "version": this is the later version of the text the CDLA-Permissive-1.0 record of this review group holds.'
   action: applied
 - rubric: 2
   severity: major
@@ -69,7 +69,7 @@ findings:
   field: dalicc:useForModelTraining
   description: This is the first record in the library to carry dalicc:useForModelTraining. The term was defined
     by the review of 2026-09-15 and applied to no record; it is applied here, and on the two data use agreements
-    of this batch, because those three texts are the only ones that say in their own words what happens to a model
+    of this review group, because those three texts are the only ones that say in their own words what happens to a model
     trained on the data.
   action: applied
 - rubric: 9
@@ -89,10 +89,10 @@ findings:
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "A Data Recipient may use, modify, and share the Data made
+    the earlier reading wrote is removed. The text reads: "A Data Recipient may use, modify, and share the Data made
     available by Data Provider(s) under this agreement if that Data Recipient follows the terms of this agreement."
     The permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive
     the relicensing.'

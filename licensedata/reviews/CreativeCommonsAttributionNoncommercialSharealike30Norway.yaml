@@ -24,7 +24,7 @@ findings:
   severity: info
   field: spdx:licenseId
   description: SPDX has no identifier for this port. The legal code URL implies CC-BY-NC-SA-3.0-NO, which
-    the SPDX licence list does not define, so none was invented. Of the thirty five records in this batch
+    the SPDX licence list does not define, so none was invented. Of the thirty five records in this review group
     only the six German ones take an SPDX identifier.
   action: none
 - rubric: 1
@@ -41,7 +41,7 @@ findings:
   description: The record targeted dalicc:CreativeWork only, while the 4.0 International parent CC-BY-NC-SA-4.0
     targets dalicc:CreativeWork and dcmitype:Dataset. This port settles the sui generis database right
     expressly. Section 1 defines "Frembringelse" to reach beyond works under section 1 of the Norwegian
-    Copyright Act to subject matter protected under "aandsverksloven kapittel 5", the chapter on neighbouring
+    Copyright Act to subject matter protected under "åndsverksloven kapittel 5", the chapter on neighbouring
     rights that contains the database and catalogue right of section 43. Section 3 closes with "Dersom
     lisensgiver innehar databaserettigheter eller lignende i henhold til aandsverklovens section 43 og
     EUs databasedirektiv, fraskriver lisensgiver seg disse rettigheter" (if the licensor holds database
@@ -50,7 +50,7 @@ findings:
     definition only because they meet those criteria. Because the legal text names databases as licensed
     subject matter and disposes of the database maker's right in the grant itself, dcmitype:Dataset was
     added here rather than left as a proposal, which is how the same question was decided for the Portuguese,
-    Czech and Azerbaijani ports. The ports in this batch whose text has no database clause at all, Ecuador
+    Czech and Azerbaijani ports. The ports in this review group whose text has no database clause at all, Ecuador
     and Brazil, keep the proposal.
   action: applied
   change: "odrl:target [ a odrl:AssetCollection ;\n        dct:type dalicc:CreativeWork,\n           \
@@ -72,10 +72,11 @@ findings:
   description: The licence forbids sublicensing and the record does not say so. "Du kan ikke gi underlisenser
     til frembringelsen." Section 4(a). The vocabulary already has dalicc:sublicense, but no record in
     the library uses it and its skos:note says so, and the same sentence stands in every Creative Commons
-    2.0 and 3.0 record, so adding it to the thirty five ports of this batch alone would split the compatibility
+    2.0 and 3.0 record, so adding it to the thirty five ports of this review group alone would split the compatibility
     behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
-    note. Batches 3 and 6 made the same recommendation.
-  action: proposed
+    note. Other review groups made the same recommendation.
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -87,8 +88,8 @@ findings:
     than in the Creative Commons notice printed around it. Section 4(d): the licensee may not assert or
     imply any connection with, or sponsorship or endorsement by, the original rightsholder, the licensor
     or the parties named for attribution. cc:CommercialUse is prohibited. Section 4(c): the rights granted
-    may not be exercised in a way aimed at "kommersiell fordel, eller paa en maate som tar sikte paa aa
-    oppnaa et privat vederlag i form av penger", with the file sharing carve out where no payment changes
+    may not be exercised in a way aimed at "kommersiell fordel, eller på en måte som tar sikte på å
+    oppnå et privat vederlag i form av penger", with the file sharing carve out where no payment changes
     hands.'
   action: none
 - rubric: 5
@@ -97,7 +98,7 @@ findings:
   description: 'The attribution and notice duties are present and supported: the licence requires a copy
     of the licence or its URI with every copy shared, that the notices referring to the licence and to
     the warranty clause be kept intact, and that credit be given, and in this port credit is owed to the
-    "originaer rettighetshaver", the "lisensgiver" and anyone else named, and an adaptation must be marked,
+    "originær rettighetshaver", the "lisensgiver" and anyone else named, and an adaptation must be marked,
     for example "Det opprinnelige verket er oversatt fra norsk til spansk". The duties hang on odrl:distribute,
     odrl:modify and odrl:derive, which matches the licence, since they are triggered by distributing or
     communicating the work to the public rather than by private use. dalicc:modificationNotice is supported
@@ -117,7 +118,7 @@ findings:
   field: odrl:permission
   description: dalicc:chargeDistributionFee is permitted while cc:CommercialUse is prohibited. Under the
     test of this port, the rights granted may not be exercised in a way aimed at "kommersiell fordel,
-    eller paa en maate som tar sikte paa aa oppnaa et privat vederlag i form av penger", with the file
+    eller på en måte som tar sikte på å oppnå et privat vederlag i form av penger", with the file
     sharing carve out where no payment changes hands, a pure cost recovery fee is arguable rather than
     plainly allowed. The statement also sits in the 4.0 International parent CC-BY-NC-SA-4.0 and in every
     NonCommercial record of the library, so this is one decision about the whole NonCommercial family
@@ -155,9 +156,9 @@ findings:
   severity: gap
   field: odrl:prohibition
   description: 'The licence forbids technological protection measures and the vocabulary has no term for
-    it. Section 4(a): "Naar du tilgjengeliggjoer eller fremfoerer frembringelsen offentlig, saa kan du
-    ikke utstyre frembringelsen med tekniske beskyttelsesmekanismer som begrenser mottaker i aa utoeve
-    de rettigheter som foelger av lisensen." Proposed term: dalicc:applyTechnicalProtectionMeasures, an
+    it. Section 4(a): "Når du tilgjengeliggjør eller fremfører frembringelsen offentlig, så kan du
+    ikke utstyre frembringelsen med tekniske beskyttelsesmekanismer som begrenser mottaker i å utøve
+    de rettigheter som følger av lisensen." Proposed term: dalicc:applyTechnicalProtectionMeasures, an
     odrl:Action to be used as an odrl:Prohibition. Not modelled, because bending an existing term would
     be worse than the gap.'
   action: none
@@ -173,7 +174,7 @@ findings:
   severity: gap
   field: record
   description: 'Moral rights have no vocabulary term, in either direction. Section 4: "Ideelle rettigheter
-    forblir uberoert av denne lisensen, i den utstrekning de i henhold til gjeldende rett anerkjennes
+    forblir uberørt av denne lisensen, i den utstrekning de i henhold til gjeldende rett anerkjennes
     og ikke er fraskrivbare", the deferring formula, which under Norwegian law leaves section 3 of the
     Copyright Act standing. Proposed terms: dalicc:moralRightsRestriction for a clause that binds the
     licensee and dalicc:moralRightsNonAssertion for one in which the licensor undertakes not to assert
@@ -187,7 +188,7 @@ findings:
     compulsory licence), "Fraskrivbar tvangslisens" (waivable compulsory licence, reserved for uses other
     than non commercial in the NonCommercial sets) and "Avtalelisens og blankolisens" (extended collective
     licensing and blanket licences under sections 36 to 47 of the Norwegian Copyright Act, or the equivalent
-    in another jurisdiction). Norway is the only port in this batch that cites the national statute by
+    in another jurisdiction). Norway is the only port in this review group that cites the national statute by
     section number inside the royalty clause. Proposed term: dalicc:royaltyCollectionReserved, with a
     counterpart for the waiver. It is one of the few places where the ports of one version really differ
     from each other.'
@@ -217,9 +218,17 @@ findings:
     of 3.0 that the model does not carry, chiefly the express prohibition of sublicensing, the technological
     measures clause, the royalty collection arrangement and the moral rights clause. The compatibility
     checker cannot tell this record from the other records of the BY-NC-SA element set, across all three
-    versions and every jurisdiction the library holds. Note for the consolidation pass: the library holds
+    versions and every jurisdiction the library holds. Note for the consolidation: the library holds
     only five Norwegian records, the NonCommercial-NoDerivatives element set of this port is missing.'
   action: none
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Denne lisensen og de rettigheter som følger
+    av den, vil automatisk opphøre ved ethvert brudd fra deg på lisensens vilkår." The licence ends automatically
+    on a breach and this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach
+    is true and no dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Norway (NO)'
 port_of: CC-BY-NC-SA-4.0
 variant_kind: jurisdiction-port

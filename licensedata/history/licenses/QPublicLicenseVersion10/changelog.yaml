@@ -1,12 +1,16 @@
 id: QPublicLicenseVersion10
 title: Q Public License Version 1.0
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 clause text and 1 identification detail and recorded
-    the review state.
+    the review state. Later changes left endorsement to the default rule of the core dependency graph
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
   changes:
   - action: added
     statement: dalicc:LiabilityLimitation "In no event shall the initial developers or copyright holders
@@ -30,13 +34,14 @@ entries:
     statement: spdx:licenseId "QPL-1.0"
     reason: Added QPL-1.0; the title matches the SPDX name.
     source: review-finding 1/spdx:licenseId
-- version: 3
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
-    now supplies it.
-  changes:
   - action: removed
     statement: prohibition dalicc:promote
-    reason: Edited by hand; see the summary of this entry.
+    reason: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
+      now supplies it.
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

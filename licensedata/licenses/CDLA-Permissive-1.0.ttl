@@ -19,6 +19,7 @@
 
 dalicclib:CDLA-Permissive-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CDLA-Permissive-1.0" ;
     cc:attributionName "The Linux Foundation" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -36,8 +37,8 @@ dalicclib:CDLA-Permissive-1.0 a odrl:Set ;
     dct:alternative "CDLA Permissive 1.0",
         "CDLA-Permissive-1.0",
         "Community Data License Agreement - Permissive - Version 1.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "The Linux Foundation" ;
     dct:source <https://spdx.org/licenses/CDLA-Permissive-1.0.html> ;
     dct:title "Community Data License Agreement Permissive 1.0"@en ;
@@ -62,7 +63,8 @@ dalicclib:CDLA-Permissive-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "You must cause any Data files containing Enhanced Data to carry prominent notices that You have changed those files; and" ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
@@ -70,7 +72,8 @@ dalicclib:CDLA-Permissive-1.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "You must cause any Data files containing Enhanced Data to carry prominent notices that You have changed those files; and" ] ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
@@ -78,15 +81,19 @@ dalicclib:CDLA-Permissive-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:suiGenerisDatabaseRights ],
+            odrl:action dalicc:suiGenerisDatabaseRights ;
+            dalicc:evidence "2.2 To the extent that the Data or the coordination, selection or arrangement of Data is protected or protectable under copyright, Sui Generis Database Rights, or other law, Data Provider(s) further agree(s) that such Data or coordination, selection or arrangement is hereby licensed to You and to anyone else who Receives Data under this Agreement for Use and Publication, subject to the conditions set forth in Section 3 of this Agreement." ],
         [ a odrl:Permission ;
-            odrl:action dalicc:moralRightsNonAssertion ],
+            odrl:action dalicc:moralRightsNonAssertion ;
+            dalicc:evidence "7.2 You and Data Provider(s), collectively and individually, waive and/or agree not to assert, to the extent permitted by law, any moral rights You or they hold in Data." ],
         [ a odrl:Permission ;
             odrl:action dalicc:sublicense ],
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ] ] ;
+                    odrl:action cc:Notice ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ] ;
     odrl:target [ a odrl:AssetCollection ;

@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Luxembourg a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Luxembourg ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc-nd/3.0/lu/legalcode> ;
     dalicc:LiabilityLimitation """SAUF DANS LA MESURE REQUISE PAR LA LOI APPLICABLE, LE DONNEUR DE LICENCE NE SAURAIT EN AUCUN CAS ETRE TENU RESPONSABLE A VOTRE EGARD AU TITRE DE QUELQUE DOCTRINE QUE CE SOIT DE TOUS DOMMAGES SPECIAUX, ACCESSOIRES, INDIRECTS, PUNITIFS OU EXEMPLAIRES DECOULANT DE LA PRESENTE LICENCE OU DE L’UTILISATION DE L’ŒUVRE, MEME DANS LE CAS OU LE DONNEUR DE LICENCE AURAIT ETE AVISE DE L'EVENTUALITE DESDITS DOMMAGES.
@@ -26,6 +27,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Luxembourg a odrl:Set
     dalicc:WarrantyDisclaimer """SAUF ACCORD COMMUN ECRIT DES PARTIES ET DANS LA MESURE PERMISE PAR LA LOI APPLICABLE, LE DONNEUR DE LICENCE PROPOSE L’ŒUVRE EN L'ETAT ET NE FORMULE AUCUNE GARANTIE NI DECLARATION DE QUELQUE NATURE QUE CE SOIT. CERTAINES JURIDICTIONS INTERDISENT L’EXCLUSION DE GARANTIES, AUQUEL CAS LA PRESENTE EXCLUSION NE VOUS EST PAS APPLICABLE.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-ND-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -44,8 +46,8 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Luxembourg a odrl:Set
         "Creative Commons Attribution NonCommercial NoDerivatives 3.0 Luxembourg",
         "Creative Commons BY-NC-ND 3.0",
         "Creative Commons BY-NC-ND 3.0 LU" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc-nd/3.0/lu/> ;
     dct:title "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Luxembourg"@en ;
@@ -64,7 +66,8 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Luxembourg a odrl:Set
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:suiGenerisDatabaseRights ] ;
+            odrl:action dalicc:suiGenerisDatabaseRights ;
+            dalicc:evidence "Lorsque l'Œuvre est une base de données, extraire et réutiliser des parties substantielles de l'Œuvre." ] ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action odrl:derive ],
         [ a odrl:Prohibition ;

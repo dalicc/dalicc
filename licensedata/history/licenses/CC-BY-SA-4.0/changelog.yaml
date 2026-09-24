@@ -1,12 +1,19 @@
 id: CC-BY-SA-4.0
 title: Creative Commons Attribution-ShareAlike 4.0 International
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail, 1 permission and 1 prohibition
-    and recorded the review state.
+    and recorded the review state. Later changes recorded what the text says about the database right,
+    recorded when the license ends on a breach, named the license the record itself is published under
+    and recorded the licenses a work under it may be released under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
   changes:
   - action: added
     statement: dalicc:reviewStatus dalicc:Reviewed
@@ -25,7 +32,8 @@ entries:
       the licensee may charge: Section 2(a)(1) grants the rights royalty-free and commercial use is
       expressly permitted. Section 4 of the legal code, the sui generis database rights section, says
       nothing about fees either. Added, so that the six records of the 4.0 set model the fee question
-      identically. This was flagged before the review in review_duplicates.md section 6.'
+      identically. This was flagged before the review in the review of duplicates (see the review
+      method, docs/LICENSE_REVIEW.md section 3).'
     source: review-finding 3/odrl:permission
   - action: added
     statement: prohibition dalicc:sublicense
@@ -38,16 +46,33 @@ entries:
     reason: The record carried no SPDX identifier although its own DALICC identifier is the SPDX list
       identifier CC-BY-SA-4.0, whose SPDX seeAlso URL is the cc:legalcode of this record. Added.
     source: review-finding 1/spdx:licenseId
-- version: 3
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: 'Section 4 of the 4.0 text grants the database right where it applies: "for the avoidance
-    of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or
-    a substantial portion of the contents of the database", and Section 4(c) carries the conditions
-    of Section 3(a) over to it. dalicc:suiGenerisDatabaseRights is now permitted, with the attribution
-    and notice duties of the copyright grant.'
-  changes:
   - action: added
     statement: permission dalicc:suiGenerisDatabaseRights with duties [cc:Attribution, cc:Notice]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Section 4 of the 4.0 text grants the database right where it applies: "for the avoidance
+      of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or
+      a substantial portion of the contents of the database", and Section 4(c) carries the conditions
+      of Section 3(a) over to it. dalicc:suiGenerisDatabaseRights is now permitted, with the attribution
+      and notice duties of the copyright grant.'
+    source: manual
+  - action: added
+    statement: dalicc:curePeriod "30 days"
+    reason: Section 6(b) reinstates the rights "automatically as of the date the violation is cured,
+      provided it is cured within 30 days of Your discovery of the violation".
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'Section 6(a) reads: "However, if You fail to comply with this Public License, then Your
+      rights under this Public License terminate automatically."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: added
+    statement: dalicc:compatibleWith dalicclib:GPL-3.0-only
+    reason: 'The Creative Commons list of compatible licenses (https://creativecommons.org/share-your-work/licensing-considerations/compatible-licenses)
+      names the "GNU General Public License version 3" as compatible with BY-SA 4.0, one way: an adaptation
+      of BY-SA 4.0 material may be released under GPL-3.0, and not the other way round.'
     source: manual

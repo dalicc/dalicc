@@ -51,7 +51,7 @@ findings:
   field: odrl:prohibition
   description: 'Review decision 2 of 2026-09-15 for a NoDerivatives record: neither odrl:modify nor dalicc:ModifiedWorks
     is permitted and odrl:derive is prohibited. The text supports it directly, because Section 3 grants no right
-    to create a derivative work and closes "All rights not expressly granted by Licensor are hereby reserved." scripts/validate_data.py
+    to create a derivative work and closes "All rights not expressly granted by Licensor are hereby reserved." the data checks (docs/LICENSE_REVIEW.md section 10)
     enforces the same shape.'
   action: applied
 - rubric: 4
@@ -60,7 +60,7 @@ findings:
   description: 'Section 4(a) reads: "You may not offer or impose any terms on the Work that alter or restrict the
     terms of this License or the recipients'' exercise of the rights granted hereunder. You may not sublicense the
     Work." That is dalicc:sublicense prohibited, which review decision 1 of 2026-09-15 requires of every Creative
-    Commons record except the CC0 dedication, and dalicc:ChangeLicense prohibited, which family rule 15 of scripts/review/family_rules.py
+    Commons record except the CC0 dedication, and dalicc:ChangeLicense prohibited, which library convention 15
     expressly keeps for this family because the no-downstream-restrictions clause is the bar the rule otherwise
     denies.'
   action: applied

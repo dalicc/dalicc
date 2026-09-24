@@ -25,7 +25,7 @@ findings:
   field: spdx:licenseId
   description: SPDX has no identifier for this port. The legal code URL implies CC-BY-NC-ND-3.0-PT, which
     the SPDX licence list does not define, so no identifier was invented. None of the forty two records
-    in this batch has an SPDX identifier.
+    in this review group has an SPDX identifier.
   action: none
 - rubric: 2
   severity: minor
@@ -36,19 +36,19 @@ findings:
     rights of Chapter III of Decreto-Lei 122/2000, which implements Directive 96/9/EC in Portuguese law,
     the Licensor "declara expressamente renunciar a esses direitos", and Section 4(e) adds that the restrictions
     do not apply to the parts of the Work protected only by that database maker''s right. Beyond that,
-    the definition of "Trabalho" in Section 1 names "uma base de dados que, pela selecao ou disposicao
-    do respetivo conteudo, constitua uma criacao intelectual" and "um programa de computador" among the
+    the definition of "Trabalho" in Section 1 names "uma base de dados que, pela seleção ou disposição
+    do respetivo conteúdo, constitua uma criação intelectual" and "um programa de computador" among the
     licensed subject matter. Because the legal text names databases as licensed subject matter and disposes
     of the database maker''s right in the grant itself, dcmitype:Dataset was added here rather than left
-    as a proposal. The ports in this batch whose text has no database clause at all keep the proposal.'
+    as a proposal. The ports in this review group whose text has no database clause at all keep the proposal.'
   action: applied
   change: "odrl:target [ a odrl:AssetCollection ;\n        dct:type dalicc:CreativeWork,\n           \
     \ dcmitype:Dataset ] ;"
 - rubric: 3
   severity: info
   field: odrl:permission
-  description: The modelled permissions follow the grant. Section 3 grants "uma licenca de ambito mundial,
-    gratuita, nao exclusiva, pelo periodo de duracao do direito de autor ou direito conexo aplicavel"
+  description: The modelled permissions follow the grant. Section 3 grants "uma licença de âmbito mundial,
+    gratuita, não exclusiva, pelo período de duração do direito de autor ou direito conexo aplicável"
     (a worldwide, free of charge, non-exclusive licence for the duration of the applicable copyright or
     neighbouring right), covering reproduction, incorporation into Collections, transformation into Derivative
     Works with a duty to label the change, and distribution and communication to the public of the Work
@@ -76,12 +76,13 @@ findings:
   severity: major
   field: odrl:prohibition
   description: 'The licence forbids sublicensing and the record does not say so. Section 4(a): "O Utilizador
-    nao pode sub-licenciar o Trabalho." The vocabulary already has dalicc:sublicense, but no record in
+    não pode sub-licenciar o Trabalho." The vocabulary already has dalicc:sublicense, but no record in
     the library uses it and its skos:note says so, and the same sentence stands in every Creative Commons
-    2.0 and 3.0 record, so adding it to the forty two ports of this batch alone would split the compatibility
+    2.0 and 3.0 record, so adding it to the forty two ports of this review group alone would split the compatibility
     behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
     note.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -90,15 +91,15 @@ findings:
     only under the terms of this licence and the licensee may not offer or impose terms that alter or
     restrict it. dalicc:promote is prohibited, which the 3.0 text supports better than the 2.0 text did,
     because the no endorsement rule sits in the licence body rather than in the Creative Commons notice
-    around it. Section 4(d): the licensee "nao podera implicita ou explicitamente afirmar ou sugerir qualquer
-    vinculo, patrocinio ou apoio" of the Original Rights Holder, the Licensor or the Attribution Parties.'
+    around it. Section 4(d): the licensee "não poderá implícita ou explicitamente afirmar ou sugerir qualquer
+    vínculo, patrocínio ou apoio" of the Original Rights Holder, the Licensor or the Attribution Parties.'
   action: none
 - rubric: 4
   severity: info
   field: odrl:prohibition
   description: 'cc:CommercialUse is prohibited, as the NonCommercial element requires. Section 4(c): no
-    exercise of the rights "que tenha como objetivo principal ou que seja direcionado para a obtencao
-    de uma vantagem comercial ou compensacao monetaria", with the file sharing exception.'
+    exercise of the rights "que tenha como objetivo principal ou que seja direcionado para a obtenção
+    de uma vantagem comercial ou compensação monetária", with the file sharing exception.'
   action: none
 - rubric: 3
   severity: minor
@@ -120,7 +121,7 @@ findings:
     parties. dalicc:modificationNotice is supported by the duty to take reasonable steps to label a change.
     The duties hang on odrl:distribute and odrl:modify, which matches the licence, since they are triggered
     by distributing or communicating the work to the public rather than by private use. In this port the
-    parties are "Licenciante" and "Utilizador", credit is owed to the "Titular Originario", and the grant
+    parties are "Licenciante" and "Utilizador", credit is owed to the "Titular Originário", and the grant
     covers neighbouring rights: performances, phonograms, videograms, films and broadcasts.'
   action: none
 - rubric: 6
@@ -154,7 +155,7 @@ findings:
   field: odrl:prohibition
   description: 'The licence forbids technological protection measures and the vocabulary has no term for
     it. Section 4(a): the Work may not be distributed or communicated to the public "com qualquer medida
-    tecnologica que restrinja a possibilidade do destinatario exercer os direitos". Proposed term: dalicc:applyTechnicalProtectionMeasures,
+    tecnológica que restrinja a possibilidade do destinatário exercer os direitos". Proposed term: dalicc:applyTechnicalProtectionMeasures,
     an odrl:Action to be used as an odrl:Prohibition. Not modelled, because bending an existing term would
     be worse than the gap.'
   action: none
@@ -169,8 +170,8 @@ findings:
 - rubric: 8
   severity: gap
   field: record
-  description: 'Moral rights have no vocabulary term. Section 4 closes with "Nada nesta Licenca podera
-    afetar quaisquer dos direitos morais assegurados ao Autor ou ao Artista pela Legislacao Aplicavel",
+  description: 'Moral rights have no vocabulary term. Section 4 closes with "Nada nesta Licença poderá
+    afetar quaisquer dos direitos morais assegurados ao Autor ou ao Artista pela Legislação Aplicável",
     naming the right to object to mutilation or deformation, and Section 7(c) preserves the author''s
     right of withdrawal (direito moral de retirada de circulacao). Proposed terms: dalicc:moralRightsRestriction
     for a clause that binds the licensee and dalicc:moralRightsNonAssertion for one in which the licensor
@@ -213,8 +214,8 @@ findings:
     text settles it, which the rubric 2 finding of this review read off the legal code: the last sentence
     of Section 3 waives the sui generis right of Chapter III of Decreto-Lei 122/2000, which implements
     Directive 96/9/EC in Portuguese law, where the Licensor "declara expressamente renunciar a esses direitos",
-    and the definition of Trabalho in Section 1 names "uma base de dados que, pela selecao ou disposicao
-    do respetivo conteudo, constitua uma criacao intelectual" among the licensed subject matter, and Section
+    and the definition of Trabalho in Section 1 names "uma base de dados que, pela seleção ou disposição
+    do respetivo conteúdo, constitua uma criação intelectual" among the licensed subject matter, and Section
     4(e) adds that the restrictions do not apply to the parts of the Work protected only by that database
     maker''s right. Exercising that right is therefore permitted by this licence and dalicc:suiGenerisDatabaseRights
     is now a permission of the record. It carries no duty, which is where the 3.0 ports part company with
@@ -226,6 +227,15 @@ findings:
   action: applied
   change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
     \ ] ;"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "A presente Licença e os direitos concedidos
+    pela mesma cessarão automaticamente em caso de qualquer violação dos termos desta Licença pelo Utilizador."
+    The licence ends automatically on a breach and this version of the text has no reinstatement clause,
+    so dalicc:terminatesOnBreach is true and no dalicc:curePeriod is written, as on the unported record
+    of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Portugal (PT)'
 port_of: CC-BY-NC-ND-4.0
 variant_kind: jurisdiction-port

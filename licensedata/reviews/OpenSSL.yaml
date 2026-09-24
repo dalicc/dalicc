@@ -99,7 +99,7 @@ findings:
   field: record
   description: 'Read against licensedata/licenses/Apache-1.0.ttl, which this addition also creates, the clause structure
     is the same and the two records differ in one statement: OpenSSL prohibits dalicc:ChangeLicense because its text
-    says the terms cannot be changed. scripts/review/family_rules.py counted that as a violation of rule 15 until it gained an
+    says the terms cannot be changed. the library conventions (see the review method, docs/LICENSE_REVIEW.md section 9) counted that as a violation of rule 15 until it gained an
     exception list for the two texts that bar relicensing outright, which this record is on.'
   action: applied
 family: Permissive variants

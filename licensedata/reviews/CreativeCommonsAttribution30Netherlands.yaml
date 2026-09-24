@@ -24,7 +24,7 @@ findings:
   description: The SPDX licence list defines CC-BY-3.0-NL, named Creative Commons Attribution 3.0 Netherlands,
     with the see-also URL https://creativecommons.org/licenses/by/3.0/nl/legalcode, which is exactly the
     cc:legalcode of this record. It is the only identifier SPDX defines for any of the forty two records
-    of this batch. Added.
+    of this review group. Added.
   action: applied
   change: spdx:licenseId "CC-BY-3.0-NL" ;
 - rubric: 2
@@ -61,10 +61,11 @@ findings:
   description: 'The licence forbids sublicensing and the record does not say so: article 4(a): "Het is
     de Gebruiker niet toegestaan om het Werk in sublicentie te geven.". The vocabulary already has dalicc:sublicense,
     but no record in the library uses it and its skos:note says so, and the same sentence stands in every
-    Creative Commons 2.0 and 3.0 record, so adding it to this batch alone would split the compatibility
+    Creative Commons 2.0 and 3.0 record, so adding it to this review group alone would split the compatibility
     behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
     note. Not applied for that reason.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -139,7 +140,7 @@ findings:
     the rights granted in article 3 be exercised with regard to the moral right of the Maker, and of the
     performer, to object to any distortion, mutilation or other impairment of the work that could harm
     their honour, name or standing, where the law does not allow that right to be waived. It restricts
-    the licensee and is the most concrete moral-rights clause of the batch. Proposed terms: dalicc:moralRightsRestriction
+    the licensee and is the most concrete moral-rights clause of the review group. Proposed terms: dalicc:moralRightsRestriction
     for a clause that binds the licensee and dalicc:moralRightsNonAssertion for one in which the licensor
     undertakes not to assert.'
   action: none
@@ -205,6 +206,15 @@ findings:
   action: applied
   change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
     \ ] ;"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Deze Licentie en de daarin verleende rechten
+    vervallen automatisch op het moment dat de Gebruiker in strijd handelt met de voorwaarden van deze
+    Licentie." The licence ends automatically on a breach and this version of the text has no reinstatement
+    clause, so dalicc:terminatesOnBreach is true and no dalicc:curePeriod is written, as on the unported
+    record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Netherlands (NL)'
 port_of: CC-BY-4.0
 variant_kind: jurisdiction-port

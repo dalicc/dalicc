@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionSharealike30Philippines a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Philippines ;
     cc:legalcode <https://creativecommons.org/licenses/by-sa/3.0/ph/legalcode> ;
     dalicc:LiabilityLimitation """EXCEPT TO THE EXTENT REQUIRED BY APPLICABLE LAW, IN NO EVENT WILL LICENSOR BE LIABLE TO YOU ON ANY LEGAL THEORY FOR ANY ACTUAL OR COMPENSATORY, INCIDENTAL, MORAL, NOMINAL, TEMPERATE OR MODERATE, LIQUIDATED, EXEMPLARY OR CORRECTIVE DAMAGES ARISING OUT OF THIS LICENSE OR THE USE OF THE WORK, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
@@ -26,6 +27,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Philippines a odrl:Set ;
     dalicc:WarrantyDisclaimer """UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, LICENSOR OFFERS THE WORK AS-IS AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE WORK, EXPRESS, IMPLIED, STATUTORY OR OTHERWISE, INCLUDING, WITHOUT LIMITATION, WARRANTIES OF TITLE, MERCHANTIBILITY, FITNESS FOR A PARTICULAR PURPOSE, NONINFRINGEMENT, OR THE ABSENCE OF LATENT OR OTHER DEFECTS, ACCURACY, OR THE PRESENCE OF ABSENCE OF ERRORS, WHETHER OR NOT DISCOVERABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO SUCH EXCLUSION MAY NOT APPLY TO YOU.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -44,7 +46,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Philippines a odrl:Set ;
         "Creative Commons BY-SA 3.0",
         "Creative Commons BY-SA 3.0 PH" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-sa/3.0/ph/> ;
     dct:title "Creative Commons Attribution-ShareAlike 3.0 Philippines"@en ;

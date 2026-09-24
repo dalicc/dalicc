@@ -19,6 +19,7 @@
 
 dalicclib:MPL-2.0-no-copyleft-exception a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "MPL-2.0-no-copyleft-exception" ;
     cc:attributionName "Mozilla Foundation" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -36,8 +37,8 @@ dalicclib:MPL-2.0-no-copyleft-exception a odrl:Set ;
     dct:alternative "MPL 2.0 no copyleft exception",
         "MPL-2.0-no-copyleft-exception",
         "Mozilla Public License 2.0 (no copyleft exception)" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Mozilla Foundation" ;
     dct:source <https://spdx.org/licenses/MPL-2.0-no-copyleft-exception.html> ;
     dct:title "Mozilla Public License 2.0 (no copyleft exception)"@en ;

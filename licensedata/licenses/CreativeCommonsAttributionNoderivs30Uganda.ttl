@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionNoderivs30Uganda a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Uganda ;
     cc:legalcode <https://creativecommons.org/licenses/by-nd/3.0/ug/legalcode> ;
     dalicc:LiabilityLimitation """EXCEPT TO THE EXTENT REQUIRED BY THE APPLICABLE LAW, IN
@@ -33,6 +34,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Uganda a odrl:Set ;
  APPLICABLE LAW, THE LICENSOR OFFERS THE WORK AS-IS.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-ND-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -51,7 +53,7 @@ dalicclib:CreativeCommonsAttributionNoderivs30Uganda a odrl:Set ;
         "Creative Commons BY-ND 3.0",
         "Creative Commons BY-ND 3.0 UG" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nd/3.0/ug/> ;
     dct:title "Creative Commons Attribution-NoDerivatives 3.0 Uganda"@en ;
@@ -78,7 +80,8 @@ dalicclib:CreativeCommonsAttributionNoderivs30Uganda a odrl:Set ;
         [ a odrl:Prohibition ;
             odrl:action dalicc:promote ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ] ;
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "The User may not sublicense the Work." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/ug.png> ;

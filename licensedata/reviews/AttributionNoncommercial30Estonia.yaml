@@ -26,12 +26,12 @@ findings:
   description: 'The record targeted dalicc:CreativeWork only, while the 4.0 International parent CC-BY-NC-4.0
     targets dalicc:CreativeWork and dcmitype:Dataset. This port licenses database rights in its own words,
     so the asset type is text supported rather than merely plausible. The Estonian port is explicit twice
-    over. Section 1 counts a database inside the licensed work: "Litsentsi tahenduses on Teoseks ka Teose
+    over. Section 1 counts a database inside the licensed work: "Litsentsi tähenduses on Teoseks ka Teose
     esitus, fonogramm, raadio- ja televisioonisaade, filmi esmasalvestus ja andmebaas selles ulatuses,
-    millises see on kaitstud Eesti autorioiguse seadusega." Section 3 then disposes of the sui generis
-    right: "Kui Litsentsiandja omab Eesti autorioiguse seaduse kohaselt, millega on Eesti oiguskorda ule
-    voetud Euroopa Parlamendi ja noukogu direktiiv 96/9/EU, 11. marts 1996, andmebaaside oiguskaitse kohta,
-    sui generis andmebaasi tegija oigusi, loobub Litsentsiandja kaesolevaga sellistest oigustest." Section
+    millises see on kaitstud Eesti autoriõiguse seadusega." Section 3 then disposes of the sui generis
+    right: "Kui Litsentsiandja omab Eesti autoriõiguse seaduse kohaselt, millega on Eesti õiguskorda üle
+    võetud Euroopa Parlamendi ja nõukogu direktiiv 96/9/EÜ, 11. märts 1996, andmebaaside õiguskaitse kohta,
+    sui generis andmebaasi tegija õigusi, loobub Litsentsiandja käesolevaga sellistest õigustest." Section
     4(e) adds that the restrictions of 4(a) to 4(d) do not apply to those database maker rights so far
     as Estonian law allows them to be limited. Added dcmitype:Dataset.'
   action: applied
@@ -42,22 +42,22 @@ findings:
 - rubric: 3
   severity: info
   field: odrl:permission
-  description: 'Every modelled permission is supported by the grant. Section 3 grants "ulemaailmse, tasuta,
-    tahtajatu (autorioiguse ja autorioigusega kaasnevate oiguste kaitse kehtivuse tahtaja piirides) lihtlitsentsi",
+  description: 'Every modelled permission is supported by the grant. Section 3 grants "ülemaailmse, tasuta,
+    tähtajatu (autoriõiguse ja autoriõigusega kaasnevate õiguste kaitse kehtivuse tähtaja piirides) lihtlitsentsi",
     a worldwide, free, perpetual non exclusive licence for the term of copyright and neighbouring rights.
     It covers reproduction, incorporation into collections, and distribution and public performance of
     the work including as incorporated in collections, and the creation and reproduction of derivative
     works and their distribution and public performance (section 3.b and 3.d). The record models this
     as odrl:reproduce, odrl:distribute, odrl:display, odrl:present, odrl:derive and cc:DerivativeWorks,
     plus odrl:modify and dalicc:ModifiedWorks, which rest on the technical modification sentence of the
-    grant: Section 3: "Eelnimetatud oigused holmavad oigust teha selliseid muudatusi, mis on tehniliselt
-    vajalikud teostamaks oigusi muudes meediumites ja formaatides."'
+    grant: Section 3: "Eelnimetatud õigused hõlmavad õigust teha selliseid muudatusi, mis on tehniliselt
+    vajalikud teostamaks õigusi muudes meediumites ja formaatides."'
   action: none
 - rubric: 3
   severity: minor
   field: odrl:permission
   description: 'The record permits dalicc:chargeDistributionFee while prohibiting cc:CommercialUse. Section
-    4(c): "Te ei voi punktis 3 antud oigusi teostada viisil, mille peamiseks eesmargiks on rahalise voi
+    4(c): "Te ei või punktis 3 antud õigusi teostada viisil, mille peamiseks eesmärgiks on rahalise või
     muu majandusliku kasu saamine", with the file sharing carve out that follows it, which in the Estonian
     port additionally requires the file sharing to be lawful. The vocabulary defines dalicc:chargeDistributionFee
     as a fee covering the act of providing the work to a third party, so a pure cost recovery fee is arguable
@@ -75,21 +75,22 @@ findings:
   description: 'The licence forbids sublicensing and the record does not say so. Section 4(a): "Te ei
     tohi Teost all-litsentsida." The vocabulary already has dalicc:sublicense, but no record in the library
     uses it and its skos:note says so, and the same sentence stands in every Creative Commons 2.0 and
-    3.0 record, so adding it to this batch alone would split the compatibility behaviour of one family.
+    3.0 record, so adding it to this review group alone would split the compatibility behaviour of one family.
     Proposed as one library wide correction, together with an update of the vocabulary note.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: |-
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:sublicense ] ;
 - rubric: 4
   severity: info
   field: odrl:prohibition
-  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: Section 4(a): "Te ei voi
-    kehtestada Teosele tingimusi, mis kitsendavad Litsentsi tingimusi voi Teose saaja voimet teostada
-    Litsentsi alusel Teosele saadud oigusi." dalicc:promote is prohibited, which rests on section 4(d)
-    itself, which is the 3.0 no endorsement clause: "Te ei voi seelabi vihjamisi ega selgesonaliselt viidata
-    mis tahes seosele Teie voi Teie poolt Teose kasutamise ning vastavalt Algse Autori, Litsentsiandja
-    ja/voi Viidatud isikute vahel ega viimaste toetusele, ilma nende eelneva selgelt valjendatud kirjaliku
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: Section 4(a): "Te ei või
+    kehtestada Teosele tingimusi, mis kitsendavad Litsentsi tingimusi või Teose saaja võimet teostada
+    Litsentsi alusel Teosele saadud õigusi." dalicc:promote is prohibited, which rests on section 4(d)
+    itself, which is the 3.0 no endorsement clause: "Te ei või seeläbi vihjamisi ega selgesõnaliselt viidata
+    mis tahes seosele Teie või Teie poolt Teose kasutamise ning vastavalt Algse Autori, Litsentsiandja
+    ja/või Viidatud isikute vahel ega viimaste toetusele, ilma nende eelneva selgelt väljendatud kirjaliku
     loata." Version 3.0 therefore supports dalicc:promote in the licence body, which version 2.0 does
     not. cc:CommercialUse is prohibited, which the NonCommercial element of this set states directly.'
   action: none
@@ -153,9 +154,9 @@ findings:
   severity: gap
   field: odrl:prohibition
   description: 'The licence forbids technological protection measures and the vocabulary has no term for
-    it. Section 4(a): "Teose levitamisel voi avalikul esitamisel ei voi Te lisada Teosele mis tahes tehnilisi
-    kaitsemeetmeid, mis kitsendavad Teilt Teose saaja voimet teostada Litsentsi alusel Teosele saadud
-    oigusi." Proposed term: dalicc:applyTechnicalProtectionMeasures, an odrl:Action to be used as an odrl:Prohibition.
+    it. Section 4(a): "Teose levitamisel või avalikul esitamisel ei või Te lisada Teosele mis tahes tehnilisi
+    kaitsemeetmeid, mis kitsendavad Teilt Teose saaja võimet teostada Litsentsi alusel Teosele saadud
+    õigusi." Proposed term: dalicc:applyTechnicalProtectionMeasures, an odrl:Action to be used as an odrl:Prohibition.
     Not modelled, because bending an existing term would be worse than the gap.'
   action: none
 - rubric: 8
@@ -172,10 +173,10 @@ findings:
   severity: gap
   field: record
   description: 'Section 4 closes by licensing the licensor''s own personal rights, which no other port
-    in this batch does: "Kaesolevaga antakse Litsentsiandja isiklike oiguste osas nii laiaulatuslik litsents,
-    kui see on lubatud kohaldatava siseriikliku oiguse kohaselt, et voimaldada Teil moistlikult kasutada
-    Teile kaesoleva Litsentsi punktis 3 antud oigusi. Kaesolevaga ei anta Teile Litsentsiandja isiklike
-    oiguste suhtes litsentsi muuks otstarbeks." It binds the licensor rather than restricting the licensee,
+    in this review group does: "Käesolevaga antakse Litsentsiandja isiklike õiguste osas nii laiaulatuslik litsents,
+    kui see on lubatud kohaldatava siseriikliku õiguse kohaselt, et võimaldada Teil mõistlikult kasutada
+    Teile käesoleva Litsentsi punktis 3 antud õigusi. Käesolevaga ei anta Teile Litsentsiandja isiklike
+    õiguste suhtes litsentsi muuks otstarbeks." It binds the licensor rather than restricting the licensee,
     as the Korean and Japanese ports do, but it goes further than they do by granting a licence instead
     of a covenant not to assert. Not expressible with the present vocabulary. Proposed terms: dalicc:moralRightsRestriction
     for the ports that bind the licensee and dalicc:moralRightsNonAssertion for the ports that bind the
@@ -227,12 +228,12 @@ findings:
   field: odrl:permission
   description: 'The record said nothing about the sui generis database right although the port''s own
     text settles it, which the rubric 2 finding of this review read off the legal code: Section 1 counts
-    a database inside the licensed work, "Litsentsi tahenduses on Teoseks ka Teose esitus, fonogramm,
+    a database inside the licensed work, "Litsentsi tähenduses on Teoseks ka Teose esitus, fonogramm,
     raadio- ja televisioonisaade, filmi esmasalvestus ja andmebaas selles ulatuses, millises see on kaitstud
-    Eesti autorioiguse seadusega.", and Section 3 disposes of the sui generis right, "Kui Litsentsiandja
-    omab Eesti autorioiguse seaduse kohaselt, millega on Eesti oiguskorda ule voetud Euroopa Parlamendi
-    ja noukogu direktiiv 96/9/EU, 11. marts 1996, andmebaaside oiguskaitse kohta, sui generis andmebaasi
-    tegija oigusi, loobub Litsentsiandja kaesolevaga sellistest oigustest.", and Section 4(e) adds that
+    Eesti autoriõiguse seadusega.", and Section 3 disposes of the sui generis right, "Kui Litsentsiandja
+    omab Eesti autoriõiguse seaduse kohaselt, millega on Eesti õiguskorda üle võetud Euroopa Parlamendi
+    ja nõukogu direktiiv 96/9/EÜ, 11. märts 1996, andmebaaside õiguskaitse kohta, sui generis andmebaasi
+    tegija õigusi, loobub Litsentsiandja käesolevaga sellistest õigustest.", and Section 4(e) adds that
     the restrictions of 4(a) to 4(d) do not apply to those database maker rights so far as Estonian law
     allows them to be limited. Exercising that right is therefore permitted by this licence and dalicc:suiGenerisDatabaseRights
     is now a permission of the record. It carries no duty, which is where the 3.0 ports part company with
@@ -244,6 +245,14 @@ findings:
   action: applied
   change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
     \ ] ;"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Litsents ja selle alusel antud õigused lõpevad
+    automaatselt Litsentsi tingimuse mis tahes rikkumise korral Teie poolt." The licence ends automatically
+    on a breach and this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach
+    is true and no dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Estonia (EE)'
 port_of: CC-BY-NC-4.0
 variant_kind: jurisdiction-port

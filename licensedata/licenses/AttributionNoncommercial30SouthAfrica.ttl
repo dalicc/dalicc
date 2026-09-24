@@ -19,6 +19,7 @@
 
 dalicclib:AttributionNoncommercial30SouthAfrica a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:SouthAfrica ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc/3.0/za/legalcode> ;
     dalicc:LiabilityLimitation """TO THE EXTENT PERMISSIBLE BY LAW, YOU AGREE THAT THE LICENSOR SHALL NOT BE LIABLE TO YOU FOR ANY LOSS OR DAMAGES ARISING OUT OF THIS LICENCE OR THE USE OF THE WORK, ON ANY BASIS WHATSOEVER (INCLUDING, WITHOUT LIMITATION, CONTRACT, DELICT (INCLUDING NEGLIGENCE), INTELLECTUAL PROPERTY RIGHTS INFRINGEMENT OR STATUTORY CLAIMS), EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
@@ -26,6 +27,7 @@ dalicclib:AttributionNoncommercial30SouthAfrica a odrl:Set ;
     dalicc:WarrantyDisclaimer """UNLESS OTHERWISE MUTUALLY AGREED TO BY THE PARTIES IN WRITING, LICENSOR OFFERS THE WORK "AS IS" (VOETSTOOTS) AND MAKES NO REPRESENTATIONS OR WARRANTIES OF ANY KIND CONCERNING THE WORK, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE. THIS INCLUDES, WITHOUT LIMITATION, REPRESENTATIONS AND WARRANTIES AS TO ACCURACY OR FITNESS FOR A PARTICULAR PURPOSE, OR THE PRESENCE OR ABSENCE OF ERRORS, WHETHER OR NOT DISCOVERABLE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO THIS EXCLUSION MAY NOT APPLY TO YOU.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -44,7 +46,7 @@ dalicclib:AttributionNoncommercial30SouthAfrica a odrl:Set ;
         "Creative Commons BY-NC 3.0",
         "Creative Commons BY-NC 3.0 ZA" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc/3.0/za/> ;
     dct:title "Creative Commons Attribution-NonCommercial 3.0 South Africa"@en ;
@@ -83,13 +85,15 @@ dalicclib:AttributionNoncommercial30SouthAfrica a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action cc:CommercialUse ],
+            odrl:action cc:CommercialUse ;
+            dalicc:evidence "You must not exercise any of the rights granted to You in Clause 3 above for any Commercial purpose." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:promote ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ] ;
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "You may not sublicense the Work. Instead, the rights provided under this Licence are granted directly to the recipients of the Work by Clause 8." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/za.png> ;

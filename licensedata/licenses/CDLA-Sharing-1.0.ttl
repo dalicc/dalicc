@@ -19,6 +19,7 @@
 
 dalicclib:CDLA-Sharing-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CDLA-Sharing-1.0" ;
     cc:attributionName "The Linux Foundation" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -35,8 +36,8 @@ dalicclib:CDLA-Sharing-1.0 a odrl:Set ;
     dct:alternative "CDLA Sharing 1.0",
         "CDLA-Sharing-1.0",
         "Community Data License Agreement - Sharing - Version 1.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "The Linux Foundation" ;
     dct:source <https://spdx.org/licenses/CDLA-Sharing-1.0.html> ;
     dct:title "Community Data License Agreement Sharing 1.0"@en ;
@@ -81,7 +82,8 @@ dalicclib:CDLA-Sharing-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:suiGenerisDatabaseRights ],
+            odrl:action dalicc:suiGenerisDatabaseRights ;
+            dalicc:evidence "2.2 To the extent that the Data or the coordination, selection or arrangement of Data is protected or protectable under copyright, Sui Generis Database Rights, or other law, Data Provider(s) further agree(s) that such Data or coordination, selection or arrangement is hereby licensed to You and to anyone else who Receives Data under this Agreement for Use and Publication, subject to the conditions set forth in Section 3 of this Agreement." ],
         [ a odrl:Permission ;
             odrl:action dalicc:moralRightsNonAssertion ],
         [ a odrl:Permission ;

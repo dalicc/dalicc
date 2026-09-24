@@ -41,10 +41,9 @@ findings:
     cc:ShareAlike hangs off the odrl:Set, not off the individual acts. This mirrors the
     existing MozillaPublicLicenseVersion20 record exactly, because the two records model the
     same text and must give the same compatibility answers. Note that the CDDL and MPL 1.x
-    records in this batch attach the same file-level reciprocity to odrl:distribute,
+    records in this review group attach the same file-level reciprocity to odrl:distribute,
     odrl:modify and odrl:derive instead, following their own parent record; the library
-    therefore carries two shapes for one concept, which is reported for the consolidation
-    pass.
+    therefore carries two shapes for one concept, which is reported for the consolidation.
   action: applied
 - rubric: 6
   severity: major

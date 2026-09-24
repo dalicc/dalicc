@@ -19,6 +19,7 @@
 
 dalicclib:JSON a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "JSON" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.json.org/license.html> ;
@@ -31,8 +32,8 @@ dalicclib:JSON a odrl:Set ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/JSON/versions> ;
     dct:alternative "JSON",
         "JSON License" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "JSON.org" ;
     dct:source <https://spdx.org/licenses/JSON.html> ;
     dct:title "JSON License"@en ;
@@ -75,6 +76,10 @@ dalicclib:JSON a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

@@ -1,0 +1,73 @@
+id: ECL-1.0
+title: Educational Community License v1.0
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'The statement is marked as a library convention, family rule 15: Permissive records permit
+      relicensing: the text does not state it in as many words. Its duty dalicc:compliantLicense is
+      marked as a library convention, family rule 15: Permissive records permit relicensing.'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice,
+      dalicc:rename]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice,
+      dalicc:rename]
+    reason: Its duty cc:Notice quotes "Permission to use, copy, modify, merge, publish, distribute,
+      and sublicense this Original Work and its documentation, with or without modification, for any
+      purpose, and without fee or royalty to the copyright holder(s) is hereby granted, provided that
+      you include the following on ALL copies of the Original Work or portions thereof, including
+      modifications or derivatives, that you make:"
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice]
+    reason: Its duty cc:Notice quotes "Permission to use, copy, modify, merge, publish, distribute,
+      and sublicense this Original Work and its documentation, with or without modification, for any
+      purpose, and without fee or royalty to the copyright holder(s) is hereby granted, provided that
+      you include the following on ALL copies of the Original Work or portions thereof, including
+      modifications or derivatives, that you make:"
+    source: manual
+  - action: changed
+    statement: permission odrl:grantUse
+    previous: permission odrl:grantUse
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Permission to
+      use, copy, modify, merge, publish, distribute, and sublicense this Original Work and its documentation,
+      with or without modification, for any purpose, and without fee or royalty to the copyright holder(s)
+      is hereby granted, provided that you include the following on ALL copies of the Original Work
+      or portions thereof, including modifications or derivatives, that you make:"'
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice,
+      dalicc:rename]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice,
+      dalicc:rename]
+    reason: Its duty cc:Notice quotes "Permission to use, copy, modify, merge, publish, distribute,
+      and sublicense this Original Work and its documentation, with or without modification, for any
+      purpose, and without fee or royalty to the copyright holder(s) is hereby granted, provided that
+      you include the following on ALL copies of the Original Work or portions thereof, including
+      modifications or derivatives, that you make:"
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "The name and
+      trademarks of copyright holder(s) may NOT be used in advertising or publicity pertaining to
+      the Original or Derivative Works without specific, written prior permission."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

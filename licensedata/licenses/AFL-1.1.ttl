@@ -19,6 +19,7 @@
 
 dalicclib:AFL-1.1 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "AFL-1.1" ;
     cc:attributionName "Lawrence E. Rosen" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -35,8 +36,8 @@ dalicclib:AFL-1.1 a odrl:Set ;
     dct:alternative "AFL 1.1",
         "AFL-1.1",
         "Academic Free License v1.1" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Lawrence Rosen" ;
     dct:source <https://spdx.org/licenses/AFL-1.1.html> ;
     dct:title "Academic Free License v1.1"@en ;
@@ -47,7 +48,8 @@ dalicclib:AFL-1.1 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "Redistributions of the Original Work must reproduce all copyright notices in the Original Work as furnished by the Licensor, both in the Original Work itself and in any documentation and/or other materials provided with the distribution of the Original Work in executable form." ],
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
@@ -59,13 +61,15 @@ dalicclib:AFL-1.1 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "Redistributions of the Original Work must reproduce all copyright notices in the Original Work as furnished by the Licensor, both in the Original Work itself and in any documentation and/or other materials provided with the distribution of the Original Work in executable form." ],
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "Redistributions of the Original Work must reproduce all copyright notices in the Original Work as furnished by the Licensor, both in the Original Work itself and in any documentation and/or other materials provided with the distribution of the Original Work in executable form." ],
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ] ],
         [ a odrl:Permission ;
@@ -75,7 +79,8 @@ dalicclib:AFL-1.1 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:chargeLicenseFee ],
+            odrl:action dalicc:chargeLicenseFee ;
+            dalicc:evidence "Licensor hereby grants to any person obtaining a copy of the Original Work (\"You\") a world-wide, royalty-free, non-exclusive, perpetual, non-sublicenseable license" ],
         [ a odrl:Permission ;
             odrl:action dalicc:patentGrant ] ;
     odrl:prohibition [ a odrl:Prohibition ;

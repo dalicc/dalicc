@@ -62,7 +62,7 @@ findings:
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 5 finding 7: the record made no patent statement although section
+    its new siblings and versioned. The review''s finding on family consistency: the record made no patent statement although section
     2 grants one and 12.1(c) is a retaliation clause, it prohibited dalicc:addStatement without support,
     it modelled no reciprocity although 2.2(c) requires the Source Code of Externally Deployed Modifications
     to be ''released under the terms set forth in this License'', and dalicc:WarrantyDisclaimer held section

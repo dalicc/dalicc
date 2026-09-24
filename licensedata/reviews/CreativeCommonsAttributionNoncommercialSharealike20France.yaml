@@ -27,7 +27,7 @@ findings:
   description: The SPDX licence list defines CC-BY-NC-SA-2.0-FR, with the name "Creative Commons Attribution-NonCommercial-ShareAlike
     2.0 France" and the see also URL https://creativecommons.org/licenses/by-nc-sa/2.0/fr/legalcode, which
     is exactly this record's cc:legalcode. It is the only identifier the SPDX list has for any of the
-    thirty six records of this batch. Added.
+    thirty six records of this review group. Added.
   action: applied
   change: spdx:licenseId "CC-BY-NC-SA-2.0-FR" ;
 - rubric: 2
@@ -81,10 +81,11 @@ findings:
     ne peut pas ceder de droits sur l''Oeuvre." The French port renders the no sublicensing sentence of
     the unported text as a prohibition on transferring rights in the work. The vocabulary already has
     dalicc:sublicense, but no record in the library uses it and its skos:note says so, and the same sentence
-    stands in every Creative Commons 2.0 and 3.0 record, so adding it to this batch alone would split
+    stands in every Creative Commons 2.0 and 3.0 record, so adding it to this review group alone would split
     the compatibility behaviour of one family. Proposed as one library wide correction, together with
     an update of the vocabulary note.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: |-
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:sublicense ] ;
@@ -227,6 +228,15 @@ findings:
     only what the text states. Removed on 2026-09-23; see section 13 of docs/LICENSE_REVIEW.md.
   action: applied
   change: "# removed\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:promote ] ;\n"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Tout manquement aux termes du contrat par
+    l''Acceptant entraîne la résiliation automatique du Contrat et la fin des droits qui en découlent."
+    The licence ends automatically on a breach and this version of the text has no reinstatement clause,
+    so dalicc:terminatesOnBreach is true and no dalicc:curePeriod is written, as on the unported record
+    of the same version.'
+  action: applied
 family: 'Creative Commons 2.0 port: France (FR)'
 port_of: CC-BY-NC-SA-4.0
 variant_kind: jurisdiction-port

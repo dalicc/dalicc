@@ -19,6 +19,7 @@
 
 dalicclib:bzip2-1.0.6 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "bzip2-1.0.6" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://spdx.org/licenses/bzip2-1.0.6.html> ;
@@ -32,8 +33,8 @@ dalicclib:bzip2-1.0.6 a odrl:Set ;
     dct:alternative "bzip2",
         "bzip2 and libbzip2 License v1.0.6",
         "bzip2-1.0.6" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://spdx.org/licenses/bzip2-1.0.6.html> ;
     dct:title "bzip2 and libbzip2 License v1.0.6"@en ;
     odrl:permission [ a odrl:Permission ;
@@ -79,8 +80,13 @@ dalicclib:bzip2-1.0.6 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "The name of the author may not be used to endorse or promote products derived from this software without specific prior written permission." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

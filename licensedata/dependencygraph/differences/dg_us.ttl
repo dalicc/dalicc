@@ -1,0 +1,47 @@
+# United States default rules
+#
+# NOTHING IN THIS FILE IS LEGAL ADVICE. Each rule names the statute or the principle it
+# rests on so that a reader can check it, explains in plain words what it does, and is a
+# proposal for the association's legal reviewer, who decides whether it is adopted. What a
+# licence means is decided by its text, and what the law of a country requires is decided
+# by that country's courts.
+#
+# This difference adds default rules only. It removes no axiom of the core graph and
+# replaces none of its rules, because no source known to the reviewer says that the law
+# here departs from them; differences/README.md shows how a removal and a replacement are
+# written.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<https://dalicc.net/dependencygraph/dg_us> dct:title "United States default rules"@en ;
+    dct:description """The DALICC deontic dependency graph with default rules for what a licence does not say, under the law of the United States: reverse engineering for interoperability and the first-sale doctrine. There is no general moral-rights rule and no mining rule, because the first reaches only works of visual art and the second is fair use decided case by case. The graph is complete: it holds the axioms and the adopted rule of the core graph beside its own rules, and it is built from the core graph and a difference file. Each rule names its legal basis and says in plain words what it does. The rules are proposals until the association's legal reviewer adopts them. Nothing in this graph is legal advice."""@en ;
+    dct:coverage dalicc:US ;
+    dalicc:basedOnGraph <https://dalicc.net/dependencygraph/dg_default> .
+
+# The default rules this graph adds.
+
+<https://dalicc.net/dependencygraph/rules/us-interop> a dalicc:DefaultRule ;
+    rdfs:label "Reverse engineering for interoperability is allowed unless the licence forbids it"@en ;
+    dalicc:appliesTo dalicc:reverseEngineerForInteroperability ;
+    dalicc:defaultOutcome dalicc:GrantedByDefault ;
+    dalicc:inJurisdiction dalicc:US ;
+    dalicc:ruleBasis "17 U.S.C. 1201(f), and Sega v. Accolade 977 F.2d 1510 (9th Cir. 1992) and Sony Computer Entertainment v. Connectix 203 F.3d 596 (9th Cir. 2000), under which intermediate copying to reach the unprotected elements needed for interoperability is fair use. Bowers v. Baystate Technologies 320 F.3d 1317 (Fed. Cir. 2003) enforced a contract term against reverse engineering, so the rule is not marked unwaivable" ;
+    dalicc:ruleExplanation "A licence that says nothing about reverse engineering for interoperability is read as allowing it. United States law exempts reverse engineering for interoperability from the anti-circumvention rules, and the Ninth Circuit has held the intermediate copying it needs to be fair use (Sega v Accolade; Sony v Connectix); other courts have enforced a contract term against reverse engineering (Bowers v Baystate), so no finding is reported when a licence forbids it. Combining a licence that is silent about it with one that prohibits it shows a conflict marked as coming from this rule."@en ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .
+
+<https://dalicc.net/dependencygraph/rules/us-exhaustion> a dalicc:DefaultRule ;
+    rdfs:label "A copy that was sold may be sold on"@en ;
+    dalicc:appliesTo dalicc:sellCopy ;
+    dalicc:defaultOutcome dalicc:GrantedByDefault ;
+    dalicc:inJurisdiction dalicc:US ;
+    dalicc:ruleBasis "17 U.S.C. 109(a): the owner of a lawfully made copy may sell or otherwise dispose of that copy without the authority of the copyright owner. Vernor v. Autodesk 621 F.3d 1102 (9th Cir. 2010): a person who receives a copy under a licence that reserves title and restricts transfer is a licensee, not an owner. Capitol Records v. ReDigi 910 F.3d 649 (2d Cir. 2018): the doctrine does not cover the resale of a digital file that requires a new copy to be made" ;
+    dalicc:ruleExplanation "A licence that says nothing about reselling a copy is read as allowing the owner of a lawfully made copy to sell that copy on. The first-sale doctrine of section 109(a) of the Copyright Act protects the owner of a copy, not a licensee: where a licence reserves title and restricts transfer, courts may find no sale took place (Vernor v Autodesk), and it does not cover resale of a digital file that requires a new copy to be made (Capitol Records v ReDigi). Combining a licence that is silent about it with one that prohibits it shows a conflict marked as coming from this rule."@en ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .

@@ -1,12 +1,21 @@
 id: OdcPublicDomainDedicationAndLicence
 title: ODC Public Domain Dedication and Licence (PDDL)
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 clause text and 1 identification detail and recorded
-    the review state.
+    the review state. Later changes brought it in line with its family and its text in the verification
+    of 2026-09-15, recorded which sentence of the text each statement rests on, recorded what the
+    text says about the database right, named the license the record itself is published under and
+    left endorsement to the default rule of the core dependency graph.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
   changes:
   - action: added
     statement: 'dalicc:additionalClauses "Licence of Copyright and Database Rights when Sections 3.1
@@ -37,12 +46,6 @@ entries:
       Commons Public Domain Dedication and License (PDDL) v1.0". The proposal file rated this medium;
       the version in the document confirms it. Added.
     source: review-finding 1/spdx:licenseId
-- version: 3
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Family rule 14 of scripts/review/family_rules.py: the warranty literal carried a padding
-    space inside its quotation marks.'
-  changes:
   - action: changed
     statement: dalicc:WarrantyDisclaimer "The Work is provided by the Rightsholder “as is” and without
       any warranty of any kind, either express or implied, whether of title, of accuracy or completeness,
@@ -52,5 +55,31 @@ entries:
       any warranty of any kind, either express or implied, whether of title, of accuracy or completeness,
       of the presence of absence of errors, of fitness for purpose, or otherwise. Some jurisdictions
       do not allow the exclusion of implied warranties, so this exclusion may not apply to You."
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Library convention 14: the warranty literal carried a padding space inside its quotation
+      marks.'
+    source: manual
+  - action: changed
+    statement: permission dalicc:ChangeLicense
+    previous: permission dalicc:ChangeLicense
+    reason: 'The statement is marked as a library convention, family rule 15: Permissive records permit
+      relicensing: the text does not state it in as many words.'
+    source: manual
+  - action: added
+    statement: permission dalicc:suiGenerisDatabaseRights
+    reason: Section 3.3(a), the licence that applies where the dedication and waiver of Sections 3.1
+      and 3.2 do not, grants the rights "for the duration of any applicable copyright and Database
+      Rights", and the licence defines Database Rights as the sui generis right of the Database Directive,
+      so the permission is text-supported.
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:promote
+    reason: No sentence was quoted for the prohibition. The text only says "This Document does not
+      cover any trade marks associated with the Database." (Section 2.2(c)), which is silence about
+      endorsement, and the default rule of the core dependency graph covers silence.
     source: manual

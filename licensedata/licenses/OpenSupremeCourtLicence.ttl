@@ -19,6 +19,7 @@
 
 dalicclib:OpenSupremeCourtLicence a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:attributionName "UK Supreme Court" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://www.nationalarchives.gov.uk/doc/open-supreme-court-licence/version/1/open-supreme-court-licence-version-1.0.pdf> ;
@@ -35,8 +36,8 @@ The Licensor is not liable for any errors or omissions in the Information and sh
         "Open Supreme Court Licence version 1.0",
         "UK Open Supreme Court Licence v1.0",
         "UK Open Supreme Court Licence version 1.0" ;
-    dct:hasVersion "4" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "The National Archives UK" ;
     dct:source <http://www.nationalarchives.gov.uk/doc/open-supreme-court-licence/version/1/open-supreme-court-licence-version-1.0.pdf> ;
     dct:title "Open Supreme Court Licence" ;
@@ -79,7 +80,11 @@ The Licensor is not liable for any errors or omissions in the Information and sh
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:promote ] ;
     odrl:target [ a odrl:AssetCollection ;

@@ -1,13 +1,20 @@
 id: CreativeCommonsAttribution20Austria
 title: Creative Commons Attribution 2.0 Austria
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, changed
     1 asset target, recorded the relation to the record this one was adapted from and recorded the
-    review state.
+    review state. Later changes left endorsement to the default rule of the core dependency graph,
+    recorded which sentence of the text each statement rests on, recorded when the license ends on
+    a breach and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
   changes:
   - action: added
     statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-4.0
@@ -54,18 +61,51 @@ entries:
       own words, so the asset type is text supported rather than merely plausible. Ziffer 1 counts
       a database among the objects of a related right: a "verwandtes Schutzrecht" is the right in
       a protected subject matter other than a work, "zum Beispiel einem nachgelassenen Werk, einem
-      Lichtbild, einer Datenbank, einem Schalltraeger, einer Rundfunksendung, einem Laufbild oder
-      einer Darbietung eines ausuebenden Kuenstlers", and the Schutzgegenstand offered under the licence
-      is the work, the collection or the object of such a related right. Ziffer 4 and Ziffer 7 name
-      "eine Datenbank" next to an adaptation and a collection. Added dcmitype:Dataset.'
+      Lichtbild, einer Datenbank, einem Schallträger, einer Rundfunksendung, einem Laufbild oder einer
+      Darbietung eines ausübenden Künstlers", and the Schutzgegenstand offered under the licence is
+      the work, the collection or the object of such a related right. Ziffer 4 and Ziffer 7 name "eine
+      Datenbank" next to an adaptation and a collection. Added dcmitype:Dataset.'
     source: review-finding 2/odrl:target
-- version: 3
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
-    now supplies it.
-  changes:
   - action: removed
     statement: prohibition dalicc:promote
-    reason: Edited by hand; see the summary of this entry.
+    reason: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
+      now supplies it.
+    source: manual
+  - action: changed
+    statement: permission dalicc:ModifiedWorks
+    previous: permission dalicc:ModifiedWorks
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Die genannte
+      Nutzungsbewilligung beinhaltet die Befugnis, solche Veränderungen an dem Werk vorzunehmen, die
+      technisch erforderlich sind, um die Nutzungsbewilligung für alle Nutzungsarten wahrzunehmen."'
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Die genannte
+      Nutzungsbewilligung beinhaltet die Befugnis, solche Veränderungen an dem Werk vorzunehmen, die
+      technisch erforderlich sind, um die Nutzungsbewilligung für alle Nutzungsarten wahrzunehmen."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:ChangeLicense
+    previous: prohibition dalicc:ChangeLicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Sie dürfen keine
+      Vertragsbedingungen anbieten oder fordern, die die Bedingungen dieser Lizenz oder die durch
+      sie gewährten Befugnisse ändern oder beschränken."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:sublicense
+    previous: prohibition dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Sie dürfen den
+      Schutzgegenstand nicht unterlizenzieren."'
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'The termination clause of this port reads: "Dieser Lizenzvertrag und die durch diesen
+      erteilten Befugnisse enden automatisch bei jeder Verletzung der Vertragsbedingungen durch Sie."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

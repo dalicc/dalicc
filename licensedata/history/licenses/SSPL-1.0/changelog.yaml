@@ -3,12 +3,109 @@ title: Server Side Public License, v 1
 current_version: 2
 entries:
 - version: 2
-  date: '2026-09-23'
+  date: '2026-09-24'
   reviewer: Giray Havur
-  summary: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
-    now supplies it.
+  summary: The changes since version 1 left endorsement to the default rule of the core dependency
+    graph, recorded which sentence of the text each statement rests on, corrected it against its text
+    on 2026-09-24 and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
   changes:
   - action: removed
     statement: prohibition dalicc:promote
-    reason: Edited by hand; see the summary of this entry.
+    reason: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
+      now supplies it.
+    source: manual
+  - action: changed
+    statement: duty cc:ShareAlike
+    previous: duty cc:ShareAlike
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You must license
+      the entire work, as a whole, under this License to anyone who comes into possession of a copy."'
+    source: manual
+  - action: changed
+    statement: permission cc:CommercialUse
+    previous: permission cc:CommercialUse
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may charge
+      any price or no price for each copy that you convey, and you may offer support or warranty protection
+      for a fee."'
+    source: manual
+  - action: changed
+    statement: permission dalicc:chargeDistributionFee
+    previous: permission dalicc:chargeDistributionFee
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may charge
+      any price or no price for each copy that you convey, and you may offer support or warranty protection
+      for a fee."'
+    source: manual
+  - action: changed
+    statement: permission dalicc:networkUseTrigger with duties [cc:SourceCode]
+    previous: permission dalicc:networkUseTrigger with duties [cc:SourceCode]
+    reason: Its duty cc:SourceCode quotes "If you make the functionality of the Program or a modified
+      version available to third parties as a service, you must make the Service Source Code available
+      via network download to everyone at no charge, under the terms of this License."
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
+    reason: Its duty cc:SourceCode quotes "If you make the functionality of the Program or a modified
+      version available to third parties as a service, you must make the Service Source Code available
+      via network download to everyone at no charge, under the terms of this License."
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may charge
+      any price or no price for each copy that you convey, and you may offer support or warranty protection
+      for a fee." Its duty cc:SourceCode quotes "If you make the functionality of the Program or a
+      modified version available to third parties as a service, you must make the Service Source Code
+      available via network download to everyone at no charge, under the terms of this License."'
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
+    reason: Its duty cc:SourceCode quotes "If you make the functionality of the Program or a modified
+      version available to third parties as a service, you must make the Service Source Code available
+      via network download to everyone at no charge, under the terms of this License."
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may charge
+      any price or no price for each copy that you convey, and you may offer support or warranty protection
+      for a fee."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:ChangeLicense
+    previous: prohibition dalicc:ChangeLicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "This License
+      gives no permission to license the work in any other way, but it does not invalidate such permission
+      if you have separately received it."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:addLimitation
+    previous: prohibition dalicc:addLimitation
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may not impose
+      any further restrictions on the exercise of the rights granted or affirmed under this License."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:sublicense
+    previous: prohibition dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Sublicensing
+      is not allowed; section 10 makes it unnecessary."'
+    source: manual
+  - action: changed
+    statement: dalicc:WarrantyOrLiabilityAcceptance "you may offer support or warranty protection
+      for a fee"
+    previous: dalicc:WarrantyOrLiabilityAcceptance "You may charge any price or no price for each
+      copy that you convey, and you may offer support or warranty protection for a fee."
+    reason: The first half of the Section 4 sentence, "You may charge any price or no price for each
+      copy that you convey", is the permission to charge for a copy, not a warranty clause.
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

@@ -1,0 +1,57 @@
+# India default rules
+#
+# NOTHING IN THIS FILE IS LEGAL ADVICE. Each rule names the statute or the principle it
+# rests on so that a reader can check it, explains in plain words what it does, and is a
+# proposal for the association's legal reviewer, who decides whether it is adopted. What a
+# licence means is decided by its text, and what the law of a country requires is decided
+# by that country's courts.
+#
+# This difference adds default rules only. It removes no axiom of the core graph and
+# replaces none of its rules, because no source known to the reviewer says that the law
+# here departs from them; differences/README.md shows how a removal and a replacement are
+# written.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<https://dalicc.net/dependencygraph/dg_in> dct:title "India default rules"@en ;
+    dct:description """The DALICC deontic dependency graph with default rules for what a licence does not say, under the law of India: the author's special rights, which survive an assignment, interoperability, which the Copyright Act allows expressly, and mining, for which its list of exceptions has no entry. The graph is complete: it holds the axioms and the adopted rule of the core graph beside its own rules, and it is built from the core graph and a difference file. Each rule names its legal basis and says in plain words what it does. The rules are proposals until the association's legal reviewer adopts them. Nothing in this graph is legal advice."""@en ;
+    dct:coverage dalicc:IN ;
+    dalicc:basedOnGraph <https://dalicc.net/dependencygraph/dg_default> .
+
+# The default rules this graph adds.
+
+<https://dalicc.net/dependencygraph/rules/in-moral> a dalicc:DefaultRule ;
+    rdfs:label "The author's special rights survive an assignment in India"@en ;
+    dalicc:appliesTo dalicc:moralRightsRestriction ;
+    dalicc:defaultOutcome dalicc:NotWaivable ;
+    dalicc:inJurisdiction dalicc:IN ;
+    dalicc:ruleBasis "Copyright Act 1957 section 57(1): the author keeps the right to claim authorship and to restrain, or claim damages for, a distortion, mutilation or modification of the work that would be prejudicial to his honour or reputation, even after the copyright has been assigned; the Act does not say whether these rights can be waived by contract" ;
+    dalicc:ruleExplanation "This rule adds nothing to a licence that says nothing about moral rights; it reports a finding when a licence permits the licensee to set aside the author's special rights. The Copyright Act 1957 of India lets the author claim authorship and restrain a distortion, mutilation or modification of the work that would be prejudicial to his honour or reputation, even after the copyright has been assigned. The Act does not say whether these rights can be waived by contract, and the finding flags that risk rather than a settled rule."@en ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .
+
+<https://dalicc.net/dependencygraph/rules/in-interop> a dalicc:DefaultRule ;
+    rdfs:label "Acts needed for interoperability are allowed unless the licence forbids them"@en ;
+    dalicc:appliesTo dalicc:reverseEngineerForInteroperability ;
+    dalicc:defaultOutcome dalicc:GrantedByDefault ;
+    dalicc:inJurisdiction dalicc:IN ;
+    dalicc:ruleBasis "Copyright Act 1957 section 52(1)(ab): a lawful possessor of a computer program may do any act necessary to obtain information essential for operating interoperability of an independently created program with other programs, provided the information is not otherwise readily available" ;
+    dalicc:ruleExplanation "A licence that says nothing about the acts needed for interoperability is read as allowing them. The Copyright Act 1957 of India states that a lawful possessor of a program does not infringe by doing what is necessary to obtain the information essential for an independently created program to operate with other programs, provided that information is not otherwise readily available. Combining a licence that is silent about it with one that prohibits it shows a conflict marked as coming from this rule."@en ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .
+
+<https://dalicc.net/dependencygraph/rules/in-tdm> a dalicc:DefaultRule ;
+    rdfs:label "Mining is not allowed unless the licence allows it"@en ;
+    dalicc:appliesTo dalicc:textAndDataMining ;
+    dalicc:defaultOutcome dalicc:NotGrantedByDefault ;
+    dalicc:inJurisdiction dalicc:IN ;
+    dalicc:ruleBasis "Copyright Act 1957 section 52 lists the acts that are not an infringement and names no general exception for text and data mining" ;
+    dalicc:ruleExplanation "A licence that says nothing about text and data mining is read as not allowing it. The Copyright Act 1957 of India lists the acts that are not an infringement and has no general entry for mining, so a mining act that reproduces a protected work needs a licence that grants it, unless a narrower exception such as fair dealing for private or personal use, including research (section 52(1)(a)(i)), applies to the facts. Combining a licence that is silent about it with one that permits it shows a conflict marked as coming from this rule."@en ;
+    dct:date "2026-09-23"^^xsd:date ;
+    dalicc:ruleStatus dalicc:Proposed .

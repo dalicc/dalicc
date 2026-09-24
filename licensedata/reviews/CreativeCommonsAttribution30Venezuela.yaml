@@ -26,14 +26,14 @@ findings:
   description: 'SPDX has no identifier for this port. The legal-code URL implies CC-BY-3.0-VE, which the
     SPDX licence list does not define: of the ported 3.0 licences SPDX knows only the Austrian, Australian,
     German, Dutch, United States and IGO ones. No identifier was invented, and none of the forty two records
-    in this batch carries one.'
+    in this review group carries one.'
   action: none
 - rubric: 2
   severity: minor
   field: odrl:target
   description: 'The record targets dalicc:CreativeWork only, while the 4.0 International parent CC-BY-4.0
     targets dalicc:CreativeWork and dcmitype:Dataset. This port has no sui generis database rights clause:
-    unlike the French and Polish ports in this batch it neither grants extraction and re-utilisation nor
+    unlike the French and Polish ports in this review group it neither grants extraction and re-utilisation nor
     waives the database producer right, so the case for dcmitype:Dataset rests only on the media neutrality
     of the grant, which runs to all media and formats now known or later devised. Aligning the ports with
     the parents is a single library wide decision covering every Creative Commons port, so it is left
@@ -45,7 +45,7 @@ findings:
   severity: info
   field: odrl:permission
   description: The grant supports the modelled permissions. "el Licenciante otorga al Licenciatario una
-    licencia universal, gratuita, no exclusiva, por tiempo indefinido (por la duracion aplicable de los
+    licencia universal, gratuita, no exclusiva, por tiempo indefinido (por la duración aplicable de los
     derechos de autor)" (section 3). The record models the grant as odrl:reproduce, odrl:distribute, odrl:display,
     odrl:present, odrl:derive, odrl:modify, cc:DerivativeWorks, and dalicc:ModifiedWorks for alterations
     short of a new derivative work.
@@ -56,10 +56,11 @@ findings:
   description: The licence forbids sublicensing and the record does not say so. "El Licenciatario no puede
     sublicenciar la Obra." (section 4(a)). The vocabulary already has dalicc:sublicense, but it is used
     by no record in the library and its skos:note says so, and the same sentence stands in every Creative
-    Commons 2.0 and 3.0 record, so adding it to this batch alone would split the compatibility behaviour
+    Commons 2.0 and 3.0 record, so adding it to this review group alone would split the compatibility behaviour
     of one family. Proposed as one library wide correction, together with an update of the vocabulary
     note.
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -124,9 +125,9 @@ findings:
   severity: gap
   field: odrl:prohibition
   description: 'The licence forbids technological protection measures and the vocabulary has no term for
-    it. The clause is in section 4(a): "el Licenciatario no podra imponer ninguna medida tecnologica efectiva
+    it. The clause is in section 4(a): "el Licenciatario no podrá imponer ninguna medida tecnológica efectiva
     que restrinja la capacidad de un beneficiario de la Obra de ejercer los derechos otorgados a dicho
-    beneficiario segun los terminos de esta Licencia". Proposed term: dalicc:applyTechnicalProtectionMeasures,
+    beneficiario según los términos de esta Licencia". Proposed term: dalicc:applyTechnicalProtectionMeasures,
     an odrl:Action to be used as an odrl:Prohibition. Not modelled, because bending an existing term would
     be worse than the gap.'
   action: none
@@ -154,7 +155,7 @@ findings:
   description: The royalty collection arrangements are not expressible either, and they are the clause
     that differs most between the ports of one version. Section 4(e) carries the same three schemes, but
     in this element set the licensor waives the waivable compulsory right and the voluntary collection
-    right ("El Licenciante renuncia el derecho a cobrar regalias") and reserves only the non waivable
+    right ("El Licenciante renuncia el derecho a cobrar regalías") and reserves only the non waivable
     one.
   action: none
 - rubric: 9
@@ -176,6 +177,15 @@ findings:
     the royalty collection arrangements. The compatibility checker cannot tell this record from the other
     records of the BY element set, across all three versions and every jurisdiction the library holds.'
   action: none
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "La presente Licencia y los derechos aquí concedidos
+    finalizarán automáticamente por el incumplimiento del Licenciatario de los términos de esta Licencia."
+    The licence ends automatically on a breach and this version of the text has no reinstatement clause,
+    so dalicc:terminatesOnBreach is true and no dalicc:curePeriod is written, as on the unported record
+    of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Venezuela (VE)'
 port_of: CC-BY-4.0
 variant_kind: jurisdiction-port

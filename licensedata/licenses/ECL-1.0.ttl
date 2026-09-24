@@ -19,6 +19,7 @@
 
 dalicclib:ECL-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "ECL-1.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://opensource.org/license/ECL-1.0> ;
@@ -35,8 +36,8 @@ dalicclib:ECL-1.0 a odrl:Set ;
         "ECL-1.0",
         "Educational Community License",
         "Educational Community License v1.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://opensource.org/license/ECL-1.0> ;
     dct:title "Educational Community License v1.0"@en ;
     odrl:permission [ a odrl:Permission ;
@@ -46,13 +47,15 @@ dalicclib:ECL-1.0 a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ] ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "Permission to use, copy, modify, merge, publish, distribute, and sublicense this Original Work and its documentation, with or without modification, for any purpose, and without fee or royalty to the copyright holder(s) is hereby granted, provided that you include the following on ALL copies of the Original Work or portions thereof, including modifications or derivatives, that you make:" ] ],
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "Permission to use, copy, modify, merge, publish, distribute, and sublicense this Original Work and its documentation, with or without modification, for any purpose, and without fee or royalty to the copyright holder(s) is hereby granted, provided that you include the following on ALL copies of the Original Work or portions thereof, including modifications or derivatives, that you make:" ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
@@ -62,7 +65,8 @@ dalicclib:ECL-1.0 a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "Permission to use, copy, modify, merge, publish, distribute, and sublicense this Original Work and its documentation, with or without modification, for any purpose, and without fee or royalty to the copyright holder(s) is hereby granted, provided that you include the following on ALL copies of the Original Work or portions thereof, including modifications or derivatives, that you make:" ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
@@ -72,7 +76,8 @@ dalicclib:ECL-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:present ],
         [ a odrl:Permission ;
-            odrl:action odrl:grantUse ],
+            odrl:action odrl:grantUse ;
+            dalicc:evidence "Permission to use, copy, modify, merge, publish, distribute, and sublicense this Original Work and its documentation, with or without modification, for any purpose, and without fee or royalty to the copyright holder(s) is hereby granted, provided that you include the following on ALL copies of the Original Work or portions thereof, including modifications or derivatives, that you make:" ],
         [ a odrl:Permission ;
             odrl:action cc:CommercialUse ],
         [ a odrl:Permission ;
@@ -84,9 +89,14 @@ dalicclib:ECL-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "The name and trademarks of copyright holder(s) may NOT be used in advertising or publicity pertaining to the Original or Derivative Works without specific, written prior permission." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset,

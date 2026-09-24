@@ -43,7 +43,7 @@ findings:
     alone that is dalicc:ChangeLicense with a dalicc:compliantLicense duty, which is what EclipsePublicLicense10
     carries. It is not written here because the consistency check reports a permitted change of licence together
     with a share-alike duty as a direct conflict, and the source-form reciprocity is the stronger statement. The
-    clause is quoted in dalicc:additionalClauses; the owner has to decide which of the two readings the library
+    clause is quoted in dalicc:additionalClauses; the association has to decide which of the two readings the library
     keeps.'
   action: proposed
 - rubric: 5
@@ -69,7 +69,7 @@ findings:
   field: cc:jurisdiction
   description: 'Section 7 states: "This Agreement is governed by the laws of the State of New York and the intellectual
     property laws of the United States of America." The record keeps cc:jurisdiction dalicc:worldwide and quotes
-    the clause, which is what EclipsePublicLicense10 does and what the batch does for every governing-law clause;
+    the clause, which is what EclipsePublicLicense10 does and what the review group does for every governing-law clause;
     bpicounty:UnitedStates would overstate a choice-of-law clause as a territorial limit.'
   action: applied
 - rubric: 8
@@ -86,7 +86,7 @@ findings:
     is the same document again, with the Eclipse Foundation as steward and the New York choice of law kept. Where
     this record has a licence-wide cc:ShareAlike duty and a dalicc:ChangeLicense prohibition, the existing EclipsePublicLicense10
     record has a dalicc:ChangeLicense permission and no share-alike, so the two disagree about the same sentence;
-    the batch report raises it.
+    the review raises it.
   action: none
 - rubric: 9
   severity: info

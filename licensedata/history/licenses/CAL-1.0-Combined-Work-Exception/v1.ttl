@@ -1,0 +1,119 @@
+# Title: The machine-readable representation of "Cryptographic Autonomy License 1.0 (Combined Work Exception)"@en in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/CAL-1.0-Combined-Work-Exception
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:CAL-1.0-Combined-Work-Exception a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "CAL-1.0-Combined-Work-Exception" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <http://cryptographicautonomylicense.com/license-text.html> ;
+    dalicc:WarrantyDisclaimer "As far as the law allows, the Work comes AS-IS, without any warranty of any kind, and no Licensor or contributor will be liable to anyone for any damages related to this software or this license, under any kind of legal claim, or for any type of damages, including indirect, special, incidental, or consequential damages of any type arising as a result of this License or the use of the Work including, without limitation, damages for loss of goodwill, work stoppage, computer failure or malfunction, loss of profits, revenue, or any and all other commercial damages or losses." ;
+    dalicc:additionalClauses "Subject to the exception in section 4.4, You must provide to each Recipient a copy of, or no-charge unrestricted network access to, the Source Code corresponding to the Work (\"Access\").",
+        "Network Access to the Notices and Source Code may be provided by You or by a third party, such as a public software repository, and must persist during the same period in which You exercise any of the permissions granted to You under this License and for at least one year thereafter.",
+        "Subject to the exception in section 4.5, You must provide to each Recipient of a Modified Work Access to Source Code corresponding to those portions of the Work remaining in the Modified Work as well as the modifications used by You to create the Modified Work. The Source Code corresponding to the modifications in the Modified Work must be provided to the Recipient either a) under this License, or b) under a Compatible Open Source License. A “Compatible Open Source License” means a license accepted by the Open Source Initiative that allows object code created using both Source Code provided under this License and Source Code provided under the other open source license to be distributed together as a single work.",
+        "Throughout any period in which You exercise any of the permissions granted to You under this License, You must also provide to any Recipient to whom you provide services via the Work, a no-charge copy, provided in a commonly used electronic form, of the Recipient's User Data in your possession, to the extent that such User Data is available to You for use in conjunction with the Work.",
+        "You may not, by means of the use cryptographic methods applied to anything provided to the Recipient, by possession or control of cryptographic keys, seeds, hashes, by any other technological protection measures, or by any other method, limit a Recipient's ability to access any functionality present in Recipient's independent copy of the Work, or to deny a Recipient full control of the Recipient's User Data.",
+        "You may not contractually restrict a Recipient's ability to independently exercise the permissions granted under this License. You waive any legal power to forbid circumvention of technical protection measures that include use of the Work, and You waive any claim that the capabilities of the Work were limited or modified as a means of enforcing the legal rights of third parties against Recipients.",
+        "As an exception to condition that You provide Recipients Access to Source Code, any Source Code files marked by the Licensor as having the \"Combined Work Exception,\" or any object code exclusively resulting from Source Code files so marked, may be combined with other Software into a \"Larger Work.\" So long as you comply with the requirements to provide Recipients the applicable Notices and Access to the Source Code provided to You by Licensor, and you provide Recipients access to their User Data and do not limit Recipient's ability to independently work with their User Data, any other Software in the Larger Work as well as the Larger Work as a whole may be licensed under the terms of your choice.",
+        "This License terminates automatically if You fail to comply with any of the conditions in section 4. As a special exception to termination for non-compliance, Your permissions for the Work under this License will automatically be reinstated if You come into compliance with all the conditions in section 2 within sixty (60) days of being notified by Licensor or an intended third-party beneficiary of Your noncompliance. You are eligible for reinstatement of permissions for the Work one time only, and only for the sixty days immediately after becoming aware of noncompliance. Loss of permissions granted for the Work under this License due to either a) sustained noncompliance lasting more than sixty days or b) subsequent termination for noncompliance after reinstatement, is permanent, unless rights are specifically restored by Licensor in writing.",
+        "If You initiate litigation against Licensor, or any Recipient of the Work, either direct or indirect, asserting that the Work directly or indirectly infringes any patent, then all permissions granted to You by this License shall terminate. In the event of termination due to litigation, all permissions validly granted by You under this License, directly or indirectly, shall survive termination. Administrative review procedures, declaratory judgment actions, counterclaims in response to patent litigation, and enforcement actions against former Licensees terminated under this section do not cause termination due to litigation.",
+        "A Licensor may require that any action or suit by a Licensee relating to a Work provided by Licensor under this License may be brought only in the courts of a particular jurisdiction and under the laws of a particular jurisdiction (excluding its conflict-of-law provisions), if Licensor provides conspicuous notice of the particular jurisdiction to all Licensees.",
+        "This License is not sublicensable. Each time You provide the Work or a Modified Work to a Recipient, the Recipient automatically receives a license under the terms described in this License. You may not impose any further reservations, conditions, or other provisions on any Recipients' exercise of the permissions granted herein." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/CAL-1.0-Combined-Work-Exception/versions> ;
+    dct:alternative "CAL-1.0-Combined-Work-Exception",
+        "Cryptographic Autonomy License 1.0 (Combined Work Exception)" ;
+    dct:hasVersion "1" ;
+    dct:modified "2026-09-15"^^xsd:date ;
+    dct:source <https://opensource.org/license/CAL-1.0> ;
+    dct:title "Cryptographic Autonomy License 1.0 (Combined Work Exception)"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:addStatement ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:provideUserData ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action cc:ShareAlike ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:addStatement ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action cc:ShareAlike ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:addStatement ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:patentGrant ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ChangeLicense ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action dalicc:compliantLicense ] ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:networkUseTrigger ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:provideUserData ] ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:addLimitation ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:applyTechnicalProtectionMeasures ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:patentRetaliationTermination ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Software ] .

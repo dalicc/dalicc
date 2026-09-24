@@ -8,8 +8,7 @@ verdict: created
 summary: >-
   The Computational Use of Data Agreement: use, modify and distribute the data for
   computational use, keeping the credit that came with it and binding every recipient to the
-  same agreement. The record follows the Community Data License Agreement records of this
-  batch, models the binding as a cc:ShareAlike duty on the acts of redistribution, and quotes
+  same agreement. The record follows the Community Data License Agreement records of this review group, models the binding as a cc:ShareAlike duty on the acts of redistribution, and quotes
   the computational use restriction, which no vocabulary term can carry.
 findings:
 - rubric: 1
@@ -17,8 +16,7 @@ findings:
   field: 'spdx:licenseId'
   description: >-
     The record carries the SPDX id C-UDA-1.0 and the SPDX name as dct:title. The library holds
-    no other data use agreement, so dalicc:variantKind is left out; the two agreements of this
-    batch are siblings, not versions of one another.
+    no other data use agreement, so dalicc:variantKind is left out; the two agreements of this review group are siblings, not versions of one another.
   action: applied
 - rubric: 2
   severity: major
@@ -119,7 +117,7 @@ findings:
     redistribute under terms of its choice. In the model that is a cc:ShareAlike duty and a
     dalicc:ChangeLicense prohibition on one side against a dalicc:ChangeLicense permission and
     a no-warranty notice duty on the other. Both sit beside the Community Data License
-    Agreement records of this batch, which use the same vocabulary of Data, Results and
+    Agreement records of this review group, which use the same vocabulary of Data, Results and
     Downstream Recipients.
   action: none
 family: Use of data agreements

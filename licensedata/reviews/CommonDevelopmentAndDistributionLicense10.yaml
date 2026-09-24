@@ -38,7 +38,7 @@ findings:
     that You create ... are governed by the terms of this License". That is file-level reciprocity and
     it is not in the model. The Mozilla Public License 2.0 record, whose text is the direct descendant
     of this one, carries a license-wide cc:ShareAlike duty and prohibits dalicc:ChangeLicense; this record
-    permits dalicc:ChangeLicense instead. Changing it inverts a permission, so it is left to the owner.'
+    permits dalicc:ChangeLicense instead. Changing it inverts a permission, so it is left open for the association''s decision.'
   action: proposed
   change: "# add\nodrl:duty [ a odrl:Duty ;\n        odrl:action cc:ShareAlike ] ;\n# and remove\nodrl:permission\
     \ [ a odrl:Permission ;\n        odrl:action dalicc:ChangeLicense ;\n        odrl:duty [ a odrl:Duty\
@@ -46,8 +46,7 @@ findings:
 - rubric: 4
   severity: minor
   field: odrl:prohibition
-  description: The record has no prohibition at all (one of the six such records named in family_rules_baseline.md
-    rule 7). Section 3.4 forbids offering terms that alter the license for Source Code form, which is
+  description: The record has no prohibition at all (one of the six such records named in the family conventions checked before the review). Section 3.4 forbids offering terms that alter the license for Source Code form, which is
     dalicc:addStatement.
   action: proposed
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:addStatement ] ;\n"
@@ -69,7 +68,7 @@ findings:
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 3 finding 5 and consolidation decision 4: the share-alike duty
+    its new siblings and versioned. The review''s finding on family consistency and consolidation decision 4: the share-alike duty
     hung off odrl:distribute and odrl:modify but not off odrl:derive, the record made no patent statement
     although section 2.1(b) grants one, relicensing was prohibited although section 3.6 lets an Executable
     go out ''under the terms of a license of Your choice'', and dct:publisher was the placeholder ''N.N.''.'

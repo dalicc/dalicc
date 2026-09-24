@@ -19,6 +19,7 @@
 
 dalicclib:TheZlibLibpngLicense a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "Zlib" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:Zlib ;
@@ -30,8 +31,8 @@ dalicclib:TheZlibLibpngLicense a odrl:Set ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/TheZlibLibpngLicense/versions> ;
     dct:alternative "The Zlib/Libpng License",
         "ZLIB" ;
-    dct:hasVersion "5" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source osl:Zlib ;
     dct:title "The zlib libpng License" ;
     odrl:permission [ a odrl:Permission ;
@@ -45,7 +46,8 @@ dalicclib:TheZlibLibpngLicense a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:rename ] ],
         [ a odrl:Permission ;
@@ -53,7 +55,8 @@ dalicclib:TheZlibLibpngLicense a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:rename ] ],
         [ a odrl:Permission ;
@@ -71,6 +74,10 @@ dalicclib:TheZlibLibpngLicense a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

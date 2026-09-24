@@ -1,0 +1,52 @@
+id: NASA-1.3
+title: NASA Open Source Agreement 1.3
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: duty cc:ShareAlike
+    previous: duty cc:ShareAlike
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "A. Distribution
+      or Redistribution of the Subject Software must be made under this Agreement except for additions
+      covered under paragraph 3H."'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:addStatement,
+      dalicc:includeNoticeFile, dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:addStatement,
+      dalicc:includeNoticeFile, dalicc:modificationNotice]
+    reason: The statement now quotes the sentence of the licence text it rests on; the record carries
+      it as dalicc:evidence.
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:addStatement,
+      dalicc:includeNoticeFile, dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:addStatement,
+      dalicc:includeNoticeFile, dalicc:modificationNotice]
+    reason: The statement now quotes the sentence of the licence text it rests on; the record carries
+      it as dalicc:evidence.
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "E. A Recipient
+      may not make any representation in the Subject Software or in any promotional, advertising or
+      other material that may be construed as an endorsement by Government Agency or by any prior
+      Recipient of any product or service provided by Recipient, or that may seek to obtain commercial
+      advantage by the fact of Government Agency''s or a prior Recipient''s participation in this
+      Agreement."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

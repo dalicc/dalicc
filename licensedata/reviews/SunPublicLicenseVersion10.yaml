@@ -53,8 +53,7 @@ findings:
   severity: minor
   field: dalicc:WarrantyDisclaimer
   description: The stored disclaimer contains the artefact "../AS IS''" where the text reads "AS IS".
-    It comes from the source the record was built from. Correcting a published literal is left to the
-    owner.
+    It comes from the source the record was built from. Correcting a published literal is left open for the association's decision.
   action: proposed
   change: |
     dalicc:WarrantyDisclaimer "COVERED CODE IS PROVIDED UNDER THIS LICENSE ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND ..." ;
@@ -69,8 +68,7 @@ findings:
   severity: info
   field: family
   description: This record, CommonDevelopmentAndDistributionLicense10 and CommonPublicAttributionLicenseVersion10
-    are all derived from the Mozilla Public License 1.1 and should model reciprocity identically. After
-    this pass this one and the Common Public Attribution record agree; the Common Development and Distribution
+    are all derived from the Mozilla Public License 1.1 and should model reciprocity identically. After the review this one and the Common Public Attribution record agree; the Common Development and Distribution
     record still permits dalicc:ChangeLicense instead.
   action: none
 family: Other OSI approved licenses (corporate, academic, weak copyleft)

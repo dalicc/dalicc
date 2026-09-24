@@ -1,0 +1,48 @@
+id: IPA
+title: IPA Font License
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Notice, cc:ShareAlike, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:originalVersionOffer, dalicc:rename]
+    previous: permission odrl:derive with duties [cc:Notice, cc:ShareAlike, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:originalVersionOffer, dalicc:rename]
+    reason: Its duty cc:Notice quotes "The Recipient must attach a copy of this Agreement to the Licensed
+      Program."
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Notice, cc:ShareAlike]
+    previous: permission odrl:distribute with duties [cc:Notice, cc:ShareAlike]
+    reason: Its duty cc:Notice quotes "The Recipient must attach a copy of this Agreement to the Licensed
+      Program."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Notice, cc:ShareAlike, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:originalVersionOffer, dalicc:rename]
+    previous: permission odrl:modify with duties [cc:Notice, cc:ShareAlike, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:originalVersionOffer, dalicc:rename]
+    reason: Its duty cc:Notice quotes "The Recipient must attach a copy of this Agreement to the Licensed
+      Program."
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "In no sense is
+      this Agreement intended to transfer ... any right relating to any trademark, trade name, or
+      service mark to the Recipient"'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

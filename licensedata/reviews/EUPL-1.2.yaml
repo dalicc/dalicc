@@ -109,7 +109,7 @@ findings:
     The compatibility appendix has no vocabulary term. A licence that lets a derivative go out
     under one of a closed list of other licences needs both a permission and the list itself;
     the library can express neither. Proposed term dalicc:compatibleLicenseTest, as proposed
-    in batch 2 for MS-RL and RPSL-1.0, taking the list of licence ids as its value.
+    in review group 2 for MS-RL and RPSL-1.0, taking the list of licence ids as its value.
   action: none
 - rubric: 8
   severity: gap
@@ -127,7 +127,7 @@ findings:
   description: >-
     Article 12 terminates the licence automatically on any breach, with the sublicences of
     compliant recipients surviving. Quoted; proposed terms dalicc:terminatesOnBreach and
-    dalicc:sublicenseSurvival, both already proposed by earlier batches of this addition.
+    dalicc:sublicenseSurvival, both already proposed by earlier review groups of this addition.
   action: none
 - rubric: 8
   severity: info
@@ -154,9 +154,22 @@ findings:
     dalicc:variantKind is "version". The differences are in the quoted clauses: the appendix
     now lists AGPL 3, LGPL, MPL 2, CC BY-SA 3.0 for works other than software, the EUPL itself
     and the two LiLiQ reciprocity licences, and the European Commission may update the
-    appendix without a new version of the licence. Two of the licences this batch adds,
+    appendix without a new version of the licence. Two of the licences this review group adds,
     LiLiQ-R-1.1 and LiLiQ-Rplus-1.1, name EUPL 1.1 as compatible in their turn.
   action: none
+- rubric: 10
+  severity: major
+  field: dalicc:compatibleWith
+  description: 'Article 5 reads: "If the Licensee Distributes and/or Communicates Derivative Works or
+    copies thereof based upon both the Original Work and another work licensed under a Compatible Licence,
+    this Distribution and/or Communication can be done under the terms of this Compatible Licence." The
+    appendix lists the Compatible Licences: GNU GPL v. 2 and v. 3, GNU AGPL v. 3, OSL v. 2.1 and v. 3.0,
+    EPL v. 1.0, CeCILL v. 2.0 and v. 2.1, MPL v. 2, GNU LGPL v. 2.1 and v. 3, CC BY-SA 3.0 Unported "for
+    works other than software", EUPL v. 1.1 and v. 1.2, and LiLiQ-R and LiLiQ-R+. The library holds no
+    record of CeCILL 2.0, so that one is not linked. dalicc:compatibleWith names GPL-2.0-only, GPL-3.0-only,
+    AGPL-3.0, OSL-2.1, OSL-3.0, EclipsePublicLicense10, CeaCnrsInriaLogicielLibreLicenseVersion21, MozillaPublicLicenseVersion20,
+    LGPL-2.1-only, LGPL-3.0-only, CC-BY-SA-3.0, EUPL-1.1, LiLiQ-R-1.1, LiLiQ-Rplus-1.1.'
+  action: applied
 family: European Union Public Licence
 port_of: null
 variant_kind: version

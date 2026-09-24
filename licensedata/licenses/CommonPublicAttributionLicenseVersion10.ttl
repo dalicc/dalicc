@@ -19,6 +19,7 @@
 
 dalicclib:CommonPublicAttributionLicenseVersion10 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CPAL-1.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:CPAL-1.0 ;
@@ -31,7 +32,7 @@ dalicclib:CommonPublicAttributionLicenseVersion10 a odrl:Set ;
     dct:alternative "CPAL 1.0",
         "CPAL-1.0" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Socialtext Incorporated" ;
     dct:source osl:CPAL-1.0 ;
     dct:title "Common Public Attribution License Version 1.0" ;

@@ -1,0 +1,87 @@
+# Title: The machine-readable representation of "Timescale License"@en in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/Timescale-License
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:Timescale-License a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://raw.githubusercontent.com/timescale/timescaledb/main/tsl/LICENSE-TIMESCALE> ;
+    dalicc:LiabilityLimitation "TO THE MAXIMUM EXTENT PERMITTED UNDER APPLICABLE LAW, IN NO EVENT SHALL TIMESCALE OR ITS LICENSORS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT OR INDIRECT DAMAGES, INCLUDING BUT NOT LIMITED TO ANY LOSS OF PROFITS OR REVENUE, LOSS OF USE, BUSINESS INTERRUPTION, LOSS OF DATA, COST OF COVER OR SUBSTITUTE GOODS OR SERVICES, OR FOR ANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES OF ANY KIND, HOWEVER CAUSED, RELATED TO, OR ARISING OUT OF THIS TSL AGREEMENT, ITS TERMINATION OR THE PERFORMANCE OR FAILURE TO PERFORM THIS TSL AGREEMENT, OR THE USE OR INABILITY TO USE THE TIMESCALE SOFTWARE, WHETHER ALLEGED AS A BREACH OF CONTRACT, BREACH OF WARRANTY, TORTIOUS CONDUCT, INCLUDING NEGLIGENCE, OR ANY OTHER LEGAL THEORY, EVEN IF TIMESCALE HAS BEEN ADVISED OR IS AWARE OF THE POSSIBILITY OF SUCH DAMAGES." ;
+    dalicc:WarrantyDisclaimer "TO THE MAXIMUM EXTENT PERMITTED UNDER APPLICABLE LAW, ALL TIMESCALE SOFTWARE PROVIDED UNDER THIS TSL AGREEMENT, INCLUDING ALL PORTIONS OF THE TIMESCALE SOFTWARE SUPPLIED ON A TRIAL BASIS, ARE PROVIDED \"AS IS\" WITHOUT WARRANTY OF ANY KIND AND TIMESCALE DISCLAIMS ALL SUCH WARRANTIES, WHETHER EXPRESS, STATUTORY, OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, TITLE, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT, AND ANY IMPLIED WARRANTIES ARISING FROM USAGE OF TRADE, COURSE OF DEALING, OR COURSE OF PERFORMANCE." ;
+    dalicc:additionalClauses "BY INSTALLING OR USING SUCH SOFTWARE, YOU AGREE THAT YOU HAVE READ AND AGREE TO BE BOUND BY THE TERMS AND CONDITIONS OF THIS TSL AGREEMENT.",
+        "Internal Use. A license to copy, compile, install, and use the Timescale Software and Derivative Works solely for Your own internal business purposes in a manner that does not expose or give access to, directly or indirectly (e.g., via a wrapper), the Timescale Data Definition Interfaces or the Timescale Data Manipulation Interfaces to any person or entity other than You or Your employees and Contractors working on Your behalf.",
+        "Value Added Products or Services. A license (i) to copy, compile, install, and use the Timescale Software, Derivative Works, or parts thereof to develop and maintain Your Value Added Products or Services, (ii) to utilize (in the case of services) copies of the Timescale Software, Derivative Works, or parts thereof solely as incorporated into or utilized with Your Value Added Products or Services, and (iii) to distribute (in the case of products that are distributed to Your customers) copies of the Timescale Software binaries or of Derivative Works solely in binary form, and both solely as incorporated into or utilized with Your Value Added Products or Services; provided that (1) You notify Your customers that use of such Timescale Software or Derivative Works is subject to this TSL Agreement and You provide to each such customer a copy of the most current version of this TSL Agreement or a URL from which the most current version of this TSL Agreement may be obtained, and (2) the customer is prohibited, either contractually or technically, from defining, redefining, or modifying the database schema or other structural aspects of database objects, such as through use of the Timescale Data Definition Interfaces, in a Timescale Database utilized by such Value Added Products or Services.",
+        "Distribution of Source Code or Binaries in Standalone Form. Subject to the prohibitions in Section 2.2 below, a license to copy and distribute the Timescale Software source code and binaries solely in unmodified standalone form and subject to the terms and conditions of the most current version of this TSL Agreement.",
+        "Derivative Works. A license (i) to prepare, compile, and test Derivative Works of the TSL Licensed Software; (ii) to use Derivative Works for Internal Use solely as expressly permitted in Section 2.1(a); (iii) to utilize Derivative Works with Your Value Added Products or Services solely as expressly permitted in Section 2.1(b); (iv) to distribute Derivative Works in binary form with Your Value Added Products or Services solely as expressly permitted in Section 2.1(b); and (v) to distribute Derivative Works back to Timescale under Timescale's Contributor Agreement for potential incorporation into Timescale's maintained code base at its sole discretion.",
+        "Notwithstanding any other provision in this TSL Agreement, You are prohibited from (i) using any TSL Licensed Software to provide time-sharing services or database-as-a-service services, or to provide any form of software-as-a-service or service offering in which the TSL Licensed Software is offered or made available to third parties to provide time-series database functions or operations, other than as part of Your Value Added Products or Services, or (ii) copying or distributing any TSL Licensed Software for use in any of the foregoing ways. In addition, You agree not to, except as expressly permitted in Section 2.1(d), prepare Derivative Works of any TSL Licensed Software or, except as expressly permitted herein, transfer, sell, rent, lease, sublicense, loan, or otherwise transfer or make available any TSL Licensed Software, whether in source code or binary executable form.",
+        "You may permit Your Contractors and Affiliates to exercise the licenses set forth in Section 2.1, provided that such exercise by Contractors must be solely for your benefit and/or the benefit of Your Affiliates, and You shall be responsible for all acts and omissions of such Contractors and Affiliates in connection with such exercise of the licenses, including but not limited to breach of any terms of this TSL Agreement.",
+        "Except as expressly set forth in Section 2.1, no other license or rights to the Timescale Software are granted to You under this TSL Agreement, whether by implication, estoppel, or otherwise.",
+        "\"Value Added Products or Services\" means products or services developed by or for You that utilize (for example, as a back-end function or part of a software stack) all or parts of the Timescale Software to provide time-series database storage and operations in support of larger value-added products or services (for example, an IoT platform or vertical-specific application) with respect to which all of the following are true:",
+        "This TSL Agreement will automatically terminate, whether or not You receive notice of such termination from Timescale, in the event You breach any of its terms or conditions.",
+        "This TSL Agreement may be modified by Timescale from time to time, and any such modifications will be effective upon the \"Posted Date\" set forth at the top of the modified agreement.",
+        "The Timescale Software and related documentation are \"Commercial Items\", as that term is defined at 48 C.F.R. §2.101, consisting of \"Commercial Computer Software\" and \"Commercial Computer Software Documentation,\" as such terms are used in 48 C.F.R. §12.212 or 48 C.F.R. §227.7202, as applicable, and are being licensed to U.S. Government end users (a) only as Commercial Items and (b) with only those rights as are granted to all other end users pursuant to the terms and conditions of this TSL Agreement." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
+    dalicc:governingLaw "the law of the State of New York, United States" ;
+    dalicc:governmentRightsLimitation "United States government end users are licensed the software as a Commercial Item with only the rights every other end user has under the agreement" ;
+    dalicc:fieldOfUseRestriction "internal business use and Your Value Added Products or Services, but not time-sharing, database-as-a-service or any service offering that makes the software available to third parties for time-series database functions" ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-22"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/Timescale-License/versions> ;
+    dct:alternative "TSL",
+        "TSL Agreement",
+        "Timescale License Agreement" ;
+    dct:hasVersion "1" ;
+    dct:modified "2026-09-22"^^xsd:date ;
+    dct:publisher "Timescale, Inc." ;
+    dct:source <https://github.com/timescale/timescaledb/blob/main/tsl/LICENSE-TIMESCALE> ;
+    dct:title "Timescale License"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:ShareAlike ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:ShareAlike ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:ShareAlike ] ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sublicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:sellCopy ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Software ] .

@@ -19,6 +19,7 @@
 
 dalicclib:LiLiQ-P-1.1 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "LiLiQ-P-1.1" ;
     cc:attributionName "Centre de services partagés du Québec" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -36,9 +37,9 @@ dalicclib:LiLiQ-P-1.1 a odrl:Set ;
     dct:alternative "LiLiQ-P",
         "LiLiQ-P 1.1",
         "Licence Libre du Québec - Permissive" ;
-    dct:hasVersion "1" ;
+    dct:hasVersion "2" ;
     dct:language "fr" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Centre de services partagés du Québec" ;
     dct:source <https://spdx.org/licenses/LiLiQ-P-1.1.html> ;
     dct:title "Licence Libre du Québec - Permissive version 1.1"@en ;
@@ -85,9 +86,14 @@ dalicclib:LiLiQ-P-1.1 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "La licence n'accorde aucune permission particulière qui permettrait d'utiliser les marques de commerce du concédant, autre que celle requise permettant d'identifier la provenance du logiciel." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Software ] .

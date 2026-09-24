@@ -74,7 +74,7 @@ findings:
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 3 finding 5 and consolidation decision 7: the record prohibited
+    its new siblings and versioned. The review''s finding on family consistency and consolidation decision 7: the record prohibited
     dalicc:addStatement although clause 6 requires a statement to be retained, and prohibited cc:ShareAlike
     without support. Clause 6 reads ''Redistributions of any form whatsoever must retain the following
     acknowledgment: \"This product includes PHP software, freely available from <http://www.php.net/software/>\"'',

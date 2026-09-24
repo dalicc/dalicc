@@ -6,7 +6,7 @@ text_source: http://web.archive.org/web/20190330210447/https://www.ordnancesurve
 text_retrieved: true
 verdict: corrected
 summary: 'The licence is the end user licence that a UK public body must pass on with Ordnance Survey data
-  published under the INSPIRE Regulations 2009. It is the most restrictive record in the batch: personal, non-commercial
+  published under the INSPIRE Regulations 2009. It is the most restrictive record in the review group: personal, non-commercial
   use only, no sub-licensing, no distribution, no sale. The record models that correctly. Applied: the licence-wide
   notice duty required by clause 3.1, which the record was missing and which made it the only record in the
   library with no attribution or notice duty at all, and a working provenance link, since the recorded URL
@@ -19,7 +19,7 @@ findings:
     current site has no INSPIRE licence page, so the record had no working link to its text. dct:source now
     points at the Internet Archive snapshot of 30 March 2019, which is the text that was read for this review.
     cc:legalcode was left at the original URL, because it is the address the licence was published at and changing
-    it would erase that fact; the owner should replace it once Ordnance Survey republishes the licence.
+    it would erase that fact; the association should replace it once Ordnance Survey republishes the licence.
   action: applied
   change: dct:source <http://web.archive.org/web/20190330210447/https://www.ordnancesurvey.co.uk/business-and-government/public-sector/mapping-agreements/inspire-licence.html>
     ;
@@ -114,7 +114,7 @@ findings:
 - rubric: 10
   severity: info
   field: record
-  description: 'The record has no sibling in the library: it is an end user licence in a batch of open government
+  description: 'The record has no sibling in the library: it is an end user licence in a review group of open government
     licences, and its deontic signature is its own. It sits with the Ordnance Survey records by publisher,
     not by terms.'
   action: none
@@ -133,6 +133,6 @@ family: Government licenses (United Kingdom, Canada)
 port_of: null
 variant_kind: null
 notes: The text was read from an Internet Archive snapshot of 2019 because Ordnance Survey has taken the page
-  down. The licence may have been withdrawn or replaced; the owner should confirm whether the record still
+  down. The licence may have been withdrawn or replaced; the association should confirm whether the record still
   describes a licence in use, and the site should say that the record documents a historical text. Nothing
   in this review is legal advice.

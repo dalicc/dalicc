@@ -19,6 +19,7 @@
 
 dalicclib:WordNet a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "WordNet" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://wordnet.princeton.edu/license-and-commercial-use> ;
@@ -30,8 +31,8 @@ dalicclib:WordNet a odrl:Set ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/WordNet/versions> ;
     dct:alternative "WordNet",
         "WordNet License" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Princeton University" ;
     dct:source <https://spdx.org/licenses/WordNet.html> ;
     dct:title "WordNet License"@en ;
@@ -70,9 +71,14 @@ dalicclib:WordNet a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "The name of Princeton University or Princeton may not be used in advertising or publicity pertaining to distribution of the software and/or database." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Dataset,
                 dcmitype:Software ] .

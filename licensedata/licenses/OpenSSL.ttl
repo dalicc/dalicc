@@ -19,6 +19,7 @@
 
 dalicclib:OpenSSL a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "OpenSSL" ;
     cc:attributionName "The OpenSSL Project" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -42,8 +43,8 @@ dalicclib:OpenSSL a odrl:Set ;
     dct:alternative "OpenSSL",
         "OpenSSL License",
         "OpenSSL-SSLeay License" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "The OpenSSL Project" ;
     dct:source <https://spdx.org/licenses/OpenSSL.html> ;
     dct:title "OpenSSL License"@en ;
@@ -74,7 +75,8 @@ dalicclib:OpenSSL a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:rename ] ],
+                    odrl:action dalicc:rename ] ;
+            dalicc:evidence "Products derived from this software may not be called \"OpenSSL\" nor may \"OpenSSL\" appear in their names without prior written permission of the OpenSSL Project." ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -90,6 +92,7 @@ dalicclib:OpenSSL a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "The names \"OpenSSL Toolkit\" and \"OpenSSL Project\" must not be used to endorse or promote products derived from this software without prior written permission." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

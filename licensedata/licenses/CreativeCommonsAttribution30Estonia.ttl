@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttribution30Estonia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Estonia ;
     cc:legalcode <https://creativecommons.org/licenses/by/3.0/ee/legalcode> ;
     dalicc:LiabilityLimitation """LITSENTSIANDJA EI VASTUTA TEIE
@@ -47,6 +48,7 @@ dalicclib:CreativeCommonsAttribution30Estonia a odrl:Set ;
  SÄTESTATUD VÄLISTUS TEIE SUHTES.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -62,8 +64,8 @@ dalicclib:CreativeCommonsAttribution30Estonia a odrl:Set ;
         "CC-BY-3.0 EE",
         "Creative Commons BY 3.0",
         "Creative Commons BY 3.0 EE" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by/3.0/ee/> ;
     dct:title "Creative Commons Attribution 3.0 Estonia"@en ;
@@ -82,7 +84,8 @@ dalicclib:CreativeCommonsAttribution30Estonia a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ] ;
+            dalicc:evidence "Eelnimetatud õigused hõlmavad õigust teha selliseid muudatusi, mis on tehniliselt vajalikud teostamaks õigusi muudes meediumites ja formaatides." ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
@@ -100,7 +103,8 @@ dalicclib:CreativeCommonsAttribution30Estonia a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
-            odrl:action dalicc:ModifiedWorks ],
+            odrl:action dalicc:ModifiedWorks ;
+            dalicc:evidence "Eelnimetatud õigused hõlmavad õigust teha selliseid muudatusi, mis on tehniliselt vajalikud teostamaks õigusi muudes meediumites ja formaatides." ],
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ],
         [ a odrl:Permission ;
@@ -108,7 +112,8 @@ dalicclib:CreativeCommonsAttribution30Estonia a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Te ei või seeläbi vihjamisi ega selgesõnaliselt viidata mis tahes seosele Teie või Teie poolt Teose kasutamise ning vastavalt Algse Autori, Litsentsiandja ja/või Viidatud isikute vahel ega viimaste toetusele, ilma nende eelneva selgelt väljendatud kirjaliku loata." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:sublicense ] ;
     odrl:target [ a odrl:AssetCollection ;

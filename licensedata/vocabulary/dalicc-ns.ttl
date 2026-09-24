@@ -1,6 +1,6 @@
 # Title: The DALICC vocabulary (https://dalicc.net/ns#)
 # Author: DALICC
-# Source: https://github.com/dalicc/dalicc_production
+# Source: https://github.com/dalicc/dalicc, file licensedata/vocabulary/dalicc-ns.ttl
 # Licensed under: Attribution 4.0 International (CC BY 4.0)
 #
 # This file is the successor of the DALICC vocabulary documentation that was published
@@ -61,16 +61,11 @@ in the production triple store; it denotes the same terms but must not be used i
     dct:creator "DALICC" ;
     dct:publisher "DALICC" ;
     dct:source <https://dalicc.github.io/> ;
-    dct:modified "2026-09-23"^^xsd:date ;
-    dct:hasVersion "7" ;
+    dct:modified "2026-09-24"^^xsd:date ;
+    dct:hasVersion "2" ;
     dalicc:versionHistory <https://dalicc.net/ns/versions> ;
-    owl:versionInfo "7.0" ;
+    owl:versionInfo "2.0" ;
     owl:priorVersion <https://dalicc.net/ns/versions/1> ,
-        <https://dalicc.net/ns/versions/2> ,
-        <https://dalicc.net/ns/versions/3> ,
-        <https://dalicc.net/ns/versions/4> ,
-        <https://dalicc.net/ns/versions/5> ,
-        <https://dalicc.net/ns/versions/6> ,
         <http://dalicc.net/ns#> ;
     vann:preferredNamespaceUri "https://dalicc.net/ns#" ;
     vann:preferredNamespacePrefix "dalicc" ;
@@ -101,7 +96,8 @@ audio, images, animations, video and interactive content."""@en ;
     skos:scopeNote "Used as a value of dct:type on the odrl:AssetCollection that an odrl:Set targets, alongside dcmitype:Dataset and dcmitype:Software."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dcmitype:Text , dcmitype:Image , dcmitype:Sound , dcmitype:MovingImage ,
-        dcmitype:InteractiveResource .
+        dcmitype:InteractiveResource ;
+    skos:closeMatch schema:CreativeWork .
 
 dalicc:Hardware a owl:Class , dalicc:AssetType ;
     rdfs:label "Hardware"@en ;
@@ -138,7 +134,7 @@ dalicc:Jurisdiction a owl:Class ;
     rdfs:seeAlso cc:jurisdiction .
 
 dalicc:ValidityType a owl:Class ;
-    rdfs:label "Validity type"@en ;
+    rdfs:label "Validity type value"@en ;
     rdfs:comment "The kind of validity period a license has: an indefinite period (dalicc:perpetual), a fixed start and end date (dalicc:specifyDate) or a duration (dalicc:specifyPeriod)."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> .
 
@@ -161,8 +157,20 @@ statute or principle it rests on (dalicc:ruleBasis) and whether it is adopted or
     skos:scopeNote "Instances live in the dependency graphs of licensedata/dependencygraph/, beside the axioms, because a graph is the layer of statements about actions and can be chosen per check."@en ;
     skos:note "Nothing a rule states is legal advice. An adopted rule is the library's reading of a legal default, a proposed one is a question for a legal reviewer, and what a license means is decided by its text."@en .
 
+dalicc:AxiomRemoval a owl:Class ;
+    rdfs:label "Axiom removal"@en ;
+    rdfs:comment """A statement that a dependency graph built from another one leaves out one axiom
+of that graph, because the law of its jurisdiction does not support it. The axiom is named in
+the reified form, with rdf:subject, rdf:predicate and rdf:object, and the removal carries the
+legal reason (dalicc:ruleBasis), a plain explanation (dalicc:ruleExplanation) and a status
+(dalicc:ruleStatus), like a default rule."""@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso dalicc:basedOnGraph , dalicc:DefaultRule , rdf:Statement ;
+    skos:scopeNote "Written in the difference files of licensedata/dependencygraph/differences/ and copied into the complete graph scripts/build_dependency_graphs.py generates from them. The generated graph never holds the axiom a removal names."@en ;
+    skos:note "Added with version 2 of the vocabulary. No shipped graph removes an axiom of the core graph; the difference-file README shows the syntax."@en .
+
 dalicc:DefaultOutcome a owl:Class ;
-    rdfs:label "Default outcome"@en ;
+    rdfs:label "Default outcome value"@en ;
     rdfs:comment """What a default rule concludes about an action the license does not mention:
 that it is not granted, that it is granted, that it is required, or that a statement of the
 license to the contrary has no effect."""@en ;
@@ -170,28 +178,29 @@ license to the contrary has no effect."""@en ;
     rdfs:seeAlso dalicc:defaultOutcome , dalicc:DefaultRule .
 
 dalicc:RuleStatus a owl:Class ;
-    rdfs:label "Rule status"@en ;
+    rdfs:label "Rule status value"@en ;
     rdfs:comment """Whether a default rule takes part in reasoning by default (dalicc:Adopted) or
 is written down for review and applies only when its graph is chosen (dalicc:Proposed)."""@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:ruleStatus , dalicc:DefaultRule .
 
 dalicc:StatementOrigin a owl:Class ;
-    rdfs:label "Statement origin"@en ;
-    rdfs:comment """Where a deontic statement in a result or a document came from: the text of the
-license, or a default rule applied to an action the text is silent on."""@en ;
+    rdfs:label "Statement origin value"@en ;
+    rdfs:comment """Where a deontic statement came from: a sentence of the license text, a
+convention the library applies to every record of its kind, or a default rule applied to an
+action the text is silent on."""@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:statementOrigin , dalicc:DefaultRule ;
-    skos:scopeNote "Used in compatibility and consistency results and in the documents built from them, never in a curated record: a record states what its text states."@en .
+    skos:scopeNote "dalicc:FromConvention is written on the statement nodes of curated records; dalicc:FromDefaultRule only in compatibility and consistency results and the documents built from them. A statement node without an origin is read as dalicc:FromText."@en .
 
 dalicc:RecordStatus a owl:Class ;
-    rdfs:label "Record status"@en ;
+    rdfs:label "Record status value"@en ;
     rdfs:comment "The editorial state of a library record, as distinct from the state of the license it models. Used to mark records that are not published licenses."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:recordStatus .
 
 dalicc:ReviewStatus a owl:Class ;
-    rdfs:label "Review status"@en ;
+    rdfs:label "Review status value"@en ;
     rdfs:comment "How far a library record has come in the editorial review workflow: created, reviewed, approved or audited."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:reviewStatus .
@@ -200,292 +209,268 @@ dalicc:ReviewStatus a owl:Class ;
 #    Actions -- permissions and prohibitions
 #################################################################
 
-dalicc:ChangeLicense a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:ChangeLicense a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Change license"@en ;
-    rdfs:comment """The licensee may change, extend or modify the license terms and replace the
-original license with a new one. Where the license carries a share-alike duty for the whole
-work, this permission must carry the dalicc:compliantLicense duty."""@en ;
+    rdfs:comment "Replacing the license of the work, or of an adaptation, with another license, or changing its terms."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso odrl:grantUse , cc:ShareAlike ;
     skos:scopeNote "Occurs 318 times as an odrl:Prohibition or odrl:Permission in 317 licenses. When permitted it usually carries the duty dalicc:compliantLicense."@en .
 
-dalicc:ModifiedWorks a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:ModifiedWorks a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Modified works"@en ;
-    rdfs:comment """Distributing a modified version of the work and making it available to the
-public. The counterpart of cc:DerivativeWorks for alterations that do not amount to a new,
-derivative work."""@en ;
+    rdfs:comment "Distributing a modified version of the work that does not amount to a new, derivative work."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso cc:DerivativeWorks , odrl:modify ;
     skos:scopeNote "Occurs in 320 of 343 licenses as an odrl:Permission."@en .
 
-dalicc:addLimitation a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:addLimitation a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Add limitation"@en ;
-    rdfs:comment "Adding further limitations or restrictions to the license terms when redistributing the work. Where this action is prohibited the license may not be made more restrictive downstream."@en ;
+    rdfs:comment "Adding further limitations or restrictions to the license terms when passing the work on."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:addStatement , dalicc:ChangeLicense .
 
-dalicc:addStatement a odrl:Action , skos:Concept , dalicc:RuleAction , dalicc:DutyAction ;
+dalicc:addStatement a odrl:Action , skos:Concept , dalicc:RuleAction , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Add statement"@en ;
-    rdfs:comment """The Assignee may add his own copyright statement, notices to his modifications
+    rdfs:comment "Attaching terms, notices or statements of one's own to the work or to one's modifications when passing it on."@en ;
+    skos:historyNote """The Assignee may add his own copyright statement, notices to his modifications
 and may provide additional or different license terms and conditions for use, reproduction, or
 distribution of his modifications, or for any such Derivative Works as a whole, provided use,
 reproduction, and distribution of the Work otherwise complies with the conditions stated in this
 License."""@en ;
     dct:source <https://dalicc.github.io/> ;
-    skos:definition "Attaching additional terms, notices or statements to the work when redistributing it. Where this action is prohibited the licensee must pass the license on unchanged."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:addLimitation .
 
-dalicc:attachoffer a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:attachoffer a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Attach offer"@en ;
-    rdfs:comment "The Assignee may add a written offer for permissions according to the license."@en ;
+    rdfs:comment "Attaching to the work a written offer of further permissions."@en ;
+    skos:historyNote "The Assignee may add a written offer for permissions according to the license."@en ;
     dct:source <https://dalicc.github.io/> ;
     skos:note "Defined in the 2022 documentation; not used by any license in the current library."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:chargeOffer , dalicc:addStatement .
 
-dalicc:chargeDistributionFee a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:chargeDistributionFee a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Charge distribution fee"@en ;
-    rdfs:comment "The distribution of the Licensed Material is provided on a costly basis."@en ;
+    rdfs:comment "Charging a fee for the act of providing a copy of the work to someone else."@en ;
+    skos:historyNote "The distribution of the Licensed Material is provided on a costly basis."@en ;
     dct:source <https://dalicc.github.io/> ;
-    skos:definition "The licensee is allowed to charge a distribution fee, that is, a fee covering the act of providing the work to a third party."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso odrl:distribute , dalicc:chargeLicenseFee .
 
-dalicc:chargeLicenseFee a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:chargeLicenseFee a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Charge license fee"@en ;
-    rdfs:comment "The Licensed Material is available for use at monetary cost."@en ;
+    rdfs:comment "Charging a fee for granting someone a license to the work."@en ;
+    skos:historyNote "The Licensed Material is available for use at monetary cost."@en ;
     dct:source <https://dalicc.github.io/> ;
-    skos:definition "The licensee is allowed to charge a fee for granting a license to the work, that is, to generate revenue from sub-licensing rather than from distribution alone."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso odrl:sell , odrl:commercialize , cc:CommercialUse ;
     skos:scopeNote "The dependency graph states that this action implies odrl:commercialize and odrl:sell and is included in odrl:transfer."@en .
 
-dalicc:chargeOffer a odrl:Action , skos:Concept , dalicc:RuleAction ;
-    rdfs:label "Charge offer"@en ;
-    rdfs:comment """The Assignee may charge a fee for the physical act of transferring a copy, and
+dalicc:chargeOffer a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
+    rdfs:label "Charge offer (deprecated)"@en ;
+    rdfs:comment "Deprecated; replaced by dalicc:chargeDistributionFee, because a fee for the physical act of transferring a copy is a distribution fee. Charging a fee for transferring a copy of the work, or for a warranty offered with it."@en ;
+    skos:historyNote """The Assignee may charge a fee for the physical act of transferring a copy, and
 you may at your option offer warranty protection in exchange for a fee."""@en ;
     dct:source <https://dalicc.github.io/> ;
     skos:note "Defined in the 2022 documentation; not used by any license in the current library."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
-    rdfs:seeAlso dalicc:chargeDistributionFee , dalicc:attachoffer .
+    rdfs:seeAlso dalicc:chargeDistributionFee , dalicc:attachoffer ;
+    owl:deprecated true ;
+    dct:isReplacedBy dalicc:chargeDistributionFee .
 
-dalicc:promote a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:promote a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Promote"@en ;
-    rdfs:comment "The Assigner permits the Assignee to use the licensed work for promotional purposes.."@en ;
+    rdfs:comment "Using the name or trademarks of the licensor or of contributors to endorse or promote a product."@en ;
+    skos:historyNote "The Assigner permits the Assignee to use the licensed work for promotional purposes.."@en ;
     dct:source <https://dalicc.github.io/> ;
-    skos:definition "Promote means that the licensee can use the licensor's trademark for advertising and promotion purposes."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:PromotionSpecification , dalicc:trademarkNotice ;
     skos:scopeNote "Occurs 334 times in 332 licenses, almost always as an odrl:Prohibition: most licenses forbid trademark use."@en .
 
-dalicc:publish a odrl:Action , skos:Concept , dalicc:RuleAction ;
-    rdfs:label "Publish"@en ;
-    rdfs:comment """The Assigner permits the Assignee to prepare and issue (a book, journal) for
+dalicc:publish a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
+    rdfs:label "Publish (deprecated)"@en ;
+    rdfs:comment "Deprecated; replaced by odrl:distribute, because issuing the work to the public is distributing it. Preparing and issuing the work for the public, in print or online."@en ;
+    skos:historyNote """The Assigner permits the Assignee to prepare and issue (a book, journal) for
 public sale to make it generally known, to make available online."""@en ;
     dct:source <https://dalicc.github.io/> ;
     skos:note "Defined in the 2022 documentation; not used by any license in the current library."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
-    rdfs:seeAlso odrl:distribute , odrl:present .
+    rdfs:seeAlso odrl:distribute , odrl:present ;
+    owl:deprecated true ;
+    dct:isReplacedBy odrl:distribute .
 
-dalicc:redistribute a odrl:Action , skos:Concept , dalicc:RuleAction ;
-    rdfs:label "Redistribute"@en ;
-    rdfs:comment "The Assigner permits/prohibits the Assignees to redistribute the Asset."@en ;
+dalicc:redistribute a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
+    rdfs:label "Redistribute (deprecated)"@en ;
+    rdfs:comment "Deprecated; replaced by odrl:distribute, because it names the same act. Passing copies of the work on to others."@en ;
+    skos:historyNote "The Assigner permits/prohibits the Assignees to redistribute the Asset."@en ;
     dct:source <https://dalicc.github.io/> ;
     skos:note "Defined in the 2022 documentation; not used by any license in the current library."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
-    rdfs:seeAlso odrl:distribute .
+    rdfs:seeAlso odrl:distribute ;
+    skos:closeMatch odrl:distribute ;
+    owl:deprecated true ;
+    dct:isReplacedBy odrl:distribute .
 
-dalicc:sellCopy a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:sellCopy a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Sell copy"@en ;
-    rdfs:comment "The Assignee may sell the copies of the License Material."@en ;
+    rdfs:comment "Selling copies of the work."@en ;
+    skos:historyNote "The Assignee may sell the copies of the License Material."@en ;
     dct:source <https://dalicc.github.io/> ;
     skos:note "Defined in the 2022 documentation; used by 3 license records since 2026-09-15."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
-    rdfs:seeAlso odrl:sell , odrl:reproduce .
+    rdfs:seeAlso odrl:sell , odrl:reproduce ;
+    skos:closeMatch odrl:sell .
 
-dalicc:sublicense a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:sublicense a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Sublicense"@en ;
-    rdfs:comment """The license granted by a licensee to a third party, under the authority of the
+    rdfs:comment "Granting a third party rights in the work under a license of the licensee's own, rather than passing on the original license."@en ;
+    skos:historyNote """The license granted by a licensee to a third party, under the authority of the
 license originally granted by a licensor to the licensee."""@en ;
     dct:source <https://dalicc.github.io/> ;
     skos:note "Defined in the 2022 documentation and first used by the data in the 2026-09-15 license review: every Creative Commons 2.0 and 3.0 port, the six 4.0 International licenses, the Open Database License and the Open Data Commons Attribution License prohibit it in as many words."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
-    rdfs:seeAlso odrl:grantUse , dalicc:ChangeLicense .
+    rdfs:seeAlso odrl:grantUse , dalicc:ChangeLicense ;
+    skos:closeMatch odrl:grantUse .
 
-dalicc:applyTechnicalProtectionMeasures a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:applyTechnicalProtectionMeasures a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Apply technical protection measures"@en ;
-    rdfs:comment """Applying technological measures that control access to the work or its
-use. Where this action is prohibited the licensee may not pass the work on behind a measure
-that keeps a recipient from exercising the rights the license grants."""@en ;
+    rdfs:comment "Applying technological measures that control access to the work or its use."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:addLimitation , odrl:distribute ;
     skos:note "Added by the license library review of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 2 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:downstreamOffer a odrl:Action , skos:Concept , dalicc:DutyAction ;
+dalicc:downstreamOffer a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Downstream offer"@en ;
-    rdfs:comment """Offering every recipient of the work a license on the same terms, directly
-from the licensor rather than through the distributing licensee."""@en ;
+    rdfs:comment "Offering every recipient of the work a license on the same terms directly from the licensor, rather than through the distributing licensee."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso odrl:distribute , dalicc:sublicense ;
     skos:note "Added by the license library review of 2026-09-15, which recorded the clause as a vocabulary gap. Defined here so the gap is named; the review applied it to no license record."@en .
 
-dalicc:patentGrant a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:patentGrant a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Patent grant"@en ;
-    rdfs:comment """An express license to the patent claims a contributor holds that the
-contribution necessarily infringes. Modelled as a permission where the license text grants
-it; its absence means the license is silent about patents, not that patents are withheld."""@en ;
+    rdfs:comment "Granting a license under the patent claims that a contributor holds and that the contribution necessarily infringes."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:patentFree , dalicc:patentNotice , dalicc:patentRetaliationTermination ;
-    skos:note "Added by the license library review of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 54 license records by the standard-license addition of 2026-09-15."@en .
+    skos:note "Added by the license library review of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 54 license records by the standard-license addition of 2026-09-15."@en ;
+    skos:scopeNote "Modelled as a permission where the license text grants it; its absence means the license is silent about patents, not that patents are withheld."@en .
 
-dalicc:patentRetaliationTermination a odrl:Action , skos:Concept , dalicc:RuleAction ;
-    rdfs:label "Patent retaliation termination"@en ;
-    rdfs:comment """Bringing a patent claim over the licensed work. Where a license carries
-this term, such a claim ends the patent license, or the whole license, as the text provides."""@en ;
+dalicc:patentRetaliationTermination a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
+    rdfs:label "Patent license ends on a patent claim"@en ;
+    rdfs:comment "Not a ban on suing: a patent claim ends the patent license, or the whole license, as the text provides."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:patentGrant , dalicc:terminationOnBreach ;
     skos:note "Added by the license library review of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 48 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:moralRightsRestriction a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:moralRightsRestriction a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Moral rights restriction"@en ;
-    rdfs:comment """Treating the work in a way that touches the moral rights of the author,
-such as false attribution or a derogatory treatment. Where the license binds the licensee to
-respect those rights, this is the action it restricts."""@en ;
+    rdfs:comment "Treating the work in a way that touches the moral rights of the author, such as false attribution or a derogatory treatment."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:moralRightsNonAssertion , cc:Attribution ;
     skos:note "Added by the license library review of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 6 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:moralRightsNonAssertion a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:moralRightsNonAssertion a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Moral rights non-assertion"@en ;
-    rdfs:comment """The licensor undertaking not to assert the moral rights of the author
-against uses made under the license, so far as the applicable law allows."""@en ;
+    rdfs:comment "Waiving, or undertaking not to assert, the moral rights of the author against uses made under the license, so far as the law allows."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:moralRightsRestriction ;
     skos:note "Added by the license library review of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 4 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:suiGenerisDatabaseRights a odrl:Action , skos:Concept , dalicc:RuleAction ;
-    rdfs:label "Sui generis database rights"@en ;
-    rdfs:comment """Exercising the database right that protects a substantial investment in
-obtaining, verifying or presenting the contents of a database, separately from any copyright
-in the database or in its contents."""@en ;
+dalicc:suiGenerisDatabaseRights a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
+    rdfs:label "Extract or reuse a substantial part of a database"@en ;
+    rdfs:comment "Extracting or reusing all or a substantial part of the contents of a database that the sui generis database right protects."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:databaseRightWaiver , odrl:extract , dcmitype:Dataset ;
     skos:note "Added by the license library review of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 8 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:databaseRightWaiver a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:databaseRightWaiver a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Database right waiver"@en ;
-    rdfs:comment """The licensor giving up the sui generis database right it holds in the
-licensed material, so that the conditions of the license do not reach the parts of the work
-protected by that right alone."""@en ;
+    rdfs:comment "Waiving the sui generis database right the licensor holds in the licensed material, so that the license conditions do not reach the parts protected by that right alone."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:suiGenerisDatabaseRights ;
     skos:note "Added by the license library review of 2026-09-15, which recorded the clause as a vocabulary gap. Defined here so the gap is named; the review applied it to no license record."@en .
 
-dalicc:exemptedMaterial a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:exemptedMaterial a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Exempted material"@en ;
-    rdfs:comment """Using material that the license expressly carves out of its grant, such as
-personal data, official insignia, third-party rights or material under a separate license.
-Where this action is prohibited the grant does not reach that material at all."""@en ;
+    rdfs:comment "Using material that the license carves out of its grant, such as personal data, official insignia, third-party rights or material under a separate license."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:additionalClauses ;
     skos:note "Added by the license library review of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 3 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:exceptedCombination a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:exceptedCombination a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Excepted combination"@en ;
-    rdfs:comment """Combining or linking the covered work with the material the exception names
-and conveying the result without the condition the exception lifts. Where this action is
-permitted the exception applies, and dalicc:reciprocityScope says what the condition still
-covers."""@en ;
+    rdfs:comment "Combining or linking the covered work with the material an exception names and conveying the result without the condition the exception lifts."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:exemptedMaterial , dalicc:reciprocityScope , cc:ShareAlike ;
-    skos:note "Added on 2026-09-23 for the records that model a license with an SPDX exception. dalicc:exemptedMaterial keeps its one meaning, material the grant does not reach at all."@en .
+    skos:note "Added on 2026-09-23 for the records that model a license with an SPDX exception. dalicc:exemptedMaterial keeps its one meaning, material the grant does not reach at all."@en ;
+    skos:scopeNote "Where this action is permitted the exception applies, and dalicc:reciprocityScope says what the condition still covers."@en .
 
-dalicc:useForModelTraining a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:useForModelTraining a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Use for model training"@en ;
-    rdfs:comment """Using the licensed material to train, validate or tune an automated
-system that learns from data. Some licenses grant it, some prohibit it and most are silent,
-in which case no statement is made."""@en ;
+    rdfs:comment "Using the licensed material to train, validate or tune an automated system that learns from data."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso odrl:extract , dcmitype:Dataset ;
-    skos:note "Added by the license library review of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 3 license records by the standard-license addition of 2026-09-15."@en .
+    skos:note "Added by the license library review of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 3 license records by the standard-license addition of 2026-09-15."@en ;
+    skos:scopeNote "Some licenses grant it, some prohibit it and most are silent, in which case no statement is made."@en .
 
-dalicc:textAndDataMining a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:textAndDataMining a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Text and data mining"@en ;
-    rdfs:comment """Automated analysis of the work in digital form to generate information about
-patterns, trends and correlations in it, which is the act the European and British mining
-exceptions describe. It covers the copying a mining run makes, whether or not a model is trained
-from the result."""@en ;
+    rdfs:comment "Analysing the work automatically in digital form to find patterns, trends and correlations in it, including the copies such an analysis makes."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:useForModelTraining , odrl:extract , odrl:reproduce ;
-    skos:note "Added with version 7 of the vocabulary so that the mining exceptions can be stated as default rules; not used by any license in the current library. dalicc:useForModelTraining stays the narrower act of training a system on the work."@en .
+    skos:note "Added with version 2 of the vocabulary so that the mining exceptions can be stated as default rules; not used by any license in the current library. dalicc:useForModelTraining stays the narrower act of training a system on the work."@en .
 
-dalicc:reverseEngineerForInteroperability a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:reverseEngineerForInteroperability a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Reverse engineer for interoperability"@en ;
-    rdfs:comment """Decompiling or otherwise analysing a program so far as is necessary to obtain
-the information needed to make an independently created program work with it. It is narrower
-than reverse engineering at large: the purpose is interoperability and nothing else."""@en ;
+    rdfs:comment "Decompiling or otherwise analysing a program only so far as is needed to make an independently created program work with it."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso odrl:extract , cc:SourceCode , dalicc:textAndDataMining ;
-    skos:note "Added with version 7 of the vocabulary so that the European interoperability exception can be stated as a default rule; not used by any license in the current library."@en .
+    skos:note "Added with version 2 of the vocabulary so that the European interoperability exception can be stated as a default rule; not used by any license in the current library."@en ;
+    skos:scopeNote "Narrower than reverse engineering at large: the purpose is interoperability and nothing else."@en .
 
-dalicc:networkUseTrigger a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:networkUseTrigger a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Network use trigger"@en ;
-    rdfs:comment """Making the work available over a network, deploying it or providing a service
-with it. Where a license carries this term, that act triggers the duties the license would
-otherwise attach to distribution, so the duties hang off this action rather than off
-odrl:distribute."""@en ;
+    rdfs:comment "Making the work available over a network, deploying it or providing a service with it."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso odrl:distribute , cc:SourceCode , cc:ShareAlike ;
-    skos:scopeNote "Carried by 16 records whose texts make deployment or communication to the public a trigger: the Apple, Open Software, Reciprocal Public and Cryptographic Autonomy families and the two European Union Public Licence records."@en ;
-    skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap in the review records named in its scope note."@en .
+    skos:scopeNote "Where a license carries this term, the act triggers the duties the license would otherwise attach to distribution, so the duties hang off this action rather than off odrl:distribute. Carried by the records whose texts make deployment or communication to the public a trigger: the Apple, Open Software, Reciprocal Public and Cryptographic Autonomy families and the two European Union Public Licence records."@en ;
+    skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 30 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:covenantNotToSue a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:covenantNotToSue a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Covenant not to sue"@en ;
-    rdfs:comment """An undertaking by the licensor not to bring a claim over uses made under the
-license. It is wider than a patent grant, because it reaches every cause of action the licensor
-might have, and narrower, because it grants nothing: it only promises not to enforce."""@en ;
+    rdfs:comment "Undertaking not to bring a claim against the licensee or later recipients over uses made under the license."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:patentGrant , dalicc:patentFree ;
-    skos:scopeNote "Carried by the two Microsoft use of data agreements, whose section 2 says the data provider will not sue the licensee or any downstream recipient over the use, modification or distribution of the data."@en ;
+    skos:scopeNote "Wider than a patent grant, because it reaches every cause of action the licensor might have, and narrower, because it grants nothing and only promises not to enforce. Carried by the two Microsoft use of data agreements, whose section 2 says the data provider will not sue the licensee or any downstream recipient over the use, modification or distribution of the data."@en ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 2 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:computationalUseOnly a odrl:Action , skos:Concept , dalicc:DutyAction ;
+dalicc:computationalUseOnly a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Computational use only"@en ;
-    rdfs:comment """Using the work only as the input of a computation: analysis, training,
-testing or the production of a result, as against publishing or performing the work itself.
-Where a license carries this term as a duty the licensee may make no other use."""@en ;
+    rdfs:comment "Using the work only as the input of a computation, such as analysis, training or testing, and not publishing or performing the work itself."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:useForModelTraining , dalicc:fieldOfUseRestriction ;
     skos:scopeNote "Carried by C-UDA-1.0, whose section 2 binds the licensee to use the data solely for Computational Use."@en ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 1 license record by the standard-license addition of 2026-09-15."@en .
 
-dalicc:conditionalAddLimitation a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:conditionalAddLimitation a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Conditional add limitation"@en ;
-    rdfs:comment """Adding a further condition to the license terms, but only in the narrow
-circumstances the license names, such as a statute, a judicial order, a regulation or a matter of
-national security. It is the qualified form of dalicc:addLimitation, which a license either
-allows outright or forbids outright."""@en ;
+    rdfs:comment "Adding a further condition to the license terms only in the narrow circumstances the license names, such as a statute, a court order or national security."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:addLimitation , dalicc:additionalClauses ;
     skos:scopeNote "Carried by OSET-PL-2.1, whose section 3.2 allows further conditions only to the extent statute, judicial order, regulation, national security or the public interest requires."@en ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 1 license record by the standard-license addition of 2026-09-15."@en .
 
-dalicc:standardsConformance a odrl:Action , skos:Concept , dalicc:DutyAction ;
+dalicc:standardsConformance a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Standards conformance"@en ;
-    rdfs:comment """Keeping a modified version in conformity with an external technical standard
-the license names. Where the modification departs from that standard, the license attaches duties
-that a conforming modification does not carry."""@en ;
+    rdfs:comment "Keeping a modified version in conformity with an external technical standard the license names."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso cc:ShareAlike , dalicc:modificationNotice ;
-    skos:scopeNote "Carried by SISSL, whose reciprocity is triggered not by modification but by a modification that departs from the named Standard."@en ;
+    skos:scopeNote "Where the modification departs from the named standard, the license attaches duties that a conforming modification does not carry. Carried by SISSL, whose reciprocity is triggered not by modification but by a modification that departs from the named Standard."@en ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 1 license record by the standard-license addition of 2026-09-15."@en .
 
-dalicc:publicationNonObstruction a odrl:Action , skos:Concept , dalicc:RuleAction ;
+dalicc:publicationNonObstruction a odrl:Action , skos:Concept , dalicc:RuleAction , owl:NamedIndividual ;
     rdfs:label "Publication non-obstruction"@en ;
-    rdfs:comment """Restricting or deterring the ability of anyone who receives the work to
-publish it, or to record it and the grants of rights in it. Where this action is prohibited the
-licensee may not stand between a recipient and publication."""@en ;
+    rdfs:comment "Restricting or deterring a recipient of the work from publishing it, or from recording it and the grants of rights in it."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:addLimitation , odrl:distribute ;
     skos:scopeNote "Carried by CDLA-Sharing-1.0, whose section 3.3 forbids restricting or deterring publication of the data by a recipient."@en ;
@@ -495,64 +480,73 @@ licensee may not stand between a recipient and publication."""@en ;
 #    Actions -- duties and notices
 #################################################################
 
-dalicc:attributionNotice a odrl:Action , skos:Concept , dalicc:DutyAction ;
-    rdfs:label "Attribution notice"@en ;
-    rdfs:comment "Notify the attributes of License Material."@en ;
+dalicc:attributionNotice a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
+    rdfs:label "Attribution notice (deprecated)"@en ;
+    rdfs:comment "Deprecated; replaced by cc:Attribution, because the library states attribution duties with it. Giving notice of the attributions that the licensed material carries."@en ;
+    skos:historyNote "Notify the attributes of License Material."@en ;
     dct:source <https://dalicc.github.io/> ;
     skos:note "Defined in the 2022 documentation; not used by any license in the current library; the library uses cc:Attribution instead."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
-    rdfs:seeAlso cc:Attribution , cc:attributionName , odrl:attribute .
+    rdfs:seeAlso cc:Attribution , cc:attributionName , odrl:attribute ;
+    skos:closeMatch cc:Attribution ;
+    owl:deprecated true ;
+    dct:isReplacedBy cc:Attribution .
 
-dalicc:compliantLicense a odrl:Action , skos:Concept , dalicc:DutyAction ;
+dalicc:compliantLicense a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Use a compliant license"@en ;
-    rdfs:comment "The replacement license chosen by the licensee must remain compliant with the terms of the original license. Attached as an odrl:Duty to a dalicc:ChangeLicense permission."@en ;
+    rdfs:comment "Choosing a replacement license that stays compliant with the terms of the original license."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:ChangeLicense , cc:ShareAlike .
 
-dalicc:modificationNotice a odrl:Action , skos:Concept , dalicc:DutyAction ;
+dalicc:modificationNotice a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Modification notice"@en ;
-    rdfs:comment """A notice that indicates if the Assignee modified the Licensed Material and
+    rdfs:comment "Marking a changed work as changed, saying how it differs from the original and keeping earlier notices of change."@en ;
+    skos:historyNote """A notice that indicates if the Assignee modified the Licensed Material and
 retains an indication of any previous modifications."""@en ;
     dct:source <https://dalicc.github.io/> ;
-    skos:definition "Providing a modification note means to document any changes done to the work and clearly document how it differs from the original work."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso odrl:modify , cc:Notice ;
     skos:scopeNote "The dependency graph states that this action is included in odrl:AttachPolicy. It is the most frequent DALICC-proprietary action (539 occurrences in 320 licenses), always as an odrl:Duty."@en .
 
-dalicc:noWarrantyNotice a odrl:Action , skos:Concept , dalicc:RuleAction , dalicc:DutyAction ;
+dalicc:noWarrantyNotice a odrl:Action , skos:Concept , dalicc:RuleAction , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "No-warranty notice"@en ;
-    rdfs:comment "Informs that Licensed Material does not provide any warranties."@en ;
+    rdfs:comment "Attaching a notice that the work is provided without any warranty."@en ;
+    skos:historyNote "Informs that Licensed Material does not provide any warranties."@en ;
     dct:source <https://dalicc.github.io/> ;
-    skos:definition "The licensee may attach a notice stating that the work is provided without warranty of any kind."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:WarrantyDisclaimer .
 
-dalicc:patentNotice a odrl:Action , skos:Concept , dalicc:DutyAction ;
+dalicc:patentNotice a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Patent notice"@en ;
-    rdfs:comment "Notifies that Licensed Material is patented or includes patented parts."@en ;
+    rdfs:comment "Stating that the work is patented or contains patented parts."@en ;
+    skos:historyNote "Notifies that Licensed Material is patented or includes patented parts."@en ;
     dct:source <https://dalicc.github.io/> ;
     skos:note "Defined in the 2022 documentation; used by 1 license record since 2026-09-15."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso cc:Notice , dalicc:patentFree .
 
-dalicc:permissionNotice a odrl:Action , skos:Concept , dalicc:DutyAction ;
-    rdfs:label "Permission notice"@en ;
-    rdfs:comment "The permission notices which are in the License shall be included."@en ;
+dalicc:permissionNotice a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
+    rdfs:label "Permission notice (deprecated)"@en ;
+    rdfs:comment "Deprecated; replaced by cc:Notice, because the library states notice duties with it. Including the permission notice of the license with the work."@en ;
+    skos:historyNote "The permission notices which are in the License shall be included."@en ;
     dct:source <https://dalicc.github.io/> ;
     skos:note "Defined in the 2022 documentation; not used by any license in the current library; the library uses cc:Notice instead."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
-    rdfs:seeAlso cc:Notice , odrl:AttachPolicy .
+    rdfs:seeAlso cc:Notice , odrl:AttachPolicy ;
+    skos:closeMatch cc:Notice ;
+    owl:deprecated true ;
+    dct:isReplacedBy cc:Notice .
 
-dalicc:rename a odrl:Action , skos:Concept , dalicc:DutyAction ;
+dalicc:rename a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Rename"@en ;
-    rdfs:comment """Rename means to change the title of the modified or derived work so that it can
-be clearly distinguished from the original work."""@en ;
+    rdfs:comment "Giving a modified or derived work a name that tells it apart from the original."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso odrl:derive , dalicc:ModifiedWorks .
 
-dalicc:trademarkNotice a odrl:Action , skos:Concept , dalicc:DutyAction ;
+dalicc:trademarkNotice a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Trademark notice"@en ;
-    rdfs:comment """Informs that Licensed Material is a trademark or includes trademark. The license
+    rdfs:comment "Stating that the work is, or contains, a trademark."@en ;
+    skos:historyNote """Informs that Licensed Material is a trademark or includes trademark. The license
 does not grant permission to use the trade names, trademarks, service marks, or product names of
 the Licensor, except as required for reasonable and customary use in describing the origin of the
 Work and reproducing the content of the notice file."""@en ;
@@ -561,24 +555,21 @@ Work and reproducing the content of the notice file."""@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:promote , cc:Notice .
 
-dalicc:includeNoticeFile a odrl:Action , skos:Concept , dalicc:DutyAction ;
+dalicc:includeNoticeFile a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Include notice file"@en ;
-    rdfs:comment """Carrying a named notice file of the original work forward into every
-redistributed copy and into derivative works, in one of the places the license lists."""@en ;
+    rdfs:comment "Carrying a named notice file of the original work into every redistributed copy and every derivative work."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso cc:Notice , dalicc:attributionNotice ;
     skos:note "Added by the license library review of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 3 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:royaltyCollectionReserved a odrl:Action , skos:Concept , dalicc:RuleAction , dalicc:DutyAction ;
+dalicc:royaltyCollectionReserved a odrl:Action , skos:Concept , dalicc:RuleAction , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Royalty collection reserved"@en ;
-    rdfs:comment """The licensor keeping the right to collect a royalty for uses of the work,
-whether individually or through a collecting society. Where the license waives that right
-instead, the statement is absent."""@en ;
+    rdfs:comment "Collecting royalties for uses of the work, individually or through a collecting society, under a right the licensor keeps."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:royaltyFree , cc:CommercialUse ;
     skos:note "Added by the license library review of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 9 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:derivativeDatabaseAccess a odrl:Action , skos:Concept , dalicc:DutyAction ;
+dalicc:derivativeDatabaseAccess a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Derivative database access"@en ;
     rdfs:comment """Offering the recipients of a derivative database access to the derivative
 database itself, or to a file recording the alterations made to the original."""@en ;
@@ -586,26 +577,23 @@ database itself, or to a file recording the alterations made to the original."""
     rdfs:seeAlso cc:SourceCode , dalicc:suiGenerisDatabaseRights ;
     skos:note "Added by the license library review of 2026-09-15, which recorded the clause as a vocabulary gap. Defined here so the gap is named; the review applied it to no license record."@en .
 
-dalicc:contributionGrantBack a odrl:Action , skos:Concept , dalicc:DutyAction ;
+dalicc:contributionGrantBack a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Contribution grant back"@en ;
-    rdfs:comment """Granting the licensor, or every other licensee, a license over the changes
-the licensee makes, so that the modification can travel back into the original work."""@en ;
+    rdfs:comment "Granting the licensor, or every other licensee, a license over one's own changes to the work, so that they can travel back into the original."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso cc:SourceCode , dalicc:sublicense ;
     skos:scopeNote "Carried by EUDatagrid, OCLC-2.0 and Vim, whose texts either ask for the changes or grant the steward a license over them."@en ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 3 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:patentFreedomCondition a odrl:Action , skos:Concept , dalicc:DutyAction ;
+dalicc:patentFreedomCondition a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Patent freedom condition"@en ;
-    rdfs:comment """The condition that a patent reading on the work must be licensed for free and
-unrestricted use by everyone, or else the work may not be distributed at all. It is the clause
-that forbids a licensee to accept a patent license narrower than the license itself."""@en ;
+    rdfs:comment "Distributing the work only where every patent that reads on it is licensed for free and unrestricted use by everyone."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:patentGrant , dalicc:patentFree , dalicc:addLimitation ;
     skos:scopeNote "Carried by LGPL-2.0-only and LGPL-2.1-only (section 11, the liberty-or-death clause) and by OCLC-2.0."@en ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 3 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:exportControlNotice a odrl:Action , skos:Concept , dalicc:DutyAction ;
+dalicc:exportControlNotice a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Export control notice"@en ;
     rdfs:comment """Complying with the export and import laws that reach the work, and passing
 the notice of them on to every recipient."""@en ;
@@ -614,7 +602,7 @@ the notice of them on to every recipient."""@en ;
     skos:scopeNote "Carried by NASA-1.3, RPL-1.1 and RPL-1.5."@en ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 3 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:recipientAssent a odrl:Action , skos:Concept , dalicc:DutyAction ;
+dalicc:recipientAssent a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Recipient assent"@en ;
     rdfs:comment """Making a reasonable effort to obtain the express assent of a recipient to the
 terms of the license before the work reaches them, rather than relying on the notice alone."""@en ;
@@ -623,7 +611,7 @@ terms of the license before the work reaches them, rather than relying on the no
     skos:scopeNote "Carried by the Academic Free and Open Software licenses from version 2.0 on, whose Attribution Rights clause asks for the express assent of recipients."@en ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 6 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:originalVersionOffer a odrl:Action , skos:Concept , dalicc:DutyAction ;
+dalicc:originalVersionOffer a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Original version offer"@en ;
     rdfs:comment """Giving every recipient of a modified work a way back to the original: the
 unmodified version itself, a difference file, or instructions for obtaining it."""@en ;
@@ -632,17 +620,15 @@ unmodified version itself, a difference file, or instructions for obtaining it."
     skos:scopeNote "Carried by IPA and OGTSL, whose texts require the original version, or the means of returning to it, to travel with the modified one."@en ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 1 license record by the standard-license addition of 2026-09-15."@en .
 
-dalicc:advertisingAcknowledgement a odrl:Action , skos:Concept , dalicc:DutyAction ;
+dalicc:advertisingAcknowledgement a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Advertising acknowledgement"@en ;
-    rdfs:comment """Displaying a prescribed acknowledgement in every advertisement that mentions
-features of the work or its use. The wording itself is carried by
-dalicc:PromotionSpecification."""@en ;
+    rdfs:comment "Displaying a prescribed acknowledgement, whose wording dalicc:PromotionSpecification carries, in every advertisement that mentions the work or its use."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:PromotionSpecification , dalicc:promote , cc:Attribution ;
     skos:scopeNote "Carried by RSCPL and by BSD-4-Clause, the two records whose texts carry the BSD advertising clause."@en ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 3 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:provideUserData a odrl:Action , skos:Concept , dalicc:DutyAction ;
+dalicc:provideUserData a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Provide user data"@en ;
     rdfs:comment """Handing a recipient a no-charge copy, in a commonly used electronic form, of
 the data about that recipient which the licensee holds because of the work."""@en ;
@@ -651,7 +637,7 @@ the data about that recipient which the licensee holds because of the work."""@e
     skos:scopeNote "Carried by the two Cryptographic Autonomy License records, whose section 4.2.1 is the clause the license is named for."@en ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 2 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:recipientRegistrationRequest a odrl:Action , skos:Concept , dalicc:DutyAction ;
+dalicc:recipientRegistrationRequest a odrl:Action , skos:Concept , dalicc:DutyAction , owl:NamedIndividual ;
     rdfs:label "Recipient registration request"@en ;
     rdfs:comment """Asking, without requiring, that a recipient register as a user of the work
 and report the modifications they make to it, so that the steward can keep a record."""@en ;
@@ -667,16 +653,16 @@ and report the modifications they make to it, so that the steward can keep a rec
 #    object of dalicc:validityType, cc:jurisdiction or an equivalent property.
 #################################################################
 
-dalicc:perpetual a skos:Concept , dalicc:ValidityType ;
+dalicc:perpetual a skos:Concept , dalicc:ValidityType , owl:NamedIndividual ;
     rdfs:label "Perpetual"@en ;
-    rdfs:comment "A perpetual license allows to use the licensed work indefinitely."@en ;
+    rdfs:comment "The license has no time limit."@en ;
+    skos:historyNote "A perpetual license allows to use the licensed work indefinitely."@en ;
     dct:source <https://dalicc.github.io/> ;
-    skos:definition "The license has no limit of time. Where this does not apply, a start date and an end date are given instead."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     skos:prefLabel "perpetual"@en ;
-    skos:scopeNote "The value of dalicc:validityType on 342 of 343 licenses."@en .
+    skos:scopeNote "Where it does not apply, a start and an end date or a period are given instead. The value of dalicc:validityType on 342 of 343 licenses."@en .
 
-dalicc:specifyDate a skos:Concept , dalicc:ValidityType ;
+dalicc:specifyDate a skos:Concept , dalicc:ValidityType , owl:NamedIndividual ;
     rdfs:label "Specify date"@en ;
     rdfs:comment "The license is valid between an explicit start date and end date, given as schema:startDate and schema:endDate on the policy."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
@@ -684,7 +670,7 @@ dalicc:specifyDate a skos:Concept , dalicc:ValidityType ;
     rdfs:seeAlso schema:startDate , schema:endDate ;
     skos:note "Written by the DALICC license composer; no license of the published library uses it."@en .
 
-dalicc:specifyPeriod a skos:Concept , dalicc:ValidityType ;
+dalicc:specifyPeriod a skos:Concept , dalicc:ValidityType , owl:NamedIndividual ;
     rdfs:label "Specify period"@en ;
     rdfs:comment "The license is valid for a duration counted from the moment it is granted, given as schema:validFor on the policy."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
@@ -692,7 +678,7 @@ dalicc:specifyPeriod a skos:Concept , dalicc:ValidityType ;
     rdfs:seeAlso schema:validFor ;
     skos:note "Written by the DALICC license composer; no license of the published library uses it."@en .
 
-dalicc:worldwide a skos:Concept , dalicc:Jurisdiction ;
+dalicc:worldwide a skos:Concept , dalicc:Jurisdiction , owl:NamedIndividual ;
     rdfs:label "Worldwide"@en ;
     rdfs:comment "The license terms are valid throughout the world."@en ;
     dct:source <https://dalicc.github.io/> ;
@@ -710,7 +696,7 @@ dalicc:worldwide a skos:Concept , dalicc:Jurisdiction ;
 #    a finding, never an act the licensee may or may not do.
 #################################################################
 
-dalicc:NotGrantedByDefault a skos:Concept , dalicc:DefaultOutcome ;
+dalicc:NotGrantedByDefault a skos:Concept , dalicc:DefaultOutcome , owl:NamedIndividual ;
     rdfs:label "Not granted by default"@en ;
     rdfs:comment """The action is not permitted unless the license permits it. A license that says
 nothing grants nothing, so a check under a graph that adopts the rule reads the silence as a
@@ -719,7 +705,7 @@ prohibition and marks the finding as coming from the rule."""@en ;
     skos:prefLabel "notGrantedByDefault"@en ;
     rdfs:seeAlso dalicc:GrantedByDefault , dalicc:defaultOutcome .
 
-dalicc:GrantedByDefault a skos:Concept , dalicc:DefaultOutcome ;
+dalicc:GrantedByDefault a skos:Concept , dalicc:DefaultOutcome , owl:NamedIndividual ;
     rdfs:label "Granted by default"@en ;
     rdfs:comment """The action is permitted unless the license prohibits it, for example because a
 statutory exception allows it whatever the license says. A check under a graph that adopts the
@@ -728,7 +714,7 @@ rule reads the silence as a permission and marks the finding as coming from the 
     skos:prefLabel "grantedByDefault"@en ;
     rdfs:seeAlso dalicc:NotGrantedByDefault , dalicc:NotWaivable .
 
-dalicc:RequiredByDefault a skos:Concept , dalicc:DefaultOutcome ;
+dalicc:RequiredByDefault a skos:Concept , dalicc:DefaultOutcome , owl:NamedIndividual ;
     rdfs:label "Required by default"@en ;
     rdfs:comment """A duty applies unless the license waives it. A check under a graph that adopts
 the rule reads the silence as a license-wide duty and marks the finding as coming from the
@@ -737,7 +723,7 @@ rule."""@en ;
     skos:prefLabel "requiredByDefault"@en ;
     rdfs:seeAlso dalicc:NotWaivable , odrl:duty .
 
-dalicc:NotWaivable a skos:Concept , dalicc:DefaultOutcome ;
+dalicc:NotWaivable a skos:Concept , dalicc:DefaultOutcome , owl:NamedIndividual ;
     rdfs:label "Not waivable"@en ;
     rdfs:comment """A statement of the license to the contrary has no effect in that jurisdiction.
 The reasoner reports it as a finding when the license prohibits the action; it never silently
@@ -746,7 +732,7 @@ overrides what the license says, because what the license says is what the recor
     skos:prefLabel "notWaivable"@en ;
     rdfs:seeAlso dalicc:GrantedByDefault , dalicc:moralRightsRestriction .
 
-dalicc:Adopted a skos:Concept , dalicc:RuleStatus ;
+dalicc:Adopted a skos:Concept , dalicc:RuleStatus , owl:NamedIndividual ;
     rdfs:label "Adopted"@en ;
     rdfs:comment """The rule takes part in reasoning under every graph that carries it. Only a rule
 the library has adopted is applied when a reader chooses nothing."""@en ;
@@ -754,7 +740,7 @@ the library has adopted is applied when a reader chooses nothing."""@en ;
     skos:prefLabel "adopted"@en ;
     rdfs:seeAlso dalicc:Proposed , dalicc:ruleStatus .
 
-dalicc:Proposed a skos:Concept , dalicc:RuleStatus ;
+dalicc:Proposed a skos:Concept , dalicc:RuleStatus , owl:NamedIndividual ;
     rdfs:label "Proposed"@en ;
     rdfs:comment """The rule is written down for review and is not part of any default check.
 Choosing the graph it lives in is the reader's request to see what it would do."""@en ;
@@ -763,14 +749,14 @@ Choosing the graph it lives in is the reader's request to see what it would do."
     rdfs:seeAlso dalicc:Adopted , dalicc:ruleStatus ;
     skos:note "A proposed rule is a question for the association's legal reviewer and not legal advice."@en .
 
-dalicc:FromText a skos:Concept , dalicc:StatementOrigin ;
+dalicc:FromText a skos:Concept , dalicc:StatementOrigin , owl:NamedIndividual ;
     rdfs:label "From the text"@en ;
-    rdfs:comment "The statement is modelled from a sentence of the license text, which is what every curated record holds."@en ;
+    rdfs:comment "The statement is modelled from a sentence of the license text. A statement node of a curated record that names no origin is read as this one."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     skos:prefLabel "fromText"@en ;
     rdfs:seeAlso dalicc:FromDefaultRule , dalicc:statementOrigin .
 
-dalicc:FromDefaultRule a skos:Concept , dalicc:StatementOrigin ;
+dalicc:FromDefaultRule a skos:Concept , dalicc:StatementOrigin , owl:NamedIndividual ;
     rdfs:label "From a default rule"@en ;
     rdfs:comment """The statement was derived, for an action the license is silent on, by a
 dalicc:DefaultRule of the dependency graph the check ran under. The rule that produced it is
@@ -778,6 +764,14 @@ named beside it."""@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     skos:prefLabel "fromDefaultRule"@en ;
     rdfs:seeAlso dalicc:FromText , dalicc:DefaultRule .
+
+dalicc:FromConvention a skos:Concept , dalicc:StatementOrigin , owl:NamedIndividual ;
+    rdfs:label "From a library convention"@en ;
+    rdfs:comment "The statement is a library convention applied to every record of its kind, not a sentence of the license text."@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    skos:prefLabel "fromConvention"@en ;
+    rdfs:seeAlso dalicc:FromText , dalicc:convention , dalicc:statementOrigin ;
+    skos:note "Added with version 2 of the vocabulary, so that a record can say which of its statements the text makes and which the library adds by convention."@en .
 
 #################################################################
 #    Regions -- jurisdictions wider than one country
@@ -788,7 +782,7 @@ named beside it."""@en ;
 #    named with the BPI country IRIs the records use.
 #################################################################
 
-dalicc:EU a skos:Concept , dalicc:Jurisdiction ;
+dalicc:EU a skos:Concept , dalicc:Jurisdiction , owl:NamedIndividual ;
     rdfs:label "European Union"@en ;
     rdfs:comment """The member states of the European Union. A rule in this jurisdiction rests on
 a Union instrument, which reaches every member state once it is transposed; where a member state
@@ -805,7 +799,7 @@ differs, a rule for that country says so."""@en ;
         bpicounty:Slovenia , bpicounty:Spain , bpicounty:Sweden ;
     skos:scopeNote "27 member states. The United Kingdom left the Union in 2020 and is dalicc:GB, which keeps some of the same law and has diverged in others."@en .
 
-dalicc:US a skos:Concept , dalicc:Jurisdiction ;
+dalicc:US a skos:Concept , dalicc:Jurisdiction , owl:NamedIndividual ;
     rdfs:label "United States"@en ;
     rdfs:comment "The United States of America, whose copyright law is federal."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
@@ -813,7 +807,7 @@ dalicc:US a skos:Concept , dalicc:Jurisdiction ;
     skos:member bpicounty:UnitedStates ;
     rdfs:seeAlso cc:jurisdiction .
 
-dalicc:CN a skos:Concept , dalicc:Jurisdiction ;
+dalicc:CN a skos:Concept , dalicc:Jurisdiction , owl:NamedIndividual ;
     rdfs:label "China"@en ;
     rdfs:comment "The People's Republic of China, excluding the special administrative regions, whose copyright law is separate."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
@@ -821,7 +815,7 @@ dalicc:CN a skos:Concept , dalicc:Jurisdiction ;
     skos:member bpicounty:China ;
     rdfs:seeAlso cc:jurisdiction .
 
-dalicc:GB a skos:Concept , dalicc:Jurisdiction ;
+dalicc:GB a skos:Concept , dalicc:Jurisdiction , owl:NamedIndividual ;
     rdfs:label "United Kingdom"@en ;
     rdfs:comment "The United Kingdom of Great Britain and Northern Ireland, which kept the database right and the mining exception it had as a member state and has diverged since."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
@@ -829,15 +823,15 @@ dalicc:GB a skos:Concept , dalicc:Jurisdiction ;
     skos:member bpicounty:UnitedKingdom ;
     rdfs:seeAlso dalicc:EU , cc:jurisdiction .
 
-dalicc:JP a skos:Concept , dalicc:Jurisdiction ;
+dalicc:JP a skos:Concept , dalicc:Jurisdiction , owl:NamedIndividual ;
     rdfs:label "Japan"@en ;
-    rdfs:comment "Japan."@en ;
+    rdfs:comment "Japan, whose copyright law is national and applies throughout the country."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     skos:prefLabel "JP"@en ;
     skos:member bpicounty:Japan ;
     rdfs:seeAlso cc:jurisdiction .
 
-dalicc:IN a skos:Concept , dalicc:Jurisdiction ;
+dalicc:IN a skos:Concept , dalicc:Jurisdiction , owl:NamedIndividual ;
     rdfs:label "India"@en ;
     rdfs:comment "The Republic of India."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
@@ -845,7 +839,7 @@ dalicc:IN a skos:Concept , dalicc:Jurisdiction ;
     skos:member bpicounty:India ;
     rdfs:seeAlso cc:jurisdiction .
 
-dalicc:BR a skos:Concept , dalicc:Jurisdiction ;
+dalicc:BR a skos:Concept , dalicc:Jurisdiction , owl:NamedIndividual ;
     rdfs:label "Brazil"@en ;
     rdfs:comment "The Federative Republic of Brazil."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
@@ -853,7 +847,7 @@ dalicc:BR a skos:Concept , dalicc:Jurisdiction ;
     skos:member bpicounty:Brazil ;
     rdfs:seeAlso cc:jurisdiction .
 
-dalicc:irrevocable a skos:Concept ;
+dalicc:irrevocable a skos:Concept , owl:NamedIndividual ;
     rdfs:label "Irrevocable"@en ;
     rdfs:comment """The license cannot be terminated for any reason or only that the license cannot
 be terminated for convenience, but still may be terminated for breach."""@en ;
@@ -862,18 +856,18 @@ be terminated for convenience, but still may be terminated for breach."""@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     skos:prefLabel "irrevocable"@en .
 
-dalicc:patentFree a skos:Concept ;
-    rdfs:label "Patent free"@en ;
-    rdfs:comment """The license applies only to those patent claims licensable by such Contributor
-that are necessarily infringed by their Contribution(s) alone or by combination of their
-Contribution(s) with the Licensed Material to which such Contribution(s) was submitted."""@en ;
+dalicc:patentFree a skos:Concept , owl:NamedIndividual ;
+    rdfs:label "Patent free (deprecated)"@en ;
+    rdfs:comment "Deprecated; replaced by dalicc:patentGrant, because its 2022 definition is the scope of a contributor's patent license. The license applies only to those patent claims licensable by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their Contribution(s) with the Licensed Material to which such Contribution(s) was submitted."@en ;
     dct:source <https://dalicc.github.io/> ;
     skos:note "Defined in the 2022 documentation; not used by any license in the current library."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     skos:prefLabel "patentFree"@en ;
-    rdfs:seeAlso dalicc:patentNotice .
+    rdfs:seeAlso dalicc:patentNotice ;
+    owl:deprecated true ;
+    dct:isReplacedBy dalicc:patentGrant .
 
-dalicc:royaltyFree a skos:Concept ;
+dalicc:royaltyFree a skos:Concept , owl:NamedIndividual ;
     rdfs:label "Royalty free"@en ;
     rdfs:comment """Refers to the right to use copyright material or intellectual property without
 the need to pay royalties or license fees for each use, per each copy or volume sold or some time
@@ -886,9 +880,10 @@ period of use or sales."""@en ;
     skos:exactMatch dalicc:royalityFree ;
     rdfs:seeAlso dalicc:royalityFree , dalicc:chargeLicenseFee .
 
-dalicc:royalityFree a skos:Concept ;
+dalicc:royalityFree a skos:Concept , owl:NamedIndividual ;
     rdfs:label "Royalty free (deprecated spelling)"@en ;
-    rdfs:comment """Refers to the right to use copyright material or intellectual property without
+    rdfs:comment "Deprecated misspelling of dalicc:royaltyFree, which replaces it: the right to use the work without paying royalties or license fees."@en ;
+    skos:historyNote """Refers to the right to use copyright material or intellectual property without
 the need to pay royalties or license fees for each use, per each copy or volume sold or some time
 period of use or sales."""@en ;
     dct:source <https://dalicc.github.io/> ;
@@ -902,16 +897,17 @@ dalicc:royaltyFree in new data."""@en ;
     skos:prefLabel "royalityFree"@en ;
     rdfs:seeAlso dalicc:royaltyFree .
 
-dalicc:terminationOnBreach a skos:Concept ;
-    rdfs:label "Termination on breach"@en ;
-    rdfs:comment """The license ends automatically when the licensee breaches it. Licenses
-differ in what survives the end and in whether compliance reinstates the grant."""@en ;
+dalicc:terminationOnBreach a skos:Concept , owl:NamedIndividual ;
+    rdfs:label "Termination on breach (deprecated)"@en ;
+    rdfs:comment "Deprecated; replaced by dalicc:terminatesOnBreach, because the property a record carries says the same thing. The license ends automatically when the licensee breaches it. Licenses differ in what survives the end and in whether compliance reinstates the grant."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     skos:prefLabel "terminationOnBreach"@en ;
     rdfs:seeAlso dalicc:irrevocable , dalicc:patentRetaliationTermination ;
-    skos:note "Added by the license library review of 2026-09-15, which recorded the clause as a vocabulary gap. Defined here so the gap is named; the review applied it to no license record."@en .
+    skos:note "Added by the license library review of 2026-09-15, which recorded the clause as a vocabulary gap. Defined here so the gap is named; the review applied it to no license record."@en ;
+    owl:deprecated true ;
+    dct:isReplacedBy dalicc:terminatesOnBreach .
 
-dalicc:testFixture a skos:Concept , dalicc:RecordStatus ;
+dalicc:testFixture a skos:Concept , dalicc:RecordStatus , owl:NamedIndividual ;
     rdfs:label "Test fixture"@en ;
     rdfs:comment """The record is a fixture used to exercise the composer and the tests, not a
 published license. Its IRI stays resolvable, and presentation layers leave it out of listings,
@@ -920,28 +916,28 @@ search results and counts."""@en ;
     skos:prefLabel "testFixture"@en ;
     rdfs:seeAlso dalicc:recordStatus .
 
-dalicc:Created a skos:Concept , dalicc:ReviewStatus ;
+dalicc:Created a skos:Concept , dalicc:ReviewStatus , owl:NamedIndividual ;
     rdfs:label "Created"@en ;
     rdfs:comment "The record exists but has not been checked against the text of the license it models."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     skos:prefLabel "Created"@en ;
     rdfs:seeAlso dalicc:reviewStatus .
 
-dalicc:Reviewed a skos:Concept , dalicc:ReviewStatus ;
+dalicc:Reviewed a skos:Concept , dalicc:ReviewStatus , owl:NamedIndividual ;
     rdfs:label "Reviewed"@en ;
     rdfs:comment "The record has been checked against the legal text of the license and against the modelling conventions, and the result is recorded in licensedata/reviews."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     skos:prefLabel "Reviewed"@en ;
     rdfs:seeAlso dalicc:reviewStatus , dalicc:reviewedOn .
 
-dalicc:Approved a skos:Concept , dalicc:ReviewStatus ;
+dalicc:Approved a skos:Concept , dalicc:ReviewStatus , owl:NamedIndividual ;
     rdfs:label "Approved"@en ;
     rdfs:comment "The review of the record, including every question it left open, has been signed off by the party responsible for the library."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     skos:prefLabel "Approved"@en ;
     rdfs:seeAlso dalicc:reviewStatus .
 
-dalicc:Audited a skos:Concept , dalicc:ReviewStatus ;
+dalicc:Audited a skos:Concept , dalicc:ReviewStatus , owl:NamedIndividual ;
     rdfs:label "Audited"@en ;
     rdfs:comment "The record has been checked a second time, independently of the reviewer who last changed it."@en ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
@@ -954,7 +950,7 @@ dalicc:Audited a skos:Concept , dalicc:ReviewStatus ;
 
 dalicc:WarrantyDisclaimer a owl:DatatypeProperty ;
     rdfs:label "Warranty disclaimer"@en ;
-    rdfs:comment "The verbatim text of the warranty disclaimer of the license. The licensee must accept a disclaimer attached to this work."@en ;
+    rdfs:comment "The verbatim text of the warranty disclaimer of the license."@en ;
     rdfs:domain odrl:Set ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
@@ -963,7 +959,7 @@ dalicc:WarrantyDisclaimer a owl:DatatypeProperty ;
 
 dalicc:LiabilityLimitation a owl:DatatypeProperty ;
     rdfs:label "Limitation of liability"@en ;
-    rdfs:comment "The verbatim text of the limitation-of-liability clause of the license. The work comes with a limitation of liability."@en ;
+    rdfs:comment "The verbatim text of the limitation-of-liability clause of the license."@en ;
     rdfs:domain odrl:Set ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
@@ -971,7 +967,7 @@ dalicc:LiabilityLimitation a owl:DatatypeProperty ;
 
 dalicc:WarrantyOrLiabilityAcceptance a owl:DatatypeProperty ;
     rdfs:label "Warranty or liability acceptance"@en ;
-    rdfs:comment "The verbatim text of a clause under which the licensee may accept a warranty or additional liability. The work comes with a warranty or additional liability."@en ;
+    rdfs:comment "The verbatim text of a clause under which the licensee may offer a warranty or accept additional liability."@en ;
     rdfs:domain odrl:Set ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> .
@@ -984,11 +980,11 @@ dalicc:additionalClauses a owl:DatatypeProperty ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> .
 
 dalicc:licenseText a owl:DatatypeProperty ;
-    rdfs:label "license text"@en ;
-    rdfs:comment """The full text of a licence as its licensor publishes it, carried by the
+    rdfs:label "License text"@en ;
+    rdfs:comment """The full text of a license as its licensor publishes it, carried by the
 record itself. Curated records point at the authoritative text with cc:legalcode and quote
 single clauses in dalicc:WarrantyDisclaimer, dalicc:LiabilityLimitation and
-dalicc:additionalClauses; a composed licence may carry the text written for it, for example
+dalicc:additionalClauses; a composed license may carry the text written for it, for example
 by License-to-Text after the licensor has checked it."""@en ;
     rdfs:domain odrl:Set ;
     rdfs:range xsd:string ;
@@ -1013,21 +1009,31 @@ dalicc:licenseOwner a owl:DatatypeProperty ;
     rdfs:seeAlso dct:publisher , odrl:assigner ;
     skos:note "Written by the DALICC license composer onto user-composed licenses; no license of the published library carries it."@en .
 
+dalicc:deprecatedOn a owl:DatatypeProperty ;
+    rdfs:label "Deprecated on"@en ;
+    rdfs:comment "The date from which a composed license is no longer current, because its publisher withdrew it or a newer version replaced it."@en ;
+    rdfs:domain odrl:Set ;
+    rdfs:range xsd:date ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso owl:deprecated , dct:isReplacedBy ;
+    skos:scopeNote "Written by the License Composer beside owl:deprecated true; with dct:isReplacedBy the license is superseded, without it withdrawn. No curated record carries it."@en ;
+    skos:note "Added with version 2 of the vocabulary. The composer wrote it before the vocabulary defined it."@en .
+
 dalicc:orLaterVersionOption a owl:DatatypeProperty ;
     rdfs:label "Or later version option"@en ;
-    rdfs:comment """Whether the record models a license text that lets the licensee choose a
-later version of the same license. False says the record models the named version only."""@en ;
+    rdfs:comment "Whether the license text lets the licensee choose a later version of the same license instead of the one named."@en ;
     rdfs:domain odrl:Set ;
     rdfs:range xsd:boolean ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dct:hasVersion , dalicc:ChangeLicense ;
-    skos:scopeNote "Carried by the four GNU records, each with the value false: none of them models an or-later text."@en .
+    skos:scopeNote "False says the record models the named version only. Carried by the four GNU records, each with the value false: none of them models an or-later text."@en .
 
-dalicc:shareAlikeVersionQualifier a owl:AnnotationProperty ;
+dalicc:shareAlikeVersionQualifier a owl:DatatypeProperty ;
     rdfs:label "Share-alike version qualifier"@en ;
     rdfs:comment """Which outgoing licenses a share-alike condition accepts, as a short literal,
 for example the same license, a later version of it, another jurisdiction port with the same
 license elements, or a license declared compatible."""@en ;
+    rdfs:domain odrl:Set ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso cc:ShareAlike , dalicc:compliantLicense ;
@@ -1037,7 +1043,7 @@ dalicc:variantKind a owl:DatatypeProperty ;
     rdfs:label "Variant kind"@en ;
     rdfs:comment """How a record relates to the record it descends from: jurisdiction-port,
 translation, version, edition, version-option, exception or rider. The first four name a text
-of the same licence adapted, translated or reissued; version-option, exception and rider name
+of the same license adapted, translated or reissued; version-option, exception and rider name
 a variant that keeps the base text and changes what it grants or requires, and each of those
 three carries dalicc:variantOf."""@en ;
     rdfs:domain odrl:Set ;
@@ -1067,99 +1073,103 @@ dalicc:reviewedOn a owl:DatatypeProperty ;
 
 dalicc:terminatesOnBreach a owl:DatatypeProperty ;
     rdfs:label "Terminates on breach"@en ;
-    rdfs:comment """Whether the license ends automatically when the licensee fails to comply with
-it. True says the text carries such a clause; the absence of the property says the text is silent,
-not that the license survives a breach."""@en ;
+    rdfs:comment "Whether the license ends automatically when the licensee fails to comply with it."@en ;
     rdfs:domain odrl:Set ;
     rdfs:range xsd:boolean ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:terminationOnBreach , dalicc:curePeriod ;
-    skos:scopeNote "The policy quality dalicc:terminationOnBreach names the concept; this property is how a record carries it."@en ;
+    skos:scopeNote "True says the text carries such a clause; the absence of the property says the text is silent, not that the license survives a breach. The policy quality dalicc:terminationOnBreach names the concept; this property is how a record carries it."@en ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 60 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:curePeriod a owl:AnnotationProperty ;
+dalicc:curePeriod a owl:DatatypeProperty ;
     rdfs:label "Cure period"@en ;
-    rdfs:comment """The time a licensee in breach is given to put the breach right before the
-license ends, as a short literal such as "30 days". The absence of the property beside
-dalicc:terminatesOnBreach says the termination is immediate."""@en ;
+    rdfs:comment """The time a licensee in breach is given to put the breach right before the license ends, as a short literal such as "30 days"."""@en ;
+    rdfs:domain odrl:Set ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:terminatesOnBreach ;
-    skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 19 license records by the standard-license addition of 2026-09-15."@en .
+    skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 19 license records by the standard-license addition of 2026-09-15."@en ;
+    skos:scopeNote "Without it, beside dalicc:terminatesOnBreach, the termination is immediate."@en .
 
 dalicc:sublicenseSurvival a owl:DatatypeProperty ;
     rdfs:label "Sublicense survival"@en ;
-    rdfs:comment """Whether the licenses a licensee has validly granted to third parties survive
-the termination of the licensee's own license."""@en ;
+    rdfs:comment "Whether the licenses a licensee has validly granted to third parties survive the end of the licensee's own license."@en ;
     rdfs:domain odrl:Set ;
     rdfs:range xsd:boolean ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:terminatesOnBreach , dalicc:sublicense ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 11 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:sourcePublicationPeriod a owl:AnnotationProperty ;
+dalicc:sourcePublicationPeriod a owl:DatatypeProperty ;
     rdfs:label "Source publication period"@en ;
     rdfs:comment """How long the source code a license requires to be published must stay
 available, and from when, as a short literal such as "12 months from first deployment"."""@en ;
+    rdfs:domain odrl:Set ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso cc:SourceCode , dalicc:networkUseTrigger ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 7 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:governingLaw a owl:AnnotationProperty ;
+dalicc:governingLaw a owl:DatatypeProperty ;
     rdfs:label "Governing law"@en ;
     rdfs:comment """The law that governs the license agreement, as a short literal. It is not the
 territory in which the grant is valid: a license whose grant is worldwide can still be governed by
 the law of one state, and cc:jurisdiction carries the territory."""@en ;
+    rdfs:domain odrl:Set ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso cc:jurisdiction , dalicc:Jurisdiction ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 6 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:compatibleLicenseTest a owl:AnnotationProperty ;
+dalicc:compatibleLicenseTest a owl:DatatypeProperty ;
     rdfs:label "Compatible license test"@en ;
     rdfs:comment """The test a license states for deciding whether another license is compatible
 with it, as a short literal: a named list, an approval by a body, or a comparison of the level of
 reciprocity. The list itself is quoted in dalicc:additionalClauses."""@en ;
+    rdfs:domain odrl:Set ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:compliantLicense , dalicc:ChangeLicense , cc:ShareAlike ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 12 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:reciprocityScope a owl:AnnotationProperty ;
+dalicc:reciprocityScope a owl:DatatypeProperty ;
     rdfs:label "Reciprocity scope"@en ;
     rdfs:comment """How far a share-alike condition reaches, as a short literal: the changed file,
 the source form, the whole work, or the product the work is built into. It says in words what the
 attachment level of the cc:ShareAlike duty says in structure."""@en ;
+    rdfs:domain odrl:Set ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso cc:ShareAlike , dalicc:shareAlikeVersionQualifier ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 1 license record by the standard-license addition of 2026-09-15."@en .
 
-dalicc:alternativeConditionSet a owl:AnnotationProperty ;
+dalicc:alternativeConditionSet a owl:DatatypeProperty ;
     rdfs:label "Alternative condition set"@en ;
     rdfs:comment """A statement that the license lets the licensee satisfy any one of several
 listed conditions rather than all of them. The deontic model has no way to say "one of these", so
 the alternatives are quoted and this property records that they are alternatives."""@en ;
+    rdfs:domain odrl:Set ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso odrl:duty , dalicc:additionalClauses ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 3 license records by the standard-license addition of 2026-09-15."@en .
 
-dalicc:governmentRightsLimitation a owl:AnnotationProperty ;
+dalicc:governmentRightsLimitation a owl:DatatypeProperty ;
     rdfs:label "Government rights limitation"@en ;
     rdfs:comment """A clause limiting the rights a government end user acquires in the work, or
 making the governing law depend on which government the licensee is."""@en ;
+    rdfs:domain odrl:Set ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:governingLaw , dalicc:additionalClauses ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 1 license record by the standard-license addition of 2026-09-15."@en .
 
-dalicc:fieldOfUseRestriction a owl:AnnotationProperty ;
+dalicc:fieldOfUseRestriction a owl:DatatypeProperty ;
     rdfs:label "Field of use restriction"@en ;
     rdfs:comment """The field of activity a license confines the licensee to, as a short literal.
 Where the field is computational use the action dalicc:computationalUseOnly carries the duty and
 this property names the field."""@en ;
+    rdfs:domain odrl:Set ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:computationalUseOnly , cc:CommercialUse ;
@@ -1171,7 +1181,7 @@ this property names the field."""@en ;
 
 dalicc:validityType a owl:ObjectProperty ;
     rdfs:label "Validity type"@en ;
-    rdfs:comment "Relates a license to the kind of validity period it has. Specify your license period by either giving a start date and an end date or by defining a validity period; where this does not apply, choose dalicc:perpetual for an indefinite period."@en ;
+    rdfs:comment "Relates a license to the kind of validity period it has: dalicc:perpetual, dalicc:specifyDate or dalicc:specifyPeriod."@en ;
     rdfs:domain odrl:Set ;
     rdfs:range dalicc:ValidityType ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
@@ -1205,7 +1215,7 @@ dalicc:variantOf a owl:ObjectProperty ;
     rdfs:label "Variant of"@en ;
     rdfs:comment """The record this record is a version-option, exception or rider variant of.
 The variant keeps the base text and changes what the base grants or requires: an or-later
-identifier adds the option of a later version of the same licence, an exception lifts one
+identifier adds the option of a later version of the same license, an exception lifts one
 condition for named material, and a rider adds a condition of its own."""@en ;
     rdfs:subPropertyOf dct:relation ;
     rdfs:domain odrl:Set ;
@@ -1253,6 +1263,18 @@ compatibility answer for the stack is the conjunction of the answers for its par
     skos:scopeNote "Carried by Python-2.0.1, which is four agreements published as one license."@en ;
     skos:note "Added by the standard-license addition of 2026-09-15, which recorded the clause as a vocabulary gap. Applied to 1 license record by the standard-license addition of 2026-09-15."@en .
 
+dalicc:compatibleWith a owl:ObjectProperty ;
+    rdfs:label "Compatible with"@en ;
+    rdfs:comment """The license lets a work under it be released, alone or combined with other
+material, under the other license, as its own text or its licensor's published compatibility list
+states; the relation is directed, not symmetric, so it says nothing about the opposite way."""@en ;
+    rdfs:domain odrl:Set ;
+    rdfs:range odrl:Set ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso dalicc:compatibleLicenseTest , dalicc:compliantLicense , cc:ShareAlike ;
+    skos:scopeNote "Examples: LGPL-3.0 is compatible with GPL-3.0 by its section 2, AGPL-3.0 with GPL-3.0 by section 13 of GPL-3.0, and CC BY-SA 4.0 with GPL-3.0 by the Creative Commons list of compatible licenses. Read by the reasoner as a one-way permission to relicense."@en ;
+    skos:note "Added with version 2 of the vocabulary."@en .
+
 #################################################################
 #    Default-rule properties
 #################################################################
@@ -1287,41 +1309,100 @@ cc:jurisdiction uses on the records."""@en ;
 
 dalicc:ruleBasis a owl:DatatypeProperty ;
     rdfs:label "Rule basis"@en ;
-    rdfs:comment """The legal source a default rule rests on, named in words: a statute and its
-article, a directive, or a general principle. It is a citation a reader can check, not a holding
-and not legal advice."""@en ;
-    rdfs:domain dalicc:DefaultRule ;
+    rdfs:comment """The legal source a default rule or an axiom removal rests on, named in words: a
+statute and its article, a directive, or a general principle. It is a citation a reader can
+check, not a holding and not legal advice."""@en ;
     rdfs:range xsd:string ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:DefaultRule , dct:date .
 
 dalicc:ruleStatus a owl:ObjectProperty ;
     rdfs:label "Rule status"@en ;
-    rdfs:comment """Relates a default rule to whether it takes part in reasoning by default
-(dalicc:Adopted) or is written down for review (dalicc:Proposed)."""@en ;
-    rdfs:domain dalicc:DefaultRule ;
+    rdfs:comment """Relates a default rule or an axiom removal to whether it takes part in reasoning
+by default (dalicc:Adopted) or is written down for review (dalicc:Proposed)."""@en ;
     rdfs:range dalicc:RuleStatus ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
     rdfs:seeAlso dalicc:RuleStatus .
 
 dalicc:statementOrigin a owl:ObjectProperty ;
     rdfs:label "Statement origin"@en ;
-    rdfs:comment """Relates a deontic statement in a result or a document to where it came from:
-dalicc:FromText or dalicc:FromDefaultRule. It is written by the reasoner and by the services that
-build a result, never by a curated record."""@en ;
+    rdfs:comment """Relates a deontic statement to where it came from: dalicc:FromText,
+dalicc:FromConvention or dalicc:FromDefaultRule. A curated record writes it only to mark a
+statement as a library convention; the reasoner and the services that build a result write the
+other two."""@en ;
     rdfs:range dalicc:StatementOrigin ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
-    rdfs:seeAlso dalicc:StatementOrigin , dalicc:DefaultRule .
+    rdfs:seeAlso dalicc:StatementOrigin , dalicc:DefaultRule , dalicc:evidence , dalicc:convention .
+
+dalicc:evidence a owl:DatatypeProperty ;
+    rdfs:label "Evidence"@en ;
+    rdfs:comment "The sentence of the legal text the statement rests on, quoted verbatim."@en ;
+    rdfs:domain odrl:Rule ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso dalicc:statementOrigin , dalicc:additionalClauses ;
+    skos:scopeNote "Carried by a permission, prohibition or duty node of a record. The record page quotes it beside the statement."@en ;
+    skos:note "Added with version 2 of the vocabulary."@en .
+
+dalicc:convention a owl:DatatypeProperty ;
+    rdfs:label "Convention"@en ;
+    rdfs:comment "The name of the library convention that put the statement there, for example a family rule."@en ;
+    rdfs:domain odrl:Rule ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso dalicc:FromConvention , dalicc:statementOrigin ;
+    skos:scopeNote "Carried by a permission, prohibition or duty node of a record together with dalicc:statementOrigin dalicc:FromConvention. The record page names it beside the statement."@en ;
+    skos:note "Added with version 2 of the vocabulary."@en .
 
 dalicc:extendsGraph a owl:ObjectProperty ;
-    rdfs:label "Extends graph"@en ;
-    rdfs:comment """Relates a dependency graph to a graph whose statements it is read together
-with. A jurisdiction graph carries its own default rules and extends the core graph, so a check
-under it sees the core axioms, the adopted rules and the proposed rules of that jurisdiction,
-and the core graph stays the single place its axioms are written."""@en ;
+    rdfs:label "Extends graph (deprecated)"@en ;
+    rdfs:comment "Deprecated; replaced by dalicc:basedOnGraph. Related a dependency graph to a graph whose statements it was read together with."@en ;
+    owl:deprecated true ;
+    dct:isReplacedBy dalicc:basedOnGraph ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
-    rdfs:seeAlso dalicc:DependencyRelation , dalicc:DefaultRule ;
-    skos:scopeNote "Read by app/services/depgraph.py and by the reasoner's dependency-graph atom, which follow it one step; a graph that extends a graph that extends a third is not resolved further."@en .
+    rdfs:seeAlso dalicc:basedOnGraph , dalicc:DependencyRelation , dalicc:DefaultRule ;
+    skos:scopeNote "No longer resolved. Every published dependency graph is complete: it holds every axiom and every rule a check under it reads, and neither app/services/depgraph.py nor the reasoner follows a link to another graph. A graph that still carries this property is read as complete, and the link is ignored with a warning in the log."@en ;
+    skos:note "Deprecated when the jurisdiction graphs became complete graphs. dalicc:basedOnGraph is not a drop-in replacement: it records where a complete graph was built from and is never followed by the reasoner."@en .
+
+dalicc:basedOnGraph a owl:ObjectProperty ;
+    rdfs:label "Based on graph"@en ;
+    rdfs:comment """Relates a complete dependency graph to the graph it was built from, together
+with a difference: the default rules it adds, the axioms it removes (dalicc:AxiomRemoval) and the
+default rules it replaces (dalicc:replacesRule). It records provenance only. The graph that
+carries it holds every statement a check reads, and nothing follows the link."""@en ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso dalicc:basedOnVersion , dalicc:AxiomRemoval , dalicc:replacesRule ;
+    skos:scopeNote "Carried by the difference files of licensedata/dependencygraph/differences/ and by the seven jurisdiction graphs scripts/build_dependency_graphs.py generates from them; each names the core graph dg_default."@en ;
+    skos:note "Added with version 2 of the vocabulary, when the jurisdiction graphs became complete graphs and dalicc:extendsGraph was deprecated."@en .
+
+dalicc:basedOnVersion a owl:DatatypeProperty ;
+    rdfs:label "Based on version"@en ;
+    rdfs:comment """The version of the graph named with dalicc:basedOnGraph that a complete
+dependency graph was built from, as the number the model history of that graph gives it."""@en ;
+    rdfs:range xsd:string ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso dalicc:basedOnGraph , dct:hasVersion ;
+    skos:scopeNote "Written by scripts/build_dependency_graphs.py and never by hand. When the core graph gets a new version, the build gives every graph based on it a new version of its own whose change log names the core version it follows."@en ;
+    skos:note "Added with version 2 of the vocabulary."@en .
+
+dalicc:replacesRule a owl:ObjectProperty ;
+    rdfs:label "Replaces rule"@en ;
+    rdfs:comment "Relates a default rule of a graph built from another one to the rule of that other graph it takes the place of. The generated graph holds the replacing rule and not the replaced one, so no graph holds two default rules for one action and one territory."@en ;
+    rdfs:domain dalicc:DefaultRule ;
+    rdfs:range dalicc:DefaultRule ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso dalicc:basedOnGraph , dalicc:AxiomRemoval ;
+    skos:scopeNote "Read by scripts/build_dependency_graphs.py and shown on the page of a graph under What it replaces."@en ;
+    skos:note "Added with version 2 of the vocabulary. No shipped graph replaces a rule of the core graph; the difference-file README shows the syntax."@en .
+
+dalicc:ruleExplanation a owl:DatatypeProperty ;
+    rdfs:label "Rule explanation"@en ;
+    rdfs:comment "Two or three plain sentences that say what a default rule, an axiom removal or a replacement does and why the law it rests on leads there. dalicc:ruleBasis is the citation, this is the reading of it."@en ;
+    rdfs:range rdf:langString ;
+    rdfs:isDefinedBy <https://dalicc.net/ns#> ;
+    rdfs:seeAlso dalicc:ruleBasis , dalicc:DefaultRule , dalicc:AxiomRemoval ;
+    skos:scopeNote "Carried by every default rule and every axiom removal of the shipped dependency graphs, and shown next to the rule on the graph pages, in the comparator and in every check result where the rule fired. It is not legal advice."@en ;
+    skos:note "Added with version 2 of the vocabulary."@en .
 
 #################################################################
 #    The dependency-graph relations
@@ -1332,20 +1413,18 @@ and the core graph stays the single place its axioms are written."""@en ;
 
 dalicc:contradicts a owl:ObjectProperty , owl:SymmetricProperty , dalicc:DependencyRelation ;
     rdfs:label "Contradicts"@en ;
-    rdfs:comment "An Action contradicts with another Action."@en ;
+    rdfs:comment "Two actions that cannot both be exercised under one policy."@en ;
+    skos:historyNote "An Action contradicts with another Action."@en ;
     dct:source <https://dalicc.github.io/> ;
-    skos:definition """States that two actions cannot both be exercised under one policy: if one
-license permits the subject action while another requires or permits the object action, the two
-licenses are incompatible. This is the relation the DALICC compatibility checker reports as a
-conflicting statement."""@en ;
     rdfs:domain odrl:Action ;
     rdfs:range odrl:Action ;
     rdfs:isDefinedBy <https://dalicc.net/ns#> ;
-    skos:scopeNote "Asserted once in the default dependency graph: odrl:ensureExclusivity contradicts odrl:commercialize. The pair cc:ShareAlike contradicts odrl:grantUse was removed on 2026-09-15: passing the same terms on is the normal way to satisfy a share-alike condition, not a contradiction of it."@en .
+    skos:scopeNote "If one license permits the subject action while another requires or permits the object action, the two are incompatible; the compatibility checker reports this as a conflicting statement. Asserted once in the default dependency graph: odrl:ensureExclusivity contradicts odrl:commercialize. The pair cc:ShareAlike contradicts odrl:grantUse was removed on 2026-09-15: passing the same terms on is the normal way to satisfy a share-alike condition, not a contradiction of it."@en .
 
 odrl:includedIn a dalicc:DependencyRelation ;
     rdfs:label "Included in"@en ;
-    rdfs:comment "An Action transitively asserts that another Action that encompasses its operational semantics."@en ;
+    rdfs:comment "Exercising the subject action is a way of exercising the object action."@en ;
+    skos:historyNote "An Action transitively asserts that another Action that encompasses its operational semantics."@en ;
     dct:source <https://dalicc.github.io/> ;
     skos:scopeNote """Action subsumption: exercising the subject action is a way of exercising the
 object action, so a permission or prohibition on the object also covers the subject
@@ -1354,7 +1433,8 @@ object action, so a permission or prohibition on the object also covers the subj
 
 odrl:implies a dalicc:DependencyRelation ;
     rdfs:label "Implies"@en ;
-    rdfs:comment "An Action asserts that another Action is not prohibited to enable its operational semantics."@en ;
+    rdfs:comment "Exercising the subject action requires that the object action is not prohibited."@en ;
+    skos:historyNote "An Action asserts that another Action is not prohibited to enable its operational semantics."@en ;
     dct:source <https://dalicc.github.io/> ;
     skos:scopeNote """Entailment: permitting the subject action necessarily permits the object
 action as well (odrl:modify implies cc:SourceCode). 7 statements in the default dependency
@@ -1363,6 +1443,7 @@ graph."""@en ;
 
 owl:sameAs a dalicc:DependencyRelation ;
     rdfs:label "Same as"@en ;
+    rdfs:comment "The two actions denote the same act in different vocabularies."@en ;
     skos:scopeNote """Synonymy: the two actions denote the same act in different vocabularies
 (cc:Attribution sameAs odrl:attribute), so a statement about one is a statement about the other.
 8 statements in the default dependency graph."""@en ;

@@ -78,17 +78,17 @@ findings:
 - rubric: 10
   severity: info
   field: record
-  description: 'ECL-1.0 is the predecessor of ECL-2.0, which is written in this batch, so both carry dalicc:variantKind
+  description: 'ECL-1.0 is the predecessor of ECL-2.0, which is written in this review group, so both carry dalicc:variantKind
     "version" the way Apache-1.1 and Apache-2.0 do. The two records differ deontically: 1.0 has no patent grant
     and no patent retaliation, and it carries the rename duty that 2.0 drops.'
   action: none
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Permission to use, copy, modify, merge, publish, distribute,
+    the earlier reading wrote is removed. The text reads: "Permission to use, copy, modify, merge, publish, distribute,
     and/or sell copies of the Original Work, and to permit persons to whom the Original Work is furnished to do
     so, subject to the following: the above copyright notice and this permission notice shall be included in all
     copies or substantial portions of the Original Work." The permission carries the dalicc:compliantLicense duty,

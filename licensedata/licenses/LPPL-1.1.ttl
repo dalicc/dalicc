@@ -19,6 +19,7 @@
 
 dalicclib:LPPL-1.1 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "LPPL-1.1" ;
     cc:attributionName "LaTeX3 Project" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -41,14 +42,18 @@ dalicclib:LPPL-1.1 a odrl:Set ;
         "LaTeX Project Public License 1.1",
         "LaTeX Project Public License v1.1" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "LaTeX3 Project" ;
     dct:source <https://spdx.org/licenses/LPPL-1.1.html> ;
     dct:title "LaTeX Project Public License, Version 1.1"@en ;
     odrl:permission [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ],
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ],
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
@@ -56,35 +61,45 @@ dalicclib:LPPL-1.1 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "In the modified file, you must acknowledge the authorship and name of the original file, and the name (if any) of the program which contains it." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "You must change any identification string in the file to indicate clearly that the modified file is not part of The Program." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:originalVersionOffer ],
+                    odrl:action dalicc:originalVersionOffer ;
+                    dalicc:evidence "(A) distribute a copy of The Program (that is, a complete, unmodified copy of The Program) together with the modified file; if your distribution of the modified file is made by offering access to copy the modified file from a designated place, then offering equivalent access to copy The Program from the same place meets this condition, even though third parties are not compelled to copy The Program along with the modified file;" ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:rename ] ],
+                    odrl:action dalicc:rename ;
+                    dalicc:evidence "You must not distribute the modified file with the filename of the original file." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ] ],
+                    odrl:action cc:Notice ] ;
+            dalicc:evidence "You may distribute a complete, unmodified copy of The Program. Distribution of only part of The Program is not allowed." ],
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "In the modified file, you must acknowledge the authorship and name of the original file, and the name (if any) of the program which contains it." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "You must change any identification string in the file to indicate clearly that the modified file is not part of The Program." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:originalVersionOffer ],
+                    odrl:action dalicc:originalVersionOffer ;
+                    dalicc:evidence "(A) distribute a copy of The Program (that is, a complete, unmodified copy of The Program) together with the modified file; if your distribution of the modified file is made by offering access to copy the modified file from a designated place, then offering equivalent access to copy The Program from the same place meets this condition, even though third parties are not compelled to copy The Program along with the modified file;" ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:rename ] ],
+                    odrl:action dalicc:rename ;
+                    dalicc:evidence "You must not distribute the modified file with the filename of the original file." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:grantUse ],
         [ a odrl:Permission ;
             odrl:action odrl:present ],
         [ a odrl:Permission ;
-            odrl:action odrl:reproduce ],
+            odrl:action odrl:reproduce ;
+            dalicc:evidence "You may distribute a complete, unmodified copy of The Program. Distribution of only part of The Program is not allowed." ],
         [ a odrl:Permission ;
             odrl:action cc:CommercialUse ],
         [ a odrl:Permission ;

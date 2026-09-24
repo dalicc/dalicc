@@ -19,6 +19,7 @@
 
 dalicclib:Unlicense a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "Unlicense" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://unlicense.org/> ;
@@ -31,8 +32,8 @@ dalicclib:Unlicense a odrl:Set ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/Unlicense/versions> ;
     dct:alternative "The Unlicense",
         "Unlicense" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://spdx.org/licenses/Unlicense.html> ;
     dct:title "The Unlicense"@en ;
     odrl:permission [ a odrl:Permission ;
@@ -52,7 +53,9 @@ dalicclib:Unlicense a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:sublicense ],
         [ a odrl:Permission ;
-            odrl:action dalicc:ChangeLicense ],
+            odrl:action dalicc:ChangeLicense ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ],
         [ a odrl:Permission ;
             odrl:action cc:CommercialUse ],
         [ a odrl:Permission ;

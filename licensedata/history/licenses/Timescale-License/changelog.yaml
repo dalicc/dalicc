@@ -1,0 +1,82 @@
+id: Timescale-License
+title: Timescale License
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on,
+    named the license the record itself is published under and removed the quotes that do not name
+    the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  changes:
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Notice, cc:ShareAlike]
+    previous: permission odrl:derive with duties [cc:Notice, cc:ShareAlike]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You notify Your
+      customers that use of such Timescale Software or Derivative Works is subject to this TSL Agreement
+      and You provide to each such customer a copy of the most current version of this TSL Agreement
+      or a URL from which the most current version of this TSL Agreement may be obtained"'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Notice, cc:ShareAlike]
+    previous: permission odrl:distribute with duties [cc:Notice, cc:ShareAlike]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Conditioned upon
+      compliance with all of the terms and conditions of this TSL Agreement, Timescale grants to You
+      at no charge the following limited, non-exclusive, non-transferable, fully paid up, worldwide
+      licenses, without the right to grant or authorize sublicenses (except as set forth in Section
+      2.3):"'
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Notice, cc:ShareAlike]
+    previous: permission odrl:modify with duties [cc:Notice, cc:ShareAlike]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You notify Your
+      customers that use of such Timescale Software or Derivative Works is subject to this TSL Agreement
+      and You provide to each such customer a copy of the most current version of this TSL Agreement
+      or a URL from which the most current version of this TSL Agreement may be obtained"'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:ChangeLicense
+    previous: prohibition dalicc:ChangeLicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Subject to the
+      prohibitions in Section 2.2 below, a license to copy and distribute the Timescale Software source
+      code and binaries solely in unmodified standalone form and subject to the terms and conditions
+      of the most current version of this TSL Agreement."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:sellCopy
+    previous: prohibition dalicc:sellCopy
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You agree not
+      to ... transfer, sell, rent, lease, sublicense, loan, or otherwise transfer or make available
+      any TSL Licensed Software, whether in source code or binary executable form"'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:sublicense
+    previous: prohibition dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You agree not
+      to ... transfer, sell, rent, lease, sublicense, loan, or otherwise transfer or make available
+      any TSL Licensed Software, whether in source code or binary executable form"'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Notice, cc:ShareAlike]
+    previous: permission odrl:modify with duties [cc:Notice, cc:ShareAlike]
+    reason: 'Removed the quoted evidence of permission odrl:modify, prohibition dalicc:ChangeLicense:
+      the quoted sentence does not name the act. The statements stay, read from the text without a
+      linked quote.'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:ChangeLicense
+    previous: prohibition dalicc:ChangeLicense
+    reason: 'Removed the quoted evidence of permission odrl:modify, prohibition dalicc:ChangeLicense:
+      the quoted sentence does not name the act. The statements stay, read from the text without a
+      linked quote.'
+    source: manual

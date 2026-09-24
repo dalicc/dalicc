@@ -73,14 +73,14 @@ findings:
 - rubric: 10
   severity: info
   field: family
-  description: 'AFL-3.0 is the same document with clause 1(c) relaxed. After this pass the two records
+  description: 'AFL-3.0 is the same document with clause 1(c) relaxed. After the review the two records
     differ exactly there: this one requires share-alike, that one permits dalicc:ChangeLicense.'
   action: none
 - rubric: 10
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 4 finding 6.4 and consolidation decision 4: the record permitted
+    its new siblings and versioned. The review''s finding on family consistency and consolidation decision 4: the record permitted
     dalicc:noWarrantyNotice and prohibited dalicc:addStatement without support, made no patent statement
     although section 2 grants one and section 10 ends it on patent litigation, and said nothing about
     relicensing although clause 1(c) requires every copy to be ''licensed under this License'', which

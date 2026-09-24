@@ -19,6 +19,7 @@
 
 dalicclib:AttributionNoncommercial30Australia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Australia ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc/3.0/au/legalcode> ;
     dalicc:LiabilityLimitation """
@@ -112,6 +113,7 @@ dalicclib:AttributionNoncommercial30Australia a odrl:Set ;
  
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -129,8 +131,8 @@ dalicclib:AttributionNoncommercial30Australia a odrl:Set ;
         "CC-BY-NC 3.0 AU",
         "Creative Commons BY-NC 3.0",
         "Creative Commons BY-NC 3.0 AU" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc/3.0/au/> ;
     dct:title "Creative Commons Attribution-NonCommercial 3.0 Australia"@en ;
@@ -173,7 +175,8 @@ dalicclib:AttributionNoncommercial30Australia a odrl:Set ;
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ] ;
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "You are not granted the right to sublicense the Work." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/au.png> ;

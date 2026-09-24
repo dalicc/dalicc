@@ -35,8 +35,7 @@ findings:
   field: odrl:permission
   description: The permissions follow the freedoms list, copy, publish, distribute and transmit the Information,
     adapt the Information, and exploit it for Non-Commercial purposes. dalicc:ModifiedWorks and cc:DerivativeWorks
-    are both present, which is what this licence grants and what the OGL 3.0 record lacked before this
-    pass.
+    are both present, which is what this licence grants and what the OGL 3.0 record lacked before the review.
   action: none
 - rubric: 4
   severity: info
@@ -54,7 +53,7 @@ findings:
     to use the Information in a way that suggests any official status or that the Information Provider
     and/or Licensor endorse you or your use of the Information", and the exemptions list excludes logos,
     crests, military insignia, the Royal Arms and trade marks. The library expresses this by prohibiting
-    dalicc:promote, which the other three government records of this batch already did. Added.'
+    dalicc:promote, which the other three government records of this review group already did. Added.'
   action: applied
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:promote ] ;"
 - rubric: 4
@@ -113,7 +112,7 @@ findings:
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 5 finding 7 and consolidation decision 9: the record called
+    its new siblings and versioned. The review''s finding on family consistency and consolidation decision 9: the record called
     itself a dalicc:jurisdictionPortOf the Open Government Licence while its dalicc:variantKind said ''edition''.
     The Non-Commercial Government Licence is an edition of the same licence for the same jurisdiction,
     not a port of it, so the port relation is replaced by the general dct:isVersionOf and the variant

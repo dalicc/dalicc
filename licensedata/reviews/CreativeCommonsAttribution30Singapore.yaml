@@ -26,14 +26,14 @@ findings:
   description: 'SPDX has no identifier for this port. The legal-code URL implies CC-BY-3.0-SG, which the
     SPDX licence list does not define: of the ported 3.0 licences SPDX knows only the Austrian, Australian,
     German, Dutch, United States and IGO ones. No identifier was invented, and none of the forty two records
-    in this batch carries one.'
+    in this review group carries one.'
   action: none
 - rubric: 2
   severity: minor
   field: odrl:target
   description: 'The record targets dalicc:CreativeWork only, while the 4.0 International parent CC-BY-4.0
     targets dalicc:CreativeWork and dcmitype:Dataset. This port has no sui generis database rights clause:
-    unlike the French and Polish ports in this batch it neither grants extraction and re-utilisation nor
+    unlike the French and Polish ports in this review group it neither grants extraction and re-utilisation nor
     waives the database producer right, so the case for dcmitype:Dataset rests only on the media neutrality
     of the grant, which runs to all media and formats now known or later devised. Aligning the ports with
     the parents is a single library wide decision covering every Creative Commons port, so it is left
@@ -56,9 +56,10 @@ findings:
   description: The licence forbids sublicensing and the record does not say so. "You may not sublicense
     the Work." (section 4(a)). The vocabulary already has dalicc:sublicense, but it is used by no record
     in the library and its skos:note says so, and the same sentence stands in every Creative Commons 2.0
-    and 3.0 record, so adding it to this batch alone would split the compatibility behaviour of one family.
+    and 3.0 record, so adding it to this review group alone would split the compatibility behaviour of one family.
     Proposed as one library wide correction, together with an update of the vocabulary note.
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -143,7 +144,7 @@ findings:
   field: record
   description: 'Moral rights have no vocabulary term, in either direction: a clause that restricts the
     licensee, and a clause that leaves the author personal rights untouched by the licence. The Singapore
-    port carries no moral rights paragraph at all. It is the only port in this batch that drops the clause,
+    port carries no moral rights paragraph at all. It is the only port in this review group that drops the clause,
     which follows the Singapore copyright statute, and it is a real divergence from the unported 3.0 text
     and from the 4.0 parent. Proposed terms: dalicc:moralRightsRestriction and dalicc:moralRightsNonAssertion.'
   action: none
@@ -176,6 +177,14 @@ findings:
     the royalty collection arrangements. The compatibility checker cannot tell this record from the other
     records of the BY element set, across all three versions and every jurisdiction the library holds.'
   action: none
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "This License and the rights granted hereunder
+    will terminate automatically upon any breach by You of the terms of this License." The licence ends
+    automatically on a breach and this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach
+    is true and no dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Singapore (SG)'
 port_of: CC-BY-4.0
 variant_kind: jurisdiction-port

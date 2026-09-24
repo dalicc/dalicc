@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Egypt a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Egypt ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc-nd/3.0/eg/legalcode> ;
     dalicc:LiabilityLimitation """باستثناء ما هو مصرح به بموجب القانون المعمول به، لا يكون المُرَخِّص بأي حال من الأحوال مسئولا تجاه المرخَّص له وفق أي مبدأ قانوني عن أي أضرار طارئة أو مترابطة أو عقابية ممكن أن تنجم عن هذا الترخيص أو عن استعمال المصنف، حتى إن تم إبلاغ المُرَخِّص باحتمالية حدوث مثل تلك الأضرار.
@@ -26,6 +27,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Egypt a odrl:Set ;
     dalicc:WarrantyDisclaimer """ما لم يتم الاتفاق المتبادل خطيا بين الأطراف وإلى المدى الذي يسمح به القانون، يقدم المُرَخِّص المصنف كما هو ولا يقدم أي ضمانات من أي نوع سواء كانت صريحة أو ضمنية أو قانونية أو غير ذلك، بما في ذلك على سبيل المثال لا الحصر ضمانات الملكية، وضمان رواج المصنف في السوق وضمان ملائمة المصنف لغاية معينة، وضمان عدم التعدي أو غياب العيب الخفي أو عيوب أخرى أو وجود أو عدم وجود أخطاء في المصنف سواء كانت أو لم تكن قابلة للاكتشاف. في التشريعات التي لا تجيز استثناء الضمانات غير الصريحة (الضمنية)، لا ينطبق هذا الاستثناء على المرخَّص له.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-ND-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -45,7 +47,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Egypt a odrl:Set ;
         "Creative Commons BY-NC-ND 3.0",
         "Creative Commons BY-NC-ND 3.0 EG" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc-nd/3.0/eg/> ;
     dct:title "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Egypt"@en ;

@@ -19,6 +19,7 @@
 
 dalicclib:libpng-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "libpng-2.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://www.libpng.org/pub/png/src/libpng-LICENSE.txt> ;
@@ -31,8 +32,8 @@ dalicclib:libpng-2.0 a odrl:Set ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/libpng-2.0/versions> ;
     dct:alternative "PNG Reference Library License version 2",
         "libpng-2.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://spdx.org/licenses/libpng-2.0.html> ;
     dct:title "PNG Reference Library version 2"@en ;
     odrl:permission [ a odrl:Permission ;
@@ -72,6 +73,10 @@ dalicclib:libpng-2.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

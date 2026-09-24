@@ -59,7 +59,8 @@ findings:
     from placing an adaptation under a share-alike licence, and in ODRL a prohibition asserts that the
     licensee must not do the act. Proposed for removal, together with the identical statements in the
     UK Open Government Licence and the Open Supreme Court Licence.
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "remove:\n    odrl:prohibition [ a odrl:Prohibition ;\n            odrl:action cc:ShareAlike\
     \ ]"
 - rubric: 4
@@ -67,7 +68,8 @@ findings:
   field: odrl:prohibition
   description: dalicc:addStatement is modelled as a prohibition, which the vocabulary reads as a duty
     to pass the licence on unchanged. The licence imposes no such condition. Proposed for removal.
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "remove:\n    odrl:prohibition [ a odrl:Prohibition ;\n            odrl:action dalicc:addStatement\
     \ ]"
 - rubric: 4
@@ -125,19 +127,19 @@ findings:
 - rubric: 10
   severity: info
   field: record
-  description: 'review_duplicates.md section 4 flagged one identical signature across this record, the
+  description: 'the review of duplicates (see the review method, docs/LICENSE_REVIEW.md section 3) flagged one identical signature across this record, the
     UK Open Government Licence and the Open Supreme Court Licence. For the UK and Canadian Open Government
     Licences that is nearly right, the two texts being close relatives; the differences that remain, the
     UK exemptions list and the Canadian choice of law, are outside the model anyway. The stronger finding
     is inside the Canadian pair: this record and OpenDataLicenceAgreement carry the same text and were
-    modelled differently, and after this pass they agree except for the two prohibitions proposed for
+    modelled differently, and after the review they agree except for the two prohibitions proposed for
     removal here.'
   action: none
 - rubric: 10
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 5 finding 7: the record prohibited cc:ShareAlike and dalicc:addStatement
+    its new siblings and versioned. The review''s finding on family consistency: the record prohibited cc:ShareAlike and dalicc:addStatement
     without support from the text, which prescribes the attribution wording, and it carried no dct:alternative
     at all, so it could not be found by searching for its SPDX identifier OGL-Canada-2.0.'
   action: applied
@@ -145,4 +147,4 @@ family: Government licenses (United Kingdom, Canada)
 port_of: null
 variant_kind: null
 notes: The licence is the base document for Canadian federal open data and the parent of OpenDataLicenceAgreement
-  in this batch. Nothing in this review is legal advice.
+  in this review group. Nothing in this review is legal advice.

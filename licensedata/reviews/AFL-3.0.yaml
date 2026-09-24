@@ -28,13 +28,15 @@ findings:
     this same license. Clause 1(c) says "any license of your choice", which includes this one. Removing
     it is the right answer but it belongs with the library-wide decision on the eight template records,
     so it is proposed rather than applied.
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "# remove\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action cc:ShareAlike ] ;\n"
 - rubric: 4
   severity: minor
   field: odrl:prohibition
   description: dalicc:addStatement is prohibited, which contradicts clause 1(c) as well.
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "# remove\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:addStatement\
     \ ] ;\n"
 - rubric: 8
@@ -62,14 +64,13 @@ findings:
   severity: info
   field: family
   description: 'AFL-3.0 and OSL-3.0 are the same document with one clause changed: 1(c) says "any license
-    of your choice" in AFL and "shall be licensed under this Open Software License" in OSL. After this
-    pass the two records differ in exactly that place, which is the intended shape.'
+    of your choice" in AFL and "shall be licensed under this Open Software License" in OSL. After the review the two records differ in exactly that place, which is the intended shape.'
   action: none
 - rubric: 10
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 4 finding 6.3, 6.4 and 6.5 and consolidation decision 4: the
+    its new siblings and versioned. The review''s finding on family consistency and consolidation decision 4: the
     record prohibited cc:ShareAlike and dalicc:addStatement without support, permitted dalicc:noWarrantyNotice
     although no clause of the AFL grants such a right, kept the limitation of liability inside dalicc:WarrantyDisclaimer
     while section 7, the disclaimer of warranty, was absent, made no patent statement although section

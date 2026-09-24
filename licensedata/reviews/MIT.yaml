@@ -35,8 +35,9 @@ findings:
     exactly one condition, "The above copyright notice and this permission notice shall be included in
     all copies or substantial portions of the Software", and says nothing about documenting changes. The
     duty makes MIT look more demanding than it is in every compatibility result. Removing it is a substantive
-    change to a heavily used record, so it is left to the owner.
-  action: proposed
+    change to a heavily used record, so it is left open for the association's decision.
+  action: superseded
+  superseded_by: 2
   change: "# remove from the odrl:modify and odrl:derive permissions\nodrl:duty [ a odrl:Duty ;\n    \
     \    odrl:action dalicc:modificationNotice ] ;\n"
 - rubric: 1
@@ -56,7 +57,7 @@ findings:
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 1 finding 7.1 and 7.2: the record carried neither the relicensing
+    its new siblings and versioned. The review''s finding on family consistency: the record carried neither the relicensing
     prohibition its siblings carry nor a separate liability clause. The MIT text says ''The above copyright
     notice and this permission notice shall be included in all copies or substantial portions of the Software'',
     which is the same clause IscLicense and BSD-3-Clause model as a dalicc:ChangeLicense prohibition,

@@ -89,8 +89,7 @@ findings:
     cc:jurisdiction dalicc:worldwide, dalicc:validityType dalicc:perpetual and
     dalicc:terminatesOnBreach true are copied from the base record. cc:legalcode and
     dct:source point at what the base record points at, because the legal text is the same
-    document; the SPDX page for this identifier would be an alternative dct:source and the
-    report notes it.
+    document; the SPDX page for this identifier would be an alternative dct:source and the review notes it.
   action: applied
 - rubric: 8
   severity: gap
@@ -137,6 +136,14 @@ findings:
     only what the text states. Removed on 2026-09-23; see section 13 of docs/LICENSE_REVIEW.md.
   action: applied
   change: "# removed\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:promote ] ;\n"
+- rubric: 10
+  severity: major
+  field: dalicc:compatibleWith
+  description: 'Section 3 reads: "You may opt to apply the terms of the ordinary GNU General Public License
+    instead of this License to a given copy of the Library." and adds "(If a newer version than version
+    2 of the ordinary GNU General Public License has appeared, then you can specify that version instead
+    if you wish.)" dalicc:compatibleWith names GPL-2.0-only, GPL-2.0-or-later, GPL-3.0-only, GPL-3.0-or-later.'
+  action: applied
 family: GNU family
 port_of: null
 variant_kind: version-option

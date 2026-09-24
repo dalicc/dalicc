@@ -23,7 +23,7 @@ findings:
   field: spdx:licenseId
   description: SPDX has no identifier for this port. The legal-code URL implies CC-BY-3.0-AM, which the
     SPDX licence list does not define, so no spdx:licenseId was invented. Of the forty two records of
-    this batch only the Attribution 3.0 Netherlands record can take one.
+    this review group only the Attribution 3.0 Netherlands record can take one.
   action: none
 - rubric: 2
   severity: minor
@@ -34,7 +34,7 @@ findings:
     the restrictions out of the parts of a work that qualify only under the sui generis database right.
     The section 3 waiver of database producer rights appears in three of the six Armenian texts (Attribution,
     ShareAlike and NoDerivatives) and not in the three NonCommercial ones. The four European Union ports
-    of this batch, Italy, the Netherlands, Ireland and Croatia, were corrected because their texts license
+    of this review group, Italy, the Netherlands, Ireland and Croatia, were corrected because their texts license
     database rights in terms; this one was not, and aligning it with the parent is part of the single
     library wide decision on the asset types of the Creative Commons family.
   action: proposed
@@ -57,10 +57,11 @@ findings:
   description: 'The licence forbids sublicensing and the record does not say so: section 4(a) states that
     the Work may not be sublicensed by the licensee. The vocabulary already has dalicc:sublicense, but
     no record in the library uses it and its skos:note says so, and the same sentence stands in every
-    Creative Commons 2.0 and 3.0 record, so adding it to this batch alone would split the compatibility
+    Creative Commons 2.0 and 3.0 record, so adding it to this review group alone would split the compatibility
     behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
     note. Not applied for that reason.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -95,7 +96,7 @@ findings:
     from statutory requirements and breaches of the section 5 warranties, the licensor is also liable
     for damage caused intentionally through negligent act or omission. The record carries section 5 verbatim
     in dalicc:WarrantyDisclaimer and section 6 verbatim in dalicc:LiabilityLimitation, so each field holds
-    its own clause, but the Armenian port is the one port of this batch where neither clause disclaims
+    its own clause, but the Armenian port is the one port of this review group where neither clause disclaims
     anything. Two smaller quoting points: the disclaimer field opens with the section heading itself and
     carries a tab character taken from the source page, and its closing sentence ends with a Latin full
     stop where three of the six Armenian legal codes use the Armenian full stop. The Creative Commons
@@ -116,7 +117,7 @@ findings:
     https://creativecommons.org/licenses/by/3.0/am/legalcode, and dalicc:validityType is dalicc:perpetual,
     which matches a grant made for the duration of the applicable rights. Section 9, applicable law and
     settlement of disputes, subjects the licence to the law of the Republic of Armenia unless the parties
-    agree otherwise. Armenia is the only port of this batch with a numbered choice-of-law section. Note
+    agree otherwise. Armenia is the only port of this review group with a numbered choice-of-law section. Note
     that the jurisdiction field records the legal home of the port, not a territorial limit on the grant:
     the grant itself runs worldwide.'
   action: none
@@ -187,6 +188,14 @@ findings:
     cannot tell this record from the other records of the BY element set, across all three versions and
     every jurisdiction the library holds.'
   action: none
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Սույն Լիցենզիան և սույնով տրամադրված իրավունքներն
+    ինքնաբերաբար դադարեցվում են, եթե Լիցենզառուն խախտել է սույն Լիցենզիայի պայմանները։" The licence ends
+    automatically on a breach and this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach
+    is true and no dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Armenia (AM)'
 port_of: CC-BY-4.0
 variant_kind: jurisdiction-port

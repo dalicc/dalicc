@@ -1,0 +1,44 @@
+id: Vim
+title: Vim License
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "IV) It is not
+      allowed to remove this license from the distribution of the Vim sources, parts of it or from
+      a modified version."'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Notice, cc:SourceCode, dalicc:contributionGrantBack,
+      dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Notice, cc:SourceCode, dalicc:contributionGrantBack,
+      dalicc:modificationNotice]
+    reason: Its duty dalicc:modificationNotice quotes "A message must be added, at least in the output
+      of the ":version" command and in the intro screen, such that the user of the modified Vim is
+      able to see that it was modified."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Notice, cc:SourceCode, dalicc:contributionGrantBack,
+      dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Notice, cc:SourceCode, dalicc:contributionGrantBack,
+      dalicc:modificationNotice]
+    reason: Its duty dalicc:modificationNotice quotes "A message must be added, at least in the output
+      of the ":version" command and in the intro screen, such that the user of the modified Vim is
+      able to see that it was modified."
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

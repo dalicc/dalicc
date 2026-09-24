@@ -63,7 +63,7 @@ findings:
 - rubric: 10
   severity: major
   field: record
-  description: Unicode-3.0 replaced Unicode-DFS-2016 in 2024 and both are modelled in this batch. The deontic models
+  description: Unicode-3.0 replaced Unicode-DFS-2016 in 2024 and both are modelled in this review group. The deontic models
     are identical; the 2016 text adds the directory listings that define which files are Data Files and which are
     Software, and the 2023 text drops them. Two records are justified because the two texts are separately cited,
     and dalicc:variantKind "version" records the chain.
@@ -71,10 +71,10 @@ findings:
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Permission is hereby granted, free of charge, to any person
+    the earlier reading wrote is removed. The text reads: "Permission is hereby granted, free of charge, to any person
     obtaining a copy of data files and any associated documentation (the "Data Files") or software and any associated
     documentation (the "Software") to deal in the Data Files or Software without restriction, including without
     limitation the rights to use, copy, modify, merge, publish, distribute, and/or sell copies." The permission

@@ -1,0 +1,124 @@
+id: OFL-1.0
+title: SIL Open Font License 1.0
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on,
+    named the license the record itself is published under and removed the quotes that do not name
+    the act they support.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  changes:
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, dalicc:rename]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, dalicc:rename]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "No Modified Version
+      of the Font Software may use the Reserved Font Name(s), in part or in whole, unless explicit
+      written permission is granted by the Copyright Holder." Its duty cc:Attribution quotes "Standard
+      or Modified Versions of the Font Software may be bundled, redistributed and sold with any software,
+      provided that each copy contains the above copyright notice and this license." Its duty cc:Notice
+      quotes "Standard or Modified Versions of the Font Software may be bundled, redistributed and
+      sold with any software, provided that each copy contains the above copyright notice and this
+      license."'
+    source: manual
+  - action: changed
+    statement: permission odrl:display
+    previous: permission odrl:display
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Permission is
+      hereby granted, free of charge, to any person obtaining a copy of the Font Software, to use,
+      study, copy, merge, embed, modify, redistribute, and sell modified and unmodified copies of
+      the Font Software, subject to the following conditions:"'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Permission is
+      hereby granted, free of charge, to any person obtaining a copy of the Font Software, to use,
+      study, copy, merge, embed, modify, redistribute, and sell modified and unmodified copies of
+      the Font Software, subject to the following conditions:" Its duty cc:Attribution quotes "Standard
+      or Modified Versions of the Font Software may be bundled, redistributed and sold with any software,
+      provided that each copy contains the above copyright notice and this license." Its duty cc:Notice
+      quotes "Standard or Modified Versions of the Font Software may be bundled, redistributed and
+      sold with any software, provided that each copy contains the above copyright notice and this
+      license."'
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, dalicc:rename]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, dalicc:rename]
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "No Modified Version
+      of the Font Software may use the Reserved Font Name(s), in part or in whole, unless explicit
+      written permission is granted by the Copyright Holder." Its duty cc:Attribution quotes "Standard
+      or Modified Versions of the Font Software may be bundled, redistributed and sold with any software,
+      provided that each copy contains the above copyright notice and this license." Its duty cc:Notice
+      quotes "Standard or Modified Versions of the Font Software may be bundled, redistributed and
+      sold with any software, provided that each copy contains the above copyright notice and this
+      license."'
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Permission is
+      hereby granted, free of charge, to any person obtaining a copy of the Font Software, to use,
+      study, copy, merge, embed, modify, redistribute, and sell modified and unmodified copies of
+      the Font Software, subject to the following conditions:"'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:ChangeLicense
+    previous: prohibition dalicc:ChangeLicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "The Font Software,
+      modified or unmodified, in part or in whole, must be distributed using this license, and may
+      not be distributed under any other license."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "The name(s) of
+      the Copyright Holder or the Author(s) of the Font Software shall not be used to promote, endorse
+      or advertise any Modified Version, except to acknowledge the contribution(s) of the Copyright
+      Holder and the Author(s) or with their explicit written permission."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:sellCopy
+    previous: prohibition dalicc:sellCopy
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Neither the Font
+      Software nor any of its individual components, in Standard or Modified Versions, may be sold
+      by itself."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, dalicc:rename]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, dalicc:rename]
+    reason: 'Removed the quoted evidence of duty cc:Attribution on odrl:derive, duty cc:Attribution
+      on odrl:distribute, duty cc:Attribution on odrl:modify, permission odrl:display: the quoted
+      sentence does not name the act. The statements stay, read from the text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:display
+    previous: permission odrl:display
+    reason: 'Removed the quoted evidence of duty cc:Attribution on odrl:derive, duty cc:Attribution
+      on odrl:distribute, duty cc:Attribution on odrl:modify, permission odrl:display: the quoted
+      sentence does not name the act. The statements stay, read from the text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike]
+    reason: 'Removed the quoted evidence of duty cc:Attribution on odrl:derive, duty cc:Attribution
+      on odrl:distribute, duty cc:Attribution on odrl:modify, permission odrl:display: the quoted
+      sentence does not name the act. The statements stay, read from the text without a linked quote.'
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, dalicc:rename]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, dalicc:rename]
+    reason: 'Removed the quoted evidence of duty cc:Attribution on odrl:derive, duty cc:Attribution
+      on odrl:distribute, duty cc:Attribution on odrl:modify, permission odrl:display: the quoted
+      sentence does not name the act. The statements stay, read from the text without a linked quote.'
+    source: manual

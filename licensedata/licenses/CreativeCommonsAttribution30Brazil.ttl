@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttribution30Brazil a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Brazil ;
     cc:legalcode <https://creativecommons.org/licenses/by/3.0/br/legalcode> ;
     dalicc:LiabilityLimitation """EXCETO NA EXTENSÃO
@@ -40,6 +41,7 @@ dalicclib:CreativeCommonsAttribution30Brazil a odrl:Set ;
  EXCLUSÕES PODEM NÃO SE APLICAR A VOCÊ. 
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -56,7 +58,7 @@ dalicclib:CreativeCommonsAttribution30Brazil a odrl:Set ;
         "Creative Commons BY 3.0",
         "Creative Commons BY 3.0 BR" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by/3.0/br/> ;
     dct:title "Creative Commons Attribution 3.0 Brazil"@en ;

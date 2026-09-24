@@ -19,6 +19,7 @@
 
 dalicclib:LPPL-1.2 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "LPPL-1.2" ;
     cc:attributionName "LaTeX3 Project" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -42,7 +43,7 @@ dalicclib:LPPL-1.2 a odrl:Set ;
         "LPPL-1.2",
         "LaTeX Project Public License v1.2" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "LaTeX3 Project" ;
     dct:source <https://spdx.org/licenses/LPPL-1.2.html> ;
     dct:title "LaTeX Project Public License, Version 1.2"@en ;
@@ -57,15 +58,19 @@ dalicclib:LPPL-1.2 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "In the modified file, you must acknowledge the authorship and name of the original file, and the name (if any) of the program which contains it." ],
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "You must change any identification string in the file to indicate clearly that the modified file is not part of The Program." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:originalVersionOffer ],
+                    odrl:action dalicc:originalVersionOffer ;
+                    dalicc:evidence "(A) distribute a copy of The Program (that is, a complete, unmodified copy of The Program) together with the modified file; if your distribution of the modified file is made by offering access to copy the modified file from a designated place, then offering equivalent access to copy The Program from the same place meets this condition, even though third parties are not compelled to copy The Program along with the modified file;" ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:rename ] ],
+                    odrl:action dalicc:rename ;
+                    dalicc:evidence "You must not distribute the modified file with the filename of the original file." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -77,15 +82,19 @@ dalicclib:LPPL-1.2 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "In the modified file, you must acknowledge the authorship and name of the original file, and the name (if any) of the program which contains it." ],
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "You must change any identification string in the file to indicate clearly that the modified file is not part of The Program." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:originalVersionOffer ],
+                    odrl:action dalicc:originalVersionOffer ;
+                    dalicc:evidence "(A) distribute a copy of The Program (that is, a complete, unmodified copy of The Program) together with the modified file; if your distribution of the modified file is made by offering access to copy the modified file from a designated place, then offering equivalent access to copy The Program from the same place meets this condition, even though third parties are not compelled to copy The Program along with the modified file;" ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:rename ] ],
+                    odrl:action dalicc:rename ;
+                    dalicc:evidence "You must not distribute the modified file with the filename of the original file." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:present ],
         [ a odrl:Permission ;
@@ -95,7 +104,8 @@ dalicclib:LPPL-1.2 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:addLimitation ] ;
+            odrl:action dalicc:addLimitation ;
+            dalicc:evidence "Individual files of The Program may bear supplementary and/or superseding conditions on modification of themselves and on the distribution of modified versions of themselves, but *no* file of The Program may bear supplementary or superseding conditions on the distribution of an unmodified copy of the file." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Software ] .

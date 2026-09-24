@@ -58,7 +58,7 @@ findings:
     the licensee is that state government, federal law where it is a federal agency, and
     otherwise section 8 sends litigation to the courts where the defendant has its principal
     place of business. No single legal system governs the licence, so cc:jurisdiction stays
-    dalicc:worldwide and both clauses are quoted. This is a case the owner may want to look
+    dalicc:worldwide and both clauses are quoted. This is a case the association may want to look
     at, because the record cannot show that a US government licensee is bound differently.
   action: applied
 - rubric: 8
@@ -86,7 +86,7 @@ findings:
   field: record
   description: >-
     Diffed against the MPL 2.0 text rather than read in full. The record mirrors
-    MozillaPublicLicenseVersion20, with the same additions this batch makes to
+    MozillaPublicLicenseVersion20, with the same additions this review group makes to
     MPL-2.0-no-copyleft-exception, plus dalicc:modificationNotice, which the OSET text
     requires and MPL 2.0 does not.
   action: none

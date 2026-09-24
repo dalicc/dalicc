@@ -23,10 +23,24 @@ External atoms
     duty's action.  ``&getLicense`` cannot see these, because its subject is the
     licence and theirs is the rule node, so without this atom every duty a licence
     attaches to a permission was invisible to the program.
+``&getLicenseIri[T](S)``
+    The licence IRI behind the hex token, decoded and validated.  The request names
+    each licence by its token, while every statement the other atoms return names it
+    by its IRI, so a rule that ranges over the licences of the request (the default
+    rules read silence this way) needs the IRI to meet those statements.
+``&getLicenseProfile[T](S, F, V, O)``
+    Which licence the record is a version of: its family, its version as a sortable
+    key and whether it offers later versions (see :mod:`app.profiles`).  Nothing is
+    returned for a record the rules cannot place.
+``&getLicenseCompatibility[T](S, X, F, V, O)``
+    The licences the record names with ``dalicc:compatibleWith``: a work under ``S``
+    may be released under ``X``.  ``F``, ``V`` and ``O`` are the profile of the named
+    record, or ``unplaced`` three times (see :func:`app.profiles.compatibility_rows`).
 ``&getDependencyGraph[G](S, P, O)``
-    Returns every triple of the configured dependency graph, and of the graph it
-    names with ``dalicc:extendsGraph`` when it names one.  ``G`` is only a fallback
-    graph *name*; the graph IRI itself is taken from ``DALICC_DEPENDENCY_GRAPH``.
+    Returns every triple of the configured dependency graph and nothing else: every
+    published graph is complete, so no link to another graph is followed.  ``G`` is
+    only a fallback graph *name*; the graph IRI itself is taken from
+    ``DALICC_DEPENDENCY_GRAPH``.
 ``&concat[...](R)``
     String concatenation, kept for backwards compatibility with older programs.
 """
@@ -46,9 +60,12 @@ if __package__ in (None, ""):  # imported as a top-level module by hexlite
 
 from app.config import get_settings
 from app.iri import decode_license_token, sparql_iri_ref, validate_license_iri
+from app.profiles import COMPATIBILITY_FIELDS, PROFILE_FIELDS, compatibility_rows, profile_rows
 from app.queries import (
     DEPENDENCY_GRAPH_QUERY_TEMPLATE,
+    LICENSE_COMPATIBILITY_QUERY_TEMPLATE,
     LICENSE_DUTY_QUERY_TEMPLATE,
+    LICENSE_PROFILE_QUERY_TEMPLATE,
     LICENSE_QUERY_TEMPLATE,
 )
 
@@ -87,6 +104,20 @@ def _select(endpoint: str, query: str, names: tuple[str, ...] = ("s", "p", "o"))
         for row in bindings
         if all(name in row for name in names)
     ]
+
+
+def _select_optional(endpoint: str, query: str, names: tuple[str, ...]) -> list[dict[str, str]]:
+    """Rows of a query whose columns may be unbound, as ``{name: value}``."""
+    client = _sparql_client(endpoint)
+    client.setQuery(query)
+    results = client.query().convert()
+    bindings = results.get("results", {}).get("bindings", [])
+    return [{name: row[name]["value"] for name in names if name in row} for row in bindings]
+
+
+def _quoted(value: str) -> str:
+    """A value hexlite hands to clingo as a string rather than parsing it as a term."""
+    return '"' + value.replace("\\", "").replace('"', "") + '"'
 
 
 def _from_clause(settings) -> str:
@@ -135,6 +166,44 @@ def getLicenseDuties(strs):  # noqa: N802 - name fixed by the ASP programs
         dlvhex.output((subject, predicate, rule_action, duty_action))
 
 
+def getLicenseIri(strs):  # noqa: N802 - name fixed by the ASP programs
+    """Emit the licence IRI the hex token stands for."""
+    license_iri = decode_license_token(_term_value(strs[0]))
+    dlvhex.output((_quoted(license_iri),))
+
+
+def getLicenseProfile(strs):  # noqa: N802 - name fixed by the ASP programs
+    """Emit ``(licence, family, version key, option)`` for one licence, or nothing.
+
+    The values are quoted so that hexlite hands them to clingo as strings: "or-later"
+    would otherwise be parsed as a subtraction.
+    """
+    settings = get_settings()
+    license_iri = decode_license_token(_term_value(strs[0]))
+    query = LICENSE_PROFILE_QUERY_TEMPLATE.format(
+        from_clause=_from_clause(settings),
+        license_iri=sparql_iri_ref(license_iri),
+    )
+    rows = _select_optional(settings.sparql_endpoint, query, PROFILE_FIELDS)
+    for row in profile_rows(license_iri, rows):
+        logger.debug("getLicenseProfile(%s) -> %s", license_iri, row)
+        dlvhex.output(tuple(_quoted(value) for value in row))
+
+
+def getLicenseCompatibility(strs):  # noqa: N802 - name fixed by the ASP programs
+    """Emit ``(licence, named licence, family, version key, option)`` per named licence."""
+    settings = get_settings()
+    license_iri = decode_license_token(_term_value(strs[0]))
+    query = LICENSE_COMPATIBILITY_QUERY_TEMPLATE.format(
+        from_clause=_from_clause(settings),
+        license_iri=sparql_iri_ref(license_iri),
+    )
+    rows = _select_optional(settings.sparql_endpoint, query, COMPATIBILITY_FIELDS)
+    for row in compatibility_rows(license_iri, rows):
+        logger.debug("getLicenseCompatibility(%s) -> %s", license_iri, row)
+        dlvhex.output(tuple(_quoted(value) for value in row))
+
+
 def concat(strs):
     """Concatenate string terms (legacy helper, unused by the shipped programs)."""
     needquote = any('"' in term.value() for term in strs)
@@ -144,20 +213,18 @@ def concat(strs):
     dlvhex.output((dlvhex.storeConstant(result),))
 
 
-#: The property one graph names another with.  A jurisdiction graph holds its own
-#: default rules and takes the curated axioms from the graph it extends, so the core
-#: graph stays the single place those axioms are written.
+#: Deprecated with version 8 of the DALICC vocabulary.  A graph that still names another
+#: with it is read as it is, complete, and the link is logged as ignored.
 EXTENDS_GRAPH = "https://dalicc.net/ns#extendsGraph"
 
 
 def getDependencyGraph(dp_named_graph):  # noqa: N802 - name fixed by the ASP programs
     """Emit every triple of the configured dependency graph.
 
-    A graph that names another one with ``dalicc:extendsGraph`` is read together with
-    it, one step only: the triples of the named graph are emitted after its own, with
-    the duplicates dropped.  A second hop is not followed, so a graph cannot send the
-    reasoner round a chain of graphs, and the IRI it names is validated exactly like
-    the one from the configuration before it is queried.
+    The graph is complete: a jurisdiction graph holds the core axioms and the core
+    rules it reasons with beside its own, so one named graph is queried and nothing it
+    names is followed.  A graph that still carries the deprecated
+    ``dalicc:extendsGraph`` is read as it is, with a warning in the log.
     """
     settings = get_settings()
     graph_iri = settings.dependency_graph
@@ -167,18 +234,12 @@ def getDependencyGraph(dp_named_graph):  # noqa: N802 - name fixed by the ASP pr
     validate_license_iri(graph_iri)
 
     triples = _graph_triples(settings, graph_iri)
-    extended = sorted({obj for _s, predicate, obj in triples if predicate == EXTENDS_GRAPH})
-    if len(extended) == 1 and extended[0] != graph_iri:
-        try:
-            validate_license_iri(extended[0])
-        except Exception:
-            logger.warning("Refusing to follow dalicc:extendsGraph to %s", extended[0])
-        else:
-            seen = {tuple(triple) for triple in triples}
-            triples = triples + [
-                triple for triple in _graph_triples(settings, extended[0])
-                if tuple(triple) not in seen
-            ]
+    if any(predicate == EXTENDS_GRAPH for _s, predicate, _o in triples):
+        logger.warning(
+            "The dependency graph %s carries the deprecated dalicc:extendsGraph; it is "
+            "read as complete and the link is ignored",
+            graph_iri,
+        )
     logger.debug("getDependencyGraph(%s) -> %d triples", graph_iri, len(triples))
     for subject, predicate, obj in triples:
         dlvhex.output((subject, predicate, obj))
@@ -196,5 +257,8 @@ def register(arguments=None):
     prop.addFiniteOutputDomain(0)
     dlvhex.addAtom("getLicense", (dlvhex.TUPLE,), 3, prop)
     dlvhex.addAtom("getLicenseDuties", (dlvhex.TUPLE,), 4, prop)
+    dlvhex.addAtom("getLicenseIri", (dlvhex.TUPLE,), 1, prop)
+    dlvhex.addAtom("getLicenseProfile", (dlvhex.TUPLE,), 4, prop)
+    dlvhex.addAtom("getLicenseCompatibility", (dlvhex.TUPLE,), 5, prop)
     dlvhex.addAtom("concat", (dlvhex.TUPLE,), 1, prop)
     dlvhex.addAtom("getDependencyGraph", (dlvhex.CONSTANT,), 3, prop)

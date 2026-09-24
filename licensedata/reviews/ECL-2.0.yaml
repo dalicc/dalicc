@@ -86,7 +86,7 @@ findings:
   field: record
   description: No vocabulary gap of its own. dalicc:patentGrant and dalicc:patentRetaliationTermination
     were defined by the 2026-09-15 review and applied to no record then; this record is one of
-    the first to use them, so the consolidation pass should update their skos:note.
+    the first to use them, so the consolidation should update their skos:note.
   action: none
 - rubric: 9
   severity: info

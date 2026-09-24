@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionSharealike30Georgia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Georgia ;
     cc:legalcode <https://creativecommons.org/licenses/by-sa/3.0/ge/legalcode> ;
     dalicc:LiabilityLimitation """მუხ.5 გათვალისწინებული გარანტიების გარდა, ლიცენზიარი პასუხს აგებს მხოლოდ განზრახ ან გაუფრთხილებლობით მიყენებული ზიანისათვის.
@@ -28,6 +29,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Georgia a odrl:Set ;
  ლიცენზიარი ათავისუფლებს ლიცენზიატს პასუხისმგებლობისაგან, რომელიც შეიძლება დადგეს წინამდებარე ლიცენზიით გათვალისწინებული პირობებით ობიექტზე უფლებებისა და მათ გამოყენების საგანზე მესამე პირების მხრიდან პრეტენზიის წარდგენის შემთხვევაში.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -45,8 +47,8 @@ dalicclib:CreativeCommonsAttributionSharealike30Georgia a odrl:Set ;
         "CC-BY-SA 3.0 GE",
         "Creative Commons BY-SA 3.0",
         "Creative Commons BY-SA 3.0 GE" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-sa/3.0/ge/> ;
     dct:title "Creative Commons Attribution-ShareAlike 3.0 Georgia"@en ;

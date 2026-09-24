@@ -40,7 +40,8 @@ findings:
   description: dalicc:ChangeLicense is prohibited although the text imposes no condition beyond the notice.
     0BSD, whose text differs only by that notice, does not prohibit it. Same family-level decision as
     in the BSD records.
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "# remove\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:ChangeLicense\
     \ ] ;\n"
 - rubric: 3
@@ -54,7 +55,7 @@ findings:
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 1 finding 7.6: dct:publisher was the placeholder ''N.N.''; the
+    its new siblings and versioned. The review''s finding on family consistency: dct:publisher was the placeholder ''N.N.''; the
     ISC text names no steward, so the predicate is left out rather than filled with a placeholder. The
     disclaimer paragraph is split at ''IN NO EVENT SHALL THE AUTHOR BE LIABLE'', the split the new ISC-form
     records use.'

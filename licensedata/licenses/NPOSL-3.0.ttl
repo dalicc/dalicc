@@ -19,6 +19,7 @@
 
 dalicclib:NPOSL-3.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "NPOSL-3.0" ;
     cc:attributionName "Lawrence Rosen" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -35,13 +36,14 @@ dalicclib:NPOSL-3.0 a odrl:Set ;
     dct:alternative "NPOSL-3.0",
         "Non-Profit OSL 3.0",
         "Non-Profit Open Software License 3.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Lawrence Rosen" ;
     dct:source <https://spdx.org/licenses/NPOSL-3.0.html> ;
     dct:title "Non-Profit Open Software License 3.0"@en ;
     odrl:duty [ a odrl:Duty ;
-            odrl:action cc:ShareAlike ] ;
+            odrl:action cc:ShareAlike ;
+            dalicc:evidence "to distribute or communicate copies of the Original Work and Derivative Works to the public, with the proviso that copies of Original Work or Derivative Works that You distribute or communicate shall be licensed under this Non-Profit Open Software License or as provided in section 17(d);" ] ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
         [ a odrl:Permission ;
@@ -79,7 +81,8 @@ dalicclib:NPOSL-3.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
-            odrl:action dalicc:sublicense ],
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "Licensor grants You a worldwide, royalty-free, non-exclusive, sublicensable license, for the duration of the copyright, to do the following:" ],
         [ a odrl:Permission ;
             odrl:action dalicc:patentGrant ],
         [ a odrl:Permission ;
@@ -87,7 +90,8 @@ dalicclib:NPOSL-3.0 a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:SourceCode ] ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action cc:CommercialUse ],
+            odrl:action cc:CommercialUse ;
+            dalicc:evidence "You may distribute or communicate the Original Work or Derivative Works thereof under this Non-Profit OSL 3.0 license only if You make the representation and declaration in paragraph (a) of this Section 17." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
@@ -95,7 +99,8 @@ dalicclib:NPOSL-3.0 a odrl:Set ;
         [ a odrl:Prohibition ;
             odrl:action dalicc:chargeLicenseFee ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Neither the names of Licensor, nor the names of any contributors to the Original Work, nor any of their trademarks or service marks, may be used to endorse or promote products derived from this Original Work without express prior permission of the Licensor." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ] ;
     odrl:target [ a odrl:AssetCollection ;

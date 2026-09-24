@@ -19,6 +19,7 @@
 
 dalicclib:Sustainable-Use-License a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://raw.githubusercontent.com/n8n-io/n8n/master/LICENSE.md> ;
     dalicc:WarrantyDisclaimer "As far as the law allows, the software comes as is, without any warranty or condition, and the licensor will not be liable to you for any damages arising out of these terms or the use or nature of the software, under any kind of legal claim." ;
@@ -40,13 +41,14 @@ dalicclib:Sustainable-Use-License a odrl:Set ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/Sustainable-Use-License/versions> ;
     dct:alternative "SUL",
         "Sustainable Use License 1.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "n8n" ;
     dct:source <https://github.com/n8n-io/n8n/blob/master/LICENSE.md> ;
     dct:title "Sustainable Use License"@en ;
     odrl:permission [ a odrl:Permission ;
-            odrl:action odrl:reproduce ],
+            odrl:action odrl:reproduce ;
+            dalicc:evidence "The licensor grants you a non-exclusive, royalty-free, worldwide, non-sublicensable, non-transferable license to use, copy, distribute, make available, and prepare derivative works of the software, in each case subject to the limitations below." ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
@@ -84,10 +86,13 @@ dalicclib:Sustainable-Use-License a odrl:Set ;
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:chargeDistributionFee ],
+            odrl:action dalicc:chargeDistributionFee ;
+            dalicc:evidence "You may distribute the software or provide it to others only if you do so free of charge for non-commercial purposes." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:chargeLicenseFee ],
+            odrl:action dalicc:chargeLicenseFee ;
+            dalicc:evidence "You may distribute the software or provide it to others only if you do so free of charge for non-commercial purposes." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:exemptedMaterial ] ;
+            odrl:action dalicc:exemptedMaterial ;
+            dalicc:evidence "\"master\") are not licensed. - Source code files that contain \".ee.\" in their filename or \".ee\" in their dirname are NOT licensed under the Sustainable Use License." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

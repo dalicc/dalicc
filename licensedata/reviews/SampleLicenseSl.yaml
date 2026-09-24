@@ -52,12 +52,11 @@ findings:
 - rubric: 2
   severity: minor
   field: odrl:target
-  description: The asset collection lists dcmitype:Software, which family_rules_baseline.md rule 8b flags.
+  description: The asset collection lists dcmitype:Software, which the family conventions checked before the review flags.
     For a fixture the target type means nothing.
   action: none
 family: Sample and test records
 port_of: null
 variant_kind: null
 notes: No legal text exists, so the verdict is text-unavailable rather than correct or corrected. Nothing
-  was changed in the file. DeveloperLicense, the other record with fixture characteristics, is in batch
-  2 and was not touched here.
+  was changed in the file. DeveloperLicense, the other record with fixture characteristics, is in review group 2 and was not touched here.

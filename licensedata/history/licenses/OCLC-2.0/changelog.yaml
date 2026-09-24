@@ -1,0 +1,51 @@
+id: OCLC-2.0
+title: OCLC Research Public License 2.0
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission cc:CommercialUse
+    previous: permission cc:CommercialUse
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Subject to these
+      terms and conditions of this License, the OCLC Office of Research (the "Original Contributor")
+      and each subsequent contributor (collectively with the Original Contributor, the "Contributors")
+      hereby grant you a non-exclusive, worldwide, no-charge, transferable license to execute, prepare
+      derivative works of, and distribute (internally and externally), for commercial and noncommercial
+      purposes, the original code contributed by Original Contributor and all Modifications (collectively
+      called the "Program")."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:addLimitation
+    previous: prohibition dalicc:addLimitation
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "A. General Requirements
+      Except as necessary to recognize third-party rights or third-party restriction (see below),
+      a distribution of the Program in any of the forms listed below must not put any further restrictions
+      on the recipient’s exercise of the rights granted herein."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:chargeLicenseFee
+    previous: prohibition dalicc:chargeLicenseFee
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "The Program must
+      be distributed without charge beyond the costs of physically transferring the files to the recipient."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Except for the
+      copyright notices required above, you may not use any trademark of any of the Contributors without
+      the prior written consent of the relevant Contributor."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

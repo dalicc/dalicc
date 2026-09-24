@@ -19,6 +19,7 @@
 
 dalicclib:AAL a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "AAL" ;
     cc:attributionName "Edwin A. Suominen" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -31,21 +32,23 @@ ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (
     dalicc:reviewedOn "2026-09-15"^^xsd:date ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/AAL/versions> ;
     dct:alternative "AAL" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Edwin A. Suominen" ;
     dct:source osl:AAL ;
     dct:title "Attribution Assurance License" ;
     odrl:permission [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "Redistributions of the Code in binary form must be accompanied by this GPG-signed text in any documentation and, each time the resulting executable program or a program dependent thereon is launched, a prominent display (e.g., splash screen or banner text) of the Author's attribution information, which includes:" ],
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ] ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "Redistributions of the Code in binary form must be accompanied by this GPG-signed text in any documentation and, each time the resulting executable program or a program dependent thereon is launched, a prominent display (e.g., splash screen or banner text) of the Author's attribution information, which includes:" ],
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ] ],
         [ a odrl:Permission ;
@@ -73,6 +76,7 @@ ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (
         [ a odrl:Prohibition ;
             odrl:action dalicc:addStatement ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Neither the name nor any trademark of the Author may be used to endorse or promote products derived from this software without specific prior written permission." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

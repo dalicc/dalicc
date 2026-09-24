@@ -53,7 +53,7 @@ findings:
   description: 'Clause 5 lets the licensee keep using the version received or move to any later version published
     by the PHP Group. That is the same shape as the GNU or-later option, for which the review added dalicc:orLaterVersionOption
     as a property of the record; it is not applied here because the library uses it only on the four GNU records
-    so far. Proposed action for the owner: apply dalicc:orLaterVersionOption "true" to this record and to PhpLicense30.'
+    so far. Proposed action: apply dalicc:orLaterVersionOption "true" to this record and to PhpLicense30.'
   action: proposed
 - rubric: 9
   severity: info
@@ -73,10 +73,10 @@ findings:
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
+    the earlier reading wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
     or without modification, is permitted provided that the following conditions are met: 1. Redistributions of
     source code must retain the above copyright notice, this list of conditions and the following disclaimer." The
     permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the

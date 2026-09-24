@@ -1,0 +1,96 @@
+id: BigCode-OpenRAIL-M
+title: BigCode Open RAIL-M v1 License Agreement
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: duty dalicc:contributionGrantBack
+    previous: duty dalicc:contributionGrantBack
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Unless You explicitly
+      state otherwise, any Contribution intentionally submitted for inclusion in the Model by You
+      to the Licensor shall be under the terms and conditions of this License, without any additional
+      terms or conditions."'
+    source: manual
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'The statement is marked as a library convention, family rule 15: Permissive records permit
+      relicensing: the text does not state it in as many words. Its duty dalicc:compliantLicense is
+      marked as a library convention, family rule 15: Permissive records permit relicensing.'
+    source: manual
+  - action: changed
+    statement: permission dalicc:networkUseTrigger with duties [cc:Attribution, cc:Notice, dalicc:addStatement]
+    previous: permission dalicc:networkUseTrigger with duties [cc:Attribution, cc:Notice, dalicc:addStatement]
+    reason: Its duty cc:Attribution quotes "Retain all copyright, patent, trademark, and attribution
+      notices." Its duty cc:Notice quotes "Give any recipients a copy of this License Agreement;"
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:addStatement,
+      dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:addStatement,
+      dalicc:modificationNotice]
+    reason: Its duty cc:Attribution quotes "Retain all copyright, patent, trademark, and attribution
+      notices." Its duty cc:Notice quotes "Give any recipients a copy of this License Agreement;"
+      Its duty dalicc:modificationNotice quotes "Retain all Explanatory Documentation; and if sharing
+      Modifications of the Model, add Explanatory Documentation of the same or better quality documenting
+      the changes made to create the Modifications of the Model; and"
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, dalicc:addStatement,
+      dalicc:modificationNotice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, dalicc:addStatement,
+      dalicc:modificationNotice]
+    reason: Its duty cc:Attribution quotes "Retain all copyright, patent, trademark, and attribution
+      notices." Its duty cc:Notice quotes "Give any recipients a copy of this License Agreement;"
+      Its duty dalicc:modificationNotice quotes "Retain all Explanatory Documentation; and if sharing
+      Modifications of the Model, add Explanatory Documentation of the same or better quality documenting
+      the changes made to create the Modifications of the Model; and"
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:addStatement,
+      dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:addStatement,
+      dalicc:modificationNotice]
+    reason: Its duty cc:Attribution quotes "Retain all copyright, patent, trademark, and attribution
+      notices." Its duty cc:Notice quotes "Give any recipients a copy of this License Agreement;"
+      Its duty dalicc:modificationNotice quotes "Retain all Explanatory Documentation; and if sharing
+      Modifications of the Model, add Explanatory Documentation of the same or better quality documenting
+      the changes made to create the Modifications of the Model; and"
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Subject to the
+      terms and conditions of this License Agreement and where and as applicable, each Contributor
+      hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, copyright
+      license to reproduce, prepare, publicly display, publicly perform, sublicense under the terms
+      herein, and distribute the Model and Modifications of the Model."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:exemptedMaterial
+    previous: prohibition dalicc:exemptedMaterial
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "The Data is not
+      licensed under this License Agreement."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Nothing in this
+      License Agreement permits You to make Use of Licensors’ trademarks, trade names, logos or to
+      otherwise suggest endorsement or misrepresent the relationship between the parties; and any
+      rights not expressly granted herein are reserved by the Licensors."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

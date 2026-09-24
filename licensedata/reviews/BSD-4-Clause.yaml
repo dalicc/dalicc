@@ -26,8 +26,7 @@ findings:
   severity: minor
   field: dalicc:additionalClauses
   description: The quoted advertising clause names the University of California, which belongs to the
-    UC variant rather than to the generic four-clause text. Correcting a published literal is left to
-    the owner; the alternative is to change spdx:licenseId to BSD-4-Clause-UC instead and keep the clause.
+    UC variant rather than to the generic four-clause text. Correcting a published literal is left open for the association's decision; the alternative is to change spdx:licenseId to BSD-4-Clause-UC instead and keep the clause.
     One or the other has to give.
   action: proposed
   change: '# either
@@ -64,14 +63,15 @@ findings:
   severity: major
   field: odrl:prohibition
   description: dalicc:ChangeLicense is prohibited without textual support, same as in the other BSD records.
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "# remove\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:ChangeLicense\
     \ ] ;\n"
 - rubric: 10
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 3 finding 5 and batch 4 section 4: the disclaimer paragraph
+    its new siblings and versioned. The review''s finding on family consistency: the disclaimer paragraph
     held both sentences and the advertising clause had no duty. The text says ''All advertising materials
     mentioning features or use of this software must display the following acknowledgement'', which is
     the new dalicc:advertisingAcknowledgement duty on distribution; dct:publisher was the placeholder
@@ -81,4 +81,4 @@ family: BSD family (0BSD, 2, 3 and 4 clause)
 port_of: null
 variant_kind: version
 notes: The identity of this record (generic four-clause text or the University of California variant)
-  needs an owner decision.
+  needs a decision of the association.

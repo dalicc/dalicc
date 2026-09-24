@@ -3,10 +3,14 @@ title: Data Exploration Licence
 current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 license-wide duty and 1 statement, changed 2 identification
-    details and recorded the review state.
+    details and recorded the review state. Later changes named the license the record itself is published
+    under.
+  squashed_from:
+  - 2
+  - 3
   changes:
   - action: changed
     statement: cc:legalcode <https://www.ordnancesurvey.co.uk/documents/licences/data-exploration-licence.pdf>
@@ -53,3 +57,9 @@ entries:
       Limited (insert year)." A licence-wide cc:Attribution duty was added, licence-wide because the
       duty is owed for any use and not only when the data is passed on.'
     source: review-finding 5/odrl:duty
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

@@ -42,6 +42,8 @@ statements that cannot all hold at once.
 | `direct` | `L1` requires `X` as a duty and `L2` prohibits `X` | the duty can never be discharged |
 | `direct` | `L` hangs a duty on a prohibition | the act the duty conditions never happens, so the duty never applies |
 | `direct` | `L1` requires share alike of the whole work while `L2` permits `dalicc:ChangeLicense` without the `dalicc:compliantLicense` duty under it | the work could leave the licence that requires it to stay |
+| `direct` | `L1` and `L2` each keep the whole work under themselves (the licence-wide share-alike duty, or share alike on `odrl:derive` with `dalicc:ChangeLicense` prohibited) and no path links them | one combined work cannot satisfy both; reported once per pair as `share-alike-reciprocity` |
+| `direct` | the same pair, and `L1` names `L2` with `dalicc:compatibleWith` (or a record one hop from it) | not a conflict: the combined work has to be released under `L2`; reported as `share-alike-direction` with the statements `[L1, dalicc:compatibleWith, L2]` and `[L2, odrl:duty, cc:ShareAlike]`, once per direction the records state |
 | `derived` | `L1` permits `Y`, `L2` prohibits `X`, and the dependency graph relates them | a conflict through `odrl:includedIn`, `odrl:implies` or `owl:sameAs` |
 | `derived` | `L1` asserts `X`, `L2` asserts `Y`, and the graph says `X dalicc:contradicts Y` | two acts that cannot both hold of one asset, although neither licence forbids anything. Asserting is permitting or requiring |
 
@@ -60,7 +62,11 @@ other name for it, and a duty settles the other names of what it requires. Those
 two closures the derived conflicts use, so silence is read with the reasoning the rest
 of the program is built on. `silent/2` is the stratified negation of it, and it is read
 against `requiredByText/2` rather than `required/2`, so a derived duty can never make a
-licence look as if it had spoken.
+licence look as if it had spoken. `silent/2` ranges over `bundleLicense/1`, the licences
+of the request by their IRI, which `&getLicenseIri` decodes from the token `license/1`
+carries: every statement names a licence by its IRI, so reading silence against the
+token would find every licence silent about everything and name the token, not the
+licence, in the `defaults` array.
 
 | Outcome | What the program adds |
 |---|---|
@@ -88,7 +94,7 @@ it publishes is about the relations and its shape is part of the contract.
 `app/services/consistency.py` on the API side implements the same reading, and
 `tests/unit/test_composer_reasoner.py` proves the two agree.
 
-The last argument of `directConflict/7` says which of the four readings produced it, and
+The last argument of `directConflict/7` says which of the six readings produced it, and
 `app/conflicts.py` maps it onto the sentence the client reads. The permission-prohibition
 case keeps the argument `"direct"` and the sentence it has always had.
 
@@ -103,6 +109,34 @@ a reading here. [docs/SERVICES.md](../docs/SERVICES.md#what-the-reasoner-is-give
 documents the encoding alongside the composer's own check, which draws the same
 conclusions.
 
+Two licences that each keep the whole work under themselves are the one conflict that
+needs no action in common. `bindsWholeWork/1` holds of a licence with the licence-wide
+share-alike duty, and of one with share alike on `odrl:derive` and `dalicc:ChangeLicense`
+prohibited, which binds every derivative the same way. `reciprocityPath/2` is a way from
+one to the other: the same family and version in `licenseProfile/4` (the same licence
+text), an `or-later` profile whose version is not above the other's, or a compatibility
+clause (`compliantRelicensing/1`). Without one the pair is a `directConflict` with the
+reason `share-alike-reciprocity`, reported once, with the IRIs in order. Cutting an SPDX
+identifier into a family and a version and making the version sort like a number is done
+in `app/profiles.py`, which the plugin calls, so the program only compares strings.
+
+A licence can also name the licences a work under it may be released under
+(`dalicc:compatibleWith`). `namedCompatibility/5` holds each such triple of a licence
+of the request with the profile of the named record, and `compatibleByName(L1,L2)`
+holds when the named licence is `L2` itself or one hop from it: a record of the same
+family and version as `L2`, or one whose `or-later` option reaches `L2`'s version
+(LGPL-2.1 names GPL-2.0-or-later, which reaches GPL-3.0). The relation is directed:
+`L1` compatibleWith `L2` lets a work under `L1` go under `L2` and says nothing about
+the other way. A pair without a `reciprocityPath/2` but with `compatibleByName` in
+either direction is not reported as `share-alike-reciprocity`; instead each stated
+direction gives a `directConflict` with the reason `share-alike-direction`, whose
+first statement is `[L1, dalicc:compatibleWith, L2]`, with `L2` the licence of the
+request the name reaches. The program
+knows no target licence: the mixer reads the object of that statement as the licence
+the combined work has to go to, a restriction without a target, and a conflict when
+a target is given that no stated direction reaches. Chains of two named links are
+not followed.
+
 A contradiction is reported once per pair, whichever way round the two licences are
 given, and `L1` may be `L2`: a licence that asserts both halves of a contradiction is in
 conflict with itself, which is what the consistency check is there to find. Its reason
@@ -114,8 +148,8 @@ The dependency graph is a named graph in the triple store, by default
 actions and one adopted default rule. `licensedata/dependencygraph/dg_default.ttl` is its source, and
 [docs/DATA.md](../docs/DATA.md) describes the model.
 
-`app/programs/query.lp` pulls the licence statements, the nested duties and the graph
-through three external atoms, lifts the graph triples into `includedIn/3`, `implies/3`,
+`app/programs/query.lp` pulls the licence statements, the nested duties, the licence IRIs, the
+licence profiles, the licences each one names as compatible and the graph through six external atoms, lifts the graph triples into `includedIn/3`, `implies/3`,
 `sameAs/3` and `contradicts/3`, closes the first three transitively (a contradiction is
 not transitive), collects what a licence requires into `required/2` and what it asserts
 into `asserted/3`, and shows `directConflict/7` and `derivedConflict/10`. The SPARQL the
@@ -142,12 +176,15 @@ generated per request into a private temporary directory.
 
 ### External atoms
 
-`app/plugins/plugins.py` runs inside the `hexlite` subprocess and registers four atoms.
+`app/plugins/plugins.py` runs inside the `hexlite` subprocess and registers seven atoms.
 
 | Atom | Input | Output | Query |
 |---|---|---|---|
 | `&getLicense[T]` | hex-encoded licence IRI | `(s, p, o)` | the deontic statements hanging on that licence and their `odrl:action` |
 | `&getLicenseDuties[T]` | hex-encoded licence IRI | `(s, p, ra, da)` | the duties hanging on one of those statements: the rule's predicate and action, and the duty's action |
+| `&getLicenseIri[T]` | hex-encoded licence IRI | `(s)` | none: the token decoded and validated, so a rule can range over the licences of the request by their IRI |
+| `&getLicenseProfile[T]` | hex-encoded licence IRI | `(s, f, v, o)` | the licence family, the version as a sortable key and `or-later` or `only`, computed by `app/profiles.py` from `spdx:licenseId`, `dalicc:licenseVersion`, `dalicc:orLaterVersionOption`, `dalicc:shareAlikeVersionQualifier` and the parent of a jurisdiction port; nothing for a record it cannot place |
+| `&getLicenseCompatibility[T]` | hex-encoded licence IRI | `(s, x, f, v, o)` | one row per `dalicc:compatibleWith` object `x` of the licence, with the profile of the named record read the same way, or `unplaced` three times when `app/profiles.py` cannot place it |
 | `&getDependencyGraph[G]` | graph name (ignored: the configuration decides) | `(s, p, o)` | every triple of the configured dependency graph |
 | `&concat[...]` | strings | string | a helper the shipped programs do not use |
 
@@ -298,10 +335,11 @@ docker run --rm -p 127.0.0.1:8190:80 \
   dalicc-reasoner:dev
 ```
 
-The image is `python:3.12-slim`, runs as the non-root user `reasoner` (uid 10001) and serves
-with `gunicorn` and `uvicorn_worker.UvicornWorker`. `docker-entrypoint.sh` derives the
-gunicorn worker timeout from `REASONER_TIMEOUT_SECONDS + 30`, so a slow solve is answered
-with the service's own 504 instead of being killed first.
+The image is `python:3.12.14-slim-bookworm` (pinned; see docs/DEPLOYMENT.md, section
+7), runs as the non-root user `reasoner` (uid 10001) and serves with `gunicorn` and
+`uvicorn_worker.UvicornWorker`. `docker-entrypoint.sh` derives the gunicorn worker
+timeout from `REASONER_TIMEOUT_SECONDS + 30`, so a slow solve is answered with the
+service's own 504 instead of being killed first.
 
 Without a container, from `reasoner/`:
 
@@ -346,6 +384,16 @@ an in-process stub SPARQL endpoint and skips itself when `hexlite` is not instal
 external-atom rules dropped and the facts they produce given directly, and skips when
 `clingo` is missing; everything else stubs the subprocess. It also covers the chains
 that cross from one relation of the graph into another, one test per rule.
+`tests/test_share_alike_reciprocity.py` runs the same way over the pairs the
+reciprocity rule has to report (GPL-2.0-only with GPL-3.0-only, the ODbL with
+CC BY-SA 4.0, BUSL-1.1 with GPL-3.0-only) and the ones it has to leave alone (an
+or-later option, the same licence text, a compatibility clause, MIT with GPL-3.0-only),
+and checks how `app/profiles.py` places a record. Its last part gives the program
+fixture `namedCompatibility/5` facts: LGPL-3.0-only with GPL-3.0-only and CC BY-SA 4.0
+with GPL-3.0-only clear with one direction, AGPL-3.0-only with GPL-3.0-only clears
+both ways, GPL-2.0-only with GPL-3.0-only and the ODbL with CC BY-SA 4.0 still
+conflict, and one hop through an or-later option or the same licence text is
+followed.
 
 Lint: `ruff check reasoner/` uses `reasoner/ruff.toml`, because the repository root
 configuration excludes this directory.
@@ -395,9 +443,15 @@ reach clients.
 * Asset types are not read at all: the program knows nothing about `odrl:target`, and
   `app.services.mixer` computes asset conflicts itself.
 * Only the first answer set is used. The program is stratified, so there is always
-  exactly one; a warning is logged if that ever changes. The one negation in it,
-  `not compliantRelicensing(L)` in the share-alike rule, is stratified: nothing below it
-  derives `licenseDuty/4`.
+  exactly one; a warning is logged if that ever changes. The negations in it,
+  `not compliantRelicensing(L)` in the share-alike rule, `not reciprocityPath(L1,L2)`
+  and `not namedPath(L1,L2)` in the reciprocity rules, are stratified: none depends on
+  a conflict atom.
+* Compatibility a licence grants by name is seen only where the record states it with
+  `dalicc:compatibleWith`, and one hop from the named record is followed. A pair
+  whose compatibility no record states is reported as `share-alike-reciprocity`.
+  [docs/DATA.md](../docs/DATA.md#share-alike-between-two-licences) says how the
+  property is read.
 * Every solve is a cold `hexlite` process start of about a second plus one SPARQL
   round trip per licence. There is no caching.
 * The provenance sentence of a derived conflict is inverted: `R = "derived"` renders "is

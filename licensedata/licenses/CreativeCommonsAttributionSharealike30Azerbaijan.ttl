@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionSharealike30Azerbaijan a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Azerbaijan ;
     cc:legalcode <https://creativecommons.org/licenses/by-sa/3.0/az/legalcode> ;
     dalicc:LiabilityLimitation """TƏTBİQEDİLƏN QANUNVERİCİLİKDƏ TƏLƏB OLUNDUĞU HALLAR İSİSNA OLMAQLA, HEÇ BİR HALDA LİSENZİYA VERƏN SİZİN QARŞINIZDA BU LİSENZİYADAN VƏ YA ƏSƏRİN İSTİFADƏSİNDƏN İRƏLİ GƏLƏN HÜQUQİ NƏZƏRİ CƏHƏTDƏN HEÇ BİR XÜSUSİ, TƏSADÜFİ, VƏ YA HƏR HANSI SƏBƏBDƏN YARANAN NÜMUNƏVİ VƏ YA CƏZALANDIRICI ZƏRƏRƏ (QƏSDƏN ZIYAN VURMA ISTISNA OLMAQLA) GÖRƏ MƏSULİYYƏT DAŞIMAYACAQ, HƏTTA LİSENZİYA VERƏNƏ BU CÜR ZƏRƏRİN EHTİMAL EDİLDİYİ BARƏDƏ MƏSLƏHƏT VERİLDİKDƏ BELƏ.
@@ -29,6 +30,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Azerbaijan a odrl:Set ;
  Lisenziya verən əsər üzərində müqavilə ilə verilən bütün hüquqlara sahiblik hüququ vardır və bu hüquqları həyata keçirmək üçün heç bir hüquqi əngəl yoxdur.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -47,7 +49,7 @@ dalicclib:CreativeCommonsAttributionSharealike30Azerbaijan a odrl:Set ;
         "Creative Commons BY-SA 3.0",
         "Creative Commons BY-SA 3.0 AZ" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-sa/3.0/az/> ;
     dct:title "Creative Commons Attribution-ShareAlike 3.0 Azerbaijan"@en ;
@@ -94,7 +96,8 @@ dalicclib:CreativeCommonsAttributionSharealike30Azerbaijan a odrl:Set ;
         [ a odrl:Prohibition ;
             odrl:action dalicc:promote ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ] ;
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "Lisenziya alan Əsərə əlavə lisenziya verə bilməz." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Dataset ] ;

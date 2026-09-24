@@ -19,6 +19,7 @@
 
 dalicclib:MulanPSL-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "MulanPSL-2.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://license.coscl.org.cn/MulanPSL2> ;
@@ -32,8 +33,8 @@ dalicclib:MulanPSL-2.0 a odrl:Set ;
     dct:alternative "Mulan PSL v2",
         "Mulan Permissive Software License, Version 2",
         "MulanPSL-2.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://spdx.org/licenses/MulanPSL-2.0.html> ;
     dct:title "Mulan Permissive Software License, Version 2"@en ;
     odrl:permission [ a odrl:Permission ;
@@ -73,10 +74,15 @@ dalicclib:MulanPSL-2.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ] ;
+            odrl:action dalicc:promote ;
+            dalicc:evidence "No trademark license is granted to use the trade names, trademarks, service marks, or product names of Contributor, except as required to fulfill notice requirements in section 4." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

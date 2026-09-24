@@ -19,6 +19,7 @@
 
 dalicclib:CC-PDDC a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CC-PDDC" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://creativecommons.org/licenses/publicdomain/> ;
@@ -34,8 +35,8 @@ dalicclib:CC-PDDC a odrl:Set ;
         "CC-PDDC",
         "Creative Commons Public Domain Dedication and Certification",
         "Public Domain Dedication and Certification" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://spdx.org/licenses/CC-PDDC.html> ;
     dct:title "Creative Commons Public Domain Dedication and Certification"@en ;
@@ -50,7 +51,8 @@ dalicclib:CC-PDDC a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:present ],
         [ a odrl:Permission ;
-            odrl:action odrl:reproduce ],
+            odrl:action odrl:reproduce ;
+            dalicc:evidence "Dedicator recognizes that, once placed in the public domain, the Work may be freely reproduced, distributed, transmitted, used, modified, built upon, or otherwise exploited by anyone for any purpose, commercial or non-commercial, and in any way, including by methods that have not yet been invented or conceived." ],
         [ a odrl:Permission ;
             odrl:action cc:CommercialUse ],
         [ a odrl:Permission ;

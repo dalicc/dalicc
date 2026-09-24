@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionSharealike20Poland a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Poland ;
     cc:legalcode <https://creativecommons.org/licenses/by-sa/2.0/pl/legalcode> ;
     dalicc:LiabilityLimitation """W ŻADNYM WYPADKU LICENCJODAWCA NIE ODPOWIADA KONTRAKTOWO ANI DELIKTOWO WOBEC LICENCJOBIORCY, Z WYŁĄCZENIEM ODPOWIEDZIALNOŚCI WYNIKAJĄCEJ Z PRAWA MAJĄCEGO ZASTOSOWANIE, ZA ŻADNE SPECJALNE, PRZYPADKOWE LUB NASTĘPCZE SZKODY WYNIKŁE Z ZASTOSOWANIA NINIEJSZEJ LICENCJI LUB WYKORZYSTANIA UTWORU, NAWET JEŻELI LICENCJODAWCA ZOSTAŁ POWIADOMIONY O MOŻLIWOŚCI WYSTĄPIENIA TAKICH SZKÓD.
@@ -26,6 +27,7 @@ dalicclib:CreativeCommonsAttributionSharealike20Poland a odrl:Set ;
     dalicc:WarrantyDisclaimer """JEŻELI STRONY NIE POSTANOWIĄ W ODRĘBNYM PISEMNYM POROZUMIENIU INACZEJ, LICENCJODAWCA UDOSTĘPNIA UTWÓR W TAKIEJ FORMIE W JAKIEJ ZAPOZNAŁ SIĘ Z NIM LICENCJOBIORCA, I NIE UDZIELA ŻADNYCH DODATKOWYCH RĘKOJMI ANI GWARANCJI, WYRAŹNYCH LUB DOROZUMIANYCH, W TYM, W SZCZEGÓLNOŚCI DOTYCZĄCYCH TYTUŁU, WYKORZYSTANIA HANDLOWEGO, PRZEZNACZENIA UTWORU DO KONKRETNEGO CELU, CO DO TEGO ŻE NIE NARUSZA ON PRAW INNYCH OSÓB, BRAKU JAWNYCH LUB UKRYTYCH WAD, DOKŁADNOŚCI, WYSTĘPOWANIA LUB NIEWYSTĘPOWANIA WAD ZAUWAŻALNYCH, JAK I NIEZAUWAŻALNYCH.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "2.0" ;
@@ -43,8 +45,8 @@ dalicclib:CreativeCommonsAttributionSharealike20Poland a odrl:Set ;
         "CC-BY-SA 2.0 PL",
         "Creative Commons BY-SA 2.0",
         "Creative Commons BY-SA 2.0 PL" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-sa/2.0/pl/> ;
     dct:title "Creative Commons Attribution-ShareAlike 2.0 Poland"@en ;

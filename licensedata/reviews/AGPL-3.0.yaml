@@ -59,7 +59,7 @@ findings:
   severity: major
   field: record
   description: 'Standard-license addition of 2026-09-15, decision 9: the record was corrected against
-    its new siblings and versioned. Batch 1 finding 5.2: the record did not carry section 4 of the text,
+    its new siblings and versioned. The review''s finding on family consistency: the record did not carry section 4 of the text,
     ''You may charge any price or no price for each copy that you convey, and you may offer support or
     warranty protection for a fee'', which every GNU record now carries.'
   action: applied
@@ -74,6 +74,24 @@ findings:
     only what the text states. Removed on 2026-09-23; see section 13 of docs/LICENSE_REVIEW.md.
   action: applied
   change: "# removed\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:promote ] ;\n"
+- rubric: 6
+  severity: minor
+  field: dalicc:WarrantyOrLiabilityAcceptance
+  description: dalicc:WarrantyOrLiabilityAcceptance held the whole sentence of Section 4, "You may charge
+    any price or no price for each copy that you convey, and you may offer support or warranty protection
+    for a fee." Its first half is the permission to charge for a copy, which the record states as dalicc:chargeDistributionFee,
+    and not a warranty clause. The literal now quotes only the second half, "you may offer support or
+    warranty protection for a fee".
+  action: applied
+- rubric: 10
+  severity: major
+  field: dalicc:compatibleWith
+  description: 'Section 13 reads: "Notwithstanding any other provision of this License, you have permission
+    to link or combine any covered work with a work licensed under version 3 of the GNU General Public
+    License into a single combined work, and to convey the resulting work." A work under this licence
+    can therefore go into a combined work released under GPL-3.0; the GPL text says the same the other
+    way round. dalicc:compatibleWith names GPL-3.0-only, GPL-3.0-or-later.'
+  action: applied
 family: GNU copyleft family (GPL, LGPL, AGPL, FDL)
 port_of: null
 variant_kind: version

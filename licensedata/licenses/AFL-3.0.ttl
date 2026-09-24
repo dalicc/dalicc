@@ -19,6 +19,7 @@
 
 dalicclib:AFL-3.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "AFL-3.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode osl:AFL-3.0 ;
@@ -29,14 +30,15 @@ dalicclib:AFL-3.0 a odrl:Set ;
     dalicc:reviewedOn "2026-09-15"^^xsd:date ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/AFL-3.0/versions> ;
     dct:alternative "AFL" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source osl:AFL-3.0 ;
     dct:title "Academic Free License 3.0" ;
     odrl:permission [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ],
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:evidence "to distribute or communicate copies of the Original Work and Derivative Works to the public, under any license of your choice that does not contradict the terms and conditions ... in this Academic Free License" ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ],
         [ a odrl:Permission ;

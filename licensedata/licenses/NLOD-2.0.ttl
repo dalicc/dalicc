@@ -19,6 +19,7 @@
 
 dalicclib:NLOD-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "NLOD-2.0" ;
     cc:attributionName "Norwegian Ministry of Local Government and Modernisation" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -36,8 +37,8 @@ dalicclib:NLOD-2.0 a odrl:Set ;
     dct:alternative "NLOD 2.0",
         "NLOD-2.0",
         "Norwegian Licence for Open Government Data 2.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Norwegian Ministry of Local Government and Modernisation" ;
     dct:source <https://spdx.org/licenses/NLOD-2.0.html> ;
     dct:title "Norwegian Licence for Open Government Data (NLOD) 2.0"@en ;
@@ -66,7 +67,8 @@ dalicclib:NLOD-2.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:addStatement ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "If the information has been changed, the licensee must clearly indicate that changes have been made by the licensee." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
@@ -76,7 +78,8 @@ dalicclib:NLOD-2.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:addStatement ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "If the information has been changed, the licensee must clearly indicate that changes have been made by the licensee." ] ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
@@ -88,11 +91,17 @@ dalicclib:NLOD-2.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ],
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "The Licensee shall not sub-license or transfer this licence." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Neither the licensor's nor other contributors' names or trademarks must be used to support, recommend or market the licensee or any products or services using the information." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:exemptedMaterial ] ;
     odrl:target [ a odrl:AssetCollection ;

@@ -63,17 +63,17 @@ findings:
 - rubric: 10
   severity: info
   field: record
-  description: 'Intel, NCSA, Sleepycat, VSL-1.0 and OLDAP-2.8 are the BSD-form records of this batch and share the
+  description: 'Intel, NCSA, Sleepycat, VSL-1.0 and OLDAP-2.8 are the BSD-form records of this review group and share the
     duty and prohibition shape of BSD-3-Clause. What separates them is what each adds: export law here, the MIT
     grant in NCSA, a source-code duty in Sleepycat, a naming condition in VSL-1.0 and a revision clause in OLDAP-2.8.'
   action: none
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
+    the earlier reading wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
     or without modification, are permitted provided that the following conditions are met: • Redistributions of
     source code must retain the above copyright notice, this list of conditions and the following disclaimer." The
     permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive the

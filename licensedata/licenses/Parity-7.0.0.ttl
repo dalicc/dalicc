@@ -19,6 +19,7 @@
 
 dalicclib:Parity-7.0.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "Parity-7.0.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://paritylicense.com/versions/7.0.0.html> ;
@@ -47,8 +48,8 @@ dalicclib:Parity-7.0.0 a odrl:Set ;
     dct:alternative "Parity 7.0.0",
         "Parity Public License 7.0.0",
         "Parity-7.0.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://spdx.org/licenses/Parity-7.0.0.html> ;
     dct:title "The Parity Public License 7.0.0"@en ;
     odrl:duty [ a odrl:Duty ;

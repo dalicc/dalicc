@@ -19,6 +19,7 @@
 
 dalicclib:Bitstream-Vera a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "Bitstream-Vera" ;
     cc:attributionName "Bitstream, Inc." ;
     cc:jurisdiction dalicc:worldwide ;
@@ -37,8 +38,8 @@ dalicclib:Bitstream-Vera a odrl:Set ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/Bitstream-Vera/versions> ;
     dct:alternative "Bitstream Vera Font License",
         "Bitstream-Vera" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Bitstream, Inc." ;
     dct:source <https://spdx.org/licenses/Bitstream-Vera.html> ;
     dct:title "Bitstream Vera Font License"@en ;
@@ -57,7 +58,8 @@ dalicclib:Bitstream-Vera a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:rename ] ],
+                    odrl:action dalicc:rename ] ;
+            dalicc:evidence "The Font Software may be modified, altered, or added to, and in particular the designs of glyphs or characters in the Fonts may be modified and additional glyphs or characters may be added to the Fonts, only if the fonts are renamed to names not containing either the words \"Bitstream\" or the word \"Vera\"." ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
@@ -65,7 +67,8 @@ dalicclib:Bitstream-Vera a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:rename ] ],
+                    odrl:action dalicc:rename ] ;
+            dalicc:evidence "The Font Software may be modified, altered, or added to, and in particular the designs of glyphs or characters in the Fonts may be modified and additional glyphs or characters may be added to the Fonts, only if the fonts are renamed to names not containing either the words \"Bitstream\" or the word \"Vera\"." ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -83,11 +86,17 @@ dalicclib:Bitstream-Vera a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ] ;
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Except as contained in this notice, the names of Gnome, the Gnome Foundation, and Bitstream Inc., shall not be used in advertising or otherwise to promote the sale, use or other dealings in this Font Software without prior written authorization from the Gnome Foundation or Bitstream Inc., respectively." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sellCopy ] ;
+            odrl:action dalicc:sellCopy ;
+            dalicc:evidence "The Font Software may be sold as part of a larger software package but no copy of one or more of the Font Software typefaces may be sold by itself." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dcmitype:Software ] .

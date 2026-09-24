@@ -19,6 +19,7 @@
 
 dalicclib:ECL-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "ECL-2.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://opensource.org/license/ECL-2.0> ;
@@ -38,8 +39,8 @@ dalicclib:ECL-2.0 a odrl:Set ;
         "ECL-2.0",
         "Educational Community License",
         "Educational Community License v2.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://opensource.org/license/ECL-2.0> ;
     dct:title "Educational Community License v2.0"@en ;
     odrl:permission [ a odrl:Permission ;
@@ -55,7 +56,8 @@ dalicclib:ECL-2.0 a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "You must cause any modified files to carry prominent notices stating that You changed the files; and" ],
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ] ],
         [ a odrl:Permission ;
@@ -63,7 +65,8 @@ dalicclib:ECL-2.0 a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "You must cause any modified files to carry prominent notices stating that You changed the files; and" ],
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ] ],
         [ a odrl:Permission ;
@@ -77,7 +80,11 @@ dalicclib:ECL-2.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ],
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ],
         [ a odrl:Permission ;
             odrl:action cc:CommercialUse ],
         [ a odrl:Permission ;
@@ -87,7 +94,8 @@ dalicclib:ECL-2.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ] ;
     odrl:target [ a odrl:AssetCollection ;

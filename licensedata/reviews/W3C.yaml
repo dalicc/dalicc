@@ -31,7 +31,7 @@ findings:
     publicity pertaining to the software without specific, written prior permission", so dalicc:promote is a prohibition.
     "without fee or royalty" gives the dalicc:chargeDistributionFee prohibition that the 2015 record also carries,
     and dalicc:ChangeLicense is prohibited because the notice must travel unchanged. (Corrected on 2026-09-15 by
-    the verification of this batch: see the rubric 3 finding on relicensing below.)'
+    the verification of this review group: see the rubric 3 finding on relicensing below.)'
   action: applied
 - rubric: 5
   severity: major
@@ -73,10 +73,10 @@ findings:
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Permission to copy, modify, and distribute this software
+    the earlier reading wrote is removed. The text reads: "Permission to copy, modify, and distribute this software
     and its documentation, with or without modification, for any purpose and without fee or royalty is hereby granted,
     provided that you include the following on ALL copies of the software and documentation or portions thereof,
     including modifications: The full text of this NOTICE in a location viewable to users of the redistributed or

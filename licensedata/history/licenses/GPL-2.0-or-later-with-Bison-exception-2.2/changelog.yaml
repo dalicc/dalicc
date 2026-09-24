@@ -3,12 +3,51 @@ title: GNU General Public License v2.0 or later with Bison exception 2.2
 current_version: 2
 entries:
 - version: 2
-  date: '2026-09-23'
+  date: '2026-09-24'
   reviewer: Giray Havur
-  summary: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
-    now supplies it.
+  summary: The changes since version 1 left endorsement to the default rule of the core dependency
+    graph, recorded which sentence of the text each statement rests on and named the license the record
+    itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
   changes:
   - action: removed
     statement: prohibition dalicc:promote
-    reason: Edited by hand; see the summary of this entry.
+    reason: The endorsement prohibition rested on no sentence of the text; the default rule for endorsement
+      now supplies it.
+    source: manual
+  - action: changed
+    statement: duty cc:ShareAlike
+    previous: duty cc:ShareAlike
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You must cause
+      any work that you distribute or publish, that in whole or in part contains or is derived from
+      the Program or any part thereof, to be licensed as a whole at no charge to all third parties
+      under the terms of this License."'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
+    reason: Its duty dalicc:modificationNotice quotes "You must cause the modified files to carry
+      prominent notices stating that you changed the files and the date of any change."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice]
+    reason: Its duty dalicc:modificationNotice quotes "You must cause the modified files to carry
+      prominent notices stating that you changed the files and the date of any change."
+    source: manual
+  - action: changed
+    statement: permission odrl:reproduce
+    previous: permission odrl:reproduce
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may charge
+      a fee for the physical act of transferring a copy, and you may at your option offer warranty
+      protection in exchange for a fee."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

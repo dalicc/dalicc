@@ -5,7 +5,12 @@
 # Python 3.12 (the previous image was tiangolo/uvicorn-gunicorn:python3.7,
 # EOL since 2023-06-27).  hexlite 1.4.1 runs unmodified on clingo 5.8.x, which
 # is the first clingo line with wheels for cp312 on both amd64 and arm64.
-FROM python:3.12-slim
+# Base image pinned to a patch release on Debian bookworm, so a rebuild gets the same
+# Python release on the same Debian release; bump it on purpose (docs/DEPLOYMENT.md,
+# "Base images"). The digest is the one the tag named when it was pinned:
+# python:3.12.14-slim-bookworm on 2026-09-24,
+# sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+FROM python:3.12.14-slim-bookworm
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \

@@ -61,17 +61,17 @@ findings:
 - rubric: 10
   severity: info
   field: record
-  description: ICU, Xnet and NCSA are the three MIT-form records of this batch. Xnet is MIT word for word plus a
+  description: ICU, Xnet and NCSA are the three MIT-form records of this review group. Xnet is MIT word for word plus a
     governing-law sentence; NCSA is the MIT grant with the three BSD conditions; ICU drops sublicensing and adds
     the advertising bar.
   action: none
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Permission is hereby granted, free of charge, to any person
+    the earlier reading wrote is removed. The text reads: "Permission is hereby granted, free of charge, to any person
     obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software
     without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute,
     and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, provided

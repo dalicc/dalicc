@@ -25,8 +25,7 @@ findings:
   field: spdx:licenseId
   description: 'The SPDX licence list defines CC-BY-SA-3.0-DE for this licence, with the legal code URL
     https://creativecommons.org/licenses/by-sa/3.0/de/legalcode as its see_also, and the entry is neither
-    deprecated nor OSI approved. The record had no identifier. Added. Germany is the only port in this
-    batch that SPDX knows: the other five ports have no SPDX identifier and none was invented for them.'
+    deprecated nor OSI approved. The record had no identifier. Added. Germany is the only port in this review group that SPDX knows: the other five ports have no SPDX identifier and none was invented for them.'
   action: applied
   change: spdx:licenseId "CC-BY-SA-3.0-DE" ;
 - rubric: 2
@@ -38,12 +37,12 @@ findings:
     von Daten einen immaterialgueterrechtlichen Schutz eigener Art geniessen, unterfallen auch sie dem
     Begriff Schutzgegenstand im Sinne dieser Lizenz" (databases and compilations of data that enjoy sui
     generis protection are themselves subject matter of this licence), and Section 3 closes with the waiver
-    "verzichtet der Lizenzgeber auf saemtliche aus diesem Schutz resultierenden Rechte". Section 4 adds
+    "verzichtet der Lizenzgeber auf sämtliche aus diesem Schutz resultierenden Rechte". Section 4 adds
     that the restrictions do not bite on the parts that are subject matter only because of that sui generis
     protection. Because the legal text names databases as licensed subject matter and disposes of the
     database maker's right in the grant itself, dcmitype:Dataset was added here rather than left as a
     proposal, which is how the same question was decided for the Portuguese, Czech and Azerbaijani ports.
-    The ports in this batch whose text has no database clause at all, Ecuador and Brazil, keep the proposal.
+    The ports in this review group whose text has no database clause at all, Ecuador and Brazil, keep the proposal.
   action: applied
   change: "odrl:target [ a odrl:AssetCollection ;\n        dct:type dalicc:CreativeWork,\n           \
     \ dcmitype:Dataset ] ;"
@@ -51,8 +50,8 @@ findings:
   severity: info
   field: odrl:permission
   description: 'The modelled permissions follow the grant. Section 3 (Einraeumung von Nutzungsrechten)
-    grants "das verguetungsfreie, raeumlich und zeitlich (fuer die Dauer des Schutzrechts am Schutzgegenstand)
-    unbeschraenkte einfache Recht", called "unentgeltlich eingeraeumtes einfaches Nutzungsrecht fuer jedermann":
+    grants "das vergütungsfreie, räumlich und zeitlich (für die Dauer des Schutzrechts am Schutzgegenstand)
+    unbeschränkte einfache Recht", called "unentgeltlich eingeräumtes einfaches Nutzungsrecht für jedermann":
     to reproduce the subject matter in any form and quantity and to integrate it into collective works,
     to make Abwandlungen (adaptations) including translations provided the change is made recognisable,
     to show and distribute the subject matter publicly, and to publish, show and distribute Abwandlungen.
@@ -63,13 +62,14 @@ findings:
 - rubric: 4
   severity: major
   field: odrl:prohibition
-  description: The licence forbids sublicensing and the record does not say so. "Sie duerfen den Schutzgegenstand
+  description: The licence forbids sublicensing and the record does not say so. "Sie dürfen den Schutzgegenstand
     nicht unterlizenzieren." Section 4(a). The vocabulary already has dalicc:sublicense, but no record
     in the library uses it and its skos:note says so, and the same sentence stands in every Creative Commons
-    2.0 and 3.0 record, so adding it to the thirty five ports of this batch alone would split the compatibility
+    2.0 and 3.0 record, so adding it to the thirty five ports of this review group alone would split the compatibility
     behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
-    note. Batches 3 and 6 made the same recommendation.
-  action: proposed
+    note. Other review groups made the same recommendation.
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -79,8 +79,8 @@ findings:
     restrict it or the rights of downstream recipients. dalicc:promote is prohibited, which the 3.0 text
     supports better than the 2.0 text did, because the no endorsement rule sits in the licence body rather
     than in the Creative Commons notice printed around it. Section 4(c): the Licensee may not "weder explizit
-    noch implizit irgendeine Verbindung zum Lizenzgeber oder Zuschreibungsempfaenger und ebenso wenig
-    eine Unterstuetzung oder Billigung durch ihn andeuten".'
+    noch implizit irgendeine Verbindung zum Lizenzgeber oder Zuschreibungsempfänger und ebenso wenig
+    eine Unterstützung oder Billigung durch ihn andeuten".'
   action: none
 - rubric: 5
   severity: info
@@ -102,7 +102,7 @@ findings:
     accepts this licence, a later version with the same licence elements, a jurisdiction specific Creative
     Commons licence with the same elements from version 3.0 upwards, the Unported licence with the same
     elements from 3.0 upwards, or a licence declared compatible with Creative Commons. It is the only
-    port in this batch whose share alike clause carries the compatible licence option. The model cannot
+    port in this review group whose share alike clause carries the compatible licence option. The model cannot
     express which other licences satisfy the duty, so the record cannot say that a differently ported
     licence of the same element set will do.'
   action: none
@@ -116,7 +116,7 @@ findings:
     for German law rather than translated: the warranty exclusion expressly does not apply where a defect
     was fraudulently concealed or where the defect causes the kind of damage named in Section 6, and Section
     6 limits liability for injury to life, body or health to at least negligence and all other damage
-    to gross negligence or intent. This is the furthest any clause pair in this batch travels from the
+    to gross negligence or intent. This is the furthest any clause pair in this review group travels from the
     unported text.'
   action: none
 - rubric: 6
@@ -141,9 +141,9 @@ findings:
   severity: gap
   field: odrl:prohibition
   description: 'The licence forbids technological protection measures and the vocabulary has no term for
-    it. Section 4(a): "Wenn Sie den Schutzgegenstand verbreiten oder oeffentlich zeigen, duerfen Sie (in
-    Bezug auf den Schutzgegenstand) keine technischen Massnahmen ergreifen, die den Nutzer des Schutzgegenstandes
-    in der Ausuebung der ihm durch diese Lizenz gewaehrten Rechte behindern koennen." Proposed term: dalicc:applyTechnicalProtectionMeasures,
+    it. Section 4(a): "Wenn Sie den Schutzgegenstand verbreiten oder öffentlich zeigen, dürfen Sie (in
+    Bezug auf den Schutzgegenstand) keine technischen Maßnahmen ergreifen, die den Nutzer des Schutzgegenstandes
+    in der Ausübung der ihm durch diese Lizenz gewährten Rechte behindern können." Proposed term: dalicc:applyTechnicalProtectionMeasures,
     an odrl:Action to be used as an odrl:Prohibition. Not modelled, because bending an existing term would
     be worse than the gap.'
   action: none
@@ -158,8 +158,8 @@ findings:
 - rubric: 8
   severity: gap
   field: record
-  description: 'Moral rights have no vocabulary term, in either direction. Section 4: "Persoenlichkeitsrechte
-    bleiben - soweit sie bestehen - von dieser Lizenz unberuehrt." Short, and in German law weighty, since
+  description: 'Moral rights have no vocabulary term, in either direction. Section 4: "Persönlichkeitsrechte
+    bleiben - soweit sie bestehen - von dieser Lizenz unberührt." Short, and in German law weighty, since
     the Urheberpersoenlichkeitsrecht cannot be assigned away. Proposed terms: dalicc:moralRightsRestriction
     for a clause that binds the licensee and dalicc:moralRightsNonAssertion for one in which the licensor
     undertakes not to assert them.'
@@ -169,8 +169,8 @@ findings:
   field: record
   description: 'The royalty collection arrangement has no vocabulary term. Section 4(f) splits royalty
     collection three ways, all in the vocabulary of German collecting society law: "Unverzichtbare gesetzliche
-    Verguetungsansprueche" (statutory licences and blank media levies), "Verguetung bei Zwangslizenzen"
-    (compulsory licences) and "Verguetung in sonstigen Fallen", with the Verwertungsgesellschaft named
+    Vergütungsansprüche" (statutory licences and blank media levies), "Vergütung bei Zwangslizenzen"
+    (compulsory licences) and "Vergütung in sonstigen Fällen", with the Verwertungsgesellschaft named
     as the channel and the reservation limited to uses that are not non commercial as defined in the NonCommercial
     clause. Proposed term: dalicc:royaltyCollectionReserved, with a counterpart for the waiver. It is
     one of the few places where the ports of one version really differ from each other.'
@@ -209,7 +209,7 @@ findings:
     text settles it, which the rubric 2 finding of this review read off the legal code: Section 1 counts
     a protected database as licensed subject matter, "Soweit Datenbanken oder Zusammenstellungen von Daten
     einen immaterialgueterrechtlichen Schutz eigener Art geniessen, unterfallen auch sie dem Begriff Schutzgegenstand
-    im Sinne dieser Lizenz", and Section 3 closes with the waiver "verzichtet der Lizenzgeber auf saemtliche
+    im Sinne dieser Lizenz", and Section 3 closes with the waiver "verzichtet der Lizenzgeber auf sämtliche
     aus diesem Schutz resultierenden Rechte", and Section 4 adds that the restrictions do not bite on
     the parts that are subject matter only because of that sui generis protection. Exercising that right
     is therefore permitted by this licence and dalicc:suiGenerisDatabaseRights is now a permission of
@@ -225,6 +225,16 @@ findings:
   action: applied
   change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
     \ ] ;"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Diese Lizenz und die durch sie eingeräumten
+    Nutzungsrechte erlöschen mit Wirkung für die Zukunft im Falle eines Verstoßes gegen die Lizenzbedingungen
+    durch Sie, ohne dass es dazu der Kenntnis des Lizenzgebers vom Verstoß oder einer weiteren Handlung
+    einer der Vertragsparteien bedarf." The licence ends automatically on a breach and this version of
+    the text has no reinstatement clause, so dalicc:terminatesOnBreach is true and no dalicc:curePeriod
+    is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Germany (DE)'
 port_of: CC-BY-SA-4.0
 variant_kind: jurisdiction-port

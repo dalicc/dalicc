@@ -1,11 +1,18 @@
 id: APSL-2.0
 title: Apple Public Source License 2.0
-current_version: 4
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
-  summary: The content review of 2026-09-15 removed 1 prohibition and recorded the review state.
+  summary: The content review of 2026-09-15 removed 1 prohibition and recorded the review state. Later
+    changes brought it in line with its family and its text in the verification of 2026-09-15, recorded
+    which sentence of the text each statement rests on and named the license the record itself is
+    published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
   changes:
   - action: added
     statement: dalicc:reviewStatus dalicc:Reviewed
@@ -22,15 +29,6 @@ entries:
     reason: 'Section 2.2(c) states: "Source Code of Your Externally Deployed Modifications must be
       released under the terms set forth in this License". The record prohibited cc:ShareAlike. Removed.'
     source: review-finding 5/odrl:prohibition
-- version: 3
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Batch 5 finding 7: the record made no patent statement although section 2 grants one and
-    12.1(c) is a retaliation clause, it prohibited dalicc:addStatement without support, it modelled
-    no reciprocity although 2.2(c) requires the Source Code of Externally Deployed Modifications to
-    be ''released under the terms set forth in this License'', and dalicc:WarrantyDisclaimer held
-    section 9, the limitation of liability, while section 8, the disclaimer of warranty, was absent.'
-  changes:
   - action: added
     statement: 'dalicc:LiabilityLimitation "TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT SHALL
       APPLE OR ANY CONTRIBUTOR BE LIABLE FOR ANY INCIDENTAL, SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES
@@ -43,7 +41,12 @@ entries:
       OF LIABILITY OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS LIMITATION MAY NOT APPLY TO YOU.
       In no event shall Apple''s total liability to You for all damages (other than as may be required
       by applicable law) under this License exceed the amount of fifty dollars ($50.00)."'
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record made no patent statement although
+      section 2 grants one and 12.1(c) is a retaliation clause, it prohibited dalicc:addStatement
+      without support, it modelled no reciprocity although 2.2(c) requires the Source Code of Externally
+      Deployed Modifications to be ''released under the terms set forth in this License'', and dalicc:WarrantyDisclaimer
+      held section 9, the limitation of liability, while section 8, the disclaimer of warranty, was
+      absent.'
     source: manual
   - action: changed
     statement: dalicc:WarrantyDisclaimer "THE COVERED CODE IS PROVIDED \"AS IS\" AND WITHOUT WARRANTY,
@@ -63,54 +66,122 @@ entries:
       OF LIABILITY OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS LIMITATION MAY NOT APPLY TO YOU.
       In no event shall Apple''s total liability to You for all damages (other than as may be required
       by applicable law) under this License exceed the amount of fifty dollars ($50.00)."'
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record made no patent statement although
+      section 2 grants one and 12.1(c) is a retaliation clause, it prohibited dalicc:addStatement
+      without support, it modelled no reciprocity although 2.2(c) requires the Source Code of Externally
+      Deployed Modifications to be ''released under the terms set forth in this License'', and dalicc:WarrantyDisclaimer
+      held section 9, the limitation of liability, while section 8, the disclaimer of warranty, was
+      absent.'
     source: manual
   - action: added
     statement: permission dalicc:ChangeLicense
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record made no patent statement although
+      section 2 grants one and 12.1(c) is a retaliation clause, it prohibited dalicc:addStatement
+      without support, it modelled no reciprocity although 2.2(c) requires the Source Code of Externally
+      Deployed Modifications to be ''released under the terms set forth in this License'', and dalicc:WarrantyDisclaimer
+      held section 9, the limitation of liability, while section 8, the disclaimer of warranty, was
+      absent.'
     source: manual
   - action: added
     statement: permission dalicc:patentGrant
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record made no patent statement although
+      section 2 grants one and 12.1(c) is a retaliation clause, it prohibited dalicc:addStatement
+      without support, it modelled no reciprocity although 2.2(c) requires the Source Code of Externally
+      Deployed Modifications to be ''released under the terms set forth in this License'', and dalicc:WarrantyDisclaimer
+      held section 9, the limitation of liability, while section 8, the disclaimer of warranty, was
+      absent.'
     source: manual
   - action: changed
     statement: permission odrl:derive with duties [cc:ShareAlike]
     previous: permission odrl:derive
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record made no patent statement although
+      section 2 grants one and 12.1(c) is a retaliation clause, it prohibited dalicc:addStatement
+      without support, it modelled no reciprocity although 2.2(c) requires the Source Code of Externally
+      Deployed Modifications to be ''released under the terms set forth in this License'', and dalicc:WarrantyDisclaimer
+      held section 9, the limitation of liability, while section 8, the disclaimer of warranty, was
+      absent.'
     source: manual
   - action: changed
     statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
     previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record made no patent statement although
+      section 2 grants one and 12.1(c) is a retaliation clause, it prohibited dalicc:addStatement
+      without support, it modelled no reciprocity although 2.2(c) requires the Source Code of Externally
+      Deployed Modifications to be ''released under the terms set forth in this License'', and dalicc:WarrantyDisclaimer
+      held section 9, the limitation of liability, while section 8, the disclaimer of warranty, was
+      absent.'
     source: manual
   - action: changed
     statement: permission odrl:modify with duties [cc:ShareAlike, dalicc:modificationNotice]
     previous: permission odrl:modify with duties [dalicc:modificationNotice]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record made no patent statement although
+      section 2 grants one and 12.1(c) is a retaliation clause, it prohibited dalicc:addStatement
+      without support, it modelled no reciprocity although 2.2(c) requires the Source Code of Externally
+      Deployed Modifications to be ''released under the terms set forth in this License'', and dalicc:WarrantyDisclaimer
+      held section 9, the limitation of liability, while section 8, the disclaimer of warranty, was
+      absent.'
     source: manual
   - action: removed
     statement: prohibition dalicc:addStatement
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record made no patent statement although
+      section 2 grants one and 12.1(c) is a retaliation clause, it prohibited dalicc:addStatement
+      without support, it modelled no reciprocity although 2.2(c) requires the Source Code of Externally
+      Deployed Modifications to be ''released under the terms set forth in this License'', and dalicc:WarrantyDisclaimer
+      held section 9, the limitation of liability, while section 8, the disclaimer of warranty, was
+      absent.'
     source: manual
   - action: added
     statement: prohibition dalicc:patentRetaliationTermination
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record made no patent statement although
+      section 2 grants one and 12.1(c) is a retaliation clause, it prohibited dalicc:addStatement
+      without support, it modelled no reciprocity although 2.2(c) requires the Source Code of Externally
+      Deployed Modifications to be ''released under the terms set forth in this License'', and dalicc:WarrantyDisclaimer
+      held section 9, the limitation of liability, while section 8, the disclaimer of warranty, was
+      absent.'
     source: manual
-- version: 4
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Weak-copyleft family alignment of 2026-09-15: sections 2.1 and 2.2 require the Source
-    Code of every Modification and of every Covered Code that is deployed to be made available, so
-    the source duty belongs on odrl:modify and odrl:derive as well as on odrl:distribute, which is
-    where APSL-1.0, APSL-1.1 and APSL-1.2 carry it.'
-  changes:
   - action: changed
     statement: permission odrl:derive with duties [cc:ShareAlike, cc:SourceCode]
     previous: permission odrl:derive with duties [cc:ShareAlike]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Weak-copyleft family alignment of 2026-09-15: sections 2.1 and 2.2 require the Source
+      Code of every Modification and of every Covered Code that is deployed to be made available,
+      so the source duty belongs on odrl:modify and odrl:derive as well as on odrl:distribute, which
+      is where APSL-1.0, APSL-1.1 and APSL-1.2 carry it.'
     source: manual
   - action: changed
     statement: permission odrl:modify with duties [cc:ShareAlike, cc:SourceCode, dalicc:modificationNotice]
     previous: permission odrl:modify with duties [cc:ShareAlike, dalicc:modificationNotice]
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'Weak-copyleft family alignment of 2026-09-15: sections 2.1 and 2.2 require the Source
+      Code of every Modification and of every Covered Code that is deployed to be made available,
+      so the source duty belongs on odrl:modify and odrl:derive as well as on odrl:distribute, which
+      is where APSL-1.0, APSL-1.1 and APSL-1.2 carry it.'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:ShareAlike, cc:SourceCode]
+    previous: permission odrl:derive with duties [cc:ShareAlike, cc:SourceCode]
+    reason: Its duty cc:ShareAlike quotes "Source Code of Your Externally Deployed Modifications must
+      be released under the terms set forth in this License, including the license grants set forth
+      in Section 3 below, for as long as you Externally Deploy the Covered Code or twelve (12) months
+      from the date of initial External Deployment, whichever is longer."
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    reason: Its duty cc:ShareAlike quotes "Source Code of Your Externally Deployed Modifications must
+      be released under the terms set forth in this License, including the license grants set forth
+      in Section 3 below, for as long as you Externally Deploy the Covered Code or twelve (12) months
+      from the date of initial External Deployment, whichever is longer."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:ShareAlike, cc:SourceCode, dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:ShareAlike, cc:SourceCode, dalicc:modificationNotice]
+    reason: Its duty cc:ShareAlike quotes "Source Code of Your Externally Deployed Modifications must
+      be released under the terms set forth in this License, including the license grants set forth
+      in Section 3 below, for as long as you Externally Deploy the Covered Code or twelve (12) months
+      from the date of initial External Deployment, whichever is longer."
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

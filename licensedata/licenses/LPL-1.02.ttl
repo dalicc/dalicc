@@ -19,6 +19,7 @@
 
 dalicclib:LPL-1.02 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "LPL-1.02" ;
     cc:attributionName "Lucent Technologies" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -36,8 +37,8 @@ dalicclib:LPL-1.02 a odrl:Set ;
         "LPL-1.02",
         "Lucent Public License Version 1.02",
         "Lucent Public License v1.02" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Lucent Technologies Inc." ;
     dct:source <https://spdx.org/licenses/LPL-1.02.html> ;
     dct:title "Lucent Public License v1.02"@en ;
@@ -50,7 +51,8 @@ dalicclib:LPL-1.02 a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "it complies with the terms and conditions of this Agreement; 2. if the Program is distributed in source code or other tangible form, a copy of this Agreement or Distributor's own license agreement is included with each copy of the Program; and 3. if distributed under Distributor's own license agreement, such license agreement:" ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:addStatement ] ],
         [ a odrl:Permission ;
@@ -62,7 +64,8 @@ dalicclib:LPL-1.02 a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "it complies with the terms and conditions of this Agreement; 2. if the Program is distributed in source code or other tangible form, a copy of this Agreement or Distributor's own license agreement is included with each copy of the Program; and 3. if distributed under Distributor's own license agreement, such license agreement:" ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ] ],
         [ a odrl:Permission ;
@@ -70,7 +73,8 @@ dalicclib:LPL-1.02 a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Attribution ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "it complies with the terms and conditions of this Agreement; 2. if the Program is distributed in source code or other tangible form, a copy of this Agreement or Distributor's own license agreement is included with each copy of the Program; and 3. if distributed under Distributor's own license agreement, such license agreement:" ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ] ],
         [ a odrl:Permission ;
@@ -82,11 +86,16 @@ dalicclib:LPL-1.02 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ],
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ],
         [ a odrl:Permission ;
             odrl:action dalicc:chargeLicenseFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:sublicense ],
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, distribute and sublicense the Contribution of such Contributor, if any, and such derivative works, in source code and object code form." ],
         [ a odrl:Permission ;
             odrl:action dalicc:patentGrant ] ;
     odrl:prohibition [ a odrl:Prohibition ;

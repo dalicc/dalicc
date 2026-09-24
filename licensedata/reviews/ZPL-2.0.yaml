@@ -21,7 +21,7 @@ findings:
   description: 'Clause 3 states "The name Zope Corporation (tm) must not be used to endorse or promote products
     derived from this software without prior written permission from Zope Corporation", modelled as a dalicc:promote
     prohibition. dalicc:ChangeLicense is prohibited as on the BSD records. (Corrected on 2026-09-15 by the verification
-    of this batch: see the rubric 3 finding on relicensing below.)'
+    of this review group: see the rubric 3 finding on relicensing below.)'
   action: applied
 - rubric: 5
   severity: major
@@ -53,17 +53,17 @@ findings:
 - rubric: 10
   severity: major
   field: record
-  description: 'The batch notes expected ZPL 2.0 to carry a condition that derived works be renamed and ZPL 2.1
+  description: 'The review group notes expected ZPL 2.0 to carry a condition that derived works be renamed and ZPL 2.1
     to drop it. The SPDX text of 2.0 carries no such condition: its five conditions are source retention, binary
     retention, endorsement, trademarks and change notices. No dalicc:rename duty is written for either Zope record.'
   action: applied
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
+    the earlier reading wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
     or without modification, are permitted provided that the following conditions are met: 1. Redistributions in
     source code must retain the above copyright notice, this list of conditions, and the following disclaimer."
     The permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive

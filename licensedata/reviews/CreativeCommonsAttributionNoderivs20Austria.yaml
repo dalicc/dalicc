@@ -28,7 +28,7 @@ findings:
     so the asset type is text supported rather than merely plausible. Ziffer 1 counts a database among
     the objects of a related right: a "verwandtes Schutzrecht" is the right in a protected subject matter
     other than a work, "zum Beispiel einem nachgelassenen Werk, einem Lichtbild, einer Datenbank, einem
-    Schalltraeger, einer Rundfunksendung, einem Laufbild oder einer Darbietung eines ausuebenden Kuenstlers",
+    Schallträger, einer Rundfunksendung, einem Laufbild oder einer Darbietung eines ausübenden Künstlers",
     and the Schutzgegenstand offered under the licence is the work, the collection or the object of such
     a related right. Ziffer 4 and Ziffer 7 name "eine Datenbank" next to an adaptation and a collection.
     Added dcmitype:Dataset.'
@@ -41,15 +41,15 @@ findings:
   severity: info
   field: odrl:permission
   description: 'Every modelled permission is supported by the grant. Ziffer 3 grants a "unentgeltliche,
-    raeumlich und zeitlich (fuer die Dauer des Urheberrechts oder verwandten Schutzrechts) unbeschraenkte,
-    nicht-ausschliessliche Nutzungsbewilligung", a free non exclusive permission of use unlimited in place
+    räumlich und zeitlich (für die Dauer des Urheberrechts oder verwandten Schutzrechts) unbeschränkte,
+    nicht-ausschließliche Nutzungsbewilligung", a free non exclusive permission of use unlimited in place
     and time. It covers exploitation in physical form (reproduction and distribution), communication to
     the public in non physical form (broadcasting, rebroadcasting, recitation, performance, presentation
     and making available), and fixation on image or sound carriers. The record models this as odrl:reproduce,
     odrl:distribute, odrl:display, odrl:present, plus odrl:modify and dalicc:ModifiedWorks, which rest
     on the technical modification sentence of the grant: Ziffer 3: "Die genannte Nutzungsbewilligung beinhaltet
-    die Befugnis, solche Veraenderungen an dem Werk vorzunehmen, die technisch erforderlich sind, um die
-    Nutzungsbewilligung fuer alle Nutzungsarten wahrzunehmen." In this NoDerivatives set the grant list
+    die Befugnis, solche Veränderungen an dem Werk vorzunehmen, die technisch erforderlich sind, um die
+    Nutzungsbewilligung für alle Nutzungsarten wahrzunehmen." In this NoDerivatives set the grant list
     stops short of any right to adapt, which is why the record prohibits odrl:derive while still permitting
     odrl:modify: the only modification allowed is the one the grant calls technically necessary. The 4.0
     International parent CC-BY-ND-4.0 models it in exactly the same way. cc:CommercialUse is permitted,
@@ -58,22 +58,23 @@ findings:
 - rubric: 4
   severity: major
   field: odrl:prohibition
-  description: 'The licence forbids sublicensing and the record does not say so. Ziffer 4: "Sie duerfen
+  description: 'The licence forbids sublicensing and the record does not say so. Ziffer 4: "Sie dürfen
     den Schutzgegenstand nicht unterlizenzieren." The vocabulary already has dalicc:sublicense, but no
     record in the library uses it and its skos:note says so, and the same sentence stands in every Creative
-    Commons 2.0 and 3.0 record, so adding it to this batch alone would split the compatibility behaviour
+    Commons 2.0 and 3.0 record, so adding it to this review group alone would split the compatibility behaviour
     of one family. Proposed as one library wide correction, together with an update of the vocabulary
     note.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: |-
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:sublicense ] ;
 - rubric: 4
   severity: info
   field: odrl:prohibition
-  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: Ziffer 4: "Sie duerfen
+  description: 'dalicc:ChangeLicense is prohibited, which the licence supports: Ziffer 4: "Sie dürfen
     keine Vertragsbedingungen anbieten oder fordern, die die Bedingungen dieser Lizenz oder die durch
-    sie gewaehrten Befugnisse aendern oder beschraenken." dalicc:promote is prohibited, which rests on
+    sie gewährten Befugnisse ändern oder beschränken." dalicc:promote is prohibited, which rests on
     the reservation of all rights not expressly granted and the Creative Commons trademark paragraph of
     the notice around the licence body, not a clause of the licence itself odrl:derive is prohibited,
     which follows from a grant that never lists a right to adapt the work; the NoDerivatives element is
@@ -132,14 +133,14 @@ findings:
   description: 'cc:jurisdiction is bpicounty:Austria, which matches the country of the legal code URL
     https://creativecommons.org/licenses/by-nd/2.0/at/legalcode, and dalicc:validityType is dalicc:perpetual,
     which matches a grant made for the duration of copyright. Ziffer 8: "Auf diesen Lizenzvertrag findet
-    das Recht der Bundesrepublik Oesterreich Anwendung." Note that cc:jurisdiction records the legal home
+    das Recht der Bundesrepublik Österreich Anwendung." Note that cc:jurisdiction records the legal home
     of the port, not a territorial limit: the grant itself is unlimited in place.'
   action: none
 - rubric: 8
   severity: gap
   field: odrl:prohibition
   description: 'The licence forbids technological protection measures and the vocabulary has no term for
-    it. Ziffer 4: "Sie duerfen den Schutzgegenstand mit keinen technischen Schutzmassnahmen versehen,
+    it. Ziffer 4: "Sie dürfen den Schutzgegenstand mit keinen technischen Schutzmaßnahmen versehen,
     die den Zugang oder den Gebrauch des Schutzgegenstandes in einer Weise kontrollieren, die mit den
     Bedingungen dieser Lizenz im Widerspruch stehen." Proposed term: dalicc:applyTechnicalProtectionMeasures,
     an odrl:Action to be used as an odrl:Prohibition. Not modelled, because bending an existing term would
@@ -204,6 +205,15 @@ findings:
     only what the text states. Removed on 2026-09-23; see section 13 of docs/LICENSE_REVIEW.md.
   action: applied
   change: "# removed\nodrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:promote ] ;\n"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Dieser Lizenzvertrag und die durch diesen
+    erteilten Befugnisse enden automatisch bei jeder Verletzung der Vertragsbedingungen durch Sie." The
+    licence ends automatically on a breach and this version of the text has no reinstatement clause, so
+    dalicc:terminatesOnBreach is true and no dalicc:curePeriod is written, as on the unported record of
+    the same version.'
+  action: applied
 family: 'Creative Commons 2.0 port: Austria (AT)'
 port_of: CC-BY-ND-4.0
 variant_kind: jurisdiction-port

@@ -1,0 +1,16 @@
+id: Parity-7.0.0
+title: The Parity Public License 7.0.0
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: Named the licence the record itself is published under, CC BY 4.0, by its canonical address
+    beside cc:license.
+  changes:
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

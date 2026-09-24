@@ -90,7 +90,7 @@ findings:
     dalicc:terminatesOnBreach true are copied from the base record. cc:legalcode and
     dct:source also point at what the base record points at, because the legal text is the
     same document; the SPDX page for this identifier would be an alternative dct:source and
-    the report notes it.
+    the review notes it.
   action: applied
 - rubric: 8
   severity: gap

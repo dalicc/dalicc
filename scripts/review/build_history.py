@@ -48,11 +48,23 @@ The three version predicates themselves (``dct:hasVersion``, ``dct:modified``,
 record is, not what the model says, and excluding them is what makes a second run of
 this script produce the same changelog as the first.
 
+Retired
+-------
+This script built the first history, before the squash of 2026-09-23 merged every model
+history into two versions and before every later correction was versioned with
+``bump_version.py``.  It still reads commit ``1079c47`` as the version to compare with,
+so run today it no longer describes the repository: on 2026-09-24 its ``--dry-run``
+reported 345 history files to write and all 581 records to restamp, and a real run would
+replace the published histories.  It therefore refuses to run without ``--i-know``.  Its
+helpers stay importable, because ``bump_version.py`` and ``record_evidence.py`` use them;
+a record is versioned with ``bump_version.py`` (docs/DATA.md section 4,
+docs/DEVELOPMENT.md).
+
 Usage
 -----
-    python scripts/review/build_history.py             # write history and stamp records
-    python scripts/review/build_history.py --dry-run   # report only
-    python scripts/review/build_history.py --no-stamp  # history only, leave the records
+    python scripts/review/build_history.py --i-know             # write history, stamp
+    python scripts/review/build_history.py --i-know --dry-run   # report only
+    python scripts/review/build_history.py --i-know --no-stamp  # history only
 
 Afterwards, in this order::
 
@@ -1111,9 +1123,23 @@ def main(argv: list[str] | None = None) -> int:
         action="store_true",
         help="write the history but leave dct:hasVersion and friends alone",
     )
+    parser.add_argument(
+        "--i-know",
+        action="store_true",
+        help="run the retired tool anyway (it would replace the published histories)",
+    )
     args = parser.parse_args(argv)
 
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
+    if not args.i_know:
+        LOG.error(
+            "build_history.py is retired: it built the first history from commit %s and "
+            "no longer matches the repository, so a run would rewrite the published "
+            "histories. Version a record with scripts/review/bump_version.py. Pass "
+            "--i-know to run it anyway.",
+            BASE_COMMIT,
+        )
+        return 2
 
     outcome = Outcome()
     versions = build_licenses(outcome, dry_run=args.dry_run)

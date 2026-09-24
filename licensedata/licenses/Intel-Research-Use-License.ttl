@@ -19,6 +19,7 @@
 
 dalicclib:Intel-Research-Use-License a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://scancode-licensedb.aboutcode.org/intel-research-use-2024.LICENSE> ;
     dalicc:LiabilityLimitation "5. Limitation on Liability. IN NO EVENT WILL INTEL BE LIABLE TO YOU UNDER ANY THEORY OF LIABILITY FOR ANY LOST PROFITS OR DAMAGES (INCLUDING BUT NOT LIMITED TO DIRECT, INDIRECT, SPECULATIVE, SPECIAL OR CONSEQUENTIAL DAMAGES) WHATSOEVER ARISING OUT OF OR IN CONNECTION WITH THIS AGREEMENT (EVEN IF INTEL HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH LOSSES OR DAMAGES)." ;
@@ -41,13 +42,14 @@ dalicclib:Intel-Research-Use-License a odrl:Set ;
     dct:alternative "Intel Research Use License",
         "Intel-Research-Use-License",
         "intel-research" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Intel Corporation" ;
     dct:source <https://scancode-licensedb.aboutcode.org/intel-research-use-2024.LICENSE> ;
     dct:title "Intel Research Use License Agreement"@en ;
     odrl:permission [ a odrl:Permission ;
-            odrl:action odrl:reproduce ],
+            odrl:action odrl:reproduce ;
+            dalicc:evidence "Intel grants to You, a limited, non-transferable, non-sublicensable, non-exclusive, worldwide, royalty-free, license under Intel’s copyrights in the Material, to use, reproduce, display, and distribute the Material solely for research purposes." ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ],
         [ a odrl:Permission ;

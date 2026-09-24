@@ -19,6 +19,7 @@
 
 dalicclib:CC-BY-NC-ND-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CC-BY-NC-ND-2.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc-nd/2.0/legalcode> ;
@@ -49,7 +50,7 @@ dalicclib:CC-BY-NC-ND-2.0 a odrl:Set ;
         "Creative Commons Attribution Non Commercial No Derivatives 2.0 Generic",
         "Creative Commons BY-NC-ND 2.0" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc-nd/2.0/> ;
     dct:title "Creative Commons Attribution-NonCommercial-NoDerivatives 2.0 Generic"@en ;
@@ -58,7 +59,8 @@ dalicclib:CC-BY-NC-ND-2.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "If you distribute, publicly display, publicly perform, or publicly digitally perform the Work, You must keep intact all copyright notices for the Work and give the Original Author credit reasonable to the medium or means You are utilizing by conveying the name (or pseudonym if applicable) of the Original Author if supplied; the title of the Work if supplied; and to the extent reasonably practicable, the Uniform Resource Identifier, if any, that Licensor specifies to be associated with the Work, unless such URI does not refer to the copyright notice or licensing information for the Work." ],
                 [ a odrl:Duty ;
                     odrl:action cc:Notice ] ],
         [ a odrl:Permission ;
@@ -70,13 +72,16 @@ dalicclib:CC-BY-NC-ND-2.0 a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action odrl:derive ],
         [ a odrl:Prohibition ;
-            odrl:action cc:CommercialUse ],
+            odrl:action cc:CommercialUse ;
+            dalicc:evidence "You may not exercise any of the rights granted to You in Section 3 above in any manner that is primarily intended for or directed toward commercial advantage or private monetary compensation." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:royaltyCollectionReserved ],
+            odrl:action dalicc:royaltyCollectionReserved ;
+            dalicc:evidence "Licensor reserves the exclusive right to collect, whether individually or via a performance rights society (e.g. ASCAP, BMI, SESAC), royalties for the public performance or public digital performance (e.g. webcast) of the Work if that performance is primarily intended for or directed toward commercial advantage or private monetary compensation." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ] ;
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "You may not offer or impose any terms on the Work that alter or restrict the terms of this License or the recipients' exercise of the rights granted hereunder. You may not sublicense the Work." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:logo <https://licensebuttons.net/l/by-nc-nd/2.0/88x31.png> .

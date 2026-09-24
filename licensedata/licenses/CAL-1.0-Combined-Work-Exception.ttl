@@ -19,6 +19,7 @@
 
 dalicclib:CAL-1.0-Combined-Work-Exception a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CAL-1.0-Combined-Work-Exception" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://cryptographicautonomylicense.com/license-text.html> ;
@@ -41,8 +42,8 @@ dalicclib:CAL-1.0-Combined-Work-Exception a odrl:Set ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/CAL-1.0-Combined-Work-Exception/versions> ;
     dct:alternative "CAL-1.0-Combined-Work-Exception",
         "Cryptographic Autonomy License 1.0 (Combined Work Exception)" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source <https://opensource.org/license/CAL-1.0> ;
     dct:title "Cryptographic Autonomy License 1.0 (Combined Work Exception)"@en ;
     odrl:permission [ a odrl:Permission ;

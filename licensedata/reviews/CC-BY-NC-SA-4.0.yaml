@@ -33,7 +33,7 @@ findings:
   field: dct:title
   description: The title literal ended with a trailing blank, "Creative Commons Attribution-NonCommercial-ShareAlike
     4.0 International ". Removed. Thirty six further records of the library, all of them NonCommercial-ShareAlike
-    ports in other batches, carry the same defect and need the same sweep.
+    ports in other review groups, carry the same defect and need the same sweep.
   action: applied
   change: dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"@en ;
 - rubric: 2
@@ -64,8 +64,7 @@ findings:
     intended for commercial advantage or monetary compensation, which is the same test that the BY-NC and BY-NC-ND
     records of this set already model alongside the same permission. Section 4 of the legal code, the sui generis
     database rights section, says nothing about fees either. Added, so that the six records of the 4.0 set
-    model the fee question identically. This was flagged before the review in review_duplicates.md section
-    6.'
+    model the fee question identically. This was flagged before the review in the review of duplicates (see the review method, docs/LICENSE_REVIEW.md section 3).'
   action: applied
   change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:chargeDistributionFee ] ;"
 - rubric: 3
@@ -128,10 +127,11 @@ findings:
   description: Sublicensing is not modelled. Section 2(a)(1) grants a "non-sublicensable" licence and Section
     2(a)(5)(A) replaces sublicensing with an automatic offer from the licensor to every downstream recipient,
     so a licensee may not put the material under a licence of their own. The vocabulary has dalicc:sublicense,
-    defined and used by no record. The owner has decided provisionally that the sublicensing prohibition should
+    defined and used by no record. The association's review decided provisionally that the sublicensing prohibition should
     be modelled on every Creative Commons record, so it is recorded here with the exact triple and applied
     in one library-wide sweep rather than in six records.
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 5
   severity: info
@@ -212,14 +212,25 @@ findings:
     else: cc:CommercialUse moves to the prohibitions and the cc:ShareAlike licence-wide duty is added. Before
     this review the two ShareAlike records also lacked dalicc:chargeDistributionFee and CC-BY-NC-SA-4.0 had
     an empty target, so the set was not uniform. The deontic model still cannot tell a 4.0 record from a 2.0
-    or 3.0 port of the same element set, which review_duplicates.md section 5 sets out in full.'
+    or 3.0 port of the same element set, which the review of duplicates (see the review method, docs/LICENSE_REVIEW.md section 3) sets out in full.'
   action: none
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'Section 6(a) reads: "However, if You fail to comply with this Public License, then Your
+    rights under this Public License terminate automatically." Section 6(b) reinstates the rights "automatically
+    as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the
+    violation". dalicc:terminatesOnBreach is true and dalicc:curePeriod is "30 days", as on the GNU GPL
+    3.0 records, whose section 8 ends the licence on a breach and restores it when the breach is put right
+    within 30 days. The unported 1.0 to 3.0 records and the jurisdiction ports carry the termination without
+    a cure period, because their text has no reinstatement clause.'
+  action: applied
 family: Creative Commons 4.0 International
 port_of: null
 variant_kind: null
 notes: 'The 4.0 International records are unported, so port_of and variant_kind are empty. This record is the
   reference model that the reviews of the 2.0 and 3.0 ports of the same element set compare their ports against.
-  A note for the consolidation pass: another batch proposes removing dalicc:chargeDistributionFee from every
-  NonCommercial record of the library. The owner has decided provisionally to keep the present modelling, so
+  A note for the consolidation: another review group proposes removing dalicc:chargeDistributionFee from every
+  NonCommercial record of the library. The association''s review decided provisionally to keep the present modelling, so
   the statement stays and the question stays open; whichever way it is settled, it has to be settled for all
   145 NonCommercial records at once. Nothing in this review is legal advice.'

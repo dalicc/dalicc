@@ -23,7 +23,7 @@ findings:
 - rubric: 5
   severity: major
   field: odrl:duty
-  description: No duties, and no prohibitions. This and MIT-0 are the two records of the batch that impose
+  description: No duties, and no prohibitions. This and MIT-0 are the two records of the review group that impose
     nothing at all on the licensee.
   action: applied
 - rubric: 4

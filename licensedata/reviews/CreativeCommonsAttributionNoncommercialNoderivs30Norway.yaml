@@ -6,7 +6,7 @@ text_source: https://creativecommons.org/licenses/by-nc-nd/3.0/no/legalcode
 text_retrieved: true
 verdict: corrected
 summary: >-
-  The record was added at consolidation. Batch 9 found that the library held five of the
+  The record was added at consolidation. Review group 9 found that the library held five of the
   six Norwegian 3.0 element sets and no Attribution-NonCommercial-NoDerivatives record,
   although the legal code exists. The record is modelled on the five Norwegian siblings,
   with the NonCommercial prohibition of the Norwegian by-nc port and the NoDerivatives
@@ -32,7 +32,7 @@ findings:
   field: odrl:permission
   description: 'Section 3 grants reproduction, inclusion in a collection and public
     distribution and communication, plus the format changes the exercise of those rights
-    technically requires: "men bortsett fra det har du ikke rett til aa lage
+    technically requires: "men bortsett fra det har du ikke rett til å lage
     bearbeidelser". The record therefore permits reproduce, distribute, display, present
     and the distribution fee, and no modification or derivative right.'
   action: applied
@@ -64,7 +64,7 @@ findings:
 - rubric: 8
   severity: gap
   field: vocabulary
-  description: 'The same four gaps batch 9 recorded for every Norwegian record apply
+  description: 'The same four gaps review group 9 recorded for every Norwegian record apply
     here: technological protection measures, termination on breach, the downstream offer
     and the royalty collection clause, together with the database right waiver of section
     3. Proposed terms exist in the vocabulary as of this consolidation and are not used
@@ -74,9 +74,16 @@ findings:
   severity: info
   field: record
   description: The record is deontically identical to CC-BY-NC-ND-4.0 and to every other
-    NonCommercial-NoDerivatives port, which is what the family observation of batches 3
-    to 9 says about the whole Creative Commons family.
+    NonCommercial-NoDerivatives port, which is what the family observation of review groups 3 to 9 says about the whole Creative Commons family.
   action: none
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Denne lisensen og de rettigheter som følger
+    av den, vil automatisk opphøre ved ethvert brudd fra deg på lisensens vilkår." The licence ends automatically
+    on a breach and this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach
+    is true and no dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Norway (NO)'
 port_of: CC-BY-NC-ND-4.0
 variant_kind: jurisdiction-port

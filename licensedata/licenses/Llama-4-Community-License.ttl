@@ -19,6 +19,7 @@
 
 dalicclib:Llama-4-Community-License a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://raw.githubusercontent.com/meta-llama/llama-models/main/models/llama4/LICENSE> ;
     dalicc:LiabilityLimitation "4. Limitation of Liability. IN NO EVENT WILL META OR ITS AFFILIATES BE LIABLE UNDER ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, TORT, NEGLIGENCE, PRODUCTS LIABILITY, OR OTHERWISE, ARISING OUT OF THIS AGREEMENT, FOR ANY LOST PROFITS OR ANY INDIRECT, SPECIAL, CONSEQUENTIAL, INCIDENTAL, EXEMPLARY OR PUNITIVE DAMAGES, EVEN IF META OR ITS AFFILIATES HAVE BEEN ADVISED OF THE POSSIBILITY OF ANY OF THE FOREGOING." ;
@@ -44,8 +45,8 @@ dalicclib:Llama-4-Community-License a odrl:Set ;
         "Llama 4 Community License Agreement",
         "Llama-4-Community-License",
         "llama4" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Meta Platforms, Inc." ;
     dct:source <https://github.com/meta-llama/llama-models/blob/main/models/llama4/LICENSE> ;
     dct:title "Llama 4 Community License Agreement"@en ;
@@ -56,13 +57,14 @@ dalicclib:Llama-4-Community-License a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "You must retain in all copies of the Llama Materials that you distribute the following attribution notice within a “Notice” text file distributed as a part of such copies: “Llama 4 is licensed under the Llama 4 Community License, Copyright © Meta Platforms, Inc." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "If you distribute or make available the Llama Materials (or any derivative works thereof), or a product or service (including another AI model) that contains any of them, you shall (A) provide a copy of this Agreement with any such Llama Materials; and (B) prominently display “Built with Llama” on a related website, user interface, blogpost, about page, or product documentation." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ],
-                [ a odrl:Duty ;
-                    odrl:action dalicc:includeNoticeFile ],
+                    odrl:action dalicc:includeNoticeFile ;
+                    dalicc:evidence "You must retain in all copies of the Llama Materials that you distribute the following attribution notice within a “Notice” text file distributed as a part of such copies: “Llama 4 is licensed under the Llama 4 Community License, Copyright © Meta Platforms, Inc." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:addStatement ] ],
         [ a odrl:Permission ;
@@ -78,23 +80,27 @@ dalicclib:Llama-4-Community-License a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:networkUseTrigger ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Attribution ],
+                    odrl:action cc:Attribution ;
+                    dalicc:evidence "You must retain in all copies of the Llama Materials that you distribute the following attribution notice within a “Notice” text file distributed as a part of such copies: “Llama 4 is licensed under the Llama 4 Community License, Copyright © Meta Platforms, Inc." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "If you distribute or make available the Llama Materials (or any derivative works thereof), or a product or service (including another AI model) that contains any of them, you shall (A) provide a copy of this Agreement with any such Llama Materials; and (B) prominently display “Built with Llama” on a related website, user interface, blogpost, about page, or product documentation." ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ],
-                [ a odrl:Duty ;
-                    odrl:action dalicc:includeNoticeFile ],
+                    odrl:action dalicc:includeNoticeFile ;
+                    dalicc:evidence "You must retain in all copies of the Llama Materials that you distribute the following attribution notice within a “Notice” text file distributed as a part of such copies: “Llama 4 is licensed under the Llama 4 Community License, Copyright © Meta Platforms, Inc." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:addStatement ] ],
         [ a odrl:Permission ;
             odrl:action dalicc:useForModelTraining ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ] ;
+                    odrl:action dalicc:addStatement ] ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ChangeLicense ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action dalicc:compliantLicense ] ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:ChangeLicense ],
-        [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "No trademark licenses are granted under this Agreement, and in connection with the Llama Materials, neither Meta nor Licensee may use any name or mark owned by or associated with the other or any of its affiliates, except as required for reasonable and customary use in describing and redistributing the Llama Materials or as set forth in this Section 5(a)." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ] ;
     odrl:target [ a odrl:AssetCollection ;

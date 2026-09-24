@@ -20,6 +20,7 @@
 dalicclib:SampleLicenseSl a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
     cc:license dalicclib:MIT ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:attributionName "Sample Creator" ;
     cc:jurisdiction dalicc:worldwide ;
     dalicc:WarrantyDisclaimer "This is a disclaimer. No programmer were harmed during the creation of this license :). " ;
@@ -29,7 +30,7 @@ dalicclib:SampleLicenseSl a odrl:Set ;
     dalicc:reviewedOn "2026-09-15"^^xsd:date ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/SampleLicenseSl/versions> ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Sample Licensor" ;
     dct:title "Sample License (SL)" ;
     odrl:assignee "Sample Licensee" ;

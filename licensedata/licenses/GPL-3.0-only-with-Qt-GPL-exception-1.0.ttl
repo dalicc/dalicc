@@ -19,12 +19,13 @@
 
 dalicclib:GPL-3.0-only-with-Qt-GPL-exception-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "GPL-3.0-only WITH Qt-GPL-exception-1.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.gnu.org/licenses/gpl-3.0.html> ;
     dalicc:LiabilityLimitation "IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES." ;
     dalicc:WarrantyDisclaimer "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION." ;
-    dalicc:WarrantyOrLiabilityAcceptance "You may charge any price or no price for each copy that you convey, and you may offer support or warranty protection for a fee." ;
+    dalicc:WarrantyOrLiabilityAcceptance "you may offer support or warranty protection for a fee" ;
     dalicc:additionalClauses "The Qt Company GPL Exception 1.0 Exception 1: As a special exception you may create a larger work which contains the output of this application and distribute that work under terms of your choice, so long as the work is not otherwise derived from or based on this application and so long as the work does not in itself generate output that contains the output from this application in its original or modified form. Exception 2: As a special exception, you have permission to combine this application with Plugins licensed under the terms of your choice, to produce an executable, and to copy and distribute the resulting executable under the terms of your choice. However, the executable must be accompanied by a prominent notice offering all users of the executable the entire source code to this application, excluding the source code of the independent modules, but including any changes you have made to this application, under the terms of this license." ;
     dalicc:validityType dalicc:perpetual ;
     dalicc:orLaterVersionOption false ;
@@ -43,14 +44,15 @@ dalicclib:GPL-3.0-only-with-Qt-GPL-exception-1.0 a odrl:Set ;
         "GPL-3.0-only-with-Qt-GPL-exception-1.0",
         "GPLv3 with Qt GPL exception" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Free Software Foundation" ;
     dct:source <https://spdx.org/licenses/Qt-GPL-exception-1.0.html> ;
     dct:title "GNU General Public License 3 with Qt GPL exception 1.0"@en ;
     odrl:duty [ a odrl:Duty ;
             odrl:action cc:ShareAlike ] ;
     odrl:permission [ a odrl:Permission ;
-            odrl:action dalicc:chargeDistributionFee ],
+            odrl:action dalicc:chargeDistributionFee ;
+            dalicc:evidence "You may charge any price or no price for each copy that you convey, and you may offer support or warranty protection for a fee." ],
         [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
         [ a odrl:Permission ;

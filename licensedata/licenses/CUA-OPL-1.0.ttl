@@ -19,6 +19,7 @@
 
 dalicclib:CUA-OPL-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CUA-OPL-1.0" ;
     cc:attributionName "CUA Office Project" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -36,8 +37,8 @@ dalicclib:CUA-OPL-1.0 a odrl:Set ;
     dct:alternative "CUA Office Public License 1.0",
         "CUA-OPL-1.0",
         "CUAPL" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "CUA Office Project" ;
     dct:source <https://spdx.org/licenses/CUA-OPL-1.0.html> ;
     dct:title "CUA Office Public License v1.0"@en ;
@@ -90,11 +91,13 @@ dalicclib:CUA-OPL-1.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:sublicense ],
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "under intellectual property rights (other than patent or trademark) Licensable by Initial Developer to use, reproduce, modify, display, perform, sublicense and distribute the Original Code (or portions thereof) with or without Modifications, and/or as part of a Larger Work; and" ],
         [ a odrl:Permission ;
             odrl:action dalicc:patentGrant ],
         [ a odrl:Permission ;
-            odrl:action dalicc:ChangeLicense ] ;
+            odrl:action dalicc:ChangeLicense ;
+            dalicc:evidence "The Source Code version of Covered Code may be distributed only under the terms of this License or a future version of this License released under Section 6.1, and You must include a copy of this License with every copy of the Source Code You distribute." ] ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:promote ],
         [ a odrl:Prohibition ;

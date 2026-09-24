@@ -38,7 +38,7 @@ on; and what the license means is decided by its text.
 from __future__ import annotations
 
 from collections.abc import Iterable, Sequence
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 import re
 from typing import Any
 
@@ -65,6 +65,7 @@ __all__ = [
     "extends_from_triples",
     "make_rule",
     "normalise_iri",
+    "rule_status_word",
     "rule_triples",
     "rules_from_triples",
     "sorted_rules",
@@ -131,6 +132,10 @@ class Conflict:
     #: The rule that supplied the side, when that side came from one.
     rule_1: str = ""
     rule_2: str = ""
+    #: The status of that rule in words, ``adopted`` or ``proposed``, so a page can say
+    #: "by default rule (proposed)" beside the finding; empty for a side from the text.
+    rule_status_1: str = ""
+    rule_status_2: str = ""
 
     def as_dict(self) -> dict[str, Any]:
         """JSON shape published by ``POST /licenselibrary/consistencycheck``.
@@ -139,7 +144,9 @@ class Conflict:
         keys before them are unchanged.  ``origin_1``, ``origin_2``, ``rule_1`` and
         ``rule_2`` came with the default rules and are always present too: the first
         two say ``dalicc:FromText`` for a statement the license makes, and the last two
-        are empty unless that side came from a rule.
+        are empty unless that side came from a rule.  ``rule_status_1`` and
+        ``rule_status_2`` came later still: ``adopted`` or ``proposed`` for a side a rule
+        supplied, and empty otherwise.
         """
         return {
             "kind": self.kind,
@@ -156,6 +163,8 @@ class Conflict:
             "origin_2": self.origin_2,
             "rule_1": self.rule_1,
             "rule_2": self.rule_2,
+            "rule_status_1": self.rule_status_1,
+            "rule_status_2": self.rule_status_2,
         }
 
     @property
@@ -436,9 +445,19 @@ P_RULE_OUTCOME = _DALICC_NS + "defaultOutcome"
 P_RULE_JURISDICTION = _DALICC_NS + "inJurisdiction"
 P_RULE_BASIS = _DALICC_NS + "ruleBasis"
 P_RULE_STATUS = _DALICC_NS + "ruleStatus"
+#: Two or three plain sentences beside the citation: what the rule does, why, and what
+#: a reader will notice.  Carried by a rule and by an axiom removal (vocabulary 8).
+P_RULE_EXPLANATION = _DALICC_NS + "ruleExplanation"
+#: A rule of a graph built from another one names the rule of that graph it replaces.
+P_REPLACES_RULE = _DALICC_NS + "replacesRule"
+#: Deprecated in vocabulary version 2: every published graph is complete, and a graph
+#: that still carries this link is read as it is, the link ignored with a warning.
 P_EXTENDS_GRAPH = _DALICC_NS + "extendsGraph"
 P_LABEL = "http://www.w3.org/2000/01/rdf-schema#label"
 P_DATE = "http://purl.org/dc/terms/date"
+#: Who adopted a rule, in words, and the date it was adopted (``dg_default.ttl``).
+P_CONTRIBUTOR = "http://purl.org/dc/terms/contributor"
+P_DATE_ACCEPTED = "http://purl.org/dc/terms/dateAccepted"
 C_DEFAULT_RULE = _DALICC_NS + "DefaultRule"
 
 RULE_PREDICATES: tuple[str, ...] = (
@@ -484,6 +503,15 @@ class Rule:
     status: str = vocab.RULE_STATUS_PROPOSED
     date: str = ""
     label: str = ""
+    #: Two or three plain sentences: what the rule does to a silent license, why the
+    #: law leads there, and what a person combining licenses will notice.
+    explanation: str = ""
+    #: The rule of the graph this one was built from that this rule takes the place of.
+    replaces: str = ""
+    #: ``dct:contributor``: who adopted the rule, in the words the graph gives.
+    contributor: str = ""
+    #: ``dct:dateAccepted``: the day the rule was adopted, ``YYYY-MM-DD``.
+    date_accepted: str = ""
 
     @property
     def action_label(self) -> str:
@@ -540,12 +568,17 @@ class Rule:
             _DALICC_NS + "RequiredByDefault": (
                 f"{self.action_label} is required unless the license waives it"
             ),
-            _DALICC_NS + "NotWaivable": (
-                f"the license cannot decide {self.action_label}, and a statement to the "
-                "contrary is reported as a finding"
-            ),
         }
+        if self.outcome == _DALICC_NS + "NotWaivable":
+            # What the law keeps out of a license's reach differs from rule to rule and
+            # protects particular persons, so the rule's own explanation says it; the
+            # generic sentence claims no more than that a finding is reported.
+            return self.explanation or not_waivable_sentence(
+                self.jurisdiction, self.action_label
+            )
         reading = readings.get(self.outcome, f"{self.action_label} is {self.outcome_label}")
+        if vocab.jurisdiction_phrase(self.jurisdiction) == vocab.WORLDWIDE_PHRASE:
+            return f"The graph applies this reading in all jurisdictions it covers: {reading}."
         return f"In {vocab.jurisdiction_phrase(self.jurisdiction)}, {reading}."
 
     def as_triples(self) -> list[tuple[str, str, str]]:
@@ -559,11 +592,32 @@ class Rule:
         ]
         if self.basis:
             triples.append((self.iri, P_RULE_BASIS, self.basis))
+        if self.explanation:
+            triples.append((self.iri, P_RULE_EXPLANATION, self.explanation))
+        if self.replaces:
+            triples.append((self.iri, P_REPLACES_RULE, self.replaces))
         if self.date:
             triples.append((self.iri, P_DATE, self.date))
         if self.label:
             triples.append((self.iri, P_LABEL, self.label))
         return triples
+
+
+def not_waivable_sentence(jurisdiction: str, action_label: str) -> str:
+    """The sentence of a ``dalicc:NotWaivable`` rule that carries no explanation."""
+    return (
+        f"In {vocab.jurisdiction_phrase(jurisdiction)}, a license term on {action_label} "
+        "that the law does not allow is reported as a finding; the license text stays as "
+        "it is."
+    )
+
+
+def _where_clause(jurisdiction: str) -> str:
+    """"in Austria", or the reading-everywhere clause for ``dalicc:worldwide``."""
+    where = vocab.jurisdiction_phrase(jurisdiction)
+    if where == vocab.WORLDWIDE_PHRASE:
+        return "the graph applies this reading in all jurisdictions it covers:"
+    return f"in {where}"
 
 
 def make_rule(
@@ -575,6 +629,10 @@ def make_rule(
     status: str = "",
     date: str = "",
     label: str = "",
+    explanation: str = "",
+    replaces: str = "",
+    contributor: str = "",
+    date_accepted: str = "",
 ) -> Rule:
     """Build a rule from IRIs or CURIEs, without validating the terms."""
     return Rule(
@@ -586,6 +644,10 @@ def make_rule(
         status=_normalise_iri(status) or vocab.RULE_STATUS_PROPOSED,
         date=(date or "").strip(),
         label=(label or "").strip(),
+        explanation=" ".join((explanation or "").split()),
+        replaces=_normalise_iri(replaces) if (replaces or "").strip() else "",
+        contributor=" ".join((contributor or "").split()),
+        date_accepted=(date_accepted or "").strip(),
     )
 
 
@@ -601,7 +663,14 @@ def rules_from_triples(triples: DependencyTriples) -> list[Rule]:
     for subject, predicate, obj in triples:
         if predicate == P_RDF_TYPE and obj == C_DEFAULT_RULE:
             collected.setdefault(subject, {})
-        elif predicate in RULE_PREDICATES or predicate in (P_LABEL, P_DATE):
+        elif predicate in RULE_PREDICATES or predicate in (
+            P_LABEL,
+            P_DATE,
+            P_RULE_EXPLANATION,
+            P_REPLACES_RULE,
+            P_CONTRIBUTOR,
+            P_DATE_ACCEPTED,
+        ):
             collected.setdefault(subject, {})[predicate] = obj
     out: list[Rule] = []
     for iri, fields in collected.items():
@@ -621,9 +690,28 @@ def rules_from_triples(triples: DependencyTriples) -> list[Rule]:
                 or vocab.RULE_STATUS_PROPOSED,
                 date=fields.get(P_DATE, "").strip(),
                 label=fields.get(P_LABEL, "").strip(),
+                explanation=" ".join(fields.get(P_RULE_EXPLANATION, "").split()),
+                replaces=_normalise_iri(fields[P_REPLACES_RULE])
+                if fields.get(P_REPLACES_RULE)
+                else "",
+                contributor=" ".join(fields.get(P_CONTRIBUTOR, "").split()),
+                date_accepted=fields.get(P_DATE_ACCEPTED, "").strip(),
             )
         )
     return sorted_rules(out)
+
+
+def rule_status_word(status: str) -> str:
+    """A rule status in the word a page shows beside it: ``adopted`` or ``proposed``.
+
+    An empty status is an empty word; anything that is not ``dalicc:Adopted`` reads as
+    ``proposed``, which is also what :func:`rules_from_triples` assumes of a rule that
+    names no status.
+    """
+    value = normalise_iri(status) if status else ""
+    if not value:
+        return ""
+    return "adopted" if value == vocab.RULE_STATUS_ADOPTED else "proposed"
 
 
 def sorted_rules(rules: Iterable[Rule]) -> list[Rule]:
@@ -645,10 +733,11 @@ def rule_triples(rules: Iterable[Rule]) -> list[tuple[str, str, str]]:
 
 
 def extends_from_triples(triples: DependencyTriples) -> str:
-    """The graph a graph is read together with, or an empty string.
+    """The graph a graph names with the deprecated ``dalicc:extendsGraph``, or ``""``.
 
-    Only one is returned: a graph that names several is a graph nobody can reason
-    about predictably, and the validator refuses it.
+    Nothing follows the link since vocabulary version 2: every published graph is
+    complete.  This is kept so that a reader can say that a graph still carries it
+    (the service logs a warning and reads the graph as it is).  Only one is returned.
     """
     targets = sorted(
         {obj for _s, predicate, obj in triples if predicate == P_EXTENDS_GRAPH}
@@ -699,9 +788,29 @@ class DefaultStatement:
     reason: str
     origin: str = vocab.ORIGIN_FROM_DEFAULT_RULE
     label: str = ""
+    #: ``dalicc:Adopted`` or ``dalicc:Proposed``: the status of the rule that supplied
+    #: this entry, which every page shows beside it.
+    status: str = vocab.RULE_STATUS_PROPOSED
+    #: The plain explanation of the rule (``dalicc:ruleExplanation``), shown beside it.
+    explanation: str = ""
+    #: Who adopted the rule and the day it was adopted, as the graph states them.
+    contributor: str = ""
+    date_accepted: str = ""
+
+    @property
+    def rule_status(self) -> str:
+        """The status of the rule in words: ``adopted`` or ``proposed``."""
+        return rule_status_word(self.status)
 
     def as_dict(self) -> dict[str, Any]:
-        """JSON shape of one entry of the additive ``defaults`` array."""
+        """JSON shape of one entry of the additive ``defaults`` array.
+
+        ``rule_status`` (``adopted`` or ``proposed``) was added after the others,
+        ``explanation`` (the rule's ``dalicc:ruleExplanation``, empty when it has none)
+        after that, and ``contributor`` and ``date_accepted`` (the rule's
+        ``dct:contributor`` and ``dct:dateAccepted``, empty for a rule nobody adopted)
+        last.
+        """
         return {
             "kind": self.kind,
             "action": self.action,
@@ -715,6 +824,10 @@ class DefaultStatement:
             "basis": self.basis,
             "reason": self.reason,
             "label": self.label,
+            "rule_status": self.rule_status,
+            "explanation": self.explanation,
+            "contributor": self.contributor,
+            "date_accepted": self.date_accepted,
         }
 
 
@@ -784,7 +897,7 @@ def default_statements(
     out: list[DefaultStatement] = []
     for rule in sorted_rules(rules):
         label = vocab.action_label(rule.action)
-        where = vocab.jurisdiction_phrase(rule.jurisdiction)
+        where = _where_clause(rule.jurisdiction)
         if rule.outcome == _OUTCOME_NOT_WAIVABLE:
             # The law either keeps an exception open, in which case a license may not
             # close it, or keeps a protection in place, in which case a license may not
@@ -800,9 +913,10 @@ def default_statements(
                 continue
             said = "prohibited" if exception_kept_open else "permitted"
             reason = (
-                f"{label} is {said} by this license, and in {where} a license cannot "
-                f"decide it. The statement is reported and not overridden: the record "
-                f"says what the text says."
+                f"{label} is {said} by this license. "
+                f"{rule.explanation or not_waivable_sentence(rule.jurisdiction, label)} "
+                "The statement is reported and not overridden: the record says what the "
+                "text says."
             )
             out.append(
                 DefaultStatement(
@@ -814,6 +928,10 @@ def default_statements(
                     kind=DEFAULT_FINDING,
                     reason=reason,
                     label=rule.label,
+                    status=rule.status,
+                    explanation=rule.explanation,
+                    contributor=rule.contributor,
+                    date_accepted=rule.date_accepted,
                 )
             )
             continue
@@ -822,15 +940,15 @@ def default_statements(
             continue
         readings = {
             DEFAULT_PROHIBITION: (
-                f"This license says nothing about {label}, and in {where} it is not "
+                f"This license says nothing about {label}, and {where} it is not "
                 f"permitted unless the license permits it."
             ),
             DEFAULT_PERMISSION: (
-                f"This license says nothing about {label}, and in {where} it is "
+                f"This license says nothing about {label}, and {where} it is "
                 f"permitted unless the license prohibits it."
             ),
             DEFAULT_DUTY: (
-                f"This license says nothing about {label}, and in {where} it is "
+                f"This license says nothing about {label}, and {where} it is "
                 f"required unless the license waives it."
             ),
         }
@@ -844,6 +962,10 @@ def default_statements(
                 kind=kind,
                 reason=readings[kind],
                 label=rule.label,
+                status=rule.status,
+                explanation=rule.explanation,
+                contributor=rule.contributor,
+                date_accepted=rule.date_accepted,
             )
         )
     return out
@@ -1151,4 +1273,18 @@ def consistency_check(
                 )
             )
 
-    return conflicts
+    if not defaults:
+        return conflicts
+    # Every side a rule supplied says whether that rule is adopted or only proposed,
+    # because the two are not the same kind of claim and the page shows which.
+    status_of = {entry.rule: entry.rule_status for entry in defaults}
+    return [
+        replace(
+            conflict,
+            rule_status_1=status_of.get(conflict.rule_1, "") if conflict.rule_1 else "",
+            rule_status_2=status_of.get(conflict.rule_2, "") if conflict.rule_2 else "",
+        )
+        if conflict.rule_1 or conflict.rule_2
+        else conflict
+        for conflict in conflicts
+    ]

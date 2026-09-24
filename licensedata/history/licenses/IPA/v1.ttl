@@ -1,0 +1,96 @@
+# Title: The machine-readable representation of "IPA Font License"@en in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/IPA
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:IPA a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "IPA" ;
+    cc:attributionName "Information-technology Promotion Agency, Japan" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://opensource.org/license/IPA> ;
+    dalicc:LiabilityLimitation "IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXTENDED, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO; PROCUREMENT OF SUBSTITUTED GOODS OR SERVICE; DAMAGES ARISING FROM SYSTEM FAILURE; LOSS OR CORRUPTION OF EXISTING DATA OR PROGRAM; LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE INSTALLATION, USE, THE REPRODUCTION OR OTHER EXPLOITATION OF THE LICENSED PROGRAM OR ANY DERIVED PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES." ;
+    dalicc:WarrantyDisclaimer "THIS LICENSED PROGRAM IS PROVIDED BY THE LICENSOR \"AS IS\" AND ANY EXPRESSED OR IMPLIED WARRANTY AS TO THE LICENSED PROGRAM OR ANY DERIVED PROGRAM, INCLUDING, BUT NOT LIMITED TO, WARRANTIES OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE, ARE DISCLAIMED." ;
+    dalicc:additionalClauses "The Licensor grants to the Recipient a license to use the Licensed Program in any and all countries in accordance with each of the provisions set forth in this Agreement. However, any and all rights underlying in the Licensed Program shall be held by the Licensor. In no sense is this Agreement intended to transfer any right relating to the Licensed Program held by the Licensor except as specifically set forth herein or any right relating to any trademark, trade name, or service mark to the Recipient. If a Derived Program is Redistributed pursuant to Paragraph 4 and 7 of the preceding Article, the following conditions must be met : (1) The following must be also Redistributed together with the Derived Program, or be made available online or by means of mailing mechanisms in exchange for a cost which does not exceed the total costs of postage, storage medium and handling fees: (a) a copy of the Derived Program; and (b) any additional file created by the font developing program in the course of creating the Derived Program that can be used for further modification of the Derived Program, if any. (2) It is required to also Redistribute means to enable recipients of the Derived Program to replace the Derived Program with the Licensed Program first released under this License (the \"Original Program\"). Such means may be to provide a difference file from the Original Program, or instructions setting out a method to replace the Derived Program with the Original Program. (3) The Recipient must license the Derived Program under the terms and conditions of this Agreement. (4) No one may use or include the name of the Licensed Program as a program name, font name or file name of the Derived Program. (5) Any material to be made available online or by means of mailing a medium to satisfy the requirements of this paragraph may be provided, verbatim, by any party wishing to do so. If the Recipient Redistributes the Licensed Program pursuant to Paragraph 6 of the preceding Article, the Recipient shall meet all of the following conditions: (1) The Recipient may not change the name of the Licensed Program. (2) The Recipient may not alter or otherwise modify the Licensed Program. (3) The Recipient must attach a copy of this Agreement to the Licensed Program. The Licensor is under no obligation to respond to any technical questions or inquiries, or provide any other user support in connection with the installation, use or the Reproduction and Other Exploitation of the Licensed Program or Derived Programs thereof. The term of this Agreement shall begin from the time of receipt of the Licensed Program by the Recipient and shall continue as long as the Recipient retains any such Licensed Program in any way. 2. Notwithstanding the provision set forth in the preceding Paragraph, in the event of the breach of any of the provisions set forth in this Agreement by the Recipient, this Agreement shall automatically terminate without any notice. In the case of such termination, the Recipient may not use or conduct Reproduction and Other Exploitation of the Licensed Program or a Derived Program: provided that such termination shall not affect any rights of any other Recipient receiving the Licensed Program or the Derived Program from such Recipient who breached this Agreement. IPA may publish revised and/or new versions of this License. In such an event, the Recipient may select either this Agreement or any subsequent version of the Agreement in using, conducting the Reproduction and Other Exploitation of, or Redistributing the Licensed Program or a Derived Program. Other matters not specified above shall be subject to the Copyright Law of Japan and other related laws and regulations of Japan. 2. This Agreement shall be construed under the laws of Japan." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/IPA/versions> ;
+    dct:alternative "IPA",
+        "IPA Font License",
+        "IPA Font License Agreement v1.0" ;
+    dct:hasVersion "1" ;
+    dct:modified "2026-09-15"^^xsd:date ;
+    dct:publisher "Information-technology Promotion Agency, Japan" ;
+    dct:source <https://spdx.org/licenses/IPA.html> ;
+    dct:title "IPA Font License"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:ShareAlike ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action cc:ShareAlike ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:rename ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:originalVersionOffer ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:SourceCode ],
+                [ a odrl:Duty ;
+                    odrl:action cc:ShareAlike ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:rename ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:originalVersionOffer ] ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Software ] .

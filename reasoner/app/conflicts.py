@@ -62,6 +62,17 @@ DIRECT_REASONS = {
         "the license is permitted without a duty to use a compliant license, so the "
         "work could leave the license that requires it to stay."
     ),
+    "share-alike-reciprocity": (
+        "Direct conflict. Both licenses require the whole work, or every work derived "
+        "from it, to stay under themselves, and no later-version option or "
+        "compatibility clause leads from one to the other, so one combined work cannot "
+        "satisfy both."
+    ),
+    "share-alike-direction": (
+        "Direct restriction. Both licenses require the whole work to stay under "
+        "themselves, and the first names the second as a license a work under it may be "
+        "released under, so the combined work has to be released under the second."
+    ),
 }
 
 #: The two values ``dalicc:statementOrigin`` takes in an answer.  Every statement a

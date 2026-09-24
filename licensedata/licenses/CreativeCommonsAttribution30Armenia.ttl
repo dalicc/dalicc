@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttribution30Armenia a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Armenia ;
     cc:legalcode <https://creativecommons.org/licenses/by/3.0/am/legalcode> ;
     dalicc:LiabilityLimitation """Օրենքով նախատեսված պահանջների և 5-րդ Բաժնի երաշխիքների խախտումներից բացի, Լիցենզատուն պատասխանատու է նաև այն վնասների համար, որոնք պատճառվել են դիտավորությամբ՝ անզգուշությամբ տեղ գտած գործողության կամ անգործության հետևանքով։
@@ -26,6 +27,7 @@ dalicclib:CreativeCommonsAttribution30Armenia a odrl:Set ;
     dalicc:WarrantyDisclaimer """Հավաստագրեր և երաշխիքներ Լիցենզատուն հավաստում և երաշխավորում է, որ՝ i.	սույն Լիցենզիայի իրականացումը և կատարումը Լիցենզատուի լիազորությունների մեջ են մտնում և չեն հակասում Օրենքին. ii.	Լիցենզատուն ամբողջությամբ տիրապետում է լիցենզավորված Ստեղծագործության նկատմամբ սեփականության իրավունքին և, որ լիցենզավորման գործընթացի առնչությամբ Լիցենզատուի համար որևէ իրավական խոչընդոտներ չկան.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -42,7 +44,7 @@ dalicclib:CreativeCommonsAttribution30Armenia a odrl:Set ;
         "Creative Commons BY 3.0",
         "Creative Commons BY 3.0 AM" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by/3.0/am/> ;
     dct:title "Creative Commons Attribution 3.0 Armenia"@en ;

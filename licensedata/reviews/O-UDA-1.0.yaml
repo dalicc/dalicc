@@ -9,15 +9,14 @@ summary: >-
   The Open Use of Data Agreement: use, modify and distribute the data under terms of your
   choice, carrying the credit forward and passing on a warranty disclaimer at least as broad
   as the one you received. The record follows the Community Data License Agreement records of
-  this batch and is the permissive member of the pair with C-UDA-1.0.
+  this review group and is the permissive member of the pair with C-UDA-1.0.
 findings:
 - rubric: 1
   severity: minor
   field: 'spdx:licenseId'
   description: >-
     The record carries the SPDX id O-UDA-1.0 and the SPDX name as dct:title. The library holds
-    no other data use agreement, so dalicc:variantKind is left out; the two agreements of this
-    batch are siblings, not versions of one another.
+    no other data use agreement, so dalicc:variantKind is left out; the two agreements of this review group are siblings, not versions of one another.
   action: applied
 - rubric: 2
   severity: major
@@ -106,7 +105,7 @@ findings:
     redistribute under terms of its choice. In the model that is a cc:ShareAlike duty and a
     dalicc:ChangeLicense prohibition on one side against a dalicc:ChangeLicense permission and
     a no-warranty notice duty on the other. Both sit beside the Community Data License
-    Agreement records of this batch, which use the same vocabulary of Data, Results and
+    Agreement records of this review group, which use the same vocabulary of Data, Results and
     Downstream Recipients.
   action: none
 family: Use of data agreements

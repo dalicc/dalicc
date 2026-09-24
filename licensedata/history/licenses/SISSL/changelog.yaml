@@ -1,0 +1,61 @@
+id: SISSL
+title: Sun Industry Standards Source License v1.1
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission dalicc:sublicense
+    previous: permission dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "under intellectual
+      property rights (other than patent or trademark) Licensable by Initial Developer to use, reproduce,
+      modify, display, perform, sublicense and distribute the Original Code (or portions thereof)
+      with or without Modifications, and/or as part of a Larger Work; and"'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:standardsConformance]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:standardsConformance]
+    reason: Its duty cc:ShareAlike quotes "In the event that the Modifications do not meet such requirements,
+      You agree to publish either (i) any deviation from the Standards protocol resulting from implementation
+      of Your Modifications and a reference implementation of Your Modifications or (ii) Your Modifications
+      in Source Code form, and to make any such deviation and reference implementation or Modifications
+      available to all third parties under the same terms as this license on a royalty free basis
+      within thirty (30) days of Your first customer shipment of Your Modifications."
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode]
+    reason: Its duty cc:ShareAlike quotes "In the event that the Modifications do not meet such requirements,
+      You agree to publish either (i) any deviation from the Standards protocol resulting from implementation
+      of Your Modifications and a reference implementation of Your Modifications or (ii) Your Modifications
+      in Source Code form, and to make any such deviation and reference implementation or Modifications
+      available to all third parties under the same terms as this license on a royalty free basis
+      within thirty (30) days of Your first customer shipment of Your Modifications."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:standardsConformance]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:ShareAlike, cc:SourceCode,
+      dalicc:standardsConformance]
+    reason: Its duty cc:ShareAlike quotes "In the event that the Modifications do not meet such requirements,
+      You agree to publish either (i) any deviation from the Standards protocol resulting from implementation
+      of Your Modifications and a reference implementation of Your Modifications or (ii) Your Modifications
+      in Source Code form, and to make any such deviation and reference implementation or Modifications
+      available to all third parties under the same terms as this license on a royalty free basis
+      within thirty (30) days of Your first customer shipment of Your Modifications."
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

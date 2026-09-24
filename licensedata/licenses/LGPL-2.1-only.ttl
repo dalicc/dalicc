@@ -19,6 +19,7 @@
 
 dalicclib:LGPL-2.1-only a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "LGPL-2.1-only" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.gnu.org/licenses/old-licenses/lgpl-2.1-standalone.html> ;
@@ -29,6 +30,10 @@ dalicclib:LGPL-2.1-only a odrl:Set ;
     dalicc:validityType dalicc:perpetual ;
     dalicc:orLaterVersionOption false ;
     dalicc:terminatesOnBreach true ;
+    dalicc:compatibleWith dalicclib:GPL-2.0-only,
+        dalicclib:GPL-2.0-or-later,
+        dalicclib:GPL-3.0-only,
+        dalicclib:GPL-3.0-or-later ;
     dalicc:variantKind "version" ;
     dalicc:reviewStatus dalicc:Created ;
     dalicc:reviewedOn "2026-09-15"^^xsd:date ;
@@ -39,12 +44,13 @@ dalicclib:LGPL-2.1-only a odrl:Set ;
         "LGPL-2.1",
         "LGPL-2.1-only" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Free Software Foundation" ;
     dct:source <https://spdx.org/licenses/LGPL-2.1-only.html> ;
     dct:title "GNU Lesser General Public License v2.1 only"@en ;
     odrl:duty [ a odrl:Duty ;
-            odrl:action cc:ShareAlike ] ;
+            odrl:action cc:ShareAlike ;
+            dalicc:evidence "You must cause the whole of the work to be licensed at no charge to all third parties under the terms of this License." ] ;
     odrl:permission [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
         [ a odrl:Permission ;
@@ -66,7 +72,8 @@ dalicclib:LGPL-2.1-only a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "You must cause the files modified to carry prominent notices stating that you changed the files and the date of any change." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
@@ -76,7 +83,8 @@ dalicclib:LGPL-2.1-only a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:modificationNotice ] ],
+                    odrl:action dalicc:modificationNotice ;
+                    dalicc:evidence "You must cause the files modified to carry prominent notices stating that you changed the files and the date of any change." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -92,6 +100,7 @@ dalicclib:LGPL-2.1-only a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ] ;
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "You may not copy, modify, sublicense, link with, or distribute the Library except as expressly provided under this License." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

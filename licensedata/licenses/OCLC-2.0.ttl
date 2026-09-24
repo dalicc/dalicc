@@ -19,6 +19,7 @@
 
 dalicclib:OCLC-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "OCLC-2.0" ;
     cc:attributionName "OCLC Online Computer Library Center, Inc." ;
     cc:jurisdiction dalicc:worldwide ;
@@ -33,15 +34,16 @@ dalicclib:OCLC-2.0 a odrl:Set ;
     dct:alternative "OCLC 2.0",
         "OCLC Research Public License 2.0",
         "OCLC-2.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "OCLC Online Computer Library Center, Inc." ;
     dct:source <https://spdx.org/licenses/OCLC-2.0.html> ;
     dct:title "OCLC Research Public License 2.0"@en ;
     odrl:duty [ a odrl:Duty ;
             odrl:action cc:ShareAlike ] ;
     odrl:permission [ a odrl:Permission ;
-            odrl:action cc:CommercialUse ],
+            odrl:action cc:CommercialUse ;
+            dalicc:evidence "Subject to these terms and conditions of this License, the OCLC Office of Research (the \"Original Contributor\") and each subsequent contributor (collectively with the Original Contributor, the \"Contributors\") hereby grant you a non-exclusive, worldwide, no-charge, transferable license to execute, prepare derivative works of, and distribute (internally and externally), for commercial and noncommercial purposes, the original code contributed by Original Contributor and all Modifications (collectively called the \"Program\")." ],
         [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
         [ a odrl:Permission ;
@@ -91,11 +93,14 @@ dalicclib:OCLC-2.0 a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:addLimitation ],
+            odrl:action dalicc:addLimitation ;
+            dalicc:evidence "A. General Requirements Except as necessary to recognize third-party rights or third-party restriction (see below), a distribution of the Program in any of the forms listed below must not put any further restrictions on the recipient’s exercise of the rights granted herein." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:chargeLicenseFee ],
+            odrl:action dalicc:chargeLicenseFee ;
+            dalicc:evidence "The Program must be distributed without charge beyond the costs of physically transferring the files to the recipient." ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Except for the copyright notices required above, you may not use any trademark of any of the Contributors without the prior written consent of the relevant Contributor." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ] ;
     odrl:target [ a odrl:AssetCollection ;

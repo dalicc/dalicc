@@ -28,7 +28,7 @@ findings:
   description: 'SPDX has no identifier for this port. The legal-code URL implies CC-BY-NC-ND-3.0-FR, which
     the SPDX licence list does not define: of the ported 3.0 licences SPDX knows only the Austrian, Australian,
     German, Dutch, United States and IGO ones. No identifier was invented, and none of the forty two records
-    in this batch carries one.'
+    in this review group carries one.'
   action: none
 - rubric: 1
   severity: minor
@@ -99,10 +99,11 @@ findings:
   description: The licence forbids sublicensing and the record does not say so. "L'Acceptant ne peut consentir
     de sous-licence sur l'Oeuvre." (article 4(a)). The vocabulary already has dalicc:sublicense, but it
     is used by no record in the library and its skos:note says so, and the same sentence stands in every
-    Creative Commons 2.0 and 3.0 record, so adding it to this batch alone would split the compatibility
+    Creative Commons 2.0 and 3.0 record, so adding it to this review group alone would split the compatibility
     behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
     note.
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -262,6 +263,15 @@ findings:
   action: applied
   change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
     \ ] ;"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Toute violation par l''Acceptant des clauses
+    de cette Licence entraînera sa résiliation automatique et la fin des droits qui en découlent." The
+    licence ends automatically on a breach and this version of the text has no reinstatement clause, so
+    dalicc:terminatesOnBreach is true and no dalicc:curePeriod is written, as on the unported record of
+    the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: France (FR)'
 port_of: CC-BY-NC-ND-4.0
 variant_kind: jurisdiction-port
@@ -270,5 +280,5 @@ notes: 'The parent is the 4.0 International record of the same element set, sinc
   and not only the jurisdiction. The 3.0 text differs from 4.0 in substance as well: it prohibits sublicensing
   expressly, it has no thirty day cure period for a breach, it settles the royalty collection question
   per jurisdiction, and it states the moral rights position of the jurisdiction. The French and Polish
-  ports add a sui generis database rights clause, which the other five ports of this batch do not carry.
+  ports add a sui generis database rights clause, which the other five ports of this review group do not carry.
   None of that is visible in the model. Nothing in this review is legal advice.'

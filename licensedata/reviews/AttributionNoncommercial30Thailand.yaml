@@ -23,7 +23,7 @@ findings:
   field: spdx:licenseId
   description: SPDX has no identifier for this port. The legal-code URL implies CC-BY-NC-3.0-TH, which
     the SPDX licence list does not define, so no spdx:licenseId was invented. Of the forty two records
-    of this batch only the Attribution 3.0 Netherlands record can take one.
+    of this review group only the Attribution 3.0 Netherlands record can take one.
   action: none
 - rubric: 2
   severity: minor
@@ -31,7 +31,7 @@ findings:
   description: 'The record targets dalicc:CreativeWork only, while the 4.0 International parent CC-BY-NC-4.0
     targets dalicc:CreativeWork and dcmitype:Dataset. The Thai port has no database language at all: neither
     the definitions nor the grant nor the restrictions mention a database or a sui generis right. The
-    four European Union ports of this batch, Italy, the Netherlands, Ireland and Croatia, were corrected
+    four European Union ports of this review group, Italy, the Netherlands, Ireland and Croatia, were corrected
     because their texts license database rights in terms; this one was not, and aligning it with the parent
     is part of the single library wide decision on the asset types of the Creative Commons family.'
   action: proposed
@@ -67,10 +67,11 @@ findings:
   description: 'The licence forbids sublicensing and the record does not say so: clause 4.1 states that
     the licensee may not sublicense the rights in the work to anyone else. The vocabulary already has
     dalicc:sublicense, but no record in the library uses it and its skos:note says so, and the same sentence
-    stands in every Creative Commons 2.0 and 3.0 record, so adding it to this batch alone would split
+    stands in every Creative Commons 2.0 and 3.0 record, so adding it to this review group alone would split
     the compatibility behaviour of one family. Proposed as one library wide correction, together with
     an update of the vocabulary note. Not applied for that reason.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -142,7 +143,7 @@ findings:
   severity: gap
   field: record
   description: 'Moral rights are not expressible with the present vocabulary. Clause 4.6 is the fullest
-    moral-rights clause of the batch: unless agreed otherwise in writing, the author keeps the right to
+    moral-rights clause of the review group: unless agreed otherwise in writing, the author keeps the right to
     claim authorship and to object to any distortion, mutilation, adaptation or other act in relation
     to the work that is derogatory and would harm the honour or reputation of the author, to the extent
     that the law recognises those rights and does not take them away. It restricts the licensee. Proposed
@@ -180,6 +181,14 @@ findings:
     cannot tell this record from the other records of the BY-NC element set, across all three versions
     and every jurisdiction the library holds.'
   action: none
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "เมื่อท่านทำผิดข้อตกลงใด ๆ ที่กำหนดไว้ในสัญญาอนุญาตนี้
+    ให้การอนุญาตและสิทธิของท่านที่ได้รับตามสัญญาอนุญาตนี้ สิ้นสุดลงโดยพลัน" The licence ends automatically
+    on a breach and this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach
+    is true and no dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Thailand (TH)'
 port_of: CC-BY-NC-4.0
 variant_kind: jurisdiction-port

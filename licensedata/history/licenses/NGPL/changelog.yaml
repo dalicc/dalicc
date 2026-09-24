@@ -1,0 +1,72 @@
+id: NGPL
+title: Nethack General Public License
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: duty cc:ShareAlike
+    previous: duty cc:ShareAlike
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "cause the whole
+      of any work that you distribute or publish, that in whole or in part contains or is a derivative
+      of NetHack or any part thereof, to be licensed at no charge to all third parties on terms identical
+      to those contained in this License Agreement (except that you may choose to grant more extensive
+      warranty protection to some or all third parties, at your option)"'
+    source: manual
+  - action: changed
+    statement: permission dalicc:chargeDistributionFee
+    previous: permission dalicc:chargeDistributionFee
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may charge
+      a distribution fee for the physical act of transferring a copy, and you may at your option offer
+      warranty protection in exchange for a fee."'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:noWarrantyNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:noWarrantyNotice]
+    reason: Its duty dalicc:noWarrantyNotice quotes "You may copy and distribute verbatim copies of
+      NetHack source code as you receive it, in any medium, provided that you keep intact the notices
+      on all files that refer to copyrights, to this License Agreement, and to the absence of any
+      warranty; and give any other recipients of the NetHack program a copy of this License Agreement
+      along with the program."
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:noWarrantyNotice]
+    previous: permission odrl:distribute with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:noWarrantyNotice]
+    reason: Its duty dalicc:noWarrantyNotice quotes "You may copy and distribute verbatim copies of
+      NetHack source code as you receive it, in any medium, provided that you keep intact the notices
+      on all files that refer to copyrights, to this License Agreement, and to the absence of any
+      warranty; and give any other recipients of the NetHack program a copy of this License Agreement
+      along with the program."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:noWarrantyNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, cc:SourceCode, dalicc:modificationNotice,
+      dalicc:noWarrantyNotice]
+    reason: Its duty dalicc:noWarrantyNotice quotes "You may copy and distribute verbatim copies of
+      NetHack source code as you receive it, in any medium, provided that you keep intact the notices
+      on all files that refer to copyrights, to this License Agreement, and to the absence of any
+      warranty; and give any other recipients of the NetHack program a copy of this License Agreement
+      along with the program."
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:sublicense
+    previous: prohibition dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may not copy,
+      sublicense, distribute or transfer NetHack except as expressly provided under this License Agreement."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

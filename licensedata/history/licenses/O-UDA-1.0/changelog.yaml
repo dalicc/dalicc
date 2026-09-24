@@ -1,0 +1,48 @@
+id: O-UDA-1.0
+title: Open Use of Data Agreement v1.0
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [cc:Attribution, dalicc:noWarrantyNotice]
+    previous: permission dalicc:ChangeLicense with duties [cc:Attribution, dalicc:noWarrantyNotice]
+    reason: 'The statement is marked as a library convention, family rule 15: Permissive records permit
+      relicensing: the text does not state it in as many words. Its duty dalicc:noWarrantyNotice quotes
+      "Your terms include a warranty disclaimer and limitation of liability for Upstream Data Providers
+      at least as broad as those contained in Section 4.2 and 4.3 of the O-UDA."'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, dalicc:noWarrantyNotice]
+    previous: permission odrl:derive with duties [cc:Attribution, dalicc:noWarrantyNotice]
+    reason: Its duty dalicc:noWarrantyNotice quotes "Your terms include a warranty disclaimer and
+      limitation of liability for Upstream Data Providers at least as broad as those contained in
+      Section 4.2 and 4.3 of the O-UDA."
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Attribution, dalicc:noWarrantyNotice]
+    previous: permission odrl:distribute with duties [cc:Attribution, dalicc:noWarrantyNotice]
+    reason: Its duty dalicc:noWarrantyNotice quotes "Your terms include a warranty disclaimer and
+      limitation of liability for Upstream Data Providers at least as broad as those contained in
+      Section 4.2 and 4.3 of the O-UDA."
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, dalicc:noWarrantyNotice]
+    previous: permission odrl:modify with duties [cc:Attribution, dalicc:noWarrantyNotice]
+    reason: Its duty dalicc:noWarrantyNotice quotes "Your terms include a warranty disclaimer and
+      limitation of liability for Upstream Data Providers at least as broad as those contained in
+      Section 4.2 and 4.3 of the O-UDA."
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

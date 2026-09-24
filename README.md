@@ -11,21 +11,23 @@ service and the website that run on top of them are developed privately for the 
 
 ## What is here
 
-`licensedata/` is the library. 581 license records as Turtle, one file per record, each
-with a review record beside it that says how it was checked against the legal text it
-models. 290 of the records are jurisdiction ports, translations or editions of another
-record and say so in the data, so the library describes 291 distinct licenses. The
-directory also holds the controlled vocabulary, at version 7, the eight deontic
-dependency graphs the reasoner works from, the SPDX mapping, and the archived version of
-every record that was ever superseded.
+`licensedata/` is the library. 581 license records as Turtle, one file per record,
+each with a review record beside it that says how it was checked against the legal text
+it models. 290 of the records are jurisdiction ports, translations or editions of
+another record and say so in the data, so the library describes 291 distinct
+licenses. The directory also holds the controlled vocabulary, at version 2,
+the eight deontic dependency graphs the reasoner works from, the SPDX mapping, and the archived version of every record, graph and
+vocabulary that was ever superseded, each with the change log that says why.
 
-The core graph, `licensedata/dependencygraph/dg_default.ttl`, holds the 46 axioms that
-relate one action to another and one adopted default rule, which says what applies to an
-action a license is silent about. Seven jurisdiction graphs beside it, `dg_eu`, `dg_us`,
-`dg_cn`, `dg_gb`, `dg_jp`, `dg_in` and `dg_br`, hold the default rules proposed for one
-market each. Every rule in those seven is a proposal for the association's legal
-reviewer, none of them is the default for any check, and nothing any of them states is
-legal advice. docs/DATA.md describes the mechanism and docs/LICENSE_REVIEW.md lists every
+The core graph, `licensedata/dependencygraph/dg_default.ttl`, holds the 46 axioms
+that relate one action to another and one adopted default rule, which says what applies to an action a license is
+silent about.
+Seven jurisdiction graphs beside it, `dg_eu`, `dg_us`, `dg_cn`, `dg_gb`, `dg_jp`, `dg_in` and `dg_br`,
+add the default rules proposed for one market each. Each of them is a complete graph, generated from the core graph and a
+difference file under `licensedata/dependencygraph/differences/` that says what the
+market changes. Every rule a jurisdiction graph adds is a proposal for the association's
+legal reviewer, none of them is the default for any check, and nothing any of them states
+is legal advice. docs/DATA.md describes the mechanism and docs/LICENSE_REVIEW.md lists every
 rule with the statute or principle it rests on.
 
 `reasoner/` is the answer-set-programming service that finds the conflicts. It reduces
@@ -75,6 +77,25 @@ what changed, why and who decided it, and the record itself carries `dct:hasVers
 dependency graph and the vocabulary are versioned the same way under
 `licensedata/history/`.
 
+## Which data this is
+
+A state of the data has a name, its release identifier, computed from the version and the
+content hash of every record, every dependency graph and the vocabulary. This README was
+published with the data of
+
+```
+data-cc2fd2f7f4a6f172
+```
+
+which is made of the library `lib-c7dcd85c3a70cd9b` (581 records, all at version 2), the
+dependency graphs `dg-e0475ee1e1683745` (all eight at version 2) and the vocabulary
+`ns-b5e891e76aaa1249` (version 2). `GET https://api.dalicc.net/v2/releases`
+answers the identifier of the data the service runs on, so the two can be compared, and
+`PYTHONPATH=scripts python -m dalicc_check --release` computes it from a checkout; the
+`data` workflow fails when it is not the one above. `scripts/build_release_manifest.py`
+writes the whole manifest, every record with its version and its hash, and a data
+release the association registers is tagged here as `data-YYYY-MM-DD`.
+
 If you redistribute the data or build on it, credit it as:
 
 ```
@@ -104,6 +125,27 @@ thing triple for triple, that every record carries the fields the model requires
 every action comes from ODRL, Creative Commons or the DALICC vocabulary, and that every
 record has a review record. It prints warnings for the known gaps, which docs/DATA.md
 lists and explains.
+
+## Checking one record
+
+The command line of the checks takes one record, a record of the library by its identifier
+or any Turtle file you wrote yourself, and checks it offline:
+
+```bash
+PYTHONPATH=scripts python -m dalicc_check licensedata/licenses/MIT.ttl
+PYTHONPATH=scripts python -m dalicc_check my-draft.ttl --graph dg_eu --json
+```
+
+It says whether the record parses and holds one `odrl:Set`, whether every DALICC term it
+uses is defined in the vocabulary, whether the consistency rule set of the API finds a
+conflict under the dependency graph you name, and whether the family rules which apply to
+it hold, run over the library with your record in it. It then prints the record's content
+hash, computed from the canonical form `dalicc-c14n-1` exactly as the API computes
+`content_hash` of `https://api.dalicc.net/v2/licenses/<id>`, and says whether the
+library's copy of that record hashes the same. Equal hashes mean the two say the same
+thing, whatever the order of the triples or the names of the blank nodes. Nothing it does
+needs a network, a triple store or the reasoner; the modules it runs are copies of the
+service's own, so it answers what the API answers.
 
 ## Running the reasoner
 

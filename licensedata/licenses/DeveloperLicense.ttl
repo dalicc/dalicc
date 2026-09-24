@@ -19,6 +19,7 @@
 
 dalicclib:DeveloperLicense a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:attributionName "The National Archives" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <http://www.nationalarchives.gov.uk/documents/information-management/developer-licence.pdf> ;
@@ -30,8 +31,8 @@ dalicclib:DeveloperLicense a odrl:Set ;
     dalicc:reviewStatus dalicc:Reviewed ;
     dalicc:reviewedOn "2026-09-15"^^xsd:date ;
     dalicc:versionHistory <https://dalicc.net/licenselibrary/DeveloperLicense/versions> ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-16"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "The National Archives" ;
     dct:source <http://www.nationalarchives.gov.uk/documents/information-management/developer-licence.pdf> ;
     dct:title "Developer License" ;

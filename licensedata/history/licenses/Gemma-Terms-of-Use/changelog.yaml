@@ -1,0 +1,74 @@
+id: Gemma-Terms-of-Use
+title: Gemma Terms of Use
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'The statement is marked as a library convention, family rule 15: Permissive records permit
+      relicensing: the text does not state it in as many words. Its duty dalicc:compliantLicense is
+      marked as a library convention, family rule 15: Permissive records permit relicensing.'
+    source: manual
+  - action: changed
+    statement: permission dalicc:networkUseTrigger with duties [cc:Notice, dalicc:addStatement]
+    previous: permission dalicc:networkUseTrigger with duties [cc:Notice, dalicc:addStatement]
+    reason: 'Its duty cc:Notice quotes "You must provide all third party recipients of Gemma or Model
+      Derivatives a copy of this Agreement." Its duty dalicc:addStatement quotes "All Distributions
+      (other than through a Hosted Service) must be accompanied by a "Notice" text file that contains
+      the following notice: "Gemma is provided under and subject to the Gemma Terms of Use found at
+      ai.google.dev/gemma/terms"."'
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Notice, dalicc:addStatement, dalicc:includeNoticeFile,
+      dalicc:modificationNotice]
+    previous: permission odrl:derive with duties [cc:Notice, dalicc:addStatement, dalicc:includeNoticeFile,
+      dalicc:modificationNotice]
+    reason: 'Its duty cc:Notice quotes "You must provide all third party recipients of Gemma or Model
+      Derivatives a copy of this Agreement." Its duty dalicc:includeNoticeFile quotes "All Distributions
+      (other than through a Hosted Service) must be accompanied by a "Notice" text file that contains
+      the following notice: "Gemma is provided under and subject to the Gemma Terms of Use found at
+      ai.google.dev/gemma/terms"." Its duty dalicc:addStatement quotes "All Distributions (other than
+      through a Hosted Service) must be accompanied by a "Notice" text file that contains the following
+      notice: "Gemma is provided under and subject to the Gemma Terms of Use found at ai.google.dev/gemma/terms"."'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Notice, dalicc:addStatement, dalicc:includeNoticeFile,
+      dalicc:modificationNotice]
+    previous: permission odrl:distribute with duties [cc:Notice, dalicc:addStatement, dalicc:includeNoticeFile,
+      dalicc:modificationNotice]
+    reason: 'Its duty cc:Notice quotes "You must provide all third party recipients of Gemma or Model
+      Derivatives a copy of this Agreement." Its duty dalicc:includeNoticeFile quotes "All Distributions
+      (other than through a Hosted Service) must be accompanied by a "Notice" text file that contains
+      the following notice: "Gemma is provided under and subject to the Gemma Terms of Use found at
+      ai.google.dev/gemma/terms"." Its duty dalicc:addStatement quotes "All Distributions (other than
+      through a Hosted Service) must be accompanied by a "Notice" text file that contains the following
+      notice: "Gemma is provided under and subject to the Gemma Terms of Use found at ai.google.dev/gemma/terms"."'
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Notice, dalicc:addStatement, dalicc:includeNoticeFile,
+      dalicc:modificationNotice]
+    previous: permission odrl:modify with duties [cc:Notice, dalicc:addStatement, dalicc:includeNoticeFile,
+      dalicc:modificationNotice]
+    reason: 'Its duty cc:Notice quotes "You must provide all third party recipients of Gemma or Model
+      Derivatives a copy of this Agreement." Its duty dalicc:includeNoticeFile quotes "All Distributions
+      (other than through a Hosted Service) must be accompanied by a "Notice" text file that contains
+      the following notice: "Gemma is provided under and subject to the Gemma Terms of Use found at
+      ai.google.dev/gemma/terms"." Its duty dalicc:addStatement quotes "All Distributions (other than
+      through a Hosted Service) must be accompanied by a "Notice" text file that contains the following
+      notice: "Gemma is provided under and subject to the Gemma Terms of Use found at ai.google.dev/gemma/terms"."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

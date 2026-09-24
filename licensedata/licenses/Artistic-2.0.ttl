@@ -19,6 +19,7 @@
 
 dalicclib:Artistic-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "Artistic-2.0" ;
     cc:attributionName "Perl Foundation" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -32,12 +33,13 @@ dalicclib:Artistic-2.0 a odrl:Set ;
     dct:alternative "Artistic License v2",
         "Artistic Version 2.0",
         "Artistic-2.0" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:source osl:Artistic-2.0 ;
     dct:title "Artistic License 2.0" ;
     odrl:permission [ a odrl:Permission ;
-            odrl:action cc:CommercialUse ],
+            odrl:action cc:CommercialUse ;
+            dalicc:evidence "You are permitted to use the Standard Version and create and use Modified Versions for any purpose without restriction, provided that you do not Distribute the Modified Version." ],
         [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
         [ a odrl:Permission ;
@@ -59,7 +61,8 @@ dalicclib:Artistic-2.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:rename ] ],
+                    odrl:action dalicc:rename ;
+                    dalicc:evidence "In addition, the Modified Version must bear a name that is different from the name of the Standard Version." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
@@ -71,7 +74,8 @@ dalicclib:Artistic-2.0 a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:rename ] ],
+                    odrl:action dalicc:rename ;
+                    dalicc:evidence "In addition, the Modified Version must bear a name that is different from the name of the Standard Version." ] ],
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
@@ -83,7 +87,8 @@ dalicclib:Artistic-2.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "This license does not grant you the right to use any trademark, service mark, tradename, or logo of the Copyright Holder." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:chargeLicenseFee ] ;
     odrl:target [ a odrl:AssetCollection ;

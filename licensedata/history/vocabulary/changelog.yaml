@@ -1,14 +1,24 @@
 id: dalicc-ns
 title: DALICC vocabulary
-current_version: 7
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 defined the terms the license texts need and the review
-    itself writes, restated the definitions it had taken from the 2022 documentation and kept the
-    misspelled royalty term as a deprecated alias, and the model history added the two terms a versioned
-    model needs.
+    itself writes, and the model history added the terms a versioned model needs. The later changes
+    defined the terms of the standard licenses, a composed license's own text, variants and SPDX exceptions,
+    default rules for what a license does not say, complete dependency graphs built from a difference
+    file and where a statement of a record comes from, made every action definition describe its act,
+    deprecated seven duplicates and spell license the way the site does.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
   changes:
   - action: changed
     statement: owl:versionInfo "2.0"
@@ -171,18 +181,6 @@ entries:
     reason: Defined so that a curated model can name the list of its versions and so that the version
       of a license text stays readable next to the version of the model of that text.
     source: model-history
-- version: 3
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: The standard-license addition of 2026-09-15 defined the 26 terms the 116 new records needed,
-    classified every action as a rule action, a duty action or both so that app/services/vocab.py
-    can read the term table from this file, and refreshed the usage notes.
-  changes:
-  - action: changed
-    statement: owl:versionInfo "3.0"
-    previous: owl:versionInfo "2.0"
-    reason: Version 2 is archived next to this change log and owl:priorVersion names it.
-    source: model-history
   - action: added
     statement: term dalicc:AssetType
     reason: The class the asset types of the library belong to, so that app/services/vocab.py can
@@ -321,18 +319,6 @@ entries:
       defined and applied nowhere are now in use, and the notes of the terms that are still unused
       say so.'
     source: consolidation-decision 2
-- version: 4
-  date: '2026-09-22'
-  reviewer: Giray Havur
-  summary: The definition of dalicc:ChangeLicense opened with the label of another term and still
-    stated the contradiction the dependency graph dropped on 2026-09-15, so it now names its own subject
-    and says what family rule 13 holds.
-  changes:
-  - action: changed
-    statement: owl:versionInfo "4.0"
-    previous: owl:versionInfo "3.0"
-    reason: Version 3 is archived next to this change log and owl:priorVersion names it.
-    source: model-history
   - action: changed
     statement: dct:modified "2026-09-22"
     previous: dct:modified "2026-09-15"
@@ -350,34 +336,12 @@ entries:
       duty beside a permitted dalicc:ChangeLicense that carries no dalicc:compliantLicense duty is
       inconsistent.'
     source: consolidation-decision 5
-- version: 5
-  date: '2026-09-22'
-  reviewer: Giray Havur
-  summary: A composed licence can now carry the licence text itself, so the vocabulary gained the
-    property that holds it.
-  changes:
-  - action: changed
-    statement: owl:versionInfo "5.0"
-    previous: owl:versionInfo "4.0"
-    reason: Version 4 is archived next to this change log and owl:priorVersion names it.
-    source: model-history
   - action: added
     statement: term dalicc:licenseText
     reason: 'The License Composer writes the licence text into the form and keeps it with the licence,
       and that text needed a property of its own: cc:legalcode is an address rather than a text, and
       the three clause properties quote single clauses rather than the whole licence.'
     source: manual
-- version: 6
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: 'The records for the licences GitHub projects use brought two relations the vocabulary
-    could not express: what a variant is a variant of, and what an SPDX exception permits.'
-  changes:
-  - action: changed
-    statement: owl:versionInfo "6.0"
-    previous: owl:versionInfo "5.0"
-    reason: Version 5 is archived next to this change log and owl:priorVersion names it.
-    source: model-history
   - action: added
     statement: term dalicc:variantOf
     reason: An or-later identifier, a licence with an SPDX exception and a licence with a rider are
@@ -399,26 +363,11 @@ entries:
     reason: The comment lists the values the property takes, and the addition brought three more,
       version-option, exception and rider, each of which carries dalicc:variantOf.
     source: manual
-- version: 7
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: 'A curated record states what its text states. Version 7 adds the terms for the other half
-    of the question, what applies to an action a licence says nothing about: a rule class with an
-    outcome, a jurisdiction, a legal basis and a status, the two origins a derived statement carries
-    in a result, seven region jurisdictions for the biggest markets, and the two actions the jurisdiction
-    proposals needed.'
-  changes:
-  - action: changed
-    statement: owl:versionInfo "7.0"
-    previous: owl:versionInfo "6.0"
-    reason: Version 6 is archived next to this change log and owl:priorVersion names it.
-    source: model-history
   - action: added
     statement: term dalicc:DefaultRule
-    reason: 'The open proposal of the licence review asked for a mechanism to close the world of unspoken
-      actions, and for that mechanism to vary by jurisdiction. A rule is that mechanism: it names
-      one action, one outcome, one territory, the legal source it rests on and whether the library
-      has adopted it.'
+    reason: 'The world of unspoken actions needed a mechanism to close it, one that can vary by jurisdiction
+      (open proposal 1 of the licence review). A rule is that mechanism: it names one action, one
+      outcome, one territory, the legal source it rests on and whether the library has adopted it.'
     source: manual
   - action: added
     statement: term dalicc:DefaultOutcome
@@ -504,4 +453,230 @@ entries:
     reason: Article 6 of the European Software Directive allows decompilation for interoperability
       and forbids a contract from taking it away, which needs an action of its own; reverse engineering
       at large is a different act.
+    source: manual
+  - action: added
+    statement: term dalicc:basedOnGraph
+    reason: A complete jurisdiction graph records the graph it was built from. It is provenance and
+      nothing follows it, unlike dalicc:extendsGraph, which the reasoner followed one step.
+    source: manual
+  - action: added
+    statement: term dalicc:basedOnVersion
+    reason: The version of the core graph a generated graph was built from, so that a core change
+      shows as a new version of every graph built from it, with a change-log entry that names the
+      core version it follows.
+    source: manual
+  - action: added
+    statement: term dalicc:AxiomRemoval
+    reason: A jurisdiction whose law does not agree with the core graph needs a way to say so. A difference
+      file names a core axiom its jurisdiction does not support in the reified form (rdf:subject,
+      rdf:predicate, rdf:object) with its legal reason, and the generated graph leaves that axiom
+      out.
+    source: manual
+  - action: added
+    statement: term dalicc:replacesRule
+    reason: A jurisdiction whose law reaches another outcome for an action the core graph has a default
+      rule for replaces that rule rather than adding a second one, so no graph holds two default rules
+      for one action and one territory.
+    source: manual
+  - action: added
+    statement: term dalicc:ruleExplanation
+    reason: Every added, removed and replaced rule needs a plain explanation beside its citation.
+      dalicc:ruleBasis is the citation; the explanation says in two or three plain sentences what
+      the rule does to a silent licence, why the law leads there and what a person combining licences
+      will notice.
+    source: manual
+  - action: changed
+    statement: term dalicc:extendsGraph
+    previous: term dalicc:extendsGraph, followed one step by the service and the reasoner
+    reason: Deprecated with owl:deprecated true and dct:isReplacedBy dalicc:basedOnGraph. The term
+      keeps dereferencing because external data may use it, and a graph that still carries it is read
+      as complete, with the link ignored and a warning in the log.
+    source: manual
+  - action: changed
+    statement: terms dalicc:ruleBasis and dalicc:ruleStatus
+    previous: rdfs:domain dalicc:DefaultRule
+    reason: An axiom removal carries a basis and a status as well as a default rule does, so the two
+      properties no longer name a domain.
+    source: manual
+  - action: added
+    statement: term dalicc:FromConvention
+    reason: Some statements of a record are not in the licence text but follow a convention the library
+      applies to every record of its kind, such as a family rule. The record page marks them "by library
+      convention" instead of presenting them as the licence's own words.
+    source: manual
+  - action: added
+    statement: term dalicc:evidence
+    reason: A statement node can quote the sentence of the licence text it rests on, so a reader can
+      check the reading against the text without leaving the page.
+    source: manual
+  - action: added
+    statement: term dalicc:convention
+    reason: A statement marked dalicc:FromConvention names the convention that put it there.
+    source: manual
+  - action: added
+    statement: term dalicc:compatibleWith
+    reason: A licence's own text, or its licensor's published list, can let a work under it be released
+      under another licence (LGPL-3.0 into GPL-3.0, CC BY-SA 4.0 into GPL-3.0). The reasoner needs
+      that one-way relation between two records as data.
+    source: manual
+  - action: changed
+    statement: terms dalicc:StatementOrigin, dalicc:statementOrigin and dalicc:FromText
+    previous: a statement origin written only in results, never in a curated record
+    reason: A curated record now marks its convention statements with dalicc:statementOrigin, and
+      a statement node that names no origin is read as dalicc:FromText.
+    source: manual
+  - action: changed
+    statement: rdfs:comment of every dalicc action
+    previous: comments phrased as a permission ("The licensee may change ...", "Promote means that
+      the licensee can use ...", "The Assigner permits the Assignee to ...") or as a noun (sublicense)
+    reason: A definition describes the act in one sentence and neither grants nor forbids it, because
+      the record page prints it under Permissions and under Prohibitions alike. The 2022 wording of
+      the documented terms is kept verbatim as skos:historyNote with its dct:source, the skos:definition
+      glosses are folded into the comment, and sentences about modelling moved to skos:scopeNote.
+    source: manual
+  - action: changed
+    statement: term dalicc:patentRetaliationTermination
+    previous: rdfs:label "Patent retaliation termination"
+    reason: 'Labelled "Patent licence ends on a patent claim" with the comment "Not a ban on suing:
+      a patent claim ends the patent licence, or the whole licence, as the text provides." The old
+      label read as a ban on suing where Apache-2.0 section 3 only ends the patent licence.'
+    source: manual
+  - action: changed
+    statement: term dalicc:suiGenerisDatabaseRights
+    previous: rdfs:label "Sui generis database rights"
+    reason: The label names the act the right controls, "Extract or reuse a substantial part of a
+      database", so a sentence built from it says something a lawyer can check. The IRI stays.
+    source: manual
+  - action: changed
+    statement: terms dalicc:curePeriod, dalicc:governingLaw, dalicc:compatibleLicenseTest, dalicc:reciprocityScope,
+      dalicc:alternativeConditionSet, dalicc:governmentRightsLimitation, dalicc:fieldOfUseRestriction,
+      dalicc:shareAlikeVersionQualifier, dalicc:sourcePublicationPeriod
+    previous: owl:AnnotationProperty without a domain
+    reason: Each carries a plain literal on an odrl:Set, like the datatype properties beside it, so
+      each is an owl:DatatypeProperty with rdfs:domain odrl:Set.
+    source: manual
+  - action: changed
+    statement: term dalicc:ruleExplanation
+    previous: rdfs:range xsd:string
+    reason: Every explanation in the shipped graphs is an English literal with a language tag, so
+      the range is rdf:langString.
+    source: manual
+  - action: changed
+    statement: terms dalicc:DefaultOutcome, dalicc:RecordStatus, dalicc:ReviewStatus, dalicc:RuleStatus,
+      dalicc:StatementOrigin, dalicc:ValidityType
+    previous: the same label as the property that takes them as values
+    reason: Each class is labelled as the set of values ("Review status value"), so no two terms share
+      a label; the property keeps the label the record pages print.
+    source: manual
+  - action: changed
+    statement: rdfs:comment of dalicc:curePeriod, dalicc:orLaterVersionOption, dalicc:terminatesOnBreach
+      and dalicc:sublicenseSurvival
+    previous: two sentences each; the comparator glossary gave all further terms one shared sentence
+    reason: One sentence each, which the comparator glossary now shows beside its row.
+    source: manual
+  - action: changed
+    statement: comments of dalicc:licenseText, dalicc:WarrantyDisclaimer, dalicc:LiabilityLimitation,
+      dalicc:WarrantyOrLiabilityAcceptance, dalicc:validityType, dalicc:JP, dalicc:perpetual, dalicc:contradicts,
+      odrl:includedIn, odrl:implies, owl:sameAs, dalicc:replacesRule, dalicc:ruleExplanation, dalicc:royalityFree
+      and dalicc:extendsGraph
+    previous: a lower-case label, composer help text in a definition, a comment that repeated its
+      label, ungrammatical 2022 wording, over-long comments and deprecated terms whose comment did
+      not name the replacement
+    reason: The label is in sentence case, each comment says what the term means in one or two plain
+      sentences, the 2022 wording is kept as skos:historyNote and a deprecated term names its replacement
+      in its comment.
+    source: manual
+  - action: added
+    statement: owl:NamedIndividual on every action and controlled value
+    reason: Individuals are typed as such, so a structural OWL check tells them from classes.
+    source: manual
+  - action: added
+    statement: skos:closeMatch from dalicc:sublicense to odrl:grantUse, dalicc:redistribute to odrl:distribute,
+      dalicc:attributionNotice to cc:Attribution, dalicc:permissionNotice to cc:Notice, dalicc:sellCopy
+      to odrl:sell and dalicc:CreativeWork to schema:CreativeWork
+    reason: Each has a close counterpart in ODRL 2.2, the CC Rights Expression Language or schema.org
+      that rdfs:seeAlso alone did not state; none is exact, so none is an equivalence.
+    source: manual
+  - action: added
+    statement: term dalicc:deprecatedOn
+    reason: The License Composer writes the date on which a composed license was withdrawn or superseded,
+      and the record page and the API read it, but the vocabulary did not define it. It is the one
+      term the application used that the vocabulary lacked.
+    source: manual
+  - action: changed
+    statement: term dalicc:terminationOnBreach
+    previous: a current term
+    reason: Deprecated with owl:deprecated true and dct:isReplacedBy dalicc:terminatesOnBreach, because
+      the property a record carries says the same thing. No record uses it; it keeps dereferencing
+      because it was published.
+    source: manual
+  - action: changed
+    statement: term dalicc:patentFree
+    previous: a current term
+    reason: Deprecated with owl:deprecated true and dct:isReplacedBy dalicc:patentGrant, because its
+      2022 definition is the scope of a contributor's patent license. No record uses it; it keeps
+      dereferencing because it was published.
+    source: manual
+  - action: changed
+    statement: term dalicc:chargeOffer
+    previous: a current term
+    reason: Deprecated with owl:deprecated true and dct:isReplacedBy dalicc:chargeDistributionFee,
+      because a fee for the physical act of transferring a copy is a distribution fee. No record uses
+      it; it keeps dereferencing because it was published.
+    source: manual
+  - action: changed
+    statement: term dalicc:redistribute
+    previous: a current term
+    reason: Deprecated with owl:deprecated true and dct:isReplacedBy odrl:distribute, because it names
+      the same act. No record uses it; it keeps dereferencing because it was published.
+    source: manual
+  - action: changed
+    statement: term dalicc:publish
+    previous: a current term
+    reason: Deprecated with owl:deprecated true and dct:isReplacedBy odrl:distribute, because issuing
+      the work to the public is distributing it. No record uses it; it keeps dereferencing because
+      it was published.
+    source: manual
+  - action: changed
+    statement: term dalicc:attributionNotice
+    previous: a current term
+    reason: Deprecated with owl:deprecated true and dct:isReplacedBy cc:Attribution, because the library
+      states attribution duties with it. No record uses it; it keeps dereferencing because it was
+      published.
+    source: manual
+  - action: changed
+    statement: term dalicc:permissionNotice
+    previous: a current term
+    reason: Deprecated with owl:deprecated true and dct:isReplacedBy cc:Notice, because the library
+      states notice duties with it. No record uses it; it keeps dereferencing because it was published.
+    source: manual
+  - action: changed
+    statement: term dalicc:FromConvention
+    previous: the same comment spelled licence
+    reason: The site's English spells license with an s (License Library, License Composer); the vocabulary's
+      own words now do as well. License titles that spell it with a c keep it.
+    source: manual
+  - action: changed
+    statement: term dalicc:licenseText
+    previous: the same comment spelled licence
+    reason: The site's English spells license with an s (License Library, License Composer); the vocabulary's
+      own words now do as well. License titles that spell it with a c keep it.
+    source: manual
+  - action: changed
+    statement: term dalicc:patentRetaliationTermination
+    previous: the same comment and label spelled licence
+    reason: The site's English spells license with an s (License Library, License Composer); the vocabulary's
+      own words now do as well. License titles that spell it with a c keep it.
+    source: manual
+  - action: changed
+    statement: term dalicc:variantKind
+    previous: the same comment spelled licence
+    reason: The site's English spells license with an s (License Library, License Composer); the vocabulary's
+      own words now do as well. License titles that spell it with a c keep it.
+    source: manual
+  - action: changed
+    statement: term dalicc:variantOf
+    previous: the same comment spelled licence
+    reason: The site's English spells license with an s (License Library, License Composer); the vocabulary's
+      own words now do as well. License titles that spell it with a c keep it.
     source: manual

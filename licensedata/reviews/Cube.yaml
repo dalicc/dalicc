@@ -84,9 +84,9 @@ findings:
   severity: major
   field: record
   description: 'Read against licensedata/licenses/TheZlibLibpngLicense.ttl the record has the same duties and one
-    statement more: dalicc:ChangeLicense is prohibited rather than permitted. scripts/review/family_rules.py counts
+    statement more: dalicc:ChangeLicense is prohibited rather than permitted. the library conventions (see the review method, docs/LICENSE_REVIEW.md section 9) counts
     this as a violation of rule 15, because the rule has no exception list for a permissive text that bars relicensing
-    outright. scripts/review/family_rules.py carries such a list since 2026-09-23, and this
+    outright. the library conventions (see the review method, docs/LICENSE_REVIEW.md section 9) carries such a list since 2026-09-23, and this
     record is on it.'
   action: applied
 family: Permissive variants

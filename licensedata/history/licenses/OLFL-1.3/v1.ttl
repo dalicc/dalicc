@@ -1,0 +1,98 @@
+# Title: The machine-readable representation of "Open Logistics Foundation License Version 1.3"@en in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/OLFL-1.3
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:OLFL-1.3 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "OLFL-1.3" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://openlogisticsfoundation.org/licenses/> ;
+    dalicc:LiabilityLimitation "Except in cases of intentional and grossly negligent conduct, the Contributors, their legal representatives, trustees, officers and employees shall not be liable for direct or indirect, material or immaterial loss or damage of any kind arising from the License or the use of the Subject Matter of the License; this applies, among other things, but not exclusively, to loss of goodwill, loss of production, computer failures or errors, loss of data or economic loss or damage, even if the Contributor has been notified of the possibility of such loss or damage. Irrespective of the above, the Licensor shall only be liable within the scope of statutory product liability to the extent that the respective provisions are applicable to the Subject Matter of the License or the Contribution. Except in cases of intentional conduct, the Contributors, their legal representatives, trustees, officers and employees shall not be liable for any infringement of third-party patent or intellectual property rights arising from the Contributions nor do they warrant that the Contributions are accurate, devoid of mistakes, complete and/or fit for any particular purpose. §" ;
+    dalicc:WarrantyDisclaimer "This License is granted free of charge and thus constitutes a gift. Accordingly, any warranty is excluded. The Subject Matter of the License is a work in progress; it is constantly being improved by countless Contributors. The Subject Matter of the License is not complete and may therefore contain errors (\"bugs\") or additional patents of Contributors or third parties, as is inherent in this type of development. §" ;
+    dalicc:WarrantyOrLiabilityAcceptance "In the event of distribution of the Subject Matter of the License or Derivative Works, You are free to accept support, warranty, indemnity or other liability obligations and/or rights consistent with this License and to charge a fee in return. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and You hereby agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of Your accepting any such warranty or additional liability. §" ;
+    dalicc:additionalClauses "However, said patent license shall cover only those rights deriving from the patents of the respective Contributors which are indispensable in order not to infringe that patent and only to the extent that the use of the Contributor’s respective Contributions, whether alone or in combination with other Contributions of the Contributors or any third parties together with the Subject Matter of the License for which these Contributions were submitted, would otherwise infringe that patent. The grant of license shall not include rights deriving from the patents which may in future become necessary for their lawful use due to subsequent modifications to the Subject Matter or Contributions made by third parties after the original submission.",
+        "In the event that You institute patent litigation against any entity or person (including a counterclaim or countersuit in a legal action), alleging that the Subject Matter of the License or a Contribution incorporated or contained therein constitutes patent infringement or indirect infringement, all patent licenses which have been granted to You under this License for the Subject Matter of the License as well as this License itself shall be deemed terminated as of the date on which the action is filed. §",
+        "You may add Your own copyright notices to Your modifications and state any additional or different license conditions and conditions for the use, reproduction or distribution of Your modifications or for those Derivative Works as a whole, provided that Your use, reproduction and distribution of the work complies with the terms and conditions set out in this License in all other respects. §",
+        "This License does not grant permission to use the trade names, trademarks, service marks or product names of the Licensor(s) or of a Contributor. §",
+        "This License is governed by German law, excluding its conflict of laws provisions and the provisions of the UN Convention on Contracts for the International Sale of Goods (CISG)." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:governingLaw "German law" ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-15"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/OLFL-1.3/versions> ;
+    dct:alternative "OLFL 1.3",
+        "OLFL-1.3",
+        "Open Logistics Foundation License",
+        "Open Logistics Foundation License Version 1.3" ;
+    dct:hasVersion "1" ;
+    dct:modified "2026-09-15"^^xsd:date ;
+    dct:publisher "Open Logistics Foundation" ;
+    dct:source <https://opensource.org/license/OLFL-1.3> ;
+    dct:title "Open Logistics Foundation License Version 1.3"@en ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Attribution ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action dalicc:modificationNotice ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action odrl:grantUse ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:patentGrant ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ChangeLicense ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action dalicc:compliantLicense ] ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:chargeDistributionFee ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:promote ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:patentRetaliationTermination ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dalicc:CreativeWork,
+                dcmitype:Dataset,
+                dcmitype:Software ] .

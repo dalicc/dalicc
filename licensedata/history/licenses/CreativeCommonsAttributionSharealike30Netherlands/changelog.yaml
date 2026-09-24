@@ -1,13 +1,19 @@
 id: CreativeCommonsAttributionSharealike30Netherlands
 title: Creative Commons Attribution-ShareAlike 3.0 Netherlands
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail and 1 prohibition, changed
     4 alternative titles and 1 asset target, recorded the relation to the record this one was adapted
-    from and recorded the review state.
+    from and recorded the review state. Later changes recorded what the text says about the database
+    right, recorded when the license ends on a breach and named the license the record itself is published
+    under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
   changes:
   - action: added
     statement: dalicc:jurisdictionPortOf dalicclib:CC-BY-SA-4.0
@@ -80,18 +86,25 @@ entries:
       out of the parts that qualify only under the sui generis database right. Since the text is explicit,
       dcmitype:Dataset was added, which also brings the record into line with its parent.
     source: review-finding 2/odrl:target
-- version: 3
-  date: '2026-09-23'
-  reviewer: Giray Havur
-  summary: 'The port settles the sui generis database right in its own text: article 1 defines the
-    Werk to include the databank in the sense of the Databankenwet, the definition of Maker counts
-    the producer of a databank among the makers, and article 3 grants the right to extract and re-use
-    the Werk and waives the licensor own exclusive rights under the national law implementing the
-    European database directive. dalicc:suiGenerisDatabaseRights is now permitted, and it carries
-    no duty because article 4 carves the restrictions out of the parts that qualify only under the
-    sui generis database right.'
-  changes:
   - action: added
     statement: permission dalicc:suiGenerisDatabaseRights
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The port settles the sui generis database right in its own text: article 1 defines the
+      Werk to include the databank in the sense of the Databankenwet, the definition of Maker counts
+      the producer of a databank among the makers, and article 3 grants the right to extract and re-use
+      the Werk and waives the licensor own exclusive rights under the national law implementing the
+      European database directive. dalicc:suiGenerisDatabaseRights is now permitted, and it carries
+      no duty because article 4 carves the restrictions out of the parts that qualify only under the
+      sui generis database right.'
+    source: manual
+  - action: added
+    statement: dalicc:terminatesOnBreach "true"^^xsd:boolean
+    reason: 'The termination clause of this port reads: "Deze Licentie en de daarin verleende rechten
+      vervallen automatisch op het moment dat de Gebruiker in strijd handelt met de voorwaarden van
+      deze Licentie."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

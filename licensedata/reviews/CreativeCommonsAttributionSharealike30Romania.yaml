@@ -23,7 +23,7 @@ findings:
   severity: info
   field: spdx:licenseId
   description: SPDX has no identifier for this port. The legal code URL implies CC-BY-SA-3.0-RO, which
-    the SPDX licence list does not define, so none was invented. Of the thirty five records in this batch
+    the SPDX licence list does not define, so none was invented. Of the thirty five records in this review group
     only the six German ones take an SPDX identifier.
   action: none
 - rubric: 2
@@ -43,8 +43,7 @@ findings:
     not apply to the parts of the Work that qualify only under the Romanian sui generis database right.
     Because the legal text names databases as licensed subject matter and disposes of the database maker's
     right in the grant itself, dcmitype:Dataset was added here rather than left as a proposal, which is
-    how the same question was decided for the Portuguese, Czech and Azerbaijani ports. The ports in this
-    batch whose text has no database clause at all, Ecuador and Brazil, keep the proposal.
+    how the same question was decided for the Portuguese, Czech and Azerbaijani ports. The ports in this review group whose text has no database clause at all, Ecuador and Brazil, keep the proposal.
   action: applied
   change: "odrl:target [ a odrl:AssetCollection ;\n        dct:type dalicc:CreativeWork,\n           \
     \ dcmitype:Dataset ] ;"
@@ -68,10 +67,10 @@ findings:
     de a sublicentia Opera." (the Licensee has no right to sublicense the Work), Section 4(a). The vocabulary
     already has dalicc:sublicense, but no record in the library uses it and its skos:note says so, and
     the same sentence stands in every Creative Commons 2.0 and 3.0 record, so adding it to the thirty
-    five ports of this batch alone would split the compatibility behaviour of one family. Proposed as
-    one library wide correction, together with an update of the vocabulary note. Batches 3 and 6 made
-    the same recommendation.
-  action: proposed
+    five ports of this review group alone would split the compatibility behaviour of one family. Proposed as
+    one library wide correction, together with an update of the vocabulary note. Other review groups made the same recommendation.
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -232,6 +231,15 @@ findings:
   action: applied
   change: "odrl:permission [ a odrl:Permission ;\n        odrl:action dalicc:suiGenerisDatabaseRights\
     \ ] ;"
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Această licenţă este reziliată de plin drept,
+    iar drepturile acordate prin intermediul său vor înceta în mod implicit în cazul în care Licenţiatul
+    săvârşeşte orice fel de încălcare a condiţiilor licenţei." The licence ends automatically on a breach
+    and this version of the text has no reinstatement clause, so dalicc:terminatesOnBreach is true and
+    no dalicc:curePeriod is written, as on the unported record of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Romania (RO)'
 port_of: CC-BY-SA-4.0
 variant_kind: jurisdiction-port

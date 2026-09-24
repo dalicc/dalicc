@@ -19,6 +19,7 @@
 
 dalicclib:GPL-2.0-only-with-OpenJDK-assembly-exception-1.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "GPL-2.0-only WITH OpenJDK-assembly-exception-1.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.gnu.org/licenses/old-licenses/gpl-2.0.html> ;
@@ -42,14 +43,15 @@ dalicclib:GPL-2.0-only-with-OpenJDK-assembly-exception-1.0 a odrl:Set ;
         "GPL-2.0-only-with-OpenJDK-assembly-exception-1.0",
         "GPLv2 with OpenJDK assembly exception" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Free Software Foundation" ;
     dct:source <https://spdx.org/licenses/OpenJDK-assembly-exception-1.0.html> ;
     dct:title "GNU General Public License, Version 2 with OpenJDK Assembly exception 1.0"@en ;
     odrl:duty [ a odrl:Duty ;
             odrl:action cc:ShareAlike ] ;
     odrl:permission [ a odrl:Permission ;
-            odrl:action dalicc:chargeDistributionFee ],
+            odrl:action dalicc:chargeDistributionFee ;
+            dalicc:evidence "You may charge a fee for the physical act of transferring a copy, and you may at your option offer warranty protection in exchange for a fee." ],
         [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
         [ a odrl:Permission ;

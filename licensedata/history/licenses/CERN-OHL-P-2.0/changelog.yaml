@@ -1,0 +1,51 @@
+id: CERN-OHL-P-2.0
+title: CERN Open Hardware Licence Version 2 - Permissive
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'The statement is marked as a library convention, family rule 15: Permissive records permit
+      relicensing: the text does not state it in as many words. Its duty dalicc:compliantLicense is
+      marked as a library convention, family rule 15: Permissive records permit relicensing.'
+    source: manual
+  - action: changed
+    statement: permission dalicc:chargeDistributionFee
+    previous: permission dalicc:chargeDistributionFee
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "6.1 Subject to
+      the terms and conditions of this Licence, each Licensor hereby grants to You a perpetual, worldwide,
+      non-exclusive, no-charge, royalty-free, irrevocable (except as stated in this section 6, or
+      where terminated by the Licensor for cause) patent license to Make, have Made, use, offer to
+      sell, sell, import, and otherwise transfer the Covered Source and Products, where such licence
+      applies only to those patent claims licensable by such Licensor that are necessarily infringed
+      by exercising rights under the Covered Source as Conveyed by that Licensor."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:addLimitation
+    previous: prohibition dalicc:addLimitation
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "2.3 You shall
+      not attempt to restrict by contract or otherwise the rights granted under this Licence to other
+      Licensees."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Any such permitted
+      use shall be factual and shall not be made so as to suggest any kind of endorsement or implication
+      of involvement by the Licensor or its personnel."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

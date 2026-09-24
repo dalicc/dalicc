@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Greece a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Greece ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc-sa/3.0/gr/legalcode> ;
     dalicc:LiabilityLimitation """ΥΠΟ ΤΗΝ ΠΡΟΫΠΟΘΕΣΗ ΔΙΑΦΟΡΕΤΙΚΗΣ ΥΠΟΧΡΕΩΤΙΚΗΣ ΡΥΘΜΙΣΗΣ ΑΠΟ ΤΟ
@@ -46,6 +47,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Greece a odrl:Set ;
  
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-SA-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -63,8 +65,8 @@ dalicclib:CreativeCommonsAttributionNoncommercialSharealike30Greece a odrl:Set ;
         "CC-BY-NC-SA 3.0 GR",
         "Creative Commons BY-NC-SA 3.0",
         "Creative Commons BY-NC-SA 3.0 GR" ;
-    dct:hasVersion "4" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc-sa/3.0/gr/> ;
     dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Greece"@en ;

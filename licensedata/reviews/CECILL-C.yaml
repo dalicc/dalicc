@@ -67,7 +67,7 @@ findings:
     because it lets a Licensor offer a warranty of its own under terms it is free to decide.
     dalicc:additionalClauses carries the purpose, acceptance, term, patent, distribution,
     intellectual property, termination, language, new versions and governing law articles.
-    Note for the consolidation pass: the existing CeCILL 2.1 record puts Article 8, the
+    Note for the consolidation: the existing CeCILL 2.1 record puts Article 8, the
     liability article, into dalicc:WarrantyDisclaimer and carries no
     dalicc:LiabilityLimitation; this record separates the two.
   action: applied
@@ -115,7 +115,7 @@ findings:
     Article 5.3.4 makes the credits, respectively the notice of rights, optional where the
     Modified Software contains a contribution under another agreement of the CeCILL family.
     That conditional relaxation of a duty has no term; the article is quoted. Proposed term
-    dalicc:compatibleLicenseTest, as in batch 2.
+    dalicc:compatibleLicenseTest, as in another review group.
   action: none
 - rubric: 8
   severity: info

@@ -57,17 +57,22 @@ Usage
     python scripts/review/family_rules.py
     python scripts/review/family_rules.py --json
     python scripts/review/family_rules.py --markdown > report.md
-    python scripts/review/family_rules.py --strict      # exit 1 on any violation
-    python scripts/review/family_rules.py --strict --skip-rule 14
-    python scripts/review/family_rules.py --strict --skip-rule 14,16
+    python scripts/review/family_rules.py --strict      # exit 1 on a violation that counts
+    python scripts/review/family_rules.py --strict --count-every-rule
+    python scripts/review/family_rules.py --strict --skip-rule 16
 
 ``--skip-rule`` names the rules whose violations do not count towards the exit status.
 It is repeatable and accepts a comma-separated list.  The rules still run and still
 print their counts; the report names what was skipped and how many violations the exit
-status left out, so the printed total and the counted total can be told apart.  Rule 14
-is the one the gate skips today: its 575 padding-space violations are a known cosmetic
-issue that takes 287 records to a new version to fix, which docs/DATA.md explains and
-which wants a commit of its own.
+status left out, so the printed total and the counted total can be told apart.
+
+Rule 14 is left out of the exit status of ``--strict`` by default (:data:`DEFAULT_SKIPPED`),
+so ``--strict`` and ``make family-rules`` answer the same question.  Its violations are
+padding spaces inside 575 clause literals of the Creative Commons ports and one fixture.
+The space is part of the literal, so removing it changes a triple of every such record
+and takes 288 records to a new version: that is a correction of the data, to be made
+with the versioning tooling when the records are next versioned, not a normalisation of
+the serialisation.  ``--count-every-rule`` counts rule 14 as well.
 """
 
 from __future__ import annotations
@@ -94,6 +99,10 @@ ODRL = Namespace("http://www.w3.org/ns/odrl/2/")
 DALICCLIB = Namespace("https://dalicc.net/licenselibrary/")
 
 LOG = logging.getLogger("family_rules")
+
+#: Rules left out of the exit status of ``--strict`` unless ``--count-every-rule`` is
+#: given: rule 14, whose open violations are values of the data (see the module notes).
+DEFAULT_SKIPPED: tuple[str, ...] = ("14",)
 
 #: The records whose own text bars the use of the licensor's name or mark, and which
 #: therefore state the dalicc:promote prohibition.  Every other record is silent about
@@ -284,8 +293,7 @@ TEXT_SUPPORTED_PROMOTE: frozenset[str] = frozenset({
     "NCGL-UK-2.0", "NCSA", "NLOD-2.0", "NPOSL-3.0", "NTP", "NVIDIA-Open-Model-License",
     "Naumen", "Nokia", "OCLC-2.0", "OFL-1.0", "OFL-1.1", "OFL-1.1-RFN", "OFL-1.1-no-RFN",
     "OGL-UK-1.0", "OGL-UK-2.0", "OGTSL", "OLDAP-2.8", "OLFL-1.3", "OSET-PL-2.1", "OSL-1.0",
-    "OSL-2.0", "OSL-2.1", "OSL-3.0", "OdcOpenDatabaseLicense",
-    "OdcPublicDomainDedicationAndLicence", "OpenDataCommonsAttributionLicenseV10",
+    "OSL-2.0", "OSL-2.1", "OSL-3.0",
     "OpenDataLicenceAgreement", "OpenGovernmentLicenceCanada", "OpenSSL",
     "OpenSupremeCourtLicence", "PHP-3.01", "PSF-2.0", "PhpLicense30", "Python-2.0.1",
     "PythonLicense20", "RPL-1.1", "RPL-1.5", "RPSL-1.0", "RSALv2", "RSCPL", "SISSL",
@@ -914,10 +922,15 @@ def main(argv: list[str] | None = None) -> int:
              "repeatable, or one comma-separated list. The rules still run and still "
              "report their counts",
     )
+    parser.add_argument(
+        "--count-every-rule",
+        action="store_true",
+        help="count the rules left out by default as well (rule 14)",
+    )
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
-    skipped: list[str] = []
+    skipped: list[str] = [] if args.count_every_rule else list(DEFAULT_SKIPPED)
     for value in args.skip_rule:
         for part in value.split(","):
             number = part.strip()

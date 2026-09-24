@@ -19,6 +19,7 @@
 
 dalicclib:SISSL a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "SISSL" ;
     cc:attributionName "Sun Microsystems, Inc." ;
     cc:jurisdiction dalicc:worldwide ;
@@ -35,8 +36,8 @@ dalicclib:SISSL a odrl:Set ;
     dct:alternative "SISSL",
         "Sun Industry Standards Source License 1.1",
         "Sun Industry Standards Source License v1.1" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Sun Microsystems, Inc." ;
     dct:source <https://spdx.org/licenses/SISSL.html> ;
     dct:title "Sun Industry Standards Source License v1.1"@en ;
@@ -53,7 +54,8 @@ dalicclib:SISSL a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ] ],
+                    odrl:action cc:ShareAlike ;
+                    dalicc:evidence "In the event that the Modifications do not meet such requirements, You agree to publish either (i) any deviation from the Standards protocol resulting from implementation of Your Modifications and a reference implementation of Your Modifications or (ii) Your Modifications in Source Code form, and to make any such deviation and reference implementation or Modifications available to all third parties under the same terms as this license on a royalty free basis within thirty (30) days of Your first customer shipment of Your Modifications." ] ],
         [ a odrl:Permission ;
             odrl:action odrl:display ],
         [ a odrl:Permission ;
@@ -67,7 +69,8 @@ dalicclib:SISSL a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ],
+                    odrl:action cc:ShareAlike ;
+                    dalicc:evidence "In the event that the Modifications do not meet such requirements, You agree to publish either (i) any deviation from the Standards protocol resulting from implementation of Your Modifications and a reference implementation of Your Modifications or (ii) Your Modifications in Source Code form, and to make any such deviation and reference implementation or Modifications available to all third parties under the same terms as this license on a royalty free basis within thirty (30) days of Your first customer shipment of Your Modifications." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:standardsConformance ] ],
         [ a odrl:Permission ;
@@ -79,7 +82,8 @@ dalicclib:SISSL a odrl:Set ;
                 [ a odrl:Duty ;
                     odrl:action cc:SourceCode ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ],
+                    odrl:action cc:ShareAlike ;
+                    dalicc:evidence "In the event that the Modifications do not meet such requirements, You agree to publish either (i) any deviation from the Standards protocol resulting from implementation of Your Modifications and a reference implementation of Your Modifications or (ii) Your Modifications in Source Code form, and to make any such deviation and reference implementation or Modifications available to all third parties under the same terms as this license on a royalty free basis within thirty (30) days of Your first customer shipment of Your Modifications." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:standardsConformance ] ],
         [ a odrl:Permission ;
@@ -89,7 +93,8 @@ dalicclib:SISSL a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:chargeDistributionFee ],
         [ a odrl:Permission ;
-            odrl:action dalicc:sublicense ],
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "under intellectual property rights (other than patent or trademark) Licensable by Initial Developer to use, reproduce, modify, display, perform, sublicense and distribute the Original Code (or portions thereof) with or without Modifications, and/or as part of a Larger Work; and" ],
         [ a odrl:Permission ;
             odrl:action dalicc:patentGrant ],
         [ a odrl:Permission ;

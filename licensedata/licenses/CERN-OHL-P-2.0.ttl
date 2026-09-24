@@ -19,6 +19,7 @@
 
 dalicclib:CERN-OHL-P-2.0 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CERN-OHL-P-2.0" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2> ;
@@ -37,8 +38,8 @@ dalicclib:CERN-OHL-P-2.0 a odrl:Set ;
     dct:alternative "CERN Open Hardware Licence Version 2 - Permissive",
         "CERN-OHL-P",
         "CERN-OHL-P-2.0" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "CERN" ;
     dct:source <https://www.ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-2> ;
     dct:title "CERN Open Hardware Licence Version 2 - Permissive"@en ;
@@ -75,7 +76,11 @@ dalicclib:CERN-OHL-P-2.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ],
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ],
         [ a odrl:Permission ;
             odrl:action cc:CommercialUse ],
         [ a odrl:Permission ;
@@ -83,13 +88,16 @@ dalicclib:CERN-OHL-P-2.0 a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ModifiedWorks ],
         [ a odrl:Permission ;
-            odrl:action dalicc:chargeDistributionFee ] ;
+            odrl:action dalicc:chargeDistributionFee ;
+            dalicc:evidence "6.1 Subject to the terms and conditions of this Licence, each Licensor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except as stated in this section 6, or where terminated by the Licensor for cause) patent license to Make, have Made, use, offer to sell, sell, import, and otherwise transfer the Covered Source and Products, where such licence applies only to those patent claims licensable by such Licensor that are necessarily infringed by exercising rights under the Covered Source as Conveyed by that Licensor." ] ;
     odrl:prohibition [ a odrl:Prohibition ;
-            odrl:action dalicc:promote ],
+            odrl:action dalicc:promote ;
+            dalicc:evidence "Any such permitted use shall be factual and shall not be made so as to suggest any kind of endorsement or implication of involvement by the Licensor or its personnel." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:patentRetaliationTermination ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:addLimitation ] ;
+            odrl:action dalicc:addLimitation ;
+            dalicc:evidence "2.3 You shall not attempt to restrict by contract or otherwise the rights granted under this Licence to other Licensees." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork,
                 dalicc:Hardware,

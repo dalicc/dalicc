@@ -19,6 +19,7 @@
 
 dalicclib:Gemma-Terms-of-Use a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://ai.google.dev/gemma/terms> ;
     dalicc:LiabilityLimitation "4.4 LIMITATION OF LIABILITY TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE), PRODUCT LIABILITY, CONTRACT, OR OTHERWISE, UNLESS REQUIRED BY APPLICABLE LAW, SHALL GOOGLE OR ITS AFFILIATES BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, EXEMPLARY, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR LOST PROFITS OF ANY KIND ARISING FROM THIS AGREEMENT OR RELATED TO, ANY OF THE GEMMA SERVICES OR OUTPUTS EVEN IF GOOGLE OR ITS AFFILIATES HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES." ;
@@ -46,8 +47,8 @@ dalicclib:Gemma-Terms-of-Use a odrl:Set ;
         "Gemma Terms of Use",
         "Gemma-Terms-of-Use",
         "gemma" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Google LLC" ;
     dct:source <https://ai.google.dev/gemma/terms> ;
     dct:title "Gemma Terms of Use"@en ;
@@ -56,31 +57,40 @@ dalicclib:Gemma-Terms-of-Use a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "You must provide all third party recipients of Gemma or Model Derivatives a copy of this Agreement." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:includeNoticeFile ],
+                    odrl:action dalicc:includeNoticeFile ;
+                    dalicc:evidence "All Distributions (other than through a Hosted Service) must be accompanied by a \"Notice\" text file that contains the following notice: \"Gemma is provided under and subject to the Gemma Terms of Use found at ai.google.dev/gemma/terms\"." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "All Distributions (other than through a Hosted Service) must be accompanied by a \"Notice\" text file that contains the following notice: \"Gemma is provided under and subject to the Gemma Terms of Use found at ai.google.dev/gemma/terms\"." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ] ],
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "You must provide all third party recipients of Gemma or Model Derivatives a copy of this Agreement." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:includeNoticeFile ],
+                    odrl:action dalicc:includeNoticeFile ;
+                    dalicc:evidence "All Distributions (other than through a Hosted Service) must be accompanied by a \"Notice\" text file that contains the following notice: \"Gemma is provided under and subject to the Gemma Terms of Use found at ai.google.dev/gemma/terms\"." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "All Distributions (other than through a Hosted Service) must be accompanied by a \"Notice\" text file that contains the following notice: \"Gemma is provided under and subject to the Gemma Terms of Use found at ai.google.dev/gemma/terms\"." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ] ],
         [ a odrl:Permission ;
             odrl:action odrl:derive ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "You must provide all third party recipients of Gemma or Model Derivatives a copy of this Agreement." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:includeNoticeFile ],
+                    odrl:action dalicc:includeNoticeFile ;
+                    dalicc:evidence "All Distributions (other than through a Hosted Service) must be accompanied by a \"Notice\" text file that contains the following notice: \"Gemma is provided under and subject to the Gemma Terms of Use found at ai.google.dev/gemma/terms\"." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "All Distributions (other than through a Hosted Service) must be accompanied by a \"Notice\" text file that contains the following notice: \"Gemma is provided under and subject to the Gemma Terms of Use found at ai.google.dev/gemma/terms\"." ],
                 [ a odrl:Duty ;
                     odrl:action dalicc:modificationNotice ] ],
         [ a odrl:Permission ;
@@ -96,13 +106,19 @@ dalicclib:Gemma-Terms-of-Use a odrl:Set ;
         [ a odrl:Permission ;
             odrl:action dalicc:ChangeLicense ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action dalicc:compliantLicense ] ],
+                    odrl:action dalicc:compliantLicense ;
+                    dalicc:statementOrigin dalicc:FromConvention ;
+                    dalicc:convention "family rule 15: Permissive records permit relicensing" ] ;
+            dalicc:statementOrigin dalicc:FromConvention ;
+            dalicc:convention "family rule 15: Permissive records permit relicensing" ],
         [ a odrl:Permission ;
             odrl:action dalicc:networkUseTrigger ;
             odrl:duty [ a odrl:Duty ;
-                    odrl:action cc:Notice ],
+                    odrl:action cc:Notice ;
+                    dalicc:evidence "You must provide all third party recipients of Gemma or Model Derivatives a copy of this Agreement." ],
                 [ a odrl:Duty ;
-                    odrl:action dalicc:addStatement ] ],
+                    odrl:action dalicc:addStatement ;
+                    dalicc:evidence "All Distributions (other than through a Hosted Service) must be accompanied by a \"Notice\" text file that contains the following notice: \"Gemma is provided under and subject to the Gemma Terms of Use found at ai.google.dev/gemma/terms\"." ] ],
         [ a odrl:Permission ;
             odrl:action dalicc:useForModelTraining ] ;
     odrl:prohibition [ a odrl:Prohibition ;

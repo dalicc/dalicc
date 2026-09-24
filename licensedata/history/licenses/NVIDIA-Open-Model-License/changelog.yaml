@@ -1,0 +1,65 @@
+id: NVIDIA-Open-Model-License
+title: NVIDIA Open Model License Agreement
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    previous: permission dalicc:ChangeLicense with duties [dalicc:compliantLicense]
+    reason: 'The statement is marked as a library convention, family rule 15: Permissive records permit
+      relicensing: the text does not state it in as many words. Its duty dalicc:compliantLicense is
+      marked as a library convention, family rule 15: Permissive records permit relicensing.'
+    source: manual
+  - action: changed
+    statement: permission dalicc:useForModelTraining with duties [dalicc:addStatement]
+    previous: permission dalicc:useForModelTraining with duties [dalicc:addStatement]
+    reason: 'Its duty dalicc:addStatement quotes "If you distribute the Model, You must give any other
+      recipients of the Model a copy of this Agreement and include the following attribution notice
+      within a “Notice” text file with such copies: “Licensed by NVIDIA Corporation under the NVIDIA
+      Open Model License”;"'
+    source: manual
+  - action: changed
+    statement: permission odrl:distribute with duties [cc:Notice, dalicc:addStatement, dalicc:includeNoticeFile]
+    previous: permission odrl:distribute with duties [cc:Notice, dalicc:addStatement, dalicc:includeNoticeFile]
+    reason: 'Its duty cc:Notice quotes "If you distribute the Model, You must give any other recipients
+      of the Model a copy of this Agreement and include the following attribution notice within a
+      “Notice” text file with such copies: “Licensed by NVIDIA Corporation under the NVIDIA Open Model
+      License”;" Its duty dalicc:includeNoticeFile quotes "If you distribute the Model, You must give
+      any other recipients of the Model a copy of this Agreement and include the following attribution
+      notice within a “Notice” text file with such copies: “Licensed by NVIDIA Corporation under the
+      NVIDIA Open Model License”;" Its duty dalicc:addStatement quotes "If you distribute the Model,
+      You must give any other recipients of the Model a copy of this Agreement and include the following
+      attribution notice within a “Notice” text file with such copies: “Licensed by NVIDIA Corporation
+      under the NVIDIA Open Model License”;"'
+    source: manual
+  - action: changed
+    statement: permission odrl:present
+    previous: permission odrl:present
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "Subject to the
+      terms and conditions of this Agreement, NVIDIA hereby grants to You a perpetual, worldwide,
+      non-exclusive, no-charge, royalty-free, revocable (as stated in Section 2.1) license to publicly
+      perform, publicly display, reproduce, use, create derivative works of, make, have made, sell,
+      offer for sale, distribute (through multiple tiers of distribution) and import the Model."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "This Agreement
+      does not grant permission to use the trade names, trademarks, service marks, or product names
+      of NVIDIA, except as required for reasonable and customary use in describing the origin of the
+      Model and reproducing the content of the “Notice” text file."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

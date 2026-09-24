@@ -1,12 +1,20 @@
 id: OdcOpenDatabaseLicense
 title: ODC Open Database License (ODbL)
-current_version: 3
+current_version: 2
 entries:
 - version: 2
-  date: '2026-09-15'
+  date: '2026-09-24'
   reviewer: Giray Havur
   summary: The content review of 2026-09-15 added 1 identification detail, 1 permission and 2 prohibitions,
-    changed 1 identification detail and recorded the review state.
+    changed 1 identification detail and recorded the review state. Later changes brought it in line
+    with its family and its text in the verification of 2026-09-15, recorded which sentence of the
+    text each statement rests on, recorded what the text says about the database right and named the
+    license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  - 4
+  - 5
   changes:
   - action: added
     statement: dalicc:reviewStatus dalicc:Reviewed
@@ -49,14 +57,6 @@ entries:
       Open Database License (ODbL) v1.0". The proposal file rated this medium; the version in the
       document confirms it. Added.
     source: review-finding 1/spdx:licenseId
-- version: 3
-  date: '2026-09-15'
-  reviewer: Giray Havur
-  summary: 'Batch 5 finding 7: the record prohibited dalicc:chargeDistributionFee although the ODbL
-    nowhere forbids charging for a copy. What it does is cap the price of the copy that has to accompany
-    a Restricted Database and of the derivative database file, and those two sentences are now quoted
-    instead; dct:source was missing.'
-  changes:
   - action: added
     statement: 'dalicc:additionalClauses "The Derivative Database (under a.) or alteration file (under
       b.) must be available at no more than a reasonable production cost for physical distributions
@@ -65,13 +65,77 @@ entries:
       part of the Contents (a “Restricted Database”) in contravention of Section 4.7 a. only if You
       also make a copy of the Database or a Derivative Database available to the recipient of the
       Restricted Database: i. That is available without additional fee."'
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record prohibited dalicc:chargeDistributionFee
+      although the ODbL nowhere forbids charging for a copy. What it does is cap the price of the
+      copy that has to accompany a Restricted Database and of the derivative database file, and those
+      two sentences are now quoted instead; dct:source was missing.'
     source: manual
   - action: added
     statement: dct:source <https://opendatacommons.org/licenses/odbl/1.0/>
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record prohibited dalicc:chargeDistributionFee
+      although the ODbL nowhere forbids charging for a copy. What it does is cap the price of the
+      copy that has to accompany a Restricted Database and of the derivative database file, and those
+      two sentences are now quoted instead; dct:source was missing.'
     source: manual
   - action: removed
     statement: prohibition dalicc:chargeDistributionFee
-    reason: Edited by hand; see the summary of this entry.
+    reason: 'The review''s finding on family consistency: the record prohibited dalicc:chargeDistributionFee
+      although the ODbL nowhere forbids charging for a copy. What it does is cap the price of the
+      copy that has to accompany a Restricted Database and of the derivative database file, and those
+      two sentences are now quoted instead; dct:source was missing.'
+    source: manual
+  - action: changed
+    statement: permission cc:CommercialUse
+    previous: permission cc:CommercialUse
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "These rights
+      explicitly include commercial use, and do not exclude any field of endeavour."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "This License
+      does not cover any trademarks associated with the Database."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:sublicense
+    previous: prohibition dalicc:sublicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "You may not sublicense
+      the Database."'
+    source: manual
+  - action: changed
+    statement: dct:publisher "Open Data Commons (Open Knowledge Foundation)"
+    previous: dct:publisher "Socialtext Incorporated"
+    reason: The ODbL is published by Open Data Commons, a project of the Open Knowledge Foundation;
+      the earlier value named the publisher of another licence.
+    source: manual
+  - action: added
+    statement: permission dalicc:suiGenerisDatabaseRights with duties [cc:Attribution, cc:Notice]
+    reason: Section 3.1 grants the rights "for the duration of any applicable copyright and Database
+      Rights", and the licence defines Database Rights as the sui generis right of the Database Directive,
+      so the permission is text-supported. The attribution and notice conditions of Section 4 apply
+      to it as they apply to every use of the Database.
+    source: manual
+  - action: changed
+    statement: permission odrl:derive with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:derive with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    reason: No sentence of the text asks for a notice of changes; the alteration file of Section 4.6(b)
+      is an alternative way to give access to a Derivative Database.
+    source: manual
+  - action: changed
+    statement: permission odrl:modify with duties [cc:Attribution, cc:Notice]
+    previous: permission odrl:modify with duties [cc:Attribution, cc:Notice, dalicc:modificationNotice]
+    reason: No sentence of the text asks for a notice of changes; the alteration file of Section 4.6(b)
+      is an alternative way to give access to a Derivative Database.
+    source: manual
+  - action: removed
+    statement: prohibition dalicc:promote
+    reason: The sentence the prohibition rested on, "This License does not cover any trademarks associated
+      with the Database.", is silence about endorsement, which the default rule of the core dependency
+      graph covers.
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
     source: manual

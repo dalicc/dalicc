@@ -79,7 +79,7 @@ findings:
     Section 11 forbids distribution where a patent claim would make royalty-free redistribution impossible
     (proposed term: dalicc:patentFreedomCondition). Section 10 forbids imposing further restrictions on the
     recipients (dalicc:addLimitation exists and could carry it, but no record uses it as a prohibition yet,
-    so it is left for the owner).'
+    so it is left open for the association''s decision).'
   action: none
 - rubric: 8
   severity: info

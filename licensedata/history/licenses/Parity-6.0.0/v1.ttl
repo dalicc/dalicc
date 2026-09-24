@@ -1,0 +1,87 @@
+# Title: The machine-readable representation of "The Parity Public License 6.0.0"@en in the DALICC license library
+# Author: DALICC
+# Source: https://dalicc.net/licenselibrary/Parity-6.0.0
+# Licensed under: Attribution 4.0 International (CC BY 4.0) 
+
+@prefix bpicounty: <http://www.bpiresearch.com/BPMO/2004/03/03/cdl/Countries#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dalicc: <https://dalicc.net/ns#> .
+@prefix dalicclib: <https://dalicc.net/licenselibrary/> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix osl: <http://opensource.org/licenses/> .
+@prefix scho: <http://schema.org/> .
+@prefix spdx: <http://spdx.org/rdf/terms#>  .
+@prefix spdxlicense: <http://spdx.org/licenses/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dalicclib:Parity-6.0.0 a odrl:Set ;
+    cc:license dalicclib:CC-BY-4.0 ;
+    spdx:licenseId "Parity-6.0.0" ;
+    cc:jurisdiction dalicc:worldwide ;
+    cc:legalcode <https://paritylicense.com/versions/6.0.0.html> ;
+    dalicc:WarrantyDisclaimer "As far as the law allows, this software comes as is, without any warranty, and the contributor will not be liable to anyone for any damages related to this software or this license, for any kind of legal claim." ;
+    dalicc:additionalClauses "If you follow the rules below, you may do everything with this software that would otherwise infringe either the contributor's copyright in it, any patent claim the contributor can license, or both.",
+        "1. Contribute changes and additions you make to this software. 2. If you combine this software with other software, contribute that other software. 3. Contribute software you develop, deploy, monitor, or run with this software. 4. Ensure everyone who gets a copy of this software from you, in source code or any other form, gets the text of this license and the contributor and source code lines above. 5. Do not make any legal claim against anyone accusing this software, with or without changes, alone or with other software, of infringing any patent claim.",
+        "To contribute software, publish all its source code, in the preferred form for making changes, through a freely accessible distribution system widely used for similar source code, and license contributions not already licensed to the public on terms as permissive as this license accordingly.",
+        "You are excused for unknowingly breaking 1, 2, or 3 if you contribute as required, or stop doing anything requiring this license, within 30 days of learning you broke the rule." ;
+    dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
+    dalicc:curePeriod "30 days" ;
+    dalicc:compatibleLicenseTest "terms as permissive as this license" ;
+    dalicc:reciprocityScope "changes and additions to this software, other software you combine it with, and software you develop, deploy, monitor or run with it" ;
+    dalicc:licenseVersion "6.0.0" ;
+    dalicc:reviewStatus dalicc:Created ;
+    dalicc:reviewedOn "2026-09-22"^^xsd:date ;
+    dalicc:versionHistory <https://dalicc.net/licenselibrary/Parity-6.0.0/versions> ;
+    dct:alternative "Parity 6.0.0",
+        "Parity Public License 6.0.0",
+        "Parity-6.0.0" ;
+    dct:hasVersion "1" ;
+    dct:modified "2026-09-22"^^xsd:date ;
+    dct:source <https://spdx.org/licenses/Parity-6.0.0.html> ;
+    dct:title "The Parity Public License 6.0.0"@en ;
+    odrl:duty [ a odrl:Duty ;
+            odrl:action cc:ShareAlike ],
+        [ a odrl:Duty ;
+            odrl:action cc:SourceCode ] ;
+    odrl:permission [ a odrl:Permission ;
+            odrl:action odrl:reproduce ],
+        [ a odrl:Permission ;
+            odrl:action odrl:distribute ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Attribution ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:modify ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Attribution ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:derive ;
+            odrl:duty [ a odrl:Duty ;
+                    odrl:action cc:Notice ],
+                [ a odrl:Duty ;
+                    odrl:action cc:Attribution ] ],
+        [ a odrl:Permission ;
+            odrl:action odrl:display ],
+        [ a odrl:Permission ;
+            odrl:action odrl:present ],
+        [ a odrl:Permission ;
+            odrl:action cc:DerivativeWorks ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:ModifiedWorks ],
+        [ a odrl:Permission ;
+            odrl:action cc:CommercialUse ],
+        [ a odrl:Permission ;
+            odrl:action dalicc:patentGrant ] ;
+    odrl:prohibition [ a odrl:Prohibition ;
+            odrl:action dalicc:ChangeLicense ],
+        [ a odrl:Prohibition ;
+            odrl:action dalicc:patentRetaliationTermination ] ;
+    odrl:target [ a odrl:AssetCollection ;
+            dct:type dcmitype:Software ] .

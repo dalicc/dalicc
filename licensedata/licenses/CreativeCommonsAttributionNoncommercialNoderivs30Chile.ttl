@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Chile a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction bpicounty:Chile ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc-nd/3.0/cl/legalcode> ;
     dalicc:LiabilityLimitation """A MENOS QUE LO EXIJA EXPRESAMENTE LA LEY APLICABLE, EL LICENCIANTE NO SERÁ RESPONSABLE ANTE USTED POR DAÑO ALGUNO, SEA POR RESPONSABILIDAD EXTRACONTRACTUAL O CONTRACTUAL, OBJETIVAS O SUBJETIVAS, SE TRATE DE DAÑOS MORALES O PATRIMONIALES, DIRECTOS O INDIRECTOS, PREVISTOS O IMPREVISTOS PRODUCIDOS POR EL USO DE ESTA LICENCIA O DE LA OBRA, AUN CUANDO EL LICENCIANTE HAYA SIDO ADVERTIDO DE LA POSIBILIDAD DE DICHOS DAÑOS. ALGUNAS LEYES NO PERMITEN LA EXCLUSIÓN DE CIERTA RESPONSABILIDAD, EN CUYO CASO ESTA EXCLUSIÓN PUEDE NO APLICARSE A USTED.
@@ -26,6 +27,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Chile a odrl:Set ;
     dalicc:WarrantyDisclaimer """A MENOS QUE LAS PARTES LO CONVINIERAN DE OTRA FORMA POR ESCRITO, Y HASTA LA MAYOR EXTENSIÓN PERMITIDA POR LA LEGISLACIÓN APLICABLE, EL LICENCIANTE OFRECE LA OBRA "TAL CUAL", SIN BRINDAR GARANTÍAS DE CLASE ALGUNA RESPECTO DE LA OBRA, YA SEA EXPRESA, IMPLÍCITA, LEGAL O CUALQUIERA OTRA, INCLUYENDO, SIN LIMITACIÓN, GARANTÍAS DE TITULARIDAD, COMERCIABILIDAD, ADAPTABILIDAD A PROPÓSITO DETERMINADO, AUSENCIA DE INFRACCIÓN, DE DEFECTOS LATENTES O DE OTRO TIPO, PRECISIÓN O ERRORES, SEAN O NO DESCUBRIBLES. ALGUNOS PAÍSES NO PERMITEN LA EXCLUSIÓN DE GARANTÍAS IMPLÍCITAS, EN CUYO CASO ESTA EXCLUSIÓN PUEDE NO APLICARSE A USTED.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-ND-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -45,7 +47,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Chile a odrl:Set ;
         "Creative Commons BY-NC-ND 3.0",
         "Creative Commons BY-NC-ND 3.0 CL" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc-nd/3.0/cl/> ;
     dct:title "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Chile"@en ;
@@ -66,13 +68,15 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Chile a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action odrl:derive ],
         [ a odrl:Prohibition ;
-            odrl:action cc:CommercialUse ],
+            odrl:action cc:CommercialUse ;
+            dalicc:evidence "Usted no puede ejercer ninguno de los derechos que le han sido otorgados en la Sección 3 precedente de modo que estén principalmente destinados o directamente dirigidos a conseguir un provecho comercial o una compensación monetaria privada." ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
             odrl:action dalicc:promote ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ] ;
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "Usted no puede sublicenciar la Obra." ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dalicc:CreativeWork ] ;
     foaf:img <https://creativecommons.org/images/international/cl.png> ;

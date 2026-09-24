@@ -19,6 +19,7 @@
 
 dalicclib:GFDL-1.3-invariants-only a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "GFDL-1.3-invariants-only" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.gnu.org/licenses/fdl.html> ;
@@ -33,15 +34,17 @@ dalicclib:GFDL-1.3-invariants-only a odrl:Set ;
     dct:alternative "GFDL 1.3 invariants",
         "GNU FDL 1.3 invariants",
         "GNU Free Documentation License v1.3 only - invariants" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Free Software Foundation" ;
     dct:source <https://www.gnu.org/licenses/fdl.html> ;
     dct:title "GNU Free Documentation License v1.3 only - invariants"@en ;
     odrl:duty [ a odrl:Duty ;
-            odrl:action cc:ShareAlike ] ;
+            odrl:action cc:ShareAlike ;
+            dalicc:evidence "You may copy and distribute a Modified Version of the Document under the conditions of sections 2 and 3 above, provided that you release the Modified Version under precisely this License, with the Modified Version filling the role of the Document, thus licensing distribution and modification of the Modified Version to whoever possesses a copy of it." ] ;
     odrl:permission [ a odrl:Permission ;
-            odrl:action dalicc:chargeDistributionFee ],
+            odrl:action dalicc:chargeDistributionFee ;
+            dalicc:evidence "However, you may accept compensation in exchange for copies." ],
         [ a odrl:Permission ;
             odrl:action odrl:reproduce ],
         [ a odrl:Permission ;

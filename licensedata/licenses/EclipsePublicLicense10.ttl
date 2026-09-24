@@ -19,6 +19,7 @@
 
 dalicclib:EclipsePublicLicense10 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "EPL-1.0" ;
     cc:attributionName "Eclipse" ;
     cc:jurisdiction dalicc:worldwide ;
@@ -34,8 +35,8 @@ dalicclib:EclipsePublicLicense10 a odrl:Set ;
         "EPL v1.0",
         "EPL-1.0",
         "Eclipse Public License Version 1.0" ;
-    dct:hasVersion "4" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Eclipse" ;
     dct:source osl:EPL-1.0 ;
     dct:title "Eclipse Public License 1.0" ;

@@ -1,0 +1,32 @@
+id: MS-RL
+title: Microsoft Reciprocal License
+current_version: 2
+entries:
+- version: 2
+  date: '2026-09-24'
+  reviewer: Giray Havur
+  summary: The changes since version 1 recorded which sentence of the text each statement rests on
+    and named the license the record itself is published under.
+  squashed_from:
+  - 2
+  - 3
+  changes:
+  - action: changed
+    statement: permission dalicc:ChangeLicense
+    previous: permission dalicc:ChangeLicense
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "If you distribute
+      any portion of the software in compiled or object code form, you may only do so under a license
+      that complies with this license."'
+    source: manual
+  - action: changed
+    statement: prohibition dalicc:promote
+    previous: prohibition dalicc:promote
+    reason: 'The statement now quotes the sentence of the licence text it rests on: "(B) No Trademark
+      License- This license does not grant you rights to use any contributors’ name, logo, or trademarks."'
+    source: manual
+  - action: added
+    statement: dct:license <https://creativecommons.org/licenses/by/4.0/>
+    reason: Every record is published under CC BY 4.0. cc:license names the record DALICC keeps of
+      that licence; dct:license now names it by the address Creative Commons publishes it at, so that
+      a consumer matching the canonical IRI finds it.
+    source: manual

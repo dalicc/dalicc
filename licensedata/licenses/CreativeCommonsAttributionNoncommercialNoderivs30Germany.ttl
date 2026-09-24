@@ -19,6 +19,7 @@
 
 dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Germany a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     spdx:licenseId "CC-BY-NC-ND-3.0-DE" ;
     cc:jurisdiction bpicounty:Germany ;
     cc:legalcode <https://creativecommons.org/licenses/by-nc-nd/3.0/de/legalcode> ;
@@ -43,6 +44,7 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Germany a odrl:Set ;
  VERTRETENMÜSSEN EBENFALLS VORLIEGT.
 """ ;
     dalicc:validityType dalicc:perpetual ;
+    dalicc:terminatesOnBreach true ;
     dalicc:jurisdictionPortOf dalicclib:CC-BY-NC-ND-4.0 ;
     dalicc:variantKind "jurisdiction-port" ;
     dalicc:licenseVersion "3.0" ;
@@ -61,8 +63,8 @@ dalicclib:CreativeCommonsAttributionNoncommercialNoderivs30Germany a odrl:Set ;
         "Creative Commons Attribution NonCommercial NoDerivatives 3.0 Germany",
         "Creative Commons BY-NC-ND 3.0",
         "Creative Commons BY-NC-ND 3.0 DE" ;
-    dct:hasVersion "3" ;
-    dct:modified "2026-09-23"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Creative Commons" ;
     dct:source <https://creativecommons.org/licenses/by-nc-nd/3.0/de/> ;
     dct:title "Creative Commons Attribution-NonCommercial-NoDerivatives 3.0 Germany"@en ;

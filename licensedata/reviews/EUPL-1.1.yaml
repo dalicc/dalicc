@@ -109,7 +109,7 @@ findings:
     The compatibility appendix has no vocabulary term. A licence that lets a derivative go out
     under one of a closed list of other licences needs both a permission and the list itself;
     the library can express neither. Proposed term dalicc:compatibleLicenseTest, as proposed
-    in batch 2 for MS-RL and RPSL-1.0, taking the list of licence ids as its value.
+    in review group 2 for MS-RL and RPSL-1.0, taking the list of licence ids as its value.
   action: none
 - rubric: 8
   severity: gap
@@ -127,7 +127,7 @@ findings:
   description: >-
     Article 12 terminates the licence automatically on any breach, with the sublicences of
     compliant recipients surviving. Quoted; proposed terms dalicc:terminatesOnBreach and
-    dalicc:sublicenseSurvival, both already proposed by earlier batches of this addition.
+    dalicc:sublicenseSurvival, both already proposed by earlier review groups of this addition.
   action: none
 - rubric: 8
   severity: info
@@ -150,13 +150,23 @@ findings:
   severity: info
   field: record
   description: >-
-    Family: the two EUPL records of this batch share every modelled statement; the 1.1 text
+    Family: the two EUPL records of this review group share every modelled statement; the 1.1 text
     limits its appendix to five licences and its Article 14 to the Court of Justice of the
     European Communities. It is also the first record in the library to carry
-    dalicc:moralRightsNonAssertion. Against the CeCILL and LiLiQ records of this batch, the
+    dalicc:moralRightsNonAssertion. Against the CeCILL and LiLiQ records of this review group, the
     EUPL is the only one whose share-alike duty hangs off the odrl:Set rather than off the
     acts, because its copyleft clause reaches every Distribution or Communication of the Work.
   action: none
+- rubric: 10
+  severity: major
+  field: dalicc:compatibleWith
+  description: 'Article 5 reads: "If the Licensee Distributes and/or Communicates Derivative Works or
+    copies thereof based upon both the Original Work and another work licensed under a Compatible Licence,
+    this Distribution and/or Communication can be done under the terms of this Compatible Licence." The
+    appendix lists GNU GPL v. 2, OSL v. 2.1 and v. 3.0, Common Public License v. 1.0, Eclipse Public License
+    v. 1.0 and CeCILL v. 2.0; the library holds no record of CeCILL 2.0, so that one is not linked. dalicc:compatibleWith
+    names GPL-2.0-only, OSL-2.1, OSL-3.0, CPL-1.0, EclipsePublicLicense10.'
+  action: applied
 family: European Union Public Licence
 port_of: null
 variant_kind: null

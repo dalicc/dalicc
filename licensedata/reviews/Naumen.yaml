@@ -29,7 +29,7 @@ findings:
     "The right to distribute this software or to use it for any purpose does not give you the right to use Servicemarks
     (sm) or Trademarks (tm) of NAUMEN", which together are dalicc:promote. dalicc:ChangeLicense is prohibited because
     conditions 1 and 2 require the list of conditions to travel with every copy. (Corrected on 2026-09-15 by the
-    verification of this batch: see the rubric 3 finding on relicensing below.)'
+    verification of this review group: see the rubric 3 finding on relicensing below.)'
   action: applied
 - rubric: 5
   severity: major
@@ -72,10 +72,10 @@ findings:
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
+    the earlier reading wrote is removed. The text reads: "Redistribution and use in source and binary forms, with
     or without modification, are permitted provided that the following conditions are met: 1. Redistributions in
     source code must retain the above copyright notice, this list of conditions, and the following disclaimer."
     The permission carries the dalicc:compliantLicense duty, as Apache-2.0 does, because the notice has to survive

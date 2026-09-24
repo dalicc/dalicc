@@ -25,14 +25,13 @@ findings:
   field: spdx:licenseId
   description: SPDX has no identifier for this port. The legal code URL implies CC-BY-NC-SA-3.0-AZ, which
     the SPDX licence list does not define, so no identifier was invented. None of the forty two records
-    in this batch has an SPDX identifier.
+    in this review group has an SPDX identifier.
   action: none
 - rubric: 1
   severity: minor
   field: dct:title
   description: The dct:title literal ended in a space, which the library list and the search index carry
-    through. Removed. The same defect sits on the NonCommercial-ShareAlike record of every port in this
-    batch.
+    through. Removed. The same defect sits on the NonCommercial-ShareAlike record of every port in this review group.
   action: applied
   change: dct:title "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Azerbaijan"@en ;
 - rubric: 2
@@ -46,7 +45,7 @@ findings:
     "melumat bazalari" (databases) alongside performances, phonograms, first fixations of film and broadcasting
     organisation programmes, and a separate definition of Database follows it. Because the legal text
     names databases as licensed subject matter and disposes of the database maker''s right in the grant
-    itself, dcmitype:Dataset was added here rather than left as a proposal. The ports in this batch whose
+    itself, dcmitype:Dataset was added here rather than left as a proposal. The ports in this review group whose
     text has no database clause at all keep the proposal.'
   action: applied
   change: "odrl:target [ a odrl:AssetCollection ;\n        dct:type dalicc:CreativeWork,\n           \
@@ -68,10 +67,11 @@ findings:
   description: 'The licence forbids sublicensing and the record does not say so. Section 4(a): "Lisenziya
     alan Esere elave lisenziya vere bilmez." The vocabulary already has dalicc:sublicense, but no record
     in the library uses it and its skos:note says so, and the same sentence stands in every Creative Commons
-    2.0 and 3.0 record, so adding it to the forty two ports of this batch alone would split the compatibility
+    2.0 and 3.0 record, so adding it to the forty two ports of this review group alone would split the compatibility
     behaviour of one family. Proposed as one library wide correction, together with an update of the vocabulary
     note.'
-  action: proposed
+  action: superseded
+  superseded_by: 2
   change: "odrl:prohibition [ a odrl:Prohibition ;\n        odrl:action dalicc:sublicense ] ;"
 - rubric: 4
   severity: info
@@ -233,6 +233,15 @@ findings:
     checker cannot tell this record from the other records of the BY-NC-SA element set, across all three
     versions and every jurisdiction the library holds.'
   action: none
+- rubric: 7
+  severity: major
+  field: dalicc:terminatesOnBreach
+  description: 'The termination clause of this port reads: "Bu Müqavilə (Lisenziya) və ona əsasən verilən
+    hüquqlara Lisenziya alan tərəfindən Lisenziyanın şərtləri pozulduqda avtomatik olaraq xitam veriləcək."
+    The licence ends automatically on a breach and this version of the text has no reinstatement clause,
+    so dalicc:terminatesOnBreach is true and no dalicc:curePeriod is written, as on the unported record
+    of the same version.'
+  action: applied
 family: 'Creative Commons 3.0 port: Azerbaijan (AZ)'
 port_of: CC-BY-NC-SA-4.0
 variant_kind: jurisdiction-port

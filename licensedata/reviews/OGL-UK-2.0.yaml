@@ -99,7 +99,7 @@ findings:
 - rubric: 10
   severity: info
   field: record
-  description: 'Family: the two OGL records of this batch and the existing version 3.0 record share one model. Version
+  description: 'Family: the two OGL records of this review group and the existing version 3.0 record share one model. Version
     1.0 differs from 2.0 in three quoted places only: version 2.0 pulls the non-endorsement condition out into its
     own section, says "commercially and non-commercially" where 1.0 says "commercially", and drops the reference
     to the Data Protection Act 1998 that 1.0 lists among its conditions. Version 3.0 adds the Information Provider''s
@@ -109,10 +109,10 @@ findings:
 - rubric: 3
   severity: major
   field: odrl:permission
-  description: 'Family rule 15 of scripts/review/family_rules.py: a licence that asks for no reciprocity and no
+  description: 'Library convention 15: a licence that asks for no reciprocity and no
     source code asks only that the notice travels with the copy, which is a duty on the acts it governs and not
     a bar on putting the copy under other terms. dalicc:ChangeLicense is therefore a permission here, and the prohibition
-    the earlier pass wrote is removed. The text reads: "The Licensor grants you a worldwide, royalty-free, perpetual,
+    the earlier reading wrote is removed. The text reads: "The Licensor grants you a worldwide, royalty-free, perpetual,
     non-exclusive licence to use the Information subject to the conditions below." The permission carries the dalicc:compliantLicense
     duty, as Apache-2.0 does, because the notice has to survive the relicensing.'
   action: applied

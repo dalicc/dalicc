@@ -19,6 +19,7 @@
 
 dalicclib:RSALv2 a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://raw.githubusercontent.com/redis/redis/unstable/LICENSE.txt> ;
     dalicc:WarrantyDisclaimer "As far as the law allows, the Software comes as is, without any warranty or condition, and the Licensor will not be liable to You for any damages arising out of this Agreement or the Use or nature of the Software, under any kind of legal claim." ;
@@ -47,13 +48,14 @@ dalicclib:RSALv2 a odrl:Set ;
     dct:alternative "RSAL 2.0",
         "RSALv2",
         "Redis Source Available License 2.0 Agreement" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Redis Ltd." ;
     dct:source <https://github.com/redis/redis/blob/unstable/LICENSE.txt> ;
     dct:title "Redis Source Available License 2.0"@en ;
     odrl:permission [ a odrl:Permission ;
-            odrl:action odrl:reproduce ],
+            odrl:action odrl:reproduce ;
+            dalicc:evidence "The Licensor grants You a non-exclusive, royalty-free, worldwide, non-sublicensable, non-transferable license to use, copy, distribute, make available, and prepare derivative works of the Software, in each case subject to the limitations and conditions below." ],
         [ a odrl:Permission ;
             odrl:action odrl:distribute ;
             odrl:duty [ a odrl:Duty ;

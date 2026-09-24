@@ -19,6 +19,7 @@
 
 dalicclib:Timescale-License a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://raw.githubusercontent.com/timescale/timescaledb/main/tsl/LICENSE-TIMESCALE> ;
     dalicc:LiabilityLimitation "TO THE MAXIMUM EXTENT PERMITTED UNDER APPLICABLE LAW, IN NO EVENT SHALL TIMESCALE OR ITS LICENSORS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT OR INDIRECT DAMAGES, INCLUDING BUT NOT LIMITED TO ANY LOSS OF PROFITS OR REVENUE, LOSS OF USE, BUSINESS INTERRUPTION, LOSS OF DATA, COST OF COVER OR SUBSTITUTE GOODS OR SERVICES, OR FOR ANY SPECIAL, INCIDENTAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES OF ANY KIND, HOWEVER CAUSED, RELATED TO, OR ARISING OUT OF THIS TSL AGREEMENT, ITS TERMINATION OR THE PERFORMANCE OR FAILURE TO PERFORM THIS TSL AGREEMENT, OR THE USE OR INABILITY TO USE THE TIMESCALE SOFTWARE, WHETHER ALLEGED AS A BREACH OF CONTRACT, BREACH OF WARRANTY, TORTIOUS CONDUCT, INCLUDING NEGLIGENCE, OR ANY OTHER LEGAL THEORY, EVEN IF TIMESCALE HAS BEEN ADVISED OR IS AWARE OF THE POSSIBILITY OF SUCH DAMAGES." ;
@@ -46,8 +47,8 @@ dalicclib:Timescale-License a odrl:Set ;
     dct:alternative "TSL",
         "TSL Agreement",
         "Timescale License Agreement" ;
-    dct:hasVersion "1" ;
-    dct:modified "2026-09-22"^^xsd:date ;
+    dct:hasVersion "2" ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Timescale, Inc." ;
     dct:source <https://github.com/timescale/timescaledb/blob/main/tsl/LICENSE-TIMESCALE> ;
     dct:title "Timescale License"@en ;
@@ -58,7 +59,8 @@ dalicclib:Timescale-License a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ] ],
+                    odrl:action cc:ShareAlike ] ;
+            dalicc:evidence "Conditioned upon compliance with all of the terms and conditions of this TSL Agreement, Timescale grants to You at no charge the following limited, non-exclusive, non-transferable, fully paid up, worldwide licenses, without the right to grant or authorize sublicenses (except as set forth in Section 2.3):" ],
         [ a odrl:Permission ;
             odrl:action odrl:modify ;
             odrl:duty [ a odrl:Duty ;
@@ -70,7 +72,8 @@ dalicclib:Timescale-License a odrl:Set ;
             odrl:duty [ a odrl:Duty ;
                     odrl:action cc:Notice ],
                 [ a odrl:Duty ;
-                    odrl:action cc:ShareAlike ] ],
+                    odrl:action cc:ShareAlike ] ;
+            dalicc:evidence "You notify Your customers that use of such Timescale Software or Derivative Works is subject to this TSL Agreement and You provide to each such customer a copy of the most current version of this TSL Agreement or a URL from which the most current version of this TSL Agreement may be obtained" ],
         [ a odrl:Permission ;
             odrl:action cc:DerivativeWorks ],
         [ a odrl:Permission ;
@@ -80,8 +83,10 @@ dalicclib:Timescale-License a odrl:Set ;
     odrl:prohibition [ a odrl:Prohibition ;
             odrl:action dalicc:ChangeLicense ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sublicense ],
+            odrl:action dalicc:sublicense ;
+            dalicc:evidence "You agree not to ... transfer, sell, rent, lease, sublicense, loan, or otherwise transfer or make available any TSL Licensed Software, whether in source code or binary executable form" ],
         [ a odrl:Prohibition ;
-            odrl:action dalicc:sellCopy ] ;
+            odrl:action dalicc:sellCopy ;
+            dalicc:evidence "You agree not to ... transfer, sell, rent, lease, sublicense, loan, or otherwise transfer or make available any TSL Licensed Software, whether in source code or binary executable form" ] ;
     odrl:target [ a odrl:AssetCollection ;
             dct:type dcmitype:Software ] .

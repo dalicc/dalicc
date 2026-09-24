@@ -47,11 +47,11 @@ findings:
   severity: major
   field: odrl:prohibition
   description: 'The record does not prohibit dalicc:sublicense. Review decision 1 of 2026-09-15 requires that prohibition
-    of every Creative Commons record except the CC0 dedication, and scripts/validate_data.py reads cc:legalcode
+    of every Creative Commons record except the CC0 dedication, and the data checks (docs/LICENSE_REVIEW.md section 10) reads cc:legalcode
     to decide which records the rule reaches, so it will report "CC-PDDC: no dalicc:sublicense prohibition" until
     CC-PDDC joins CC_SUBLICENSE_EXEMPT beside Cc010Universal. The text states no sublicensing bar, because there
     is nothing left to sublicense: the dedicator relinquishes the copyright. Writing the prohibition to satisfy
-    the validator would say something the text does not. The change belongs in scripts/validate_data.py and is proposed,
+    the validator would say something the text does not. The change belongs in the data checks (docs/LICENSE_REVIEW.md section 10) and is proposed,
     not applied.'
   action: proposed
 - rubric: 5
@@ -60,8 +60,7 @@ findings:
   description: 'The record carries no duty, because the dedication asks for nothing in return. It reads: "hereby
     either (a) certifies that, to the best of his knowledge, the work of authorship identified is in the public
     domain of the country from which the work is published, or (b) hereby dedicates whatever copyright the dedicators
-    holds in the work of authorship identified below (the "Work") to the public domain". Family rules 6 and 7 of
-    scripts/review/family_rules.py expect an attribution or notice duty and a prohibition or a duty on every record
+    holds in the work of authorship identified below (the "Work") to the public domain". Library conventions 6 and 7 expect an attribution or notice duty and a prohibition or a duty on every record
     that is not in their DEDICATIONS set; CC-PDDC belongs in that set, beside Cc010Universal, WTFPL and Unlicense.
     Proposed there too.'
   action: applied
@@ -107,6 +106,6 @@ family: Creative Commons public domain dedication
 port_of: null
 variant_kind: null
 variant_of: null
-notes: Modelled from the SPDX plain text. The record will make scripts/validate_data.py report a missing dalicc:sublicense
-  prohibition until CC-PDDC is added to CC_SUBLICENSE_EXEMPT, and scripts/review/family_rules.py report rules 6
+notes: Modelled from the SPDX plain text. The record will make the data checks (docs/LICENSE_REVIEW.md section 10) report a missing dalicc:sublicense
+  prohibition until CC-PDDC is added to CC_SUBLICENSE_EXEMPT, and the library conventions (see the review method, docs/LICENSE_REVIEW.md section 9) report rules 6
   and 7 until it is added to DEDICATIONS. Both are recorded as findings.

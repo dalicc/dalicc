@@ -19,6 +19,7 @@
 
 dalicclib:DataExplorationLicence a odrl:Set ;
     cc:license dalicclib:CC-BY-4.0 ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     cc:attributionName "Ordnance Survey" ;
     cc:jurisdiction dalicc:worldwide ;
     cc:legalcode <https://www.ordnancesurvey.co.uk/documents/licences/data-exploration-licence.pdf> ;
@@ -30,7 +31,7 @@ dalicclib:DataExplorationLicence a odrl:Set ;
     dct:alternative "OS Data Exploration Licence",
         "Ordnance Survey Data Exploration Licence" ;
     dct:hasVersion "2" ;
-    dct:modified "2026-09-15"^^xsd:date ;
+    dct:modified "2026-09-24"^^xsd:date ;
     dct:publisher "Ordnance Survey" ;
     dct:source <https://www.ordnancesurvey.co.uk/licensing/data-exploration-licence> ;
     dct:title "Data Exploration Licence" ;
